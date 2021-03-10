@@ -24,8 +24,9 @@ class CreateRestaurantsTable extends Migration
             $table->boolean('free_shipping')->default(true);
             $table->float('price_shipping', 4,2);
             $table->float('quality', 2,1);
-            $table->string('tag_id');
             $table->string('plate_id');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
     }
