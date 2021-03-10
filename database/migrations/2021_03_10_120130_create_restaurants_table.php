@@ -26,6 +26,7 @@ class CreateRestaurantsTable extends Migration
             $table->float('quality', 2,1);
             $table->string('tag_id');
             $table->string('plate_id');
+
             $table->timestamps();
         });
     }
