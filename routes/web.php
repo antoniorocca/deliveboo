@@ -19,4 +19,10 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::middleware('auth')->namespace('User')->prefix('user')->name('user.')->group(function(){
+
+  Route::get('/home', 'HomeController@index')->name('home');
+  Route::get('/graphs', 'UserPageController@graphs')->name('graphs');
+  Route::get('/profile', 'UserPageController@profile')->name('profile');
+
+});
