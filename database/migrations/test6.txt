@@ -1,0 +1,16 @@
+RESTAURANT
+public function dishes()
+    {
+        return $this->hasMany('App\Dish');
+    }
+
+DISH
+    public function restaurant()
+{
+    return $this->belongsTo('App\Restaurant');
+}
+
+
+restaurant
+$table->unsignedBigInteger('dish_id');
+$table->foreign('dish_id')->references('id')->on('dishes');
