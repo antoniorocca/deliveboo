@@ -51,14 +51,13 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
-            'address' => ['required', 'string'],
-            'restaurant_name' => ['required', 'string'],
-            'p_iva' => ['required', 'string'],
+            'address' => ['required', 'string', 'max:255'],
+            'restaurant_name' => ['required', 'string', 'max:255'],
+            'p_iva' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
     }
-
     /**
      * Create a new user instance after a valid registration.
      *
