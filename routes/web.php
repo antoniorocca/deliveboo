@@ -25,4 +25,5 @@ Route::middleware('auth')->namespace('User')->prefix('user')->name('user.')->gro
   Route::get('/graphs', 'UserPageController@graphs')->name('graphs');
   Route::get('/profile', 'UserPageController@profile')->name('profile');
 
+  Route::resource('/dish', 'DishController');
 });

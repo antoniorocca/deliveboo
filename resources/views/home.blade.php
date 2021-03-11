@@ -15,6 +15,11 @@
                     @endif
 
                     {{ __('You are logged in!') }}
+
+                    <a class="btn btn-primary" href="{{route('user.home')}}">HOME</a>
+                    <a class="btn btn-primary" href="{{route('user.dish.index')}}">Piatti</a>
+                    <a class="btn btn-primary" href="{{route('user.graphs')}}">Grafici</a>
+                    <a class="btn btn-primary" href="{{route('user.profile')}}">Profilo</a>
                 </div>
             </div>
         </div>
