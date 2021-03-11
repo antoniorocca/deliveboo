@@ -77,22 +77,13 @@ return [
             'model' => App\User::class,
         ],
 
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
-    ],
-    'providers' => [
         'admins' => [
-            'driver' => 'eloquent',
-            'model' => App\Admin::class,
+          'driver' => 'eloquent',
+          'model' => App\Admin::class,
         ],
-
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
+    
     ],
+
 
     /*
     |--------------------------------------------------------------------------
