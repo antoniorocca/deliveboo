@@ -11,4 +11,5 @@ class Type extends Model
     {
         return $this->belongsToMany('App\User');
     }
+    protected $fillable = ['type'];
 }

@@ -12,4 +12,5 @@ class Tag extends Model
     {
         return $this->belongsToMany('App\Restaurant');
     }
+    protected $fillable = ['name_tag', 'color'];
 }
