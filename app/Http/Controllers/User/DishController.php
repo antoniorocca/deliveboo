@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Controllers\User;
-
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 use App\Dish;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -37,7 +38,24 @@ class DishController extends Controller
      */
     public function store(Request $request)
     {
-        
+        $validatedData = $request->validate([
+            'name' => 'required',
+            'img' => 'nullable | image | max:500',
+            'description' => 'required',
+            'price' => 'required',
+            'discount' => 'nullable',
+            'rating' => 'required',
+            'menu_class' => 'required'
+
+        ]);
+        if ($request->img) {
+            $img = Storage::disk('public')->put('img_restaurants', $request->img);
+            $validatedData['img'] = $img;
+        }
+        Dish::create($validatedData);
+        $new_dish = Dish::orderBy('id', 'desc')->first();
+  
+        return redirect()->route('user.dish.index', $new_dish);
     }
 
     /**
@@ -48,7 +66,7 @@ class DishController extends Controller
      */
     public function show(Dish $dish)
     {
-        //
+        return view('user.dish.show', compact('dish'));
     }
 
     /**
@@ -59,7 +77,7 @@ class DishController extends Controller
      */
     public function edit(Dish $dish)
     {
-        //
+        return view('user.dish.edit', compact('dish'));
     }
 
     /**
@@ -71,7 +89,24 @@ class DishController extends Controller
      */
     public function update(Request $request, Dish $dish)
     {
-        //
+        $validatedData = $request->validate([
+            'name' => 'required',
+            'img' => 'nullable | image | max:500',
+            'description' => 'required',
+            'price' => 'required',
+            'discount' => 'nullable',
+            'rating' => 'required',
+            'menu_class' => 'required'
+
+        ]);
+        if ($request->img) {
+            Storage::delete($dish->img);
+            $img = Storage::disk('public')->put('img_restaurants', $request->img);
+            $validatedData['img'] = $img;
+        }
+        $dish->update($validatedData);
+
+        return redirect()->route('user.dish.index', $dish);
     }
 
     /**
@@ -82,6 +117,7 @@ class DishController extends Controller
      */
     public function destroy(Dish $dish)
     {
-        //
+        $dish->delete();
+        return redirect()->route('user.dish.index');
     }
 }
