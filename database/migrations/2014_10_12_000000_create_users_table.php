@@ -22,7 +22,6 @@ class CreateUsersTable extends Migration
             $table->string('restaurant_name')->unique();
             $table->string('address');
             $table->string('p_iva')->unique();
-            $table->string('category_id')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

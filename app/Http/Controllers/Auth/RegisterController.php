@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Validator;
 
 class RegisterController extends Controller
 {
+    
     /*
     |--------------------------------------------------------------------------
     | Register Controller
@@ -66,13 +67,14 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            'name' => $data['name'],
-            'restaurant_name' => $data['restaurant_name'],
-            'address' => $data['address'],
-            'p_iva' => $data['p_iva'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-        ]);
+        $newUser = new User;
+        $newUser->name = $data['name'];
+        $newUser->address = $data['address'];
+        $newUser->restaurant_name = $data['restaurant_name'];
+        $newUser->p_iva = $data['p_iva'];
+        $newUser->email = $data['email'];
+        $newUser->password = $data['password'];
+        $newUser->save();
+        $newUser->types()->attach($data['category_id']);
     }
 }

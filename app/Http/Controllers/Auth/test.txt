@@ -1,0 +1,11 @@
+return User::create([
+            'name' => $data['name'],
+            'restaurant_name' => $data['restaurant_name'],
+            'address' => $data['address'],
+            'p_iva' => $data['p_iva'],
+            'category_id' => $data['category_id'],
+            'email' => $data['email'],
+            'password' => Hash::make($data['password']),
+        ]);
+        $user = User::find(1);
+        $user->roles()->attach($roleId);
