@@ -27,10 +27,14 @@ Route::middleware('auth')->namespace('User')->prefix('user')->name('user.')->gro
 
   Route::resource('/dish', 'DishController');
 });
+
+
+
+
 Route::middleware('guest:admin')->namespace('Auth')->prefix('admin')->name('admin.')->group(function(){
 
   Route::get('/login', 'AdminLoginController@showLoginForm')->name('login');
   Route::post('/login', 'AdminLoginController@login')->name('login.submit');
 
 });
-Route::get('/admin', 'AdminController@index')->name('admin');
+Route::get('/admin', 'AdminController@index')->name('admin')->middleware('auth:admin');

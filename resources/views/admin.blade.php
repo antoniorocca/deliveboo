@@ -16,10 +16,7 @@
 
                     {{ __('You are logged in as admin') }}
 
-                    <a class="btn btn-primary" href="{{route('user.home')}}">HOME</a>
-                    <a class="btn btn-primary" href="{{route('user.dish.index')}}">Piatti</a>
-                    <a class="btn btn-primary" href="{{route('user.graphs')}}">Grafici</a>
-                    <a class="btn btn-primary" href="{{route('user.profile')}}">Profilo</a>
+                    <a class="btn btn-primary" href="{{route('admin')}}">HOME</a>
                 </div>
             </div>
         </div>
