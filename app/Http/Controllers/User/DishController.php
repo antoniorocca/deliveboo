@@ -26,7 +26,7 @@ class DishController extends Controller
      */
     public function create()
     {
-        //
+        return view('user.dish.create');
     }
 
     /**
@@ -37,7 +37,7 @@ class DishController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
     }
 
     /**

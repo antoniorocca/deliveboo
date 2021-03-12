@@ -17,7 +17,7 @@ class TypeSeeder extends Seeder
         $type = ['Italiana', 'Thailandese', 'Cinese', 'Giapponese', 'Messicana', 'Fast Food', 'Poke', 'Gelati'];
         foreach ($type as $value) {
             $newType = new Type;
-            $newType->type = $value;
+            $newType->name = $value;
             $newType->save();
         }
     }

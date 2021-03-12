@@ -17,8 +17,8 @@ class CreateRestaurantsTable extends Migration
             $table->id();
             $table->text('description');
             $table->string('phone_number');
-            $table->string('restaurant_img');
-            $table->string('restaurant_location');
+            $table->string('img');
+            $table->string('location');
             $table->string('opening_time');
             $table->string('closure_time');
             $table->boolean('free_shipping')->default(true);

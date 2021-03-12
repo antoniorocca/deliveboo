@@ -15,14 +15,14 @@ class CreateDishesTable extends Migration
     {
         Schema::create('dishes', function (Blueprint $table) {
             $table->id();
-            $table->string('dish_name');
-            $table->string('dish_img');
-            $table->string('dish_description');
-            $table->float('dish_price',5,2);
-            $table->boolean('dish_discount');
-            $table->float('dish_rating',2,1);
-            $table->string('dish_menu_class');
-            $table->string('dish_discount_id');
+            $table->string('name');
+            $table->string('img');
+            $table->string('description');
+            $table->float('price',5,2);
+            $table->boolean('discount');
+            $table->float('rating',2,1);
+            $table->string('menu_class');
+            $table->string('discount_id');
             $table->timestamps();
         });
     }

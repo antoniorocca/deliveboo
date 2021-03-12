@@ -17,7 +17,7 @@ class TagSeeder extends Seeder
         $tag = ['Consegna gratuita', 'Nuovo', 'Sconto 10%', 'Sconto 20%',];
         foreach ($tag as $value) {
             $newTag = new Tag;
-            $newTag->name_tag = $value;
+            $newTag->name = $value;
             if ($value == 'Nuovo') {
                 $newTag->color = 'blue';
             } elseif ($value == 'Consegna gratuita') {
