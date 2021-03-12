@@ -2,7 +2,16 @@
 /public/hot
 /public/storage
 /storage/*.key
-/vendor
+
+vendor/*
+!vendor/laravel
+vendor/laravel/*
+!vendor/laravel/ui
+vendor/laravel/ui/*
+!vendor/laravel/ui/auth-backend
+vendor/laravel/ui/auth-backend/*
+!vendor/laravel/ui/auth-backend/RegistersUsers.php
+
 .env
 .env.backup
 .phpunit.result.cache
