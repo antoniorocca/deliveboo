@@ -17,7 +17,7 @@ class CreateDishesTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('img')->nullable();
-            $table->string('description')->nullable();
+            $table->text('description', 500)->nullable();
             $table->float('price',5,2);
             $table->boolean('discount')->default(false);
             $table->float('rating',2,1)->nullable();

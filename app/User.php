@@ -42,8 +42,8 @@ class User extends Authenticatable
         return $this->hasOne('App\Restaurant');
     }
 
-    public function types()
+    public function categories()
     {
-        return $this->belongsToMany('App\Type');
+        return $this->belongsToMany('App\Category');
     }
 }
