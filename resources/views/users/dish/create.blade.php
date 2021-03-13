@@ -6,13 +6,13 @@
     @csrf
 
     <div class="container">
-        <span>* campo obligatorio</span> 
+        <span>* campo obligatorio</span>
 
         {{-- name --}}
         <div class="form-group row">
             <label for="name" class="col-sm-1-12 col-form-label text-info">name*</label>
             <div class="col-md-12-12 col-md-12">
-                <input type="text" class="form-control" name="name" value="">
+                <input type="text" class="form-control" name="name" value="" maxlength='30'>
             </div>
             @error('name')
                 <div class="alert alert-danger">{{ $message }}</div>
@@ -23,13 +23,13 @@
         <div class="form-group row">
             <label for="description" class="col-sm-1-12 col-form-label text-info">Description</label>
             <div class="col-md-12-12 col-md-12">
-                <textarea type="text" class="form-control" name="description" value=""></textarea>
+                <textarea type="text" class="form-control" name="description" value="" maxlength='500'></textarea>
             </div>
             @error('description')
                 <div class="alert alert-danger">{{ $message }}</div>
             @enderror
         </div>
-        
+
         {{-- img --}}
         <div class="form-group">
             <label for="img">immagine piatto</label>
@@ -39,13 +39,13 @@
             @enderror
         </div>
 
-    
+
 
         {{-- price --}}
         <div class="form-group row">
             <label for="price" class="col-sm-1-12 col-form-label text-info">Price*</label>
             <div class="col-md-12-12 col-md-12">
-                <input type="text" class="form-control" name="price" value="">
+                <input type="number" class="form-control" name="price" value="" min="0" max="999.99">
             </div>
             @error('price')
                 <div class="alert alert-danger">{{ $message }}</div>
@@ -56,7 +56,7 @@
         <div class="form-group row">
             <label for="menu_class" class="col-sm-1-12 col-form-label text-info">menu_class</label>
             <div class="col-md-12-12 col-md-12">
-                <textarea type="text" class="form-control" name="menu_class" value=""></textarea>
+                <textarea type="text" class="form-control" name="menu_class" value="" maxlength='30'></textarea>
             </div>
             @error('menu_class')
                 <div class="alert alert-danger">{{ $message }}</div>
@@ -81,8 +81,8 @@
             @enderror
         </div>
 
-                        
-        
+
+
 
         {{-- Create button --}}
         <div class="form-group row">

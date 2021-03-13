@@ -42,8 +42,8 @@ class DishController extends Controller
         $validatedData = $request->validate([
             'name' => 'required',
             'img' => 'nullable | mimes:jpg,png,jpeg | max:500',
-            'description' => 'nullable',
-            'price' => 'required',
+            'description' => 'nullable | max:500',
+            'price' => 'required | max:5',
             'discount' => 'nullable',
             'rating' => 'nullable',
             'menu_class' => 'nullable',
@@ -97,8 +97,8 @@ class DishController extends Controller
         $validatedData = $request->validate([
             'name' => 'required',
             'img' => 'nullable | image | max:500',
-            'description' => 'nullable',
-            'price' => 'required',
+            'description' => 'nullable | max:500',
+            'price' => 'required | max:5',
             'discount' => 'nullable',
             'menu_class' => 'nullable'
 

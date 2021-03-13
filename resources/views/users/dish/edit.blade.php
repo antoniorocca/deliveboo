@@ -13,7 +13,7 @@
             <div class="form-group row">
                 <label for="name" class="col-sm-1-12 col-form-label text-info">Nome piatto</label>
                 <div class="col-md-12-12 col-md-12">
-                    <input type="text" class="form-control" name="name" value="{{$dish->name}}">
+                    <input type="text" class="form-control" name="name" value="{{$dish->name}} " maxlength="30">
                 </div>
                 @error('name')
                 <div class="alert alert-danger">{{ $message }}</div>
@@ -24,13 +24,13 @@
             <div class="form-group row">
                 <label for="description" class="col-sm-1-12 col-form-label text-info">Descrizione</label>
                 <div class="col-md-12-12 col-md-12">
-                    <textarea type="text" class="form-control" name="description" value="">{{$dish->description}}</textarea>
+                    <textarea type="text" class="form-control" name="description" value="" maxlength="500">{{$dish->description}}</textarea>
                 </div>
                 @error('description')
                 <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
             </div>
-            
+
             {{-- img --}}
             <div class="form-group">
                 @if ($dish->img)
@@ -45,23 +45,23 @@
                     <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
             </div>
-            
+
             {{-- price --}}
             <div class="form-group row">
                 <label for="price" class="col-sm-1-12 col-form-label text-info">prezzo</label>
                 <div class="col-md-12-12 col-md-12">
-                    <input type="text" class="form-control" name="price" value="{{$dish->price}}">
+                    <input type="text" class="form-control" name="price" value="{{$dish->price}}" min="0" max="999.99">
                 </div>
                 @error('price')
                     <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
             </div>
-            
+
             {{-- menu_class --}}
             <div class="form-group row">
                 <label for="menu_class" class="col-sm-1-12 col-form-label text-info">Menu class</label>
                 <div class="col-md-12-12 col-md-12">
-                    <input type="text" class="form-control" name="menu_class" value="{{$dish->menu_class}}">
+                    <input type="text" class="form-control" name="menu_class" value="{{$dish->menu_class}}" maxlength="30">
                 </div>
                 @error('menu_class')
                     <div class="alert alert-danger">{{ $message }}</div>
