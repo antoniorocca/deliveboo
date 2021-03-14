@@ -12,9 +12,10 @@
     <table class="table">
         <thead>
             <tr>
-                <th>piatto ID</th>
+                <th>Piatto ID</th>
                 <th>Nome</th>
-                <th>prezzo</th>
+                <th>Immagine</th>
+                <th>Prezzo</th>
             </tr>
         </thead>
         <tbody>
@@ -22,11 +23,11 @@
             <tr>
                 <td scope="row">{{$dish->id}}</td>
                 <td>{{$dish->name}}</td>
+                <td>
+                    <img src="{{asset('storage/' . $dish->img )}}" style="height:50px;" alt="">
+                </td>
                 <td>{{$dish->price}}</td>
                 <td>
-
-
-
 
                     <a class="btn btn-primary" href="{{ route('user.dish.show', $dish) }}">Show</a>
                     <a class="btn btn-warning" href="{{ route('user.dish.edit', $dish) }}">Edit</a>
@@ -61,7 +62,6 @@
                         </div>
                     </div>
                     <!-- //Modal -->
-
 
                 </td>
             </tr>
