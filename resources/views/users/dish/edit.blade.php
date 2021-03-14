@@ -34,15 +34,15 @@
             {{-- img --}}
             <div class="form-group">
                 @if ($dish->img)
-                    <dd>foto piatto</dd>
-                    <img src="{{asset('storage/' . $dish->img )}}" alt="l'immagine è presente ma non stata caricata">
+                <dd>foto piatto</dd>
+                <img src="{{asset('storage/' . $dish->img )}}" alt="l'immagine è presente ma non stata caricata">
                 @endif
                 <br>
                 <br>
                 <dd for="img">Carica/inserisci foto del piatto</dd>
                 <input type="file" class="form-control-file" name="img" placeholder="" aria-describedby="fileHelpId">
                 @error('img')
-                    <div class="alert alert-danger">{{ $message }}</div>
+                <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
             </div>
 
@@ -50,10 +50,10 @@
             <div class="form-group row">
                 <label for="price" class="col-sm-1-12 col-form-label text-info">prezzo</label>
                 <div class="col-md-12-12 col-md-12">
-                    <input type="text" class="form-control" name="price" value="{{$dish->price}}" min="0" max="999.99">
+                    <input type="text" class="form-control" name="price" value="{{$dish->price}}" min="0" max="999.99" step="0.01">
                 </div>
                 @error('price')
-                    <div class="alert alert-danger">{{ $message }}</div>
+                <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
             </div>
 
@@ -64,7 +64,7 @@
                     <input type="text" class="form-control" name="menu_class" value="{{$dish->menu_class}}" maxlength="30">
                 </div>
                 @error('menu_class')
-                    <div class="alert alert-danger">{{ $message }}</div>
+                <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
             </div>
 
@@ -81,7 +81,7 @@
                     <label class="form-check-lable" for="discount">nessuno sconto</label>
                 </div>
                 @error('discount')
-                    <div class="alert alert-danger">{{ $message }}</div>
+                <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
             </div>
 
@@ -97,5 +97,5 @@
 @endsection
 
 @error('SOSTITUIRE')
-    <div class="alert alert-danger">{{ $message }}</div>
+<div class="alert alert-danger">{{ $message }}</div>
 @enderror

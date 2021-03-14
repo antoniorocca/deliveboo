@@ -19,29 +19,52 @@
         </thead>
         <tbody>
             @foreach($dishes as $dish)
-                <tr>
-                    <td scope="row">{{$dish->id}}</td>
-                    <td>{{$dish->name}}</td>
-                    <td>{{$dish->price}}</td>
-                    <td>
-                        <div class="dropdown open">
-                            <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="triggerId" data-toggle="dropdown" aria-haspopup="true"
-                                aria-expanded="false">
-                                Option
-                            </button>
-                            <div class="dropdown-menu" aria-labelledby="triggerId">
-                                <a class="dropdown-item" href="{{ route('user.dish.edit', $dish) }}">Edit</a>
-                                <a class="dropdown-item" href="{{ route('user.dish.show', $dish) }}">Show</a>
-    
-                                <form class="" action="{{route('user.dish.destroy', $dish->id )}}" method="post">
-                                    @csrf
-                                    @method('delete')
-                                   <button type="submit" class="btn btn-danger btn-block">delete</button>
-                                </form>
+            <tr>
+                <td scope="row">{{$dish->id}}</td>
+                <td>{{$dish->name}}</td>
+                <td>{{$dish->price}}</td>
+                <td>
+
+
+
+
+                    <a class="btn btn-primary" href="{{ route('user.dish.show', $dish) }}">Show</a>
+                    <a class="btn btn-warning" href="{{ route('user.dish.edit', $dish) }}">Edit</a>
+
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete-{{$dish->id}}">
+                        Delete
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade text-dark" id="delete-{{$dish->id}}" tabindex="-1" role="dialog" aria-labelledby="dish-delete-{{$dish->id}}" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Delete Dish {{$dish->name}}</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    Sei sicuro?
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <form class="" action="{{route('user.dish.destroy', $dish->id )}}" method="post">
+                                        @csrf
+                                        @method('delete')
+                                        <button type="submit" class="btn btn-danger btn-block">delete</button>
+                                    </form>
+                                </div>
                             </div>
                         </div>
-                    </td>
-                </tr>
+                    </div>
+                    <!-- //Modal -->
+
+
+                </td>
+            </tr>
             @endforeach
         </tbody>
     </table>

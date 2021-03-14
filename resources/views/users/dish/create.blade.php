@@ -45,7 +45,7 @@
         <div class="form-group row">
             <label for="price" class="col-sm-1-12 col-form-label text-info">Price*</label>
             <div class="col-md-12-12 col-md-12">
-                <input type="number" class="form-control" name="price" value="" min="0" max="999.99">
+                <input type="number" class="form-control" name="price" value="" min="0" max="999.99" step="0.01">
             </div>
             @error('price')
                 <div class="alert alert-danger">{{ $message }}</div>
