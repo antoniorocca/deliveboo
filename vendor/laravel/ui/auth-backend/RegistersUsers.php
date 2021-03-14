@@ -7,7 +7,6 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-use App\Type;
 
 trait RegistersUsers
 {
@@ -20,8 +19,7 @@ trait RegistersUsers
      */
     public function showRegistrationForm()
     {
-        $types = Type::all();
-        return view('auth.register', compact('types'));
+        return view('auth.register');
     }
 
     /**

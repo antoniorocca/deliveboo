@@ -17,7 +17,8 @@ class DishController extends Controller
     public function index()
     {
         //
-        return view('users.dish.index');
+        $dishes = Dish::all();
+        return view('users.dish.index', compact('dishes'));
     }
 
     /**
@@ -27,7 +28,7 @@ class DishController extends Controller
      */
     public function create()
     {
-        return view('user.dish.create');
+        return view('users.dish.create');
     }
 
     /**
@@ -40,22 +41,26 @@ class DishController extends Controller
     {
         $validatedData = $request->validate([
             'name' => 'required',
-            'img' => 'nullable | image | max:500',
-            'description' => 'required',
-            'price' => 'required',
+            'img' => 'nullable | mimes:jpg,png,jpeg | max:500',
+            'description' => 'nullable | max:500',
+            'price' => 'required | max:5',
             'discount' => 'nullable',
-            'rating' => 'required',
-            'menu_class' => 'required'
+            'rating' => 'nullable',
+            'menu_class' => 'nullable',
+            'discount_id'=> 'nullable'
 
         ]);
         if ($request->img) {
             $img = Storage::disk('public')->put('img_restaurants', $request->img);
             $validatedData['img'] = $img;
         }
+        // Dish::create($validatedData);
+        // $dishes = Dish::orderBy('id', 'desc')->first();
+        // return redirect()->route('user.dish.index');
+
         Dish::create($validatedData);
-        $new_dish = Dish::orderBy('id', 'desc')->first();
-  
-        return redirect()->route('user.dish.index', $new_dish);
+        $dish = Dish::orderBy('id', 'desc')->first();
+        return redirect()->route('user.dish.show', compact('dish'));
     }
 
     /**
@@ -66,7 +71,7 @@ class DishController extends Controller
      */
     public function show(Dish $dish)
     {
-        return view('user.dish.show', compact('dish'));
+        return view('users.dish.show', compact('dish'));
     }
 
     /**
@@ -77,7 +82,7 @@ class DishController extends Controller
      */
     public function edit(Dish $dish)
     {
-        return view('user.dish.edit', compact('dish'));
+        return view('users.dish.edit', compact('dish'));
     }
 
     /**
@@ -92,11 +97,10 @@ class DishController extends Controller
         $validatedData = $request->validate([
             'name' => 'required',
             'img' => 'nullable | image | max:500',
-            'description' => 'required',
-            'price' => 'required',
+            'description' => 'nullable | max:500',
+            'price' => 'required | max:5',
             'discount' => 'nullable',
-            'rating' => 'required',
-            'menu_class' => 'required'
+            'menu_class' => 'nullable'
 
         ]);
         if ($request->img) {
@@ -106,7 +110,7 @@ class DishController extends Controller
         }
         $dish->update($validatedData);
 
-        return redirect()->route('user.dish.index', $dish);
+        return redirect()->route('user.dish.index');
     }
 
     /**
