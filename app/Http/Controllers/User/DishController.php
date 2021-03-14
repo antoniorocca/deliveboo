@@ -54,10 +54,6 @@ class DishController extends Controller
             $img = Storage::disk('public')->put('img_restaurants', $request->img);
             $validatedData['img'] = $img;
         }
-        // Dish::create($validatedData);
-        // $dishes = Dish::orderBy('id', 'desc')->first();
-        // return redirect()->route('user.dish.index');
-
         Dish::create($validatedData);
         $dish = Dish::orderBy('id', 'desc')->first();
         return redirect()->route('user.dish.show', compact('dish'));
