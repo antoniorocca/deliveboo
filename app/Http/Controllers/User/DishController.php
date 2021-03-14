@@ -60,7 +60,7 @@ class DishController extends Controller
 
         Dish::create($validatedData);
         $dish = Dish::orderBy('id', 'desc')->first();
-        return view('users.dish.show', compact('dish'));
+        return redirect()->route('user.dish.show', compact('dish'));
     }
 
     /**
