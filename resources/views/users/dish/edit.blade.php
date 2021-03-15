@@ -98,7 +98,3 @@
     </form>
 </div>
 @endsection
-
-@error('SOSTITUIRE')
-<div class="alert alert-danger">{{ $message }}</div>
-@enderror

@@ -15,16 +15,16 @@ class CreateRestaurantsTable extends Migration
     {
         Schema::create('restaurants', function (Blueprint $table) {
             $table->id();
-            $table->text('description');
-            $table->string('phone_number');
-            $table->string('img');
-            $table->string('location');
-            $table->string('opening_time');
-            $table->string('closure_time');
+            $table->text('description')->nullable();
+            $table->string('phone_number')->nullable();
+            $table->string('img')->nullable();
+            $table->string('location')->nullable();
+            $table->string('opening_time')->nullable();
+            $table->string('closure_time')->nullable();
             $table->boolean('free_shipping')->default(true);
-            $table->float('price_shipping', 4,2);
-            $table->float('quality', 2,1);
-            $table->unsignedBigInteger('dish_id');
+            $table->float('price_shipping', 4,2)->nullable();
+            $table->float('quality', 2,1)->nullable();
+            $table->unsignedBigInteger('dish_id')->nullable();
             $table->foreign('dish_id')->references('id')->on('dishes');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
