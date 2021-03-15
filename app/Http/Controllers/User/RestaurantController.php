@@ -72,11 +72,6 @@ class RestaurantController extends Controller
 
         $categories = Category::all();
 
-        $restaurant_categories_id = $restaurant->categories;
-        $cat_ids = $restaurant_categories_id['id'];
-
-        dd($cat_ids);
-
         return view('users.restaurant.edit', compact('restaurant','categories'));
     }
 

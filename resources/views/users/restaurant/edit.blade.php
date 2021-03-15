@@ -28,14 +28,12 @@
              <label for="category_id">Categorie:</label>
              <select name="category_id[]"class="form-control" id="category_id" multiple>
                @foreach($categories as $category)
-               @if( in_array($category->id,$restaurant->categories->category_id))
-               <option value="{{$category->id}}" selected >{{$category->name}}</option>
-               @else
-               <option value="{{$category->id}}"  >{{$category->name}}</option>
-               @endif
+               <option value="{{$category->id}}" {{$restaurant->categories->contains($category) ? 'selected' : ''}}>{{$category->name}}</option>
                @endforeach
              </select>
             </div>
+
+
 
 
 
