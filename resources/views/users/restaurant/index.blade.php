@@ -10,4 +10,5 @@
    <p>{{$restaurant['closure_time']}}</p>
    <p>{{$restaurant['free_shipping']}}</p>
    <p>{{$restaurant['price_shipping']}}</p>   
+
 @endsection

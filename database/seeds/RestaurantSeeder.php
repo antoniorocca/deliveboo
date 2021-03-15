@@ -14,11 +14,11 @@ class RestaurantSeeder extends Seeder
     public function run(Faker $faker)
     {
 
-      for ($i=0; $i < 20; $i++) {
-        $newRestaurant = new Restaurant;
-        $newRestaurant->user_id = 1;
-        $newRestaurant->save();
-      }
+      // for ($i=0; $i < 20; $i++) {
+      //   $newRestaurant = new Restaurant;
+      //   $newRestaurant->user_id = 1;
+      //   $newRestaurant->save();
+      // }
 
     }
 }

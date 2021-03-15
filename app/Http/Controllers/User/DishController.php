@@ -46,15 +46,18 @@ class DishController extends Controller
      */
     public function store(Request $request)
     {
+        $request['slug'] = Str::slug($request->name);
+        
         $validatedData = $request->validate([
             'name' => 'required',
+            'slug' => 'required',
             'img' => 'nullable | mimes:jpg,png,jpeg | max:500',
             'description' => 'nullable | max:500',
             'price' => 'required | max:5',
             'discount' => 'nullable',
             'rating' => 'nullable',
             'menu_class' => 'nullable',
-            'discount_id'=> 'nullable'
+            'discount_id' => 'nullable'
 
         ]);
         if ($request->img) {

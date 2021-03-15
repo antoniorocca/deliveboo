@@ -4,6 +4,7 @@ namespace App\Http\Controllers\User;
 use App\Restaurant;
 use App\User;
 use App\Category;
+use Illuminate\Support\Str;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 

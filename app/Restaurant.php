@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Restaurant extends Model
 {
     protected $fillable = [
-        'name', 'phone_number', 'description', 'img', 'location','opening_time','closure_time','free_shipping', 'price_shipping', 'quality',
+        'name','phone_number', 'description', 'img', 'location','opening_time','closure_time','free_shipping', 'price_shipping', 'quality',
     ];
     public function user()
     {
@@ -33,5 +33,6 @@ class Restaurant extends Model
     {
         return $this->belongsToMany('App\Category');
     }
+
 
 }

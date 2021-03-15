@@ -4,7 +4,6 @@
     <h1>modifica ristorante</h1>
     <form action="{{ route('user.restaurant.update', $restaurant) }}" method="post" enctype="multipart/form-data">
         @csrf
-
         @method('patch')
 
         <div class="container">
