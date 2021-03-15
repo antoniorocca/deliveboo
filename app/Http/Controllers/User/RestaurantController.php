@@ -4,6 +4,7 @@ namespace App\Http\Controllers\User;
 use App\Restaurant;
 use App\User;
 use App\Category;
+use App\Tag;
 use Illuminate\Support\Str;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -23,6 +24,7 @@ class RestaurantController extends Controller
         //->request->get('parameters')
         $user = User::find($user_id);
         $restaurant = User::find($user_id)->restaurant;
+
         // dd($restaurant->id);
         return view('users.restaurant.index', compact('restaurant','user'));
     }
@@ -74,7 +76,10 @@ class RestaurantController extends Controller
 
         $categories = Category::all();
 
-        return view('users.restaurant.edit', compact('restaurant','categories'));
+        $tags = Tag::all();
+
+
+        return view('users.restaurant.edit', compact('restaurant','categories','tags'));
     }
 
     /**
@@ -98,6 +103,7 @@ class RestaurantController extends Controller
             'free_shipping' => 'nullable',
             'price_shipping' => 'nullable | max:5',
             'category_id' => 'exists:categories,id',
+            'tag_id' => 'exists:tags,id',
         ]);
         $restaurant = Restaurant::find($id);
         if ($request->img) {
@@ -107,6 +113,7 @@ class RestaurantController extends Controller
         }
         $restaurant->update($validatedData);
         $restaurant->categories()->sync($request->category_id);
+        $restaurant->tags()->sync($request->tag_id);
 
 
         return redirect()->route('user.restaurant.index');

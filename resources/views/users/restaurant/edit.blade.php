@@ -33,13 +33,23 @@
                 @enderror
             </div>
 
-            
+
             {{-- categories --}}
             <div class="form-group">
              <label for="category_id">Categorie:</label>
              <select name="category_id[]"class="form-control" id="category_id" multiple>
                @foreach($categories as $category)
                <option value="{{$category->id}}" {{$restaurant->categories->contains($category) ? 'selected' : ''}}>{{$category->name}}</option>
+               @endforeach
+             </select>
+            </div>
+
+            {{-- categories --}}
+            <div class="form-group">
+             <label for="tag_id">Categorie:</label>
+             <select name="tag_id[]"class="form-control" id="tag_id" multiple>
+               @foreach($tags as $tag)
+               <option value="{{$tag->id}}" {{$restaurant->tags->contains($tag) ? 'selected' : ''}}>{{$tag->name}}</option>
                @endforeach
              </select>
             </div>
