@@ -36,7 +36,7 @@
 
             <h4 class="text-info">sconto</h4>
             <p class="card-text text-danger">
-                @if ($dish->discount == 0)
+                @if ($dish->discount === 0)
                 no
                 @else
                 QUI STAMPARE SCONTO
