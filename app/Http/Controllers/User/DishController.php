@@ -4,6 +4,8 @@ namespace App\Http\Controllers\User;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use App\Dish;
+use App\User;
+use App\Restaurant;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -14,10 +16,15 @@ class DishController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
-        $dishes = Dish::all();
+        $user_id = $request->user()->id;
+        $restaurant = User::find($user_id)->restaurant;
+        $dishes = $restaurant->dishes;
+
+
+
+
         return view('users.dish.index', compact('dishes'));
     }
 
@@ -56,6 +63,10 @@ class DishController extends Controller
         }
         Dish::create($validatedData);
         $dish = Dish::orderBy('id', 'desc')->first();
+        $user_id = $request->user()->id;
+        $restaurant = User::find($user_id)->restaurant;
+        $dish->restaurant_id = $restaurant->id;
+        $dish->save();
         return redirect()->route('user.dish.show', compact('dish'));
     }
 

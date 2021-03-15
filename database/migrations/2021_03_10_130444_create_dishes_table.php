@@ -23,6 +23,8 @@ class CreateDishesTable extends Migration
             $table->float('rating',2,1)->nullable();
             $table->string('menu_class')->nullable();
             $table->string('discount_id')->nullable();
+            $table->unsignedBigInteger('restaurant_id')->nullable();
+            $table->foreign('restaurant_id')->references('id')->on('restaurants');
             $table->timestamps();
         });
     }

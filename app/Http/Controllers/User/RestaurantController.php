@@ -21,7 +21,6 @@ class RestaurantController extends Controller
         //->request->get('parameters')
         $restaurant = User::find($user_id)->restaurant;
         // dd($restaurant->id);
-
         return view('users.restaurant.index', compact('restaurant'));
     }
 
@@ -65,11 +64,11 @@ class RestaurantController extends Controller
      */
     public function edit(Request $request)
     {
-       
+
         $user_id = $request->user()->id;
-        
+
         $restaurant = User::find($user_id)->restaurant;
-        
+
         return view('users.restaurant.edit', compact('restaurant'));
     }
 
