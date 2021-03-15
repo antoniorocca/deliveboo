@@ -20,11 +20,30 @@
                 @enderror
             </div>
 
+
+
+            
+            {{-- categories --}}
+            <div class="form-group">
+             <label for="category_id">Categorie:</label>
+             <select name="category_id[]"class="form-control" id="category_id" multiple>
+               @foreach($categories as $category)
+               @if( in_array($category->id,$restaurant->categories->category_id))
+               <option value="{{$category->id}}" selected >{{$category->name}}</option>
+               @else
+               <option value="{{$category->id}}"  >{{$category->name}}</option>
+               @endif
+               @endforeach
+             </select>
+            </div>
+
+
+
             {{-- phone_number --}}
             <div class="form-group row">
                 <label for="phone_number" class="col-sm-1-12 col-form-label text-info">Numero di telefono</label>
                 <div class="col-md-12-12 col-md-12">
-                  <input type="text" class="form-control" name="phone_number" value="{{$restaurant->phone_number}}">   
+                  <input type="text" class="form-control" name="phone_number" value="{{$restaurant->phone_number}}" maxlength="20">
                 </div>
                 @error('phone_number')
                 <div class="alert alert-danger">{{ $message }}</div>
@@ -43,7 +62,7 @@
                 <br>
                 <br>
                 <dd for="img">Carica/inserisci foto del ristorante</dd>
-                <input type="file" class="form-control-file" name="img" placeholder="" aria-describedby="fileHelpId">
+                <input type="file" class="form-control-file" name="img" placeholder="" aria-describedby="fileHelpId" maxlength="254">
                 @error('img')
                 <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
@@ -53,7 +72,7 @@
             <div class="form-group row">
                 <label for="location" class="col-sm-1-12 col-form-label text-info">Location</label>
                 <div class="col-md-12-12 col-md-12">
-                    <input type="text" class="form-control" name="location" value="{{$restaurant->location}}">
+                    <input type="text" class="form-control" name="location" value="{{$restaurant->location}}" maxlength="30">
                 </div>
                 @error('location')
                 <div class="alert alert-danger">{{ $message }}</div>
@@ -63,7 +82,7 @@
             {{-- opening_time --}}
             <div class="form-group row">
                 <label for="opening_time" class="col-sm-1-12 col-form-label text-info">Orario di apertura</label>
-                <input type="text" class="form-control" name="opening_time" value="{{$restaurant->opening_time}}">
+                <input type="text" class="form-control" name="opening_time" value="{{$restaurant->opening_time}}" maxlength="20">
                 @error('opening_time')
                 <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
@@ -72,7 +91,7 @@
             {{-- closure_time --}}
             <div class="form-group row">
                 <label for="closure_time" class="col-lg-12 col-form-label text-info">Orario di chiusura</label>
-                <input type="text" class="form-control" name="closure_time" value="{{$restaurant->closure_time}}">
+                <input type="text" class="form-control" name="closure_time" value="{{$restaurant->closure_time}}" maxlength="20">
                 @error('closure_time')
                 <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
@@ -99,7 +118,7 @@
             <div class="form-group row">
                 <label for="price_shipping" class="col-sm-1-12 col-form-label text-info">prezzo di consegna</label>
                 <div class="col-md-12-12 col-md-12">
-                    <input type="text" class="form-control" name="price_shipping" value="{{$restaurant->price_shipping}}" min="0" max="999.99" step="0.01">
+                    <input type="text" class="form-control" name="price_shipping" value="{{$restaurant->price_shipping}}" min="0" max="99.99" step="0.01">
                 </div>
                 @error('price_shipping')
                 <div class="alert alert-danger">{{ $message }}</div>

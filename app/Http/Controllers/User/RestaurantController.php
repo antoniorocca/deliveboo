@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\User;
 use App\Restaurant;
 use App\User;
+use App\Category;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -69,7 +70,14 @@ class RestaurantController extends Controller
 
         $restaurant = User::find($user_id)->restaurant;
 
-        return view('users.restaurant.edit', compact('restaurant'));
+        $categories = Category::all();
+
+        $restaurant_categories_id = $restaurant->categories;
+        $cat_ids = $restaurant_categories_id['id'];
+
+        dd($cat_ids);
+
+        return view('users.restaurant.edit', compact('restaurant','categories'));
     }
 
     /**
@@ -81,15 +89,17 @@ class RestaurantController extends Controller
      */
     public function update(Request $request, $id)
     {
+
         $validatedData = $request->validate([
-            'phone_number' => 'nullable',
-            'img' => 'nullable | image | max:500',
-            'description' => 'nullable | max:500',
-            'location' => 'nullable',
-            'opening_time' => 'nullable',
-            'closure_time' => 'nullable',
+          'description' => 'nullable | max:500',
+            'phone_number' => 'nullable | max:20',
+            'img' => 'nullable | mimes:jpg,png,jpeg | max:500',
+            'location' => 'nullable | max:30',
+            'opening_time' => 'nullable | max:20',
+            'closure_time' => 'nullable | max:20',
             'free_shipping' => 'nullable',
-            'price_shipping' => 'nullable'
+            'price_shipping' => 'nullable | max:5',
+            'category_id' => 'exists:categories,id',
         ]);
         $restaurant = Restaurant::find($id);
         if ($request->img) {
@@ -98,6 +108,8 @@ class RestaurantController extends Controller
             $validatedData['img'] = $img;
         }
         $restaurant->update($validatedData);
+        $restaurant->categories()->sync($request->category_id);
+
 
         return redirect()->route('user.restaurant.index');
     }

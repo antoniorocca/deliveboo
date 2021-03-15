@@ -16,11 +16,11 @@ class CreateRestaurantsTable extends Migration
         Schema::create('restaurants', function (Blueprint $table) {
             $table->id();
             $table->text('description')->nullable();
-            $table->string('phone_number')->nullable();
+            $table->string('phone_number', 20)->nullable();
             $table->string('img')->nullable();
-            $table->string('location')->nullable();
-            $table->string('opening_time')->nullable();
-            $table->string('closure_time')->nullable();
+            $table->string('location', 30)->nullable();
+            $table->string('opening_time', 20)->nullable();
+            $table->string('closure_time', 20)->nullable();
             $table->boolean('free_shipping')->default(true);
             $table->float('price_shipping', 4,2)->nullable();
             $table->float('quality', 2,1)->nullable();
