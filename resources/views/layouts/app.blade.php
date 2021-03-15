@@ -73,7 +73,15 @@
         </nav>
 
         <main class="py-4">
-            @yield('content')
+          <nav class="d-flex justify-content-center">
+            <a class="btn btn-primary m-1" href="{{route('user.home')}}">HOME</a>
+            <a class="btn btn-primary m-1" href="{{route('user.restaurant.index') }}">Il mio ristorante</a>
+            <a class="btn btn-primary m-1" href="{{route('user.dish.index')}}">Piatti</a>
+            <a class="btn btn-primary m-1" href="{{route('user.graphs')}}">Grafici</a>
+            <a class="btn btn-primary m-1" href="{{route('user.profile')}}">Profilo</a>
+          </nav>
+
+          @yield('content')
         </main>
     </div>
 </body>

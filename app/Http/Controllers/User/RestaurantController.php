@@ -21,9 +21,10 @@ class RestaurantController extends Controller
         // dd($request->user()->name);
         $user_id = $request->user()->id;
         //->request->get('parameters')
+        $user = User::find($user_id);
         $restaurant = User::find($user_id)->restaurant;
         // dd($restaurant->id);
-        return view('users.restaurant.index', compact('restaurant'));
+        return view('users.restaurant.index', compact('restaurant','user'));
     }
 
     /**
