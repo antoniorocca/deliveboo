@@ -9,18 +9,30 @@
 
         <div class="container">
 
+            <!-- name -->
+            <div class="form-group row">
+                <label for="name" class="col-md-4 col-form-label text-md-right">Nome ristorante</label>
+                <div class="col-md-6">
+                    <input id="name" maxlength='255' type="text" class="form-control" name="name" value="{{ $restaurant->name }}">
+                    @error('name')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
+            </div>
+
+
             {{-- description --}}
             <div class="form-group row">
                 <label for="description" class="col-sm-1-12 col-form-label text-info">Descrizione</label>
                 <div class="col-md-12-12 col-md-12">
-                    <textarea type="text" class="form-control" name="description" value="" maxlength="500">{{$restaurant->description}}</textarea>
+                    <textarea type="text" class="form-control" name="description" value="{{$restaurant->description}}" maxlength="500">{{$restaurant->description}}</textarea>
                 </div>
                 @error('description')
                 <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
             </div>
-
-
 
             
             {{-- categories --}}
@@ -32,8 +44,6 @@
                @endforeach
              </select>
             </div>
-
-
 
 
 

@@ -86,7 +86,8 @@ class RestaurantController extends Controller
     {
 
         $validatedData = $request->validate([
-          'description' => 'nullable | max:500',
+            'name' => 'nullable | string | max:255 ',
+            'description' => 'nullable | max:500',
             'phone_number' => 'nullable | max:20',
             'img' => 'nullable | mimes:jpg,png,jpeg | max:500',
             'location' => 'nullable | max:30',

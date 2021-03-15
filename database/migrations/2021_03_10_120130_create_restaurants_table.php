@@ -15,6 +15,7 @@ class CreateRestaurantsTable extends Migration
     {
         Schema::create('restaurants', function (Blueprint $table) {
             $table->id();
+            $table->string('name')->nullable();
             $table->text('description')->nullable();
             $table->string('phone_number', 20)->nullable();
             $table->string('img')->nullable();
