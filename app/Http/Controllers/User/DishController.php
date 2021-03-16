@@ -9,6 +9,8 @@ use App\Restaurant;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+
 
 class DishController extends Controller
 {
@@ -43,9 +45,14 @@ class DishController extends Controller
      */
     public function store(Request $request)
     {
-        $request['slug'] = Str::slug($request->name);
+        $user_id = $request->user()->id;
+        $numb = rand(100, 1000);
+        $request['slug'] = Str::slug($request->name) . $user_id . $numb;
         $validatedData = $request->validate([
+            // da rivedere validazione del nome univoco per utente
+            //
             'name' => 'required',
+            //
             'slug' => 'required',
             'img' => 'nullable | mimes:jpg,png,jpeg | max:500',
             'description' => 'nullable | max:500',
@@ -54,7 +61,6 @@ class DishController extends Controller
             'rating' => 'nullable',
             'menu_class' => 'nullable',
             'discount_id' => 'nullable'
-
         ]);
         if ($request->img) {
             $img = Storage::disk('public')->put('img_restaurants', $request->img);
