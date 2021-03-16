@@ -79,7 +79,7 @@ class DishController extends Controller
     {
         $owner_id = $dish->restaurant->user->id;
         if ($owner_id !== Auth::user()->id) {
-            return view('/home');
+            return redirect()->route('user.home');
         }
         return view('users.dish.show', compact('dish'));
     }
@@ -94,7 +94,7 @@ class DishController extends Controller
     {
         $owner_id = $dish->restaurant->user->id;
         if ($owner_id !== Auth::user()->id) {
-            return view('/home');
+            return redirect()->route('user.home');
         }
         return view('users.dish.edit', compact('dish'));
     }

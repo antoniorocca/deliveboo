@@ -73,7 +73,7 @@ class RestaurantController extends Controller
     {
         $owner_id = $restaurant->user->id;
         if ($owner_id !== Auth::user()->id) {
-            return view('/home');
+            return redirect()->route('user.home');
         }
         $user_id = $request->user()->id;
         $restaurant = User::find($user_id)->restaurant;
