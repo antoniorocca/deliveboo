@@ -8,6 +8,7 @@ use App\User;
 use App\Restaurant;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class DishController extends Controller
 {
@@ -21,10 +22,6 @@ class DishController extends Controller
         $user_id = $request->user()->id;
         $restaurant = User::find($user_id)->restaurant;
         $dishes = $restaurant->dishes;
-
-
-
-
         return view('users.dish.index', compact('dishes'));
     }
 
@@ -47,7 +44,6 @@ class DishController extends Controller
     public function store(Request $request)
     {
         $request['slug'] = Str::slug($request->name);
-        
         $validatedData = $request->validate([
             'name' => 'required',
             'slug' => 'required',
@@ -81,6 +77,10 @@ class DishController extends Controller
      */
     public function show(Dish $dish)
     {
+        $owner_id = $dish->restaurant->user->id;
+        if ($owner_id !== Auth::user()->id) {
+            return view('/home');
+        }
         return view('users.dish.show', compact('dish'));
     }
 
@@ -92,6 +92,10 @@ class DishController extends Controller
      */
     public function edit(Dish $dish)
     {
+        $owner_id = $dish->restaurant->user->id;
+        if ($owner_id !== Auth::user()->id) {
+            return view('/home');
+        }
         return view('users.dish.edit', compact('dish'));
     }
 
@@ -104,6 +108,10 @@ class DishController extends Controller
      */
     public function update(Request $request, Dish $dish)
     {
+        $owner_id = $dish->restaurant->user->id;
+        if ($owner_id !== Auth::user()->id) {
+            return view('/home');
+        }
         $validatedData = $request->validate([
             'name' => 'required',
             'img' => 'nullable | image | max:500',
@@ -119,7 +127,6 @@ class DishController extends Controller
             $validatedData['img'] = $img;
         }
         $dish->update($validatedData);
-
         return redirect()->route('user.dish.index');
     }
 
