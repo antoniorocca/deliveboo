@@ -53124,29 +53124,30 @@ module.exports = function(module) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
+/* harmony import */ var _components_ShowAll__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/ShowAll */ "./resources/js/components/ShowAll.vue");
+window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
+
+
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
+
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
-window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
-
 Vue.use(vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]);
-Vue.component('show-all', __webpack_require__(/*! ./components/ShowAll.vue */ "./resources/js/components/ShowAll.vue")["default"]);
 var Foo = {
   template: '<div>foo</div>'
-};
-var Bar = {
-  template: '<div>bar</div>'
-};
+}; // const Bar = { template: '<div>bar</div>' }
+
 var routes = [{
   path: '/foo',
   component: Foo
 }, {
-  path: '/bar',
-  component: Bar
+  path: '/generali',
+  component: _components_ShowAll__WEBPACK_IMPORTED_MODULE_1__["default"],
+  name: 'ShowAll'
 }];
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]({
   routes: routes // short for `routes: routes`

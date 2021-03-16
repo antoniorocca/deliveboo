@@ -1,3 +1,6 @@
+window.Vue = require('vue');
+import VueRouter from 'vue-router';
+import ShowAll from './components/ShowAll';
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -6,19 +9,14 @@
 
 require('./bootstrap');
 
-window.Vue = require('vue');
-import VueRouter from 'vue-router';
 Vue.use(VueRouter)
 
-Vue.component('show-all', require('./components/ShowAll.vue').default);
-
-
 const Foo = { template: '<div>foo</div>' }
-const Bar = { template: '<div>bar</div>' }
+// const Bar = { template: '<div>bar</div>' }
 
 const routes = [
   { path: '/foo', component: Foo },
-  { path: '/bar', component: Bar }
+  { path: '/generali', component: ShowAll, name:'ShowAll' }
 ]
 
 
