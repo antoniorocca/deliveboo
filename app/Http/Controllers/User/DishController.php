@@ -108,10 +108,6 @@ class DishController extends Controller
      */
     public function update(Request $request, Dish $dish)
     {
-        $owner_id = $dish->restaurant->user->id;
-        if ($owner_id !== Auth::user()->id) {
-            return view('/home');
-        }
         $validatedData = $request->validate([
             'name' => 'required',
             'img' => 'nullable | image | max:500',

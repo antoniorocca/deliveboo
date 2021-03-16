@@ -89,12 +89,8 @@ class RestaurantController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id, Restaurant $restaurant)
+    public function update(Request $request, $id)
     {
-        $owner_id = $restaurant->user->id;
-        if ($owner_id !== Auth::user()->id) {
-            return view('/home');
-        }
         $validatedData = $request->validate([
             'name' => 'nullable | string | max:255 ',
             'description' => 'nullable | max:500',

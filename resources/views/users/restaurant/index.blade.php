@@ -29,7 +29,13 @@
   <h4>Chiusura:</h4>
   <p>{{$restaurant['closure_time']}}</p>
   <h4>spedizione gratutita:</h4>
-  <p>{{$restaurant['free_shipping']}}</p>
+  <p class="card-text text-danger">
+    @if ($restaurant->free_shipping === 1)
+    consegna gratuita
+    @else
+    consegna a pagamento
+    @endif
+ </p>
   <h4>Prezzo spedizione:</h4>
   <p>{{$restaurant['price_shipping']}}</p>
 </div>
