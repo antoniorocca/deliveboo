@@ -3,7 +3,7 @@
       <div class="row justify-content-center">
         <h2>Ristoranti</h2>
           <div class="col-md-10 d-flex flex-wrap">
-              <div class="card col-md-4" v-bind:key="restaurant" v-for="restaurant in restaurants">
+              <div class="card col-md-4" v-for="restaurant in restaurants">
                   <div class="card-header">
                     <h3>
                       {{restaurant.name}}
@@ -22,7 +22,7 @@
       <div class="row justify-content-center">
         <h2>Categorie</h2>
           <div class="col-md-10 d-flex flex-wrap">
-              <div class="card col-md-4" v-bind:key="category" v-for="category in categories">
+              <div class="card col-md-4" v-for="category in categories">
                   <div class="card-header">
                     <h3>
                       {{category.name}}
@@ -41,7 +41,7 @@
 
         <h2>Piatti</h2>
           <div class="col-md-10 d-flex flex-wrap">
-              <div class="card col-md-4" v-bind:key="dish" v-for="dish in dishes">
+              <div class="card col-md-4" v-for="dish in dishes">
                   <div class="card-header">
                     <h3>
                       {{dish.name}}
