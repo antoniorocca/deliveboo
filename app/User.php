@@ -42,8 +42,4 @@ class User extends Authenticatable
         return $this->hasOne('App\Restaurant');
     }
 
-    public function categories()
-    {
-        return $this->belongsToMany('App\Category');
-    }
 }

@@ -6,9 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Category extends Model
 {
-  public function users()
+  public function restaurants()
   {
-      return $this->belongsToMany('App\User');
+      return $this->belongsToMany('App\Restaurant');
   }
 
   protected $fillable = ['category'];

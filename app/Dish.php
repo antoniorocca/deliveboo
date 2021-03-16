@@ -25,6 +25,12 @@ class Dish extends Model
         'discount',
         'rating',
         'menu_class',
+        'slug',
     ];
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
    
 }

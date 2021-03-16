@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Database\Seeder;
-
 use App\Tag;
 
 class TagSeeder extends Seeder
@@ -13,7 +12,7 @@ class TagSeeder extends Seeder
      */
     public function run()
     {
-        //
+
         $tag = ['Consegna gratuita', 'Nuovo', 'Sconto 10%', 'Sconto 20%',];
         foreach ($tag as $value) {
             $newTag = new Tag;

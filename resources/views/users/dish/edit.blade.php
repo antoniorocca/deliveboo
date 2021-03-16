@@ -2,7 +2,7 @@
 @section('content')
 <div class="container">
     <h1>modifica piatto: {{$dish->name}}</h1>
-    <form action="{{ route('user.dish.update', $dish) }}" method="post" enctype="multipart/form-data">
+    <form action="{{ route('user.dish.update', ['dish' => $dish->slug]) }}" method="post" enctype="multipart/form-data">
         @csrf
 
         @method('patch')

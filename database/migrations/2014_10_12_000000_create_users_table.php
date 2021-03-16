@@ -19,7 +19,6 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->string('restaurant_name')->unique();
             $table->string('address');
             $table->string('p_iva')->unique();
             $table->string('category_id')->nullable();

@@ -16,6 +16,7 @@ class CreateDishesTable extends Migration
         Schema::create('dishes', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('slug');
             $table->string('img')->nullable();
             $table->text('description', 500)->nullable();
             $table->float('price',5,2);
@@ -23,6 +24,8 @@ class CreateDishesTable extends Migration
             $table->float('rating',2,1)->nullable();
             $table->string('menu_class')->nullable();
             $table->string('discount_id')->nullable();
+            $table->unsignedBigInteger('restaurant_id')->nullable();
+            $table->foreign('restaurant_id')->references('id')->on('restaurants');
             $table->timestamps();
         });
     }

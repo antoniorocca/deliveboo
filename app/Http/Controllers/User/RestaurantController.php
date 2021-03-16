@@ -3,9 +3,14 @@
 namespace App\Http\Controllers\User;
 use App\Restaurant;
 use App\User;
+use App\Category;
+use App\Tag;
+use Illuminate\Support\Str;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Storage;
+use App\Http\Controllers\User\Redirect;
+use Illuminate\Support\Facades\Auth;
 
 class RestaurantController extends Controller
 {
@@ -18,11 +23,12 @@ class RestaurantController extends Controller
     {
         // dd($request->user()->name);
         $user_id = $request->user()->id;
+        // dd($user_id,Auth::user());
         //->request->get('parameters')
+        $user = User::find($user_id);
         $restaurant = User::find($user_id)->restaurant;
         // dd($restaurant->id);
-
-        return view('users.restaurant.index', compact('restaurant'));
+        return view('users.restaurant.index', compact('restaurant','user'));
     }
 
     /**
@@ -63,14 +69,17 @@ class RestaurantController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Request $request)
+    public function edit(Request $request, Restaurant $restaurant)
     {
-       
+        $owner_id = $restaurant->user->id;
+        if ($owner_id !== Auth::user()->id) {
+            return view('/home');
+        }
         $user_id = $request->user()->id;
-        
         $restaurant = User::find($user_id)->restaurant;
-        
-        return view('users.restaurant.edit', compact('restaurant'));
+        $categories = Category::all();
+        $tags = Tag::all();
+        return view('users.restaurant.edit', compact('restaurant','categories','tags'));
     }
 
     /**
@@ -80,17 +89,24 @@ class RestaurantController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $id, Restaurant $restaurant)
     {
+        $owner_id = $restaurant->user->id;
+        if ($owner_id !== Auth::user()->id) {
+            return view('/home');
+        }
         $validatedData = $request->validate([
-            'phone_number' => 'nullable',
-            'img' => 'nullable | image | max:500',
+            'name' => 'nullable | string | max:255 ',
             'description' => 'nullable | max:500',
-            'location' => 'nullable',
-            'opening_time' => 'nullable',
-            'closure_time' => 'nullable',
+            'phone_number' => 'nullable | max:20',
+            'img' => 'nullable | mimes:jpg,png,jpeg | max:500',
+            'location' => 'nullable | max:30',
+            'opening_time' => 'nullable | max:20',
+            'closure_time' => 'nullable | max:20',
             'free_shipping' => 'nullable',
-            'price_shipping' => 'nullable'
+            'price_shipping' => 'nullable | max:5',
+            'category_id' => 'exists:categories,id',
+            'tag_id' => 'exists:tags,id',
         ]);
         $restaurant = Restaurant::find($id);
         if ($request->img) {
@@ -99,7 +115,8 @@ class RestaurantController extends Controller
             $validatedData['img'] = $img;
         }
         $restaurant->update($validatedData);
-
+        $restaurant->categories()->sync($request->category_id);
+        $restaurant->tags()->sync($request->tag_id);
         return redirect()->route('user.restaurant.index');
     }
 
