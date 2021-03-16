@@ -37714,7 +37714,7 @@ var render = function() {
         "div",
         { staticClass: "col-md-10 d-flex flex-wrap" },
         _vm._l(_vm.restaurants, function(restaurant) {
-          return _c("div", { staticClass: "card col-md-4" }, [
+          return _c("div", { key: restaurant, staticClass: "card col-md-4" }, [
             _c("div", { staticClass: "card-header" }, [
               _c("h3", [
                 _vm._v(
@@ -37745,7 +37745,7 @@ var render = function() {
         "div",
         { staticClass: "col-md-10 d-flex flex-wrap" },
         _vm._l(_vm.categories, function(category) {
-          return _c("div", { staticClass: "card col-md-4" }, [
+          return _c("div", { key: category, staticClass: "card col-md-4" }, [
             _c("div", { staticClass: "card-header" }, [
               _c("h3", [
                 _vm._v(
@@ -37770,7 +37770,7 @@ var render = function() {
         "div",
         { staticClass: "col-md-10 d-flex flex-wrap" },
         _vm._l(_vm.dishes, function(dish) {
-          return _c("div", { staticClass: "card col-md-4" }, [
+          return _c("div", { key: dish, staticClass: "card col-md-4" }, [
             _c("div", { staticClass: "card-header" }, [
               _c("h3", [
                 _vm._v(
