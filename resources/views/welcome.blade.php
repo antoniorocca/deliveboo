@@ -23,7 +23,7 @@
         <!-- Styles -->
         <style>
             header{
-                height: 800px;
+                height: 350px;
             }
             /* html, body {
                 background-color: #fff;
@@ -104,10 +104,10 @@
         </header>
         
         <div class="content">
+            
             <div class="title m-b-md">
-                Laravel
+                {{-- Laravel --}}
             </div>
-
             <!-- <div class="links">
                 <a href="https://laravel.com/docs">Docs</a>
                 <a href="https://laracasts.com">Laracasts</a>
@@ -125,18 +125,19 @@
         
         <div id="app">
             {{-- <rocco-matt></rocco-matt> --}}
+            <to-top></to-top>
 
             <h1>Hello App!</h1>
             <p>
                 <!-- use router-link component for navigation. -->
                 <!-- specify the link by passing the `to` prop. -->
                 <!-- `<router-link>` will be rendered as an `<a>` tag by default -->
-                {{-- <router-link to="/foo">Go to Foo</router-link> --}}
-                {{-- <router-link to="/generali">Mostra robbe</router-link> --}}
+                <router-link to="/foo">Go to Foo</router-link>
+                <router-link to="/generali">Mostra robbe</router-link>
             </p>
             <!-- route outlet -->
             <!-- component matched by the route will render here -->
-            {{-- <router-view></router-view> --}}
+            <router-view></router-view>
 
 
             {{-- <show-all></show-all> --}}
@@ -194,7 +195,6 @@
                             </ul>
                         </ul>
                     </div>
-
                 </div>
             </div>
         </footer>
