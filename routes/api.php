@@ -22,3 +22,4 @@ Route::get('dishes', 'Api\DishController@index');
 Route::get('categories', 'Api\CategoryController@index');
 
 Route::get('token', 'Api\TokenController@index');
+Route::post('token', 'Api\TokenController@post');
