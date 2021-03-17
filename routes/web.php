@@ -29,3 +29,8 @@ Route::middleware('auth')->namespace('User')->prefix('user')->name('user.')->gro
   
   Route::resource('/dish', 'DishController');
 });
+
+
+Route::get('/payment', function () {
+  return view('payment');
+})->name('payment');
