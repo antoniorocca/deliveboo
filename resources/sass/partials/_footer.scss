@@ -10,8 +10,8 @@ footer{
     }
     .footer_container{
         text-align: left;
-        margin: 0 auto !important;
-        max-width: 90%;
+        margin: auto !important;
+        max-width: 1024px;
         ul{
             li{
                 line-height: 2.5em;
@@ -24,6 +24,24 @@ footer{
                     }
                 }
             }
+        }
+    }
+}
+
+@media all and (max-width: 767px){
+    .footer_container {
+        .lol{
+            padding-left: 20px !important;
+        }
+    }
+}
+@media all and (max-width: 575px) {
+    .footer_container {
+        .link{
+            padding-left: 20px !important;
+        }
+        #privacy{
+            padding-left: 10px !important;
         }
     }
 }

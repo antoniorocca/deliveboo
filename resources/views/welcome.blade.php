@@ -151,9 +151,56 @@
             
             <div class="footer_container"> 
 
-                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-4">
+                {{-- ESEMPIO PRESOI DA BOOTSTRAP 5
+                <div class="container">
+                    <div class="row">
+                      <div class="col-md-4">.col-md-4</div>
+                      <div class="col-md-4 offset-md-4">.col-md-4 .offset-md-4</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-3 offset-md-3">.col-md-3 .offset-md-3</div>
+                      <div class="col-md-3 offset-md-3">.col-md-3 .offset-md-3</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6 offset-md-3">.col-md-6 .offset-md-3</div>
+                    </div>
+                </div>
 
-                    <div class="col">
+                ESEMPIO PRESOI DA BOOTSTRAP 4
+                <div class="container">
+                    <div class="row">
+                      <div class="col-md-4">.col-md-4</div>
+                      <div class="col-md-4 offset-md-4">.col-md-4 .offset-md-4</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-3 offset-md-3">.col-md-3 .offset-md-3</div>
+                      <div class="col-md-3 offset-md-3">.col-md-3 .offset-md-3</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6 offset-md-3">.col-md-6 .offset-md-3</div>
+                    </div>
+                </div>
+
+                ESEMPIO PRESOI DA BOOTSTRAP 3
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4">.col-md-4</div>
+                        <div class="col-md-4 col-md-offset-4">.col-md-4 .col-md-offset-4</div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-3 col-md-offset-3">.col-md-3 .col-md-offset-3</div>
+                        <div class="col-md-3 col-md-offset-3">.col-md-3 .col-md-offset-3</div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-6 col-md-offset-3">.col-md-6 .col-md-offset-3</div>
+                    </div>
+                </div> --}}
+
+                <div class="row">
+
+                    <div class="col-lg-1 col-md-1 link"></div>
+
+                    <div class="col-lg-3 col-md-3 col-sm-3 offset-lg-1 offset-md-1 offset-sm-1 link lol">
                         <h3>Uniamo le forze</h3>
                         <ul>
                             <li><a href="">Lavora con noi</a></li>
@@ -163,7 +210,7 @@
                         </ul>
                     </div>
 
-                    <div class="col">
+                    <div class="col-lg-3 col-md-3 col-sm-3 link">
                         <h3>Link di interesse</h3>
                         <ul>
                             <li><a href="">Chi siamo</a></li>
@@ -173,7 +220,7 @@
                         </ul>
                     </div>
 
-                    <div class="col">
+                    <div class="col-lg-2 col-md-2 col-sm-3 link">
                         <h3>Seguici</h3>
                         <ul>
                             <li><a href="">Facebook</a></li>
@@ -181,8 +228,8 @@
                             <li><a href="">Instagram</a></li>
                         </ul>
                     </div>
-
-                    <div class="col">
+                    
+                    <div id="privacy" class="col-lg-3 col-md-3 col-sm-3">
                         <ul class="row row-cols-1 row-cols-sm-1 row-cols-md-1 row-cols-lg-1">
                             <ul class="row row-cols-2 row-cols-sm-1 row-cols-md-1 row-cols-lg-1">
                                 <li><a href=""><img src="{{asset('img/download-button-android.svg')}}" alt=""></a></li>
@@ -195,7 +242,9 @@
                             </ul>
                         </ul>
                     </div>
+
                 </div>
+
             </div>
         </footer>
     </body>

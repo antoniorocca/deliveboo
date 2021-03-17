@@ -10972,8 +10972,8 @@ footer a #footer_logo {
 
 footer .footer_container {
   text-align: left;
-  margin: 0 auto !important;
-  max-width: 90%;
+  margin: auto !important;
+  max-width: 1024px;
 }
 
 footer .footer_container ul li {
@@ -10988,5 +10988,21 @@ footer .footer_container ul li a {
 
 footer .footer_container ul li a img {
   margin-bottom: 20px !important;
+}
+
+@media all and (max-width: 767px) {
+  .footer_container .lol {
+    padding-left: 20px !important;
+  }
+}
+
+@media all and (max-width: 575px) {
+  .footer_container .link {
+    padding-left: 20px !important;
+  }
+
+  .footer_container #privacy {
+    padding-left: 10px !important;
+  }
 }
 
