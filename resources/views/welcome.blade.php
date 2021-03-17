@@ -22,7 +22,7 @@
 
         <!-- Styles -->
         <style>
-            html, body {
+            /* html, body {
                 background-color: #fff;
                 color: #636b6f;
                 font-family: 'Nunito', sans-serif;
@@ -71,7 +71,7 @@
 
             .m-b-md {
                 margin-bottom: 30px;
-            }
+            } */
         </style>
     </head>
     <body class="container">
@@ -100,42 +100,20 @@
             </nav>
         </header>
         
-        <div class="content">
-            <div class="title m-b-md">
-                Laravel
-            </div>
 
-            <!-- <div class="links">
-                <a href="https://laravel.com/docs">Docs</a>
-                <a href="https://laracasts.com">Laracasts</a>
-                <a href="https://laravel-news.com">News</a>
-                <a href="https://blog.laravel.com">Blog</a>
-                <a href="https://nova.laravel.com">Nova</a>
-                <a href="https://forge.laravel.com">Forge</a>
-                <a href="https://vapor.laravel.com">Vapor</a>
-                <a href="https://github.com/laravel/laravel">GitHub</a>
-            </div>   -->
-        </div>
-        
+
+
         <!-- VUE APP -->
         <!-- ////////////////////////////////// -->
-        
         <div id="app">
-            <rocco-matt></rocco-matt>
+            <restaurant-component></restaurant-component>
 
-            <h1>Hello App!</h1>
-            <p>
-                <!-- use router-link component for navigation. -->
-                <!-- specify the link by passing the `to` prop. -->
-                <!-- `<router-link>` will be rendered as an `<a>` tag by default -->
+            {{-- <p>
                 <router-link to="/foo">Go to Foo</router-link>
                 <router-link to="/generali">Mostra robbe</router-link>
-            </p>
-            <!-- route outlet -->
-            <!-- component matched by the route will render here -->
-            <router-view></router-view>
-
-
+            </p> --}}
+ 
+            {{-- <router-view></router-view> --}}
             {{-- <show-all></show-all> --}}
 
         </div>

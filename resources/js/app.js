@@ -26,7 +26,7 @@ const router = new VueRouter({
 })
 
 // esempio componente
-Vue.component('rocco-matt', require('./components/RestaurantComponent.vue').default);
+Vue.component('restaurant-component', require('./components/RestaurantComponent.vue').default);
 
 const app = new Vue({
   router,
