@@ -1,0 +1,82 @@
+@import "variables";
+
+header {
+    height: 650px;
+    background-color: $orange;
+    width: 100%;  
+    nav {
+        height: 100px;
+        width: 100%;
+        position: fixed !important;
+        top: 0 !important;
+        background-color: $orange;
+        z-index: 1;
+        #logo {
+            width: 800px;
+            input {
+                margin-left: 100px;
+                width: 400px;
+                text-align: center;
+                border-radius: 50px;
+                border-style: none;   
+                font-size: 18px;
+                height: 50px;
+                &:focus {
+                  outline: none;
+                }
+            }
+        }
+        #register {
+            border-radius: 50px;
+            background-color: $green;
+            color: white;
+            height: 50px;
+            width: 120px;
+            a {
+                color: white;
+                margin: 5px;
+                font-weight: bold;
+            }
+        } 
+    }
+    #link-consegne {
+        position: absolute;
+        top: 100px;
+        left: 540px;
+        height: 20px;
+        font-size: 18px;
+    }
+    #main-header {
+        position: absolute;
+        top: 120px;
+        width: 100%;
+        height: 400px;
+        #categories {
+            width: 750px;
+            height: 300px;
+            .category {
+                height: 120px;
+                width: 120px;
+                background-color: white;
+                border-radius: 50%;
+                font-size: 12px;
+                position: relative;
+                &:hover {
+                    transform: scale(1.1);
+                    transition: 0.3s all ease-in-out;
+                }
+                img {
+                    position: absolute;
+                    top: 8px;
+                    width: 70px;
+                }
+                span {
+                    position: absolute;
+                    bottom: 8px;
+                    width: 75px;
+                    text-align: center;
+                }
+            }
+        }
+    } 
+}

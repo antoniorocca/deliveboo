@@ -17,21 +17,24 @@
         <!-- Bootstrap -->
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
+        <!-- FontAwesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+
         <!-- Styles -->
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
         <!-- Styles -->
         <style>
-            html, body {
+            /* html, body {
                 background-color: #fff;
                 color: #636b6f;
                 font-family: 'Nunito', sans-serif;
                 font-weight: 200;
                 height: 100vh;
                 margin: 0;
-            }
+            } */
 
-            .full-height {
+            /* .full-height {
                 height: 100vh;
             }
 
@@ -71,17 +74,17 @@
 
             .m-b-md {
                 margin-bottom: 30px;
-            }
+            } */
         </style>
     </head>
-    <body class="container">
+    <body>
         <header>
-            <nav class="d-flex justify-content-between">
-                <div class="">
+            <nav class="col-lg-12 col-md-12 col-sm-12 d-flex justify-content-around align-items-center">
+                <div id="logo" class="d-flex">
                     <a href=""><img src="{{asset('img/logo_green.svg')}}" alt=""></a>
-                    <input type="text" placeholder="Cerca">
+                   <div><input type="text" placeholder="Cerca"> <i></i></div> 
                 </div>
-                <div class="  ">
+                <div id="register" class="d-flex align-items-center">
                 <!--flex-center position-ref full-height-->
                 @if (Route::has('login'))
                     <!-- <div class="top-right links"> -->
@@ -98,6 +101,45 @@
                 @endif
                 </div>
             </nav>
+            <div id="link-consegne">
+              <p>Consegne in <a href="">Via ...... <i class="fas fa-angle-down"></i></a></p>
+            </div>
+            <div id="main-header" class="d-flex justify-content-center">
+                <div id="categories" class="d-flex justify-content-center flex-wrap">
+                    <div class="category mr-4 mt-5 d-flex justify-content-center">
+                      <img src="{{asset('img/hamburger.svg')}}" alt="">
+                      <span>Cibo</span>   
+                    </div>
+                    <div class="category mr-4 mt-5 d-flex justify-content-center">
+                        <img src="" alt="">
+                        <span>Super mercato</span>
+                    </div>
+                    <div class="category mr-4 mt-5 d-flex justify-content-center">
+                        <img src="" alt="">
+                        <span>Shopping</span>
+                    </div>
+                    <div class="category mr-4 mt-5 d-flex justify-content-center">
+                        <img src="" alt="">
+                        <span>Di tutto e di più</span>
+                    </div>
+                    <div class="category mr-4 mt-5 d-flex justify-content-center">
+                        <img src="" alt="">
+                        <span>Colazioni & dolci</span>
+                    </div>
+                    <div class="category mr-4 mt-5 d-flex justify-content-center">
+                        <img src="" alt="">
+                        <span>Farmacia e Bellezza</span>
+                    </div>
+                    <div class="category mr-4 mt-5 d-flex justify-content-center">
+                        <img src="" alt="">
+                        <span>Bevande</span>
+                    </div>
+                    <div class="category mr-4 mt-5 d-flex justify-content-center">
+                        <img src="" alt="">
+                        <span>Spedizione Express</span>
+                    </div>
+                </div>   
+            </div>
         </header>
         
         <div class="content">
@@ -120,24 +162,25 @@
         <!-- VUE APP -->
         <!-- ////////////////////////////////// -->
         
-        <div id="app">
-            <rocco-matt></rocco-matt>
+        <!-- <div id="app"> -->
+            <!-- <rocco-matt></rocco-matt> -->
 
-            <h1>Hello App!</h1>
-            <p>
+            <!-- <h1>Hello App!</h1> -->
+            <!-- <p> -->
                 <!-- use router-link component for navigation. -->
                 <!-- specify the link by passing the `to` prop. -->
                 <!-- `<router-link>` will be rendered as an `<a>` tag by default -->
-                <router-link to="/foo">Go to Foo</router-link>
-                <router-link to="/generali">Mostra robbe</router-link>
-            </p>
+
+                <!-- <router-link to="/foo">Go to Foo</router-link>
+                <router-link to="/generali">Mostra robbe</router-link> -->
+            <!-- </p> -->
             <!-- route outlet -->
             <!-- component matched by the route will render here -->
-            <router-view></router-view>
+            <!-- <router-view></router-view> -->
 
 
-            {{-- <show-all></show-all> --}}
+            <!-- {{-- <show-all></show-all> --}} -->
 
-        </div>
+        <!-- </div> -->
     </body>
 </html>
