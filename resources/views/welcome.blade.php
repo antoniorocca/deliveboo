@@ -118,12 +118,8 @@
             </div>
         </div>
         <div id="app">
-
-
                   <show-all></show-all>
 
-
-
-                </div>
+      </div>
     </body>
 </html>
