@@ -14,4 +14,19 @@ class TokenController extends Controller
         $clienttoken = $braintree->clientToken()->generate();
         return $clienttoken;
     }
+    public function post(Request $request)
+    {
+
+      $nonceFromTheClient = $request->payment_method_nonce;
+      $braintree = config('braintree');
+      $result = $braintree->transaction()->sale([
+        'amount' => '10.00',
+        'paymentMethodNonce' => $nonceFromTheClient,
+        'options' => [
+          'submitForSettlement' => True
+        ]
+      ]);
+      return redirect()->route('index');
+    }
+
 }

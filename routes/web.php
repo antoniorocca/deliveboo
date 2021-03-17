@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('index');
 
 Auth::routes();
 
@@ -24,9 +24,9 @@ Route::middleware('auth')->namespace('User')->prefix('user')->name('user.')->gro
   Route::get('/home', 'HomeController@index')->name('home');
   Route::get('/graphs', 'UserPageController@graphs')->name('graphs');
   Route::get('/profile', 'UserPageController@profile')->name('profile');
-  
+
   Route::resource('/restaurant', 'RestaurantController');
-  
+
   Route::resource('/dish', 'DishController');
 });
 
