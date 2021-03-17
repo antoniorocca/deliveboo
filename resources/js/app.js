@@ -1,3 +1,6 @@
+window.Vue = require('vue');
+import VueRouter from 'vue-router';
+import ShowAll from './components/ShowAll';
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -6,7 +9,29 @@
 
 require('./bootstrap');
 
-window.Vue = require('vue');
+Vue.use(VueRouter)
+
+const Foo = { template: '<div>foo</div>' }
+// const Bar = { template: '<div>bar</div>' }
+
+const routes = [
+  { path: '/foo', component: Foo },
+  { path: '/generali', component: ShowAll, name:'ShowAll' }
+]
+
+
+const router = new VueRouter({
+  routes // short for `routes: routes`
+})
+
+
+const app = new Vue({
+  router,
+  data:{
+  },
+}).$mount('#app')
+
+
 
 /**
  * The following block of code may be used to automatically register your
@@ -19,55 +44,20 @@ window.Vue = require('vue');
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
-Vue.component('show-all', require('./components/ShowAll.vue').default);
+// Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+// Vue.component('show-all', require('./components/ShowAll.vue').default);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-const app = new Vue({
-    el: '#app',
-    data:{
-      // restaurants:'',
-      // dishes:'',
-      // categories:'',
-    },
-    mounted(){
+// const app = new Vue({
+//     el: '#app',
+//     data:{
+//     },
+//     mounted(){
 
+//     },
 
-
-    //   axios.get('api/restaurants').then(resp =>{
-    //     console.log(resp.data.response);
-    //   }).catch(error => {
-    //         console.log(error);
-    //     })
-
-
-
-
-     //      Promise.all([
-     //        axios.get('api/restaurants'),
-     //        axios.get('api/dishes'),
-     //        axios.get('api/categories'),
-     //      ]).then(resp => {
-     //        console.log(resp[0].data.response);
-     //        console.log(resp[1].data.response);
-     //        console.log(resp[2].data.response);
-     //
-     //        this.restaurants = resp[0].data.response;
-     //        this.dishes = resp[1].data.response;
-     //        this.categories = resp[2].data.response;
-     //        return (ShowAll, { props: { restaurants: this.restaurants } });
-     //      }).catch(error => {
-     //        console.log(error);
-     //      })
-      },
-
-
-
-
-
-
-});
+// });
