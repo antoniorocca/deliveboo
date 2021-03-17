@@ -1,6 +1,7 @@
 window.Vue = require('vue');
 import VueRouter from 'vue-router';
 import ShowAll from './components/ShowAll';
+// import RestaurantComponent from './components/RestaurantComponent';
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -24,12 +25,15 @@ const router = new VueRouter({
   routes // short for `routes: routes`
 })
 
+// esempio componente
+Vue.component('rocco-matt', require('./components/RestaurantComponent.vue').default);
 
 const app = new Vue({
   router,
   data:{
   },
 }).$mount('#app')
+
 
 
 
