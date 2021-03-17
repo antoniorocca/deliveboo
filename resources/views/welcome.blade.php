@@ -22,7 +22,10 @@
 
         <!-- Styles -->
         <style>
-            html, body {
+            header{
+                height: 800px;
+            }
+            /* html, body {
                 background-color: #fff;
                 color: #636b6f;
                 font-family: 'Nunito', sans-serif;
@@ -71,10 +74,10 @@
 
             .m-b-md {
                 margin-bottom: 30px;
-            }
+            } */
         </style>
     </head>
-    <body class="container">
+    <body>
         <header>
             <nav class="d-flex justify-content-between">
                 <div class="">
@@ -121,23 +124,79 @@
         <!-- ////////////////////////////////// -->
         
         <div id="app">
-            <rocco-matt></rocco-matt>
+            {{-- <rocco-matt></rocco-matt> --}}
 
             <h1>Hello App!</h1>
             <p>
                 <!-- use router-link component for navigation. -->
                 <!-- specify the link by passing the `to` prop. -->
                 <!-- `<router-link>` will be rendered as an `<a>` tag by default -->
-                <router-link to="/foo">Go to Foo</router-link>
-                <router-link to="/generali">Mostra robbe</router-link>
+                {{-- <router-link to="/foo">Go to Foo</router-link> --}}
+                {{-- <router-link to="/generali">Mostra robbe</router-link> --}}
             </p>
             <!-- route outlet -->
             <!-- component matched by the route will render here -->
-            <router-view></router-view>
+            {{-- <router-view></router-view> --}}
 
 
             {{-- <show-all></show-all> --}}
 
         </div>
+
+        <footer>
+            <a href="">
+                <img id="footer_logo" src="{{asset('img/logo_white.svg')}}" alt="">
+            </a>
+            
+            <div class="footer_container"> 
+
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-4">
+
+                    <div class="col">
+                        <h3>Uniamo le forze</h3>
+                        <ul>
+                            <li><a href="">Lavora con noi</a></li>
+                            <li><a href="">Negozi partner</a></li>
+                            <li><a href="">Corrieri</a></li>
+                            <li><a href="">Business</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col">
+                        <h3>Link di interesse</h3>
+                        <ul>
+                            <li><a href="">Chi siamo</a></li>
+                            <li><a href="">FAQ</a></li>
+                            <li><a href="">Blog</a></li>
+                            <li><a href="">Contattaci</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col">
+                        <h3>Seguici</h3>
+                        <ul>
+                            <li><a href="">Facebook</a></li>
+                            <li><a href="">Twitter</a></li>
+                            <li><a href="">Instagram</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col">
+                        <ul class="row row-cols-1 row-cols-sm-1 row-cols-md-1 row-cols-lg-1">
+                            <ul class="row row-cols-2 row-cols-sm-1 row-cols-md-1 row-cols-lg-1">
+                                <li><a href=""><img src="{{asset('img/download-button-android.svg')}}" alt=""></a></li>
+                                <li><a href=""><img src="{{asset('img/download-button-ios.svg')}}" alt=""></a></li>
+                            </ul>
+                            <ul class="row row-cols-3 row-cols-sm-1 row-cols-md-1 row-cols-lg-1">
+                                <li><a href="">TERMINI E CONDIZIONI</a></li>
+                                <li><a href="">POLITICA SULLA PRIVACY</a></li>
+                                <li><a href="">POLITICA SUI COOKIE</a></li>
+                            </ul>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </footer>
     </body>
 </html>

@@ -1,0 +1,29 @@
+footer{
+    background-color: #1d1d1d;
+    color: white;
+    a{
+        text-decoration: none;
+        #footer_logo {
+            height:35px;
+            margin: 35px !important;
+        }
+    }
+    .footer_container{
+        text-align: left;
+        margin: 0 auto !important;
+        max-width: 90%;
+        ul{
+            li{
+                line-height: 2.5em;
+                list-style: none;
+                a{
+                    text-decoration: none;
+                    color: white;
+                    img{
+                        margin-bottom: 20px !important;
+                    }
+                }
+            }
+        }
+    }
+}
