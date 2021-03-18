@@ -21,7 +21,7 @@
 </head>
 <body>
     <div id="app">
-        <nav id="back_nav" class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav id="back_nav" class="navbar navbar-expand-md navbar-light bg-white">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     <img src="https://res.cloudinary.com/glovoapp/image/fetch///https://glovoapp.com/images/logo_green.svg" alt="">
@@ -71,7 +71,9 @@
                 </div>
             </div>
         </nav>
-
+        <div class="spacer">
+          <img class="img_spacer" src="{{asset('storage/yellow_arch.png')}}" alt="">
+        </div>
         <main class="py-4">
           <nav id="user_nav" class="d-flex">
 
@@ -129,7 +131,6 @@
               <a class="" href="{{route('user.profile')}}">Profilo</a>
             </div> -->
           </nav>
-
           @yield('content')
         </main>
     </div>
