@@ -33,7 +33,17 @@ const app = new Vue({
   router,
   data:{
   },
-}).$mount('#app')
+}).$mount('#app');
+
+// CARRELLO
+import store from './store.js';
+Vue.component('products-list', require('./components/ProductsList.vue').default);
+Vue.component('cart-dropdown', require('./components/Cart.vue').default);
+const app2 = new Vue({
+    el: '#app2',
+    store: new Vuex.Store(store)
+});
+
 
 
 
