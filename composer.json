@@ -9,6 +9,7 @@
     "license": "MIT",
     "require": {
         "php": "^7.2.5",
+        "braintree/braintree_php": "^5.5",
         "fakerphp/faker": "^1.13",
         "fideloper/proxy": "^4.2",
         "fruitcake/laravel-cors": "^1.0",
