@@ -74,7 +74,7 @@
             } */
         </style>
     </head>
-    <body class="container">
+    <body>
         <header>
             <nav class="d-flex justify-content-between">
                 <div class="">
@@ -100,13 +100,28 @@
             </nav>
         </header>
         
+        <div class="content">
+            <div class="title m-b-md">
+                Laravel
+            </div>
 
-
-
+            <!-- <div class="links">
+                <a href="https://laravel.com/docs">Docs</a>
+                <a href="https://laracasts.com">Laracasts</a>
+                <a href="https://laravel-news.com">News</a>
+                <a href="https://blog.laravel.com">Blog</a>
+                <a href="https://nova.laravel.com">Nova</a>
+                <a href="https://forge.laravel.com">Forge</a>
+                <a href="https://vapor.laravel.com">Vapor</a>
+                <a href="https://github.com/laravel/laravel">GitHub</a>
+            </div>   -->
+        </div>
+        
         <!-- VUE APP -->
         <!-- ////////////////////////////////// -->
         <div id="app">
             <restaurant-component></restaurant-component>
+            <to-top></to-top>
 
             {{-- <p>
                 <router-link to="/foo">Go to Foo</router-link>
@@ -117,5 +132,64 @@
             {{-- <show-all></show-all> --}}
 
         </div>
+
+        <footer>
+            <a href="">
+                <img id="footer_logo" src="{{asset('img/logo_white.svg')}}" alt="">
+            </a>
+            
+            <div class="footer_container"> 
+
+                <div class="row">
+
+                    <div class="col-lg-1 col-md-1 link"></div>
+
+                    <div class="col-lg-3 col-md-3 col-sm-3 offset-lg-1 offset-md-1 offset-sm-1 link lol">
+                        <h3>Uniamo le forze</h3>
+                        <ul>
+                            <li><a href="">Lavora con noi</a></li>
+                            <li><a href="">Negozi partner</a></li>
+                            <li><a href="">Corrieri</a></li>
+                            <li><a href="">Business</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-md-3 col-sm-3 link">
+                        <h3>Link di interesse</h3>
+                        <ul>
+                            <li><a href="">Chi siamo</a></li>
+                            <li><a href="">FAQ</a></li>
+                            <li><a href="">Blog</a></li>
+                            <li><a href="">Contattaci</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-2 col-md-2 col-sm-3 link">
+                        <h3>Seguici</h3>
+                        <ul>
+                            <li><a href="">Facebook</a></li>
+                            <li><a href="">Twitter</a></li>
+                            <li><a href="">Instagram</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div id="privacy" class="col-lg-3 col-md-3 col-sm-3">
+                        <ul class="row row-cols-1 row-cols-sm-1 row-cols-md-1 row-cols-lg-1">
+                            <ul class="row row-cols-2 row-cols-sm-1 row-cols-md-1 row-cols-lg-1">
+                                <li><a href=""><img src="{{asset('img/download-button-android.svg')}}" alt=""></a></li>
+                                <li><a href=""><img src="{{asset('img/download-button-ios.svg')}}" alt=""></a></li>
+                            </ul>
+                            <ul class="row row-cols-3 row-cols-sm-1 row-cols-md-1 row-cols-lg-1">
+                                <li><a href="">TERMINI E CONDIZIONI</a></li>
+                                <li><a href="">POLITICA SULLA PRIVACY</a></li>
+                                <li><a href="">POLITICA SUI COOKIE</a></li>
+                            </ul>
+                        </ul>
+                    </div>
+
+                </div>
+
+            </div>
+        </footer>
     </body>
 </html>

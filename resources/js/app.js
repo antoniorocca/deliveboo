@@ -27,6 +27,7 @@ const router = new VueRouter({
 
 // esempio componente
 Vue.component('restaurant-component', require('./components/RestaurantComponent.vue').default);
+Vue.component('to-top', require('./components/ToTop.vue').default);
 
 const app = new Vue({
   router,
