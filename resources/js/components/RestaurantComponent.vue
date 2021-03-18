@@ -1,5 +1,5 @@
 <template>
-    <div class="content">
+    <div id="content" class="">
         <div class=" first_title">
             <h2>Ristoranti consigliati</h2>
             <p>
@@ -43,7 +43,9 @@
 
 
 <style scoped lang="scss">
-    .content{
+    #content{
+        width: 80%;
+        margin: auto !important;
         .first_title{
                 text-align: center;
             h2{
@@ -61,7 +63,7 @@
             margin: auto;
             justify-content: center;
             .card{
-                margin: 30px;
+                margin: 30px !important;
                 width: 300px;
                 z-index: 10;
                 border-radius: 10px;
