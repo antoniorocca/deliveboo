@@ -7,10 +7,9 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
-
-
 //regole css nostre
 @import 'partials/_common.scss';
 @import 'partials/_header.scss';
 @import 'main/_main.scss';
 @import 'partials/_footer.scss';
+@import 'partials/_backend.scss';

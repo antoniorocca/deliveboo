@@ -1,24 +1,18 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+<div class="spacer">
+  <img class="img_spacer" src="{{asset('storage/lightgreen_wave.png')}}" alt="">
+</div>
+<div id="main_container" class="">
+  <h1> <strong>{{Auth::user()->name}}</strong>  benvenuto nella tua dashboard</h1>
+  <h2>You are logged in!</h2>
+  <img src="{{asset('storage/pizza.png')}}" alt="">
+  @if (session('status'))
+      <div class="alert alert-success" role="alert">
+          {{ session('status') }}
+      </div>
+  @endif
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-                    <h3>Welcome {{Auth::user()->name}} </h3>
-                    {{ __('You are logged in!') }}
-
-                </div>
-            </div>
-        </div>
-    </div>
 </div>
 @endsection

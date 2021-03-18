@@ -21,10 +21,10 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav id="back_nav" class="navbar navbar-expand-md navbar-light bg-white">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                    <img src="https://res.cloudinary.com/glovoapp/image/fetch///https://glovoapp.com/images/logo_green.svg" alt="">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -37,11 +37,11 @@
                     </ul>
 
                     <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
+                    <ul id="collapse" class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
@@ -71,16 +71,66 @@
                 </div>
             </div>
         </nav>
-
+        <div class="spacer">
+          <img class="img_spacer" src="{{asset('storage/yellow_arch.png')}}" alt="">
+        </div>
         <main class="py-4">
-          <nav class="d-flex justify-content-center">
-            <a class="btn btn-primary m-1" href="{{route('user.home')}}">HOME</a>
-            <a class="btn btn-primary m-1" href="{{route('user.restaurant.index') }}">Il mio ristorante</a>
-            <a class="btn btn-primary m-1" href="{{route('user.dish.index')}}">Piatti</a>
-            <a class="btn btn-primary m-1" href="{{route('user.graphs')}}">Grafici</a>
-            <a class="btn btn-primary m-1" href="{{route('user.profile')}}">Profilo</a>
-          </nav>
+          <nav id="user_nav" class="d-flex">
 
+            <div class="button_wrap">
+              <div class="user_nav_button">
+                <a class="" href="{{route('user.home')}}">
+                  <img src="{{asset('storage/house1.png')}}" alt="">
+                </a>
+              </div>
+              <span class="user_span">home</span>
+            </div>
+
+
+            <div class="button_wrap">
+              <div class="user_nav_button">
+                <a class="" href="{{route('user.restaurant.index') }}">
+                  <img src="{{asset('storage/restaurant.png')}}" alt="">
+                </a>
+              </div>
+              <span class="user_span">Il mio ristorante</span>
+            </div>
+
+
+
+            <div class="button_wrap">
+              <div class="user_nav_button">
+                <a class="" href="{{route('user.dish.index')}}">
+                  <img src="{{asset('storage/steak.png')}}" alt="">
+                </a>
+              </div>
+              <span class="user_span">piatti</span>
+            </div>
+
+
+            <div class="button_wrap">
+              <div class="user_nav_button">
+                <a class="" href="{{route('user.graphs')}}">
+                  <img src="{{asset('storage/analysis.png')}}" alt="">
+                </a>
+              </div>
+              <span class="user_span">grafici</span>
+            </div>
+
+
+            <!-- <div class="user_nav_button">
+              <a class="" href="{{route('user.restaurant.index') }}">Il mio ristorante</a>
+            </div> -->
+            <!-- <div class="user_nav_button">
+              <a class="" href="{{route('user.dish.index')}}">Piatti</a>
+            </div> -->
+            <!-- <div class="user_nav_button">
+              <a class="" href="{{route('user.graphs')}}">Grafici</a>
+            </div> -->
+            <!-- <div class="user_nav_button">
+              <a class="" href="{{route('user.profile')}}">Profilo</a>
+            </div> -->
+          </nav>
           @yield('content')
         </main>
     </div>
