@@ -62,7 +62,6 @@
             justify-content: center;
             .card{
                 margin: 30px;
-                height: 150px;
                 width: 300px;
                 z-index: 10;
                 border-radius: 10px;
@@ -70,7 +69,8 @@
                 img{
                     height: 150px;
                     width: 100%;
-                    border-radius: 10px;
+                    border-top-left-radius: 10px;
+                    border-top-right-radius: 10px;
                     object-fit: cover;
                 }
                 h4{
@@ -93,6 +93,4 @@
             }
         }
     }
-    
-
 </style>
