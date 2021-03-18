@@ -1,10 +1,10 @@
 <template>
-    <div class="navbar-item has-dropdown is-hoverable">
+    <div class="cart_box">
         <a class="navbar-link" href="">
             Cart ({{ $store.state.cartCount }})
         </a>
 
-        <div v-if="$store.state.cart.length > 0" class="navbar-dropdown is-boxed is-right">
+        <div v-if="$store.state.cart.length > 0" class="car_product_dropdown">
             <a v-for="item in $store.state.cart"
                 :key="item.id"
                 class="navbar-item"
@@ -33,6 +33,7 @@
                 Cart is empty
             </a>
         </div>
+        <img src="img/payment.png" alt="">
     </div>
 </template>
 
@@ -58,6 +59,30 @@ export default {
 </script>
 
 <style>
+.cart_box {
+  position: relative;
+  border: 1px solid black;
+  width: 350px;
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 15px;
+  padding: 20px;
+}
+.car_product_dropdown {
+  display: flex;
+  flex-direction: column;
+}
+.cart_box > img {
+  width: 80%;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: .3;
+
+}
 .removeBtn {
     margin-right: 1rem;
     color: red;

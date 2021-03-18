@@ -10942,12 +10942,6 @@ a.text-dark:focus {
   }
 }
 
-* {
-  margin: 0 !important;
-  padding: 0 !important;
-  box-sizing: border-box !important;
-}
-
 body {
   overflow-x: hidden;
   height: 2000px;
