@@ -6594,7 +6594,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "#to_top[data-v-2b42e07f] {\n  position: fixed;\n  bottom: 30px;\n  right: 30px;\n  background-color: #ffc244;\n  color: white;\n  width: 40px;\n  height: 40px;\n  padding: 5px !important;\n  display: flex;\n  place-content: center;\n  place-items: center;\n  border-radius: 50%;\n}", ""]);
+exports.push([module.i, "#to_top[data-v-2b42e07f] {\n  position: fixed;\n  bottom: 50%;\n  right: 30px;\n  background-color: #ffc244;\n  color: white;\n  width: 40px;\n  height: 40px;\n  z-index: 100 !important;\n  padding: 5px !important;\n  display: flex;\n  place-content: center;\n  place-items: center;\n  border-radius: 50%;\n}", ""]);
 
 // exports
 
