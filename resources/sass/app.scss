@@ -64,13 +64,17 @@
   }
 }
 .button_wrap:hover .user_span {
+  transition: all .6s linear;
   color: #00A082;
 }
 
 .img_spacer {
   width: 100%;
 }
-
+.button_wrap:hover .user_nav_button {
+  transition: all 1s linear;
+  transform: rotateX(-30deg);
+}
 #main_container {
   background-color: #E9F8F5;
   min-height: 600px;
@@ -89,5 +93,23 @@
   };
   img {
     height: 300px;
+  }
+}
+
+#profile_container {
+  background-color: #E9F8F5;
+  .profile_wrap {
+    width: 80%;
+    margin: auto;
+    h1 {
+      font-size: 50px;
+    };
+    .content_row {
+      padding: 10px 15px;
+      background-color: white;
+      border: 2px solid #00A082;
+      border-radius: 10px;
+      margin: 5px 0;
+    }
   }
 }
