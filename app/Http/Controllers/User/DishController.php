@@ -46,8 +46,18 @@ class DishController extends Controller
     public function store(Request $request)
     {
         $user_id = $request->user()->id;
-        $numb = rand(100, 1000);
-        $request['slug'] = Str::slug($request->name) . $user_id . $numb;
+        $dish = Dish::all();
+        $slugs = array();
+
+        foreach ($dish as $value) {
+            array_push($slugs, $value->slug);
+        }
+        
+        do {
+            $numb = rand(100, 1000);
+            $request['slug'] = Str::slug($request->name) . $user_id . $numb;
+        } while (in_array($request['slug'], $slugs));
+
         $validatedData = $request->validate([
             // da rivedere validazione del nome univoco per utente
             //
