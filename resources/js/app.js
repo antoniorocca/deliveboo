@@ -1,6 +1,7 @@
 window.Vue = require('vue');
 import VueRouter from 'vue-router';
 import ShowAll from './components/ShowAll';
+
 // import RestaurantComponent from './components/RestaurantComponent';
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -28,6 +29,7 @@ const router = new VueRouter({
 // esempio componente
 Vue.component('restaurant-component', require('./components/RestaurantComponent.vue').default);
 Vue.component('to-top', require('./components/ToTop.vue').default);
+Vue.component('category-component', require('./components/CategoryComponent.vue').default);
 
 const app = new Vue({
   router,
