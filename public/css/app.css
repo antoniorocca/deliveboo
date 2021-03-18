@@ -10977,7 +10977,7 @@ header nav #logo {
 }
 
 header nav #logo input {
-  margin-left: 100px;
+  margin-left: 25%;
   width: 400px;
   text-align: center;
   border-radius: 50px;
@@ -11031,6 +11031,7 @@ header #main-header #categories .category {
   border-radius: 50%;
   font-size: 12px;
   position: relative;
+  box-shadow: 0 0 10px #DDDDDD;
 }
 
 header #main-header #categories .category:hover {
