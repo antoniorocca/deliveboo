@@ -27,14 +27,10 @@
             ]).then(resp => {
                 console.log(resp[0].data.response);
                 this.ristoranti = resp[0].data.response;
-                return (RestaurantComponent, { props: { ristoranti: this.ristoranti } });
+                return (ToTop, { props: { ristoranti: this.ristoranti } });
             }).catch(error => {
                 console.log(error);
             })
         }
     }
 </script>
-
-<style>
-
-</style>
