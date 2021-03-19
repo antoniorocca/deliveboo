@@ -6,9 +6,7 @@
                 <div class="category category_hover mr-4 mt-5 d-flex justify-content-center" v-for="category in categories.slice(0, 8)">
                     <!-- <img :src="{{category.img}}" alt=""> -->
                     <span>{{category.name}}</span>   
-                </div>           
-                
-
+                </div>
             </div>   
         </div>
     </header>
