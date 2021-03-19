@@ -5,7 +5,9 @@
             <div id="categories" class="d-flex justify-content-center flex-wrap">
                 <div class="category category_hover mr-4 mt-5 d-flex justify-content-center" v-for="category in categories.slice(0, 8)">
                     <!-- <img :src="{{category.img}}" alt=""> -->
-                    <span>{{category.name}}</span>   
+                    <span type="submit">{{category.name}}</span>
+                    <input type="submit" :value="category.id" @click="selectRestaurantOnClick">
+                    <!-- <option v-for="category in categories" :value="category.id">{{category.name}}</option> -->
                 </div>
             </div>   
         </div>
@@ -14,7 +16,7 @@
         <h4>Categorie:</h4>
         <select name="category_id" class="form-control" id="category_id" @change="selectRestaurant">
             <option value="all">All</option>
-            <option v-for="category in categories" :value="category.id">{{category.name}}</option>
+            <option id="selection" v-for="category in categories" :value="category.id">{{category.name}}</option>
         </select>
     </div>
     
@@ -53,13 +55,19 @@
             selectRestaurant(value){
                 console.log(value.target.value);
                 if (value.target.value !== 'all') {
-                    var restSelect = this.categories[value.target.value - 1];
+                    let restSelect = this.categories[value.target.value - 1];
                     console.log(restSelect);
                     this.restaurants = restSelect.restaurants;
                 } else {
                     this.restaurants = this.restaurantsAll;
                 }
-            }            
+            },
+            selectRestaurantOnClick(value){
+                console.log(value.target.value);
+                let v = this.categories[value.target.value - 1];
+                console.log(v);
+                this.restaurants = v.restaurants;
+            }  
         },
         mounted() {
             Promise.all([

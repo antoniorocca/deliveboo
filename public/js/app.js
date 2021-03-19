@@ -2038,6 +2038,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2057,6 +2059,12 @@ __webpack_require__.r(__webpack_exports__);
       } else {
         this.restaurants = this.restaurantsAll;
       }
+    },
+    selectRestaurantOnClick: function selectRestaurantOnClick(value) {
+      console.log(value.target.value);
+      var v = this.categories[value.target.value - 1];
+      console.log(v);
+      this.restaurants = v.restaurants;
     }
   },
   mounted: function mounted() {
@@ -2184,8 +2192,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
 //
 //
 //
@@ -6695,7 +6701,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "#to_top[data-v-2b42e07f] {\n  position: fixed;\n  bottom: 50%;\n  right: 30px;\n  background-color: #ffc244;\n  color: white;\n  width: 40px;\n  height: 40px;\n  z-index: 100 !important;\n  padding: 5px !important;\n  display: flex;\n  place-content: center;\n  place-items: center;\n  border-radius: 50%;\n}", ""]);
+exports.push([module.i, "#to_top[data-v-2b42e07f] {\n  position: absolute;\n  top: 0px;\n  right: 20px;\n  margin: 35px;\n  background-color: #ffc244;\n  color: white;\n  width: 35px;\n  height: 35px;\n  display: flex;\n  place-content: center;\n  place-items: center;\n  border-radius: 50%;\n}", ""]);
 
 // exports
 
@@ -38679,7 +38685,17 @@ var render = function() {
                   staticClass:
                     "category category_hover mr-4 mt-5 d-flex justify-content-center"
                 },
-                [_c("span", [_vm._v(_vm._s(category.name))])]
+                [
+                  _c("span", { attrs: { type: "submit" } }, [
+                    _vm._v(_vm._s(category.name))
+                  ]),
+                  _vm._v(" "),
+                  _c("input", {
+                    attrs: { type: "submit" },
+                    domProps: { value: category.id },
+                    on: { click: _vm.selectRestaurantOnClick }
+                  })
+                ]
               )
             }),
             0
@@ -38702,9 +38718,11 @@ var render = function() {
           _c("option", { attrs: { value: "all" } }, [_vm._v("All")]),
           _vm._v(" "),
           _vm._l(_vm.categories, function(category) {
-            return _c("option", { domProps: { value: category.id } }, [
-              _vm._v(_vm._s(category.name))
-            ])
+            return _c(
+              "option",
+              { attrs: { id: "selection" }, domProps: { value: category.id } },
+              [_vm._v(_vm._s(category.name))]
+            )
           })
         ],
         2

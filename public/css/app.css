@@ -10943,14 +10943,18 @@ a.text-dark:focus {
 }
 
 * {
-  margin: 0 !important;
-  padding: 0 !important;
-  box-sizing: border-box !important;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
   overflow-x: hidden;
-  height: 2000px;
+}
+
+.row {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
 }
 
 .esempio {
@@ -10967,24 +10971,25 @@ header,
   width: 100%;
 }
 
-header nav,
-.header nav {
+header #nav,
+.header #nav {
   height: 100px;
   width: 100%;
-  position: fixed !important;
-  top: 0 !important;
+  position: fixed;
+  top: 0;
   background-color: #ffc244;
   z-index: 100;
+  box-shadow: 0px 5px 5px #80808042;
 }
 
-header nav #logo,
-.header nav #logo {
+header #nav #logo,
+.header #nav #logo {
   width: 800px;
 }
 
-header nav #logo input,
-.header nav #logo input {
-  margin-left: 25% !important;
+header #nav #logo #header_logo,
+.header #nav #logo #header_logo {
+  margin-left: 25%;
   width: 400px;
   text-align: center;
   border-radius: 50px;
@@ -10993,13 +10998,13 @@ header nav #logo input,
   height: 50px;
 }
 
-header nav #logo input:focus,
-.header nav #logo input:focus {
+header #nav #logo #header_logo:focus,
+.header #nav #logo #header_logo:focus {
   outline: none;
 }
 
-header nav #register,
-.header nav #register {
+header #nav #register,
+.header #nav #register {
   border-radius: 50px;
   background-color: #00a082;
   color: white;
@@ -11007,8 +11012,8 @@ header nav #register,
   width: 120px;
 }
 
-header nav #register a,
-.header nav #register a {
+header #nav #register a,
+.header #nav #register a {
   color: white;
   margin: 5px;
   font-weight: bold;
@@ -11069,18 +11074,28 @@ header #main-header #categories .category span,
   text-align: center;
 }
 
+header #main-header #categories .category input,
+.header #main-header #categories .category input {
+  border-radius: 50%;
+  width: 100%;
+  color: transparent;
+  background-color: transparent;
+  border-color: transparent;
+}
+
 header #main-header #categories .category_hover,
 .header #main-header #categories .category_hover {
   transition: 0.3s all ease-in-out;
 }
 
-@media all and (max-width: 597px) {
+@media all and (max-width: 592px) {
   header {
-    height: 650px;
+    height: 710px;
   }
 }
 
 footer {
+  position: relative;
   background-color: #1d1d1d;
   color: white;
 }
@@ -11091,42 +11106,43 @@ footer a {
 
 footer a #footer_logo {
   height: 35px;
-  margin: 35px !important;
+  margin: 35px;
 }
 
-footer .footer_container {
+footer #footer_container {
   text-align: left;
-  margin: auto !important;
+  margin: auto;
   max-width: 1024px;
 }
 
-footer .footer_container ul li {
+footer #footer_container ul li {
   line-height: 2.5em;
   list-style: none;
 }
 
-footer .footer_container ul li a {
+footer #footer_container ul li a {
   text-decoration: none;
   color: white;
 }
 
-footer .footer_container ul li a img {
-  margin-bottom: 20px !important;
+footer #footer_container ul .footer_img {
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 @media all and (max-width: 767px) {
-  .footer_container .lol {
-    padding-left: 20px !important;
+  #footer_container #workForUs {
+    padding-left: 20px;
   }
 }
 
 @media all and (max-width: 575px) {
-  .footer_container .link {
-    padding-left: 20px !important;
+  #footer_container .link {
+    padding-left: 20px;
   }
 
-  .footer_container #privacy {
-    padding-left: 10px !important;
+  #footer_container .privacy {
+    padding-left: 20px;
   }
 }
 
