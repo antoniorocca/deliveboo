@@ -2029,44 +2029,51 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       restaurants: '',
       categories: '',
-      restaurantIndex: 0
+      restaurantsAll: ''
     };
   },
   methods: {
-    findConnectedRestaurant: function findConnectedRestaurant(index) {
-      this.restaurantIndex = index;
-    },
-    searchOrNew: function searchOrNew() {
-      var _this = this;
+    selectRestaurant: function selectRestaurant(value) {
+      console.log(value.target.value);
 
-      this.contacts.forEach(function (i) {
-        var searChat = _this.searChat.toLowerCase();
-
-        var name = i.name.toLowerCase();
-
-        if (name.includes(searChat)) {
-          i.visible = true;
-        } else {
-          i.visible = false;
-        }
-      });
+      if (value.target.value !== 'all') {
+        var v = this.categories[value.target.value - 1];
+        console.log(v);
+        this.restaurants = v.restaurants;
+      } else {
+        this.restaurants = this.restaurantsAll;
+      }
     }
   },
   mounted: function mounted() {
-    var _this2 = this;
+    var _this = this;
 
     Promise.all([axios.get('api/restaurants'), axios.get('api/categories') // axios.get('api/category_restaurant'),
     ]).then(function (resp) {
       console.log(resp[0].data.response);
       console.log(resp[1].data.response); // console.log(resp[2].data.response);
 
-      _this2.restaurants = resp[0].data.response;
-      _this2.categories = resp[1].data.response; // return (RestaurantComponent, { props: { restaurants: this.restaurants } });
+      _this.restaurants = resp[0].data.response;
+      _this.categories = resp[1].data.response;
+      _this.restaurantsAll = resp[0].data.response; // return (RestaurantComponent, { props: { restaurants: this.restaurants } });
     })["catch"](function (error) {
       console.log(error);
     });
@@ -38668,17 +38675,61 @@ var render = function() {
             staticClass: "d-flex justify-content-center flex-wrap",
             attrs: { id: "categories" }
           },
-          _vm._l(_vm.categories.slice(0, 8), function(category) {
-            return _c(
-              "div",
-              {
-                staticClass:
-                  "category category_hover mr-4 mt-5 d-flex justify-content-center"
-              },
-              [_c("span", [_vm._v(_vm._s(category.name))])]
-            )
-          }),
-          0
+          [
+            _vm._l(_vm.categories.slice(0, 8), function(category) {
+              return _c(
+                "div",
+                {
+                  staticClass:
+                    "category category_hover mr-4 mt-5 d-flex justify-content-center"
+                },
+                [_c("span", [_vm._v(_vm._s(category.name))])]
+              )
+            }),
+            _vm._v(" "),
+            _c(
+              "select",
+              { attrs: { name: "", id: "" } },
+              _vm._l(_vm.categories.slice(0, 8), function(category) {
+                return _c(
+                  "option",
+                  {
+                    staticClass:
+                      "category category_hover mr-4 mt-5 d-flex justify-content-center",
+                    attrs: { value: "" }
+                  },
+                  [_vm._v(_vm._s(category.name))]
+                )
+              }),
+              0
+            ),
+            _vm._v(" "),
+            _c("div", { staticClass: "form-group" }, [
+              _c("label", { attrs: { for: "category_id" } }, [
+                _vm._v("Categorie:")
+              ]),
+              _vm._v(" "),
+              _c(
+                "select",
+                {
+                  staticClass: "form-control",
+                  attrs: { name: "category_id", id: "category_id" },
+                  on: { change: _vm.selectRestaurant }
+                },
+                [
+                  _c("option", { attrs: { value: "all" } }, [_vm._v("All")]),
+                  _vm._v(" "),
+                  _vm._l(_vm.categories, function(category) {
+                    return _c("option", { domProps: { value: category.id } }, [
+                      _vm._v(_vm._s(category.name))
+                    ])
+                  })
+                ],
+                2
+              )
+            ])
+          ],
+          2
         )
       ]
     ),
@@ -54657,8 +54708,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\gitKraken_esercizi\deliveboo_progetto_finale\deliveboo\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\gitKraken_esercizi\deliveboo_progetto_finale\deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\Fabio\Desktop\Boolean\classe 23\deliveboo\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\Fabio\Desktop\Boolean\classe 23\deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

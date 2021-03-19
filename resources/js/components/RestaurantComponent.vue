@@ -6,6 +6,19 @@
                 <!-- <img :src="{{category.img}}" alt=""> -->
                 <span>{{category.name}}</span>   
             </div>           
+            <select name="" id="">
+                <option  class="category category_hover mr-4 mt-5 d-flex justify-content-center" v-for="category in categories.slice(0, 8)" value="">{{category.name}}</option>
+            </select>
+
+            <div class="form-group">
+                <label for="category_id">Categorie:</label>
+                <select name="category_id" class="form-control" id="category_id" @change="selectRestaurant">
+                    <option value="all">All</option>
+                    <option v-for="category in categories" :value="category.id">{{category.name}}</option>
+                </select>
+            </div>
+
+
         </div>   
     </div>
     
@@ -37,26 +50,20 @@
             return {
                 restaurants:'',
                 categories:'',
-                restaurantIndex: 0,
+                restaurantsAll: ''
             }
         },
         methods:{
-
-            findConnectedRestaurant: function(index){
-                this.restaurantIndex = index;
-            },
-
-            searchOrNew(){
-                this.contacts.forEach(i => {
-                    let searChat = this.searChat.toLowerCase();
-                    let name = i.name.toLowerCase();
-                    if(name.includes(searChat)){
-                    i.visible = true;
-                    }else{
-                    i.visible = false;
-                    }
-                });
-            },
+            selectRestaurant(value){
+                console.log(value.target.value);
+                if (value.target.value !== 'all') {
+                    var v = this.categories[value.target.value - 1];
+                    console.log(v);
+                    this.restaurants = v.restaurants;
+                } else {
+                    this.restaurants = this.restaurantsAll;
+                }
+            }            
         },
         mounted() {
             Promise.all([
@@ -69,6 +76,8 @@
                 // console.log(resp[2].data.response);
                 this.restaurants = resp[0].data.response;
                 this.categories = resp[1].data.response;
+                this.restaurantsAll = resp[0].data.response;
+
                 // return (RestaurantComponent, { props: { restaurants: this.restaurants } });
             }).catch(error => {
                 console.log(error);
