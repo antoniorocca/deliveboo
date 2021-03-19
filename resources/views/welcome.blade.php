@@ -54,7 +54,7 @@
             <div id="link-consegne">
               <p>Consegne in <a href="">Via ...... <i class="fas fa-angle-down"></i></a></p>
             </div>
-            <category-component></category-component>
+            {{-- <category-component></category-component> --}}
 
             <!-- <div id="main-header" class="d-flex justify-content-center">
                 <div id="categories" class="d-flex justify-content-center flex-wrap">

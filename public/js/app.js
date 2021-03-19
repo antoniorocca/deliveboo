@@ -2018,23 +2018,55 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      restaurants: ''
+      restaurants: '',
+      categories: '',
+      restaurantIndex: 0
     };
   },
-  mounted: function mounted() {
-    var _this = this;
+  methods: {
+    findConnectedRestaurant: function findConnectedRestaurant(index) {
+      this.restaurantIndex = index;
+    },
+    searchOrNew: function searchOrNew() {
+      var _this = this;
 
-    Promise.all([axios.get('api/restaurants')]).then(function (resp) {
-      console.log(resp[0].data.response);
-      _this.restaurants = resp[0].data.response;
-      return RestaurantComponent, {
-        props: {
-          restaurants: _this.restaurants
+      this.contacts.forEach(function (i) {
+        var searChat = _this.searChat.toLowerCase();
+
+        var name = i.name.toLowerCase();
+
+        if (name.includes(searChat)) {
+          i.visible = true;
+        } else {
+          i.visible = false;
         }
-      };
+      });
+    }
+  },
+  mounted: function mounted() {
+    var _this2 = this;
+
+    Promise.all([axios.get('api/restaurants'), axios.get('api/categories') // axios.get('api/category_restaurant'),
+    ]).then(function (resp) {
+      console.log(resp[0].data.response);
+      console.log(resp[1].data.response); // console.log(resp[2].data.response);
+
+      _this2.restaurants = resp[0].data.response;
+      _this2.categories = resp[1].data.response; // return (RestaurantComponent, { props: { restaurants: this.restaurants } });
     })["catch"](function (error) {
       console.log(error);
     });
@@ -38622,29 +38654,61 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { attrs: { id: "content" } }, [
-    _vm._m(0),
-    _vm._v(" "),
+  return _c("div", [
     _c(
       "div",
-      { staticClass: "restaurants" },
-      _vm._l(_vm.restaurants, function(restaurant) {
-        return _c("div", { staticClass: "card card_hover " }, [
-          _c("div", { staticClass: "restaurant_image" }, [
-            _c("img", {
-              attrs: { src: restaurant.img, alt: "restaurant's image" }
-            })
-          ]),
-          _vm._v(" "),
-          _c("h4", [
-            _vm._v(
-              "\n                " + _vm._s(restaurant.name) + "\n            "
+      {
+        staticClass: "d-flex justify-content-center flex-wrap",
+        attrs: { id: "main-header" }
+      },
+      [
+        _c(
+          "div",
+          {
+            staticClass: "d-flex justify-content-center flex-wrap",
+            attrs: { id: "categories" }
+          },
+          _vm._l(_vm.categories.slice(0, 8), function(category) {
+            return _c(
+              "div",
+              {
+                staticClass:
+                  "category category_hover mr-4 mt-5 d-flex justify-content-center"
+              },
+              [_c("span", [_vm._v(_vm._s(category.name))])]
             )
+          }),
+          0
+        )
+      ]
+    ),
+    _vm._v(" "),
+    _c("div", { attrs: { id: "content" } }, [
+      _vm._m(0),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "restaurants" },
+        _vm._l(_vm.restaurants, function(restaurant) {
+          return _c("div", { staticClass: "card card_hover " }, [
+            _c("div", { staticClass: "restaurant_image" }, [
+              _c("img", {
+                attrs: { src: restaurant.img, alt: "restaurant's image" }
+              })
+            ]),
+            _vm._v(" "),
+            _c("h4", [
+              _vm._v(
+                "\r\n                    " +
+                  _vm._s(restaurant.name) +
+                  "\r\n                "
+              )
+            ])
           ])
-        ])
-      }),
-      0
-    )
+        }),
+        0
+      )
+    ])
   ])
 }
 var staticRenderFns = [
@@ -38657,7 +38721,7 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("p", [
         _vm._v(
-          "\n        Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, voluptatibus?\n        "
+          "\r\n            Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, voluptatibus?\r\n            "
         )
       ])
     ])
@@ -54593,8 +54657,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\USER\Desktop\boolean\deliveboo\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\USER\Desktop\boolean\deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\gitKraken_esercizi\deliveboo_progetto_finale\deliveboo\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\gitKraken_esercizi\deliveboo_progetto_finale\deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

@@ -1,4 +1,14 @@
 <template>
+<div>
+    <div id="main-header" class="d-flex justify-content-center flex-wrap">
+        <div id="categories" class="d-flex justify-content-center flex-wrap">
+            <div class="category category_hover mr-4 mt-5 d-flex justify-content-center" v-for="category in categories.slice(0, 8)">
+                <!-- <img :src="{{category.img}}" alt=""> -->
+                <span>{{category.name}}</span>   
+            </div>           
+        </div>   
+    </div>
+    
     <div id="content" class="">
         <div class=" first_title">
             <h2>Ristoranti consigliati</h2>
@@ -17,6 +27,7 @@
             </div>
         </div>
     </div>
+</div>
 </template>
 
 
@@ -25,15 +36,40 @@
         data(){
             return {
                 restaurants:'',
+                categories:'',
+                restaurantIndex: 0,
             }
+        },
+        methods:{
+
+            findConnectedRestaurant: function(index){
+                this.restaurantIndex = index;
+            },
+
+            searchOrNew(){
+                this.contacts.forEach(i => {
+                    let searChat = this.searChat.toLowerCase();
+                    let name = i.name.toLowerCase();
+                    if(name.includes(searChat)){
+                    i.visible = true;
+                    }else{
+                    i.visible = false;
+                    }
+                });
+            },
         },
         mounted() {
             Promise.all([
-                axios.get('api/restaurants')
+                axios.get('api/restaurants'),
+                axios.get('api/categories'),
+                // axios.get('api/category_restaurant'),
             ]).then(resp => {
                 console.log(resp[0].data.response);
+                console.log(resp[1].data.response);
+                // console.log(resp[2].data.response);
                 this.restaurants = resp[0].data.response;
-                return (RestaurantComponent, { props: { restaurants: this.restaurants } });
+                this.categories = resp[1].data.response;
+                // return (RestaurantComponent, { props: { restaurants: this.restaurants } });
             }).catch(error => {
                 console.log(error);
             })
