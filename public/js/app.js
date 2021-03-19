@@ -2041,7 +2041,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2055,9 +2054,9 @@ __webpack_require__.r(__webpack_exports__);
       console.log(value.target.value);
 
       if (value.target.value !== 'all') {
-        var v = this.categories[value.target.value - 1];
-        console.log(v);
-        this.restaurants = v.restaurants;
+        var restSelect = this.categories[value.target.value - 1];
+        console.log(restSelect);
+        this.restaurants = restSelect.restaurants;
       } else {
         this.restaurants = this.restaurantsAll;
       }
@@ -38687,27 +38686,8 @@ var render = function() {
               )
             }),
             _vm._v(" "),
-            _c(
-              "select",
-              { attrs: { name: "", id: "" } },
-              _vm._l(_vm.categories.slice(0, 8), function(category) {
-                return _c(
-                  "option",
-                  {
-                    staticClass:
-                      "category category_hover mr-4 mt-5 d-flex justify-content-center",
-                    attrs: { value: "" }
-                  },
-                  [_vm._v(_vm._s(category.name))]
-                )
-              }),
-              0
-            ),
-            _vm._v(" "),
-            _c("div", { staticClass: "form-group" }, [
-              _c("label", { attrs: { for: "category_id" } }, [
-                _vm._v("Categorie:")
-              ]),
+            _c("div", [
+              _c("h4", [_vm._v("Categorie:")]),
               _vm._v(" "),
               _c(
                 "select",

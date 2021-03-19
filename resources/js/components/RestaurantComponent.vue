@@ -6,17 +6,16 @@
                 <!-- <img :src="{{category.img}}" alt=""> -->
                 <span>{{category.name}}</span>   
             </div>           
-            <select name="" id="">
-                <option  class="category category_hover mr-4 mt-5 d-flex justify-content-center" v-for="category in categories.slice(0, 8)" value="">{{category.name}}</option>
-            </select>
+            
 
-            <div class="form-group">
-                <label for="category_id">Categorie:</label>
+            <div>
+                <h4>Categorie:</h4>
                 <select name="category_id" class="form-control" id="category_id" @change="selectRestaurant">
                     <option value="all">All</option>
                     <option v-for="category in categories" :value="category.id">{{category.name}}</option>
                 </select>
             </div>
+    
 
 
         </div>   
@@ -57,9 +56,9 @@
             selectRestaurant(value){
                 console.log(value.target.value);
                 if (value.target.value !== 'all') {
-                    var v = this.categories[value.target.value - 1];
-                    console.log(v);
-                    this.restaurants = v.restaurants;
+                    var restSelect = this.categories[value.target.value - 1];
+                    console.log(restSelect);
+                    this.restaurants = restSelect.restaurants;
                 } else {
                     this.restaurants = this.restaurantsAll;
                 }
