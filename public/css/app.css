@@ -10958,12 +10958,17 @@ body {
 }
 
 header {
-  height: 250px;
+  height: 550px;
+}
+
+header,
+.header {
   background-color: #ffc244;
   width: 100%;
 }
 
-header nav {
+header nav,
+.header nav {
   height: 100px;
   width: 100%;
   position: fixed !important;
@@ -10972,11 +10977,13 @@ header nav {
   z-index: 100;
 }
 
-header nav #logo {
+header nav #logo,
+.header nav #logo {
   width: 800px;
 }
 
-header nav #logo input {
+header nav #logo input,
+.header nav #logo input {
   margin-left: 25% !important;
   width: 400px;
   text-align: center;
@@ -10986,11 +10993,13 @@ header nav #logo input {
   height: 50px;
 }
 
-header nav #logo input:focus {
+header nav #logo input:focus,
+.header nav #logo input:focus {
   outline: none;
 }
 
-header nav #register {
+header nav #register,
+.header nav #register {
   border-radius: 50px;
   background-color: #00a082;
   color: white;
@@ -10998,13 +11007,15 @@ header nav #register {
   width: 120px;
 }
 
-header nav #register a {
+header nav #register a,
+.header nav #register a {
   color: white;
   margin: 5px;
   font-weight: bold;
 }
 
-header #link-consegne {
+header #link-consegne,
+.header #link-consegne {
   position: absolute;
   top: 100px;
   left: 540px;
@@ -11012,19 +11023,22 @@ header #link-consegne {
   font-size: 18px;
 }
 
-header #main-header {
+header #main-header,
+.header #main-header {
   position: absolute;
   top: 130px;
   width: 100%;
   height: 400px;
 }
 
-header #main-header #categories {
+header #main-header #categories,
+.header #main-header #categories {
   width: 750px;
   height: 350px;
 }
 
-header #main-header #categories .category {
+header #main-header #categories .category,
+.header #main-header #categories .category {
   height: 120px;
   width: 120px;
   background-color: white;
@@ -11034,26 +11048,36 @@ header #main-header #categories .category {
   box-shadow: 0 0 10px #DDDDDD;
 }
 
-header #main-header #categories .category:hover {
+header #main-header #categories .category:hover,
+.header #main-header #categories .category:hover {
   transform: scale(1.1);
   cursor: pointer;
 }
 
-header #main-header #categories .category img {
+header #main-header #categories .category img,
+.header #main-header #categories .category img {
   position: absolute;
   top: 8px;
   width: 70px;
 }
 
-header #main-header #categories .category span {
+header #main-header #categories .category span,
+.header #main-header #categories .category span {
   position: absolute;
   bottom: 8px;
   width: 75px;
   text-align: center;
 }
 
-header #main-header #categories .category_hover {
+header #main-header #categories .category_hover,
+.header #main-header #categories .category_hover {
   transition: 0.3s all ease-in-out;
+}
+
+@media all and (max-width: 597px) {
+  header {
+    height: 650px;
+  }
 }
 
 footer {

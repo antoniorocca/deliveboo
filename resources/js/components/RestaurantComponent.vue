@@ -1,6 +1,6 @@
 <template>
 <div>
-    <header>
+    <div class="header">
         <div id="main-header" class="d-flex justify-content-center flex-wrap">
             <div id="categories" class="d-flex justify-content-center flex-wrap">
                 <div class="category category_hover mr-4 mt-5 d-flex justify-content-center" v-for="category in categories.slice(0, 8)">
@@ -9,7 +9,7 @@
                 </div>
             </div>   
         </div>
-    </header>
+    </div>
     <div>
         <h4>Categorie:</h4>
         <select name="category_id" class="form-control" id="category_id" @change="selectRestaurant">

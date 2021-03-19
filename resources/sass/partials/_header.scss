@@ -1,5 +1,7 @@
-header {
-    height: 250px;
+header{
+    height: 550px;
+}
+header, .header {
     background-color: $orange;
     width: 100%;  
     nav {
@@ -81,4 +83,10 @@ header {
             }
         }
     } 
+}
+
+@media all and (max-width: 597px) {
+    header{
+        height: 650px;
+    }
 }
