@@ -1,24 +1,23 @@
 <template>
 <div>
-    <div id="main-header" class="d-flex justify-content-center flex-wrap">
-        <div id="categories" class="d-flex justify-content-center flex-wrap">
-            <div class="category category_hover mr-4 mt-5 d-flex justify-content-center" v-for="category in categories.slice(0, 8)">
-                <!-- <img :src="{{category.img}}" alt=""> -->
-                <span>{{category.name}}</span>   
-            </div>           
-            
+    <header>
+        <div id="main-header" class="d-flex justify-content-center flex-wrap">
+            <div id="categories" class="d-flex justify-content-center flex-wrap">
+                <div class="category category_hover mr-4 mt-5 d-flex justify-content-center" v-for="category in categories.slice(0, 8)">
+                    <!-- <img :src="{{category.img}}" alt=""> -->
+                    <span>{{category.name}}</span>   
+                </div>           
+                
 
-            <div>
-                <h4>Categorie:</h4>
-                <select name="category_id" class="form-control" id="category_id" @change="selectRestaurant">
-                    <option value="all">All</option>
-                    <option v-for="category in categories" :value="category.id">{{category.name}}</option>
-                </select>
-            </div>
-    
-
-
-        </div>   
+            </div>   
+        </div>
+    </header>
+    <div>
+        <h4>Categorie:</h4>
+        <select name="category_id" class="form-control" id="category_id" @change="selectRestaurant">
+            <option value="all">All</option>
+            <option v-for="category in categories" :value="category.id">{{category.name}}</option>
+        </select>
     </div>
     
     <div id="content" class="">

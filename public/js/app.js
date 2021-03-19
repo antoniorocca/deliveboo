@@ -2040,7 +2040,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -38661,20 +38660,20 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c(
-      "div",
-      {
-        staticClass: "d-flex justify-content-center flex-wrap",
-        attrs: { id: "main-header" }
-      },
-      [
-        _c(
-          "div",
-          {
-            staticClass: "d-flex justify-content-center flex-wrap",
-            attrs: { id: "categories" }
-          },
-          [
+    _c("header", [
+      _c(
+        "div",
+        {
+          staticClass: "d-flex justify-content-center flex-wrap",
+          attrs: { id: "main-header" }
+        },
+        [
+          _c(
+            "div",
+            {
+              staticClass: "d-flex justify-content-center flex-wrap",
+              attrs: { id: "categories" }
+            },
             _vm._l(_vm.categories.slice(0, 8), function(category) {
               return _c(
                 "div",
@@ -38685,34 +38684,34 @@ var render = function() {
                 [_c("span", [_vm._v(_vm._s(category.name))])]
               )
             }),
-            _vm._v(" "),
-            _c("div", [
-              _c("h4", [_vm._v("Categorie:")]),
-              _vm._v(" "),
-              _c(
-                "select",
-                {
-                  staticClass: "form-control",
-                  attrs: { name: "category_id", id: "category_id" },
-                  on: { change: _vm.selectRestaurant }
-                },
-                [
-                  _c("option", { attrs: { value: "all" } }, [_vm._v("All")]),
-                  _vm._v(" "),
-                  _vm._l(_vm.categories, function(category) {
-                    return _c("option", { domProps: { value: category.id } }, [
-                      _vm._v(_vm._s(category.name))
-                    ])
-                  })
-                ],
-                2
-              )
+            0
+          )
+        ]
+      )
+    ]),
+    _vm._v(" "),
+    _c("div", [
+      _c("h4", [_vm._v("Categorie:")]),
+      _vm._v(" "),
+      _c(
+        "select",
+        {
+          staticClass: "form-control",
+          attrs: { name: "category_id", id: "category_id" },
+          on: { change: _vm.selectRestaurant }
+        },
+        [
+          _c("option", { attrs: { value: "all" } }, [_vm._v("All")]),
+          _vm._v(" "),
+          _vm._l(_vm.categories, function(category) {
+            return _c("option", { domProps: { value: category.id } }, [
+              _vm._v(_vm._s(category.name))
             ])
-          ],
-          2
-        )
-      ]
-    ),
+          })
+        ],
+        2
+      )
+    ]),
     _vm._v(" "),
     _c("div", { attrs: { id: "content" } }, [
       _vm._m(0),
@@ -54688,8 +54687,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\Fabio\Desktop\Boolean\classe 23\deliveboo\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\Fabio\Desktop\Boolean\classe 23\deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\gitKraken_esercizi\deliveboo_progetto_finale\deliveboo\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\gitKraken_esercizi\deliveboo_progetto_finale\deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
