@@ -5,7 +5,7 @@
             <div id="categories" class="d-flex justify-content-center flex-wrap">
                 <div class="category category_hover mr-4 mt-5 d-flex justify-content-center" v-for="category in categories.slice(0, 8)">
                     <!-- <img :src="{{category.img}}" alt=""> -->
-                    <span type="submit">{{category.name}}</span>
+                    <span>{{category.name}}</span>
                     <input type="submit" :value="category.id" @click="selectRestaurantOnClick">
                     <!-- <option v-for="category in categories" :value="category.id">{{category.name}}</option> -->
                 </div>
@@ -62,6 +62,7 @@
                     this.restaurants = this.restaurantsAll;
                 }
             },
+            // deve ancora cambiare i valori dentro category_id
             selectRestaurantOnClick(value){
                 console.log(value.target.value);
                 let v = this.categories[value.target.value - 1];
