@@ -16,7 +16,7 @@
         <h4>Categorie:</h4>
         <select name="category_id" class="form-control" id="category_id" @change="selectRestaurant">
             <option value="all">All</option>
-            <option id="selection" v-for="category in categories" :value="category.id">{{category.name}} ({{category.restaurants.length}})</option>
+            <option id="selection" :selected="letSelected == category.id" v-for="category in categories" :value="category.id">{{category.name}} ({{category.restaurants.length}})</option>
         </select>
     </div>
     
@@ -48,7 +48,8 @@
             return {
                 restaurants:'',
                 categories:'',
-                restaurantsAll: ''
+                restaurantsAll: '',
+                letSelected: '',
             }
         },
         methods:{
@@ -57,9 +58,14 @@
                 if (value.target.value !== 'all') {
                     let restSelect = this.categories[value.target.value - 1];
                     console.log(restSelect);
+                    
+                    this.letSelected = value.target.value;
+                    console.log(this.letSelected);
+                    
                     this.restaurants = restSelect.restaurants;
                 } else {
                     this.restaurants = this.restaurantsAll;
+                    this.letSelected = "all";
                 }
             },
             // deve ancora cambiare i valori dentro category_id
@@ -68,6 +74,8 @@
                 let v = this.categories[value.target.value - 1];
                 console.log(v);
                 this.restaurants = v.restaurants;
+
+                this.letSelected = value.target.value;
             }  
         },
         mounted() {

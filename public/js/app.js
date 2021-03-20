@@ -2045,7 +2045,8 @@ __webpack_require__.r(__webpack_exports__);
     return {
       restaurants: '',
       categories: '',
-      restaurantsAll: ''
+      restaurantsAll: '',
+      letSelected: ''
     };
   },
   methods: {
@@ -2055,9 +2056,12 @@ __webpack_require__.r(__webpack_exports__);
       if (value.target.value !== 'all') {
         var restSelect = this.categories[value.target.value - 1];
         console.log(restSelect);
+        this.letSelected = value.target.value;
+        console.log(this.letSelected);
         this.restaurants = restSelect.restaurants;
       } else {
         this.restaurants = this.restaurantsAll;
+        this.letSelected = "all";
       }
     },
     // deve ancora cambiare i valori dentro category_id
@@ -2066,6 +2070,7 @@ __webpack_require__.r(__webpack_exports__);
       var v = this.categories[value.target.value - 1];
       console.log(v);
       this.restaurants = v.restaurants;
+      this.letSelected = value.target.value;
     }
   },
   mounted: function mounted() {
@@ -38719,7 +38724,13 @@ var render = function() {
           _vm._l(_vm.categories, function(category) {
             return _c(
               "option",
-              { attrs: { id: "selection" }, domProps: { value: category.id } },
+              {
+                attrs: { id: "selection" },
+                domProps: {
+                  selected: _vm.letSelected == category.id,
+                  value: category.id
+                }
+              },
               [
                 _vm._v(
                   _vm._s(category.name) +
