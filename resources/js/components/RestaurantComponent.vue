@@ -16,7 +16,7 @@
         <h4>Categorie:</h4>
         <select name="category_id" class="form-control" id="category_id" @change="selectRestaurant">
             <option value="all">All</option>
-            <option id="selection" v-for="category in categories" :value="category.id">{{category.name}}</option>
+            <option id="selection" v-for="category in categories" :value="category.id">{{category.name}} ({{category.restaurants.length}})</option>
         </select>
     </div>
     

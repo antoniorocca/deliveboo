@@ -2060,6 +2060,7 @@ __webpack_require__.r(__webpack_exports__);
         this.restaurants = this.restaurantsAll;
       }
     },
+    // deve ancora cambiare i valori dentro category_id
     selectRestaurantOnClick: function selectRestaurantOnClick(value) {
       console.log(value.target.value);
       var v = this.categories[value.target.value - 1];
@@ -38686,9 +38687,7 @@ var render = function() {
                     "category category_hover mr-4 mt-5 d-flex justify-content-center"
                 },
                 [
-                  _c("span", { attrs: { type: "submit" } }, [
-                    _vm._v(_vm._s(category.name))
-                  ]),
+                  _c("span", [_vm._v(_vm._s(category.name))]),
                   _vm._v(" "),
                   _c("input", {
                     attrs: { type: "submit" },
@@ -38721,7 +38720,14 @@ var render = function() {
             return _c(
               "option",
               { attrs: { id: "selection" }, domProps: { value: category.id } },
-              [_vm._v(_vm._s(category.name))]
+              [
+                _vm._v(
+                  _vm._s(category.name) +
+                    " (" +
+                    _vm._s(category.restaurants.length) +
+                    ")"
+                )
+              ]
             )
           })
         ],
@@ -54703,8 +54709,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\gitKraken_esercizi\deliveboo_progetto_finale\deliveboo\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\gitKraken_esercizi\deliveboo_progetto_finale\deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\Fabio\Desktop\Boolean\classe 23\deliveboo\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\Fabio\Desktop\Boolean\classe 23\deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

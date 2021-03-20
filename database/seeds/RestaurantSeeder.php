@@ -50,7 +50,7 @@ class RestaurantSeeder extends Seeder
 
 
 
-      for ($i=0; $i < 11; $i++) {
+      for ($i=0; $i < 21; $i++) {
         $newRestaurant = new Restaurant;
         $newRestaurant->user_id = ($i+1);
         $newRestaurant->name = 'restaurant'.($i+1);
