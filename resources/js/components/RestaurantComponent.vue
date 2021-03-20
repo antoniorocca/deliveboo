@@ -3,7 +3,7 @@
     <div class="header">
         <div id="main-header" class="d-flex justify-content-center flex-wrap">
             <div id="categories" class="d-flex justify-content-center flex-wrap">
-                <div class="category category_hover mr-4 mt-5 d-flex justify-content-center" v-for="category in categories.slice(0, 8)">
+                <div class="category category_hover mr-4 mt-5 d-flex justify-content-center" v-for="category in categories.slice(0, 8)" :class="(letSelected == category.id) ? 'focusr' : ''">
                     <!-- <img :src="{{category.img}}" alt=""> -->
                     <span>{{category.name}}</span>
                     <input type="submit" :value="category.id" @click="selectRestaurantOnClick">
@@ -58,13 +58,12 @@
                 if (value.target.value !== 'all') {
                     let restSelect = this.categories[value.target.value - 1];
                     console.log(restSelect);
-                    
-                    this.letSelected = value.target.value;
-                    console.log(this.letSelected);
-                    
                     this.restaurants = restSelect.restaurants;
+
+                    this.letSelected = value.target.value;
                 } else {
                     this.restaurants = this.restaurantsAll;
+
                     this.letSelected = "all";
                 }
             },
@@ -87,9 +86,9 @@
                 console.log(resp[0].data.response);
                 console.log(resp[1].data.response);
                 // console.log(resp[2].data.response);
+                this.restaurantsAll = resp[0].data.response;
                 this.restaurants = resp[0].data.response;
                 this.categories = resp[1].data.response;
-                this.restaurantsAll = resp[0].data.response;
 
                 // return (RestaurantComponent, { props: { restaurants: this.restaurants } });
             }).catch(error => {
@@ -101,6 +100,9 @@
 
 
 <style scoped lang="scss">
+    .focusr{
+        outline: -webkit-focus-ring-color auto 1px;
+    }
     #content{
         width: 80%;
         margin: auto !important;
