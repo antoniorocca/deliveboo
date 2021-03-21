@@ -55,67 +55,33 @@
 
       <!-- TRASFORMARE HEADER IN COMPONENTE -->
       <header>
-        <nav class="col-lg-12 col-md-12 col-sm-12 d-flex justify-content-around align-items-center">
-          <div id="logo" class="d-flex">
-            <a href=""><img src="{{asset('img/logo_green.svg')}}" alt=""></a>
-            <div><input type="text" placeholder="Cerca" v-model="search" @keyup.enter="switchMain"> <i></i></div>
-          </div>
-          <div id="register" class="d-flex align-items-center">
-            <!--flex-center position-ref full-height-->
-            @if (Route::has('login'))
-            <!-- <div class="top-right links"> -->
-            @auth
-            <a href="{{ url('/user/home') }}">Home</a>
-            @else
-            <a href="{{ route('login') }}">Login</a>
+          <nav id="nav" class="col-lg-12 col-md-12 col-sm-12 d-flex justify-content-around align-items-center">
+              <div id="logo" class="d-flex">
+                  <a href=""><img src="{{asset('img/logo_green.svg')}}" alt=""></a>
+                  <div>
+                      <input id="header_logo" type="text" placeholder="Cerca"><i></i>
+                  </div>
+              </div>
+              <div id="register" class="d-flex align-items-center">
+              <!--flex-center position-ref full-height-->
+              @if (Route::has('login'))
+                  <!-- <div class="top-right links"> -->
+                      @auth
+                          <a href="{{ url('/user/home') }}">Home</a>
+                      @else
+                          <a href="{{ route('login') }}">Login</a>
 
-            @if (Route::has('register'))
-            <a href="{{ route('register') }}">Register</a>
-            @endif
-            @endauth
-            <!-- </div> -->
-            @endif
+                          @if (Route::has('register'))
+                              <a href="{{ route('register') }}">Register</a>
+                          @endif
+                      @endauth
+                  <!-- </div> -->
+              @endif
+              </div>
+          </nav>
+          <div id="link-consegne">
+              <p>Consegne in <a href="">Via ...... <i class="fas fa-angle-down"></i></a></p>
           </div>
-        </nav>
-        <div id="link-consegne">
-          <p>Consegne in <a href="">Via ...... <i class="fas fa-angle-down"></i></a></p>
-        </div>
-        <div id="main-header" class="d-flex justify-content-center">
-          <div id="categories" class="d-flex justify-content-center flex-wrap">
-            <div class="category mr-4 mt-5 d-flex justify-content-center">
-              <img src="{{asset('img/hamburger.svg')}}" alt="">
-              <span>Cibo</span>
-            </div>
-            <div class="category mr-4 mt-5 d-flex justify-content-center">
-              <img src="" alt="">
-              <span>Super mercato</span>
-            </div>
-            <div class="category mr-4 mt-5 d-flex justify-content-center">
-              <img src="" alt="">
-              <span>Shopping</span>
-            </div>
-            <div class="category mr-4 mt-5 d-flex justify-content-center">
-              <img src="" alt="">
-              <span>Di tutto e di più</span>
-            </div>
-            <div class="category mr-4 mt-5 d-flex justify-content-center">
-              <img src="" alt="">
-              <span>Colazioni & dolci</span>
-            </div>
-            <div class="category mr-4 mt-5 d-flex justify-content-center">
-              <img src="" alt="">
-              <span>Farmacia e Bellezza</span>
-            </div>
-            <div class="category mr-4 mt-5 d-flex justify-content-center">
-              <img src="" alt="">
-              <span>Bevande</span>
-            </div>
-            <div class="category mr-4 mt-5 d-flex justify-content-center">
-              <img src="" alt="">
-              <span>Spedizione Express</span>
-            </div>
-          </div>
-        </div>
       </header>
       <!-- ///////////////////////////////////////////////// -->
 
@@ -123,25 +89,19 @@
       <landing-component v-if="showLanding"></landing-component>
 
 
-      <!-- TEST EDO -->
-      <edo-categories v-if="showMain"></edo-categories>
 
 
       <!-- COMPONENTE RISTORANTE -->
       <restaurant-component v-if="showMain"></restaurant-component>
 
 
-      <!-- BOTTONE TO TOP -->
-      <to-top></to-top>
+      <!-- <p>
+          <router-link to="/foo">Go to Foo</router-link>
+          <router-link to="/generali">Mostra robbe</router-link>
+      </p>  -->
 
-      {{-- <p>
-        <router-link to="/foo">Go to Foo</router-link>
-        <router-link to="/generali">Mostra robbe</router-link>
-      </p> --}}
-
-      {{-- <router-view></router-view> --}}
-      {{-- <show-all></show-all> --}}
-
+      <!-- <router-view></router-view>
+      <show-all></show-all>  -->
 
 
 
@@ -174,30 +134,23 @@
 
 
 
+      <!-- TRASFORMARE FOOTER IN UN COMPONENTE -->
+      <!-- ////////////////////////////////////////////// -->
 
+      <footer>
+        <to-top></to-top>
 
-
-
-    </div>
-    <!-- ////////////////////////////////// -->
-
-
-
-
-<!-- TRASFORMARE FOOTER IN UN COMPONENTE -->
-<!-- ////////////////////////////////////////////// -->
-    <footer>
         <a href="">
             <img id="footer_logo" src="{{asset('img/logo_white.svg')}}" alt="">
         </a>
 
-        <div class="footer_container">
+        <div id="footer_container">
 
             <div class="row">
 
                 <div class="col-lg-1 col-md-1 link"></div>
 
-                <div class="col-lg-3 col-md-3 col-sm-3 offset-lg-1 offset-md-1 offset-sm-1 link lol">
+                <div id="workForUs" class="col-lg-3 col-md-3 col-sm-3">
                     <h3>Uniamo le forze</h3>
                     <ul>
                         <li><a href="">Lavora con noi</a></li>
@@ -229,8 +182,8 @@
                 <div id="privacy" class="col-lg-3 col-md-3 col-sm-3">
                     <ul class="row row-cols-1 row-cols-sm-1 row-cols-md-1 row-cols-lg-1">
                         <ul class="row row-cols-2 row-cols-sm-1 row-cols-md-1 row-cols-lg-1">
-                            <li><a href=""><img src="{{asset('img/download-button-android.svg')}}" alt=""></a></li>
-                            <li><a href=""><img src="{{asset('img/download-button-ios.svg')}}" alt=""></a></li>
+                            <li class="footer_img"><a href=""><img src="{{asset('img/download-button-android.svg')}}" alt=""></a></li>
+                            <li class="footer_img"><a href=""><img src="{{asset('img/download-button-ios.svg')}}" alt=""></a></li>
                         </ul>
                         <ul class="row row-cols-3 row-cols-sm-1 row-cols-md-1 row-cols-lg-1">
                             <li><a href="">TERMINI E CONDIZIONI</a></li>
@@ -243,7 +196,17 @@
             </div>
 
         </div>
-    </footer>
+      </footer>
+
+
+
+    </div>
+    <!-- ////////////////////////////////// -->
+
+
+
+
+
 </body>
 
 </html>
