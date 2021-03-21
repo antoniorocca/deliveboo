@@ -44,6 +44,7 @@ let store = {
             window.localStorage.setItem('cart', JSON.stringify(state.cart));
             window.localStorage.setItem('cartCount', state.cartCount);
         },
+        // restaurants
         saveCall(state, resp){
           this.state.categories = resp[0];
           this.state.dishes = resp[1];
@@ -51,7 +52,10 @@ let store = {
 
         },
         setSelectedCategoties(state, category){
-          this.state.selectedCategories.push(category) ;
+          this.state.selectedCategories = category;
+        },
+        setRestaurants(state, category) {
+            this.state.selectedCategories = this.state.restaurants.data.response;
         },
 
 

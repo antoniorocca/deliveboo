@@ -2090,6 +2090,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2099,9 +2102,12 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     selectCategory: function selectCategory(name) {
-      this.$store.commit('setSelectedCategoties', name);
-      console.log(name);
-      this.selectedCategories = this.$store.getters.getSelectedCategories;
+      if (name == 'all') {
+        this.$store.commit('setRestaurants', name); //this.selectedCategories = this.$store.getters.getSelectedCategories;
+      } else {
+        this.$store.commit('setSelectedCategoties', name);
+        console.log(name); //this.selectedCategories = this.$store.getters.getSelectedCategories;
+      }
     }
   },
   computed: {},
@@ -2122,6 +2128,16 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -6949,7 +6965,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".focusr[data-v-78e2f7b6] {\n  outline: -webkit-focus-ring-color auto 1px;\n}\n#content[data-v-78e2f7b6] {\n  width: 80%;\n  margin: auto !important;\n}\n#content .first_title[data-v-78e2f7b6] {\n  text-align: center;\n}\n#content .first_title h2[data-v-78e2f7b6] {\n  color: black;\n  padding-top: 100px;\n  font-weight: 800;\n}\n#content .first_title p[data-v-78e2f7b6] {\n  color: grey;\n}\n#content .restaurants[data-v-78e2f7b6] {\n  display: flex;\n  flex-wrap: wrap;\n  margin: auto;\n  justify-content: center;\n}\n#content .restaurants .card[data-v-78e2f7b6] {\n  margin: 30px !important;\n  width: 300px;\n  z-index: 10;\n  border-radius: 10px;\n  box-shadow: 0 0 10px #DDDDDD;\n}\n#content .restaurants .card img[data-v-78e2f7b6] {\n  height: 150px;\n  width: 100%;\n  border-top-left-radius: 10px;\n  border-top-right-radius: 10px;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n#content .restaurants .card h4[data-v-78e2f7b6] {\n  border: px solid rgba(0, 0, 0, 0.125);\n  border-radius: 0.25rem;\n  text-align: center;\n  margin-bottom: 10px;\n  font-weight: 700;\n  padding: 10px;\n}\n#content .restaurants .card_hover[data-v-78e2f7b6] {\n  transition: all 0.35s;\n}\n#content .restaurants .card[data-v-78e2f7b6]:hover {\n  cursor: pointer;\n  transform: scale(1.05);\n}", ""]);
+exports.push([module.i, ".focusr[data-v-78e2f7b6] {\n  outline: 0;\n}\ninput[data-v-78e2f7b6]:focus {\n  outline: 0;\n}\n#content[data-v-78e2f7b6] {\n  width: 80%;\n  margin: auto !important;\n}\n#content .first_title[data-v-78e2f7b6] {\n  text-align: center;\n}\n#content .first_title h2[data-v-78e2f7b6] {\n  color: black;\n  padding-top: 100px;\n  font-weight: 800;\n}\n#content .first_title p[data-v-78e2f7b6] {\n  color: grey;\n}\n#content .restaurants[data-v-78e2f7b6] {\n  display: flex;\n  flex-wrap: wrap;\n  margin: auto;\n  justify-content: center;\n}\n#content .restaurants .card[data-v-78e2f7b6] {\n  margin: 30px !important;\n  width: 300px;\n  z-index: 10;\n  border-radius: 10px;\n  box-shadow: 0 0 10px #DDDDDD;\n}\n#content .restaurants .card img[data-v-78e2f7b6] {\n  height: 150px;\n  width: 100%;\n  border-top-left-radius: 10px;\n  border-top-right-radius: 10px;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n#content .restaurants .card h4[data-v-78e2f7b6] {\n  border: px solid rgba(0, 0, 0, 0.125);\n  border-radius: 0.25rem;\n  text-align: center;\n  margin-bottom: 10px;\n  font-weight: 700;\n  padding: 10px;\n}\n#content .restaurants .card_hover[data-v-78e2f7b6] {\n  transition: all 0.35s;\n}\n#content .restaurants .card[data-v-78e2f7b6]:hover {\n  cursor: pointer;\n  transform: scale(1.05);\n}", ""]);
 
 // exports
 
@@ -39097,13 +39113,25 @@ var render = function() {
     [
       _c("h3", [_vm._v("Category Component")]),
       _vm._v(" "),
+      _c(
+        "p",
+        {
+          on: {
+            click: function($event) {
+              return _vm.selectCategory("all")
+            }
+          }
+        },
+        [_vm._v("All")]
+      ),
+      _vm._v(" "),
       _vm._l(_vm.categories, function(category) {
         return _c(
           "p",
           {
             on: {
               click: function($event) {
-                return _vm.selectCategory(category.name)
+                return _vm.selectCategory(category.restaurants)
               }
             }
           },
@@ -39136,14 +39164,28 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "restaurant_container" },
-    _vm._l(this.$store.state.selectedCategories, function(category) {
-      return _c("h2", [_vm._v(_vm._s(category))])
-    }),
-    0
-  )
+  return _c("div", { staticClass: "restaurant_container" }, [
+    _c(
+      "div",
+      { staticClass: "restaurants" },
+      _vm._l(this.$store.state.selectedCategories, function(restaurant) {
+        return _c("div", { staticClass: "card card_hover " }, [
+          _c("div", { staticClass: "restaurant_image" }, [
+            _c("img", {
+              attrs: { src: restaurant.img, alt: "restaurant's image" }
+            })
+          ]),
+          _vm._v(" "),
+          _c("h4", [
+            _vm._v(
+              "\n                " + _vm._s(restaurant.name) + "\n            "
+            )
+          ])
+        ])
+      }),
+      0
+    )
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -39323,6 +39365,7 @@ var render = function() {
                   _c("span", [_vm._v(_vm._s(category.name))]),
                   _vm._v(" "),
                   _c("input", {
+                    class: _vm.letSelected == category.id ? "focusr" : "",
                     attrs: { type: "submit" },
                     domProps: { value: category.id },
                     on: { click: _vm.selectRestaurantOnClick }
@@ -57066,13 +57109,17 @@ var store = {
       window.localStorage.setItem('cart', JSON.stringify(state.cart));
       window.localStorage.setItem('cartCount', state.cartCount);
     },
+    // restaurants
     saveCall: function saveCall(state, resp) {
       this.state.categories = resp[0];
       this.state.dishes = resp[1];
       this.state.restaurants = resp[2];
     },
     setSelectedCategoties: function setSelectedCategoties(state, category) {
-      this.state.selectedCategories.push(category);
+      this.state.selectedCategories = category;
+    },
+    setRestaurants: function setRestaurants(state, category) {
+      this.state.selectedCategories = this.state.restaurants.data.response;
     }
   },
   getters: {
