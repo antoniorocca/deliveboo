@@ -2077,6 +2077,22 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {}
 });
@@ -38933,7 +38949,37 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "container" }, [
-      _c("h1", [_vm._v("landing")])
+      _c("section", [
+        _c("h2", [_vm._v("in evidenza nella tua citta'")]),
+        _vm._v(" "),
+        _c("h3", [
+          _vm._v(
+            "Scopri i negozi più richiesti e ricevi alla tua porta ogni tuo desiderio"
+          )
+        ]),
+        _vm._v(" "),
+        _c("div", {}, [
+          _c("img", {
+            attrs: {
+              src:
+                "https://res.cloudinary.com/glovoapp/w_700,h_360,c_fill,f_auto,q_auto/Stores/hetiotbb7y6pfdnpu8hr",
+              alt: ""
+            }
+          })
+        ])
+      ]),
+      _vm._v(" "),
+      _c("section", [
+        _c("h2", [_vm._v("uniamo le forze")]),
+        _vm._v(" "),
+        _c("img", {
+          attrs: {
+            src:
+              "https://res.cloudinary.com/glovoapp/image/fetch//w_300,h_300,c_fit,f_auto,q_auto/https://glovoapp.com/images/corporate/rider.png",
+            alt: ""
+          }
+        })
+      ])
     ])
   }
 ]

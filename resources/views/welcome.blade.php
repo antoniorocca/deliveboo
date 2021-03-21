@@ -142,7 +142,7 @@
 
 
       <!-- CARRELLO -->
-      <div class="cart-box" v-if="showMain">        
+      <div class="cart-box" v-if="showMain">
         <nav class="navbar is-primary">
           <div class="navbar-brand">
             <a class="navbar-item" href="/">
@@ -170,7 +170,7 @@
 
 
         <!-- TEST EDO -->
-        <edo-categories></edo-categories>
+        <edo-categories v-if="showMain"></edo-categories>
 
 
 
