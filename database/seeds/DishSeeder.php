@@ -47,7 +47,7 @@ class DishSeeder extends Seeder
       $names = ['insalata','poke','pizza','hamburger','pasta','toast','sushi','taco'];
 
 
-      for ($i=0; $i < 110; $i++) {
+      for ($i=0; $i < 210; $i++) {
         $newDish = new Dish;
         $newDish->name = $names[rand(0,7)];
         $newDish->img = $images[rand(0,25)];
@@ -57,7 +57,7 @@ class DishSeeder extends Seeder
         $newDish->rating = rand(1,5);
         $newDish->menu_class ='';
         $newDish->discount_id ='';
-        $newDish->restaurant_id =rand(1,11);
+        $newDish->restaurant_id =rand(1,21);
 
         $dish = Dish::all();
         $slugs = array();

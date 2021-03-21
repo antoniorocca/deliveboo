@@ -8,8 +8,11 @@ use App\Restaurant;
 class RestaurantController extends Controller
 {
   public function index(){
+    $var = Restaurant::with('categories')->get();
+    //dd($var);
     return response()->json([
       'response'=> Restaurant::all()
+      //'response'=> $var
     ]);
   }
 

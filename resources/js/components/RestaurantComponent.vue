@@ -1,4 +1,25 @@
 <template>
+<div>
+    <div class="header">
+        <div id="main-header" class="d-flex justify-content-center flex-wrap">
+            <div id="categories" class="d-flex justify-content-center flex-wrap">
+                <div class="category category_hover mr-4 mt-5 d-flex justify-content-center" v-for="category in categories.slice(0, 8)" :class="(letSelected == category.id) ? 'focusr' : ''">
+                    <!-- <img :src="{{category.img}}" alt=""> -->
+                    <span>{{category.name}}</span>
+                    <input type="submit" :value="category.id" @click="selectRestaurantOnClick">
+                    <!-- <option v-for="category in categories" :value="category.id">{{category.name}}</option> -->
+                </div>
+            </div>   
+        </div>
+    </div>
+    <div>
+        <h4>Categorie:</h4>
+        <select name="category_id" class="form-control" id="category_id" @change="selectRestaurant">
+            <option value="all">All</option>
+            <option id="selection" :selected="letSelected == category.id" v-for="category in categories" :value="category.id">{{category.name}} ({{category.restaurants.length}})</option>
+        </select>
+    </div>
+    
     <div id="content" class="">
         <div class=" first_title">
             <h2>Ristoranti consigliati</h2>
@@ -17,6 +38,7 @@
             </div>
         </div>
     </div>
+</div>
 </template>
 
 
@@ -25,15 +47,50 @@
         data(){
             return {
                 restaurants:'',
+                categories:'',
+                restaurantsAll: '',
+                letSelected: '',
             }
+        },
+        methods:{
+            selectRestaurant(value){
+                console.log(value.target.value);
+                if (value.target.value !== 'all') {
+                    let restSelect = this.categories[value.target.value - 1];
+                    console.log(restSelect);
+                    this.restaurants = restSelect.restaurants;
+
+                    this.letSelected = value.target.value;
+                } else {
+                    this.restaurants = this.restaurantsAll;
+
+                    this.letSelected = "all";
+                }
+            },
+            // deve ancora cambiare i valori dentro category_id
+            selectRestaurantOnClick(value){
+                console.log(value.target.value);
+                let v = this.categories[value.target.value - 1];
+                console.log(v);
+                this.restaurants = v.restaurants;
+
+                this.letSelected = value.target.value;
+            }  
         },
         mounted() {
             Promise.all([
-                axios.get('api/restaurants')
+                axios.get('api/restaurants'),
+                axios.get('api/categories'),
+                // axios.get('api/category_restaurant'),
             ]).then(resp => {
                 console.log(resp[0].data.response);
+                console.log(resp[1].data.response);
+                // console.log(resp[2].data.response);
+                this.restaurantsAll = resp[0].data.response;
                 this.restaurants = resp[0].data.response;
-                return (RestaurantComponent, { props: { restaurants: this.restaurants } });
+                this.categories = resp[1].data.response;
+
+                // return (RestaurantComponent, { props: { restaurants: this.restaurants } });
             }).catch(error => {
                 console.log(error);
             })
@@ -43,6 +100,9 @@
 
 
 <style scoped lang="scss">
+    .focusr{
+        outline: -webkit-focus-ring-color auto 1px;
+    }
     #content{
         width: 80%;
         margin: auto !important;
