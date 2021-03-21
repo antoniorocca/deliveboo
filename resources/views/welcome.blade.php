@@ -74,7 +74,7 @@
             <!-- ///////////////////////////////////////////////// -->
 
             <!-- LANDING PAGE COMPONENT -->
-            {{-- <landing-component v-if="showLanding"></landing-component> --}}
+            <landing-component v-if="showLanding"></landing-component>
 
 
             <!-- COMPONENTE CATEGORIES EDO -->
@@ -84,7 +84,7 @@
             </div>
 
             <!-- COMPONENTE RISTORANTE -->
-            {{-- <restaurant-component v-if="showMain"></restaurant-component> --}}
+            <restaurant-component v-if="showMain"></restaurant-component>
 
 
 

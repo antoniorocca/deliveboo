@@ -3,15 +3,14 @@
     border-bottom: 2px solid black;
     width: 25%;
     h3{
-        padding-left: 10px;
-        // border-bottom: 2px solid black;
+        display: flex;
+        place-content: center;
     }
     p{
-        padding-left: 10px;
+        // padding-left: 10px;
         border-top: 2px solid black;
         display: flex;
         place-content: center;
-        place-items: center;
     }
 }
 .restaurant_container {

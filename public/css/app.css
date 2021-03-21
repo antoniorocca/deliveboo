@@ -11101,15 +11101,14 @@ header #main-header #categories .category_hover,
 }
 
 .category_container h3 {
-  padding-left: 10px;
+  display: flex;
+  place-content: center;
 }
 
 .category_container p {
-  padding-left: 10px;
   border-top: 2px solid black;
   display: flex;
   place-content: center;
-  place-items: center;
 }
 
 .restaurant_container {
