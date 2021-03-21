@@ -48,6 +48,7 @@
                             <input id="header_logo" type="text" placeholder="Cerca" v-model="search" @keyup.enter="switchMain"><i></i>
                         </div>
                     </div>
+
                     <div id="register" class="d-flex align-items-center">
                         <!--flex-center position-ref full-height-->
                         @if (Route::has('login'))
@@ -65,6 +66,7 @@
                         @endif
                     </div>
                 </nav>
+
                 <div id="link-consegne">
                     <p>Consegne in <a href="">Via ...... <i class="fas fa-angle-down"></i></a></p>
                 </div>
@@ -72,17 +74,17 @@
             <!-- ///////////////////////////////////////////////// -->
 
             <!-- LANDING PAGE COMPONENT -->
-            <landing-component v-if="showLanding"></landing-component>
+            {{-- <landing-component v-if="showLanding"></landing-component> --}}
 
 
             <!-- COMPONENTE CATEGORIES EDO -->
             <div class="select_restaurant">
                 <edo-categories v-if="showMain"></edo-categories>
-                <edo-restaurants></edo-restaurants>
+                <edo-restaurants v-if="showMain"></edo-restaurants>
             </div>
 
             <!-- COMPONENTE RISTORANTE -->
-            <restaurant-component v-if="showMain"></restaurant-component>
+            {{-- <restaurant-component v-if="showMain"></restaurant-component> --}}
 
 
 
