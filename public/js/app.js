@@ -55902,7 +55902,15 @@ var app2 = new Vue({
   store: new Vuex.Store(_store_js__WEBPACK_IMPORTED_MODULE_2__["default"]),
   data: {
     showLanding: true,
-    showMain: false
+    showMain: false,
+    search: ''
+  },
+  methods: {
+    switchMain: function switchMain() {
+      console.log('switch');
+      this.showMain = true;
+      this.showLanding = false;
+    }
   },
   mounted: function mounted() {
     this.$store.dispatch('axiosCall');

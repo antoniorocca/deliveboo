@@ -35,71 +35,6 @@
 
 
 
-  <!-- TRASFORMARE HEADER IN COMPONENTE -->
-    <header>
-        <nav class="col-lg-12 col-md-12 col-sm-12 d-flex justify-content-around align-items-center">
-            <div id="logo" class="d-flex">
-                <a href=""><img src="{{asset('img/logo_green.svg')}}" alt=""></a>
-                <div><input type="text" placeholder="Cerca"> <i></i></div>
-            </div>
-            <div id="register" class="d-flex align-items-center">
-                <!--flex-center position-ref full-height-->
-                @if (Route::has('login'))
-                <!-- <div class="top-right links"> -->
-                @auth
-                <a href="{{ url('/user/home') }}">Home</a>
-                @else
-                <a href="{{ route('login') }}">Login</a>
-
-                @if (Route::has('register'))
-                <a href="{{ route('register') }}">Register</a>
-                @endif
-                @endauth
-                <!-- </div> -->
-                @endif
-            </div>
-        </nav>
-        <div id="link-consegne">
-            <p>Consegne in <a href="">Via ...... <i class="fas fa-angle-down"></i></a></p>
-        </div>
-        <div id="main-header" class="d-flex justify-content-center">
-            <div id="categories" class="d-flex justify-content-center flex-wrap">
-                <div class="category mr-4 mt-5 d-flex justify-content-center">
-                    <img src="{{asset('img/hamburger.svg')}}" alt="">
-                    <span>Cibo</span>
-                </div>
-                <div class="category mr-4 mt-5 d-flex justify-content-center">
-                    <img src="" alt="">
-                    <span>Super mercato</span>
-                </div>
-                <div class="category mr-4 mt-5 d-flex justify-content-center">
-                    <img src="" alt="">
-                    <span>Shopping</span>
-                </div>
-                <div class="category mr-4 mt-5 d-flex justify-content-center">
-                    <img src="" alt="">
-                    <span>Di tutto e di più</span>
-                </div>
-                <div class="category mr-4 mt-5 d-flex justify-content-center">
-                    <img src="" alt="">
-                    <span>Colazioni & dolci</span>
-                </div>
-                <div class="category mr-4 mt-5 d-flex justify-content-center">
-                    <img src="" alt="">
-                    <span>Farmacia e Bellezza</span>
-                </div>
-                <div class="category mr-4 mt-5 d-flex justify-content-center">
-                    <img src="" alt="">
-                    <span>Bevande</span>
-                </div>
-                <div class="category mr-4 mt-5 d-flex justify-content-center">
-                    <img src="" alt="">
-                    <span>Spedizione Express</span>
-                </div>
-            </div>
-        </div>
-    </header>
-<!-- ///////////////////////////////////////////////// -->
 
 
 
@@ -118,6 +53,71 @@
     <!-- ////////////////////////////////// -->
     <div id="app2">
 
+      <!-- TRASFORMARE HEADER IN COMPONENTE -->
+      <header>
+        <nav class="col-lg-12 col-md-12 col-sm-12 d-flex justify-content-around align-items-center">
+          <div id="logo" class="d-flex">
+            <a href=""><img src="{{asset('img/logo_green.svg')}}" alt=""></a>
+            <div><input type="text" placeholder="Cerca" v-model="search" @keyup.enter="switchMain"> <i></i></div>
+          </div>
+          <div id="register" class="d-flex align-items-center">
+            <!--flex-center position-ref full-height-->
+            @if (Route::has('login'))
+            <!-- <div class="top-right links"> -->
+            @auth
+            <a href="{{ url('/user/home') }}">Home</a>
+            @else
+            <a href="{{ route('login') }}">Login</a>
+
+            @if (Route::has('register'))
+            <a href="{{ route('register') }}">Register</a>
+            @endif
+            @endauth
+            <!-- </div> -->
+            @endif
+          </div>
+        </nav>
+        <div id="link-consegne">
+          <p>Consegne in <a href="">Via ...... <i class="fas fa-angle-down"></i></a></p>
+        </div>
+        <div id="main-header" class="d-flex justify-content-center">
+          <div id="categories" class="d-flex justify-content-center flex-wrap">
+            <div class="category mr-4 mt-5 d-flex justify-content-center">
+              <img src="{{asset('img/hamburger.svg')}}" alt="">
+              <span>Cibo</span>
+            </div>
+            <div class="category mr-4 mt-5 d-flex justify-content-center">
+              <img src="" alt="">
+              <span>Super mercato</span>
+            </div>
+            <div class="category mr-4 mt-5 d-flex justify-content-center">
+              <img src="" alt="">
+              <span>Shopping</span>
+            </div>
+            <div class="category mr-4 mt-5 d-flex justify-content-center">
+              <img src="" alt="">
+              <span>Di tutto e di più</span>
+            </div>
+            <div class="category mr-4 mt-5 d-flex justify-content-center">
+              <img src="" alt="">
+              <span>Colazioni & dolci</span>
+            </div>
+            <div class="category mr-4 mt-5 d-flex justify-content-center">
+              <img src="" alt="">
+              <span>Farmacia e Bellezza</span>
+            </div>
+            <div class="category mr-4 mt-5 d-flex justify-content-center">
+              <img src="" alt="">
+              <span>Bevande</span>
+            </div>
+            <div class="category mr-4 mt-5 d-flex justify-content-center">
+              <img src="" alt="">
+              <span>Spedizione Express</span>
+            </div>
+          </div>
+        </div>
+      </header>
+      <!-- ///////////////////////////////////////////////// -->
 
       <!-- LANDING PAGE COMPONENT -->
       <landing-component v-if="showLanding"></landing-component>

@@ -60,6 +60,15 @@ const app2 = new Vue({
     data:{
       showLanding : true,
       showMain : false,
+      search:'',
+    },
+    methods:{
+      switchMain : function(){
+        console.log('switch');
+        this.showMain = true;
+        this.showLanding = false;
+
+      },
     },
     mounted(){
       this.$store.dispatch('axiosCall')
