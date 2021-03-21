@@ -8,6 +8,8 @@ let store = {
         categories: '',
         dishes : '',
         restaurants: '',
+        selectedCategories:'',
+        test: 'bomber',
     },
 
     mutations: {
@@ -52,7 +54,7 @@ let store = {
       },
       getRestaurant(state){
         return state.restaurants;
-      }
+      },
     },
     mutations: {
       // categoriesCall(state){

@@ -1,7 +1,7 @@
 <template>
-  <div class="">
-    <h3>ciao</h3>
-    <h3>{{categories}}</h3>
+  <div class="category_container">
+    <h3>Category Component</h3>
+    <p v-for="category in categories" v-on:click="">{{category.name}}</p>
   </div>
 
 </template>
@@ -10,17 +10,22 @@
 export default {
     data() {
         return {
-            categories: 'ciccio',
+            categories: '',
         };
     },
-    methods: {
+    methods:{
+      
     },
     computed: {
+
+
     },
     mounted(){
-
-
+      this.categories = this.$store.getters.getCategories.data.response;
+      console.log(this.categories);
     }
 }
 
 </script>
+<style>
+</style>

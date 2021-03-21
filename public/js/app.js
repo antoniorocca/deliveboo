@@ -2052,12 +2052,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      categories: 'ciccio'
+      categories: ''
     };
   },
   methods: {},
   computed: {},
-  mounted: function mounted() {}
+  mounted: function mounted() {
+    this.categories = this.$store.getters.getCategories.data.response;
+    console.log(this.categories);
+  }
 });
 
 /***/ }),
@@ -38913,11 +38916,20 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", {}, [
-    _c("h3", [_vm._v("ciao")]),
-    _vm._v(" "),
-    _c("h3", [_vm._v(_vm._s(_vm.categories))])
-  ])
+  return _c(
+    "div",
+    { staticClass: "category_container" },
+    [
+      _c("h3", [_vm._v("Category Component")]),
+      _vm._v(" "),
+      _vm._l(_vm.categories, function(category) {
+        return _c("p", { on: { click: function($event) {} } }, [
+          _vm._v(_vm._s(category.name))
+        ])
+      })
+    ],
+    2
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -56587,7 +56599,9 @@ var store = (_store = {
     cartCount: cartCount ? parseInt(cartCount) : 0,
     categories: '',
     dishes: '',
-    restaurants: ''
+    restaurants: '',
+    selectedCategories: '',
+    test: 'bomber'
   },
   mutations: {
     addToCart: function addToCart(state, item) {

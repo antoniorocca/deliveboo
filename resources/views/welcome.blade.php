@@ -122,6 +122,11 @@
       <!-- LANDING PAGE COMPONENT -->
       <landing-component v-if="showLanding"></landing-component>
 
+
+      <!-- TEST EDO -->
+      <edo-categories v-if="showMain"></edo-categories>
+
+
       <!-- COMPONENTE RISTORANTE -->
       <restaurant-component v-if="showMain"></restaurant-component>
 
@@ -169,8 +174,6 @@
 
 
 
-        <!-- TEST EDO -->
-        <edo-categories v-if="showMain"></edo-categories>
 
 
 
