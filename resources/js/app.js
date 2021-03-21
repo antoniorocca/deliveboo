@@ -1,3 +1,5 @@
+// TODO: ORDINARE IN MODO COERENTE APP.JS
+
 window.Vue = require('vue');
 import VueRouter from 'vue-router';
 import ShowAll from './components/ShowAll';
@@ -29,20 +31,43 @@ const router = new VueRouter({
 Vue.component('restaurant-component', require('./components/RestaurantComponent.vue').default);
 Vue.component('to-top', require('./components/ToTop.vue').default);
 
+
+
+
+// TODO:
+// APP VUE DA ELIMINARE - INUTILE
 const app = new Vue({
   router,
   data:{
   },
 }).$mount('#app');
 
+
+
+
 // CARRELLO
+// TODO:
+// DIVENTERA' MAIN APP
+Vue.component('edo-categories', require('./components/EdoCategories.vue').default);
+
 import store from './store.js';
 Vue.component('products-list', require('./components/ProductsList.vue').default);
 Vue.component('cart-dropdown', require('./components/Cart.vue').default);
+Vue.component('landing-component', require('./components/LandingComponent.vue').default);
 const app2 = new Vue({
     el: '#app2',
-    store: new Vuex.Store(store)
+    store: new Vuex.Store(store),
+    data:{
+      showLanding : true,
+      showMain : false,
+    },
+    mounted(){
+      this.$store.dispatch('axiosCall')
+    }
 });
+
+
+// LANDING COMPONENT
 
 
 

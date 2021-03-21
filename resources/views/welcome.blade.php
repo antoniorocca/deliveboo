@@ -27,60 +27,15 @@
 
     <!-- Styles -->
     <style>
-        /* html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            } */
-
-        /* .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            } */
     </style>
 </head>
 
 <body>
+
+
+
+
+  <!-- TRASFORMARE HEADER IN COMPONENTE -->
     <header>
         <nav class="col-lg-12 col-md-12 col-sm-12 d-flex justify-content-around align-items-center">
             <div id="logo" class="d-flex">
@@ -144,67 +99,90 @@
             </div>
         </div>
     </header>
+<!-- ///////////////////////////////////////////////// -->
 
-    <div class="content">
-        <div class="title m-b-md">
-            Laravel
-        </div>
 
-        <!-- <div class="links">
-                <a href="https://laravel.com/docs">Docs</a>
-                <a href="https://laracasts.com">Laracasts</a>
-                <a href="https://laravel-news.com">News</a>
-                <a href="https://blog.laravel.com">Blog</a>
-                <a href="https://nova.laravel.com">Nova</a>
-                <a href="https://forge.laravel.com">Forge</a>
-                <a href="https://vapor.laravel.com">Vapor</a>
-                <a href="https://github.com/laravel/laravel">GitHub</a>
-            </div>   -->
-    </div>
 
+
+
+<!-- ////////////////////////////////////////////////////////////// -->
+<!-- UNIFICARE APP E APP2 IN UN UNICA APP (SINGLE PAGE APLICATION) -->
+<!-- ///////////////////////////////////////////////////////////////// -->
     <!-- VUE APP -->
     <!-- ////////////////////////////////// -->
     <div id="app">
-        <restaurant-component></restaurant-component>
-        <to-top></to-top>
-
-        {{-- <p>
-                <router-link to="/foo">Go to Foo</router-link>
-                <router-link to="/generali">Mostra robbe</router-link>
-            </p> --}}
-
-        {{-- <router-view></router-view> --}}
-        {{-- <show-all></show-all> --}}
 
     </div>
 
     <!-- VUE APP CARRELLO -->
     <!-- ////////////////////////////////// -->
     <div id="app2">
+
+
+      <!-- LANDING PAGE COMPONENT -->
+      <landing-component v-if="showLanding"></landing-component>
+
+      <!-- COMPONENTE RISTORANTE -->
+      <restaurant-component v-if="showMain"></restaurant-component>
+
+
+      <!-- BOTTONE TO TOP -->
+      <to-top></to-top>
+
+      {{-- <p>
+        <router-link to="/foo">Go to Foo</router-link>
+        <router-link to="/generali">Mostra robbe</router-link>
+      </p> --}}
+
+      {{-- <router-view></router-view> --}}
+      {{-- <show-all></show-all> --}}
+
+
+
+
+
+      <!-- CARRELLO -->
+      <div class="cart-box" v-if="showMain">        
         <nav class="navbar is-primary">
-            <div class="navbar-brand">
-                <a class="navbar-item" href="/">
-                    Voerro Shopping Cart Tutorial
-                </a>
+          <div class="navbar-brand">
+            <a class="navbar-item" href="/">
+              Voerro Shopping Cart Tutorial
+            </a>
 
-                <div class="navbar-burger burger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
+            <div class="navbar-burger burger">
+              <span></span>
+              <span></span>
+              <span></span>
             </div>
+          </div>
 
-            <cart-dropdown></cart-dropdown>
+          <cart-dropdown></cart-dropdown>
         </nav>
 
         <div class="section content">
-            <h1>Our Products</h1>
-            <products-list></products-list>
+          <h1>Our Products</h1>
+          <products-list></products-list>
         </div>
+      </div>
+
+
+
+
+
+        <!-- TEST EDO -->
+        <edo-categories></edo-categories>
+
+
+
+
     </div>
     <!-- ////////////////////////////////// -->
 
 
+
+
+<!-- TRASFORMARE FOOTER IN UN COMPONENTE -->
+<!-- ////////////////////////////////////////////// -->
     <footer>
         <a href="">
             <img id="footer_logo" src="{{asset('img/logo_white.svg')}}" alt="">

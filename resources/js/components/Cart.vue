@@ -33,6 +33,7 @@
                 Cart is empty
             </a>
         </div>
+          
         <img src="img/payment.png" alt="">
     </div>
 </template>
