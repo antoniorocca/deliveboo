@@ -11255,3 +11255,17 @@ footer #footer_container ul .footer_img {
   margin: 5px 0;
 }
 
+.select_restaurant {
+  display: flex;
+}
+
+.category_container {
+  border: 5px solid black;
+  width: 25%;
+}
+
+.restaurant_container {
+  border: 5px solid black;
+  width: 75%;
+}
+

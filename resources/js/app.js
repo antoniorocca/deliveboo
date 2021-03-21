@@ -50,12 +50,15 @@ Vue.component('category-component', require('./components/CategoryComponent.vue'
 // CARRELLO
 // TODO:
 // DIVENTERA' MAIN APP
-Vue.component('edo-categories', require('./components/EdoCategories.vue').default);
 
 import store from './store.js';
 Vue.component('products-list', require('./components/ProductsList.vue').default);
 Vue.component('cart-dropdown', require('./components/Cart.vue').default);
 Vue.component('landing-component', require('./components/LandingComponent.vue').default);
+Vue.component('edo-categories', require('./components/EdoCategories.vue').default);
+Vue.component('edo-restaurants', require('./components/EdoRestaurants.vue').default);
+
+
 const app2 = new Vue({
     el: '#app2',
     store: new Vuex.Store(store),

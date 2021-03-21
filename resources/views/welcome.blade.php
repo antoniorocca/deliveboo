@@ -86,8 +86,10 @@
 
 
         <!-- COMPONENTE CATEGORIES EDO -->
-
-        <edo-categories v-if="showMain"></edo-categories>
+        <div class="select_restaurant">
+          <edo-categories v-if="showMain"></edo-categories>
+          <edo-restaurants></edo-restaurants>
+        </div>
 
         <!-- COMPONENTE RISTORANTE -->
         <restaurant-component v-if="showMain"></restaurant-component>

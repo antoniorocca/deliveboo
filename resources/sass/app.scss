@@ -13,3 +13,17 @@
 @import 'main/_main.scss';
 @import 'partials/_footer.scss';
 @import 'partials/_backend.scss';
+
+// scss Component
+.select_restaurant {
+  display: flex;
+}
+.category_container {
+  border: 5px solid black;
+  width: 25%;
+}
+.restaurant_container {
+  border: 5px solid black;
+  width: 75%;
+
+}
