@@ -10942,15 +10942,12 @@ a.text-dark:focus {
   }
 }
 
-<<<<<<< HEAD
-=======
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
->>>>>>> filtri_di_selezione
 body {
   overflow-x: hidden;
 }

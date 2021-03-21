@@ -13,20 +13,20 @@ import ShowAll from './components/ShowAll';
 
 require('./bootstrap');
 
-Vue.use(VueRouter)
-
-const Foo = { template: '<div>foo</div>' }
-// const Bar = { template: '<div>bar</div>' }
-
-const routes = [
-  { path: '/foo', component: Foo },
-  { path: '/generali', component: ShowAll, name:'ShowAll' }
-]
-
-
-const router = new VueRouter({
-  routes // short for `routes: routes`
-})
+// Vue.use(VueRouter)
+//
+// const Foo = { template: '<div>foo</div>' }
+// // const Bar = { template: '<div>bar</div>' }
+//
+// const routes = [
+//   { path: '/foo', component: Foo },
+//   { path: '/generali', component: ShowAll, name:'ShowAll' }
+// ]
+//
+//
+// const router = new VueRouter({
+//   routes // short for `routes: routes`
+// })
 
 // esempio componente
 Vue.component('restaurant-component', require('./components/RestaurantComponent.vue').default);
@@ -38,12 +38,12 @@ Vue.component('category-component', require('./components/CategoryComponent.vue'
 
 // TODO:
 // APP VUE DA ELIMINARE - INUTILE
-const app = new Vue({
-  router,
-  data:{
-  },
-}).$mount('#app');
-
+// const app = new Vue({
+//   router,
+//   data:{
+//   },
+// }).$mount('#app');
+//
 
 
 

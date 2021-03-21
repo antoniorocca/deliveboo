@@ -1,7 +1,7 @@
 <template>
   <div class="category_container">
     <h3>Category Component</h3>
-    <p v-for="category in categories" v-on:click="">{{category.name}}</p>
+    <p v-for="category in categories" @click="selectCategory(category.name)">{{category.name}}</p>
   </div>
 
 </template>
@@ -11,10 +11,15 @@ export default {
     data() {
         return {
             categories: '',
+            selectedCategories:'',
         };
     },
     methods:{
-
+      selectCategory(name){
+        this.$store.commit('setSelectedCategoties', name)
+        console.log(name);
+        this.selectedCategories = this.$store.getters.getSelectedCategories;
+      },
     },
     computed: {
 

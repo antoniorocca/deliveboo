@@ -8,7 +8,7 @@ let store = {
         categories: '',
         dishes : '',
         restaurants: '',
-        selectedCategories:'',
+        selectedCategories:[],
         test: 'bomber',
     },
 
@@ -43,7 +43,18 @@ let store = {
         saveCart(state) {
             window.localStorage.setItem('cart', JSON.stringify(state.cart));
             window.localStorage.setItem('cartCount', state.cartCount);
-        }
+        },
+        saveCall(state, resp){
+          this.state.categories = resp[0];
+          this.state.dishes = resp[1];
+          this.state.restaurants = resp[2];
+
+        },
+        setSelectedCategoties(state, category){
+          this.state.selectedCategories.push(category) ;
+        },
+
+
     },
     getters: {
       getCategories(state){
@@ -55,23 +66,9 @@ let store = {
       getRestaurant(state){
         return state.restaurants;
       },
-    },
-    mutations: {
-      // categoriesCall(state){
-      //   // console.log('fake_call');
-      //   // console.log(this.state.categories);
-      //   // this.state.categories = 'pippo';
-      //   // console.log(this.state.categories);
-      //
-      // },
-      saveCall(state, resp){
-        this.state.categories = resp[0];
-        this.state.dishes = resp[1];
-        this.state.restaurants = resp[2];
-
-      }
-
-
+      getSelectedCategories(state){
+        return state.selectedCategories;
+      },
     },
     actions: {
       axiosCall(context){
