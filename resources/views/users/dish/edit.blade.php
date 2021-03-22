@@ -79,7 +79,7 @@
             <div class="content_row">
                 <label for="discount" class="col-lg-12 col-form-label text-info">Sconto</label>
 
-                <div class="col-md-1">
+                <div class="col-md-2">
                     <input type="radio" class="form-check-input" name="discount" value="1">
                     <label class="form-check-lable" for="discount">sconto</label>
                 </div>
