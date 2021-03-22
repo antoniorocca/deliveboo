@@ -82,7 +82,7 @@
             <nav class="col-lg-12 col-md-12 col-sm-12 d-flex justify-content-around align-items-center">
                 <div id="logo" class="d-flex">
                     <a href=""><img src="{{asset('img/logo_green.svg')}}" alt=""></a>
-                   <div><input type="text" placeholder="Cerca"> <i></i></div> 
+                   <div><input type="text" placeholder="Cerca"> <i></i></div>
                 </div>
                 <div id="register" class="d-flex align-items-center">
                 <!--flex-center position-ref full-height-->
@@ -100,6 +100,7 @@
                     <!-- </div> -->
                 @endif
                 </div>
+                
             </nav>
             <div id="link-consegne">
               <p>Consegne in <a href="">Via ...... <i class="fas fa-angle-down"></i></a></p>
@@ -108,7 +109,7 @@
                 <div id="categories" class="d-flex justify-content-center flex-wrap">
                     <div class="category mr-4 mt-5 d-flex justify-content-center">
                       <img src="{{asset('img/hamburger.svg')}}" alt="">
-                      <span>Cibo</span>   
+                      <span>Cibo</span>
                     </div>
                     <div class="category mr-4 mt-5 d-flex justify-content-center">
                         <img src="" alt="">
@@ -138,10 +139,10 @@
                         <img src="" alt="">
                         <span>Spedizione Express</span>
                     </div>
-                </div>   
+                </div>
             </div>
         </header>
-        
+
         <div class="content">
             <div class="title m-b-md">
                 Laravel
@@ -158,7 +159,7 @@
                 <a href="https://github.com/laravel/laravel">GitHub</a>
             </div>   -->
         </div>
-        
+
         <!-- VUE APP -->
         <!-- ////////////////////////////////// -->
         <div id="app">
@@ -169,7 +170,7 @@
                 <router-link to="/foo">Go to Foo</router-link>
                 <router-link to="/generali">Mostra robbe</router-link>
             </p> --}}
- 
+
             {{-- <router-view></router-view> --}}
             {{-- <show-all></show-all> --}}
 
@@ -179,8 +180,8 @@
             <a href="">
                 <img id="footer_logo" src="{{asset('img/logo_white.svg')}}" alt="">
             </a>
-            
-            <div class="footer_container"> 
+
+            <div class="footer_container">
 
                 <div class="row">
 
@@ -214,7 +215,7 @@
                             <li><a href="">Instagram</a></li>
                         </ul>
                     </div>
-                    
+
                     <div id="privacy" class="col-lg-3 col-md-3 col-sm-3">
                         <ul class="row row-cols-1 row-cols-sm-1 row-cols-md-1 row-cols-lg-1">
                             <ul class="row row-cols-2 row-cols-sm-1 row-cols-md-1 row-cols-lg-1">
