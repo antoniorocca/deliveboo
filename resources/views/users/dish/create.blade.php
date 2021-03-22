@@ -1,6 +1,11 @@
 @extends('layouts.app')
 @section('content')
-<h1>crea piatto</h1>
+<div class="spacer">
+  <img class="img_spacer" src="{{asset('storage/lightgreen_wave.png')}}" alt="">
+</div>
+<div id="backend_container">
+  <div class="backend_wrap">
+<h1>Crea piatto</h1>
 
 <form action="{{ route('user.dish.store') }}" method="post" enctype="multipart/form-data">
     @csrf
@@ -9,10 +14,10 @@
         <span>* campo obligatorio</span>
 
         {{-- name --}}
-        <div class="form-group row">
+        <div class="content_row">
             <label for="name" class="col-sm-1-12 col-form-label text-info">name*</label>
             <div class="col-md-12-12 col-md-12">
-                <input type="text" class="form-control" name="name" value="" maxlength='30'>
+                <input type="text" class="edit_input" name="name" value="" maxlength='30'>
             </div>
             @error('name')
                 <div class="alert alert-danger">{{ $message }}</div>
@@ -20,10 +25,10 @@
         </div>
 
         {{-- description --}}
-        <div class="form-group row">
+        <div class="content_row">
             <label for="description" class="col-sm-1-12 col-form-label text-info">Description</label>
             <div class="col-md-12-12 col-md-12">
-                <textarea type="text" class="form-control" name="description" value="" maxlength='500'></textarea>
+                <textarea type="text" class="edit_input" name="description" value="" maxlength='500'></textarea>
             </div>
             @error('description')
                 <div class="alert alert-danger">{{ $message }}</div>
@@ -33,7 +38,7 @@
         {{-- img --}}
         <div class="form-group">
             <label for="img">immagine piatto</label>
-            <input type="file" class="form-control-file" name="img" aria-describedby="fileHelpId">
+            <input type="file" class="edit_input-file" name="img" aria-describedby="fileHelpId">
             @error('img')
                 <div class="alert alert-danger">{{ $message }}</div>
             @enderror
@@ -42,10 +47,10 @@
 
 
         {{-- price --}}
-        <div class="form-group row">
+        <div class="content_row">
             <label for="price" class="col-sm-1-12 col-form-label text-info">Price*</label>
             <div class="col-md-12-12 col-md-12">
-                <input type="number" class="form-control" name="price" value="" min="0" max="999.99" step="0.01">
+                <input type="number" class="edit_input" name="price" value="" min="0" max="999.99" step="0.01">
             </div>
             @error('price')
                 <div class="alert alert-danger">{{ $message }}</div>
@@ -53,10 +58,10 @@
         </div>
 
         {{-- menu_class --}}
-        <div class="form-group row">
+        <div class="content_row">
             <label for="menu_class" class="col-sm-1-12 col-form-label text-info">menu_class</label>
             <div class="col-md-12-12 col-md-12">
-                <textarea type="text" class="form-control" name="menu_class" value="" maxlength='30'></textarea>
+                <textarea type="text" class="edit_input" name="menu_class" value="" maxlength='30'></textarea>
             </div>
             @error('menu_class')
                 <div class="alert alert-danger">{{ $message }}</div>
@@ -64,7 +69,7 @@
         </div>
 
         {{-- discount --}}
-        <div class="form-group row">
+        <div class="content_row">
             <label for="discount" class="col-lg-12 col-form-label text-info">discount</label>
 
             <div class="col-md-1">
@@ -85,11 +90,13 @@
 
 
         {{-- Create button --}}
-        <div class="form-group row">
+        <div class="content_row">
             <div class="offset-sm-2 col-sm-10">
-                <input type="submit" value="Create">
+                <input id="glovo_btn" type="submit" value="Create">
             </div>
         </div>
     </div>
 </form>
+</div>
+</div>
 @endsection

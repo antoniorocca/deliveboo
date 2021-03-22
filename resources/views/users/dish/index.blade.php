@@ -7,12 +7,8 @@
   <div class="backend_wrap">
     <h1>Elenco pietanze</h1>
     <div class="content_row">
-      <a class="text-white" href="{{ route('user.dish.create') }}">
-        <ul class="list-group">
-          <li class="list-group-item active text-center">
+      <a id="glovo_btn" class="text-white" href="{{ route('user.dish.create') }}">
             Crea Nuovo piatto
-          </li>
-        </ul>
       </a>
       <table class="table">
         <thead>

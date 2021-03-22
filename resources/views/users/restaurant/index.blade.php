@@ -10,7 +10,7 @@
 
 
     <h1>Il mio ristorante</h1>
-    <a class="btn btn-primary" href="{{ route('user.restaurant.edit', $restaurant) }}">Modifica il ristorante</a>
+    <a id="glovo_btn" href="{{ route('user.restaurant.edit', $restaurant) }}">Modifica il ristorante</a>
 
     <div class="content_row">
       <h1>{{$restaurant['name']}}</h1>

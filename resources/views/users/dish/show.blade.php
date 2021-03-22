@@ -7,7 +7,7 @@
 
 <div id="backend_container"class="">
 <div class="backend_wrap">
-    <a class="btn btn-primary" href="{{ route('user.dish.index') }}">Dishes</a>
+    <a id="glovo_btn" href="{{ route('user.dish.index') }}">Dishes</a>
     <h1>Piatto: {{$dish->name}}</h1>
 
 

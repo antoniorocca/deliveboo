@@ -148,7 +148,7 @@
             {{-- Update button --}}
             <div class="content_row">
                 <div class="offset-sm-2 col-sm-10">
-                    <input type="submit" value="Update">
+                    <input id="glovo_btn" type="submit" value="Update">
                 </div>
             </div>
         </div>
