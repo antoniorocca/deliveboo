@@ -12,5 +12,4 @@ class DishController extends Controller
       'response'=> Dish::all()
     ]);
   }
-
 }

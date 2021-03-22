@@ -74,65 +74,54 @@
         <div class="spacer">
           <img class="img_spacer" src="{{asset('storage/yellow_arch.png')}}" alt="">
         </div>
+
         <main class="py-4">
           <nav id="user_nav" class="d-flex">
 
             <div class="button_wrap">
-              <div class="user_nav_button">
-                <a class="" href="{{route('user.home')}}">
+              <a class="" href="{{route('user.home')}}">
+                <div class="user_nav_button">
                   <img src="{{asset('storage/house1.png')}}" alt="">
-                </a>
-              </div>
+                </div>
+              </a>
               <span class="user_span">home</span>
             </div>
 
 
             <div class="button_wrap">
-              <div class="user_nav_button">
-                <a class="" href="{{route('user.restaurant.index') }}">
+              <a class="" href="{{route('user.restaurant.index') }}">
+                <div class="user_nav_button">
                   <img src="{{asset('storage/restaurant.png')}}" alt="">
-                </a>
-              </div>
+                </div>
+              </a>
               <span class="user_span">Il mio ristorante</span>
             </div>
 
 
 
             <div class="button_wrap">
-              <div class="user_nav_button">
-                <a class="" href="{{route('user.dish.index')}}">
+              <a class="" href="{{route('user.dish.index')}}">
+                <div class="user_nav_button">
                   <img src="{{asset('storage/steak.png')}}" alt="">
-                </a>
-              </div>
+                </div>
+              </a>
               <span class="user_span">piatti</span>
             </div>
 
 
             <div class="button_wrap">
-              <div class="user_nav_button">
-                <a class="" href="{{route('user.graphs')}}">
+              <a class="" href="{{route('user.graphs')}}">
+                <div class="user_nav_button">
                   <img src="{{asset('storage/analysis.png')}}" alt="">
-                </a>
-              </div>
+                </div>
+              </a>
               <span class="user_span">grafici</span>
             </div>
 
-
-            <!-- <div class="user_nav_button">
-              <a class="" href="{{route('user.restaurant.index') }}">Il mio ristorante</a>
-            </div> -->
-            <!-- <div class="user_nav_button">
-              <a class="" href="{{route('user.dish.index')}}">Piatti</a>
-            </div> -->
-            <!-- <div class="user_nav_button">
-              <a class="" href="{{route('user.graphs')}}">Grafici</a>
-            </div> -->
-            <!-- <div class="user_nav_button">
-              <a class="" href="{{route('user.profile')}}">Profilo</a>
-            </div> -->
           </nav>
           @yield('content')
         </main>
+
     </div>
 </body>
 </html>

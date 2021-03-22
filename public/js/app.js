@@ -56569,8 +56569,10 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); // Vue.us
 
 Vue.component('restaurant-component', __webpack_require__(/*! ./components/RestaurantComponent.vue */ "./resources/js/components/RestaurantComponent.vue")["default"]);
 Vue.component('to-top', __webpack_require__(/*! ./components/ToTop.vue */ "./resources/js/components/ToTop.vue")["default"]);
+Vue.component('to-top', __webpack_require__(/*! ./components/ToTop.vue */ "./resources/js/components/ToTop.vue")["default"]);
 Vue.component('category-component', __webpack_require__(/*! ./components/CategoryComponent.vue */ "./resources/js/components/CategoryComponent.vue")["default"]);
-Vue.component('footer-component', __webpack_require__(/*! ./components/FooterComponent.vue */ "./resources/js/components/FooterComponent.vue")["default"]); // TODO:
+Vue.component('footer-component', __webpack_require__(/*! ./components/FooterComponent.vue */ "./resources/js/components/FooterComponent.vue")["default"]);
+Vue.component('dish-component', __webpack_require__(/*! ./components/FooterComponent.vue */ "./resources/js/components/FooterComponent.vue")["default"]); // TODO:
 // APP VUE DA ELIMINARE - INUTILE
 // const app = new Vue({
 //   router,
@@ -56588,8 +56590,8 @@ Vue.component('cart-dropdown', __webpack_require__(/*! ./components/Cart.vue */ 
 Vue.component('landing-component', __webpack_require__(/*! ./components/LandingComponent.vue */ "./resources/js/components/LandingComponent.vue")["default"]);
 Vue.component('edo-categories', __webpack_require__(/*! ./components/EdoCategories.vue */ "./resources/js/components/EdoCategories.vue")["default"]);
 Vue.component('edo-restaurants', __webpack_require__(/*! ./components/EdoRestaurants.vue */ "./resources/js/components/EdoRestaurants.vue")["default"]);
-var app2 = new Vue({
-  el: '#app2',
+var app = new Vue({
+  el: '#app',
   store: new Vuex.Store(_store_js__WEBPACK_IMPORTED_MODULE_2__["default"]),
   data: {
     showLanding: true,

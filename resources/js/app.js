@@ -31,8 +31,10 @@ require('./bootstrap');
 // esempio componente
 Vue.component('restaurant-component', require('./components/RestaurantComponent.vue').default);
 Vue.component('to-top', require('./components/ToTop.vue').default);
+Vue.component('to-top', require('./components/ToTop.vue').default);
 Vue.component('category-component', require('./components/CategoryComponent.vue').default);
 Vue.component('footer-component', require('./components/FooterComponent.vue').default);
+Vue.component('dish-component', require('./components/FooterComponent.vue').default);
 
 
 
@@ -60,8 +62,8 @@ Vue.component('edo-categories', require('./components/EdoCategories.vue').defaul
 Vue.component('edo-restaurants', require('./components/EdoRestaurants.vue').default);
 
 
-const app2 = new Vue({
-    el: '#app2',
+const app = new Vue({
+    el: '#app',
     store: new Vuex.Store(store),
     data:{
       showLanding : true,
