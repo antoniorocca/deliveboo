@@ -5,17 +5,17 @@
         </a>
 
         <div v-if="$store.state.cart.length > 0" class="car_product_dropdown">
-            <a v-for="item in $store.state.cart"
-                :key="item.id"
-                class="navbar-item"
-                href=""
-            >
-                <span class="removeBtn"
-                    title="Remove from cart"
-                    @click.prevent="removeFromCart(item)">X</span>
+            <div v-for="item in $store.state.cart" :key="item.id">
+                
+                <span class="cart-item">
+                    {{ item.title }} x{{ item.quantity }} - ${{ item.totalPrice }}
+                </span>
 
-                {{ item.title }} x{{ item.quantity }} - ${{ item.totalPrice }}
-            </a>
+                <button class="removeBtn" title="Remove from cart" @click.prevent="removeFromCart(item)">X</button>
+                    
+                <button v-if="item.quantity > 1" class="lessBtn" title="Less from cart" @click="lessToCart(item)">-</button>
+
+            </div>
 
             <a class="navbar-item" href="">
                 Total: ${{ totalPrice }}
@@ -54,7 +54,11 @@ export default {
     methods: {
     removeFromCart(item) {
         this.$store.commit('removeFromCart', item);
-    }
+    },
+    lessToCart(item) {
+        console.log(item);
+        this.$store.commit('lessToCart', item);
+    },
 }
 }
 </script>

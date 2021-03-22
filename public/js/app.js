@@ -2026,6 +2026,10 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
   methods: {
     removeFromCart: function removeFromCart(item) {
       this.$store.commit('removeFromCart', item);
+    },
+    lessToCart: function lessToCart(item) {
+      console.log(item);
+      this.$store.commit('lessToCart', item);
     }
   }
 });
@@ -39113,39 +39117,50 @@ var render = function() {
           { staticClass: "car_product_dropdown" },
           [
             _vm._l(_vm.$store.state.cart, function(item) {
-              return _c(
-                "a",
-                {
-                  key: item.id,
-                  staticClass: "navbar-item",
-                  attrs: { href: "" }
-                },
-                [
-                  _c(
-                    "span",
-                    {
-                      staticClass: "removeBtn",
-                      attrs: { title: "Remove from cart" },
-                      on: {
-                        click: function($event) {
-                          $event.preventDefault()
-                          return _vm.removeFromCart(item)
-                        }
-                      }
-                    },
-                    [_vm._v("X")]
-                  ),
+              return _c("div", { key: item.id }, [
+                _c("span", { staticClass: "cart-item" }, [
                   _vm._v(
-                    "\n\n            " +
+                    "\n                " +
                       _vm._s(item.title) +
                       " x" +
                       _vm._s(item.quantity) +
                       " - $" +
                       _vm._s(item.totalPrice) +
-                      "\n        "
+                      "\n            "
                   )
-                ]
-              )
+                ]),
+                _vm._v(" "),
+                _c(
+                  "button",
+                  {
+                    staticClass: "removeBtn",
+                    attrs: { title: "Remove from cart" },
+                    on: {
+                      click: function($event) {
+                        $event.preventDefault()
+                        return _vm.removeFromCart(item)
+                      }
+                    }
+                  },
+                  [_vm._v("X")]
+                ),
+                _vm._v(" "),
+                item.quantity > 1
+                  ? _c(
+                      "button",
+                      {
+                        staticClass: "lessBtn",
+                        attrs: { title: "Less from cart" },
+                        on: {
+                          click: function($event) {
+                            return _vm.lessToCart(item)
+                          }
+                        }
+                      },
+                      [_vm._v("-")]
+                    )
+                  : _vm._e()
+              ])
             }),
             _vm._v(" "),
             _c("a", { staticClass: "navbar-item", attrs: { href: "" } }, [
@@ -57521,6 +57536,23 @@ var store = {
       state.cartCount++;
       this.commit('saveCart');
     },
+    lessToCart: function lessToCart(state, item) {
+      var found = state.cart.find(function (product) {
+        return product.id == item.id;
+      });
+
+      if (found.quantity == 1) {
+        var product = state.cart[index];
+        state.cartCount -= product.quantity;
+        state.cart.splice(index, 1);
+      } else {
+        found.quantity--;
+        found.totalPrice = found.quantity * found.price;
+      }
+
+      state.cartCount--;
+      this.commit('saveCart');
+    },
     removeFromCart: function removeFromCart(state, item) {
       var index = state.cart.indexOf(item);
 
@@ -57596,8 +57628,8 @@ var store = {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\gitKraken_esercizi\deliveboo_progetto_finale\deliveboo\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\gitKraken_esercizi\deliveboo_progetto_finale\deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\Fabio\Desktop\Boolean\classe 23\deliveboo\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\Fabio\Desktop\Boolean\classe 23\deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

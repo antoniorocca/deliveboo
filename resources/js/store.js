@@ -29,6 +29,25 @@ let store = {
             state.cartCount++;
             this.commit('saveCart');
         },
+        lessToCart(state, item) {
+            let found = state.cart.find(product => product.id == item.id);
+
+            if (found.quantity == 1) {
+                let product = state.cart[index];
+                state.cartCount -= product.quantity;
+
+
+                state.cart.splice(index, 1);
+                
+            } 
+            else {
+                found.quantity--;
+                found.totalPrice = found.quantity * found.price;
+            }
+
+            state.cartCount--;
+            this.commit('saveCart');
+        },
         removeFromCart(state, item) {
             let index = state.cart.indexOf(item);
 
