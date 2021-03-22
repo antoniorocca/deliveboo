@@ -39,7 +39,7 @@
 
     <!-- VUE APP CARRELLO -->
     <!-- ////////////////////////////////// -->
-    <div id="app2">
+    <div id="app">
 
         <!-- TRASFORMARE HEADER IN COMPONENTE -->
         <header>
@@ -80,7 +80,7 @@
         <!-- COMPONENTE CATEGORIES EDO -->
         <div class="select_restaurant">
             <edo-categories v-if="showMain"></edo-categories>
-            <edo-restaurants></edo-restaurants>
+            <edo-restaurants v-if="showMain"></edo-restaurants>
         </div>
 
         <!-- COMPONENTE RISTORANTE -->
@@ -180,7 +180,7 @@
                     </div>
 
                 </div>
-                
+
             </div>
 
         </footer>
