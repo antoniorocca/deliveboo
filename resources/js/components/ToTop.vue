@@ -20,12 +20,12 @@ export default {
         margin: 35px;
         background-color: #ffc244;
         color: white;
-        width: 35px;
+        width: 60px;
         height: 35px;
         display: flex;
         place-content: center;
         place-items: center;
-        border-radius: 50%;
+        border-radius: 10px;
     }
 
 </style>

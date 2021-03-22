@@ -6,7 +6,7 @@
                 <div class="category category_hover mr-4 mt-5 d-flex justify-content-center" v-for="category in categories.slice(0, 8)" :class="(letSelected == category.id) ? 'focusr' : ''">
                     <!-- <img :src="{{category.img}}" alt=""> -->
                     <span>{{category.name}}</span>
-                    <input type="submit" :value="category.id" @click="selectRestaurantOnClick">
+                    <input type="submit" :value="category.id" @click="selectRestaurantOnClick" :class="(letSelected == category.id) ? 'focusr' : ''">
                     <!-- <option v-for="category in categories" :value="category.id">{{category.name}}</option> -->
                 </div>
             </div>   
@@ -101,7 +101,11 @@
 
 <style scoped lang="scss">
     .focusr{
-        outline: -webkit-focus-ring-color auto 1px;
+        //outline: -webkit-focus-ring-color auto 1px;
+        outline: 0;
+    }
+    input:focus{
+        outline: 0;
     }
     #content{
         width: 80%;

@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -50,6 +49,7 @@
                         <input id="header_logo" type="text" placeholder="Cerca" v-model="search" @keyup.enter="switchMain"><i></i>
                     </div>
                 </div>
+
                 <div id="register" class="d-flex align-items-center">
                     <!--flex-center position-ref full-height-->
                     @if (Route::has('login'))
@@ -67,6 +67,7 @@
                     @endif
                 </div>
             </nav>
+
             <div id="link-consegne">
                 <p>Consegne in <a href="">Via ...... <i class="fas fa-angle-down"></i></a></p>
             </div>
@@ -74,17 +75,20 @@
         <!-- ///////////////////////////////////////////////// -->
 
         <!-- LANDING PAGE COMPONENT -->
-        <landing-component v-if="showLanding"></landing-component>
+        <!-- <landing-component v-if="showLanding"></landing-component> -->
+
 
 
         <!-- COMPONENTE CATEGORIES EDO -->
+<!-- 
         <div class="select_restaurant">
             <edo-categories v-if="showMain"></edo-categories>
             <edo-restaurants v-if="showMain"></edo-restaurants>
         </div>
+ -->
 
         <!-- COMPONENTE RISTORANTE -->
-        <restaurant-component v-if="showMain"></restaurant-component>
+        <!-- <restaurant-component v-if="showMain"></restaurant-component> -->
 
 
 
@@ -92,7 +96,7 @@
 
 
         <!-- CARRELLO -->
-        <div class="cart-box" v-if="showMain">
+        <div class="cart-box" v-if="true">
             <nav class="navbar is-primary">
                 <div class="navbar-brand">
                     <a class="navbar-item" href="/">
@@ -115,79 +119,8 @@
             </div>
         </div>
 
-
-
-
-
-
-        <!-- TRASFORMARE FOOTER IN UN COMPONENTE -->
-        <!-- ////////////////////////////////////////////// -->
-
-        <footer>
-            <to-top></to-top>
-
-            <a href="">
-                <img id="footer_logo" src="{{asset('img/logo_white.svg')}}" alt="">
-            </a>
-
-            <div id="footer_container">
-
-                <div class="row">
-
-                    <div class="col-lg-1 col-md-1 link"></div>
-
-                    <div id="workForUs" class="col-lg-3 col-md-3 col-sm-3">
-                        <h3>Uniamo le forze</h3>
-                        <ul>
-                            <li><a href="">Lavora con noi</a></li>
-                            <li><a href="">Negozi partner</a></li>
-                            <li><a href="">Corrieri</a></li>
-                            <li><a href="">Business</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="col-lg-3 col-md-3 col-sm-3 link">
-                        <h3>Link di interesse</h3>
-                        <ul>
-                            <li><a href="">Chi siamo</a></li>
-                            <li><a href="">FAQ</a></li>
-                            <li><a href="">Blog</a></li>
-                            <li><a href="">Contattaci</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="col-lg-2 col-md-2 col-sm-3 link">
-                        <h3>Seguici</h3>
-                        <ul>
-                            <li><a href="">Facebook</a></li>
-                            <li><a href="">Twitter</a></li>
-                            <li><a href="">Instagram</a></li>
-                        </ul>
-                    </div>
-
-                    <div id="privacy" class="col-lg-3 col-md-3 col-sm-3">
-                        <ul class="row row-cols-1 row-cols-sm-1 row-cols-md-1 row-cols-lg-1">
-                            <ul class="row row-cols-2 row-cols-sm-1 row-cols-md-1 row-cols-lg-1">
-                                <li class="footer_img"><a href=""><img src="{{asset('img/download-button-android.svg')}}" alt=""></a></li>
-                                <li class="footer_img"><a href=""><img src="{{asset('img/download-button-ios.svg')}}" alt=""></a></li>
-                            </ul>
-                            <ul class="row row-cols-3 row-cols-sm-1 row-cols-md-1 row-cols-lg-1">
-                                <li><a href="">TERMINI E CONDIZIONI</a></li>
-                                <li><a href="">POLITICA SULLA PRIVACY</a></li>
-                                <li><a href="">POLITICA SUI COOKIE</a></li>
-                            </ul>
-                        </ul>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </footer>
-
+        <footer-component></footer-component>
     </div>
-
-
 </body>
 
 </html>

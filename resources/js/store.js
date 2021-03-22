@@ -29,6 +29,25 @@ let store = {
             state.cartCount++;
             this.commit('saveCart');
         },
+        lessToCart(state, item) {
+            let found = state.cart.find(product => product.id == item.id);
+
+            if (found.quantity == 1) {
+                let product = state.cart[index];
+                state.cartCount -= product.quantity;
+
+
+                state.cart.splice(index, 1);
+                
+            } 
+            else {
+                found.quantity--;
+                found.totalPrice = found.quantity * found.price;
+            }
+
+            state.cartCount--;
+            this.commit('saveCart');
+        },
         removeFromCart(state, item) {
             let index = state.cart.indexOf(item);
 
@@ -44,6 +63,7 @@ let store = {
             window.localStorage.setItem('cart', JSON.stringify(state.cart));
             window.localStorage.setItem('cartCount', state.cartCount);
         },
+        // restaurants
         saveCall(state, resp){
           this.state.categories = resp[0];
           this.state.dishes = resp[1];
@@ -51,7 +71,10 @@ let store = {
 
         },
         setSelectedCategoties(state, category){
-          this.state.selectedCategories.push(category) ;
+          this.state.selectedCategories = category;
+        },
+        setRestaurants(state, category) {
+            this.state.selectedCategories = this.state.restaurants.data.response;
         },
 
 

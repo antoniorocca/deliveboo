@@ -11094,6 +11094,29 @@ header #main-header #categories .category_hover,
   }
 }
 
+.category_container {
+  border-right: 2px solid black;
+  border-bottom: 2px solid black;
+  width: 25%;
+}
+
+.category_container h3 {
+  display: flex;
+  place-content: center;
+}
+
+.category_container p {
+  border-top: 2px solid black;
+  display: flex;
+  place-content: center;
+}
+
+.restaurant_container {
+  border: 0px solid transparent;
+  border-bottom: 2px solid black;
+  width: 75%;
+}
+
 footer {
   position: relative;
   background-color: #1d1d1d;
@@ -11286,15 +11309,5 @@ h1 {
 
 .select_restaurant {
   display: flex;
-}
-
-.category_container {
-  border: 5px solid black;
-  width: 25%;
-}
-
-.restaurant_container {
-  border: 5px solid black;
-  width: 75%;
 }
 

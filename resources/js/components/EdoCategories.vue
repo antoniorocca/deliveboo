@@ -1,8 +1,11 @@
 <template>
-  <div class="category_container">
-    <h3>Category Component</h3>
-    <p v-for="category in categories" @click="selectCategory(category.name)">{{category.name}}</p>
-  </div>
+    <div class="category_container">
+        <h3>Category Component</h3>
+        <p @click="selectCategory('all')">All</p>
+
+        <p v-for="category in categories" @click="selectCategory(category.restaurants)">{{category.name}}</p>
+        
+    </div>
 
 </template>
 
@@ -15,19 +18,25 @@ export default {
         };
     },
     methods:{
-      selectCategory(name){
-        this.$store.commit('setSelectedCategoties', name)
-        console.log(name);
-        this.selectedCategories = this.$store.getters.getSelectedCategories;
-      },
+        selectCategory(name){
+            if (name == 'all') {
+                this.$store.commit('setRestaurants', name)
+
+                //this.selectedCategories = this.$store.getters.getSelectedCategories;
+            } else {
+                this.$store.commit('setSelectedCategoties', name)
+                console.log(name);
+                //this.selectedCategories = this.$store.getters.getSelectedCategories;
+            }
+        },
     },
     computed: {
 
 
     },
     mounted(){
-      this.categories = this.$store.getters.getCategories.data.response;
-      console.log(this.categories);
+        this.categories = this.$store.getters.getCategories.data.response;
+        console.log(this.categories);
     }
 }
 
