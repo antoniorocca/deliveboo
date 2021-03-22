@@ -11234,20 +11234,20 @@ footer #footer_container ul .footer_img {
   height: 300px;
 }
 
-#profile_container {
+#backend_container {
   background-color: #E9F8F5;
 }
 
-#profile_container .profile_wrap {
+#backend_container .backend_wrap {
   width: 80%;
   margin: auto;
 }
 
-#profile_container .profile_wrap h1 {
+#backend_container .backend_wrap h1 {
   font-size: 50px;
 }
 
-#profile_container .profile_wrap .content_row {
+#backend_container .backend_wrap .content_row {
   padding: 10px 15px;
   background-color: white;
   border: 2px solid #00A082;

@@ -5,8 +5,8 @@
   <img class="img_spacer" src="{{asset('storage/lightgreen_wave.png')}}" alt="">
 </div>
 
-<div id="profile_container"class="">
-  <div class="profile_wrap">
+<div id="backend_container"class="">
+  <div class="backend_wrap">
 
 
     <h1>Il mio ristorante</h1>
@@ -58,7 +58,7 @@
 
     <h4>Prezzo spedizione:</h4>
     <div class="content_row">
-      <p>{{$restaurant['price_shipping']}}</p>      
+      <p>{{$restaurant['price_shipping']}}</p>
     </div>
 
   </div>

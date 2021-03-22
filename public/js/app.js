@@ -56205,8 +56205,8 @@ Vue.component('cart-dropdown', __webpack_require__(/*! ./components/Cart.vue */ 
 Vue.component('landing-component', __webpack_require__(/*! ./components/LandingComponent.vue */ "./resources/js/components/LandingComponent.vue")["default"]);
 Vue.component('edo-categories', __webpack_require__(/*! ./components/EdoCategories.vue */ "./resources/js/components/EdoCategories.vue")["default"]);
 Vue.component('edo-restaurants', __webpack_require__(/*! ./components/EdoRestaurants.vue */ "./resources/js/components/EdoRestaurants.vue")["default"]);
-var app2 = new Vue({
-  el: '#app2',
+var app = new Vue({
+  el: '#app',
   store: new Vuex.Store(_store_js__WEBPACK_IMPORTED_MODULE_2__["default"]),
   data: {
     showLanding: true,

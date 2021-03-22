@@ -9,16 +9,13 @@
         <div class="container">
 
             <!-- name -->
-            <div class="form-group row">
-                <label for="name" class="col-md-4 col-form-label text-md-right">Nome ristorante</label>
-                <div class="col-md-6">
+            <div class="content_row">
                     <input id="name" maxlength='255' type="text" class="form-control" name="name" value="{{ $restaurant->name }}">
                     @error('name')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
                     @enderror
-                </div>
             </div>
 
 
