@@ -47,7 +47,7 @@
 
       <!-- VUE APP CARRELLO -->
       <!-- ////////////////////////////////// -->
-      <div id="app2">
+      <div id="app">
 
         <!-- TRASFORMARE HEADER IN COMPONENTE -->
         <header>
