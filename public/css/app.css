@@ -11255,6 +11255,23 @@ footer #footer_container ul .footer_img {
   margin: 5px 0;
 }
 
+label {
+  font-size: 1.35rem !important;
+}
+
+h1 {
+  font-size: 50px;
+}
+
+.edit_input {
+  width: 100%;
+  padding: 10px 15px !important;
+  background-color: white !important;
+  border: 2px solid #00A082 !important;
+  border-radius: 10px !important;
+  margin: 5px 0 !important;
+}
+
 .select_restaurant {
   display: flex;
 }
