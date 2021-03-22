@@ -11,10 +11,19 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
+
+
+    <!-- Braintree -->
+    <script src="https://js.braintreegateway.com/web/dropin/1.27.0/js/dropin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous"></script>
+
+
+
     <!-- Vue -->
 
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
@@ -80,7 +89,7 @@
 
 
         <!-- COMPONENTE CATEGORIES EDO -->
-<!-- 
+<!--
         <div class="select_restaurant">
             <edo-categories v-if="showMain"></edo-categories>
             <edo-restaurants v-if="showMain"></edo-restaurants>
@@ -118,7 +127,7 @@
                 <products-list></products-list>
             </div>
         </div>
-
+        <edo-payment></edo-payment>
         <footer-component></footer-component>
     </div>
 </body>

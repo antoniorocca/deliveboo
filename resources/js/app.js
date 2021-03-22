@@ -13,20 +13,20 @@ import ShowAll from './components/ShowAll';
 
 require('./bootstrap');
 
-// Vue.use(VueRouter)
-//
-// const Foo = { template: '<div>foo</div>' }
-// // const Bar = { template: '<div>bar</div>' }
-//
-// const routes = [
-//   { path: '/foo', component: Foo },
-//   { path: '/generali', component: ShowAll, name:'ShowAll' }
-// ]
-//
-//
-// const router = new VueRouter({
-//   routes // short for `routes: routes`
-// })
+Vue.use(VueRouter)
+
+const Foo = { template: '<div>foo</div>' }
+// const Bar = { template: '<div>bar</div>' }
+
+const routes = [
+  { path: '/foo', component: Foo },
+  { path: '/generali', component: ShowAll, name:'ShowAll' }
+]
+
+
+const router = new VueRouter({
+  routes // short for `routes: routes`
+})
 
 // esempio componente
 Vue.component('restaurant-component', require('./components/RestaurantComponent.vue').default);
@@ -58,9 +58,11 @@ Vue.component('cart-dropdown', require('./components/Cart.vue').default);
 Vue.component('landing-component', require('./components/LandingComponent.vue').default);
 Vue.component('edo-categories', require('./components/EdoCategories.vue').default);
 Vue.component('edo-restaurants', require('./components/EdoRestaurants.vue').default);
+Vue.component('edo-payment', require('./components/PaymentComponent.vue').default);
 
 
 const app = new Vue({
+    router,
     el: '#app',
     store: new Vuex.Store(store),
     data:{

@@ -20,11 +20,11 @@
                         <button class="trash" title="Remove from cart" @click.prevent="removeFromCart(item)"><i class="far fa-trash-alt"></i></button>
                         <button v-if="item.quantity > 1" title="Less from cart" @click="lessToCart(item)"><i class="fas fa-minus"></i></button>
                     </div>
-                        
+
 
                 </div>
             </div>
-            
+
 
             <span class="totalSpan">
                 <span>Total: </span> ${{ totalPrice }}
@@ -32,9 +32,11 @@
 
             <hr class="navbar_divider">
             <div class="wrapCheckout">
-                <button class="checkoutBtn">
-                    Checkout
+              <a href="/payment" >
+                <button class="checkoutBtn" >
+                  Checkout
                 </button>
+              </a>
             </div>
         </div>
 
@@ -43,7 +45,7 @@
                 Cart is empty
             </a>
         </div>
-          
+
         <img class="phone" src="img/payment.png" alt="">
     </div>
 </template>
@@ -71,8 +73,14 @@ export default {
         },
         addToCart(item) {
             this.$store.commit('addToCart', item);
-        }
-}
+        },
+        // post_cart(){
+        //   let cart = {
+        //       cart: JSON.stringify(this.$store.state.cart)
+        //   }
+        //   axios.post('/payment', cart);
+        // }
+      }
 }
 </script>
 
