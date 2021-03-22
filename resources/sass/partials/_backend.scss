@@ -83,9 +83,9 @@
   }
 }
 
-#profile_container {
+#backend_container {
   background-color: #E9F8F5;
-  .profile_wrap {
+  .backend_wrap {
     width: 80%;
     margin: auto;
     h1 {
@@ -99,4 +99,31 @@
       margin: 5px 0;
     }
   }
+}
+// BACKEND EDIT STYLE
+label {
+  font-size: 1.35rem!important;
+}
+h1 {
+  font-size: 50px;
+};
+.edit_input {
+  width: 100%;
+  padding: 10px 15px!important;
+  background-color: white!important;
+  border: 2px solid #00A082!important;
+  border-radius: 10px!important;
+  margin: 5px 0!important;
+}
+#glovo_btn {
+  min-width: 200px;
+  display: flex;
+  justify-content: center;
+  line-height: 50px;
+  border-radius: 30px;
+  background-color: #00a082;
+  color: white;
+  height: 50px;
+  border: 0;
+
 }
