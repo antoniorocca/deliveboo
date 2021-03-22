@@ -81,13 +81,9 @@
                 <p>Consegne in <a href="">Via ...... <i class="fas fa-angle-down"></i></a></p>
             </div>
         </header>
-        <!-- ///////////////////////////////////////////////// -->
 
         <!-- LANDING PAGE COMPONENT -->
         <!-- <landing-component v-if="showLanding"></landing-component> -->
-
-
-
         <!-- COMPONENTE CATEGORIES EDO -->
 <!--
         <div class="select_restaurant">
@@ -95,7 +91,6 @@
             <edo-restaurants v-if="showMain"></edo-restaurants>
         </div>
  -->
-
         <!-- COMPONENTE RISTORANTE -->
         <!-- <restaurant-component v-if="showMain"></restaurant-component> -->
 
@@ -105,12 +100,16 @@
 
 
         <!-- CARRELLO -->
-            <cart-dropdown class="cart-box" style="background-color:yellow"></cart-dropdown>
 
-        </div>
-        <div class="section content" style="background-color:red">
-          <h1>Our Products</h1>
-          <products-list></products-list>
+
+        <div class="section_content" style=" display:flex; flex-wrap:wrap">
+          <h1 style="width:100%">Our Products</h1>
+          <products-list style="width:70%"></products-list>
+          <div class="" style="displa:flex; flex-direction:column;">
+            <cart-dropdown class="cart-box"></cart-dropdown>
+            <edo-payment></edo-payment>
+
+          </div>
         </div>
 
 
@@ -119,7 +118,6 @@
 
 
         <div class="" style="width:30%">
-          <edo-payment></edo-payment>
         </div>
         <footer-component></footer-component>
     </div>
