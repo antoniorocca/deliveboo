@@ -14,7 +14,6 @@ let store = {
 
 
     },
-
     mutations: {
         addToCart(state, item) {
             let found = state.cart.find(product => product.id == item.id);
@@ -47,14 +46,10 @@ let store = {
             window.localStorage.setItem('cart', JSON.stringify(state.cart));
             window.localStorage.setItem('cartCount', state.cartCount);
         },
-        // restaurants
         saveCall(state, resp) {
             this.state.categories = resp[0];
             this.state.dishes = resp[1];
             this.state.restaurants = resp[2];
-            this.state.restaurant = resp[3];
-
-
         },
         setSelectedCategoties(state, category) {
             this.state.selectedCategories = category;
@@ -66,8 +61,6 @@ let store = {
             console.log(restaurant);
             this.state.selectedRestaurant = restaurant;
         }
-
-
     },
     getters: {
         getCategories(state) {

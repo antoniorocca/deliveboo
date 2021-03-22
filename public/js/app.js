@@ -2427,8 +2427,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2441,7 +2439,6 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     selectRestaurant: function selectRestaurant(value) {
-      // console.log(value.target.value);
       if (value.target.value !== 'all') {
         var restSelect = this.categories[value.target.value - 1];
         console.log(restSelect);
@@ -2453,23 +2450,10 @@ __webpack_require__.r(__webpack_exports__);
       }
     },
     showRestaurant: function showRestaurant(value) {
-      // console.log(value.target.value);
-      // console.log(this.$store);
-      // console.log(this.$store.state.selectedRestaurant);
       this.restaurantMom = this.restaurants[value.target.value - 1];
-      console.log(this.restaurantMom.id); // this.restaurantMom = resp[3].data.response;
-      // if (name == 'all') {
-      //     this.$store.commit('setRestaurants', name)
-      //     //this.selectedCategories = this.$store.getters.getSelectedCategories;
-      // } else {
-      //     this.$store.commit('setSelectedCategoties', name)
-      //     console.log(name);
-      //     //this.selectedCategories = this.$store.getters.getSelectedCategories;
-      // }
-
+      console.log(this.restaurantMom.id);
       this.$store.commit('setSelectedRestaurant', this.restaurantMom);
     },
-    // deve ancora cambiare i valori dentro category_id
     selectRestaurantOnClick: function selectRestaurantOnClick(value) {
       console.log(value.target.value);
       var v = this.categories[value.target.value - 1];
@@ -2481,11 +2465,9 @@ __webpack_require__.r(__webpack_exports__);
   mounted: function mounted() {
     var _this = this;
 
-    Promise.all([axios.get('api/restaurants'), axios.get('api/categories') // axios.get('api/category_restaurant'),
-    ]).then(function (resp) {
+    Promise.all([axios.get('api/restaurants'), axios.get('api/categories')]).then(function (resp) {
       console.log(resp[0].data.response);
-      console.log(resp[1].data.response); // console.log(resp[3].data.response);
-
+      console.log(resp[1].data.response);
       _this.restaurantsAll = resp[0].data.response;
       _this.restaurants = resp[0].data.response;
       _this.categories = resp[1].data.response; // return (RestaurantComponent, { props: { restaurants: this.restaurants } });
@@ -2506,10 +2488,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
 //
 //
 //
@@ -7148,7 +7126,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".focusr[data-v-78e2f7b6] {\n  outline: 0;\n}\ninput[data-v-78e2f7b6]:focus {\n  outline: 0;\n}\n#content[data-v-78e2f7b6] {\n  height: 100%;\n  width: 80%;\n  margin: auto !important;\n}\n#content .first_title[data-v-78e2f7b6] {\n  text-align: center;\n}\n#content .first_title h2[data-v-78e2f7b6] {\n  color: black;\n  padding-top: 100px;\n  font-weight: 800;\n}\n#content .first_title p[data-v-78e2f7b6] {\n  color: grey;\n}\n#content .restaurants[data-v-78e2f7b6] {\n  display: flex;\n  flex-wrap: wrap;\n  margin: auto;\n  justify-content: center;\n}\n#content .restaurants .card[data-v-78e2f7b6] {\n  margin: 30px !important;\n  width: 300px;\n  z-index: 10;\n  border-radius: 10px;\n  box-shadow: 0 0 10px #DDDDDD;\n}\n#content .restaurants .card img[data-v-78e2f7b6] {\n  height: 150px;\n  width: 100%;\n  border-top-left-radius: 10px;\n  border-top-right-radius: 10px;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n#content .restaurants .card h4[data-v-78e2f7b6] {\n  border: px solid rgba(0, 0, 0, 0.125);\n  border-radius: 0.25rem;\n  text-align: center;\n  margin-bottom: 10px;\n  font-weight: 700;\n  padding: 10px;\n}\n#content .restaurants .card option[data-v-78e2f7b6] {\n  height: 100%;\n}\n#content .restaurants .card_hover[data-v-78e2f7b6] {\n  transition: all 0.35s;\n}\n#content .restaurants .card[data-v-78e2f7b6]:hover {\n  cursor: pointer;\n  transform: scale(1.05);\n}\n.option_restaurant[data-v-78e2f7b6] {\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  color: transparent;\n  background-color: transparent;\n  border-color: transparent;\n  cursor: pointer;\n}", ""]);
+exports.push([module.i, ".focusr[data-v-78e2f7b6] {\n  outline: 0;\n}\ninput[data-v-78e2f7b6]:focus {\n  outline: 0;\n}\n#content[data-v-78e2f7b6] {\n  height: 100%;\n  width: 80%;\n  margin: auto;\n}\n#content .first_title[data-v-78e2f7b6] {\n  text-align: center;\n}\n#content .first_title h2[data-v-78e2f7b6] {\n  color: black;\n  padding-top: 100px;\n  font-weight: 800;\n}\n#content .first_title p[data-v-78e2f7b6] {\n  color: grey;\n}\n#content .restaurants[data-v-78e2f7b6] {\n  display: flex;\n  flex-wrap: wrap;\n  margin: auto;\n  justify-content: center;\n}\n#content .restaurants .card[data-v-78e2f7b6] {\n  margin: 30px;\n  width: 300px;\n  z-index: 10;\n  border-radius: 10px;\n  box-shadow: 0 0 10px #DDDDDD;\n}\n#content .restaurants .card img[data-v-78e2f7b6] {\n  height: 150px;\n  width: 100%;\n  border-top-left-radius: 10px;\n  border-top-right-radius: 10px;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n#content .restaurants .card h4[data-v-78e2f7b6] {\n  border: px solid rgba(0, 0, 0, 0.125);\n  border-radius: 0.25rem;\n  text-align: center;\n  margin-bottom: 10px;\n  font-weight: 700;\n  padding: 10px;\n}\n#content .restaurants .card option[data-v-78e2f7b6] {\n  height: 100%;\n}\n#content .restaurants .card_hover[data-v-78e2f7b6] {\n  transition: all 0.35s;\n}\n#content .restaurants .card[data-v-78e2f7b6]:hover {\n  cursor: pointer;\n  transform: scale(1.05);\n}\n#content .restaurants .option_restaurant[data-v-78e2f7b6] {\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  color: transparent;\n  background-color: transparent;\n  border-color: transparent;\n  cursor: pointer;\n}", ""]);
 
 // exports
 
@@ -7167,7 +7145,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".focusr[data-v-3db2e1e3] {\n  outline: 0;\n}\ninput[data-v-3db2e1e3]:focus {\n  outline: 0;\n}\n#content[data-v-3db2e1e3] {\n  height: 500px;\n  width: 80%;\n  margin: auto !important;\n}\n#content .first_title[data-v-3db2e1e3] {\n  text-align: center;\n}\n#content .first_title h2[data-v-3db2e1e3] {\n  color: black;\n  margin-top: 40px;\n  font-weight: 800;\n}\n#content .first_title p[data-v-3db2e1e3] {\n  color: grey;\n}\n#content .restaurants[data-v-3db2e1e3] {\n  display: flex;\n  flex-wrap: wrap;\n  margin: auto;\n  justify-content: center;\n}\n#content .restaurants .card[data-v-3db2e1e3] {\n  margin: 10px !important;\n  width: 300px;\n  z-index: 10;\n  border-radius: 10px;\n  box-shadow: 0 0 10px #DDDDDD;\n}\n#content .restaurants .card img[data-v-3db2e1e3] {\n  height: 150px;\n  width: 100%;\n  border-top-left-radius: 10px;\n  border-top-right-radius: 10px;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n#content .restaurants .card h4[data-v-3db2e1e3] {\n  border: px solid rgba(0, 0, 0, 0.125);\n  border-radius: 0.25rem;\n  text-align: center;\n  margin-bottom: 10px;\n  font-weight: 700;\n  padding: 10px;\n}\n#content .restaurants .card_hover[data-v-3db2e1e3] {\n  transition: all 0.35s;\n}\n#content .restaurants .card[data-v-3db2e1e3]:hover {\n  cursor: pointer;\n  transform: scale(1.05);\n}", ""]);
+exports.push([module.i, ".selected_restaurant_container[data-v-3db2e1e3] {\n  height: 100%;\n  width: 80%;\n  margin: auto;\n}\n.selected_restaurant_container #restaurant_jumbotron[data-v-3db2e1e3] {\n  width: 500px;\n}\n.selected_restaurant_container .selected_restaurant_dishes[data-v-3db2e1e3] {\n  margin: 30px;\n  width: 360px;\n  z-index: 10;\n  border-radius: 10px;\n  box-shadow: 0 0 10px #DDDDDD;\n}\n.selected_restaurant_container .selected_restaurant_dishes .dish_img[data-v-3db2e1e3] {\n  width: 360px;\n  border-top-left-radius: 10px;\n  border-top-right-radius: 10px;\n  -o-object-fit: cover;\n     object-fit: cover;\n}", ""]);
 
 // exports
 
@@ -39959,14 +39937,58 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "restaurant_container" }, [
-    _c("div", { attrs: { id: "content" } }, [
-      _vm._m(0),
-      _vm._v(" "),
-      _c("div", [
-        _c("h4", [_vm._v(_vm._s(this.$store.state.selectedRestaurant.name))])
-      ])
-    ])
+  return _c("div", { staticClass: "selected_restaurant_container" }, [
+    _c(
+      "div",
+      {},
+      [
+        _vm._m(0),
+        _vm._v(" "),
+        _c("div", [
+          _c("h2", [_vm._v(_vm._s(this.$store.state.selectedRestaurant.name))]),
+          _vm._v(" "),
+          _c("p", [
+            _vm._v(_vm._s(this.$store.state.selectedRestaurant.description))
+          ]),
+          _vm._v(" "),
+          _c("p", [
+            _vm._v(_vm._s(this.$store.state.selectedRestaurant.phone_number))
+          ]),
+          _vm._v(" "),
+          _c("img", {
+            attrs: {
+              id: "restaurant_jumbotron",
+              src: this.$store.state.selectedRestaurant.img,
+              alt: ""
+            }
+          })
+        ]),
+        _vm._v(" "),
+        _vm._l(this.$store.state.selectedRestaurant.dishes, function(dish) {
+          return _c("div", { staticClass: "selected_restaurant_dishes" }, [
+            _c("img", {
+              staticClass: "dish_img",
+              attrs: { src: dish.img, alt: "" }
+            }),
+            _vm._v(" "),
+            _c("h4", [_vm._v("nome " + _vm._s(dish.name))]),
+            _vm._v(" "),
+            _c("dd", [_vm._v("prezzo " + _vm._s(dish.price))]),
+            _vm._v(" "),
+            _c("dd", [_vm._v(" rating " + _vm._s(dish.rating))]),
+            _vm._v(" "),
+            _c("dd", [_vm._v("descrizione " + _vm._s(dish.description))]),
+            _vm._v(" "),
+            _c("dd", [_vm._v("sconto " + _vm._s(dish.discount))]),
+            _vm._v(" "),
+            _c("dd", [_vm._v(" classe menu " + _vm._s(dish.menu_class))]),
+            _vm._v(" "),
+            _c("dd", [_vm._v("rating " + _vm._s(dish.rating))])
+          ])
+        })
+      ],
+      2
+    )
   ])
 }
 var staticRenderFns = [
@@ -57807,12 +57829,10 @@ var store = {
       window.localStorage.setItem('cart', JSON.stringify(state.cart));
       window.localStorage.setItem('cartCount', state.cartCount);
     },
-    // restaurants
     saveCall: function saveCall(state, resp) {
       this.state.categories = resp[0];
       this.state.dishes = resp[1];
       this.state.restaurants = resp[2];
-      this.state.restaurant = resp[3];
     },
     setSelectedCategoties: function setSelectedCategoties(state, category) {
       this.state.selectedCategories = category;

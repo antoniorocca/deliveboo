@@ -31,5 +31,3 @@
         <p>Consegne in <a href="">Via ...... <i class="fas fa-angle-down"></i></a></p>
     </div>
 </header>
-
-<a href="/guests/restaurant">ristorate vista </a>

@@ -40,8 +40,6 @@
                 <input class="option_restaurant" :value="restaurant.id">
             </div>
         </div>
-
-
     </div>
 </div>
 </template>
@@ -60,48 +58,26 @@
         },
         methods:{
             selectRestaurant(value){
-                // console.log(value.target.value);
                 if (value.target.value !== 'all') {
                     let restSelect = this.categories[value.target.value - 1];
                     console.log(restSelect);
                     this.restaurants = restSelect.restaurants;
                     this.letSelected = value.target.value;
-
                 } else {
                     this.restaurants = this.restaurantsAll;
-
                     this.letSelected = "all";
                 }
             },
             showRestaurant(value){
-                // console.log(value.target.value);
-                // console.log(this.$store);
-                // console.log(this.$store.state.selectedRestaurant);
                 this.restaurantMom = this.restaurants[value.target.value - 1];
                 console.log(this.restaurantMom.id);
-                // this.restaurantMom = resp[3].data.response;
-
-
-                // if (name == 'all') {
-                //     this.$store.commit('setRestaurants', name)
-
-                //     //this.selectedCategories = this.$store.getters.getSelectedCategories;
-                // } else {
-                //     this.$store.commit('setSelectedCategoties', name)
-                //     console.log(name);
-                //     //this.selectedCategories = this.$store.getters.getSelectedCategories;
-                // }
-
                 this.$store.commit('setSelectedRestaurant', this.restaurantMom);
-
-        },
-            // deve ancora cambiare i valori dentro category_id
+            },
             selectRestaurantOnClick(value){
                 console.log(value.target.value);
                 let v = this.categories[value.target.value - 1];
                 console.log(v);
                 this.restaurants = v.restaurants;
-
                 this.letSelected = value.target.value;
             }  
         },
@@ -109,16 +85,12 @@
             Promise.all([
                 axios.get('api/restaurants'),
                 axios.get('api/categories'),
-                // axios.get('api/category_restaurant'),
             ]).then(resp => {
                 console.log(resp[0].data.response);
                 console.log(resp[1].data.response);
-                // console.log(resp[3].data.response);
                 this.restaurantsAll = resp[0].data.response;
                 this.restaurants = resp[0].data.response;
                 this.categories = resp[1].data.response;
-                
-
                 // return (RestaurantComponent, { props: { restaurants: this.restaurants } });
             }).catch(error => {
                 console.log(error);
@@ -130,7 +102,6 @@
 
 <style scoped lang="scss">
     .focusr{
-        //outline: -webkit-focus-ring-color auto 1px;
         outline: 0;
     }
     input:focus{
@@ -139,7 +110,7 @@
     #content{
         height: 100%;
         width: 80%;
-        margin: auto !important;
+        margin: auto;
         .first_title{
                 text-align: center;
             h2{
@@ -157,7 +128,7 @@
             margin: auto;
             justify-content: center;
             .card{
-                margin: 30px !important;
+                margin: 30px;
                 width: 300px;
                 z-index: 10;
                 border-radius: 10px;
@@ -189,15 +160,15 @@
                 transform: scale(1.05);
 
             }
+            .option_restaurant{
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                color: transparent;
+                background-color: transparent;
+                border-color: transparent;
+                cursor: pointer;
+            }
         }
-    }
-    .option_restaurant{
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        color: transparent;
-        background-color: transparent;
-        border-color: transparent;
-        cursor: pointer;
     }
 </style>
