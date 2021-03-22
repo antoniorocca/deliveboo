@@ -6,10 +6,13 @@ let store = {
         cart: cart ? JSON.parse(cart) : [],
         cartCount: cartCount ? parseInt(cartCount) : 0,
         categories: '',
-        dishes : '',
+        dishes: '',
         restaurants: '',
-        selectedCategories:[],
+        selectedCategories: [],
         test: 'bomber',
+        selectedRestaurant: [],
+
+
     },
 
     mutations: {
@@ -45,48 +48,57 @@ let store = {
             window.localStorage.setItem('cartCount', state.cartCount);
         },
         // restaurants
-        saveCall(state, resp){
-          this.state.categories = resp[0];
-          this.state.dishes = resp[1];
-          this.state.restaurants = resp[2];
+        saveCall(state, resp) {
+            this.state.categories = resp[0];
+            this.state.dishes = resp[1];
+            this.state.restaurants = resp[2];
+            this.state.restaurant = resp[3];
+
 
         },
-        setSelectedCategoties(state, category){
-          this.state.selectedCategories = category;
+        setSelectedCategoties(state, category) {
+            this.state.selectedCategories = category;
         },
         setRestaurants(state, category) {
             this.state.selectedCategories = this.state.restaurants.data.response;
         },
+        setSelectedRestaurant(state, restaurant) {
+            console.log(restaurant);
+            this.state.selectedRestaurant = restaurant;
+        }
 
 
     },
     getters: {
-      getCategories(state){
-        return state.categories;
-      },
-      getDishes(state){
-        return state.dishes;
-      },
-      getRestaurant(state){
-        return state.restaurants;
-      },
-      getSelectedCategories(state){
-        return state.selectedCategories;
-      },
+        getCategories(state) {
+            return state.categories;
+        },
+        getDishes(state) {
+            return state.dishes;
+        },
+        getRestaurant(state) {
+            return state.restaurants;
+        },
+        getSelectedCategories(state) {
+            return state.selectedCategories;
+        },
+        getSelectedRestaurant(state) {
+            return state.selectedRestaurant;
+        },
     },
     actions: {
-      axiosCall(context){
-        console.log('call');
-        Promise.all([
-          axios.get('api/categories'),
-          axios.get('api/dishes'),
-          axios.get('api/restaurants'),
-        ]).then(resp => {
-          context.commit('saveCall', resp);
-        }).catch(error => {
-          console.log(error);
-        })
-      }
+        axiosCall(context) {
+            console.log('call');
+            Promise.all([
+                axios.get('api/categories'),
+                axios.get('api/dishes'),
+                axios.get('api/restaurants'),
+            ]).then(resp => {
+                context.commit('saveCall', resp);
+            }).catch(error => {
+                console.log(error);
+            })
+        }
 
     }
 };

@@ -35,6 +35,7 @@ Vue.component('to-top', require('./components/ToTop.vue').default);
 Vue.component('category-component', require('./components/CategoryComponent.vue').default);
 Vue.component('footer-component', require('./components/FooterComponent.vue').default);
 Vue.component('dish-component', require('./components/FooterComponent.vue').default);
+Vue.component('selected-restaurant', require('./components/SelectedRestaurant.vue').default);
 
 
 
@@ -60,26 +61,28 @@ Vue.component('cart-dropdown', require('./components/Cart.vue').default);
 Vue.component('landing-component', require('./components/LandingComponent.vue').default);
 Vue.component('edo-categories', require('./components/EdoCategories.vue').default);
 Vue.component('edo-restaurants', require('./components/EdoRestaurants.vue').default);
+Vue.component('selected-restaurant', require('./components/SelectedRestaurant.vue').default);
+
 
 
 const app = new Vue({
     el: '#app',
     store: new Vuex.Store(store),
-    data:{
-      showLanding : true,
-      showMain : false,
-      search:'',
+    data: {
+        showLanding: true,
+        showMain: false,
+        search: '',
     },
-    methods:{
-      switchMain : function(){
-        console.log('switch');
-        this.showMain = true;
-        this.showLanding = false;
+    methods: {
+        switchMain: function() {
+            console.log('switch');
+            this.showMain = true;
+            this.showLanding = false;
 
-      },
+        },
     },
-    mounted(){
-      this.$store.dispatch('axiosCall')
+    mounted() {
+        this.$store.dispatch('axiosCall')
     }
 });
 

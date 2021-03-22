@@ -27,14 +27,16 @@
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, voluptatibus?
             </p>
         </div>
-        <div class="restaurants">
-            <div class="card card_hover " v-for="restaurant in restaurants">
-                <div class="restaurant_image">
-                    <img :src="restaurant.img" alt="restaurant's image">
-                </div>
-                <h4>
-                    {{restaurant.name}}
-                </h4>
+        <div class="restaurants" v-for="restaurant in restaurants" @click="showRestaurant">
+            <div class="card card_hover"  >
+                <option id="option_restaurant" class="restaurant_image" :value="restaurant.id">
+                    <div>
+                        <img :src="restaurant.img" alt="restaurant's image">
+                    </div>
+                    <h4>
+                        {{restaurant.name}}
+                    </h4>
+                </option>
             </div>
         </div>
     </div>
@@ -47,6 +49,7 @@
         data(){
             return {
                 restaurants:'',
+                restaurantMom:'',
                 categories:'',
                 restaurantsAll: '',
                 letSelected: '',
@@ -54,19 +57,41 @@
         },
         methods:{
             selectRestaurant(value){
-                console.log(value.target.value);
+                // console.log(value.target.value);
                 if (value.target.value !== 'all') {
                     let restSelect = this.categories[value.target.value - 1];
                     console.log(restSelect);
                     this.restaurants = restSelect.restaurants;
-
                     this.letSelected = value.target.value;
+
                 } else {
                     this.restaurants = this.restaurantsAll;
 
                     this.letSelected = "all";
                 }
             },
+            showRestaurant(value){
+                // console.log(value.target.value);
+                // console.log(this.$store);
+                // console.log(this.$store.state.selectedRestaurant);
+                this.restaurantMom = this.restaurants[value.target.value - 1];
+                console.log(this.restaurantMom.id);
+                // this.restaurantMom = resp[3].data.response;
+
+
+                // if (name == 'all') {
+                //     this.$store.commit('setRestaurants', name)
+
+                //     //this.selectedCategories = this.$store.getters.getSelectedCategories;
+                // } else {
+                //     this.$store.commit('setSelectedCategoties', name)
+                //     console.log(name);
+                //     //this.selectedCategories = this.$store.getters.getSelectedCategories;
+                // }
+
+                this.$store.commit('setSelectedRestaurant', this.restaurantMom);
+
+        },
             // deve ancora cambiare i valori dentro category_id
             selectRestaurantOnClick(value){
                 console.log(value.target.value);
@@ -85,10 +110,11 @@
             ]).then(resp => {
                 console.log(resp[0].data.response);
                 console.log(resp[1].data.response);
-                // console.log(resp[2].data.response);
+                // console.log(resp[3].data.response);
                 this.restaurantsAll = resp[0].data.response;
                 this.restaurants = resp[0].data.response;
                 this.categories = resp[1].data.response;
+                
 
                 // return (RestaurantComponent, { props: { restaurants: this.restaurants } });
             }).catch(error => {
@@ -108,6 +134,7 @@
         outline: 0;
     }
     #content{
+        height: 100%;
         width: 80%;
         margin: auto !important;
         .first_title{
@@ -146,6 +173,9 @@
                     margin-bottom: 10px;
                     font-weight: 700;
                     padding: 10px;
+                }
+                option{
+                    height: 100%;
                 }
             }
             .card_hover{

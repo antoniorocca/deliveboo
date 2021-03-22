@@ -3,17 +3,18 @@
 @section('guest_content')
 
     <!-- LANDING PAGE COMPONENT -->
-    <landing-component v-if="showLanding"></landing-component>
+    {{-- <landing-component v-if="showLanding"></landing-component> --}}
 
 
     <!-- COMPONENTE CATEGORIES EDO -->
-    <div class="select_restaurant">
+    {{-- <div class="select_restaurant">
         <edo-categories v-if="showMain"></edo-categories>
         <edo-restaurants v-if="showMain"></edo-restaurants>
-    </div>
+    </div> --}}
 
     <!-- COMPONENTE RISTORANTE -->
     <restaurant-component></restaurant-component>
+    <selected-restaurant></selected-restaurant>
 
     
     <!-- CARRELLO -->
