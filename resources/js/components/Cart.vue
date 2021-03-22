@@ -88,7 +88,7 @@ export default {
 .cart_box {
     position: relative;
     border: 1px solid black;
-    min-width: 350px;
+    max-width: 400px;
     min-height: 450px;
     display: flex;
     flex-direction: column;

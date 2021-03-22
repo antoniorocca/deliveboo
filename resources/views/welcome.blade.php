@@ -105,29 +105,22 @@
 
 
         <!-- CARRELLO -->
-        <div class="cart-box" v-if="true">
-            <nav class="navbar is-primary">
-                <div class="navbar-brand">
-                    <a class="navbar-item" href="/">
-                        Voerro Shopping Cart Tutorial
-                    </a>
+            <cart-dropdown class="cart-box" style="background-color:yellow"></cart-dropdown>
 
-                    <div class="navbar-burger burger">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                </div>
-
-                <cart-dropdown></cart-dropdown>
-            </nav>
-
-            <div class="section content">
-                <h1>Our Products</h1>
-                <products-list></products-list>
-            </div>
         </div>
-        <edo-payment></edo-payment>
+        <div class="section content" style="background-color:red">
+          <h1>Our Products</h1>
+          <products-list></products-list>
+        </div>
+
+
+
+
+
+
+        <div class="" style="width:30%">
+          <edo-payment></edo-payment>
+        </div>
         <footer-component></footer-component>
     </div>
 </body>
