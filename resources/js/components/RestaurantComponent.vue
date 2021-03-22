@@ -21,24 +21,27 @@
     </div>
     
     <div id="content" class="">
+
         <div class=" first_title">
             <h2>Ristoranti consigliati</h2>
             <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, voluptatibus?
             </p>
         </div>
-        <div class="restaurants" v-for="restaurant in restaurants" @click="showRestaurant">
-            <div class="card card_hover"  >
-                <option id="option_restaurant" class="restaurant_image" :value="restaurant.id">
-                    <div>
-                        <img :src="restaurant.img" alt="restaurant's image">
-                    </div>
-                    <h4>
-                        {{restaurant.name}}
-                    </h4>
-                </option>
+
+        <div class="restaurants">
+            <div class="card card_hover "  v-for="restaurant in restaurants" @click="showRestaurant">
+                <div class="restaurant_image">
+                    <img :src="restaurant.img" alt="restaurant's image">
+                </div>
+                <h4>
+                    {{restaurant.name}}
+                </h4>
+                <input class="option_restaurant" :value="restaurant.id">
             </div>
         </div>
+
+
     </div>
 </div>
 </template>
@@ -180,7 +183,6 @@
             }
             .card_hover{
                 transition: all 0.35s;
-
             }
             .card:hover{
                 cursor: pointer;
@@ -188,5 +190,14 @@
 
             }
         }
+    }
+    .option_restaurant{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        color: transparent;
+        background-color: transparent;
+        border-color: transparent;
+        cursor: pointer;
     }
 </style>
