@@ -4,7 +4,7 @@
         <to-top></to-top>
 
         <a href="">
-            <img id="footer_logo" :src="('img/logo_white.svg')" alt="">
+            <img id="footer_logo" :src="('../img/logo_white.svg')" alt="">
         </a>
 
         <div id="footer_container">
@@ -45,8 +45,8 @@
                 <div id="privacy" class="col-lg-3 col-md-3 col-sm-3">
                     <ul class="row row-cols-1 row-cols-sm-1 row-cols-md-1 row-cols-lg-1">
                         <ul class="row row-cols-2 row-cols-sm-1 row-cols-md-1 row-cols-lg-1">
-                            <li class="footer_img"><a href=""><img :src="('img/download-button-android.svg')" alt=""></a></li>
-                            <li class="footer_img"><a href=""><img :src="('img/download-button-ios.svg')" alt=""></a></li>
+                            <li class="footer_img"><a href=""><img :src="('../img/download-button-android.svg')" alt=""></a></li>
+                            <li class="footer_img"><a href=""><img :src="('../img/download-button-ios.svg')" alt=""></a></li>
                         </ul>
                         <ul class="row row-cols-3 row-cols-sm-1 row-cols-md-1 row-cols-lg-1">
                             <li><a href="">TERMINI E CONDIZIONI</a></li>

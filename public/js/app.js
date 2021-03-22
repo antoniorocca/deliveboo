@@ -39371,7 +39371,7 @@ var render = function() {
       _vm._v(" "),
       _c("a", { attrs: { href: "" } }, [
         _c("img", {
-          attrs: { id: "footer_logo", src: "img/logo_white.svg", alt: "" }
+          attrs: { id: "footer_logo", src: "../img/logo_white.svg", alt: "" }
         })
       ]),
       _vm._v(" "),
@@ -39410,7 +39410,7 @@ var render = function() {
                         _c("a", { attrs: { href: "" } }, [
                           _c("img", {
                             attrs: {
-                              src: "img/download-button-android.svg",
+                              src: "../img/download-button-android.svg",
                               alt: ""
                             }
                           })
@@ -39421,7 +39421,7 @@ var render = function() {
                         _c("a", { attrs: { href: "" } }, [
                           _c("img", {
                             attrs: {
-                              src: "img/download-button-ios.svg",
+                              src: "../img/download-button-ios.svg",
                               alt: ""
                             }
                           })
