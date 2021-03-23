@@ -40,6 +40,7 @@
               <button class="checkoutBtn" @click="toggleCheckout" >
                 Checkout
               </button>
+              <button class="checkoutBtn" style="background-color:red" @click="emptyCart" >svuta carrello</button>
 
           </div>
         </div>
@@ -94,6 +95,10 @@ export default {
         toggleCheckout(){
           this.$store.commit('toggleCheckout');
           this.showCheckout = this.$store.state.checkout;
+        },
+        emptyCart(){
+          console.log('empty');
+          this.$store.commit('emptyCart');
         }
         // post_cart(){
         //   let cart = {

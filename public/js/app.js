@@ -2022,6 +2022,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2066,6 +2067,10 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
     toggleCheckout: function toggleCheckout() {
       this.$store.commit('toggleCheckout');
       this.showCheckout = this.$store.state.checkout;
+    },
+    emptyCart: function emptyCart() {
+      console.log('empty');
+      this.$store.commit('emptyCart');
     } // post_cart(){
     //   let cart = {
     //       cart: JSON.stringify(this.$store.state.cart)
@@ -39364,6 +39369,16 @@ var render = function() {
                         on: { click: _vm.toggleCheckout }
                       },
                       [_vm._v("\n            Checkout\n          ")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "button",
+                      {
+                        staticClass: "checkoutBtn",
+                        staticStyle: { "background-color": "red" },
+                        on: { click: _vm.emptyCart }
+                      },
+                      [_vm._v("svuta carrello")]
                     )
                   ])
                 ])
@@ -57940,6 +57955,11 @@ var store = {
     // funzione per toglerare tra carrello e checkout
     toggleCheckout: function toggleCheckout() {
       this.state.checkout = !this.state.checkout;
+    },
+    emptyCart: function emptyCart() {
+      this.state.cart = [];
+      this.state.cartCount = 0;
+      this.commit('saveCart');
     }
   },
   getters: {

@@ -82,7 +82,12 @@ let store = {
         toggleCheckout(){
 
           this.state.checkout = !this.state.checkout
-          
+
+        },
+        emptyCart(){
+          this.state.cart = [];
+          this.state.cartCount = 0;
+          this.commit('saveCart');
         }
 
     },
