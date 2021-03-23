@@ -21,32 +21,35 @@
     </div>
     
     <div id="content" class="">
+
         <div class=" first_title">
             <h2>Ristoranti consigliati</h2>
             <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, voluptatibus?
             </p>
         </div>
+
         <div class="restaurants">
-            <div class="card card_hover " v-for="restaurant in restaurants">
+            <div class="card card_hover "  v-for="restaurant in restaurants" @click="showRestaurant">
                 <div class="restaurant_image">
                     <img :src="restaurant.img" alt="restaurant's image">
                 </div>
                 <h4>
                     {{restaurant.name}}
                 </h4>
+                <input class="option_restaurant" :value="restaurant.id">
             </div>
         </div>
     </div>
 </div>
 </template>
 
-
 <script>
     export default {
         data(){
             return {
                 restaurants:'',
+                restaurantMom:'',
                 categories:'',
                 restaurantsAll: '',
                 letSelected: '',
@@ -54,26 +57,31 @@
         },
         methods:{
             selectRestaurant(value){
-                console.log(value.target.value);
                 if (value.target.value !== 'all') {
                     let restSelect = this.categories[value.target.value - 1];
-                    console.log(restSelect);
                     this.restaurants = restSelect.restaurants;
-
                     this.letSelected = value.target.value;
+                    console.log('if case');
+                    console.log( this.restaurants);
+                    console.log('restaurant all');
+                    console.log( this.restaurantsAll);
                 } else {
                     this.restaurants = this.restaurantsAll;
-
                     this.letSelected = "all";
+                    console.log('else case');
+                    console.log(this.restaurants);
                 }
             },
-            // deve ancora cambiare i valori dentro category_id
+            showRestaurant(value){
+                console.log(value.target.value);
+                this.restaurantMom = this.restaurantsAll[value.target.value - 1];
+                console.log(this.restaurantMom.id);
+                this.$store.commit('setSelectedRestaurant', this.restaurantMom);
+            },
             selectRestaurantOnClick(value){
                 console.log(value.target.value);
                 let v = this.categories[value.target.value - 1];
-                console.log(v);
                 this.restaurants = v.restaurants;
-
                 this.letSelected = value.target.value;
             }  
         },
@@ -81,15 +89,12 @@
             Promise.all([
                 axios.get('api/restaurants'),
                 axios.get('api/categories'),
-                // axios.get('api/category_restaurant'),
             ]).then(resp => {
                 console.log(resp[0].data.response);
                 console.log(resp[1].data.response);
-                // console.log(resp[2].data.response);
                 this.restaurantsAll = resp[0].data.response;
                 this.restaurants = resp[0].data.response;
                 this.categories = resp[1].data.response;
-
                 // return (RestaurantComponent, { props: { restaurants: this.restaurants } });
             }).catch(error => {
                 console.log(error);
@@ -98,18 +103,17 @@
     }
 </script>
 
-
 <style scoped lang="scss">
     .focusr{
-        //outline: -webkit-focus-ring-color auto 1px;
         outline: 0;
     }
     input:focus{
         outline: 0;
     }
     #content{
+        height: 100%;
         width: 80%;
-        margin: auto !important;
+        margin: auto;
         .first_title{
                 text-align: center;
             h2{
@@ -127,7 +131,7 @@
             margin: auto;
             justify-content: center;
             .card{
-                margin: 30px !important;
+                margin: 30px;
                 width: 300px;
                 z-index: 10;
                 border-radius: 10px;
@@ -147,15 +151,26 @@
                     font-weight: 700;
                     padding: 10px;
                 }
+                option{
+                    height: 100%;
+                }
             }
             .card_hover{
                 transition: all 0.35s;
-
             }
             .card:hover{
                 cursor: pointer;
                 transform: scale(1.05);
 
+            }
+            .option_restaurant{
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                color: transparent;
+                background-color: transparent;
+                border-color: transparent;
+                cursor: pointer;
             }
         }
     }

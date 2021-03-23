@@ -11169,7 +11169,8 @@ footer #footer_container ul .footer_img {
   }
 }
 
-#app #back_nav {
+#app #back_nav,
+#app2 #back_nav {
   background-color: #FFC244 !important;
   height: 100px;
 }

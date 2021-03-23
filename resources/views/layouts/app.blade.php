@@ -1,24 +1,4 @@
-<!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>{{ config('app.name', 'Laravel') }}</title>
-
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-</head>
+@include('layouts.head')
 <body>
     <div id="app">
         <nav id="back_nav" class="navbar navbar-expand-md navbar-light bg-white">
@@ -74,65 +54,54 @@
         <div class="spacer">
           <img class="img_spacer" src="{{asset('storage/yellow_arch.png')}}" alt="">
         </div>
+
         <main class="py-4">
           <nav id="user_nav" class="d-flex">
 
             <div class="button_wrap">
-              <div class="user_nav_button">
-                <a class="" href="{{route('user.home')}}">
+              <a class="" href="{{route('user.home')}}">
+                <div class="user_nav_button">
                   <img src="{{asset('storage/house1.png')}}" alt="">
-                </a>
-              </div>
+                </div>
+              </a>
               <span class="user_span">home</span>
             </div>
 
 
             <div class="button_wrap">
-              <div class="user_nav_button">
-                <a class="" href="{{route('user.restaurant.index') }}">
+              <a class="" href="{{route('user.restaurant.index') }}">
+                <div class="user_nav_button">
                   <img src="{{asset('storage/restaurant.png')}}" alt="">
-                </a>
-              </div>
+                </div>
+              </a>
               <span class="user_span">Il mio ristorante</span>
             </div>
 
 
 
             <div class="button_wrap">
-              <div class="user_nav_button">
-                <a class="" href="{{route('user.dish.index')}}">
+              <a class="" href="{{route('user.dish.index')}}">
+                <div class="user_nav_button">
                   <img src="{{asset('storage/steak.png')}}" alt="">
-                </a>
-              </div>
+                </div>
+              </a>
               <span class="user_span">piatti</span>
             </div>
 
 
             <div class="button_wrap">
-              <div class="user_nav_button">
-                <a class="" href="{{route('user.graphs')}}">
+              <a class="" href="{{route('user.graphs')}}">
+                <div class="user_nav_button">
                   <img src="{{asset('storage/analysis.png')}}" alt="">
-                </a>
-              </div>
+                </div>
+              </a>
               <span class="user_span">grafici</span>
             </div>
 
-
-            <!-- <div class="user_nav_button">
-              <a class="" href="{{route('user.restaurant.index') }}">Il mio ristorante</a>
-            </div> -->
-            <!-- <div class="user_nav_button">
-              <a class="" href="{{route('user.dish.index')}}">Piatti</a>
-            </div> -->
-            <!-- <div class="user_nav_button">
-              <a class="" href="{{route('user.graphs')}}">Grafici</a>
-            </div> -->
-            <!-- <div class="user_nav_button">
-              <a class="" href="{{route('user.profile')}}">Profilo</a>
-            </div> -->
           </nav>
           @yield('content')
         </main>
+
     </div>
 </body>
 </html>
