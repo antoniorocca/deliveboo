@@ -10943,14 +10943,18 @@ a.text-dark:focus {
 }
 
 * {
-  margin: 0 !important;
-  padding: 0 !important;
-  box-sizing: border-box !important;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
   overflow-x: hidden;
-  height: 2000px;
+}
+
+.row {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
 }
 
 .esempio {
@@ -10958,26 +10962,34 @@ body {
 }
 
 header {
-  height: 650px;
+  height: 550px;
+}
+
+header,
+.header {
   background-color: #ffc244;
   width: 100%;
 }
 
-header nav {
+header #nav,
+.header #nav {
   height: 100px;
   width: 100%;
-  position: fixed !important;
-  top: 0 !important;
+  position: fixed;
+  top: 0;
   background-color: #ffc244;
   z-index: 100;
+  box-shadow: 0px 5px 5px #80808042;
 }
 
-header nav #logo {
+header #nav #logo,
+.header #nav #logo {
   width: 800px;
 }
 
-header nav #logo input {
-  margin-left: 25% !important;
+header #nav #logo #header_logo,
+.header #nav #logo #header_logo {
+  margin-left: 25%;
   width: 400px;
   text-align: center;
   border-radius: 50px;
@@ -10986,11 +10998,13 @@ header nav #logo input {
   height: 50px;
 }
 
-header nav #logo input:focus {
+header #nav #logo #header_logo:focus,
+.header #nav #logo #header_logo:focus {
   outline: none;
 }
 
-header nav #register {
+header #nav #register,
+.header #nav #register {
   border-radius: 50px;
   background-color: #00a082;
   color: white;
@@ -10998,13 +11012,15 @@ header nav #register {
   width: 120px;
 }
 
-header nav #register a {
+header #nav #register a,
+.header #nav #register a {
   color: white;
   margin: 5px;
   font-weight: bold;
 }
 
-header #link-consegne {
+header #link-consegne,
+.header #link-consegne {
   position: absolute;
   top: 100px;
   left: 540px;
@@ -11012,19 +11028,22 @@ header #link-consegne {
   font-size: 18px;
 }
 
-header #main-header {
+header #main-header,
+.header #main-header {
   position: absolute;
   top: 130px;
   width: 100%;
   height: 400px;
 }
 
-header #main-header #categories {
+header #main-header #categories,
+.header #main-header #categories {
   width: 750px;
   height: 350px;
 }
 
-header #main-header #categories .category {
+header #main-header #categories .category,
+.header #main-header #categories .category {
   height: 120px;
   width: 120px;
   background-color: white;
@@ -11034,25 +11053,72 @@ header #main-header #categories .category {
   box-shadow: 0 0 10px #DDDDDD;
 }
 
-header #main-header #categories .category:hover {
+header #main-header #categories .category:hover,
+.header #main-header #categories .category:hover {
   transform: scale(1.1);
-  transition: 0.3s all ease-in-out;
+  cursor: pointer;
 }
 
-header #main-header #categories .category img {
+header #main-header #categories .category img,
+.header #main-header #categories .category img {
   position: absolute;
   top: 8px;
   width: 70px;
 }
 
-header #main-header #categories .category span {
+header #main-header #categories .category span,
+.header #main-header #categories .category span {
   position: absolute;
   bottom: 8px;
   width: 75px;
   text-align: center;
 }
 
+header #main-header #categories .category input,
+.header #main-header #categories .category input {
+  border-radius: 50%;
+  width: 100%;
+  color: transparent;
+  background-color: transparent;
+  border-color: transparent;
+}
+
+header #main-header #categories .category_hover,
+.header #main-header #categories .category_hover {
+  transition: 0.3s all ease-in-out;
+}
+
+@media all and (max-width: 592px) {
+  header {
+    height: 710px;
+  }
+}
+
+.category_container {
+  border-right: 2px solid black;
+  border-bottom: 2px solid black;
+  width: 25%;
+}
+
+.category_container h3 {
+  display: flex;
+  place-content: center;
+}
+
+.category_container p {
+  border-top: 2px solid black;
+  display: flex;
+  place-content: center;
+}
+
+.restaurant_container {
+  border: 0px solid transparent;
+  border-bottom: 2px solid black;
+  width: 75%;
+}
+
 footer {
+  position: relative;
   background-color: #1d1d1d;
   color: white;
 }
@@ -11063,46 +11129,48 @@ footer a {
 
 footer a #footer_logo {
   height: 35px;
-  margin: 35px !important;
+  margin: 35px;
 }
 
-footer .footer_container {
+footer #footer_container {
   text-align: left;
-  margin: auto !important;
+  margin: auto;
   max-width: 1024px;
 }
 
-footer .footer_container ul li {
+footer #footer_container ul li {
   line-height: 2.5em;
   list-style: none;
 }
 
-footer .footer_container ul li a {
+footer #footer_container ul li a {
   text-decoration: none;
   color: white;
 }
 
-footer .footer_container ul li a img {
-  margin-bottom: 20px !important;
+footer #footer_container ul .footer_img {
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 @media all and (max-width: 767px) {
-  .footer_container .lol {
-    padding-left: 20px !important;
+  #footer_container #workForUs {
+    padding-left: 20px;
   }
 }
 
 @media all and (max-width: 575px) {
-  .footer_container .link {
-    padding-left: 20px !important;
+  #footer_container .link {
+    padding-left: 20px;
   }
 
-  .footer_container #privacy {
-    padding-left: 10px !important;
+  #footer_container .privacy {
+    padding-left: 20px;
   }
 }
 
-#app #back_nav {
+#app #back_nav,
+#app2 #back_nav {
   background-color: #FFC244 !important;
   height: 100px;
 }
@@ -11190,24 +11258,74 @@ footer .footer_container ul li a img {
   height: 300px;
 }
 
-#profile_container {
+#backend_container {
   background-color: #E9F8F5;
 }
 
-#profile_container .profile_wrap {
+#backend_container .backend_wrap {
   width: 80%;
   margin: auto;
 }
 
-#profile_container .profile_wrap h1 {
+#backend_container .backend_wrap h1 {
   font-size: 50px;
 }
 
-#profile_container .profile_wrap .content_row {
+#backend_container .backend_wrap .content_row {
   padding: 10px 15px;
   background-color: white;
   border: 2px solid #00A082;
   border-radius: 10px;
   margin: 5px 0;
+}
+
+label {
+  font-size: 1.35rem !important;
+}
+
+h1 {
+  font-size: 50px;
+}
+
+.edit_input {
+  width: 100%;
+  padding: 10px 15px !important;
+  background-color: white !important;
+  border: 2px solid #00A082 !important;
+  border-radius: 10px !important;
+  margin: 5px 0 !important;
+}
+
+#glovo_btn {
+  min-width: 200px;
+  display: flex;
+  justify-content: center;
+  line-height: 50px;
+  border-radius: 30px;
+  background-color: #00a082;
+  color: white;
+  height: 50px;
+  border: 0;
+}
+
+.glovo_btn {
+  min-width: 200px !important;
+  display: flex !important;
+  justify-content: center !important;
+  line-height: 50px !important;
+  border-radius: 30px !important;
+  background-color: #00a082 !important;
+  color: white !important;
+  height: 50px !important;
+  border: 0 !important;
+}
+
+.select_restaurant {
+  display: flex;
+}
+
+#box_cart {
+  position: sticky;
+  top: 100px;
 }
 

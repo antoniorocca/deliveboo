@@ -1,16 +1,17 @@
 footer{
+    position: relative;
     background-color: #1d1d1d;
     color: white;
     a{
         text-decoration: none;
         #footer_logo {
             height:35px;
-            margin: 35px !important;
+            margin: 35px;
         }
     }
-    .footer_container{
+    #footer_container{
         text-align: left;
-        margin: auto !important;
+        margin: auto;
         max-width: 1024px;
         ul{
             li{
@@ -19,29 +20,30 @@ footer{
                 a{
                     text-decoration: none;
                     color: white;
-                    img{
-                        margin-bottom: 20px !important;
-                    }
                 }
+            }
+            .footer_img{
+                text-align: center;
+                margin-bottom: 20px;
             }
         }
     }
 }
 
-@media all and (max-width: 767px){
-    .footer_container {
-        .lol{
-            padding-left: 20px !important;
+@media all and (max-width: 767px) {
+    #footer_container {
+        #workForUs{
+            padding-left: 20px;
         }
     }
 }
 @media all and (max-width: 575px) {
-    .footer_container {
+    #footer_container {
         .link{
-            padding-left: 20px !important;
+            padding-left: 20px;
         }
-        #privacy{
-            padding-left: 10px !important;
+        .privacy{
+            padding-left: 20px;
         }
     }
 }

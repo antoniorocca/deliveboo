@@ -1,11 +1,15 @@
 * {
-    margin: 0 !important;
-    padding: 0 !important;
-    box-sizing: border-box !important;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 body {
     overflow-x: hidden;
-    height: 2000px;
+}
+
+.row{
+    margin-left: 0 !important;
+    margin-right: 0 !important;
 }
 
 // esempio scss in template

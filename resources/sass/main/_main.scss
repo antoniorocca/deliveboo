@@ -1,3 +1,20 @@
-main{
-   
+.category_container {
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+    width: 25%;
+    h3{
+        display: flex;
+        place-content: center;
+    }
+    p{
+        // padding-left: 10px;
+        border-top: 2px solid black;
+        display: flex;
+        place-content: center;
+    }
+}
+.restaurant_container {
+    border: 0px solid transparent;
+    border-bottom: 2px solid black;
+    width: 75%;
 }

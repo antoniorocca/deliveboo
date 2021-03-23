@@ -13,3 +13,13 @@
 @import 'main/_main.scss';
 @import 'partials/_footer.scss';
 @import 'partials/_backend.scss';
+
+// scss Component
+.select_restaurant {
+  display: flex;
+}
+
+#box_cart {
+    position: sticky;
+    top: 100px;
+}

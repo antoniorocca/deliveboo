@@ -1,239 +1,28 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.app_guest')
 
-        <title>Deliveboo</title>
+@section('guest_content')
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+<!-- LANDING PAGE COMPONENT -->
+{{-- <landing-component v-if="showLanding"></landing-component> --}}
 
-        <!-- Vue -->
 
-        <script src="{{ asset('js/app.js') }}" defer></script>
-        <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+<!-- COMPONENTE CATEGORIES EDO -->
+{{-- <div class="select_restaurant">
+        <edo-categories v-if="showMain"></edo-categories>
+        <edo-restaurants v-if="showMain"></edo-restaurants>
+    </div> --}}
 
-        <!-- Bootstrap -->
-        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+<!-- COMPONENTE RISTORANTE -->
+<restaurant-component></restaurant-component>
+<div class="wrap" style="display:flex;">
+    <selected-restaurant></selected-restaurant>
 
-        <!-- FontAwesome -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+    <!-- CARRELLO -->
+    <div style="display:flex; flex-direction:column;">
+        <cart-dropdown id="box_cart" class="cart-box"></cart-dropdown>
 
-        <!-- Styles -->
-        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    </div>
+</div>
 
-        <!-- Styles -->
-        <style>
-            /* html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            } */
 
-            /* .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            } */
-        </style>
-    </head>
-    <body>
-        <header>
-            <nav class="col-lg-12 col-md-12 col-sm-12 d-flex justify-content-around align-items-center">
-                <div id="logo" class="d-flex">
-                    <a href=""><img src="{{asset('img/logo_green.svg')}}" alt=""></a>
-                   <div><input type="text" placeholder="Cerca"> <i></i></div>
-                </div>
-                <div id="register" class="d-flex align-items-center">
-                <!--flex-center position-ref full-height-->
-                @if (Route::has('login'))
-                    <!-- <div class="top-right links"> -->
-                        @auth
-                            <a href="{{ url('/user/home') }}">Home</a>
-                        @else
-                            <a href="{{ route('login') }}">Login</a>
-
-                            @if (Route::has('register'))
-                                <a href="{{ route('register') }}">Register</a>
-                            @endif
-                        @endauth
-                    <!-- </div> -->
-                @endif
-                </div>
-
-                
-            </nav>
-            <div id="link-consegne">
-              <p>Consegne in <a href="">Via ...... <i class="fas fa-angle-down"></i></a></p>
-            </div>
-            <div id="main-header" class="d-flex justify-content-center">
-                <div id="categories" class="d-flex justify-content-center flex-wrap">
-                    <div class="category mr-4 mt-5 d-flex justify-content-center">
-                      <img src="{{asset('img/hamburger.svg')}}" alt="">
-                      <span>Cibo</span>
-                    </div>
-                    <div class="category mr-4 mt-5 d-flex justify-content-center">
-                        <img src="" alt="">
-                        <span>Super mercato</span>
-                    </div>
-                    <div class="category mr-4 mt-5 d-flex justify-content-center">
-                        <img src="" alt="">
-                        <span>Shopping</span>
-                    </div>
-                    <div class="category mr-4 mt-5 d-flex justify-content-center">
-                        <img src="" alt="">
-                        <span>Di tutto e di più</span>
-                    </div>
-                    <div class="category mr-4 mt-5 d-flex justify-content-center">
-                        <img src="" alt="">
-                        <span>Colazioni & dolci</span>
-                    </div>
-                    <div class="category mr-4 mt-5 d-flex justify-content-center">
-                        <img src="" alt="">
-                        <span>Farmacia e Bellezza</span>
-                    </div>
-                    <div class="category mr-4 mt-5 d-flex justify-content-center">
-                        <img src="" alt="">
-                        <span>Bevande</span>
-                    </div>
-                    <div class="category mr-4 mt-5 d-flex justify-content-center">
-                        <img src="" alt="">
-                        <span>Spedizione Express</span>
-                    </div>
-                </div>
-            </div>
-        </header>
-
-        <div class="content">
-            <div class="title m-b-md">
-                Laravel
-            </div>
-
-            <!-- <div class="links">
-                <a href="https://laravel.com/docs">Docs</a>
-                <a href="https://laracasts.com">Laracasts</a>
-                <a href="https://laravel-news.com">News</a>
-                <a href="https://blog.laravel.com">Blog</a>
-                <a href="https://nova.laravel.com">Nova</a>
-                <a href="https://forge.laravel.com">Forge</a>
-                <a href="https://vapor.laravel.com">Vapor</a>
-                <a href="https://github.com/laravel/laravel">GitHub</a>
-            </div>   -->
-        </div>
-
-        <!-- VUE APP -->
-        <!-- ////////////////////////////////// -->
-        <div id="app">
-            <restaurant-component></restaurant-component>
-            <to-top></to-top>
-
-            {{-- <p>
-                <router-link to="/foo">Go to Foo</router-link>
-                <router-link to="/generali">Mostra robbe</router-link>
-            </p> --}}
-
-            {{-- <router-view></router-view> --}}
-            {{-- <show-all></show-all> --}}
-
-        </div>
-
-        <footer>
-            <a href="">
-                <img id="footer_logo" src="{{asset('img/logo_white.svg')}}" alt="">
-            </a>
-
-            <div class="footer_container">
-
-                <div class="row">
-
-                    <div class="col-lg-1 col-md-1 link"></div>
-
-                    <div class="col-lg-3 col-md-3 col-sm-3 offset-lg-1 offset-md-1 offset-sm-1 link lol">
-                        <h3>Uniamo le forze</h3>
-                        <ul>
-                            <li><a href="">Lavora con noi</a></li>
-                            <li><a href="">Negozi partner</a></li>
-                            <li><a href="">Corrieri</a></li>
-                            <li><a href="">Business</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="col-lg-3 col-md-3 col-sm-3 link">
-                        <h3>Link di interesse</h3>
-                        <ul>
-                            <li><a href="">Chi siamo</a></li>
-                            <li><a href="">FAQ</a></li>
-                            <li><a href="">Blog</a></li>
-                            <li><a href="">Contattaci</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="col-lg-2 col-md-2 col-sm-3 link">
-                        <h3>Seguici</h3>
-                        <ul>
-                            <li><a href="">Facebook</a></li>
-                            <li><a href="">Twitter</a></li>
-                            <li><a href="">Instagram</a></li>
-                        </ul>
-                    </div>
-
-                    <div id="privacy" class="col-lg-3 col-md-3 col-sm-3">
-                        <ul class="row row-cols-1 row-cols-sm-1 row-cols-md-1 row-cols-lg-1">
-                            <ul class="row row-cols-2 row-cols-sm-1 row-cols-md-1 row-cols-lg-1">
-                                <li><a href=""><img src="{{asset('img/download-button-android.svg')}}" alt=""></a></li>
-                                <li><a href=""><img src="{{asset('img/download-button-ios.svg')}}" alt=""></a></li>
-                            </ul>
-                            <ul class="row row-cols-3 row-cols-sm-1 row-cols-md-1 row-cols-lg-1">
-                                <li><a href="">TERMINI E CONDIZIONI</a></li>
-                                <li><a href="">POLITICA SULLA PRIVACY</a></li>
-                                <li><a href="">POLITICA SUI COOKIE</a></li>
-                            </ul>
-                        </ul>
-                    </div>
-
-                </div>
-
-            </div>
-        </footer>
-    </body>
-</html>
+@endsection

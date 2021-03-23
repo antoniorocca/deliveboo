@@ -9,7 +9,7 @@ class CategoryController extends Controller
 {
   public function index(){
     return response()->json([
-      'response'=> Category::all()
+      'response'=> Category::with('restaurants')->get()
     ]);
   }
 
