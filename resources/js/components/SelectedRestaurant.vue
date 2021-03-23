@@ -16,7 +16,7 @@
             <div class="dish_card" v-for="dish in this.$store.state.selectedRestaurant.dishes">
                 <img :src="dish.img" alt="">
                 <h4>{{ dish.name }}</h4>
-                <span>prezzo &euro; {{ dish.price }}</span><br>
+                <span>prezzo &euro; {{ dish.price.toFixed(2) }}</span><br>
                 <span> rating {{ dish.rating }}</span>
                 <div class="add_cart">
                     <button class="button is-success" @click="addToCart(dish)">Add to Cart</button>
@@ -116,7 +116,7 @@ export default {
                 padding: 10px;
             }
             .add_cart{
-                
+
             }
         }
     }      

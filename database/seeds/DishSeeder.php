@@ -52,7 +52,7 @@ class DishSeeder extends Seeder
         $newDish->name = $names[rand(0,7)];
         $newDish->img = $images[rand(0,25)];
         $newDish->description = $faker->sentence();
-        $newDish->price = rand(100,1000) / 100;
+        $newDish->price = number_format(rand(100, 1000) / 100, 2);
         $newDish->discount = rand(0,1);
         $newDish->rating = rand(1,5);
         $newDish->menu_class ='';

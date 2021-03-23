@@ -40476,7 +40476,7 @@ var render = function() {
               _vm._v(" "),
               _c("h4", [_vm._v(_vm._s(dish.name))]),
               _vm._v(" "),
-              _c("span", [_vm._v("prezzo € " + _vm._s(dish.price))]),
+              _c("span", [_vm._v("prezzo € " + _vm._s(dish.price.toFixed(2)))]),
               _c("br"),
               _vm._v(" "),
               _c("span", [_vm._v(" rating " + _vm._s(dish.rating))]),
