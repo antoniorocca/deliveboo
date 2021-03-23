@@ -11307,6 +11307,18 @@ h1 {
   border: 0;
 }
 
+.glovo_btn {
+  min-width: 200px !important;
+  display: flex !important;
+  justify-content: center !important;
+  line-height: 50px !important;
+  border-radius: 30px !important;
+  background-color: #00a082 !important;
+  color: white !important;
+  height: 50px !important;
+  border: 0 !important;
+}
+
 .select_restaurant {
   display: flex;
 }
