@@ -53,7 +53,14 @@ Vue.component('footer-component', require('./components/FooterComponent.vue').de
 // DIVENTERA' MAIN APP
 
 import store from './store.js';
+
+
+// test product list
 Vue.component('products-list', require('./components/ProductsList.vue').default);
+Vue.component('products-list2', require('./components/ProductsList2.vue').default);
+
+
+
 Vue.component('cart-dropdown', require('./components/Cart.vue').default);
 Vue.component('landing-component', require('./components/LandingComponent.vue').default);
 Vue.component('edo-categories', require('./components/EdoCategories.vue').default);

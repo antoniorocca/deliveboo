@@ -110,6 +110,7 @@
             <!-- <edo-payment></edo-payment> -->
 
           </div>
+          <products-list2 style="width:70%"></products-list2>
         </div>
 
 
