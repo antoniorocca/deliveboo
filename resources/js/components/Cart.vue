@@ -17,7 +17,7 @@
             <div class="cart_product_item" v-for="item in $store.state.cart" :key="item.id">
 
               <span class="cart_item">
-                {{ item.title }} x {{ item.quantity }} - <span>${{ item.totalPrice }}</span>
+                {{ item.title }} x {{ item.quantity }} - <span>${{ item.totalPrice.toFixed(2) }}</span>
               </span>
               <div class="btn_box">
                 <button @click="addToCart(item)"><i class="fas fa-plus"></i></button>

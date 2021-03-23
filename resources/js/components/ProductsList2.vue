@@ -21,7 +21,7 @@
 export default {
     data() {
         return {
-          categories:'ciao',
+
         };
     },
     methods: {

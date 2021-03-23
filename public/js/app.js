@@ -2556,9 +2556,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
-    return {
-      categories: 'ciao'
-    };
+    return {};
   },
   methods: {
     addToCart: function addToCart(item) {
@@ -39379,7 +39377,9 @@ var render = function() {
                                 _vm._s(item.quantity) +
                                 " - "
                             ),
-                            _c("span", [_vm._v("$" + _vm._s(item.totalPrice))])
+                            _c("span", [
+                              _vm._v("$" + _vm._s(item.totalPrice.toFixed(2)))
+                            ])
                           ]),
                           _vm._v(" "),
                           _c("div", { staticClass: "btn_box" }, [
