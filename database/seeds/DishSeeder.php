@@ -57,7 +57,7 @@ class DishSeeder extends Seeder
         $newDish->rating = rand(1,5);
         $newDish->menu_class ='';
         $newDish->discount_id ='';
-        $newDish->restaurant_id =rand(1,21);
+        $newDish->restaurant_id =rand(1,31);
 
         $dish = Dish::all();
         $slugs = array();
