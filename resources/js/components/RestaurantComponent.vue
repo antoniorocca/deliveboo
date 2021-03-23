@@ -1,5 +1,5 @@
 <template>
-<div>
+<div  v-if="this.$store.state.visibility">
     <div class="header">
         <div id="main-header" class="d-flex justify-content-center flex-wrap">
             <div id="categories" class="d-flex justify-content-center flex-wrap">
@@ -30,14 +30,14 @@
         </div>
 
         <div class="restaurants">
-            <div class="card card_hover "  v-for="restaurant in restaurants" @click="showRestaurant">
+            <div class="card card_hover " v-for="restaurant in restaurants" @click="toggle">
                 <div class="restaurant_image">
                     <img :src="restaurant.img" alt="restaurant's image">
                 </div>
                 <h4>
                     {{restaurant.name}}
                 </h4>
-                <input class="option_restaurant" :value="restaurant.id">
+                <input class="option_restaurant" :value="restaurant.id" @click="showRestaurant">
             </div>
         </div>
     </div>
@@ -61,15 +61,15 @@
                     let restSelect = this.categories[value.target.value - 1];
                     this.restaurants = restSelect.restaurants;
                     this.letSelected = value.target.value;
-                    console.log('if case');
-                    console.log( this.restaurants);
-                    console.log('restaurant all');
-                    console.log( this.restaurantsAll);
+                    // console.log('if case');
+                    // console.log( this.restaurants);
+                    // console.log('restaurant all');
+                    // console.log( this.restaurantsAll);
                 } else {
                     this.restaurants = this.restaurantsAll;
                     this.letSelected = "all";
-                    console.log('else case');
-                    console.log(this.restaurants);
+                    // console.log('else case');
+                    // console.log(this.restaurants);
                 }
             },
             showRestaurant(value){
@@ -83,15 +83,24 @@
                 let v = this.categories[value.target.value - 1];
                 this.restaurants = v.restaurants;
                 this.letSelected = value.target.value;
-            }  
+            },
+            toggle(){
+                if (this.$store.state.visibility == false) {
+                    this.$store.commit('visibilityFunction')
+                    console.log('false');
+                } else {
+                    this.$store.commit('visibilityFunction')
+                    console.log('true');
+                }
+            }
         },
         mounted() {
             Promise.all([
                 axios.get('api/restaurants'),
                 axios.get('api/categories'),
             ]).then(resp => {
-                console.log(resp[0].data.response);
-                console.log(resp[1].data.response);
+                // console.log(resp[0].data.response);
+                // console.log(resp[1].data.response);
                 this.restaurantsAll = resp[0].data.response;
                 this.restaurants = resp[0].data.response;
                 this.categories = resp[1].data.response;

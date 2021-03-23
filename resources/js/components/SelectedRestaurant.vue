@@ -1,5 +1,5 @@
 <template>
-    <div class="selected_restaurant_container">
+    <div class="selected_restaurant_container"  v-if="!this.$store.state.visibility">
         <div id="info_restaurant">
             <img id="restaurant_jumbotron" :src="this.$store.state.selectedRestaurant.img" alt="">
             <h2>{{ this.$store.state.selectedRestaurant.name }}</h2>
@@ -9,6 +9,7 @@
         <div id="main_restaurant">
             <div class=" first_title">
                 <h2>Ristorante selezionato</h2>
+                <button @click="toggle"> torna in dietro</button>
             </div>
 
             <div id="selected_restaurant_dishes" class="d-flex flex-wrap justify-content-center" >
@@ -39,20 +40,20 @@ export default {
         };
     },
     methods:{
-        
-                
-
-
+        toggle(){
+            if (this.$store.state.visibility == false) {
+                this.$store.commit('visibilityFunction', true)
+                console.log('false');
+            } else {
+                this.$store.commit('visibilityFunction', false)
+                console.log('true');
+            }
+        },
     },
     computed: {
-
-
     },
     mounted(){
     //   this.selectedRestaurant = this.$store.state.restaurant;
-
-
-
     }
 }
 
