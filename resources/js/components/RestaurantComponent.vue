@@ -44,7 +44,6 @@
 </div>
 </template>
 
-
 <script>
     export default {
         data(){
@@ -60,23 +59,28 @@
             selectRestaurant(value){
                 if (value.target.value !== 'all') {
                     let restSelect = this.categories[value.target.value - 1];
-                    console.log(restSelect);
                     this.restaurants = restSelect.restaurants;
                     this.letSelected = value.target.value;
+                    console.log('if case');
+                    console.log( this.restaurants);
+                    console.log('restaurant all');
+                    console.log( this.restaurantsAll);
                 } else {
                     this.restaurants = this.restaurantsAll;
                     this.letSelected = "all";
+                    console.log('else case');
+                    console.log(this.restaurants);
                 }
             },
             showRestaurant(value){
-                this.restaurantMom = this.restaurants[value.target.value - 1];
+                console.log(value.target.value);
+                this.restaurantMom = this.restaurantsAll[value.target.value - 1];
                 console.log(this.restaurantMom.id);
                 this.$store.commit('setSelectedRestaurant', this.restaurantMom);
             },
             selectRestaurantOnClick(value){
                 console.log(value.target.value);
                 let v = this.categories[value.target.value - 1];
-                console.log(v);
                 this.restaurants = v.restaurants;
                 this.letSelected = value.target.value;
             }  
@@ -98,7 +102,6 @@
         }
     }
 </script>
-
 
 <style scoped lang="scss">
     .focusr{
