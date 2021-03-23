@@ -1,5 +1,5 @@
 <template>
-    <div class="cart_box">
+    <div class="cart_box" v-if="!this.$store.state.visibility">
 
       <div class="resume_wrap" v-if="!this.$store.state.checkout">
         <span class="cart_count_span">
@@ -97,14 +97,23 @@ export default {
         emptyCart(){
           console.log('empty');
           this.$store.commit('emptyCart');
-        }
+        },
+        toggle(){
+            if (this.$store.state.visibility == false) {
+                this.$store.commit('visibilityFunction')
+                console.log('false');
+            } else {
+                this.$store.commit('visibilityFunction')
+                console.log('true');
+            }
+        },
         // post_cart(){
         //   let cart = {
         //       cart: JSON.stringify(this.$store.state.cart)
         //   }
         //   axios.post('/payment', cart);
         // }
-      }
+    }
 }
 </script>
 

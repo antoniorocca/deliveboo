@@ -2069,6 +2069,15 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
     emptyCart: function emptyCart() {
       console.log('empty');
       this.$store.commit('emptyCart');
+    },
+    toggle: function toggle() {
+      if (this.$store.state.visibility == false) {
+        this.$store.commit('visibilityFunction');
+        console.log('false');
+      } else {
+        this.$store.commit('visibilityFunction');
+        console.log('true');
+      }
     } // post_cart(){
     //   let cart = {
     //       cart: JSON.stringify(this.$store.state.cart)
@@ -39474,143 +39483,147 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "cart_box" },
-    [
-      !this.$store.state.checkout
-        ? _c("div", { staticClass: "resume_wrap" }, [
-            _c("span", { staticClass: "cart_count_span" }, [
-              _vm._v("\n      Cart ("),
-              _c("span", [_vm._v(_vm._s(_vm.$store.state.cartCount))]),
-              _vm._v(")\n    ")
-            ]),
-            _vm._v(" "),
-            _vm._m(0),
-            _vm._v(" "),
-            _vm.$store.state.cart.length > 0
-              ? _c("div", { staticClass: "cart_product_dropdown" }, [
-                  _c(
-                    "div",
-                    { staticClass: "cart_wrap" },
-                    _vm._l(_vm.$store.state.cart, function(item) {
-                      return _c(
+  return !this.$store.state.visibility
+    ? _c(
+        "div",
+        { staticClass: "cart_box" },
+        [
+          !this.$store.state.checkout
+            ? _c("div", { staticClass: "resume_wrap" }, [
+                _c("span", { staticClass: "cart_count_span" }, [
+                  _vm._v("\n      Cart ("),
+                  _c("span", [_vm._v(_vm._s(_vm.$store.state.cartCount))]),
+                  _vm._v(")\n    ")
+                ]),
+                _vm._v(" "),
+                _vm._m(0),
+                _vm._v(" "),
+                _vm.$store.state.cart.length > 0
+                  ? _c("div", { staticClass: "cart_product_dropdown" }, [
+                      _c(
                         "div",
-                        { key: item.id, staticClass: "cart_product_item" },
-                        [
-                          _c("span", { staticClass: "cart_item" }, [
-                            _vm._v(
-                              "\n            " +
-                                _vm._s(item.name) +
-                                " x " +
-                                _vm._s(item.quantity) +
-                                " - "
-                            ),
-                            _c("span", [
-                              _vm._v("$" + _vm._s(item.totalPrice.toFixed(2)))
-                            ])
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "btn_box" }, [
-                            _c(
-                              "button",
-                              {
-                                on: {
-                                  click: function($event) {
-                                    return _vm.addToCart(item)
-                                  }
-                                }
-                              },
-                              [_c("i", { staticClass: "fas fa-plus" })]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "button",
-                              {
-                                staticClass: "trash",
-                                attrs: { title: "Remove from cart" },
-                                on: {
-                                  click: function($event) {
-                                    $event.preventDefault()
-                                    return _vm.removeFromCart(item)
-                                  }
-                                }
-                              },
-                              [_c("i", { staticClass: "far fa-trash-alt" })]
-                            ),
-                            _vm._v(" "),
-                            item.quantity > 1
-                              ? _c(
+                        { staticClass: "cart_wrap" },
+                        _vm._l(_vm.$store.state.cart, function(item) {
+                          return _c(
+                            "div",
+                            { key: item.id, staticClass: "cart_product_item" },
+                            [
+                              _c("span", { staticClass: "cart_item" }, [
+                                _vm._v(
+                                  "\n            " +
+                                    _vm._s(item.name) +
+                                    " x " +
+                                    _vm._s(item.quantity) +
+                                    " - "
+                                ),
+                                _c("span", [
+                                  _vm._v(
+                                    "$" + _vm._s(item.totalPrice.toFixed(2))
+                                  )
+                                ])
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "btn_box" }, [
+                                _c(
                                   "button",
                                   {
-                                    attrs: { title: "Less from cart" },
                                     on: {
                                       click: function($event) {
-                                        return _vm.lessToCart(item)
+                                        return _vm.addToCart(item)
                                       }
                                     }
                                   },
-                                  [_c("i", { staticClass: "fas fa-minus" })]
-                                )
-                              : _vm._e()
-                          ])
-                        ]
-                      )
-                    }),
-                    0
-                  ),
-                  _vm._v(" "),
-                  _c("span", { staticClass: "totalSpan" }, [
-                    _c("span", [_vm._v("Total: ")]),
-                    _vm._v(" $" + _vm._s(_vm.totalPrice) + "\n      ")
-                  ]),
-                  _vm._v(" "),
-                  _c("hr", { staticClass: "navbar_divider" }),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "wrapCheckout" }, [
-                    _c(
-                      "button",
-                      {
-                        staticClass: "checkoutBtn",
-                        on: { click: _vm.toggleCheckout }
-                      },
-                      [_vm._v("\n            Checkout\n          ")]
+                                  [_c("i", { staticClass: "fas fa-plus" })]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "button",
+                                  {
+                                    staticClass: "trash",
+                                    attrs: { title: "Remove from cart" },
+                                    on: {
+                                      click: function($event) {
+                                        $event.preventDefault()
+                                        return _vm.removeFromCart(item)
+                                      }
+                                    }
+                                  },
+                                  [_c("i", { staticClass: "far fa-trash-alt" })]
+                                ),
+                                _vm._v(" "),
+                                item.quantity > 1
+                                  ? _c(
+                                      "button",
+                                      {
+                                        attrs: { title: "Less from cart" },
+                                        on: {
+                                          click: function($event) {
+                                            return _vm.lessToCart(item)
+                                          }
+                                        }
+                                      },
+                                      [_c("i", { staticClass: "fas fa-minus" })]
+                                    )
+                                  : _vm._e()
+                              ])
+                            ]
+                          )
+                        }),
+                        0
+                      ),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "totalSpan" }, [
+                        _c("span", [_vm._v("Total: ")]),
+                        _vm._v(" $" + _vm._s(_vm.totalPrice) + "\n      ")
+                      ]),
+                      _vm._v(" "),
+                      _c("hr", { staticClass: "navbar_divider" }),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "wrapCheckout" }, [
+                        _c(
+                          "button",
+                          {
+                            staticClass: "checkoutBtn",
+                            on: { click: _vm.toggleCheckout }
+                          },
+                          [_vm._v("\n            Checkout\n          ")]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "button",
+                          {
+                            staticClass: "checkoutBtn",
+                            staticStyle: { "background-color": "red" },
+                            on: { click: _vm.emptyCart }
+                          },
+                          [_vm._v("Svuota carrello")]
+                        )
+                      ])
+                    ])
+                  : _c(
+                      "div",
+                      { staticClass: "navbar-dropdown is-boxed is-right" },
+                      [
+                        _c(
+                          "a",
+                          { staticClass: "navbar-item", attrs: { href: "" } },
+                          [_vm._v("\n        Cart is empty\n      ")]
+                        )
+                      ]
                     ),
-                    _vm._v(" "),
-                    _c(
-                      "button",
-                      {
-                        staticClass: "checkoutBtn",
-                        staticStyle: { "background-color": "red" },
-                        on: { click: _vm.emptyCart }
-                      },
-                      [_vm._v("Svuota carrello")]
-                    )
-                  ])
-                ])
-              : _c(
-                  "div",
-                  { staticClass: "navbar-dropdown is-boxed is-right" },
-                  [
-                    _c(
-                      "a",
-                      { staticClass: "navbar-item", attrs: { href: "" } },
-                      [_vm._v("\n        Cart is empty\n      ")]
-                    )
-                  ]
-                ),
-            _vm._v(" "),
-            _c("img", {
-              staticClass: "phone",
-              attrs: { src: "img/payment.png", alt: "" }
-            })
-          ])
-        : _vm._e(),
-      _vm._v(" "),
-      this.$store.state.checkout ? _c("edo-payment") : _vm._e()
-    ],
-    1
-  )
+                _vm._v(" "),
+                _c("img", {
+                  staticClass: "phone",
+                  attrs: { src: "img/payment.png", alt: "" }
+                })
+              ])
+            : _vm._e(),
+          _vm._v(" "),
+          this.$store.state.checkout ? _c("edo-payment") : _vm._e()
+        ],
+        1
+      )
+    : _vm._e()
 }
 var staticRenderFns = [
   function() {
