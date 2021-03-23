@@ -7202,7 +7202,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.cart_box {\r\n  position: relative;\r\n  border: 1px solid black;\r\n  width: 350px;\r\n  height: 450px;\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: center;\r\n  border-radius: 15px;\r\n  padding: 20px;\n}\n.car_product_dropdown {\r\n  display: flex;\r\n  flex-direction: column;\n}\n.cart_box > img {\r\n  width: 80%;\r\n  position: absolute;\r\n  top: 60%;\r\n  left: 50%;\r\n  transform: translate(-50%, -50%);\r\n  opacity: .3;\n}\n.removeBtn {\r\n    margin-right: 1rem;\r\n    color: red;\n}\r\n", ""]);
+exports.push([module.i, "\n.cart_box {\n  position: relative;\n  border: 1px solid black;\n  width: 350px;\n  height: 450px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  border-radius: 15px;\n  padding: 20px;\n}\n.car_product_dropdown {\n  display: flex;\n  flex-direction: column;\n}\n.cart_box > img {\n  width: 80%;\n  position: absolute;\n  top: 60%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  opacity: .3;\n}\n.removeBtn {\n    margin-right: 1rem;\n    color: red;\n}\n", ""]);
 
 // exports
 
@@ -39882,9 +39882,9 @@ var render = function() {
               _vm._v(" "),
               _c("h4", [
                 _vm._v(
-                  "\r\n                    " +
+                  "\n                    " +
                     _vm._s(restaurant.name) +
-                    "\r\n                "
+                    "\n                "
                 )
               ]),
               _vm._v(" "),
@@ -39910,7 +39910,7 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("p", [
         _vm._v(
-          "\r\n            Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, voluptatibus?\r\n            "
+          "\n            Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, voluptatibus?\n            "
         )
       ])
     ])
@@ -57895,8 +57895,8 @@ var store = {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\gitKraken_esercizi\deliveboo_progetto_finale\deliveboo\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\gitKraken_esercizi\deliveboo_progetto_finale\deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /var/www/html/boolean/laravel/deliveboo/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /var/www/html/boolean/laravel/deliveboo/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

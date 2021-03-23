@@ -16,7 +16,7 @@
     <restaurant-component></restaurant-component>
     <selected-restaurant></selected-restaurant>
 
-    
+
     <!-- CARRELLO -->
     <div class="cart-box" v-if="showMain">
         <nav class="navbar is-primary">
@@ -41,5 +41,5 @@
         </div>
     </div>
 
-@endsection
 
+@endsection
