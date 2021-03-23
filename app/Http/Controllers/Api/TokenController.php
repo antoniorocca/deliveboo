@@ -34,7 +34,7 @@ class TokenController extends Controller
         ]
       ]);
 
-      return redirect()->route('index');
+      return redirect()->route('checkout');
     }
 
 }

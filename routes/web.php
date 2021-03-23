@@ -16,6 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 })->name('index');
+Route::get('/checkout', function () {
+    return view('endCheckout');
+})->name('checkout');
 
 Auth::routes();
 

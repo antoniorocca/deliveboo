@@ -59,6 +59,7 @@ Vue.component('landing-component', require('./components/LandingComponent.vue').
 Vue.component('edo-categories', require('./components/EdoCategories.vue').default);
 Vue.component('edo-restaurants', require('./components/EdoRestaurants.vue').default);
 Vue.component('edo-payment', require('./components/PaymentComponent.vue').default);
+Vue.component('checkout', require('./components/CheckoutComponent.vue').default);
 
 
 const app = new Vue({
@@ -71,12 +72,13 @@ const app = new Vue({
       search:'',
     },
     methods:{
+
       switchMain : function(){
         console.log('switch');
         this.showMain = true;
         this.showLanding = false;
-
       },
+
     },
     mounted(){
       this.$store.dispatch('axiosCall')
