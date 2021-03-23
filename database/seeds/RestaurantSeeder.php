@@ -72,7 +72,7 @@ class RestaurantSeeder extends Seeder
             $newRestaurant->name = 'restaurant'.($i+1);
             $newRestaurant->description = $faker->realText($maxNbChars = 100, $indexSize = 2);
             $newRestaurant->phone_number = $faker->phoneNumber();
-            $newRestaurant->location = $location[rand(1,13)];
+            $newRestaurant->location = $location[rand(0,12)];
             $newRestaurant->opening_time = rand(15,18);
             $newRestaurant->closure_time = rand(22,24);
             $newRestaurant->price_shipping = rand(100,300)/100;
