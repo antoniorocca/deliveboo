@@ -38,7 +38,7 @@ class TokenController extends Controller
       $newOrder->amount = $total;
       $newOrder->order = serialize($dishes);
       $newOrder->save();
-
+      dd($dishes);
       return redirect()->route('checkout');
     }
 
