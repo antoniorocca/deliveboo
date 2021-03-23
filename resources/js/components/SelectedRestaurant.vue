@@ -9,15 +9,18 @@
         <div id="main_restaurant">
             <div class=" first_title">
                 <h2>Ristorante selezionato</h2>
-                <button @click="toggle"> torna in dietro</button>
+                <button @click="toggle"> torna indietro</button>
             </div>
         </div>
         <div id="selected_restaurant_dishes" class="d-flex flex-wrap justify-content-center">
             <div class="dish_card" v-for="dish in this.$store.state.selectedRestaurant.dishes">
                 <img :src="dish.img" alt="">
                 <h4>{{ dish.name }}</h4>
-                <span>prezzo {{ dish.price }}</span><br>
-                <span> rating {{ dish.rating }}</span> 
+                <span>prezzo &euro; {{ dish.price }}</span><br>
+                <span> rating {{ dish.rating }}</span>
+                <div class="add_cart">
+                    <button class="button is-success" @click="addToCart(dish)">Add to Cart</button>
+                </div> 
                 <!-- <p>descrizione {{ dish.description }}</p> -->
                 <!-- <dd>sconto {{ dish.discount }}</dd> -->
                 <!-- <dd> classe menu {{ dish.menu_class }}</dd> -->
@@ -89,8 +92,9 @@ export default {
         width: 100%;
         .dish_card {
             margin: 30px;
-            height: 230px;
+            min-height: 230px;
             width: 360px;
+            padding-bottom: 15px;
             z-index: 10;
             border-radius: 10px;
             box-shadow: 0 0 10px #DDDDDD;
@@ -110,6 +114,9 @@ export default {
                 margin-bottom: 10px;
                 font-weight: 700;
                 padding: 10px;
+            }
+            .add_cart{
+                
             }
         }
     }      

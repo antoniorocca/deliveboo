@@ -2721,6 +2721,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -7401,7 +7404,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".selected_restaurant_container[data-v-3db2e1e3] {\n  height: 100%;\n  width: 75%;\n  padding-left: 20px;\n  padding-right: 20px;\n}\n.selected_restaurant_container #info_restaurant[data-v-3db2e1e3] {\n  position: relative;\n  margin-bottom: 150px;\n}\n.selected_restaurant_container #info_restaurant img[data-v-3db2e1e3] {\n  width: 850px;\n  height: 440px;\n}\n.selected_restaurant_container #info_restaurant #restaurant_txt[data-v-3db2e1e3] {\n  position: absolute;\n  top: 400px;\n  left: 50px;\n  height: 150px;\n  width: 500px;\n  background-color: white;\n  border-radius: 10px;\n}\n.selected_restaurant_container #info_restaurant #restaurant_txt h2[data-v-3db2e1e3] {\n  color: red;\n}\n.selected_restaurant_container #selected_restaurant_dishes[data-v-3db2e1e3] {\n  height: 100%;\n  width: 100%;\n}\n.selected_restaurant_container #selected_restaurant_dishes .dish_card[data-v-3db2e1e3] {\n  margin: 30px;\n  height: 230px;\n  width: 360px;\n  z-index: 10;\n  border-radius: 10px;\n  box-shadow: 0 0 10px #DDDDDD;\n  border-color: transparent;\n  text-align: center;\n}\n.selected_restaurant_container #selected_restaurant_dishes .dish_card img[data-v-3db2e1e3] {\n  height: 120px;\n  width: 360px;\n  border-top-left-radius: 10px;\n  border-top-right-radius: 10px;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.selected_restaurant_container #selected_restaurant_dishes .dish_card h4[data-v-3db2e1e3] {\n  border: px solid rgba(0, 0, 0, 0.125);\n  border-radius: 0.25rem;\n  margin-bottom: 10px;\n  font-weight: 700;\n  padding: 10px;\n}", ""]);
+exports.push([module.i, ".selected_restaurant_container[data-v-3db2e1e3] {\n  height: 100%;\n  width: 75%;\n  padding-left: 20px;\n  padding-right: 20px;\n}\n.selected_restaurant_container #info_restaurant[data-v-3db2e1e3] {\n  position: relative;\n  margin-bottom: 150px;\n}\n.selected_restaurant_container #info_restaurant img[data-v-3db2e1e3] {\n  width: 850px;\n  height: 440px;\n}\n.selected_restaurant_container #info_restaurant #restaurant_txt[data-v-3db2e1e3] {\n  position: absolute;\n  top: 400px;\n  left: 50px;\n  height: 150px;\n  width: 500px;\n  background-color: white;\n  border-radius: 10px;\n}\n.selected_restaurant_container #info_restaurant #restaurant_txt h2[data-v-3db2e1e3] {\n  color: red;\n}\n.selected_restaurant_container #selected_restaurant_dishes[data-v-3db2e1e3] {\n  height: 100%;\n  width: 100%;\n}\n.selected_restaurant_container #selected_restaurant_dishes .dish_card[data-v-3db2e1e3] {\n  margin: 30px;\n  min-height: 230px;\n  width: 360px;\n  padding-bottom: 15px;\n  z-index: 10;\n  border-radius: 10px;\n  box-shadow: 0 0 10px #DDDDDD;\n  border-color: transparent;\n  text-align: center;\n}\n.selected_restaurant_container #selected_restaurant_dishes .dish_card img[data-v-3db2e1e3] {\n  height: 120px;\n  width: 360px;\n  border-top-left-radius: 10px;\n  border-top-right-radius: 10px;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.selected_restaurant_container #selected_restaurant_dishes .dish_card h4[data-v-3db2e1e3] {\n  border: px solid rgba(0, 0, 0, 0.125);\n  border-radius: 0.25rem;\n  margin-bottom: 10px;\n  font-weight: 700;\n  padding: 10px;\n}", ""]);
 
 // exports
 
@@ -40217,11 +40220,11 @@ var render = function() {
           _vm._l(_vm.$store.state.dishes.data.response, function(item) {
             return _c("li", [
               _vm._v(
-                "\n      " +
+                "\r\n      " +
                   _vm._s(item.name) +
-                  "\n      " +
+                  "\r\n      " +
                   _vm._s(item.price) +
-                  "\n      "
+                  "\r\n      "
               ),
               _c(
                 "button",
@@ -40233,7 +40236,7 @@ var render = function() {
                     }
                   }
                 },
-                [_vm._v("Add to Cart\n      ")]
+                [_vm._v("Add to Cart\r\n      ")]
               )
             ])
           }),
@@ -40363,9 +40366,9 @@ var render = function() {
                   _vm._v(" "),
                   _c("h4", [
                     _vm._v(
-                      "\n                    " +
+                      "\r\n                    " +
                         _vm._s(restaurant.name) +
-                        "\n                "
+                        "\r\n                "
                     )
                   ]),
                   _vm._v(" "),
@@ -40393,7 +40396,7 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("p", [
         _vm._v(
-          "\n            Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, voluptatibus?\n            "
+          "\r\n            Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, voluptatibus?\r\n            "
         )
       ])
     ])
@@ -40443,7 +40446,7 @@ var render = function() {
             _c("h2", [_vm._v("Ristorante selezionato")]),
             _vm._v(" "),
             _c("button", { on: { click: _vm.toggle } }, [
-              _vm._v(" torna in dietro")
+              _vm._v(" torna indietro")
             ])
           ])
         ]),
@@ -40460,10 +40463,25 @@ var render = function() {
               _vm._v(" "),
               _c("h4", [_vm._v(_vm._s(dish.name))]),
               _vm._v(" "),
-              _c("span", [_vm._v("prezzo " + _vm._s(dish.price))]),
+              _c("span", [_vm._v("prezzo € " + _vm._s(dish.price))]),
               _c("br"),
               _vm._v(" "),
-              _c("span", [_vm._v(" rating " + _vm._s(dish.rating))])
+              _c("span", [_vm._v(" rating " + _vm._s(dish.rating))]),
+              _vm._v(" "),
+              _c("div", { staticClass: "add_cart" }, [
+                _c(
+                  "button",
+                  {
+                    staticClass: "button is-success",
+                    on: {
+                      click: function($event) {
+                        return _vm.addToCart(dish)
+                      }
+                    }
+                  },
+                  [_vm._v("Add to Cart")]
+                )
+              ])
             ])
           }),
           0
@@ -58638,8 +58656,8 @@ var store = {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /var/www/html/boolean/laravel/deliveboo/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /var/www/html/boolean/laravel/deliveboo/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\Fabio\Desktop\Boolean\classe 23\deliveboo\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\Fabio\Desktop\Boolean\classe 23\deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
