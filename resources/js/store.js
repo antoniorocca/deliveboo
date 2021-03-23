@@ -88,7 +88,7 @@ let store = {
         setSelectedRestaurant(state, restaurant) {
             console.log(restaurant);
             this.state.selectedRestaurant = restaurant;
-        }
+        },
         // funzione per toglerare tra carrello e checkout
         toggleCheckout(){
 

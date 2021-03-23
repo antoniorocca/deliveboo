@@ -16,7 +16,7 @@
     <restaurant-component></restaurant-component>
     <selected-restaurant></selected-restaurant>
 
-    
+
     <!-- CARRELLO -->
     <div class="cart-box" v-if="showMain">
         <nav class="navbar is-primary">
@@ -42,25 +42,19 @@
         </div>
     </div>
 
+
+    <!-- CARRELLO -->
+
+
+    <div class="section_content" style=" display:flex; flex-wrap:wrap">
+      <h1 style="width:100%">Our Products</h1>
+      <products-list style="width:70%"></products-list>
+      <div class="" style="displa:flex; flex-direction:column;">
+        <cart-dropdown class="cart-box"></cart-dropdown>
+        <!-- <edo-payment></edo-payment> -->
+
+      </div>
+      <products-list2 style="width:70%"></products-list2>
+    </div>
+
 @endsection
-
-
-
-
-        <!-- CARRELLO -->
-
-
-        <div class="section_content" style=" display:flex; flex-wrap:wrap">
-          <h1 style="width:100%">Our Products</h1>
-          <products-list style="width:70%"></products-list>
-          <div class="" style="displa:flex; flex-direction:column;">
-            <cart-dropdown class="cart-box"></cart-dropdown>
-            <!-- <edo-payment></edo-payment> -->
-
-          </div>
-          <products-list2 style="width:70%"></products-list2>
-        </div>
-
-
-
-
