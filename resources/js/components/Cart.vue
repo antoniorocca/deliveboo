@@ -108,7 +108,7 @@ export default {
 <style  scoped lang="scss">
 .cart_box {
     position: relative;
-    border: 1px solid black;
+    box-shadow:  0 0 10px #acacac;
     width: 400px;
     min-height: 450px;
     display: flex;

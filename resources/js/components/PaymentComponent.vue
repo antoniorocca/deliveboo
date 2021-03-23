@@ -6,11 +6,10 @@
     easier to manage -->
 
 
-    <div id="dropin-container">
-    </div>
+    <div id="dropin-container"></div>
     <div class="wrap">
-      <input class="glovo_btn" type="submit" value="Invia il pagamento">
-      <a class="glovo_btn" @click="toggleCheckout">ritorna carrello</a>
+      <input class="payment_btn" type="submit" value="Invia il pagamento">
+      <a class="payment_btn" @click="toggleCheckout">ritorna carrello</a>
     </div>
     <input type="hidden" id="nonce" name="payment_method_nonce"/>
     <input type="hidden" id="cart" name="cart"/>
@@ -72,21 +71,22 @@
     }
 </script>
 <style  scoped lang="scss">
-.wrap {
-  display:flex;
-  justify-content: center;
+#payment-form{
+  .wrap {
+    display:flex;
+    justify-content: space-between;
+      .payment_btn {
+      min-width: 150px;
+      display: flex;
+      justify-content: center;
+      line-height: 50px;
+      border-radius: 30px;
+      background-color: #00a082;
+      color: white;
+      height: 50px;
+      border: 0;
 
-  .glovo_btn {
-    max-width: 100px!important;
-    display: flex!important;
-    justify-content: center!important;
-    line-height: 50px!important;
-    border-radius: 30px!important;
-    background-color: #00a082!important;
-    color: white!important;
-    height: 50px!important;
-    border: 0!important;
-
+    }
   }
 }
 
