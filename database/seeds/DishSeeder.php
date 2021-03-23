@@ -47,12 +47,12 @@ class DishSeeder extends Seeder
       $names = ['insalata','poke','pizza','hamburger','pasta','toast','sushi','taco'];
 
 
-      for ($i=0; $i < 210; $i++) {
+      for ($i=0; $i < 310; $i++) {
         $newDish = new Dish;
         $newDish->name = $names[rand(0,7)];
         $newDish->img = $images[rand(0,25)];
         $newDish->description = $faker->sentence();
-        $newDish->price = rand(1,10);
+        $newDish->price = rand(100,1000) / 100;
         $newDish->discount = rand(0,1);
         $newDish->rating = rand(1,5);
         $newDish->menu_class ='';
