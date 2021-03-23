@@ -2689,9 +2689,62 @@ __webpack_require__.r(__webpack_exports__);
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/SelectedRestaurant.vue?vue&type=script&lang=js& ***!
   \*****************************************************************************************************************************************************************************/
 /*! exports provided: default */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /var/www/html/boolean/laravel/deliveboo/resources/js/components/SelectedRestaurant.vue: Unexpected token (53:0)\n\n\u001b[0m \u001b[90m 51 |\u001b[39m     }\u001b[33m,\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 52 |\u001b[39m     methods\u001b[33m:\u001b[39m{\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 53 |\u001b[39m \u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<\u001b[39m \u001b[33mHEAD\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 54 |\u001b[39m         addToCart(item) {\u001b[0m\n\u001b[0m \u001b[90m 55 |\u001b[39m             \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39m$store\u001b[33m.\u001b[39mcommit(\u001b[32m'addToCart'\u001b[39m\u001b[33m,\u001b[39m item)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 56 |\u001b[39m         }     \u001b[0m\n    at Parser._raise (/var/www/html/boolean/laravel/deliveboo/node_modules/@babel/parser/lib/index.js:776:17)\n    at Parser.raiseWithData (/var/www/html/boolean/laravel/deliveboo/node_modules/@babel/parser/lib/index.js:769:17)\n    at Parser.raise (/var/www/html/boolean/laravel/deliveboo/node_modules/@babel/parser/lib/index.js:737:17)\n    at Parser.unexpected (/var/www/html/boolean/laravel/deliveboo/node_modules/@babel/parser/lib/index.js:9686:16)\n    at Parser.parseIdentifierName (/var/www/html/boolean/laravel/deliveboo/node_modules/@babel/parser/lib/index.js:11846:18)\n    at Parser.parseIdentifier (/var/www/html/boolean/laravel/deliveboo/node_modules/@babel/parser/lib/index.js:11819:23)\n    at Parser.parseMaybePrivateName (/var/www/html/boolean/laravel/deliveboo/node_modules/@babel/parser/lib/index.js:11148:19)\n    at Parser.parsePropertyName (/var/www/html/boolean/laravel/deliveboo/node_modules/@babel/parser/lib/index.js:11633:155)\n    at Parser.parsePropertyDefinition (/var/www/html/boolean/laravel/deliveboo/node_modules/@babel/parser/lib/index.js:11519:22)\n    at Parser.parseObjectLike (/var/www/html/boolean/laravel/deliveboo/node_modules/@babel/parser/lib/index.js:11434:25)\n    at Parser.parseExprAtom (/var/www/html/boolean/laravel/deliveboo/node_modules/@babel/parser/lib/index.js:10994:23)\n    at Parser.parseExprSubscripts (/var/www/html/boolean/laravel/deliveboo/node_modules/@babel/parser/lib/index.js:10655:23)\n    at Parser.parseUpdate (/var/www/html/boolean/laravel/deliveboo/node_modules/@babel/parser/lib/index.js:10635:21)\n    at Parser.parseMaybeUnary (/var/www/html/boolean/laravel/deliveboo/node_modules/@babel/parser/lib/index.js:10613:23)\n    at Parser.parseExprOps (/var/www/html/boolean/laravel/deliveboo/node_modules/@babel/parser/lib/index.js:10474:23)\n    at Parser.parseMaybeConditional (/var/www/html/boolean/laravel/deliveboo/node_modules/@babel/parser/lib/index.js:10448:23)\n    at Parser.parseMaybeAssign (/var/www/html/boolean/laravel/deliveboo/node_modules/@babel/parser/lib/index.js:10411:21)\n    at /var/www/html/boolean/laravel/deliveboo/node_modules/@babel/parser/lib/index.js:10378:39\n    at Parser.allowInAnd (/var/www/html/boolean/laravel/deliveboo/node_modules/@babel/parser/lib/index.js:12051:12)\n    at Parser.parseMaybeAssignAllowIn (/var/www/html/boolean/laravel/deliveboo/node_modules/@babel/parser/lib/index.js:10378:17)\n    at Parser.parseObjectProperty (/var/www/html/boolean/laravel/deliveboo/node_modules/@babel/parser/lib/index.js:11595:101)\n    at Parser.parseObjPropValue (/var/www/html/boolean/laravel/deliveboo/node_modules/@babel/parser/lib/index.js:11620:100)\n    at Parser.parsePropertyDefinition (/var/www/html/boolean/laravel/deliveboo/node_modules/@babel/parser/lib/index.js:11544:10)\n    at Parser.parseObjectLike (/var/www/html/boolean/laravel/deliveboo/node_modules/@babel/parser/lib/index.js:11434:25)\n    at Parser.parseExprAtom (/var/www/html/boolean/laravel/deliveboo/node_modules/@babel/parser/lib/index.js:10994:23)\n    at Parser.parseExprSubscripts (/var/www/html/boolean/laravel/deliveboo/node_modules/@babel/parser/lib/index.js:10655:23)\n    at Parser.parseUpdate (/var/www/html/boolean/laravel/deliveboo/node_modules/@babel/parser/lib/index.js:10635:21)\n    at Parser.parseMaybeUnary (/var/www/html/boolean/laravel/deliveboo/node_modules/@babel/parser/lib/index.js:10613:23)\n    at Parser.parseExprOps (/var/www/html/boolean/laravel/deliveboo/node_modules/@babel/parser/lib/index.js:10474:23)\n    at Parser.parseMaybeConditional (/var/www/html/boolean/laravel/deliveboo/node_modules/@babel/parser/lib/index.js:10448:23)\n    at Parser.parseMaybeAssign (/var/www/html/boolean/laravel/deliveboo/node_modules/@babel/parser/lib/index.js:10411:21)\n    at /var/www/html/boolean/laravel/deliveboo/node_modules/@babel/parser/lib/index.js:10378:39\n    at Parser.allowInAnd (/var/www/html/boolean/laravel/deliveboo/node_modules/@babel/parser/lib/index.js:12045:16)\n    at Parser.parseMaybeAssignAllowIn (/var/www/html/boolean/laravel/deliveboo/node_modules/@babel/parser/lib/index.js:10378:17)\n    at Parser.parseExportDefaultExpression (/var/www/html/boolean/laravel/deliveboo/node_modules/@babel/parser/lib/index.js:13407:24)\n    at Parser.parseExport (/var/www/html/boolean/laravel/deliveboo/node_modules/@babel/parser/lib/index.js:13317:31)");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      selectedRestaurant: ''
+    };
+  },
+  methods: {
+    toggle: function toggle() {
+      if (this.$store.state.visibility == false) {
+        this.$store.commit('visibilityFunction', true);
+        console.log('false');
+      } else {
+        this.$store.commit('visibilityFunction', false);
+        console.log('true');
+      }
+    },
+    addToCart: function addToCart(item) {
+      this.$store.commit('addToCart', item);
+    }
+  },
+  computed: {},
+  mounted: function mounted() {//   this.selectedRestaurant = this.$store.state.restaurant;
+  }
+});
 
 /***/ }),
 
@@ -40386,52 +40439,13 @@ var render = function() {
         ]),
         _vm._v(" "),
         _c("div", { attrs: { id: "main_restaurant" } }, [
-          _vm._m(0),
-          _vm._v(" "),
-          _c(
-            "div",
-            {
-              staticClass: "d-flex flex-wrap justify-content-center",
-              attrs: { id: "selected_restaurant_dishes" }
-            },
-            [
-              _vm._l(this.$store.state.selectedRestaurant.dishes, function(
-                dish
-              ) {
-                return _c("div", { staticClass: "dish_card" }, [
-                  _c("img", {
-                    staticClass: "dish_img",
-                    attrs: { src: dish.img, alt: "" }
-                  }),
-                  _vm._v(" "),
-                  _c("h4", [_vm._v("nome " + _vm._s(dish.name))]),
-                  _vm._v(" "),
-                  _c("dd", [_vm._v("prezzo " + _vm._s(dish.price))]),
-                  _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      staticClass: "button is-success",
-                      on: {
-                        click: function($event) {
-                          return _vm.addToCart(dish)
-                        }
-                      }
-                    },
-                    [_vm._v("Add to Cart")]
-                  ),
-                  _vm._v(" "),
-                  _c("dd", [_vm._v(" rating " + _vm._s(dish.rating))])
-                ])
-              }),
-              _vm._v("\n=======\n                "),
-              _c("button", { on: { click: _vm.toggle } }, [
-                _vm._v(" torna in dietro")
-              ]),
-              _vm._v("\n>>>>>>> initmenustyle\n            ")
-            ],
-            2
-          )
+          _c("div", { staticClass: " first_title" }, [
+            _c("h2", [_vm._v("Ristorante selezionato")]),
+            _vm._v(" "),
+            _c("button", { on: { click: _vm.toggle } }, [
+              _vm._v(" torna in dietro")
+            ])
+          ])
         ]),
         _vm._v(" "),
         _c(
@@ -40457,17 +40471,7 @@ var render = function() {
       ])
     : _vm._e()
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: " first_title" }, [
-      _c("h2", [_vm._v("Ristorante selezionato")]),
-      _vm._v("\n<<<<<<< HEAD\n            ")
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
