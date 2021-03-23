@@ -3,7 +3,7 @@
 
 
 
-      <div class="resume_wrap" v-bind:style="this.$store.state.checkout?'display:none':'display:block'">
+      <div class="resume_wrap" v-if="!this.$store.state.checkout">
         <span class="cart_count_span">
           Cart (<span>{{ $store.state.cartCount }}</span>)
         </span>
@@ -55,7 +55,7 @@
 
 
 
-        <edo-payment v-bind:style="!this.$store.state.checkout?'display:none':'display:block'"></edo-payment>
+        <edo-payment v-if="this.$store.state.checkout"></edo-payment>
     </div>
 </template>
 
