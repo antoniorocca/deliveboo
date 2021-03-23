@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
+use App\Order;
 class TokenController extends Controller
 {
     //
@@ -33,7 +33,12 @@ class TokenController extends Controller
           'submitForSettlement' => True
         ]
       ]);
-
+      $newOrder = new Order;
+      $newOrder->restaurant_id = $dishes[0]->restaurant_id;
+      $newOrder->amount = $total;
+      $newOrder->order = serialize($dishes);
+      $newOrder->save();
+      dd($newOrder);
       return redirect()->route('checkout');
     }
 

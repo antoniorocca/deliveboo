@@ -1,8 +1,7 @@
 <template>
 <div class="" style=" background-color:red;">
-<p v-if="$store.state.dishes.data != undefined">
-  <ul>
-    <li v-for="item in $store.state.dishes.data.response">
+  <ul v-if="$store.state.dishes.data != undefined">
+    <li  v-for="item in $store.state.dishes.data.response">
       {{item.name}}
       {{item.price}}
       <button class="button is-success"
@@ -12,7 +11,6 @@
 
     </li>
   </ul>
-</p>
 </div>
 
 

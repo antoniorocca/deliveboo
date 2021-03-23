@@ -2554,8 +2554,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -40088,35 +40086,33 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { staticStyle: { "background-color": "red" } }, [
     _vm.$store.state.dishes.data != undefined
-      ? _c("p", [
-          _c(
-            "ul",
-            _vm._l(_vm.$store.state.dishes.data.response, function(item) {
-              return _c("li", [
-                _vm._v(
+      ? _c(
+          "ul",
+          _vm._l(_vm.$store.state.dishes.data.response, function(item) {
+            return _c("li", [
+              _vm._v(
+                "\n      " +
+                  _vm._s(item.name) +
                   "\n      " +
-                    _vm._s(item.name) +
-                    "\n      " +
-                    _vm._s(item.price) +
-                    "\n      "
-                ),
-                _c(
-                  "button",
-                  {
-                    staticClass: "button is-success",
-                    on: {
-                      click: function($event) {
-                        return _vm.addToCart(item)
-                      }
+                  _vm._s(item.price) +
+                  "\n      "
+              ),
+              _c(
+                "button",
+                {
+                  staticClass: "button is-success",
+                  on: {
+                    click: function($event) {
+                      return _vm.addToCart(item)
                     }
-                  },
-                  [_vm._v("Add to Cart\n      ")]
-                )
-              ])
-            }),
-            0
-          )
-        ])
+                  }
+                },
+                [_vm._v("Add to Cart\n      ")]
+              )
+            ])
+          }),
+          0
+        )
       : _vm._e()
   ])
 }
