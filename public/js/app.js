@@ -2637,16 +2637,14 @@ __webpack_require__.r(__webpack_exports__);
       if (value.target.value !== 'all') {
         var restSelect = this.categories[value.target.value - 1];
         this.restaurants = restSelect.restaurants;
-        this.letSelected = value.target.value;
-        console.log('if case');
-        console.log(this.restaurants);
-        console.log('restaurant all');
-        console.log(this.restaurantsAll);
+        this.letSelected = value.target.value; // console.log('if case');
+        // console.log( this.restaurants);
+        // console.log('restaurant all');
+        // console.log( this.restaurantsAll);
       } else {
         this.restaurants = this.restaurantsAll;
-        this.letSelected = "all";
-        console.log('else case');
-        console.log(this.restaurants);
+        this.letSelected = "all"; // console.log('else case');
+        // console.log(this.restaurants);
       }
     },
     showRestaurant: function showRestaurant(value) {
@@ -2660,14 +2658,23 @@ __webpack_require__.r(__webpack_exports__);
       var v = this.categories[value.target.value - 1];
       this.restaurants = v.restaurants;
       this.letSelected = value.target.value;
+    },
+    toggle: function toggle() {
+      if (this.$store.state.visibility == false) {
+        this.$store.commit('visibilityFunction');
+        console.log('false');
+      } else {
+        this.$store.commit('visibilityFunction');
+        console.log('true');
+      }
     }
   },
   mounted: function mounted() {
     var _this = this;
 
     Promise.all([axios.get('api/restaurants'), axios.get('api/categories')]).then(function (resp) {
-      console.log(resp[0].data.response);
-      console.log(resp[1].data.response);
+      // console.log(resp[0].data.response);
+      // console.log(resp[1].data.response);
       _this.restaurantsAll = resp[0].data.response;
       _this.restaurants = resp[0].data.response;
       _this.categories = resp[1].data.response; // return (RestaurantComponent, { props: { restaurants: this.restaurants } });
@@ -2712,13 +2719,32 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       selectedRestaurant: ''
     };
   },
-  methods: {},
+  methods: {
+    toggle: function toggle() {
+      if (this.$store.state.visibility == false) {
+        this.$store.commit('visibilityFunction', true);
+        console.log('false');
+      } else {
+        this.$store.commit('visibilityFunction', false);
+        console.log('true');
+      }
+    }
+  },
   computed: {},
   mounted: function mounted() {//   this.selectedRestaurant = this.$store.state.restaurant;
   }
@@ -40242,124 +40268,111 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("div", { staticClass: "header" }, [
-      _c(
-        "div",
-        {
-          staticClass: "d-flex justify-content-center flex-wrap",
-          attrs: { id: "main-header" }
-        },
-        [
+  return this.$store.state.visibility
+    ? _c("div", [
+        _c("div", { staticClass: "header" }, [
           _c(
             "div",
             {
               staticClass: "d-flex justify-content-center flex-wrap",
-              attrs: { id: "categories" }
+              attrs: { id: "main-header" }
             },
-            _vm._l(_vm.categories.slice(0, 8), function(category) {
-              return _c(
+            [
+              _c(
                 "div",
                 {
-                  staticClass:
-                    "category category_hover mr-4 mt-5 d-flex justify-content-center",
-                  class: _vm.letSelected == category.id ? "focusr" : ""
+                  staticClass: "d-flex justify-content-center flex-wrap",
+                  attrs: { id: "categories" }
                 },
+                _vm._l(_vm.categories.slice(0, 8), function(category) {
+                  return _c(
+                    "div",
+                    {
+                      staticClass:
+                        "category category_hover mr-4 mt-5 d-flex justify-content-center",
+                      class: _vm.letSelected == category.id ? "focusr" : ""
+                    },
+                    [
+                      _c("span", [_vm._v(_vm._s(category.name))]),
+                      _vm._v(" "),
+                      _c("input", {
+                        class: _vm.letSelected == category.id ? "focusr" : "",
+                        attrs: { type: "submit" },
+                        domProps: { value: category.id },
+                        on: { click: _vm.selectRestaurantOnClick }
+                      })
+                    ]
+                  )
+                }),
+                0
+              )
+            ]
+          )
+        ]),
+        _vm._v(" "),
+        _c("div", [
+          _c("h4", [_vm._v("Categorie:")]),
+          _vm._v(" "),
+          _c(
+            "select",
+            {
+              staticClass: "form-control",
+              attrs: { name: "category_id", id: "category_id" },
+              on: { change: _vm.selectRestaurant }
+            },
+            [
+              _c("option", { attrs: { value: "all" } }, [_vm._v("All")]),
+              _vm._v(" "),
+              _c("h4", [
+                _vm._v(
+                  "\n                    " +
+                    _vm._s(restaurant.name) +
+                    "\n                "
+                )
+              })
+            ],
+            2
+          )
+        ]),
+        _vm._v(" "),
+        _c("div", { attrs: { id: "content" } }, [
+          _vm._m(0),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "restaurants" },
+            _vm._l(_vm.restaurants, function(restaurant) {
+              return _c(
+                "div",
+                { staticClass: "card card_hover ", on: { click: _vm.toggle } },
                 [
-                  _c("span", [_vm._v(_vm._s(category.name))]),
+                  _c("div", { staticClass: "restaurant_image" }, [
+                    _c("img", {
+                      attrs: { src: restaurant.img, alt: "restaurant's image" }
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _c("h4", [
+                    _vm._v(
+                      "\r\n                    " +
+                        _vm._s(restaurant.name) +
+                        "\r\n                "
+                    )
+                  ]),
                   _vm._v(" "),
                   _c("input", {
-                    class: _vm.letSelected == category.id ? "focusr" : "",
-                    attrs: { type: "submit" },
-                    domProps: { value: category.id },
-                    on: { click: _vm.selectRestaurantOnClick }
+                    staticClass: "option_restaurant",
+                    domProps: { value: restaurant.id },
+                    on: { click: _vm.showRestaurant }
                   })
                 ]
               )
             }),
             0
           )
-        ]
-      )
-    ]),
-    _vm._v(" "),
-    _c("div", [
-      _c("h4", [_vm._v("Categorie:")]),
-      _vm._v(" "),
-      _c(
-        "select",
-        {
-          staticClass: "form-control",
-          attrs: { name: "category_id", id: "category_id" },
-          on: { change: _vm.selectRestaurant }
-        },
-        [
-          _c("option", { attrs: { value: "all" } }, [_vm._v("All")]),
-          _vm._v(" "),
-          _vm._l(_vm.categories, function(category) {
-            return _c(
-              "option",
-              {
-                attrs: { id: "selection" },
-                domProps: {
-                  selected: _vm.letSelected == category.id,
-                  value: category.id
-                }
-              },
-              [
-                _vm._v(
-                  _vm._s(category.name) +
-                    " (" +
-                    _vm._s(category.restaurants.length) +
-                    ")"
-                )
-              ]
-            )
-          })
-        ],
-        2
-      )
-    ]),
-    _vm._v(" "),
-    _c("div", { attrs: { id: "content" } }, [
-      _vm._m(0),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "restaurants" },
-        _vm._l(_vm.restaurants, function(restaurant) {
-          return _c(
-            "div",
-            {
-              staticClass: "card card_hover ",
-              on: { click: _vm.showRestaurant }
-            },
-            [
-              _c("div", { staticClass: "restaurant_image" }, [
-                _c("img", {
-                  attrs: { src: restaurant.img, alt: "restaurant's image" }
-                })
-              ]),
-              _vm._v(" "),
-              _c("h4", [
-                _vm._v(
-                  "\r\n                    " +
-                    _vm._s(restaurant.name) +
-                    "\r\n                "
-                )
-              ]),
-              _vm._v(" "),
-              _c("input", {
-                staticClass: "option_restaurant",
-                domProps: { value: restaurant.id }
-              })
-            ]
-          )
-        }),
-        0
-      )
-    ])
-  ])
+        ])
+      ])
+    : _vm._e()
 }
 var staticRenderFns = [
   function() {
@@ -40401,38 +40414,55 @@ var render = function() {
   return _c("div", { staticClass: "selected_restaurant_container" }, [
     _c("div", { attrs: { id: "info_restaurant" } }, [
       _c("img", {
-        attrs: { src: this.$store.state.selectedRestaurant.img, alt: "" }
+        attrs: {
+          id: "restaurant_jumbotron",
+          src: this.$store.state.selectedRestaurant.img,
+          alt: ""
+        }
       }),
       _vm._v(" "),
-      _c("div", { attrs: { id: "restaurant_txt" } }, [
-        _c("h2", [_vm._v(_vm._s(this.$store.state.selectedRestaurant.name))]),
-        _vm._v(" "),
-        _c("p", [
-          _vm._v(_vm._s(this.$store.state.selectedRestaurant.description))
-        ])
+      _c("h2", [_vm._v(_vm._s(this.$store.state.selectedRestaurant.name))]),
+      _vm._v(" "),
+      _c("p", [
+        _vm._v(_vm._s(this.$store.state.selectedRestaurant.description))
       ])
     ]),
     _vm._v(" "),
-    _c(
-      "div",
-      {
-        staticClass: "d-flex flex-wrap justify-content-center",
-        attrs: { id: "selected_restaurant_dishes" }
-      },
-      _vm._l(this.$store.state.selectedRestaurant.dishes, function(dish) {
-        return _c("div", { staticClass: "dish_card" }, [
-          _c("img", { attrs: { src: dish.img, alt: "" } }),
-          _vm._v(" "),
-          _c("h4", [_vm._v(_vm._s(dish.name))]),
-          _vm._v(" "),
-          _c("span", [_vm._v("prezzo " + _vm._s(dish.price))]),
-          _c("br"),
-          _vm._v(" "),
-          _c("span", [_vm._v(" rating " + _vm._s(dish.rating))])
-        ])
-      }),
-      0
-    )
+    _c("div", { attrs: { id: "main_restaurant" } }, [
+      _vm._m(0),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          staticClass: "d-flex flex-wrap justify-content-center",
+          attrs: { id: "selected_restaurant_dishes" }
+        },
+        _vm._l(this.$store.state.selectedRestaurant.dishes, function(dish) {
+          return _c("div", { staticClass: "dish_card" }, [
+            _c("img", {
+              staticClass: "dish_img",
+              attrs: { src: dish.img, alt: "" }
+            }),
+            _vm._v(" "),
+            _c("h4", [_vm._v("nome " + _vm._s(dish.name))]),
+            _vm._v(" "),
+            _c("dd", [_vm._v("prezzo " + _vm._s(dish.price))]),
+            _vm._v(" "),
+            _c("input", {
+              attrs: { type: "submit" },
+              domProps: { value: dish.price }
+            }),
+            _vm._v(" "),
+            _c("dd", [_vm._v(" rating " + _vm._s(dish.rating))])
+          ])
+        }),
+        0
+      ),
+      _vm._v(" "),
+      _c("div", { attrs: { id: "carrello_debug" } }, [
+        _vm._v("\n            Qui va tutto il carrello di Edo\n        ")
+      ])
+    ])
   ])
 }
 var staticRenderFns = []
@@ -58462,9 +58492,17 @@ var store = {
     // variabile per toglerare tra carrello e checkout
     checkout: false,
     test: 'bomber',
-    selectedRestaurant: []
+    selectedRestaurant: [],
+    visibility: true
   },
   mutations: {
+    visibilityFunction: function visibilityFunction() {
+      if (this.state.visibility == false) {
+        this.state.visibility = true;
+      } else {
+        this.state.visibility = false;
+      }
+    },
     // TEST
     changeTest: function changeTest(state) {
       state.test = 'ciao';
@@ -58531,7 +58569,7 @@ var store = {
       this.state.selectedCategories = this.state.restaurants.data.response;
     },
     setSelectedRestaurant: function setSelectedRestaurant(state, restaurant) {
-      console.log(restaurant);
+      // console.log(restaurant);
       this.state.selectedRestaurant = restaurant;
     },
     // funzione per toglerare tra carrello e checkout
@@ -58563,7 +58601,7 @@ var store = {
   },
   actions: {
     axiosCall: function axiosCall(context) {
-      console.log('call');
+      // console.log('call');
       Promise.all([axios.get('api/categories'), axios.get('api/dishes'), axios.get('api/restaurants')]).then(function (resp) {
         context.commit('saveCall', resp);
       })["catch"](function (error) {
@@ -58594,8 +58632,8 @@ var store = {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\USER\Desktop\boolean\deliveboo\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\USER\Desktop\boolean\deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /var/www/html/boolean/laravel/deliveboo/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /var/www/html/boolean/laravel/deliveboo/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

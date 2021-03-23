@@ -18,7 +18,7 @@
 
 
     <!-- CARRELLO -->
-    <div class="cart-box" v-if="showMain">
+    {{-- <div class="cart-box" v-if="showMain">
         <nav class="navbar is-primary">
             <div class="navbar-brand">
                 <a class="navbar-item" href="/">
@@ -40,12 +40,12 @@
             <h1>Our Products</h1>
             <products-list></products-list>
         </div>
-    </div>
+    </div> --}}
 
 
     <!-- CARRELLO -->
 
-
+{{-- 
     <div class="section_content" style=" display:flex; flex-wrap:wrap">
       <h1 style="width:100%">Our Products</h1>
       <products-list style="width:70%"></products-list>
@@ -55,6 +55,6 @@
 
       </div>
       <products-list2 style="width:70%"></products-list2>
-    </div>
+    </div> --}}
 
 @endsection

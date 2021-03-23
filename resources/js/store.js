@@ -13,10 +13,17 @@ let store = {
         checkout:false,
         test: 'bomber',
         selectedRestaurant: [],
-
-
+        visibility: true,
     },
     mutations: {
+
+        visibilityFunction(){
+            if (this.state.visibility == false) {
+                this.state.visibility = true;
+            } else {
+                this.state.visibility = false;
+            }
+        },
 
       // TEST
 
@@ -86,7 +93,7 @@ let store = {
             this.state.selectedCategories = this.state.restaurants.data.response;
         },
         setSelectedRestaurant(state, restaurant) {
-            console.log(restaurant);
+            // console.log(restaurant);
             this.state.selectedRestaurant = restaurant;
         },
         // funzione per toglerare tra carrello e checkout
@@ -121,7 +128,7 @@ let store = {
     },
     actions: {
         axiosCall(context) {
-            console.log('call');
+            // console.log('call');
             Promise.all([
                 axios.get('api/categories'),
                 axios.get('api/dishes'),
