@@ -1,8 +1,6 @@
 <template>
     <div class="cart_box">
 
-
-
       <div class="resume_wrap" v-if="!this.$store.state.checkout">
         <span class="cart_count_span">
           Cart (<span>{{ $store.state.cartCount }}</span>)
@@ -17,7 +15,7 @@
             <div class="cart_product_item" v-for="item in $store.state.cart" :key="item.id">
 
               <span class="cart_item">
-                {{ item.title }} x {{ item.quantity }} - <span>${{ item.totalPrice.toFixed(2) }}</span>
+                {{ item.name }} x {{ item.quantity }} - <span>${{ item.totalPrice.toFixed(2) }}</span>
               </span>
               <div class="btn_box">
                 <button @click="addToCart(item)"><i class="fas fa-plus"></i></button>
@@ -40,7 +38,7 @@
               <button class="checkoutBtn" @click="toggleCheckout" >
                 Checkout
               </button>
-              <button class="checkoutBtn" style="background-color:red" @click="emptyCart" >svuta carrello</button>
+              <button class="checkoutBtn" style="background-color:red" @click="emptyCart" >Svuota carrello</button>
 
           </div>
         </div>
@@ -122,103 +120,107 @@ export default {
     border-radius: 15px;
     padding: 20px;
     .resume_wrap{
-      .cart_count_span{
-        font-size: 23px;
-        font-weight: 600;
-        span{
-          color: #00a082;
-        }
-      }
-      .scooter{
-        img{
-          height: 40px;
-        }
-      }
-      .cart_product_dropdown {
-        display: flex;
-        flex-direction: column;
-        z-index: 99;
-        position: relative;
-        z-index: 100;
-        .cart_wrap{
-          overflow: auto;
-          height: 300px;
-          padding: 5px;
-
-          .cart_product_item{
-            line-height: 50px;
+        min-width: 350px;
+        .cart_count_span{
+            font-size: 23px;
             font-weight: 600;
-            padding: 10px;
-            border-radius: 10px;
-            margin-top: 10px;
-            background-color: #f4f4f4;
-            box-shadow:  0 0 10px #acacac;
-            .cart_item{
-              font-size: 20px;
-              font-weight: 600;
-              span{
-                color: #00a082;
-              }
-            }
-            .btn_box{
-              display: flex;
-              justify-content: space-between;
-              padding: 5px;
-              button {
-                font-size: 20px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                padding: 5px;
-                border-radius: 50%;
-                height: 40px;
-                width: 40px;
-                color: #00a082;
-                background-color: #00a08317;
-                border: none;
-              }
-              .trash{
-                color: red;
-              }
-            }
-
-          }
-        };
-        .wrapCheckout{
-          display: flex;
-          justify-content: center;
-          .checkoutBtn{
             display: flex;
             justify-content: center;
-            line-height: 50px;
-            border-radius: 30px;
-            background-color: #00a082;
-            color: white;
-            height: 50px;
-            width: 120px;
-          }
-        }
-        .totalSpan{
-          font-size: 20px;
-          font-weight: 600;
-          padding: 20px;
-          span{
+            span{
             color: #00a082;
-          }
+            }
         }
-        .navbar_divider{
-          margin-top: 0;
+        .scooter{
+            text-align: center;
+            img{
+            height: 40px;
+            }
         }
-      }
-      .phone {
-        height: 70%;
-        position: absolute;
-        top: 60%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        opacity: .15;
+        .cart_product_dropdown {
+            display: flex;
+            flex-direction: column;
+            z-index: 99;
+            position: relative;
+            z-index: 100;
+            .cart_wrap{
+            overflow: auto;
+            height: 300px;
+            padding: 5px;
 
-      }
+            .cart_product_item{
+                line-height: 50px;
+                font-weight: 600;
+                padding: 10px;
+                border-radius: 10px;
+                margin-top: 10px;
+                background-color: #f4f4f4;
+                box-shadow:  0 0 10px #acacac;
+                .cart_item{
+                font-size: 20px;
+                font-weight: 600;
+                span{
+                    color: #00a082;
+                }
+                }
+                .btn_box{
+                display: flex;
+                justify-content: space-between;
+                padding: 5px;
+                button {
+                    font-size: 20px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 5px;
+                    border-radius: 50%;
+                    height: 40px;
+                    width: 40px;
+                    color: #00a082;
+                    background-color: #00a08317;
+                    border: none;
+                }
+                .trash{
+                    color: red;
+                }
+                }
+
+            }
+            };
+            .wrapCheckout{
+            display: flex;
+            justify-content: space-between;
+            .checkoutBtn{
+                display: flex;
+                justify-content: center;
+                line-height: 50px;
+                border-radius: 30px;
+                background-color: #00a082;
+                color: white;
+                height: 50px;
+                width: 120px;
+            }
+            }
+            .totalSpan{
+            font-size: 20px;
+            font-weight: 600;
+            padding: 20px;
+            span{
+                color: #00a082;
+            }
+            }
+            .navbar_divider{
+            margin-top: 0;
+            }
+        }
+        .phone {
+            height: 70%;
+            position: absolute;
+            top: 60%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: .15;
+
+        }
     }
 
 }

@@ -11324,3 +11324,8 @@ h1 {
   display: flex;
 }
 
+#box_cart {
+  position: sticky;
+  top: 100px;
+}
+

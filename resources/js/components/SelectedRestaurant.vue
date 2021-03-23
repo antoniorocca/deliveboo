@@ -16,16 +16,12 @@
                     <img class="dish_img" :src="dish.img" alt="">
                     <h4>nome {{ dish.name }}</h4>
                     <dd>prezzo {{ dish.price }}</dd>
-                    <input type="submit" :value="dish.price">
+                    <button class="button is-success" @click="addToCart(dish)">Add to Cart</button>
                     <dd> rating {{ dish.rating }}</dd> 
                     <!-- <dd>descrizione {{ dish.description }}</dd> la descrizione si vedrà on hover-->
                     <!-- <dd>sconto {{ dish.discount }}</dd> -->
                     <!-- <dd> classe menu {{ dish.menu_class }}</dd> -->
                 </div>
-            </div>
-            <div id="carrello_debug">
-                <!-- spazio componente carrello -->
-                Qui va tutto il carrello di Edo
             </div>
         </div>
     </div>
@@ -39,8 +35,9 @@ export default {
         };
     },
     methods:{
-        
-                
+        addToCart(item) {
+            this.$store.commit('addToCart', item);
+        }     
 
 
     },
