@@ -2520,6 +2520,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -7149,7 +7154,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".selected_restaurant_container[data-v-3db2e1e3] {\n  height: 100%;\n  width: 80%;\n  margin: auto;\n}\n.selected_restaurant_container #restaurant_jumbotron[data-v-3db2e1e3] {\n  width: 500px;\n}\n.selected_restaurant_container .selected_restaurant_dishes[data-v-3db2e1e3] {\n  margin: 30px;\n  width: 360px;\n  z-index: 10;\n  border-radius: 10px;\n  box-shadow: 0 0 10px #DDDDDD;\n}\n.selected_restaurant_container .selected_restaurant_dishes .dish_img[data-v-3db2e1e3] {\n  width: 360px;\n  border-top-left-radius: 10px;\n  border-top-right-radius: 10px;\n  -o-object-fit: cover;\n     object-fit: cover;\n}", ""]);
+exports.push([module.i, ".selected_restaurant_container[data-v-3db2e1e3] {\n  height: 100%;\n  width: 75%;\n  padding-left: 20px;\n  padding-right: 20px;\n  background-color: lightgray;\n}\n.selected_restaurant_container #info_restaurant h2[data-v-3db2e1e3] {\n  color: red;\n}\n.selected_restaurant_container #info_restaurant img[data-v-3db2e1e3] {\n  width: 720px;\n  height: 440px;\n}\n.selected_restaurant_container #main_restaurant[data-v-3db2e1e3] {\n  position: relative;\n}\n.selected_restaurant_container #main_restaurant #restaurant_jumbotron[data-v-3db2e1e3] {\n  width: 100%;\n}\n.selected_restaurant_container #main_restaurant #selected_restaurant_dishes[data-v-3db2e1e3] {\n  height: 100%;\n  width: 100%;\n  border: 1px solid black;\n}\n.selected_restaurant_container #main_restaurant #selected_restaurant_dishes .dish_card[data-v-3db2e1e3] {\n  margin: 30px;\n  width: 360px;\n  z-index: 10;\n  border-radius: 10px;\n  box-shadow: 0 0 10px #DDDDDD;\n  border: 1px solid black;\n}\n.selected_restaurant_container #main_restaurant #selected_restaurant_dishes .dish_img[data-v-3db2e1e3] {\n  width: 160px;\n  border-top-left-radius: 10px;\n  border-top-right-radius: 10px;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.selected_restaurant_container #main_restaurant #carrello_debug[data-v-3db2e1e3] {\n  border: 1px solid black;\n  height: 400px;\n  width: 300px;\n  position: fixed;\n  bottom: 30px;\n  right: 20px;\n  background-color: green;\n}", ""]);
 
 // exports
 
@@ -39942,34 +39947,33 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "selected_restaurant_container" }, [
-    _c(
-      "div",
-      {},
-      [
-        _vm._m(0),
-        _vm._v(" "),
-        _c("div", [
-          _c("h2", [_vm._v(_vm._s(this.$store.state.selectedRestaurant.name))]),
-          _vm._v(" "),
-          _c("p", [
-            _vm._v(_vm._s(this.$store.state.selectedRestaurant.description))
-          ]),
-          _vm._v(" "),
-          _c("p", [
-            _vm._v(_vm._s(this.$store.state.selectedRestaurant.phone_number))
-          ]),
-          _vm._v(" "),
-          _c("img", {
-            attrs: {
-              id: "restaurant_jumbotron",
-              src: this.$store.state.selectedRestaurant.img,
-              alt: ""
-            }
-          })
-        ]),
-        _vm._v(" "),
+    _c("div", { attrs: { id: "info_restaurant" } }, [
+      _c("img", {
+        attrs: {
+          id: "restaurant_jumbotron",
+          src: this.$store.state.selectedRestaurant.img,
+          alt: ""
+        }
+      }),
+      _vm._v(" "),
+      _c("h2", [_vm._v(_vm._s(this.$store.state.selectedRestaurant.name))]),
+      _vm._v(" "),
+      _c("p", [
+        _vm._v(_vm._s(this.$store.state.selectedRestaurant.description))
+      ])
+    ]),
+    _vm._v(" "),
+    _c("div", { attrs: { id: "main_restaurant" } }, [
+      _vm._m(0),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          staticClass: "d-flex flex-wrap justify-content-center",
+          attrs: { id: "selected_restaurant_dishes" }
+        },
         _vm._l(this.$store.state.selectedRestaurant.dishes, function(dish) {
-          return _c("div", { staticClass: "selected_restaurant_dishes" }, [
+          return _c("div", { staticClass: "dish_card" }, [
             _c("img", {
               staticClass: "dish_img",
               attrs: { src: dish.img, alt: "" }
@@ -39979,20 +39983,21 @@ var render = function() {
             _vm._v(" "),
             _c("dd", [_vm._v("prezzo " + _vm._s(dish.price))]),
             _vm._v(" "),
-            _c("dd", [_vm._v(" rating " + _vm._s(dish.rating))]),
+            _c("input", {
+              attrs: { type: "submit" },
+              domProps: { value: dish.price }
+            }),
             _vm._v(" "),
-            _c("dd", [_vm._v("descrizione " + _vm._s(dish.description))]),
-            _vm._v(" "),
-            _c("dd", [_vm._v("sconto " + _vm._s(dish.discount))]),
-            _vm._v(" "),
-            _c("dd", [_vm._v(" classe menu " + _vm._s(dish.menu_class))]),
-            _vm._v(" "),
-            _c("dd", [_vm._v("rating " + _vm._s(dish.rating))])
+            _c("dd", [_vm._v(" rating " + _vm._s(dish.rating))])
           ])
-        })
-      ],
-      2
-    )
+        }),
+        0
+      ),
+      _vm._v(" "),
+      _c("div", { attrs: { id: "carrello_debug" } }, [
+        _vm._v("\n            Qui va tutto il carrello di Edo\n        ")
+      ])
+    ])
   ])
 }
 var staticRenderFns = [
@@ -57899,8 +57904,8 @@ var store = {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\gitKraken_esercizi\deliveboo_progetto_finale\deliveboo\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\gitKraken_esercizi\deliveboo_progetto_finale\deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\USER\Desktop\boolean\deliveboo\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\USER\Desktop\boolean\deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
