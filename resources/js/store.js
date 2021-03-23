@@ -15,6 +15,13 @@ let store = {
     },
 
     mutations: {
+
+      // TEST
+
+      changeTest(state){
+        state.test = 'ciao';
+      },
+      /////////////////
         addToCart(state, item) {
             let found = state.cart.find(product => product.id == item.id);
 
@@ -121,5 +128,4 @@ let store = {
 
     }
 };
-
 export default store;

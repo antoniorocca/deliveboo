@@ -1,7 +1,18 @@
 <template>
-<div class="" style="height:200px; background-color:red;">
+<div class="" style=" background-color:red;">
+<p v-if="$store.state.dishes.data != undefined">
+  <ul>
+    <li v-for="item in $store.state.dishes.data.response">
+      {{item.name}}
+      {{item.price}}
+      <button class="button is-success"
+          @click="addToCart(item)">Add to Cart
+      </button>
 
-{{categories}}
+
+    </li>
+  </ul>
+</p>
 </div>
 
 
@@ -16,16 +27,9 @@ export default {
         };
     },
     methods: {
-        addToCart(item) {
-            this.$store.commit('addToCart', item);
-        }
+      addToCart(item) {
+          this.$store.commit('addToCart', item);
+      },
     },
-    mounted(){
-      setTimeout(function(){
-        this.categories = $store.getters.getCategories;
-        console.log('this.categories');
-
-      }, 3000);
-    }
 }
 </script>
