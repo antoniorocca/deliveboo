@@ -2712,10 +2712,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -7383,7 +7379,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".selected_restaurant_container[data-v-3db2e1e3] {\n  height: 100%;\n  width: 75%;\n  padding-left: 20px;\n  padding-right: 20px;\n  background-color: lightgray;\n}\n.selected_restaurant_container #info_restaurant h2[data-v-3db2e1e3] {\n  color: red;\n}\n.selected_restaurant_container #info_restaurant img[data-v-3db2e1e3] {\n  width: 850px;\n  height: 440px;\n}\n.selected_restaurant_container #selected_restaurant_dishes[data-v-3db2e1e3] {\n  height: 100%;\n  width: 100%;\n  border: 1px solid black;\n}\n.selected_restaurant_container #selected_restaurant_dishes .dish_card[data-v-3db2e1e3] {\n  margin: 30px;\n  height: 230px;\n  width: 360px;\n  z-index: 10;\n  border-radius: 10px;\n  box-shadow: 0 0 10px #DDDDDD;\n  border: 1px solid black;\n  text-align: center;\n}\n.selected_restaurant_container #selected_restaurant_dishes .dish_card img[data-v-3db2e1e3] {\n  height: 120px;\n  width: 200px;\n  margin: 15px 15px;\n  -o-object-fit: cover;\n     object-fit: cover;\n}", ""]);
+exports.push([module.i, ".selected_restaurant_container[data-v-3db2e1e3] {\n  height: 100%;\n  width: 75%;\n  padding-left: 20px;\n  padding-right: 20px;\n}\n.selected_restaurant_container #info_restaurant[data-v-3db2e1e3] {\n  position: relative;\n  margin-bottom: 150px;\n}\n.selected_restaurant_container #info_restaurant img[data-v-3db2e1e3] {\n  width: 850px;\n  height: 440px;\n}\n.selected_restaurant_container #info_restaurant #restaurant_txt[data-v-3db2e1e3] {\n  position: absolute;\n  top: 400px;\n  left: 50px;\n  height: 150px;\n  width: 500px;\n  background-color: white;\n  border-radius: 10px;\n}\n.selected_restaurant_container #info_restaurant #restaurant_txt h2[data-v-3db2e1e3] {\n  color: red;\n}\n.selected_restaurant_container #selected_restaurant_dishes[data-v-3db2e1e3] {\n  height: 100%;\n  width: 100%;\n}\n.selected_restaurant_container #selected_restaurant_dishes .dish_card[data-v-3db2e1e3] {\n  margin: 30px;\n  height: 230px;\n  width: 360px;\n  z-index: 10;\n  border-radius: 10px;\n  box-shadow: 0 0 10px #DDDDDD;\n  border-color: transparent;\n  text-align: center;\n}\n.selected_restaurant_container #selected_restaurant_dishes .dish_card img[data-v-3db2e1e3] {\n  height: 120px;\n  width: 360px;\n  border-top-left-radius: 10px;\n  border-top-right-radius: 10px;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.selected_restaurant_container #selected_restaurant_dishes .dish_card h4[data-v-3db2e1e3] {\n  border: px solid rgba(0, 0, 0, 0.125);\n  border-radius: 0.25rem;\n  margin-bottom: 10px;\n  font-weight: 700;\n  padding: 10px;\n}", ""]);
 
 // exports
 
@@ -40403,6 +40399,20 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "selected_restaurant_container" }, [
+    _c("div", { attrs: { id: "info_restaurant" } }, [
+      _c("img", {
+        attrs: { src: this.$store.state.selectedRestaurant.img, alt: "" }
+      }),
+      _vm._v(" "),
+      _c("div", { attrs: { id: "restaurant_txt" } }, [
+        _c("h2", [_vm._v(_vm._s(this.$store.state.selectedRestaurant.name))]),
+        _vm._v(" "),
+        _c("p", [
+          _vm._v(_vm._s(this.$store.state.selectedRestaurant.description))
+        ])
+      ])
+    ]),
+    _vm._v(" "),
     _c(
       "div",
       {
