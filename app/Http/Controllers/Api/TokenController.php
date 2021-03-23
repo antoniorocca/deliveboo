@@ -18,28 +18,28 @@ class TokenController extends Controller
     public function post(Request $request)
     {
 
-      $dishes = json_decode(request('cart'));
-      $total = 0;
-      foreach ($dishes as $dish) {
-        $total += $dish->totalPrice;
-      }
-      json_decode(request('cart'));
-      $nonceFromTheClient = $request->payment_method_nonce;
-      $braintree = config('braintree');
-      $result = $braintree->transaction()->sale([
-        'amount' => $total,
-        'paymentMethodNonce' => $nonceFromTheClient,
-        'options' => [
-          'submitForSettlement' => True
-        ]
-      ]);
-      $newOrder = new Order;
-      $newOrder->restaurant_id = $dishes[0]->restaurant_id;
-      $newOrder->amount = $total;
-      $newOrder->order = serialize($dishes);
-      $newOrder->save();
-      dd($dishes);
-      return redirect()->route('checkout');
+        $dishes = json_decode(request('cart'));
+        $total = 0;
+        foreach ($dishes as $dish) {
+            $total += $dish->totalPrice;
+        }
+        json_decode(request('cart'));
+        $nonceFromTheClient = $request->payment_method_nonce;
+        $braintree = config('braintree');
+        $result = $braintree->transaction()->sale([
+            'amount' => $total,
+            'paymentMethodNonce' => $nonceFromTheClient,
+            'options' => [
+            'submitForSettlement' => True
+            ]
+        ]);
+        $newOrder = new Order;
+        $newOrder->restaurant_id = $dishes[0]->restaurant_id;
+        $newOrder->amount = $total;
+        $newOrder->order = serialize($dishes);
+        $newOrder->save();
+        //dd($dishes);
+        return redirect()->route('checkout');
     }
 
 }
