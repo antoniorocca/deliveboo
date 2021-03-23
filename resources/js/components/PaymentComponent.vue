@@ -5,10 +5,11 @@
     `braintree.dropin.create` inside a form will make layout and flow
     easier to manage -->
 
-    <input type="text" name="" value="ciao">
+
     <div id="dropin-container">
     </div>
-    <input type="submit" />
+    <input type="submit">
+    <a @click="toggleCheckout">ritorna carrello</a>
     <input type="hidden" id="nonce" name="payment_method_nonce"/>
     <input type="hidden" id="cart" name="cart"/>
   </form>
@@ -16,6 +17,13 @@
 
 <script>
     export default {
+        methods:{
+          toggleCheckout(){
+            this.$store.commit('toggleCheckout');
+            console.log(this.$store.state.checkout);
+          }
+
+        },
         mounted() {
             console.log('Component payment mounted.');
             console.log('ciao');

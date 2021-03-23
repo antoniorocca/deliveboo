@@ -107,7 +107,7 @@
           <products-list style="width:70%"></products-list>
           <div class="" style="displa:flex; flex-direction:column;">
             <cart-dropdown class="cart-box"></cart-dropdown>
-            <edo-payment></edo-payment>
+            <!-- <edo-payment></edo-payment> -->
 
           </div>
         </div>

@@ -9,6 +9,8 @@ let store = {
         dishes : '',
         restaurants: '',
         selectedCategories:[],
+        // variabile per toglerare tra carrello e checkout
+        checkout:false,
         test: 'bomber',
     },
 
@@ -38,8 +40,8 @@ let store = {
 
 
                 state.cart.splice(index, 1);
-                
-            } 
+
+            }
             else {
                 found.quantity--;
                 found.totalPrice = found.quantity * found.price;
@@ -76,7 +78,12 @@ let store = {
         setRestaurants(state, category) {
             this.state.selectedCategories = this.state.restaurants.data.response;
         },
+        // funzione per toglerare tra carrello e checkout
+        toggleCheckout(){
 
+          this.state.checkout = !this.state.checkout
+          
+        }
 
     },
     getters: {
