@@ -2,26 +2,33 @@
 
 @section('guest_content')
 
+{{-- DA CENCELLARE? --}}
 <!-- LANDING PAGE COMPONENT -->
 {{-- <landing-component v-if="showLanding"></landing-component> --}}
 
 
 <!-- COMPONENTE CATEGORIES EDO -->
 {{-- <div class="select_restaurant">
-        <edo-categories v-if="showMain"></edo-categories>
-        <edo-restaurants v-if="showMain"></edo-restaurants>
-    </div> --}}
+    <edo-categories v-if="showMain"></edo-categories>
+    <edo-restaurants v-if="showMain"></edo-restaurants>
+</div> --}}
+{{-- DA CENCELLARE? --}}
+
 
 <!-- COMPONENTE RISTORANTE -->
 <restaurant-component></restaurant-component>
+
 <div class="wrap" style="display:flex;">
+
+    <!-- SELECTED-RESTAURANT -->
     <selected-restaurant></selected-restaurant>
+
+    <!-- LANDING-COMPONENT -->
+    <landing-component></landing-component>
 
     <!-- CARRELLO -->
     <div style="display:flex; flex-direction:column;">
         <cart-dropdown id="box_cart" class="cart-box"></cart-dropdown>
-
     </div>
 </div>
-
 @endsection

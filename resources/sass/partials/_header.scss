@@ -26,6 +26,9 @@ header, .header {
                   outline: none;
                 }
             }
+            img{
+                height: 50px;
+            }
         }
         #register {
             border-radius: 50px;
@@ -95,5 +98,10 @@ header, .header {
 @media all and (max-width: 592px) {
     header{
         height: 710px;
+    }
+}
+@media all and (max-width: 431px) {
+    header{
+        height: 850px;
     }
 }

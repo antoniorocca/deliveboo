@@ -14,31 +14,30 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-  return view('welcome');
+	return view('welcome');
 })->name('index');
-// Route::get('/restaurant/{restaurant}', 'GuestController@show')->name('restaurant');
+
 Route::get('/checkout', function () {
-    return view('endCheckout');
+	return view('endCheckout');
 })->name('checkout');
 
 Auth::routes();
 
 Route::middleware('auth')->namespace('User')->prefix('user')->name('user.')->group(function(){
+	Route::get('/users/home', 'HomeController@index')->name('home');
+	Route::get('/graphs', 'UserPageController@graphs')->name('graphs');
+	Route::get('/profile', 'UserPageController@profile')->name('profile');
 
-  Route::get('/users/home', 'HomeController@index')->name('home');
-  Route::get('/graphs', 'UserPageController@graphs')->name('graphs');
-  Route::get('/profile', 'UserPageController@profile')->name('profile');
+	Route::resource('/restaurant', 'RestaurantController');
 
-  Route::resource('/restaurant', 'RestaurantController');
-
-  Route::resource('/dish', 'DishController');
+	Route::resource('/dish', 'DishController');
 });
 
 
 Route::get('/payment', function () {
-  return view('payment');
+	return view('payment');
 })->name('payment');
 
 Route::get('/guests/restaurant', function () {
-  return view('/guests/restaurant');
+	return view('/guests/restaurant');
 })->name('restaurant');

@@ -4,7 +4,7 @@
         <to-top></to-top>
 
         <a href="">
-            <img id="footer_logo" :src="('../img/logo_white.svg')" alt="">
+            <img id="footer_logo" :src="('../img/deliveboo-logo-white.png')" alt="">
         </a>
 
         <div id="footer_container">
