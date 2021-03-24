@@ -18,6 +18,8 @@
 <!-- COMPONENTE RISTORANTE -->
 <restaurant-component></restaurant-component>
 
+
+
 <div class="wrap" style="display:flex;">
 
     <!-- SELECTED-RESTAURANT -->
