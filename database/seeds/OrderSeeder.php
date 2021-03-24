@@ -19,7 +19,7 @@ class OrderSeeder extends Seeder
 
         $newOrder->restaurant_id = $i+1;
         $patti = json_encode(Restaurant::find($i+1)->dishes);
-        $newOrder->order = serialize($patti);
+        $newOrder->order = $patti;
         $newOrder->amount = rand(10,100);
         $newOrder->save();
       }
