@@ -2370,6 +2370,26 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {}
 });
@@ -39906,44 +39926,86 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return this.$store.state.visibility
+    ? _c("div", { staticClass: "call_to_action" }, [
+        _vm._m(0),
+        _vm._v(" "),
+        _vm._m(1)
+      ])
+    : _vm._e()
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
-      _c("section", [
-        _c("h2", [_vm._v("in evidenza nella tua citta'")]),
+    return _c("div", { staticClass: "title" }, [
+      _c("img", { attrs: { src: "img/handshakes.png", alt: "", srcset: "" } }),
+      _vm._v(" "),
+      _c("h2", [_vm._v("Diventa uno di noi!")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "container_calls container" }, [
+      _c("div", { staticClass: "single_call" }, [
+        _c("div", { staticClass: "box_img" }, [
+          _c("img", {
+            attrs: { src: "img/photo_rider.png", alt: "", srcset: "" }
+          })
+        ]),
         _vm._v(" "),
-        _c("h3", [
+        _c("h4", [_vm._v("Diventa un rider")]),
+        _vm._v(" "),
+        _c("p", [
           _vm._v(
-            "Scopri i negozi più richiesti e ricevi alla tua porta ogni tuo desiderio"
+            "Lavora per te stesso! Goditi flessibilità, libertà e guadagni competitivi effettuando consegne con Deliveboo."
           )
         ]),
         _vm._v(" "),
-        _c("div", {}, [
-          _c("img", {
-            attrs: {
-              src:
-                "https://res.cloudinary.com/glovoapp/w_700,h_360,c_fill,f_auto,q_auto/Stores/hetiotbb7y6pfdnpu8hr",
-              alt: ""
-            }
-          })
+        _c("a", { staticClass: "button", attrs: { href: "#" } }, [
+          _vm._v("Unisciti a noi")
         ])
       ]),
       _vm._v(" "),
-      _c("section", [
-        _c("h2", [_vm._v("uniamo le forze")]),
+      _c("div", { staticClass: "single_call" }, [
+        _c("div", { staticClass: "box_img" }, [
+          _c("img", {
+            attrs: { src: "img/photo_cooking.png", alt: "", srcset: "" }
+          })
+        ]),
         _vm._v(" "),
+        _c("h4", [_vm._v("Diventa un partner")]),
+        _vm._v(" "),
+        _c("p", [
+          _vm._v(
+            "Cresci con Deliveboo! La nostra tecnologia e la nostra base di utenti possono aiutarti a incrementare le vendite e aprire nuove opportunità!"
+          )
+        ]),
+        _vm._v(" "),
+        _c("a", { staticClass: "button", attrs: { href: "#" } }, [
+          _vm._v("Unisciti a noi")
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "single_call" }, [
         _c("img", {
-          attrs: {
-            src:
-              "https://res.cloudinary.com/glovoapp/image/fetch//w_300,h_300,c_fit,f_auto,q_auto/https://glovoapp.com/images/corporate/rider.png",
-            alt: ""
-          }
-        })
+          attrs: { src: "img/photo_workwithus.png", alt: "", srcset: "" }
+        }),
+        _vm._v(" "),
+        _c("h4", [_vm._v("Lavora con noi")]),
+        _vm._v(" "),
+        _c("p", [
+          _vm._v(
+            "Pronto per una nuova ed entusiasmante sfida? Se sei ambizioso, umile e ami lavorare con gli altri, mettiti in contatto con noi!"
+          )
+        ]),
+        _vm._v(" "),
+        _c("a", { staticClass: "button", attrs: { href: "#" } }, [
+          _vm._v("Unisciti a noi")
+        ])
       ])
     ])
   }
