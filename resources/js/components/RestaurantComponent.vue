@@ -1,8 +1,7 @@
 <template>
-<div  v-if="this.$store.state.visibility">
-
+<div>
     <div>
-        <input id="header_logo" type="text" placeholder="Cerca" v-model="search" @keyup.enter="typeSearch">
+        <input id="header_logo" type="text" placeholder="Cerca" v-model="search"  @keyup.enter="typeSearch">
     </div>
 
     <div class="header">
@@ -17,32 +16,35 @@
             </div>   
         </div>
     </div>
-    <div>
-        <h4>Categorie:</h4>
-        <select name="category_id" class="form-control" id="category_id" @change="selectRestaurant">
-            <option value="all">All</option>
-            <option id="selection" :selected="letSelected == category.id" v-for="category in categories" :value="category.id">{{category.name}} ({{category.restaurants.length}})</option>
-        </select>
-    </div>
-    
-    <div id="content" class="">
 
-        <div class=" first_title">
-            <h2>Ristoranti consigliati</h2>
-            <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, voluptatibus?
-            </p>
+    <div  v-if="this.$store.state.visibility">
+        <div>
+            <h4>Categorie:</h4>
+            <select name="category_id" class="form-control" id="category_id" @change="selectRestaurant">
+                <option value="all">All</option>
+                <option id="selection" :selected="letSelected == category.id" v-for="category in categories" :value="category.id">{{category.name}} ({{category.restaurants.length}})</option>
+            </select>
         </div>
+        
+        <div id="content" class="">
 
-        <div class="restaurants">
-            <div class="card card_hover" v-for="restaurant in restaurants" @click="toggle" >
-                <div class="restaurant_image">
-                    <img :src="restaurant.img" alt="restaurant's image">
+            <div class=" first_title">
+                <h2>Ristoranti consigliati</h2>
+                <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, voluptatibus?
+                </p>
+            </div>
+
+            <div class="restaurants">
+                <div class="card card_hover" v-for="restaurant in restaurants" @click="toggle" >
+                    <div class="restaurant_image">
+                        <img :src="restaurant.img" alt="restaurant's image">
+                    </div>
+                    <h4>
+                        {{restaurant.name}}
+                    </h4>
+                    <input class="option_restaurant" :value="restaurant.id" @click="showRestaurant">
                 </div>
-                <h4>
-                    {{restaurant.name}}
-                </h4>
-                <input class="option_restaurant" :value="restaurant.id" @click="showRestaurant">
             </div>
         </div>
     </div>

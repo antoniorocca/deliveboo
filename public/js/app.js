@@ -2634,6 +2634,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -40162,156 +40164,161 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return this.$store.state.visibility
-    ? _c("div", [
-        _c("div", [
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.search,
-                expression: "search"
-              }
-            ],
-            attrs: { id: "header_logo", type: "text", placeholder: "Cerca" },
-            domProps: { value: _vm.search },
-            on: {
-              keyup: function($event) {
-                if (
-                  !$event.type.indexOf("key") &&
-                  _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
-                ) {
-                  return null
-                }
-                return _vm.typeSearch($event)
-              },
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.search = $event.target.value
-              }
+  return _c("div", [
+    _c("div", [
+      _c("input", {
+        directives: [
+          {
+            name: "model",
+            rawName: "v-model",
+            value: _vm.search,
+            expression: "search"
+          }
+        ],
+        attrs: { id: "header_logo", type: "text", placeholder: "Cerca" },
+        domProps: { value: _vm.search },
+        on: {
+          keyup: function($event) {
+            if (
+              !$event.type.indexOf("key") &&
+              _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+            ) {
+              return null
             }
-          })
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "header" }, [
+            return _vm.typeSearch($event)
+          },
+          input: function($event) {
+            if ($event.target.composing) {
+              return
+            }
+            _vm.search = $event.target.value
+          }
+        }
+      })
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "header" }, [
+      _c(
+        "div",
+        {
+          staticClass: "d-flex justify-content-center flex-wrap",
+          attrs: { id: "main-header" }
+        },
+        [
           _c(
             "div",
             {
               staticClass: "d-flex justify-content-center flex-wrap",
-              attrs: { id: "main-header" }
+              attrs: { id: "categories" }
             },
-            [
-              _c(
-                "div",
-                {
-                  staticClass: "d-flex justify-content-center flex-wrap",
-                  attrs: { id: "categories" }
-                },
-                _vm._l(_vm.categories.slice(0, 8), function(category) {
-                  return _c(
-                    "div",
-                    {
-                      staticClass:
-                        "category category_hover mr-4 mt-5 d-flex justify-content-center",
-                      class: _vm.letSelected == category.id ? "focusr" : ""
-                    },
-                    [
-                      _c("span", [_vm._v(_vm._s(category.name))]),
-                      _vm._v(" "),
-                      _c("input", {
-                        class: _vm.letSelected == category.id ? "focusr" : "",
-                        attrs: { type: "submit" },
-                        domProps: { value: category.id },
-                        on: { click: _vm.selectRestaurantOnClick }
-                      })
-                    ]
-                  )
-                }),
-                0
-              )
-            ]
-          )
-        ]),
-        _vm._v(" "),
-        _c("div", [
-          _c("h4", [_vm._v("Categorie:")]),
-          _vm._v(" "),
-          _c(
-            "select",
-            {
-              staticClass: "form-control",
-              attrs: { name: "category_id", id: "category_id" },
-              on: { change: _vm.selectRestaurant }
-            },
-            [
-              _c("option", { attrs: { value: "all" } }, [_vm._v("All")]),
-              _vm._v(" "),
-              _vm._l(_vm.categories, function(category) {
-                return _c(
-                  "option",
-                  {
-                    attrs: { id: "selection" },
-                    domProps: {
-                      selected: _vm.letSelected == category.id,
-                      value: category.id
-                    }
-                  },
-                  [
-                    _vm._v(
-                      _vm._s(category.name) +
-                        " (" +
-                        _vm._s(category.restaurants.length) +
-                        ")"
-                    )
-                  ]
-                )
-              })
-            ],
-            2
-          )
-        ]),
-        _vm._v(" "),
-        _c("div", { attrs: { id: "content" } }, [
-          _vm._m(0),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "restaurants" },
-            _vm._l(_vm.restaurants, function(restaurant) {
+            _vm._l(_vm.categories.slice(0, 8), function(category) {
               return _c(
                 "div",
-                { staticClass: "card card_hover", on: { click: _vm.toggle } },
+                {
+                  staticClass:
+                    "category category_hover mr-4 mt-5 d-flex justify-content-center",
+                  class: _vm.letSelected == category.id ? "focusr" : ""
+                },
                 [
-                  _c("div", { staticClass: "restaurant_image" }, [
-                    _c("img", {
-                      attrs: { src: restaurant.img, alt: "restaurant's image" }
-                    })
-                  ]),
-                  _vm._v(" "),
-                  _c("h4", [
-                    _vm._v(
-                      "\r\n                    " +
-                        _vm._s(restaurant.name) +
-                        "\r\n                "
-                    )
-                  ]),
+                  _c("span", [_vm._v(_vm._s(category.name))]),
                   _vm._v(" "),
                   _c("input", {
-                    staticClass: "option_restaurant",
-                    domProps: { value: restaurant.id },
-                    on: { click: _vm.showRestaurant }
+                    class: _vm.letSelected == category.id ? "focusr" : "",
+                    attrs: { type: "submit" },
+                    domProps: { value: category.id },
+                    on: { click: _vm.selectRestaurantOnClick }
                   })
                 ]
               )
             }),
             0
           )
+        ]
+      )
+    ]),
+    _vm._v(" "),
+    this.$store.state.visibility
+      ? _c("div", [
+          _c("div", [
+            _c("h4", [_vm._v("Categorie:")]),
+            _vm._v(" "),
+            _c(
+              "select",
+              {
+                staticClass: "form-control",
+                attrs: { name: "category_id", id: "category_id" },
+                on: { change: _vm.selectRestaurant }
+              },
+              [
+                _c("option", { attrs: { value: "all" } }, [_vm._v("All")]),
+                _vm._v(" "),
+                _vm._l(_vm.categories, function(category) {
+                  return _c(
+                    "option",
+                    {
+                      attrs: { id: "selection" },
+                      domProps: {
+                        selected: _vm.letSelected == category.id,
+                        value: category.id
+                      }
+                    },
+                    [
+                      _vm._v(
+                        _vm._s(category.name) +
+                          " (" +
+                          _vm._s(category.restaurants.length) +
+                          ")"
+                      )
+                    ]
+                  )
+                })
+              ],
+              2
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", { attrs: { id: "content" } }, [
+            _vm._m(0),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "restaurants" },
+              _vm._l(_vm.restaurants, function(restaurant) {
+                return _c(
+                  "div",
+                  { staticClass: "card card_hover", on: { click: _vm.toggle } },
+                  [
+                    _c("div", { staticClass: "restaurant_image" }, [
+                      _c("img", {
+                        attrs: {
+                          src: restaurant.img,
+                          alt: "restaurant's image"
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("h4", [
+                      _vm._v(
+                        "\r\n                        " +
+                          _vm._s(restaurant.name) +
+                          "\r\n                    "
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("input", {
+                      staticClass: "option_restaurant",
+                      domProps: { value: restaurant.id },
+                      on: { click: _vm.showRestaurant }
+                    })
+                  ]
+                )
+              }),
+              0
+            )
+          ])
         ])
-      ])
-    : _vm._e()
+      : _vm._e()
+  ])
 }
 var staticRenderFns = [
   function() {
@@ -40323,7 +40330,7 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("p", [
         _vm._v(
-          "\r\n            Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, voluptatibus?\r\n            "
+          "\r\n                Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, voluptatibus?\r\n                "
         )
       ])
     ])
