@@ -1,7 +1,7 @@
 <template>
 <div>
     <div>
-        <input id="header_logo" type="text" placeholder="Cerca" v-model="search"  @keyup.enter="typeSearch">
+        <input id="header_logo" type="text" placeholder="Cerca" v-model="search"  @keyup.enter="typeSearchMain">
     </div>
 
     <div class="header">
@@ -36,7 +36,19 @@
             </div>
 
             <div class="restaurants">
-                <div class="card card_hover" v-for="restaurant in restaurants" @click="toggle" >
+                <div class="card card_hover" v-for="restaurant in restaurants" @click="toggle" v-if="!lol">
+                    <div class="restaurant_image">
+                        <img :src="restaurant.img" alt="restaurant's image">
+                    </div>
+                    <h4>
+                        {{restaurant.name}}
+                    </h4>
+                    <input class="option_restaurant" :value="restaurant.id" @click="showRestaurant">
+                </div>
+            </div>
+            
+            <div class="restaurants">
+                <div class="card card_hover" v-for="restaurant in this.$store.state.searchBar" @click="toggle" v-if="lol">
                     <div class="restaurant_image">
                         <img :src="restaurant.img" alt="restaurant's image">
                     </div>
@@ -62,6 +74,7 @@
                 restaurantsAll: '',
                 letSelected: '',
                 search: '',
+                lol: true,
             }
         },
         methods:{
@@ -102,13 +115,13 @@
                     console.log('true');
                 }
             },
-            typeSearch(){
+            typeSearchMain(){
+                console.log(this.search);
                 if (this.search == ''){
                     this.restaurants = this.restaurantsAll;
                 }else{
                     this.restaurants = this.restaurantsAll.filter((restaurant) =>{
-                        return restaurant.name.toLowerCase().match(this.search.toLowerCase()) |
-                        console.log(restaurant);
+                        return restaurant.name.toLowerCase().match(this.search.toLowerCase())
                     });
                 }
                 this.search ='';
@@ -129,14 +142,7 @@
             }).catch(error => {
                 console.log(error);
             })
-        },
-        // computed: {
-        //     typeSearch:function(){
-        //         return this.restaurants.filter((restaurant) =>{
-        //             return restaurant.name.match(this.search);
-        //         })
-        //     },
-        // }
+        }
     }
 </script>
 
@@ -198,7 +204,6 @@
             .card:hover{
                 cursor: pointer;
                 transform: scale(1.05);
-
             }
             .option_restaurant{
                 position: absolute;
