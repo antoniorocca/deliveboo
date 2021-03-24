@@ -2640,6 +2640,7 @@ __webpack_require__.r(__webpack_exports__);
       restaurants: '',
       restaurantMom: '',
       categories: '',
+      categoriesAll: '',
       restaurantsAll: '',
       letSelected: '',
       search: ''
@@ -2688,7 +2689,7 @@ __webpack_require__.r(__webpack_exports__);
         this.restaurants = this.restaurantsAll;
       } else {
         this.restaurants = this.restaurantsAll.filter(function (restaurant) {
-          return restaurant.name === _this.search | console.log(_this.restaurants);
+          return restaurant.name.toLowerCase().match(_this.search.toLowerCase()) | console.log(restaurant);
         });
       }
 
@@ -2703,6 +2704,7 @@ __webpack_require__.r(__webpack_exports__);
       // console.log(resp[1].data.response);
       _this2.restaurantsAll = resp[0].data.response;
       _this2.restaurants = resp[0].data.response;
+      _this2.categoriesAll = resp[0].data.response;
       _this2.categories = resp[1].data.response; // return (RestaurantComponent, { props: { restaurants: this.restaurants } });
     })["catch"](function (error) {
       console.log(error);

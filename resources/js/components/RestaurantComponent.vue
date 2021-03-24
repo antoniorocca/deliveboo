@@ -56,6 +56,7 @@
                 restaurants:'',
                 restaurantMom:'',
                 categories:'',
+                categoriesAll:'',
                 restaurantsAll: '',
                 letSelected: '',
                 search: '',
@@ -104,7 +105,8 @@
                     this.restaurants = this.restaurantsAll;
                 }else{
                     this.restaurants = this.restaurantsAll.filter((restaurant) =>{
-                        return restaurant.name === this.search | console.log(this.restaurants);
+                        return restaurant.name.toLowerCase().match(this.search.toLowerCase()) |
+                        console.log(restaurant);
                     });
                 }
                 this.search ='';
@@ -119,6 +121,7 @@
                 // console.log(resp[1].data.response);
                 this.restaurantsAll = resp[0].data.response;
                 this.restaurants = resp[0].data.response;
+                this.categoriesAll = resp[0].data.response;
                 this.categories = resp[1].data.response;
                 // return (RestaurantComponent, { props: { restaurants: this.restaurants } });
             }).catch(error => {
