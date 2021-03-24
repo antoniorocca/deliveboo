@@ -11003,6 +11003,11 @@ header #nav #logo #header_logo:focus,
   outline: none;
 }
 
+header #nav #logo img,
+.header #nav #logo img {
+  height: 50px;
+}
+
 header #nav #register,
 .header #nav #register {
   border-radius: 50px;

@@ -39725,7 +39725,11 @@ var render = function() {
       _vm._v(" "),
       _c("a", { attrs: { href: "" } }, [
         _c("img", {
-          attrs: { id: "footer_logo", src: "../img/logo_white.svg", alt: "" }
+          attrs: {
+            id: "footer_logo",
+            src: "../img/deliveboo-logo-white.png",
+            alt: ""
+          }
         })
       ]),
       _vm._v(" "),
