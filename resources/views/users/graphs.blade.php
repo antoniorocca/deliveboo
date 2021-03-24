@@ -5,7 +5,7 @@
 
 @section('head_scripts')
 <style media="screen">
-#myChart_box {
+.myChart_box {
   margin: auto;
   width: 60%;
 }
@@ -20,10 +20,13 @@
 @endsection
 @section('scripts')
 <h2>Piatti venduti</h2>
-<div id="myChart_box">
+<div class="myChart_box">
   <canvas id="myChart" width="300" height="170"></canvas>
 </div>
 <h2>Profitto per mese</h2>
+<div class="myChart_box">
+  <canvas id="myChart2" width="300" height="170"></canvas>
+</div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js" integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw==" crossorigin="anonymous"></script>
 <script type="text/javascript">
@@ -143,16 +146,70 @@ let date = [
   ['2021-11'],
   ['2021-12'],
 ];
+
+
 orders.forEach((order, i) => {
   date.forEach((date, i) => {
-    console.log(order.order_date[0]+order.order_date[1]+order.order_date[2]+order.order_date[3]+order.order_date[4]+order.order_date[5]+order.order_date[6]+order.order_date[7]);
     if (date[0]=== order.order_date[0]+order.order_date[1]+order.order_date[2]+order.order_date[3]+order.order_date[4]+order.order_date[5]+order.order_date[6]) {
       date.push(order);
     }
   });
 
 });
+date.forEach((date, i) => {
+  let totalMonth = 0;
+  for (var i = 1; i < date.length; i++) {
+    totalMonth += date[i].amount;
+  }
+  date.push(totalMonth)
+});
+let newDate=[];
+let newTotalMonth =[];
+let newColor = [];
+let newBorderColor = [];
+date.forEach((item, i) => {
+  newDate.push(item[0]);
+  newTotalMonth.push(item[item.length -1]);
+  newColor.push('rgba(0, 0, 130,0.2)');
+  newBorderColor.push('rgba(0, 160, 130, 1)');
+});
+console.log(newDate, newTotalMonth);
+var ctx = document.getElementById('myChart2');
+var myChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: newDate,
+        datasets: [{
+            label: 'Incasso per mese',
+            data: newTotalMonth,
+            backgroundColor: newColor,
+            borderColor: newBorderColor,
+            borderWidth: 3
+        }]
+    },
+    options: {
+        scales: {
+          yAxes: [{
+              ticks: {
+                  beginAtZero: true
+              },
+              gridLines: {
+                  color: "rgba(0, 0, 0, 0)",
+              }
+          }],
+          xAxes: [{
+              ticks: {
+                  beginAtZero: true
+              },
+              gridLines: {
+                  color: "rgba(0, 0, 0, 0)",
+              }
 
-console.log(date);
+          }]
+        }
+    }
+});
+
+
 </script>
 @endsection
