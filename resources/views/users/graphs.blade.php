@@ -5,31 +5,41 @@
 
 @section('head_scripts')
 <style media="screen">
-.myChart_box {
+#myChart_box, #myChart_box2 {
   margin: auto;
-  width: 60%;
+  width: 80%;
 }
 </style>
 @endsection
 
 
 @section('content')
-<div class="container">
-  <h1>Grafici</h1>
-</div>
 @endsection
 @section('scripts')
-<h2>Piatti venduti</h2>
-<div class="myChart_box">
-  <canvas id="myChart" width="300" height="170"></canvas>
+<div class="spacer">
+  <img class="img_spacer" src="{{asset('storage/lightgreen_wave.png')}}" alt="">
 </div>
-<h2>Profitto per mese</h2>
-<div class="myChart_box">
-  <canvas id="myChart2" width="300" height="170"></canvas>
+<div id="backend_container"class="">
+  <div class="backend_wrap">
+    <div class="container">
+      <h1>Grafici</h1>
+    </div>
+    <div class="content_row">
+      <h2>Piatti venduti</h2>
+      <div id="myChart_box">
+        <canvas id="myChart" width="300" height="170"></canvas>
+      </div>
+    </div>
+    <div class="content_row">
+      <h2>Profitto per mese</h2>
+      <div id="myChart_box2">
+        <canvas id="myChart2" width="300" height="170"></canvas>
+      </div>
+    </div>
+  </div>
 </div>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js" integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw==" crossorigin="anonymous"></script>
-<script type="text/javascript">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js" integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw==" crossorigin="anonymous"></script>
+    <script type="text/javascript">
 
 
 // PRIMO GRAFICO
@@ -170,7 +180,7 @@ let newBorderColor = [];
 date.forEach((item, i) => {
   newDate.push(item[0]);
   newTotalMonth.push(item[item.length -1]);
-  newColor.push('rgba(0, 0, 130,0.2)');
+  newColor.push('rgba(0, 160, 130,0.2)');
   newBorderColor.push('rgba(0, 160, 130, 1)');
 });
 console.log(newDate, newTotalMonth);
