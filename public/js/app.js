@@ -2629,6 +2629,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2636,7 +2641,8 @@ __webpack_require__.r(__webpack_exports__);
       restaurantMom: '',
       categories: '',
       restaurantsAll: '',
-      letSelected: ''
+      letSelected: '',
+      search: ''
     };
   },
   methods: {
@@ -2674,21 +2680,41 @@ __webpack_require__.r(__webpack_exports__);
         this.$store.commit('visibilityFunction');
         console.log('true');
       }
+    },
+    typeSearch: function typeSearch() {
+      var _this = this;
+
+      if (this.search == '') {
+        this.restaurants = this.restaurantsAll;
+      } else {
+        this.restaurants = this.restaurantsAll.filter(function (restaurant) {
+          return restaurant.name === _this.search | console.log(_this.restaurants);
+        });
+      }
+
+      this.search = '';
     }
   },
   mounted: function mounted() {
-    var _this = this;
+    var _this2 = this;
 
     Promise.all([axios.get('api/restaurants'), axios.get('api/categories')]).then(function (resp) {
       // console.log(resp[0].data.response);
       // console.log(resp[1].data.response);
-      _this.restaurantsAll = resp[0].data.response;
-      _this.restaurants = resp[0].data.response;
-      _this.categories = resp[1].data.response; // return (RestaurantComponent, { props: { restaurants: this.restaurants } });
+      _this2.restaurantsAll = resp[0].data.response;
+      _this2.restaurants = resp[0].data.response;
+      _this2.categories = resp[1].data.response; // return (RestaurantComponent, { props: { restaurants: this.restaurants } });
     })["catch"](function (error) {
       console.log(error);
     });
-  }
+  } // computed: {
+  //     typeSearch:function(){
+  //         return this.restaurants.filter((restaurant) =>{
+  //             return restaurant.name.match(this.search);
+  //         })
+  //     },
+  // }
+
 });
 
 /***/ }),
@@ -40087,11 +40113,11 @@ var render = function() {
           _vm._l(_vm.$store.state.dishes.data.response, function(item) {
             return _c("li", [
               _vm._v(
-                "\n      " +
+                "\r\n      " +
                   _vm._s(item.name) +
-                  "\n      " +
+                  "\r\n      " +
                   _vm._s(item.price) +
-                  "\n      "
+                  "\r\n      "
               ),
               _c(
                 "button",
@@ -40103,7 +40129,7 @@ var render = function() {
                     }
                   }
                 },
-                [_vm._v("Add to Cart\n      ")]
+                [_vm._v("Add to Cart\r\n      ")]
               )
             ])
           }),
@@ -40136,6 +40162,38 @@ var render = function() {
   var _c = _vm._self._c || _h
   return this.$store.state.visibility
     ? _c("div", [
+        _c("div", [
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.search,
+                expression: "search"
+              }
+            ],
+            attrs: { id: "header_logo", type: "text", placeholder: "Cerca" },
+            domProps: { value: _vm.search },
+            on: {
+              keyup: function($event) {
+                if (
+                  !$event.type.indexOf("key") &&
+                  _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+                ) {
+                  return null
+                }
+                return _vm.typeSearch($event)
+              },
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.search = $event.target.value
+              }
+            }
+          })
+        ]),
+        _vm._v(" "),
         _c("div", { staticClass: "header" }, [
           _c(
             "div",
@@ -40223,7 +40281,7 @@ var render = function() {
             _vm._l(_vm.restaurants, function(restaurant) {
               return _c(
                 "div",
-                { staticClass: "card card_hover ", on: { click: _vm.toggle } },
+                { staticClass: "card card_hover", on: { click: _vm.toggle } },
                 [
                   _c("div", { staticClass: "restaurant_image" }, [
                     _c("img", {
@@ -40233,9 +40291,9 @@ var render = function() {
                   _vm._v(" "),
                   _c("h4", [
                     _vm._v(
-                      "\n                    " +
+                      "\r\n                    " +
                         _vm._s(restaurant.name) +
-                        "\n                "
+                        "\r\n                "
                     )
                   ]),
                   _vm._v(" "),
@@ -40263,7 +40321,7 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("p", [
         _vm._v(
-          "\n            Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, voluptatibus?\n            "
+          "\r\n            Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, voluptatibus?\r\n            "
         )
       ])
     ])
@@ -55117,8 +55175,8 @@ var store = {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/rocco/Documents/BOOLEAN/Classe23/deliveboo/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/rocco/Documents/BOOLEAN/Classe23/deliveboo/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\gitKraken_esercizi\deliveboo_progetto_finale\deliveboo\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\gitKraken_esercizi\deliveboo_progetto_finale\deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

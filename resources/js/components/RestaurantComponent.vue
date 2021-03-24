@@ -1,5 +1,10 @@
 <template>
 <div  v-if="this.$store.state.visibility">
+
+    <div>
+        <input id="header_logo" type="text" placeholder="Cerca" v-model="search" @keyup.enter="typeSearch">
+    </div>
+
     <div class="header">
         <div id="main-header" class="d-flex justify-content-center flex-wrap">
             <div id="categories" class="d-flex justify-content-center flex-wrap">
@@ -30,7 +35,7 @@
         </div>
 
         <div class="restaurants">
-            <div class="card card_hover " v-for="restaurant in restaurants" @click="toggle">
+            <div class="card card_hover" v-for="restaurant in restaurants" @click="toggle" >
                 <div class="restaurant_image">
                     <img :src="restaurant.img" alt="restaurant's image">
                 </div>
@@ -53,6 +58,7 @@
                 categories:'',
                 restaurantsAll: '',
                 letSelected: '',
+                search: '',
             }
         },
         methods:{
@@ -92,7 +98,17 @@
                     this.$store.commit('visibilityFunction')
                     console.log('true');
                 }
-            }
+            },
+            typeSearch(){
+                if (this.search == ''){
+                    this.restaurants = this.restaurantsAll;
+                }else{
+                    this.restaurants = this.restaurantsAll.filter((restaurant) =>{
+                        return restaurant.name === this.search | console.log(this.restaurants);
+                    });
+                }
+                this.search ='';
+            },
         },
         mounted() {
             Promise.all([
@@ -108,7 +124,14 @@
             }).catch(error => {
                 console.log(error);
             })
-        }
+        },
+        // computed: {
+        //     typeSearch:function(){
+        //         return this.restaurants.filter((restaurant) =>{
+        //             return restaurant.name.match(this.search);
+        //         })
+        //     },
+        // }
     }
 </script>
 
