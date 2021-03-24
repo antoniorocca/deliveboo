@@ -97,3 +97,8 @@ header, .header {
         height: 710px;
     }
 }
+@media all and (max-width: 431px) {
+    header{
+        height: 850px;
+    }
+}
