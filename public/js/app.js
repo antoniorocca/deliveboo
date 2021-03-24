@@ -2386,10 +2386,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {}
 });
@@ -39940,7 +39936,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "title" }, [
-      _c("img", { attrs: { src: "img/handshakes.png", alt: "", srcset: "" } }),
+      _c("img", { attrs: { src: "img/handshakes.png", alt: "" } }),
       _vm._v(" "),
       _c("h2", [_vm._v("Diventa uno di noi!")])
     ])
@@ -39949,13 +39945,11 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container_calls container" }, [
+    return _c("div", { staticClass: "container_calls" }, [
       _c("div", { staticClass: "single_call" }, [
-        _c("div", { staticClass: "box_img" }, [
-          _c("img", {
-            attrs: { src: "img/photo_rider.png", alt: "", srcset: "" }
-          })
-        ]),
+        _c("img", {
+          attrs: { src: "img/photo_rider.png", alt: "", srcset: "" }
+        }),
         _vm._v(" "),
         _c("h4", [_vm._v("Diventa un rider")]),
         _vm._v(" "),
@@ -39971,11 +39965,7 @@ var staticRenderFns = [
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "single_call" }, [
-        _c("div", { staticClass: "box_img" }, [
-          _c("img", {
-            attrs: { src: "img/photo_cooking.png", alt: "", srcset: "" }
-          })
-        ]),
+        _c("img", { attrs: { src: "img/photo_cooking.png", alt: "" } }),
         _vm._v(" "),
         _c("h4", [_vm._v("Diventa un partner")]),
         _vm._v(" "),
@@ -39991,9 +39981,7 @@ var staticRenderFns = [
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "single_call" }, [
-        _c("img", {
-          attrs: { src: "img/photo_workwithus.png", alt: "", srcset: "" }
-        }),
+        _c("img", { attrs: { src: "img/photo_workwithus.png", alt: "" } }),
         _vm._v(" "),
         _c("h4", [_vm._v("Lavora con noi")]),
         _vm._v(" "),
