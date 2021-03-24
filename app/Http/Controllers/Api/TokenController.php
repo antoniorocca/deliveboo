@@ -37,6 +37,7 @@ class TokenController extends Controller
         $newOrder->restaurant_id = $dishes[0]->restaurant_id;
         $newOrder->amount = $total;
         $newOrder->order = json_encode($dishes);
+        $newOrder->order_date = new Date();
         $newOrder->save();
         //dd($dishes);
         return redirect()->route('checkout');

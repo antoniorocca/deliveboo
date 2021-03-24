@@ -19,6 +19,7 @@ class CreateOrdersTable extends Migration
             $table->foreign('restaurant_id')->references('id')->on('restaurants');
             $table->text('order');
             $table->float('amount', 10,2);
+            $table->dateTime('order_date');  
             $table->timestamps();
         });
     }

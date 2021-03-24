@@ -7,7 +7,7 @@
 <style media="screen">
 #myChart_box {
   margin: auto;
-  width: 80%;
+  width: 60%;
 }
 </style>
 @endsection
@@ -21,11 +21,15 @@
 @section('scripts')
 <h2>Piatti venduti</h2>
 <div id="myChart_box">
-  <canvas id="myChart" width="400" height="300"></canvas>
+  <canvas id="myChart" width="300" height="170"></canvas>
 </div>
+<h2>Profitto per mese</h2>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js" integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw==" crossorigin="anonymous"></script>
 <script type="text/javascript">
+
+
+// PRIMO GRAFICO
 var orders = {!!$orders!!};
 let data = [];
 Object.keys(orders).forEach(key => {
@@ -35,7 +39,6 @@ Object.keys(orders).forEach(key => {
   });
 
 });
-
 let filtered = [];
 let dishesArray = []
 data.forEach((data, i) => {
@@ -64,7 +67,6 @@ data.forEach((data, i) => {
   });
 
 });
-console.log(dishesArray);
 let names = [];
 let values = [];
 let colors = [];
@@ -75,7 +77,6 @@ dishesArray.forEach((item, i) => {
   colors.push('rgba(0, 160, 130,0.2)')
   borderColor.push('rgba(0, 160, 130,1)')
 });
-console.log(names, values, colors, borderColor);
 var ctx = document.getElementById('myChart');
 Chart.defaults.global.legend.display = false;
 var myChart = new Chart(ctx, {
@@ -113,5 +114,45 @@ var myChart = new Chart(ctx, {
     }
 });
 
+
+// SECONDO GRAFICO
+
+let date = [
+  ['2020-01'],
+  ['2020-02'],
+  ['2020-03'],
+  ['2020-04'],
+  ['2020-05'],
+  ['2020-06'],
+  ['2020-07'],
+  ['2020-08'],
+  ['2020-09'],
+  ['2020-10'],
+  ['2020-11'],
+  ['2020-12'],
+  ['2021-01'],
+  ['2021-02'],
+  ['2021-03'],
+  ['2021-04'],
+  ['2021-05'],
+  ['2021-06'],
+  ['2021-07'],
+  ['2021-08'],
+  ['2021-09'],
+  ['2021-10'],
+  ['2021-11'],
+  ['2021-12'],
+];
+orders.forEach((order, i) => {
+  date.forEach((date, i) => {
+    console.log(order.order_date[0]+order.order_date[1]+order.order_date[2]+order.order_date[3]+order.order_date[4]+order.order_date[5]+order.order_date[6]+order.order_date[7]);
+    if (date[0]=== order.order_date[0]+order.order_date[1]+order.order_date[2]+order.order_date[3]+order.order_date[4]+order.order_date[5]+order.order_date[6]) {
+      date.push(order);
+    }
+  });
+
+});
+
+console.log(date);
 </script>
 @endsection
