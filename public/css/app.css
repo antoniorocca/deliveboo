@@ -11094,6 +11094,12 @@ header #main-header #categories .category_hover,
   }
 }
 
+@media all and (max-width: 431px) {
+  header {
+    height: 850px;
+  }
+}
+
 .category_container {
   border-right: 2px solid black;
   border-bottom: 2px solid black;
