@@ -11262,6 +11262,10 @@ footer #footer_container ul .footer_img {
   background-color: #E9F8F5;
 }
 
+#backend_container img {
+  height: 400px;
+}
+
 #backend_container .backend_wrap {
   width: 80%;
   margin: auto;
