@@ -1,24 +1,43 @@
 .call_to_action{
-    height: 500px;
+    padding: 20px 0 50px;
     width: 100%;
     margin: auto;
     text-align: center;
     background-color: #E9F8F5;
     display: flex;
     flex-direction: column;
+    h2{
+    }
     .container_calls{
         display: flex;
         flex-direction: row;
         .single_call{
+            padding: 20px;
+            margin: 20px;
             width: 33%;
-            .box_img{
-                -webkit-mask-image: url(https://res.cloudinary.com/glovoapp/image/fetch///https://glovoapp.com/images/landing/corporate/inner-mask-left.svg);
-                -webkit-mask-position:  center;
 
-                img{
-                    height: 232px;
-                    width: 244px;
+            img{
+                height: 250px;
+            }
+            h4{
+                margin: 20px 0 10px;
+            }
+            p{
+                margin: 10px 0;
+                height: 110px;
+            }
+            a{
+                background-color: #36a081;
+                color: white;
+                padding: 15px 40px;
+                border-radius: 30px;
+                text-decoration: none;
+
+                &:hover{
+                background-color: #008169;
+                    
                 }
+
             }
         }
 

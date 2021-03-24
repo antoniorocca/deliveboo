@@ -11331,7 +11331,7 @@ h1 {
 }
 
 .call_to_action {
-  height: 500px;
+  padding: 20px 0 50px;
   width: 100%;
   margin: auto;
   text-align: center;
@@ -11346,17 +11346,34 @@ h1 {
 }
 
 .call_to_action .container_calls .single_call {
+  padding: 20px;
+  margin: 20px;
   width: 33%;
 }
 
-.call_to_action .container_calls .single_call .box_img {
-  -webkit-mask-image: url(https://res.cloudinary.com/glovoapp/image/fetch///https://glovoapp.com/images/landing/corporate/inner-mask-left.svg);
-  -webkit-mask-position: center;
+.call_to_action .container_calls .single_call img {
+  height: 250px;
 }
 
-.call_to_action .container_calls .single_call .box_img img {
-  height: 232px;
-  width: 244px;
+.call_to_action .container_calls .single_call h4 {
+  margin: 20px 0 10px;
+}
+
+.call_to_action .container_calls .single_call p {
+  margin: 10px 0;
+  height: 110px;
+}
+
+.call_to_action .container_calls .single_call a {
+  background-color: #36a081;
+  color: white;
+  padding: 15px 40px;
+  border-radius: 30px;
+  text-decoration: none;
+}
+
+.call_to_action .container_calls .single_call a:hover {
+  background-color: #008169;
 }
 
 .select_restaurant {
