@@ -62,6 +62,18 @@
   transition: all 1s linear;
   transform: rotateX(-30deg);
 }
+.main_container_home {
+  h1 {
+    margin-top: 40px;
+    text-align: center;
+  }
+  h2{
+    margin: 40px 0;
+  }
+  img {
+    margin-bottom: 60px;
+  }
+}
 #main_container {
   background-color: #E9F8F5;
   min-height: 600px;
@@ -85,6 +97,7 @@
 
 #backend_container {
   background-color: #E9F8F5;
+  padding-top: 40px;
   img{
     height: 400px;
   }
@@ -97,9 +110,14 @@
     .content_row {
       padding: 10px 15px;
       background-color: white;
-      border: 2px solid #00A082;
+      // border: 2px solid #00A082;
+      box-shadow:  0 0 10px #acacac;
       border-radius: 10px;
       margin: 5px 0;
+      p {
+        margin-top: 1rem;
+      }
+
     }
   }
 }
@@ -114,7 +132,8 @@ h1 {
   width: 100%;
   padding: 10px 15px!important;
   background-color: white!important;
-  border: 2px solid #00A082!important;
+  box-shadow:  0 0 10px #acacac;
+  border: 0!important;
   border-radius: 10px!important;
   margin: 5px 0!important;
 }
@@ -128,6 +147,7 @@ h1 {
   color: white;
   height: 50px;
   border: 0;
+  margin: 20px 0;
 
 }
 .glovo_btn {

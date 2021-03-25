@@ -21,9 +21,6 @@
 </div>
 <div id="backend_container"class="">
   <div class="backend_wrap">
-    <div class="container">
-      <h1>Grafici</h1>
-    </div>
     <div class="content_row">
       <h2>Piatti venduti</h2>
       <div id="myChart_box">
