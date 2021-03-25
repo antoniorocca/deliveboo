@@ -4,7 +4,7 @@
 
         @include('layouts.header')
 
-        <main class="py-4">
+        <main class="">
           @yield('guest_content')
         </main>
 
