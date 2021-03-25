@@ -1,7 +1,9 @@
 <template>
-  <div class="" v-if="this.$store.state.categories.data != undefined">
+  <div  v-if="this.$store.state.categories.data != undefined">
+    <div id="edo" class="">
+      <button v-for="category in this.$store.state.categories.data.response">{{category.name}}</button>
 
-    <p v-for="category in this.$store.state.categories.data.response">{{category.name}}</p>
+    </div>
   </div>
 </template>
 
@@ -11,5 +13,15 @@ export default {
 }
 
 </script>
-<style>
+<style  scoped lang="scss">
+
+#edo {
+  width:20%;
+  display:flex;
+  flex-direction:column;
+  border: 5px solid black;
+  button{
+
+  }
+}
 </style>
