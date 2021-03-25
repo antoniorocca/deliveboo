@@ -12,6 +12,21 @@ vendor/laravel/ui/*
 vendor/laravel/ui/auth-backend/*
 !vendor/laravel/ui/auth-backend/RegistersUsers.php
 
+vendor/*
+!vendor/laravel
+vendor/laravel/*
+!vendor/laravel/framework
+vendor/laravel/framework/*
+!vendor/laravel/framework/src
+vendor/laravel/framework/src/*
+!vendor/laravel/framework/src/illuminate
+vendor/laravel/framework/src/illuminate/*
+!vendor/laravel/framework/src/illuminate/mail
+vendor/laravel/framework/src/illuminate/mail/*
+!vendor/laravel/framework/src/illuminate/mail/resources
+vendor/laravel/framework/src/illuminate/mail/resources/*
+!vendor/laravel/framework/src/illuminate/mail/resources/views
+
 .env
 .env.backup
 .phpunit.result.cache
