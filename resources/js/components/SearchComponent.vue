@@ -21,7 +21,7 @@ export default {
                         return restaurant.name.toLowerCase().match(this.search.toLowerCase()) 
                     })
                 )
-                console.log(this.$store.state.searchBar)
+                console.log(this.$store.state.filteredRestaurant)
             }
             this.search ='';
         },
