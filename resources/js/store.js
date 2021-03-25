@@ -10,6 +10,7 @@ let store = {
         dishes: '',
         restaurants: '',
         selectedCategories:[],
+        filteredRestaurant:'',
         // variabile per toglerare tra carrello e checkout
         checkout:false,
         test: 'bomber',
@@ -93,10 +94,34 @@ let store = {
             this.state.categories = resp[0];
             this.state.dishes = resp[1];
             this.state.restaurants = resp[2];
+            this.state.filteredRestaurant = resp[2];
         },
         setSelectedCategoties(state, category) {
-            this.state.selectedCategories += category;
+            this.state.selectedCategories = category;
         },
+
+        // FUNZIONAMENTO SELEZIONE RISTORANTI
+//////////////////////////////////////////////////////////////////////////
+
+        filterRestaurant(state, category){
+          this.state.filteredRestaurant = [];
+
+          this.state.categories.data.response.forEach((item, i) => {
+            if (item.name === category) {
+              item.restaurants.forEach((item, i) => {
+                this.state.filteredRestaurant.push(item);
+              });
+
+            }
+          });
+
+
+
+        },
+
+/////////////////////////////////////////////////////////////////////////////
+
+
         setRestaurants(state, category) {
             this.state.selectedCategories = this.state.restaurants.data.response;
         },

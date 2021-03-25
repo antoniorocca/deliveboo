@@ -1,23 +1,22 @@
 <template>
 <div id="restaurant_box">
-    <div>
-        <input id="header_logo" type="text" placeholder="Cerca" v-model="search"  @keyup.enter="typeSearchMain">
-    </div>
+  <p>ciao</p>
+  <p>{{this.$store.state.filteredRestaurant}}</p>
 
-    <div class="header">
+    <!-- <div class="header">
         <div id="main-header" class="d-flex justify-content-center flex-wrap">
             <div id="categories" class="d-flex justify-content-center flex-wrap">
                 <div class="category category_hover mr-4 mt-5 d-flex justify-content-center" v-for="category in categories.slice(0, 8)" :class="(letSelected == category.id) ? 'focusr' : ''">
-                    <!-- <img :src="{{category.img}}" alt=""> -->
+                    <img :src="{{category.img}}" alt="">
                     <span>{{category.name}}</span>
                     <input type="submit" :value="category.id" @click="selectRestaurantOnClick" :class="(letSelected == category.id) ? 'focusr' : ''">
-                    <!-- <option v-for="category in categories" :value="category.id">{{category.name}}</option> -->
+                    <option v-for="category in categories" :value="category.id">{{category.name}}</option>
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
-    <div  v-if="this.$store.state.visibility">
+    <!-- <div  v-if="this.$store.state.visibility">
         <div>
             <h4>Categorie:</h4>
             <select name="category_id" class="form-control" id="category_id" @change="selectRestaurant">
@@ -35,17 +34,28 @@
                 </p>
             </div>
 
-            <div class="restaurants">
-                <div class="card card_hover" v-for="restaurant in restaurants" @click="toggle" v-if="!lol">
-                    <div class="restaurant_image">
-                        <img :src="restaurant.img" alt="restaurant's image">
-                    </div>
-                    <h4>
-                        {{restaurant.name}}
-                    </h4>
-                    <input class="option_restaurant" :value="restaurant.id" @click="showRestaurant">
+
+
+            EDO MOD
+
+            <div class="" v-if="this.$store.state.filteredRestaurant.data!= undefined">
+              <div class="restaurants">
+                <div class="card card_hover" v-for="restaurant in this.$store.state.filteredRestaurant.data" @click="">
+                  <div class="restaurant_image">
+                    <img :src="restaurant.img" alt="restaurant's image">
+                  </div>
+                  <h4>
+                    {{restaurant.name}}
+                  </h4>
+                  <input class="option_restaurant" :value="restaurant.id" @click="showRestaurant">
                 </div>
+              </div>
             </div>
+
+
+            /EDO MOD
+
+
 
             <div class="restaurants">
                 <div class="card card_hover" v-for="restaurant in this.$store.state.searchBar" @click="toggle" v-if="lol">
@@ -59,7 +69,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 </div>
 </template>
 
@@ -67,7 +77,7 @@
     export default {
         data(){
             return {
-                restaurants:'',
+
                 restaurantMom:'',
                 categories:'',
                 categoriesAll:'',
@@ -127,22 +137,6 @@
                 this.search ='';
             },
         },
-        mounted() {
-            Promise.all([
-                axios.get('api/restaurants'),
-                axios.get('api/categories'),
-            ]).then(resp => {
-                // console.log(resp[0].data.response);
-                // console.log(resp[1].data.response);
-                this.restaurantsAll = resp[0].data.response;
-                this.restaurants = resp[0].data.response;
-                this.categoriesAll = resp[0].data.response;
-                this.categories = resp[1].data.response;
-                // return (RestaurantComponent, { props: { restaurants: this.restaurants } });
-            }).catch(error => {
-                console.log(error);
-            })
-        }
     }
 </script>
 
