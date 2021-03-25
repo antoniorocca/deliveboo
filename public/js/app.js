@@ -2176,7 +2176,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   methods: {
     addSelectedCategories: function addSelectedCategories(category) {
@@ -2184,6 +2183,9 @@ __webpack_require__.r(__webpack_exports__);
     },
     filterRestaurant: function filterRestaurant(category) {
       this.$store.commit('filterRestaurant', category);
+    },
+    selectAllRestaurants: function selectAllRestaurants() {
+      this.$store.commit('selectAllRestaurants');
     }
   }
 });
@@ -2652,11 +2654,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2670,20 +2667,26 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
-    selectRestaurant: function selectRestaurant(value) {
-      if (value.target.value !== 'all') {
-        var restSelect = this.categories[value.target.value - 1];
-        this.restaurants = restSelect.restaurants;
-        this.letSelected = value.target.value; // console.log('if case');
-        // console.log( this.restaurants);
-        // console.log('restaurant all');
-        // console.log( this.restaurantsAll);
-      } else {
-        this.restaurants = this.restaurantsAll;
-        this.letSelected = "all"; // console.log('else case');
-        // console.log(this.restaurants);
-      }
+    showSelectedRestaurant: function showSelectedRestaurant(restaurant) {
+      this.$store.commit('selectRestaurant', restaurant);
+      console.log('filter');
     },
+    // selectRestaurant(value){
+    //     if (value.target.value !== 'all') {
+    //         let restSelect = this.categories[value.target.value - 1];
+    //         this.restaurants = restSelect.restaurants;
+    //         this.letSelected = value.target.value;
+    //         // console.log('if case');
+    //         // console.log( this.restaurants);
+    //         // console.log('restaurant all');
+    //         // console.log( this.restaurantsAll);
+    //     } else {
+    //         this.restaurants = this.restaurantsAll;
+    //         this.letSelected = "all";
+    //         // console.log('else case');
+    //         // console.log(this.restaurants);
+    //     }
+    // },
     showRestaurant: function showRestaurant(value) {
       console.log(value.target.value);
       this.restaurantMom = this.restaurantsAll[value.target.value - 1];
@@ -39740,34 +39743,28 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return this.$store.state.categories.data != undefined
-    ? _c(
-        "div",
-        { attrs: { id: "category_box" } },
-        [
-          _vm._l(this.$store.state.categories.data.response, function(
-            category
-          ) {
-            return _c(
-              "button",
-              {
-                on: {
-                  click: function($event) {
-                    return _vm.filterRestaurant(category.name)
-                  }
-                }
-              },
-              [_vm._v(_vm._s(category.name))]
-            )
-          }),
-          _vm._v(" "),
-          _c("p", [_vm._v("ciao")]),
-          _vm._v(" "),
-          _c("p", [_vm._v(_vm._s(this.$store.state.selectedCategories))])
-        ],
-        2
-      )
-    : _vm._e()
+  return _c(
+    "div",
+    { attrs: { id: "category_box" } },
+    [
+      _vm._l(this.$store.state.categories, function(category) {
+        return _c(
+          "button",
+          {
+            on: {
+              click: function($event) {
+                return _vm.filterRestaurant(category.name)
+              }
+            }
+          },
+          [_vm._v(_vm._s(category.name))]
+        )
+      }),
+      _vm._v(" "),
+      _c("button", { on: { click: _vm.selectAllRestaurants } }, [_vm._v("All")])
+    ],
+    2
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -40318,12 +40315,68 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { attrs: { id: "restaurant_box" } }, [
-    _c("p", [_vm._v("ciao")]),
-    _vm._v(" "),
-    _c("p", [_vm._v(_vm._s(this.$store.state.filteredRestaurant))])
+    _c("div", { attrs: { id: "content" } }, [
+      _vm._m(0),
+      _vm._v(" "),
+      _c("div", {}, [
+        _c(
+          "div",
+          { staticClass: "restaurants" },
+          _vm._l(this.$store.state.filteredRestaurant, function(restaurant) {
+            return _c(
+              "div",
+              {
+                staticClass: "card card_hover",
+                on: {
+                  click: function($event) {
+                    return _vm.showSelectedRestaurant(restaurant)
+                  }
+                }
+              },
+              [
+                _c("div", { staticClass: "restaurant_image" }, [
+                  _c("img", {
+                    attrs: { src: restaurant.img, alt: "restaurant's image" }
+                  })
+                ]),
+                _vm._v(" "),
+                _c("h4", [
+                  _vm._v(
+                    "\n                    " +
+                      _vm._s(restaurant.name) +
+                      "\n                  "
+                  )
+                ]),
+                _vm._v(" "),
+                _c("input", {
+                  staticClass: "option_restaurant",
+                  domProps: { value: restaurant.id }
+                })
+              ]
+            )
+          }),
+          0
+        )
+      ])
+    ])
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: " first_title" }, [
+      _c("h2", [_vm._v("Ristoranti consigliati")]),
+      _vm._v(" "),
+      _c("p", [
+        _vm._v(
+          "\n                Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, voluptatibus?\n                "
+        )
+      ])
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -55177,6 +55230,7 @@ var store = {
     checkout: false,
     test: 'bomber',
     selectedRestaurant: [],
+    selectedRestaurant2: '',
     visibility: true ? JSON.parse(visibility) : undefined,
     searchBar: ''
   },
@@ -55248,10 +55302,10 @@ var store = {
       window.localStorage.setItem('cartCount', state.cartCount);
     },
     saveCall: function saveCall(state, resp) {
-      this.state.categories = resp[0];
-      this.state.dishes = resp[1];
-      this.state.restaurants = resp[2];
-      this.state.filteredRestaurant = resp[2];
+      this.state.categories = resp[0].data.response;
+      this.state.dishes = resp[1].data.response;
+      this.state.restaurants = resp[2].data.response;
+      this.state.filteredRestaurant = resp[2].data.response;
     },
     setSelectedCategoties: function setSelectedCategoties(state, category) {
       this.state.selectedCategories = category;
@@ -55262,13 +55316,21 @@ var store = {
       var _this = this;
 
       this.state.filteredRestaurant = [];
-      this.state.categories.data.response.forEach(function (item, i) {
+      this.state.categories.forEach(function (item, i) {
         if (item.name === category) {
           item.restaurants.forEach(function (item, i) {
             _this.state.filteredRestaurant.push(item);
           });
         }
       });
+      console.log(this.state.filteredRestaurant);
+    },
+    selectAllRestaurants: function selectAllRestaurants(state) {
+      this.state.filteredRestaurant = this.state.restaurants;
+    },
+    selectRestaurant: function selectRestaurant(state, restaurant) {
+      this.state.selectedRestaurant2 = restaurant;
+      console.log(this.state.selectedRestaurant2);
     },
     /////////////////////////////////////////////////////////////////////////////
     setRestaurants: function setRestaurants(state, category) {

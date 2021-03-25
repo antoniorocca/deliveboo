@@ -15,6 +15,7 @@ let store = {
         checkout:false,
         test: 'bomber',
         selectedRestaurant: [],
+        selectedRestaurant2:'',
         visibility: true? JSON.parse(visibility) : false,
         searchBar:'',
     },
@@ -91,10 +92,10 @@ let store = {
             window.localStorage.setItem('cartCount', state.cartCount);
         },
         saveCall(state, resp) {
-            this.state.categories = resp[0];
-            this.state.dishes = resp[1];
-            this.state.restaurants = resp[2];
-            this.state.filteredRestaurant = resp[2];
+            this.state.categories = resp[0].data.response;
+            this.state.dishes = resp[1].data.response;
+            this.state.restaurants = resp[2].data.response;
+            this.state.filteredRestaurant = resp[2].data.response;
         },
         setSelectedCategoties(state, category) {
             this.state.selectedCategories = category;
@@ -105,20 +106,22 @@ let store = {
 
         filterRestaurant(state, category){
           this.state.filteredRestaurant = [];
-
-          this.state.categories.data.response.forEach((item, i) => {
+          this.state.categories.forEach((item, i) => {
             if (item.name === category) {
               item.restaurants.forEach((item, i) => {
                 this.state.filteredRestaurant.push(item);
               });
-
             }
           });
-
-
-
+          console.log(this.state.filteredRestaurant);
         },
-
+        selectAllRestaurants(state){
+          this.state.filteredRestaurant = this.state.restaurants;
+        },
+        selectRestaurant(state, restaurant){
+          this.state.selectedRestaurant2 = restaurant;
+          console.log(this.state.selectedRestaurant2);
+        },
 /////////////////////////////////////////////////////////////////////////////
 
 

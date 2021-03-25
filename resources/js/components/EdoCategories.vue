@@ -1,8 +1,7 @@
 <template>
-  <div  id="category_box" v-if="this.$store.state.categories.data != undefined">
-      <button @click="filterRestaurant(category.name)" v-for="category in this.$store.state.categories.data.response">{{category.name}}</button>
-      <p>ciao</p>
-      <p>{{this.$store.state.selectedCategories}}</p>
+  <div  id="category_box">
+    <button @click="filterRestaurant(category.name)" v-for="category in this.$store.state.categories">{{category.name}}</button>
+    <button @click="selectAllRestaurants">All</button>
   </div>
 </template>
 
@@ -10,10 +9,14 @@
 export default {
   methods:{
     addSelectedCategories(category){
-      this.$store.commit('setSelectedCategoties', category)
+      this.$store.commit('setSelectedCategoties', category);
     },
     filterRestaurant(category){
-      this.$store.commit('filterRestaurant',category)
+
+      this.$store.commit('filterRestaurant',category);
+    },
+    selectAllRestaurants(){
+      this.$store.commit('selectAllRestaurants');
     },
   },
 
