@@ -4,9 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Mail\SendNewMail;
 use Illuminate\Support\Facades\Mail;
-
-
-
+use Carbon\Carbon;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Order;
@@ -30,8 +28,7 @@ class TokenController extends Controller
         ]);
         dd($request);
         $to = $request->email;
-        
-        Mail::to($to)->send(new SendNewMail);
+
 
         $dishes = json_decode(request('cart'));
         $total = 0;
@@ -56,9 +53,12 @@ class TokenController extends Controller
         $newOrder->address = $request->address;
         $newOrder->email = $request->email;
         $newOrder->order = json_encode($dishes);
-        $newOrder->order_date = new Date();
+        $newOrder->order_date = Carbon::now();
         $newOrder->save();
         //dd($dishes);
+
+        Mail::to($to)->send(new SendNewMail($newOrder));
+
         return redirect()->route('checkout');
     }
 
