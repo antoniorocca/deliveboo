@@ -20,48 +20,53 @@
         </select>
     </div>
     
-    <div id="content" class="container">
-
+    <div id="content" class="">
         <div class=" first_title">
-            <h2>Ristoranti consigliati</h2>
+            <h2>I ristoranti consigliati</h2>
             <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, voluptatibus?
+            Scopri i negozi più richiesti e ricevi alla tua porta ogni tuo desiderio
             </p>
         </div>
 
-        <!-- <div class="restaurants">
-            <div class="card card_hover " v-for="restaurant in restaurants.slice(0, 9)" @click="toggle">
-                <div class="restaurant_image">
+        <hooper id="hooper" :settings="hooperSettings" >
+            <slide id="slide" v-for="restaurant in restaurants.slice(0, 10)" v-bind:key="restaurants.id" >
+                <div class="card" @click="toggle">
                     <img :src="restaurant.img" alt="restaurant's image">
-                </div>
-                <h4>
-                    {{restaurant.name}}
-                </h4>
-                <input class="option_restaurant" :value="restaurant.id" @click="showRestaurant">
-            </div>
-        </div> -->
-        <carousel>
-            <slide class="card card_hover" v-for="restaurant in restaurants.slice(0, 10)" v-bind:key="restaurants.id" @click="toggle">
-                <div>
-                    <div class="restaurant_image">
-                        <img :src="restaurant.img" alt="restaurant's image">
-                    </div>
-                    <h4> {{restaurant.name}} </h4>
+                    <h4 > {{restaurant.name}} </h4>
                     <!-- <input class="option_restaurant" :value="restaurant.id" @click="showRestaurant"> -->
                 </div>
             </slide>
-        </carousel>
+            <hooper-navigation slot="hooper-addons"></hooper-navigation>
+            <!-- <hooper-pagination slot="hooper-addons"></hooper-pagination>
+            <hooper-progress slot="hooper-addons"></hooper-progress> -->
+        </hooper>
+
     </div>
 </div>
 </template>
 
 <script>
-    import { Carousel, Slide } from 'vue-carousel';
+    // import { Carousel, Slide } from 'vue-carousel';
+    import { 
+        Hooper,
+        Slide,
+        // Progress as HooperProgress,
+        // Pagination as HooperPagination,
+        Navigation as HooperNavigation,
+    } from 'hooper';
+    import 'hooper/dist/hooper.css';
 
     export default {
+        // components: {
+        //     Carousel,
+        //     Slide
+        // },
         components: {
-            Carousel,
-            Slide
+            Hooper,
+            Slide,
+            // HooperProgress,
+            // HooperPagination,
+            HooperNavigation
         },
         data(){
             return {
@@ -70,6 +75,10 @@
                 categories:'',
                 restaurantsAll: '',
                 letSelected: '',
+                hooperSettings: {
+                    itemsToShow: 3,
+                    // centerMode: false
+                }
             }
         },
         methods:{
@@ -146,61 +155,49 @@
                 color: black;
                 padding-top: 100px;
                 font-weight: 800;
+                font-size: 30px;
             }
             p{
                 color: grey;
+                font-size: 20px;
+                font-weight: 100;
             }
         }
-        .restaurants{
-            display: flex;
-            flex-wrap: wrap;
-            margin: auto;
-            justify-content: center;
-            .card{
-                margin: 30px;
-                width: 300px;
-                height: 50px;
-                z-index: 10;
+        #hooper{
+            // border: 1px solid grey;
+            border-radius: 10px;
+            margin: 50px;
+            height: 100%;
+            width: 100%;
+            &:focus{
+                    outline: none;
+                }
+            #slide{
                 border-radius: 10px;
-                box-shadow: 0 0 10px #DDDDDD;
                 img{
-                    height: 150px;
-                    width: 100%;
+                    height: 250px;
+                    object-fit: cover;
                     border-top-left-radius: 10px;
                     border-top-right-radius: 10px;
-                    object-fit: cover;
-                }
-                h4{
-                    border: px solid rgba(0, 0, 0, 0.125);
-                    border-radius: 0.25rem;
-                    text-align: center;
-                    margin-bottom: 10px;
-                    font-weight: 700;
-                    padding: 10px;
-                }
-                option{
-                    height: 100%;
-                }
-            }
-            .card_hover{
-                transition: all 0.35s;
-                height: 50px;
 
+                }
+                .card{
+                    margin: 15px;
+                    border-radius: 10px;
+                    cursor: pointer;
+                }
             }
-            .card:hover{
-                cursor: pointer;
-                transform: scale(1.05);
-
-            }
-            .option_restaurant{
-                position: absolute;
-                width: 100%;
-                height: 100%;
-                color: transparent;
-                background-color: transparent;
-                border-color: transparent;
-                cursor: pointer;
-            }
+            // .option_restaurant{
+            //     position: absolute;
+            //     width: 100%;
+            //     height: 100%;
+            //     color: transparent;
+            //     background-color: transparent;
+            //     border-color: transparent;
+            //     cursor: pointer;
+            // }
         }
+       
     }
+    
 </style>
