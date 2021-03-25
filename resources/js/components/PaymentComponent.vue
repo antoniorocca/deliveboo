@@ -1,28 +1,35 @@
 <template>
-    <form id="payment-form" action="api/token" method="post">
+    <form id="payment-form" @submit="checkForm" action="api/token" method="post">
 
         <!-- Putting the empty container you plan to pass to
         `braintree.dropin.create` inside a form will make layout and flow
         easier to manage -->
 
+        <p v-if="errors.length">
+            <b>Please correct the following error(s):</b>
+            <ul>
+                <li v-for="error in errors">{{ error }}</li>
+            </ul>
+        </p>
+
         <div class="form-group">
             <label for="name">Nome</label>
-            <input type="text" maxlength="100" class="form-control" name="name" id="name" placeholder="Inserisci il tuo nome" required>
+            <input type="text" v-model="name" maxlength="100" class="form-control" name="name" id="name" placeholder="Inserisci il tuo nome" required>
         </div>
 
         <div class="form-group">
             <label for="surname">Cognome</label>
-            <input type="text" maxlength="100" class="form-control" name="surname" id="surname" placeholder="Inserisci il tuo cognome" required>
+            <input type="text" v-model="surname" maxlength="100" class="form-control" name="surname" id="surname" placeholder="Inserisci il tuo cognome" required>
         </div>
 
         <div class="form-group">
             <label for="address">Indirizzo</label>
-            <input type="text" maxlength="100" class="form-control" name="address" id="address" placeholder="Inserisci il tuo indirizzo" required>
+            <input type="text" v-model="address" maxlength="100" class="form-control" name="address" id="address" placeholder="Inserisci il tuo indirizzo" required>
         </div>
 
         <div class="form-group">
             <label for="email">Email</label>
-            <input type="email" maxlength="100" class="form-control" name="email" id="email" placeholder="Inserisci la tua email" required>
+            <input type="email" v-model="email" maxlength="100" class="form-control" name="email" id="email" placeholder="Inserisci la tua email" required>
         </div>
 
         <div id="dropin-container"></div>
@@ -39,12 +46,42 @@
 
 <script>
     export default {
+        data() {
+            return{
+                errors: [],
+                name: null,
+                surname: null,
+                address: null,
+                email: null,
+            };
+        },
         methods:{
             toggleCheckout(){
                 this.$store.commit('toggleCheckout');
                 console.log(this.$store.state.checkout);
-            }
+            },
+            checkForm: function (e) {
+                if (this.name && this.surname && this.address && this.email) {
+                    return true;
+                }
 
+                this.errors = [];
+
+                if (!this.name) {
+                    this.errors.push('Name required.');
+                }
+                if (!this.surname) {
+                    this.errors.push('Surname required.');
+                }
+                if (!this.address) {
+                    this.errors.push('Address required.');
+                }
+                if (!this.email) {
+                    this.errors.push('Email required.');
+                }
+
+                e.preventDefault();
+            }
         },
         mounted() {
 
