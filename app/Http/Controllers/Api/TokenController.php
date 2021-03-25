@@ -26,7 +26,7 @@ class TokenController extends Controller
             'address' => 'required | max:100',
             'email' => 'required | email | max:100',
         ]);
-        dd($request);
+        //dd($request);
         $to = $request->email;
 
 
