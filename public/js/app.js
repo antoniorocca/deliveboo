@@ -7359,7 +7359,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "#payment-form .wrap[data-v-4f61e082] {\n  display: flex;\n  justify-content: space-between;\n}\n#payment-form .wrap .payment_btn[data-v-4f61e082] {\n  min-width: 150px;\n  display: flex;\n  justify-content: center;\n  line-height: 50px;\n  border-radius: 30px;\n  background-color: #00a082;\n  color: white;\n  height: 50px;\n  border: 0;\n}", ""]);
+exports.push([module.i, "#payment-form[data-v-4f61e082] {\n  height: 400px;\n  overflow-y: auto;\n}\n#payment-form .wrap[data-v-4f61e082] {\n  display: flex;\n  justify-content: space-between;\n}\n#payment-form .wrap .payment_btn[data-v-4f61e082] {\n  min-width: 150px;\n  display: flex;\n  justify-content: center;\n  line-height: 50px;\n  border-radius: 30px;\n  background-color: #00a082;\n  color: white;\n  height: 50px;\n  border: 0;\n}", ""]);
 
 // exports
 

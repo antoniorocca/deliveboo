@@ -131,6 +131,8 @@
 </script>
 <style  scoped lang="scss">
 #payment-form{
+    height: 400px;
+    overflow-y: auto;
     .wrap {
         display:flex;
         justify-content: space-between;
