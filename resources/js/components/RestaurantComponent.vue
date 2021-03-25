@@ -1,5 +1,5 @@
 <template>
-<div id="restaurant_box">
+<div id="restaurant_box" v-if="this.$store.state.visibility">
     <!-- <div class="header">
         <div id="main-header" class="d-flex justify-content-center flex-wrap">
             <div id="categories" class="d-flex justify-content-center flex-wrap">
@@ -43,7 +43,7 @@
                   <h4>
                     {{restaurant.name}}
                   </h4>
-                  <input class="option_restaurant" :value="restaurant.id">
+                  <input class="option_restaurant" :value="restaurant.id" @click="toggle">
                 </div>
               </div>
             </div>

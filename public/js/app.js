@@ -39743,28 +39743,32 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { attrs: { id: "category_box" } },
-    [
-      _vm._l(this.$store.state.categories, function(category) {
-        return _c(
-          "button",
-          {
-            on: {
-              click: function($event) {
-                return _vm.filterRestaurant(category.name)
-              }
-            }
-          },
-          [_vm._v(_vm._s(category.name))]
-        )
-      }),
-      _vm._v(" "),
-      _c("button", { on: { click: _vm.selectAllRestaurants } }, [_vm._v("All")])
-    ],
-    2
-  )
+  return this.$store.state.visibility
+    ? _c(
+        "div",
+        { attrs: { id: "category_box" } },
+        [
+          _c("button", { on: { click: _vm.selectAllRestaurants } }, [
+            _vm._v("All")
+          ]),
+          _vm._v(" "),
+          _vm._l(this.$store.state.categories, function(category) {
+            return _c(
+              "button",
+              {
+                on: {
+                  click: function($event) {
+                    return _vm.filterRestaurant(category.name)
+                  }
+                }
+              },
+              [_vm._v(_vm._s(category.name))]
+            )
+          })
+        ],
+        2
+      )
+    : _vm._e()
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -40267,11 +40271,11 @@ var render = function() {
           _vm._l(_vm.$store.state.dishes.data.response, function(item) {
             return _c("li", [
               _vm._v(
-                "\n      " +
+                "\r\n      " +
                   _vm._s(item.name) +
-                  "\n      " +
+                  "\r\n      " +
                   _vm._s(item.price) +
-                  "\n      "
+                  "\r\n      "
               ),
               _c(
                 "button",
@@ -40283,7 +40287,7 @@ var render = function() {
                     }
                   }
                 },
-                [_vm._v("Add to Cart\n      ")]
+                [_vm._v("Add to Cart\r\n      ")]
               )
             ])
           }),
@@ -40314,52 +40318,60 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { attrs: { id: "restaurant_box" } }, [
-    _c("div", { attrs: { id: "content" } }, [
-      _vm._m(0),
-      _vm._v(" "),
-      _c("div", {}, [
-        _c(
-          "div",
-          { staticClass: "restaurants" },
-          _vm._l(this.$store.state.filteredRestaurant, function(restaurant) {
-            return _c(
+  return this.$store.state.visibility
+    ? _c("div", { attrs: { id: "restaurant_box" } }, [
+        _c("div", { attrs: { id: "content" } }, [
+          _vm._m(0),
+          _vm._v(" "),
+          _c("div", {}, [
+            _c(
               "div",
-              {
-                staticClass: "card card_hover",
-                on: {
-                  click: function($event) {
-                    return _vm.showSelectedRestaurant(restaurant)
-                  }
-                }
-              },
-              [
-                _c("div", { staticClass: "restaurant_image" }, [
-                  _c("img", {
-                    attrs: { src: restaurant.img, alt: "restaurant's image" }
-                  })
-                ]),
-                _vm._v(" "),
-                _c("h4", [
-                  _vm._v(
-                    "\n                    " +
-                      _vm._s(restaurant.name) +
-                      "\n                  "
-                  )
-                ]),
-                _vm._v(" "),
-                _c("input", {
-                  staticClass: "option_restaurant",
-                  domProps: { value: restaurant.id }
-                })
-              ]
+              { staticClass: "restaurants" },
+              _vm._l(this.$store.state.filteredRestaurant, function(
+                restaurant
+              ) {
+                return _c(
+                  "div",
+                  {
+                    staticClass: "card card_hover",
+                    on: {
+                      click: function($event) {
+                        return _vm.showSelectedRestaurant(restaurant)
+                      }
+                    }
+                  },
+                  [
+                    _c("div", { staticClass: "restaurant_image" }, [
+                      _c("img", {
+                        attrs: {
+                          src: restaurant.img,
+                          alt: "restaurant's image"
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("h4", [
+                      _vm._v(
+                        "\r\n                    " +
+                          _vm._s(restaurant.name) +
+                          "\r\n                  "
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("input", {
+                      staticClass: "option_restaurant",
+                      domProps: { value: restaurant.id },
+                      on: { click: _vm.toggle }
+                    })
+                  ]
+                )
+              }),
+              0
             )
-          }),
-          0
-        )
+          ])
+        ])
       ])
-    ])
-  ])
+    : _vm._e()
 }
 var staticRenderFns = [
   function() {
@@ -40371,7 +40383,7 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("p", [
         _vm._v(
-          "\n                Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, voluptatibus?\n                "
+          "\r\n                Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, voluptatibus?\r\n                "
         )
       ])
     ])
@@ -40452,67 +40464,73 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "selected_restaurant_container" }, [
-    _c("div", { attrs: { id: "info_restaurant" } }, [
-      _c("img", {
-        attrs: {
-          id: "restaurant_jumbotron",
-          src: this.$store.state.selectedRestaurant2.img,
-          alt: ""
-        }
-      }),
-      _vm._v(" "),
-      _c("h2", [_vm._v(_vm._s(this.$store.state.selectedRestaurant2.name))]),
-      _vm._v(" "),
-      _c("p", [
-        _vm._v(_vm._s(this.$store.state.selectedRestaurant2.description))
-      ])
-    ]),
-    _vm._v(" "),
-    _c("div", { attrs: { id: "main_restaurant" } }, [
-      _c("div", { staticClass: " first_title" }, [
-        _c("h2", [_vm._v("Ristorante selezionato")]),
-        _vm._v(" "),
-        _c("button", { on: { click: _vm.toggle } }, [_vm._v(" torna indietro")])
-      ])
-    ]),
-    _vm._v(" "),
-    _c(
-      "div",
-      {
-        staticClass: "d-flex flex-wrap justify-content-center",
-        attrs: { id: "selected_restaurant_dishes" }
-      },
-      _vm._l(this.$store.state.selectedRestaurant2.dishes, function(dish) {
-        return _c("div", { staticClass: "dish_card" }, [
-          _c("img", { attrs: { src: dish.img, alt: "" } }),
+  return !this.$store.state.visibility
+    ? _c("div", { staticClass: "selected_restaurant_container" }, [
+        _c("div", { attrs: { id: "info_restaurant" } }, [
+          _c("img", {
+            attrs: {
+              id: "restaurant_jumbotron",
+              src: this.$store.state.selectedRestaurant2.img,
+              alt: ""
+            }
+          }),
           _vm._v(" "),
-          _c("h4", [_vm._v(_vm._s(dish.name))]),
+          _c("h2", [
+            _vm._v(_vm._s(this.$store.state.selectedRestaurant2.name))
+          ]),
           _vm._v(" "),
-          _c("span", [_vm._v("prezzo € " + _vm._s(dish.price.toFixed(2)))]),
-          _c("br"),
-          _vm._v(" "),
-          _c("span", [_vm._v(" rating " + _vm._s(dish.rating))]),
-          _vm._v(" "),
-          _c("div", { staticClass: "add_cart" }, [
-            _c(
-              "button",
-              {
-                staticClass: "button is-success",
-                on: {
-                  click: function($event) {
-                    return _vm.addToCart(dish)
-                  }
-                }
-              },
-              [_vm._v("Add to Cart")]
-            )
+          _c("p", [
+            _vm._v(_vm._s(this.$store.state.selectedRestaurant2.description))
           ])
-        ])
-      }),
-      0
-    )
-  ])
+        ]),
+        _vm._v(" "),
+        _c("div", { attrs: { id: "main_restaurant" } }, [
+          _c("div", { staticClass: " first_title" }, [
+            _c("h2", [_vm._v("Ristorante selezionato")]),
+            _vm._v(" "),
+            _c("button", { on: { click: _vm.toggle } }, [
+              _vm._v(" torna indietro")
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass: "d-flex flex-wrap justify-content-center",
+            attrs: { id: "selected_restaurant_dishes" }
+          },
+          _vm._l(this.$store.state.selectedRestaurant2.dishes, function(dish) {
+            return _c("div", { staticClass: "dish_card" }, [
+              _c("img", { attrs: { src: dish.img, alt: "" } }),
+              _vm._v(" "),
+              _c("h4", [_vm._v(_vm._s(dish.name))]),
+              _vm._v(" "),
+              _c("span", [_vm._v("prezzo € " + _vm._s(dish.price.toFixed(2)))]),
+              _c("br"),
+              _vm._v(" "),
+              _c("span", [_vm._v(" rating " + _vm._s(dish.rating))]),
+              _vm._v(" "),
+              _c("div", { staticClass: "add_cart" }, [
+                _c(
+                  "button",
+                  {
+                    staticClass: "button is-success",
+                    on: {
+                      click: function($event) {
+                        return _vm.addToCart(dish)
+                      }
+                    }
+                  },
+                  [_vm._v("Add to Cart")]
+                )
+              ])
+            ])
+          }),
+          0
+        )
+      ])
+    : _vm._e()
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -55337,8 +55355,9 @@ var store = {
       this.state.selectedRestaurant = restaurant;
     },
     searchBar: function searchBar(state, s) {
+      // console.log(s);
       // console.log(restaurant);
-      this.state.searchBar = s;
+      this.state.filteredRestaurant = s;
     },
     // funzione per toglerare tra carrello e checkout
     toggleCheckout: function toggleCheckout() {
@@ -55400,8 +55419,8 @@ var store = {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /var/www/html/boolean/laravel/deliveboo/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /var/www/html/boolean/laravel/deliveboo/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\gitKraken_esercizi\deliveboo_progetto_finale\deliveboo\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\gitKraken_esercizi\deliveboo_progetto_finale\deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

@@ -1,5 +1,5 @@
 <template>
-    <div class="selected_restaurant_container">
+    <div class="selected_restaurant_container" v-if="!this.$store.state.visibility">
         <div id="info_restaurant">
             <img id="restaurant_jumbotron" :src="this.$store.state.selectedRestaurant2.img" alt="">
             <h2>{{ this.$store.state.selectedRestaurant2.name }}</h2>
