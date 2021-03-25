@@ -2,6 +2,11 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Mail\SendNewMail;
+use Illuminate\Support\Facades\Mail;
+
+
+
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Order;
@@ -23,7 +28,10 @@ class TokenController extends Controller
             'address' => 'required | max:100',
             'email' => 'required | email | max:100',
         ]);
-        dd($request);
+        $to = $request->email;
+        Mail::to($to)->send(new SendNewMail);
+
+        //dd($request);
         $dishes = json_decode(request('cart'));
         $total = 0;
         foreach ($dishes as $dish) {
