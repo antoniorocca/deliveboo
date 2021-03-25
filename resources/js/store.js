@@ -14,6 +14,7 @@ let store = {
         test: 'bomber',
         selectedRestaurant: [],
         visibility: true,
+        searchBar:'',
     },
     mutations: {
 
@@ -95,6 +96,10 @@ let store = {
         setSelectedRestaurant(state, restaurant) {
             // console.log(restaurant);
             this.state.selectedRestaurant = restaurant;
+        },
+        searchBar(state, s) {
+            // console.log(restaurant);
+            this.state.searchBar = s;
         },
         // funzione per toglerare tra carrello e checkout
         toggleCheckout(){
