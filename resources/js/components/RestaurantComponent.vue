@@ -109,10 +109,10 @@
             toggle(){
                 if (this.$store.state.visibility == false) {
                     this.$store.commit('visibilityFunction')
-                    console.log('false');
+                    // console.log('false');
                 } else {
                     this.$store.commit('visibilityFunction')
-                    console.log('true');
+                    // console.log('true');
                 }
             },
             typeSearchMain(){

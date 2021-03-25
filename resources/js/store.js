@@ -1,5 +1,6 @@
 let cart = window.localStorage.getItem('cart');
 let cartCount = window.localStorage.getItem('cartCount');
+let visibility = window.sessionStorage.getItem('visibility');
 
 let store = {
     state: {
@@ -13,17 +14,23 @@ let store = {
         checkout:false,
         test: 'bomber',
         selectedRestaurant: [],
-        visibility: true,
+        visibility: true? JSON.parse(visibility) : false,
         searchBar:'',
     },
     mutations: {
 
-        visibilityFunction(){
+        visibilityFunction(state){
             if (this.state.visibility == false) {
                 this.state.visibility = true;
+                // window.localStorage.setItem('v', visibility);
             } else {
                 this.state.visibility = false;
+                // window.localStorage.setItem('v', visibility);
             }
+            this.commit('saveView');
+        },
+        saveView(state) {
+            window.sessionStorage.setItem('visibility', JSON.stringify(state.visibility));
         },
 
       // TEST
