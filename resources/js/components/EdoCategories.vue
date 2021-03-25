@@ -4,7 +4,7 @@
         <p @click="selectCategory('all')">All</p>
 
         <p v-for="category in categories" @click="selectCategory(category.restaurants)">{{category.name}}</p>
-        
+
     </div>
 
 </template>
@@ -17,6 +17,8 @@ export default {
             selectedCategories:'',
         };
     },
+
+    
     methods:{
         selectCategory(name){
             if (name == 'all') {
