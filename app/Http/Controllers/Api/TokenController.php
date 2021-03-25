@@ -55,10 +55,11 @@ class TokenController extends Controller
         $newOrder->order = json_encode($dishes);
         $newOrder->order_date = Carbon::now();
         $newOrder->save();
-        //dd($dishes);
-
+        
         Mail::to($to)->send(new SendNewMail($newOrder));
-
+        
+        dd($newOrder);
+        
         return redirect()->route('checkout');
     }
 
