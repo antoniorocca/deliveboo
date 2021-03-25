@@ -1,7 +1,7 @@
 <template>
-  <div  id="category_box">
-    <button @click="filterRestaurant(category.name)" v-for="category in this.$store.state.categories">{{category.name}}</button>
+  <div  id="category_box" v-if="this.$store.state.visibility">
     <button @click="selectAllRestaurants">All</button>
+    <button @click="filterRestaurant(category.name)" v-for="category in this.$store.state.categories">{{category.name}}</button>
   </div>
 </template>
 

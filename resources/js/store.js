@@ -133,8 +133,9 @@ let store = {
             this.state.selectedRestaurant = restaurant;
         },
         searchBar(state, s) {
+            // console.log(s);
             // console.log(restaurant);
-            this.state.searchBar = s;
+            this.state.filteredRestaurant = s;
         },
         // funzione per toglerare tra carrello e checkout
         toggleCheckout(){
