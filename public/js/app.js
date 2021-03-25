@@ -2690,11 +2690,9 @@ __webpack_require__.r(__webpack_exports__);
     },
     toggle: function toggle() {
       if (this.$store.state.visibility == false) {
-        this.$store.commit('visibilityFunction');
-        console.log('false');
+        this.$store.commit('visibilityFunction'); // console.log('false');
       } else {
-        this.$store.commit('visibilityFunction');
-        console.log('true');
+        this.$store.commit('visibilityFunction'); // console.log('true');
       }
     },
     typeSearchMain: function typeSearchMain() {
@@ -55275,6 +55273,7 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 var cart = window.localStorage.getItem('cart');
 var cartCount = window.localStorage.getItem('cartCount');
+var visibility = window.sessionStorage.getItem('visibility');
 var store = {
   state: {
     cart: cart ? JSON.parse(cart) : [],
@@ -55287,16 +55286,21 @@ var store = {
     checkout: false,
     test: 'bomber',
     selectedRestaurant: [],
-    visibility: true,
+    visibility: true ? JSON.parse(visibility) : undefined,
     searchBar: ''
   },
   mutations: {
-    visibilityFunction: function visibilityFunction() {
+    visibilityFunction: function visibilityFunction(state) {
       if (this.state.visibility == false) {
-        this.state.visibility = true;
+        this.state.visibility = true; // window.localStorage.setItem('v', visibility);
       } else {
-        this.state.visibility = false;
+        this.state.visibility = false; // window.localStorage.setItem('v', visibility);
       }
+
+      this.commit('saveView');
+    },
+    saveView: function saveView(state) {
+      window.sessionStorage.setItem('visibility', JSON.stringify(state.visibility));
     },
     // TEST
     changeTest: function changeTest(state) {

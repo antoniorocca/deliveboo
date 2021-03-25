@@ -21,10 +21,11 @@
     <selected-restaurant></selected-restaurant>
 
     <!-- CALL-TO-ACTION -->
-    <div class="call_to_action">
+    {{-- <div class="call_to_action">
         <div class="title">
             <h2>Diventa uno di noi!</h2>
         </div>
+        
         <div class="container_calls container">
             <div class="single_call">
                 <div class="box_img">
@@ -54,7 +55,7 @@
     
 
 
-    </div>
+    </div> --}}
 
     <!-- CARRELLO -->
     <div style="display:flex; flex-direction:column;">
