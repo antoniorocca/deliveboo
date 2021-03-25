@@ -20,6 +20,7 @@ class TokenController extends Controller
     {
 
         $dishes = json_decode(request('cart'));
+      
         $total = 0;
         foreach ($dishes as $dish) {
             $total += $dish->totalPrice;
