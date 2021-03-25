@@ -17,7 +17,13 @@ class TokenController extends Controller
     }
     public function post(Request $request)
     {
-
+        $request->validate([
+            'name' => 'required | max:100',
+            'surname' => 'required | max:100',
+            'address' => 'required | max:100',
+            'email' => 'required | email | max:100',
+        ]);
+        dd($request);
         $dishes = json_decode(request('cart'));
         $total = 0;
         foreach ($dishes as $dish) {

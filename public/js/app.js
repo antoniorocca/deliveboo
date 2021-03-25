@@ -2455,7 +2455,6 @@ __webpack_require__.r(__webpack_exports__);
     var _this = this;
 
     console.log('Component payment mounted.');
-    console.log('ciao');
     var data;
     axios.get('/api/token').then(function (response) {
       data = response.data; // call `braintree.dropin.create` code here
@@ -40099,6 +40098,7 @@ var staticRenderFns = [
         staticClass: "form-control",
         attrs: {
           type: "text",
+          maxlength: "100",
           name: "name",
           id: "name",
           placeholder: "Inserisci il tuo nome"
@@ -40117,6 +40117,7 @@ var staticRenderFns = [
         staticClass: "form-control",
         attrs: {
           type: "text",
+          maxlength: "100",
           name: "surname",
           id: "surname",
           placeholder: "Inserisci il tuo cognome"
@@ -40135,6 +40136,7 @@ var staticRenderFns = [
         staticClass: "form-control",
         attrs: {
           type: "text",
+          maxlength: "100",
           name: "address",
           id: "address",
           placeholder: "Inserisci il tuo indirizzo"
@@ -40152,7 +40154,8 @@ var staticRenderFns = [
       _c("input", {
         staticClass: "form-control",
         attrs: {
-          type: "text",
+          type: "email",
+          maxlength: "100",
           name: "email",
           id: "email",
           placeholder: "Inserisci la tua email"

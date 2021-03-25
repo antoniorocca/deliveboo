@@ -7,22 +7,22 @@
 
         <div class="form-group">
             <label for="name">Nome</label>
-            <input type="text" class="form-control" name="name" id="name" placeholder="Inserisci il tuo nome">
+            <input type="text" maxlength="100" class="form-control" name="name" id="name" placeholder="Inserisci il tuo nome">
         </div>
 
         <div class="form-group">
             <label for="surname">Cognome</label>
-            <input type="text" class="form-control" name="surname" id="surname" placeholder="Inserisci il tuo cognome">
+            <input type="text" maxlength="100" class="form-control" name="surname" id="surname" placeholder="Inserisci il tuo cognome">
         </div>
 
         <div class="form-group">
             <label for="address">Indirizzo</label>
-            <input type="text" class="form-control" name="address" id="address" placeholder="Inserisci il tuo indirizzo">
+            <input type="text" maxlength="100" class="form-control" name="address" id="address" placeholder="Inserisci il tuo indirizzo">
         </div>
 
         <div class="form-group">
             <label for="email">Email</label>
-            <input type="text" class="form-control" name="email" id="email" placeholder="Inserisci la tua email">
+            <input type="email" maxlength="100" class="form-control" name="email" id="email" placeholder="Inserisci la tua email">
         </div>
 
         <div id="dropin-container"></div>
@@ -40,53 +40,54 @@
 <script>
     export default {
         methods:{
-          toggleCheckout(){
-            this.$store.commit('toggleCheckout');
-            console.log(this.$store.state.checkout);
-          }
+            toggleCheckout(){
+                this.$store.commit('toggleCheckout');
+                console.log(this.$store.state.checkout);
+            }
 
         },
         mounted() {
+
             console.log('Component payment mounted.');
-            console.log('ciao');
-              var data;
-              axios.get('/api/token')
-              .then(response =>{
+
+            var data;
+
+            axios.get('/api/token')
+            .then(response =>{
 
 
+                data = response.data;
 
-                  data = response.data;
+                // call `braintree.dropin.create` code here
+                const form = document.getElementById('payment-form');
 
-                  // call `braintree.dropin.create` code here
-                  const form = document.getElementById('payment-form');
-
-                  braintree.dropin.create({
+                braintree.dropin.create({
                     authorization: data,
                     container: '#dropin-container'
-                  }, (error, dropinInstance) => {
+                }, (error, dropinInstance) => {
                     if (error) console.error(error);
 
                     form.addEventListener('submit', event => {
-                      event.preventDefault();
+                        event.preventDefault();
 
-                      dropinInstance.requestPaymentMethod((error, payload) => {
-                        if (error) console.error(error);
+                        dropinInstance.requestPaymentMethod((error, payload) => {
+                            if (error) console.error(error);
 
-                        // Step four: when the user is ready to complete their
-                        //   transaction, use the dropinInstance to get a payment
-                        //   method nonce for the user's selected payment method, then add
-                        //   it a the hidden field before submitting the complete form to
-                        //   a server-side integration
-                        document.getElementById('nonce').value = payload.nonce;
-                        document.getElementById('cart').value = JSON.stringify(this.$store.state.cart);
-                        form.submit();
-                      });
+                            // Step four: when the user is ready to complete their
+                            //   transaction, use the dropinInstance to get a payment
+                            //   method nonce for the user's selected payment method, then add
+                            //   it a the hidden field before submitting the complete form to
+                            //   a server-side integration
+                            document.getElementById('nonce').value = payload.nonce;
+                            document.getElementById('cart').value = JSON.stringify(this.$store.state.cart);
+                            form.submit();
+                        });
                     });
-                  });
-              })
-              .catch(error =>{
+                });
+            })
+            .catch(error =>{
 
-              });
+            });
 
         }
     }
