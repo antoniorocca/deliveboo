@@ -40101,7 +40101,8 @@ var staticRenderFns = [
           maxlength: "100",
           name: "name",
           id: "name",
-          placeholder: "Inserisci il tuo nome"
+          placeholder: "Inserisci il tuo nome",
+          required: ""
         }
       })
     ])
@@ -40120,7 +40121,8 @@ var staticRenderFns = [
           maxlength: "100",
           name: "surname",
           id: "surname",
-          placeholder: "Inserisci il tuo cognome"
+          placeholder: "Inserisci il tuo cognome",
+          required: ""
         }
       })
     ])
@@ -40139,7 +40141,8 @@ var staticRenderFns = [
           maxlength: "100",
           name: "address",
           id: "address",
-          placeholder: "Inserisci il tuo indirizzo"
+          placeholder: "Inserisci il tuo indirizzo",
+          required: ""
         }
       })
     ])
@@ -40158,7 +40161,8 @@ var staticRenderFns = [
           maxlength: "100",
           name: "email",
           id: "email",
-          placeholder: "Inserisci la tua email"
+          placeholder: "Inserisci la tua email",
+          required: ""
         }
       })
     ])
