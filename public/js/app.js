@@ -2181,33 +2181,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-/* harmony default export */ __webpack_exports__["default"] = ({
-  data: function data() {
-    return {
-      categories: '',
-      selectedCategories: ''
-    };
-  },
-  methods: {
-    selectCategory: function selectCategory(name) {
-      if (name == 'all') {
-        this.$store.commit('setRestaurants', name); //this.selectedCategories = this.$store.getters.getSelectedCategories;
-      } else {
-        this.$store.commit('setSelectedCategoties', name);
-        console.log(name); //this.selectedCategories = this.$store.getters.getSelectedCategories;
-      }
-    }
-  },
-  computed: {},
-  mounted: function mounted() {
-    this.categories = this.$store.getters.getCategories.data.response;
-    console.log(this.categories);
-  }
-});
+/* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
 
@@ -39719,40 +39693,16 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "category_container" },
-    [
-      _c("h3", [_vm._v("Category Component")]),
-      _vm._v(" "),
-      _c(
-        "p",
-        {
-          on: {
-            click: function($event) {
-              return _vm.selectCategory("all")
-            }
-          }
-        },
-        [_vm._v("All")]
-      ),
-      _vm._v(" "),
-      _vm._l(_vm.categories, function(category) {
-        return _c(
-          "p",
-          {
-            on: {
-              click: function($event) {
-                return _vm.selectCategory(category.restaurants)
-              }
-            }
-          },
-          [_vm._v(_vm._s(category.name))]
-        )
-      })
-    ],
-    2
-  )
+  return this.$store.state.categories.data != undefined
+    ? _c(
+        "div",
+        {},
+        _vm._l(this.$store.state.categories.data.response, function(category) {
+          return _c("p", [_vm._v(_vm._s(category.name))])
+        }),
+        0
+      )
+    : _vm._e()
 }
 var staticRenderFns = []
 render._withStripped = true

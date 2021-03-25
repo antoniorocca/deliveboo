@@ -78,6 +78,7 @@ data.forEach((data, i) => {
     }
   });
 
+  console.log(data);
 });
 let names = [];
 let values = [];

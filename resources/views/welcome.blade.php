@@ -8,14 +8,14 @@
 
 
 <!-- COMPONENTE CATEGORIES EDO -->
-{{-- <div class="select_restaurant">
-    <edo-categories v-if="showMain"></edo-categories>
-    <edo-restaurants v-if="showMain"></edo-restaurants>
-</div> --}}
+<!-- <div class="select_restaurant">
+    <edo-categories v-if="true"></edo-categories>
+    <edo-restaurants v-if="true"></edo-restaurants>
+</div> -->
 {{-- DA CENCELLARE? --}}
 
+<edo-categories style="margin:auto"></edo-categories>
 
-<!-- COMPONENTE RISTORANTE -->
 <restaurant-component></restaurant-component>
 
 <div class="wrap" style="display:flex;">
