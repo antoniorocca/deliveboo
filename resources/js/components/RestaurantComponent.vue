@@ -1,5 +1,5 @@
 <template>
-<div>
+<div id="restaurant_box">
     <div>
         <input id="header_logo" type="text" placeholder="Cerca" v-model="search"  @keyup.enter="typeSearchMain">
     </div>
@@ -13,7 +13,7 @@
                     <input type="submit" :value="category.id" @click="selectRestaurantOnClick" :class="(letSelected == category.id) ? 'focusr' : ''">
                     <!-- <option v-for="category in categories" :value="category.id">{{category.name}}</option> -->
                 </div>
-            </div>   
+            </div>
         </div>
     </div>
 
@@ -25,7 +25,7 @@
                 <option id="selection" :selected="letSelected == category.id" v-for="category in categories" :value="category.id">{{category.name}} ({{category.restaurants.length}})</option>
             </select>
         </div>
-        
+
         <div id="content" class="">
 
             <div class=" first_title">
@@ -46,7 +46,7 @@
                     <input class="option_restaurant" :value="restaurant.id" @click="showRestaurant">
                 </div>
             </div>
-            
+
             <div class="restaurants">
                 <div class="card card_hover" v-for="restaurant in this.$store.state.searchBar" @click="toggle" v-if="lol">
                     <div class="restaurant_image">
@@ -147,6 +147,10 @@
 </script>
 
 <style scoped lang="scss">
+#restaurant_box{
+  width:80%;
+  border: 5px solid black;
+}
     .focusr{
         outline: 0;
     }

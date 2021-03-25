@@ -13,10 +13,10 @@
     <edo-restaurants v-if="true"></edo-restaurants>
 </div> -->
 {{-- DA CENCELLARE? --}}
-
-<edo-categories style="margin:auto"></edo-categories>
-
-<restaurant-component></restaurant-component>
+<div id="main_container_box"class="">
+  <edo-categories></edo-categories>
+  <restaurant-component></restaurant-component>
+</div>
 
 <div class="wrap" style="display:flex;">
 

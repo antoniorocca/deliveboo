@@ -11106,6 +11106,10 @@ header #main-header #categories .category_hover,
   }
 }
 
+#main_container_box {
+  display: flex;
+}
+
 .category_container {
   border-right: 2px solid black;
   border-bottom: 2px solid black;
