@@ -40153,11 +40153,11 @@ var render = function() {
           _vm._l(_vm.$store.state.dishes.data.response, function(item) {
             return _c("li", [
               _vm._v(
-                "\n      " +
+                "\r\n      " +
                   _vm._s(item.name) +
-                  "\n      " +
+                  "\r\n      " +
                   _vm._s(item.price) +
-                  "\n      "
+                  "\r\n      "
               ),
               _c(
                 "button",
@@ -40169,7 +40169,7 @@ var render = function() {
                     }
                   }
                 },
-                [_vm._v("Add to Cart\n      ")]
+                [_vm._v("Add to Cart\r\n      ")]
               )
             ])
           }),
@@ -40299,9 +40299,9 @@ var render = function() {
                   _vm._v(" "),
                   _c("h4", [
                     _vm._v(
-                      "\n                    " +
+                      "\r\n                    " +
                         _vm._s(restaurant.name) +
-                        "\n                "
+                        "\r\n                "
                     )
                   ]),
                   _vm._v(" "),
@@ -40329,7 +40329,7 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("p", [
         _vm._v(
-          "\n            Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, voluptatibus?\n            "
+          "\r\n            Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, voluptatibus?\r\n            "
         )
       ])
     ])
@@ -55183,8 +55183,8 @@ var store = {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /var/www/html/boolean/laravel/deliveboo/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /var/www/html/boolean/laravel/deliveboo/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\Fabio\Desktop\Boolean\classe 23\deliveboo\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\Fabio\Desktop\Boolean\classe 23\deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
