@@ -16,7 +16,9 @@
 
 
 <!-- COMPONENTE RISTORANTE -->
-<restaurant-component></restaurant-component>
+<carousel-component></carousel-component>
+{{-- <restaurant-component></restaurant-component> --}}
+
 
 <div class="wrap" style="display:flex;">
 
