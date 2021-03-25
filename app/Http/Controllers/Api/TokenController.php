@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Order;
+use Carbon\Carbon;
 class TokenController extends Controller
 {
     //
@@ -37,7 +38,7 @@ class TokenController extends Controller
         $newOrder->restaurant_id = $dishes[0]->restaurant_id;
         $newOrder->amount = $total;
         $newOrder->order = json_encode($dishes);
-        $newOrder->order_date = new Date();
+        $newOrder->order_date = Carbon::now();
         $newOrder->save();
         //dd($dishes);
         return redirect()->route('checkout');
