@@ -1,11 +1,18 @@
 <template>
   <div  id="category_box" v-if="this.$store.state.categories.data != undefined">
-      <button v-for="category in this.$store.state.categories.data.response">{{category.name}}</button>
+      <button @click="addSelectedCategories(category.name)" v-for="category in this.$store.state.categories.data.response">{{category.name}}</button>
+      <p>ciao</p>
+      <p>{{this.$store.state.selectedCategories}}</p>
   </div>
 </template>
 
 <script>
 export default {
+  methods:{
+    addSelectedCategories(category){
+      this.$store.commit('setSelectedCategoties', category)
+    }
+  },
 
 }
 

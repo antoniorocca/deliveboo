@@ -95,7 +95,7 @@ let store = {
             this.state.restaurants = resp[2];
         },
         setSelectedCategoties(state, category) {
-            this.state.selectedCategories = category;
+            this.state.selectedCategories += category;
         },
         setRestaurants(state, category) {
             this.state.selectedCategories = this.state.restaurants.data.response;

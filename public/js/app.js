@@ -2112,11 +2112,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
-  data: function data() {
-    return {
-      categories: ''
-    };
-  },
   mounted: function mounted() {
     var _this = this;
 
@@ -2180,7 +2175,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-/* harmony default export */ __webpack_exports__["default"] = ({});
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  methods: {
+    addSelectedCategories: function addSelectedCategories(category) {
+      this.$store.commit('setSelectedCategoties', category);
+    }
+  }
+});
 
 /***/ }),
 
@@ -39743,10 +39746,28 @@ var render = function() {
     ? _c(
         "div",
         { attrs: { id: "category_box" } },
-        _vm._l(this.$store.state.categories.data.response, function(category) {
-          return _c("button", [_vm._v(_vm._s(category.name))])
-        }),
-        0
+        [
+          _vm._l(this.$store.state.categories.data.response, function(
+            category
+          ) {
+            return _c(
+              "button",
+              {
+                on: {
+                  click: function($event) {
+                    return _vm.addSelectedCategories(category.name)
+                  }
+                }
+              },
+              [_vm._v(_vm._s(category.name))]
+            )
+          }),
+          _vm._v(" "),
+          _c("p", [_vm._v("ciao")]),
+          _vm._v(" "),
+          _c("p", [_vm._v(_vm._s(this.$store.state.selectedCategories))])
+        ],
+        2
       )
     : _vm._e()
 }
@@ -55444,7 +55465,7 @@ var store = {
       this.state.restaurants = resp[2];
     },
     setSelectedCategoties: function setSelectedCategoties(state, category) {
-      this.state.selectedCategories = category;
+      this.state.selectedCategories += category;
     },
     setRestaurants: function setRestaurants(state, category) {
       this.state.selectedCategories = this.state.restaurants.data.response;
