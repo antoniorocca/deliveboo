@@ -2,8 +2,10 @@
     <div class="selected_restaurant_container"  v-if="!this.$store.state.visibility">
         <div id="info_restaurant">
             <img id="restaurant_jumbotron" :src="this.$store.state.selectedRestaurant.img" alt="">
-            <h2>{{ this.$store.state.selectedRestaurant.name }}</h2>
-            <p>{{ this.$store.state.selectedRestaurant.description }}</p>
+            <div id="restaurant_txt">
+                <h2>{{ this.$store.state.selectedRestaurant.name }}</h2>
+                <p>{{ this.$store.state.selectedRestaurant.description }}</p>
+            </div>  
         </div>
 
         <div id="main_restaurant">
@@ -16,11 +18,9 @@
             <div class="dish_card" v-for="dish in this.$store.state.selectedRestaurant.dishes">
                 <img :src="dish.img" alt="">
                 <h4>{{ dish.name }}</h4>
-                <span>prezzo &euro; {{ dish.price.toFixed(2) }}</span><br>
-                <span> rating {{ dish.rating }}</span>
-                <div class="add_cart">
-                    <button class="button is-success" @click="addToCart(dish)">Add to Cart</button>
-                </div> 
+                <span class="prezzo">prezzo &euro; {{ dish.price.toFixed(2) }}</span><br>
+                <span class="rating"> rating {{ dish.rating }}</span>
+                <button class="button is-success" @click="addToCart(dish)"><i class="fas fa-plus"></i></button>
                 <!-- <p>descrizione {{ dish.description }}</p> -->
                 <!-- <dd>sconto {{ dish.discount }}</dd> -->
                 <!-- <dd> classe menu {{ dish.menu_class }}</dd> -->
@@ -71,7 +71,6 @@ export default {
         img {
             width: 850px;
             height: 440px;
-
         }
         #restaurant_txt {
             position: absolute;
@@ -81,7 +80,6 @@ export default {
             width: 500px;
             background-color: white;
             border-radius: 10px;
-
             h2 {
             color: red;
         }
@@ -99,24 +97,50 @@ export default {
             border-radius: 10px;
             box-shadow: 0 0 10px #DDDDDD;
             border-color: transparent;
-            text-align: center;
+            position: relative;
             img {
                 height: 120px;
                 width: 360px;
                 border-top-left-radius: 10px;
                 border-top-right-radius: 10px;
                 object-fit: cover;
-
             }
             h4 {
                 border: px solid rgba(0, 0, 0, 0.125);
                 border-radius: 0.25rem;
-                margin-bottom: 10px;
+                margin-top: 10px;
                 font-weight: 700;
-                padding: 10px;
+                // padding: 10px;
+                position: absolute;
+                left: 20px; 
             }
-            .add_cart{
+            .prezzo {
+                position: absolute;
+                top: 170px;
+                left: 20px; 
+            }
+            .rating {
+                position: absolute;
+                top: 190px;
+                left: 20px; 
+            }
+            button {
+                background-color: rgb(0, 160, 130);
+                border-style: none;
+                height: 35px;
+                width: 35px;
+                border-radius: 50%;
+                position: absolute;
+                bottom: 20px;
+                right: 20px;
+                &:hover {
+                    transform: scale(1.1);
+                background-color: #008169;
 
+                }
+                i {
+                    color: white;
+                }
             }
         }
     }      
