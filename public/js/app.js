@@ -2744,12 +2744,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      restaurants: '',
-      restaurantMom: '',
-      categories: '',
-      categoriesAll: '',
-      restaurantsAll: '',
-      letSelected: '',
       search: ''
     };
   },
@@ -2758,9 +2752,9 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       if (this.search == '') {
-        this.$store.commit('searchBar', this.restaurantsAll);
+        this.$store.commit('searchBar', this.search);
       } else {
-        this.$store.commit('searchBar', this.restaurants = this.restaurantsAll.filter(function (restaurant) {
+        this.$store.commit('searchBar', this.restaurants = this.$store.state.restaurants.filter(function (restaurant) {
           return restaurant.name.toLowerCase().match(_this.search.toLowerCase());
         }));
         console.log(this.$store.state.searchBar);
@@ -2768,23 +2762,6 @@ __webpack_require__.r(__webpack_exports__);
 
       this.search = '';
     }
-  },
-  mounted: function mounted() {
-    var _this2 = this;
-
-    Promise.all([axios.get('api/restaurants'), axios.get('api/categories')]).then(function (resp) {
-      // console.log(resp[0].data.response);
-      // console.log(resp[1].data.response);
-      _this2.restaurantsAll = resp[0].data.response;
-      _this2.restaurants = resp[0].data.response;
-      _this2.categoriesAll = resp[0].data.response;
-      _this2.categories = resp[1].data.response;
-
-      _this2.$store.commit('searchBar', _this2.restaurantsAll); // return (RestaurantComponent, { props: { restaurants: this.restaurants } });
-
-    })["catch"](function (error) {
-      console.log(error);
-    });
   }
 });
 
@@ -55355,9 +55332,13 @@ var store = {
       this.state.selectedRestaurant = restaurant;
     },
     searchBar: function searchBar(state, s) {
-      // console.log(s);
+      if (s == '') {
+        this.state.filteredRestaurant = this.state.restaurants;
+      } else {
+        this.state.filteredRestaurant = s;
+      } // console.log(s);
       // console.log(restaurant);
-      this.state.filteredRestaurant = s;
+
     },
     // funzione per toglerare tra carrello e checkout
     toggleCheckout: function toggleCheckout() {
