@@ -8,47 +8,23 @@
 export default {
     data(){
         return {
-            restaurants:'',
-            restaurantMom:'',
-            categories:'',
-            categoriesAll:'',
-            restaurantsAll: '',
-            letSelected: '',
             search: '',
         }
     },
     methods:{
         typeSearch(){
             if (this.search == ''){
-                this.$store.commit('searchBar', this.restaurantsAll);
+                this.$store.commit('searchBar', this.search);
             }else{
                 this.$store.commit('searchBar',
-                    this.restaurants = this.restaurantsAll.filter((restaurant) =>{
+                    this.$store.state.restaurants.filter((restaurant) =>{
                         return restaurant.name.toLowerCase().match(this.search.toLowerCase()) 
                     })
                 )
-                console.log(this.$store.state.searchBar)
+                console.log(this.$store.state.filteredRestaurant)
             }
             this.search ='';
         },
-    },
-    
-    mounted() {
-        Promise.all([
-            axios.get('api/restaurants'),
-            axios.get('api/categories'),
-        ]).then(resp => {
-            // console.log(resp[0].data.response);
-            // console.log(resp[1].data.response);
-            this.restaurantsAll = resp[0].data.response;
-            this.restaurants = resp[0].data.response;
-            this.categoriesAll = resp[0].data.response;
-            this.categories = resp[1].data.response;
-            this.$store.commit('searchBar', this.restaurantsAll);
-            // return (RestaurantComponent, { props: { restaurants: this.restaurants } });
-        }).catch(error => {
-            console.log(error);
-        })
     },
 }
 </script>

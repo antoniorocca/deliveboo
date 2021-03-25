@@ -133,9 +133,13 @@ let store = {
             this.state.selectedRestaurant = restaurant;
         },
         searchBar(state, s) {
+            if (s == '') {
+                this.state.filteredRestaurant = this.state.restaurants;
+            } else {
+                this.state.filteredRestaurant = s;
+            }
             // console.log(s);
             // console.log(restaurant);
-            this.state.filteredRestaurant = s;
         },
         // funzione per toglerare tra carrello e checkout
         toggleCheckout(){
