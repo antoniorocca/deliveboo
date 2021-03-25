@@ -32,7 +32,7 @@ class SendNewMail extends Mailable
      */
     public function build()
     {
-        return $this->from('deliveboo@mail.it')->markdown('mail.markdown')->with([
+        return $this->from('deliveboo@mail.it')->view('mail.markdown')->with([
             'name' => $this->order->name,
             'surname' => $this->order->surname,
             'address' => $this->order->address,

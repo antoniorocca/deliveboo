@@ -11,6 +11,10 @@ body *:not(html):not(style):not(br):not(tr):not(code) {
 body {
     -webkit-text-size-adjust: none;
     background-color: #ffffff;
+    
+    /* background-image: url("https://1.bp.blogspot.com/-thcp2wgZDt4/XNcqrYXgHTI/AAAAAAAAOeU/cTbAW-qsGVoo9KaLQjHtq-qaZ1jM0aG9QCLcBGAs/s1600/space-1080%2B%25281%2529.png"); */
+    background-image: url("img/burger.png");
+
     color: #718096;
     height: 100%;
     line-height: 1.4;
@@ -80,7 +84,7 @@ img {
     -premailer-cellpadding: 0;
     -premailer-cellspacing: 0;
     -premailer-width: 100%;
-    background-color: #edf2f7;
+    /* background-color: yellow; */
     margin: 0;
     padding: 0;
     width: 100%;
@@ -122,7 +126,7 @@ img {
     -premailer-cellpadding: 0;
     -premailer-cellspacing: 0;
     -premailer-width: 100%;
-    background-color: #edf2f7;
+    /* background-color: aqua; */
     border-bottom: 1px solid #edf2f7;
     border-top: 1px solid #edf2f7;
     margin: 0;
@@ -134,7 +138,7 @@ img {
     -premailer-cellpadding: 0;
     -premailer-cellspacing: 0;
     -premailer-width: 570px;
-    background-color: #ffffff;
+    background-color: red;
     border-color: #e8e5ef;
     border-radius: 2px;
     border-width: 1px;
@@ -264,7 +268,7 @@ img {
 }
 
 .panel-content {
-    background-color: #edf2f7;
+    background-color: black;
     color: #718096;
     padding: 16px;
 }
