@@ -1,9 +1,9 @@
 <template>
-    <div class="selected_restaurant_container"  v-if="!this.$store.state.visibility">
+    <div class="selected_restaurant_container">
         <div id="info_restaurant">
-            <img id="restaurant_jumbotron" :src="this.$store.state.selectedRestaurant.img" alt="">
-            <h2>{{ this.$store.state.selectedRestaurant.name }}</h2>
-            <p>{{ this.$store.state.selectedRestaurant.description }}</p>
+            <img id="restaurant_jumbotron" :src="this.$store.state.selectedRestaurant2.img" alt="">
+            <h2>{{ this.$store.state.selectedRestaurant2.name }}</h2>
+            <p>{{ this.$store.state.selectedRestaurant2.description }}</p>
         </div>
 
         <div id="main_restaurant">
@@ -13,19 +13,19 @@
             </div>
         </div>
         <div id="selected_restaurant_dishes" class="d-flex flex-wrap justify-content-center">
-            <div class="dish_card" v-for="dish in this.$store.state.selectedRestaurant.dishes">
+            <div class="dish_card" v-for="dish in this.$store.state.selectedRestaurant2.dishes">
                 <img :src="dish.img" alt="">
                 <h4>{{ dish.name }}</h4>
                 <span>prezzo &euro; {{ dish.price.toFixed(2) }}</span><br>
                 <span> rating {{ dish.rating }}</span>
                 <div class="add_cart">
                     <button class="button is-success" @click="addToCart(dish)">Add to Cart</button>
-                </div> 
+                </div>
                 <!-- <p>descrizione {{ dish.description }}</p> -->
                 <!-- <dd>sconto {{ dish.discount }}</dd> -->
                 <!-- <dd> classe menu {{ dish.menu_class }}</dd> -->
             </div>
-        </div>            
+        </div>
     </div>
 </template>
 
@@ -48,7 +48,7 @@ export default {
         },
         addToCart(item) {
             this.$store.commit('addToCart', item);
-        }     
+        }
     },
     computed: {
     },
@@ -65,6 +65,7 @@ export default {
     width: 75%;
     padding-left: 20px;
     padding-right: 20px;
+    border:5px solid black;
     #info_restaurant {
         position: relative;
         margin-bottom: 150px;
@@ -119,6 +120,6 @@ export default {
 
             }
         }
-    }      
+    }
 }
 </style>
