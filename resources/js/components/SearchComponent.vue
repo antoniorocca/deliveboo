@@ -17,7 +17,7 @@ export default {
                 this.$store.commit('searchBar', this.search);
             }else{
                 this.$store.commit('searchBar',
-                    this.restaurants = this.$store.state.restaurants.filter((restaurant) =>{
+                    this.$store.state.restaurants.filter((restaurant) =>{
                         return restaurant.name.toLowerCase().match(this.search.toLowerCase()) 
                     })
                 )

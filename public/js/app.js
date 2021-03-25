@@ -2754,7 +2754,7 @@ __webpack_require__.r(__webpack_exports__);
       if (this.search == '') {
         this.$store.commit('searchBar', this.search);
       } else {
-        this.$store.commit('searchBar', this.restaurants = this.$store.state.restaurants.filter(function (restaurant) {
+        this.$store.commit('searchBar', this.$store.state.restaurants.filter(function (restaurant) {
           return restaurant.name.toLowerCase().match(_this.search.toLowerCase());
         }));
         console.log(this.$store.state.filteredRestaurant);
