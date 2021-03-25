@@ -21,17 +21,19 @@
 </div>
 <div id="backend_container"class="">
   <div class="backend_wrap">
-    <div class="content_row">
+    <div id="myChart_row" class="content_row">
       <h2>Piatti venduti</h2>
       <div id="myChart_box">
         <canvas id="myChart" width="300" height="170"></canvas>
       </div>
+      <img src="/img/burger.png" alt="">
     </div>
-    <div class="content_row">
+    <div id="myChart_row2" class="content_row">
       <h2>Profitto per mese</h2>
       <div id="myChart_box2">
         <canvas id="myChart2" width="300" height="170"></canvas>
       </div>
+      <img src="/img/wallet.png" alt="">
     </div>
   </div>
 </div>
@@ -84,7 +86,7 @@ let borderColor = [];
 dishesArray.forEach((item, i) => {
   names.push(item.name+' '+item.id);
   values.push(item.quantity);
-  colors.push('rgba(0, 160, 130,0.2)')
+  colors.push('rgba(0, 160, 130,0.4)')
   borderColor.push('rgba(0, 160, 130,1)')
 });
 var ctx = document.getElementById('myChart');
@@ -177,7 +179,7 @@ let newBorderColor = [];
 date.forEach((item, i) => {
   newDate.push(item[0]);
   newTotalMonth.push(item[item.length -1]);
-  newColor.push('rgba(0, 160, 130,0.2)');
+  newColor.push('rgba(0, 160, 130,0.4)');
   newBorderColor.push('rgba(0, 160, 130, 1)');
 });
 console.log(newDate, newTotalMonth);
