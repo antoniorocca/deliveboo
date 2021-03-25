@@ -1,19 +1,40 @@
 <template>
-  <form id="payment-form" action="api/token" method="post">
+    <form id="payment-form" action="api/token" method="post">
 
-    <!-- Putting the empty container you plan to pass to
-    `braintree.dropin.create` inside a form will make layout and flow
-    easier to manage -->
+        <!-- Putting the empty container you plan to pass to
+        `braintree.dropin.create` inside a form will make layout and flow
+        easier to manage -->
 
+        <div class="form-group">
+            <label for="name">Nome</label>
+            <input type="text" class="form-control" name="name" id="name" placeholder="Inserisci il tuo nome">
+        </div>
 
-    <div id="dropin-container"></div>
-    <div class="wrap">
-      <input class="payment_btn" type="submit" value="Invia il pagamento">
-      <a class="payment_btn" @click="toggleCheckout">ritorna carrello</a>
-    </div>
-    <input type="hidden" id="nonce" name="payment_method_nonce"/>
-    <input type="hidden" id="cart" name="cart"/>
-  </form>
+        <div class="form-group">
+            <label for="surname">Cognome</label>
+            <input type="text" class="form-control" name="surname" id="surname" placeholder="Inserisci il tuo cognome">
+        </div>
+
+        <div class="form-group">
+            <label for="address">Indirizzo</label>
+            <input type="text" class="form-control" name="address" id="address" placeholder="Inserisci il tuo indirizzo">
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="text" class="form-control" name="email" id="email" placeholder="Inserisci la tua email">
+        </div>
+
+        <div id="dropin-container"></div>
+        <div class="wrap">
+            <input class="payment_btn" type="submit" value="Invia il pagamento">
+            <a class="payment_btn" @click="toggleCheckout">ritorna carrello</a>
+        </div>
+
+        <input type="hidden" id="nonce" name="payment_method_nonce"/>
+        <input type="hidden" id="cart" name="cart"/>
+
+    </form>
 </template>
 
 <script>
@@ -72,22 +93,21 @@
 </script>
 <style  scoped lang="scss">
 #payment-form{
-  .wrap {
-    display:flex;
-    justify-content: space-between;
-      .payment_btn {
-      min-width: 150px;
-      display: flex;
-      justify-content: center;
-      line-height: 50px;
-      border-radius: 30px;
-      background-color: #00a082;
-      color: white;
-      height: 50px;
-      border: 0;
-
+    .wrap {
+        display:flex;
+        justify-content: space-between;
+        .payment_btn {
+        min-width: 150px;
+        display: flex;
+        justify-content: center;
+        line-height: 50px;
+        border-radius: 30px;
+        background-color: #00a082;
+        color: white;
+        height: 50px;
+        border: 0;
+        }
     }
-  }
 }
 
 </style>
