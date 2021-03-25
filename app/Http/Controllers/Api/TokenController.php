@@ -28,10 +28,11 @@ class TokenController extends Controller
             'address' => 'required | max:100',
             'email' => 'required | email | max:100',
         ]);
+        dd($request);
         $to = $request->email;
+        
         Mail::to($to)->send(new SendNewMail);
 
-        //dd($request);
         $dishes = json_decode(request('cart'));
         $total = 0;
         foreach ($dishes as $dish) {
@@ -50,6 +51,10 @@ class TokenController extends Controller
         $newOrder = new Order;
         $newOrder->restaurant_id = $dishes[0]->restaurant_id;
         $newOrder->amount = $total;
+        $newOrder->name = $request->name;
+        $newOrder->surname = $request->surname;
+        $newOrder->address = $request->address;
+        $newOrder->email = $request->email;
         $newOrder->order = json_encode($dishes);
         $newOrder->order_date = new Date();
         $newOrder->save();
