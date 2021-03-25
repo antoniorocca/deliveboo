@@ -25,6 +25,7 @@
         "vuex": "^3.0.1"
     },
     "dependencies": {
+        "hooper": "^0.3.4",
         "vue-carousel": "^0.18.0"
     }
 }
