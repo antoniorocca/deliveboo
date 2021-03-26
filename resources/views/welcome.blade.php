@@ -20,6 +20,13 @@
 
 <div class="wrap" style="display:flex; flex-direction: row; align-items:flex-start;">
 
+<!-- COMPONENTE RISTORANTE -->
+<carousel-component></carousel-component>
+{{-- <restaurant-component></restaurant-component> --}}
+
+
+<div class="wrap" style="display:flex;">
+
     <!-- SELECTED-RESTAURANT -->
     <selected-restaurant></selected-restaurant>
     <!-- CARRELLO -->

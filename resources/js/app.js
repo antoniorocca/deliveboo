@@ -16,6 +16,8 @@ Vue.component('category-component', require('./components/CategoryComponent.vue'
 Vue.component('footer-component', require('./components/FooterComponent.vue').default);
 Vue.component('dish-component', require('./components/FooterComponent.vue').default);
 Vue.component('selected-restaurant', require('./components/SelectedRestaurant.vue').default);
+Vue.component('carousel-component', require('./components/CarouselComponent.vue').default);
+
 
 
 // test product list

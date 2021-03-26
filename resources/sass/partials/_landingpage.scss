@@ -4,8 +4,6 @@
     margin: auto;
     text-align: center;
     background-color: #E9F8F5;
-    display: flex;
-    flex-direction: column;
     .title{
         img{
             padding: 10px 0 20px;
@@ -13,12 +11,16 @@
         }
     }
     .container_calls{
+        width: 80%;
+        margin: auto;
         display: flex;
         flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
         .single_call{
             padding: 20px;
             margin: 20px;
-            width: 33%;
+            width: 25%;
             img{
                 height: 250px;
             }
@@ -26,23 +28,19 @@
                 margin: 20px 0 10px;
             }
             p{
-                margin: 10px 0;
+                margin: 5px 0;
                 height: 110px;
             }
             a{
                 background-color: #36a081;
                 color: white;
-                padding: 15px 40px;
+                padding: 20px 40px;
                 border-radius: 30px;
                 text-decoration: none;
-
                 &:hover{
                 background-color: #008169;
-                    
                 }
-
             }
         }
-
     }
 }
