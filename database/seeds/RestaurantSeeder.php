@@ -78,8 +78,8 @@ class RestaurantSeeder extends Seeder
             $newRestaurant->price_shipping = rand(100,300)/100;
             $newRestaurant->img = $images[rand(1,25)] ;
             $newRestaurant->save();
-            $newRestaurant->categories()->attach(rand(1,19));
-            $newRestaurant->categories()->attach(rand(20,30));
+            $newRestaurant->categories()->attach(rand(1,13));
+            $newRestaurant->categories()->attach(rand(14,25));
             $newRestaurant->tags()->attach(rand(1,4));
         }
 

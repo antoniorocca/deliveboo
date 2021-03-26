@@ -3,12 +3,49 @@
     <div class="header">
         <div id="main-header" class="d-flex justify-content-center flex-wrap">
             <div id="categories" class="d-flex justify-content-center flex-wrap">
-                <div class="category category_hover mr-4 mt-5 d-flex justify-content-center" v-for="category in categories.slice(0, 8)" :class="(letSelected == category.id) ? 'focusr' : ''">
-                    <!-- <img :src="{{category.img}}" alt=""> -->
-                    <span>{{category.name}}</span>
-                    <input type="submit" :value="category.id" @click="selectRestaurantOnClick" :class="(letSelected == category.id) ? 'focusr' : ''">
+
+                <div class="category category_hover mr-4 mt-5 d-flex justify-content-center">
+                    <img src="img/pizza_trancio.png" alt="">
+                    <span>{{categories[20].name}}</span>
+                    <!-- <input type="submit" :value="categories[20].id" @click="selectRestaurantOnClick" :class="(letSelected == categories[20].id) ? 'focusr' : ''"> -->
                     <!-- <option v-for="category in categories" :value="category.id">{{category.name}}</option> -->
                 </div>
+
+                <div class="category category_hover mr-4 mt-5 d-flex justify-content-center">
+                    <img src="img/wrap.png" alt="">
+                    <span>{{categories[19].name}}</span>
+                </div>
+
+                <div class="category category_hover mr-4 mt-5 d-flex justify-content-center">
+                    <img src="img/mexican.png" alt="">
+                    <span>{{categories[17].name}}</span>
+                </div>
+
+                <div class="category category_hover mr-4 mt-5 d-flex justify-content-center">
+                    <img src="img/ramen.png" alt="">
+                    <span>{{categories[9].name}}</span>
+                </div>
+
+                <div class="category category_hover mr-4 mt-5 d-flex justify-content-center">
+                    <img src="img/caffe.png" alt="">
+                    <span>{{categories[4].name}}</span>
+                </div>
+
+                <div class="category category_hover mr-4 mt-5 d-flex justify-content-center">
+                    <img src="img/ice-cream.png" alt="">
+                    <span>{{categories[8].name}}</span>
+                </div>
+
+                <div class="category category_hover mr-4 mt-5 d-flex justify-content-center">
+                    <img src="img/hamburger.png" alt="">
+                    <span>{{categories[10].name}}</span>
+                </div>
+
+                <div class="category category_hover mr-4 mt-5 d-flex justify-content-center">
+                    <img src="img/salad.png" alt="">
+                    <span>{{categories[13].name}}</span>
+                </div>
+
             </div>   
         </div>
     </div>

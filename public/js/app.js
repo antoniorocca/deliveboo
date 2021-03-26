@@ -2809,6 +2809,43 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -41890,27 +41927,117 @@ var render = function() {
                   staticClass: "d-flex justify-content-center flex-wrap",
                   attrs: { id: "categories" }
                 },
-                _vm._l(_vm.categories.slice(0, 8), function(category) {
-                  return _c(
+                [
+                  _c(
                     "div",
                     {
                       staticClass:
-                        "category category_hover mr-4 mt-5 d-flex justify-content-center",
-                      class: _vm.letSelected == category.id ? "focusr" : ""
+                        "category category_hover mr-4 mt-5 d-flex justify-content-center"
                     },
                     [
-                      _c("span", [_vm._v(_vm._s(category.name))]),
+                      _c("img", {
+                        attrs: { src: "img/pizza_trancio.png", alt: "" }
+                      }),
                       _vm._v(" "),
-                      _c("input", {
-                        class: _vm.letSelected == category.id ? "focusr" : "",
-                        attrs: { type: "submit" },
-                        domProps: { value: category.id },
-                        on: { click: _vm.selectRestaurantOnClick }
-                      })
+                      _c("span", [_vm._v(_vm._s(_vm.categories[20].name))])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass:
+                        "category category_hover mr-4 mt-5 d-flex justify-content-center"
+                    },
+                    [
+                      _c("img", { attrs: { src: "img/wrap.png", alt: "" } }),
+                      _vm._v(" "),
+                      _c("span", [_vm._v(_vm._s(_vm.categories[19].name))])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass:
+                        "category category_hover mr-4 mt-5 d-flex justify-content-center"
+                    },
+                    [
+                      _c("img", { attrs: { src: "img/mexican.png", alt: "" } }),
+                      _vm._v(" "),
+                      _c("span", [_vm._v(_vm._s(_vm.categories[17].name))])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass:
+                        "category category_hover mr-4 mt-5 d-flex justify-content-center"
+                    },
+                    [
+                      _c("img", { attrs: { src: "img/ramen.png", alt: "" } }),
+                      _vm._v(" "),
+                      _c("span", [_vm._v(_vm._s(_vm.categories[9].name))])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass:
+                        "category category_hover mr-4 mt-5 d-flex justify-content-center"
+                    },
+                    [
+                      _c("img", { attrs: { src: "img/caffe.png", alt: "" } }),
+                      _vm._v(" "),
+                      _c("span", [_vm._v(_vm._s(_vm.categories[4].name))])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass:
+                        "category category_hover mr-4 mt-5 d-flex justify-content-center"
+                    },
+                    [
+                      _c("img", {
+                        attrs: { src: "img/ice-cream.png", alt: "" }
+                      }),
+                      _vm._v(" "),
+                      _c("span", [_vm._v(_vm._s(_vm.categories[8].name))])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass:
+                        "category category_hover mr-4 mt-5 d-flex justify-content-center"
+                    },
+                    [
+                      _c("img", {
+                        attrs: { src: "img/hamburger.png", alt: "" }
+                      }),
+                      _vm._v(" "),
+                      _c("span", [_vm._v(_vm._s(_vm.categories[10].name))])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass:
+                        "category category_hover mr-4 mt-5 d-flex justify-content-center"
+                    },
+                    [
+                      _c("img", { attrs: { src: "img/salad.png", alt: "" } }),
+                      _vm._v(" "),
+                      _c("span", [_vm._v(_vm._s(_vm.categories[13].name))])
                     ]
                   )
-                }),
-                0
+                ]
               )
             ]
           )
