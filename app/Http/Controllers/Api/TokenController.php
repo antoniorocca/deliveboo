@@ -64,7 +64,6 @@ class TokenController extends Controller
             return redirect()->route('checkout');
         } else {
             dd($request, $result);
-
             //return view('');
         }
         
