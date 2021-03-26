@@ -30,8 +30,8 @@ class TokenController extends Controller
         //dd($request);
         $to = $request->email;
 
-
         $dishes = json_decode(request('cart'));
+      
         $total = 0;
         foreach ($dishes as $dish) {
             $total += $dish->totalPrice;
@@ -43,25 +43,31 @@ class TokenController extends Controller
             'amount' => $total,
             'paymentMethodNonce' => $nonceFromTheClient,
             'options' => [
-            'submitForSettlement' => True
+                'submitForSettlement' => True
             ]
         ]);
-        $newOrder = new Order;
-        $newOrder->restaurant_id = $dishes[0]->restaurant_id;
-        $newOrder->amount = $total;
-        $newOrder->name = $request->name;
-        $newOrder->surname = $request->surname;
-        $newOrder->address = $request->address;
-        $newOrder->email = $request->email;
-        $newOrder->order = json_encode($dishes);
-        $newOrder->order_date = Carbon::now();
-        $newOrder->save();
+        if ($result->success === true) {
+            $newOrder = new Order;
+            $newOrder->restaurant_id = $dishes[0]->restaurant_id;
+            $newOrder->amount = $total;
+            $newOrder->name = $request->name;
+            $newOrder->surname = $request->surname;
+            $newOrder->address = $request->address;
+            $newOrder->email = $request->email;
+            $newOrder->order = json_encode($dishes);
+            $newOrder->order_date = Carbon::now();
+            $newOrder->save();
+            
+            Mail::to($to)->send(new SendNewMail($newOrder));
+            
+            dd($request, $result);
+            return redirect()->route('checkout');
+        } else {
+            dd($request, $result);
+
+            //return view('');
+        }
         
-        Mail::to($to)->send(new SendNewMail($newOrder));
-        
-        dd($newOrder);
-        
-        return redirect()->route('checkout');
     }
 
 }
