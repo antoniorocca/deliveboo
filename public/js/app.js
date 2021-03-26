@@ -41827,11 +41827,11 @@ var render = function() {
           _vm._l(_vm.$store.state.dishes.data.response, function(item) {
             return _c("li", [
               _vm._v(
-                "\r\n      " +
+                "\n      " +
                   _vm._s(item.name) +
-                  "\r\n      " +
+                  "\n      " +
                   _vm._s(item.price) +
-                  "\r\n      "
+                  "\n      "
               ),
               _c(
                 "button",
@@ -41843,7 +41843,7 @@ var render = function() {
                     }
                   }
                 },
-                [_vm._v("Add to Cart\r\n      ")]
+                [_vm._v("Add to Cart\n      ")]
               )
             ])
           }),
@@ -41973,9 +41973,9 @@ var render = function() {
                   _vm._v(" "),
                   _c("h4", [
                     _vm._v(
-                      "\r\n                    " +
+                      "\n                    " +
                         _vm._s(restaurant.name) +
-                        "\r\n                "
+                        "\n                "
                     )
                   ]),
                   _vm._v(" "),
@@ -42003,7 +42003,7 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("p", [
         _vm._v(
-          "\r\n            Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, voluptatibus?\r\n            "
+          "\n            Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, voluptatibus?\n            "
         )
       ])
     ])
@@ -56942,13 +56942,8 @@ var store = {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-<<<<<<< HEAD
 __webpack_require__(/*! /Users/rocco/Documents/BOOLEAN/Classe23/deliveboo/resources/js/app.js */"./resources/js/app.js");
 module.exports = __webpack_require__(/*! /Users/rocco/Documents/BOOLEAN/Classe23/deliveboo/resources/sass/app.scss */"./resources/sass/app.scss");
-=======
-__webpack_require__(/*! C:\Users\USER\Desktop\boolean\deliveboo\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\USER\Desktop\boolean\deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
->>>>>>> stylerestaurantpage
 
 
 /***/ })
