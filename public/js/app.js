@@ -1988,31 +1988,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-// import { Carousel, Slide } from 'vue-carousel';
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  // components: {
-  //     Carousel,
-  //     Slide
-  // },
   components: {
     Hooper: hooper__WEBPACK_IMPORTED_MODULE_0__["Hooper"],
     Slide: hooper__WEBPACK_IMPORTED_MODULE_0__["Slide"],
@@ -2039,32 +2017,6 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
-    selectRestaurant: function selectRestaurant(value) {
-      if (value.target.value !== 'all') {
-        var restSelect = this.categories[value.target.value - 1];
-        this.restaurants = restSelect.restaurants;
-        this.letSelected = value.target.value; // console.log('if case');
-        // console.log( this.restaurants);
-        // console.log('restaurant all');
-        // console.log( this.restaurantsAll);
-      } else {
-        this.restaurants = this.restaurantsAll;
-        this.letSelected = "all"; // console.log('else case');
-        // console.log(this.restaurants);
-      }
-    },
-    showRestaurant: function showRestaurant(value) {
-      console.log(value.target.value);
-      this.restaurantMom = this.restaurantsAll[value.target.value - 1];
-      console.log(this.restaurantMom.id);
-      this.$store.commit('setSelectedRestaurant', this.restaurantMom);
-    },
-    selectRestaurantOnClick: function selectRestaurantOnClick(value) {
-      console.log(value.target.value);
-      var v = this.categories[value.target.value - 1];
-      this.restaurants = v.restaurants;
-      this.letSelected = value.target.value;
-    },
     toggle: function toggle() {
       if (this.$store.state.visibility == false) {
         this.$store.commit('visibilityFunction');
@@ -2078,12 +2030,9 @@ __webpack_require__.r(__webpack_exports__);
   mounted: function mounted() {
     var _this = this;
 
-    Promise.all([axios.get('api/restaurants'), axios.get('api/categories')]).then(function (resp) {
-      // console.log(resp[0].data.response);
-      // console.log(resp[1].data.response);
+    Promise.all([axios.get('api/restaurants')]).then(function (resp) {
       _this.restaurantsAll = resp[0].data.response;
       _this.restaurants = resp[0].data.response;
-      _this.categories = resp[1].data.response; // return (RestaurantComponent, { props: { restaurants: this.restaurants } });
     })["catch"](function (error) {
       console.log(error);
     });
@@ -7402,7 +7351,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".focusr[data-v-4681a3bc] {\n  outline: 0;\n}\ninput[data-v-4681a3bc]:focus {\n  outline: 0;\n}\n#content[data-v-4681a3bc] {\n  width: 80%;\n  margin: auto;\n}\n#content .first_title[data-v-4681a3bc] {\n  text-align: center;\n}\n#content .first_title h2[data-v-4681a3bc] {\n  color: black;\n  padding-top: 100px;\n  font-weight: 800;\n  font-size: 30px;\n}\n#content .first_title p[data-v-4681a3bc] {\n  color: grey;\n  font-size: 20px;\n  font-weight: 100;\n}\n#content #hooper[data-v-4681a3bc] {\n  border-radius: 10px;\n  margin: 50px;\n  height: 100%;\n  width: 100%;\n}\n#content #hooper[data-v-4681a3bc]:focus {\n  outline: none;\n}\n#content #hooper #slide[data-v-4681a3bc] {\n  border-radius: 10px;\n}\n#content #hooper #slide img[data-v-4681a3bc] {\n  height: 250px;\n  -o-object-fit: cover;\n     object-fit: cover;\n  border-top-left-radius: 10px;\n  border-top-right-radius: 10px;\n}\n#content #hooper #slide .card[data-v-4681a3bc] {\n  margin: 15px;\n  border-radius: 10px;\n  cursor: pointer;\n}\n#content #hooper #slide .card h4[data-v-4681a3bc] {\n  padding: 10px;\n  margin: 0;\n}\n#content #hooper #slide .card_hover[data-v-4681a3bc] {\n  transition: all 0.35s;\n}\n#content #hooper #slide .card[data-v-4681a3bc]:hover {\n  cursor: pointer;\n  transform: scale(1.05);\n}", ""]);
+exports.push([module.i, "#content[data-v-4681a3bc] {\n  margin: auto;\n}\n#content .first_title[data-v-4681a3bc] {\n  text-align: center;\n}\n#content .first_title h2[data-v-4681a3bc] {\n  color: black;\n  padding-top: 100px;\n  font-weight: 800;\n  font-size: 30px;\n}\n#content .first_title p[data-v-4681a3bc] {\n  color: grey;\n  font-size: 20px;\n  font-weight: 100;\n}\n#content #hooper[data-v-4681a3bc] {\n  border-radius: 10px;\n  margin: 50px;\n  height: 100%;\n  width: 100%;\n}\n#content #hooper[data-v-4681a3bc]:focus {\n  outline: none;\n}\n#content #hooper #slide[data-v-4681a3bc] {\n  border-radius: 10px;\n}\n#content #hooper #slide img[data-v-4681a3bc] {\n  height: 250px;\n  -o-object-fit: cover;\n     object-fit: cover;\n  border-top-left-radius: 10px;\n  border-top-right-radius: 10px;\n}\n#content #hooper #slide .card[data-v-4681a3bc] {\n  margin: 15px;\n  border-radius: 10px;\n  cursor: pointer;\n}\n#content #hooper #slide .card h4[data-v-4681a3bc] {\n  padding: 10px;\n  margin: 0;\n}\n#content #hooper #slide .card_hover[data-v-4681a3bc] {\n  transition: all 0.35s;\n}\n#content #hooper #slide .card[data-v-4681a3bc]:hover {\n  cursor: pointer;\n  transform: scale(1.08);\n}", ""]);
 
 // exports
 
@@ -7535,7 +7484,7 @@ exports = module.exports = __webpack_require__(/*! ../../css-loader/lib/css-base
 
 
 // module
-exports.push([module.i, ".hooper-slide {\n  flex-shrink: 0;\n  height: 100%;\n  margin: 0;\n  padding: 0;\n  list-style: none;\n}\n.hooper-progress {\n  position: absolute;\n  top: 0;\n  right: 0;\n  left: 0;\n  height: 4px;\n  background-color: #efefef;\n}\n.hooper-progress-inner {\n  height: 100%;\n  background-color: #4285f4;\n  transition: 300ms;\n}\n.hooper-pagination {\n  position: absolute;\n  bottom: 0;\n  right: 50%;\n  transform: translateX(50%);\n  display: flex;\n  padding: 5px 10px;\n}\n.hooper-indicators {\n  display: flex;\n  list-style: none;\n  margin: 0;\n  padding: 0;\n}\n.hooper-indicator:hover,\n.hooper-indicator.is-active {\n  background-color: #4285f4;\n}\n.hooper-indicator {\n  margin: 0 2px;\n  width: 12px;\n  height: 4px;\n  border-radius: 4px;\n  border: none;\n  padding: 0;\n  background-color: #fff;\n  cursor: pointer;\n}\n.hooper-pagination.is-vertical {\n  bottom: auto;\n  right: 0;\n  top: 50%;\n  transform: translateY(-50%);\n}\n.hooper-pagination.is-vertical .hooper-indicators {\n  flex-direction: column;\n}\n.hooper-pagination.is-vertical .hooper-indicator {\n  width: 6px;\n}\n/* .hooper-prev {\n  margin: -100px;\n  transform: scale(2);\n}\n.hooper-next {\n  margin: -100px;\n} */\n.hooper-next,\n.hooper-prev {\n  background-color: #f7c244;\n  border-radius: 50%;\n  border: none;\n  padding: 1em;\n  position: absolute;\n  top: 50%;\n  transform: translateY(-50%);\n  cursor: pointer;\n}\n.hooper-next.is-disabled,\n.hooper-prev.is-disabled {\n  opacity: 0.3;\n  cursor: not-allowed;\n}\n.hooper-next {\n  right: 0;\n}\n.hooper-prev {\n  left: 0;\n}\n.hooper-navigation.is-vertical .hooper-next {\n  top: auto;\n  bottom: 0;\n  transform: initial;\n}\n.hooper-navigation.is-vertical .hooper-prev {\n  top: 0;\n  bottom: auto;\n  right: 0;\n  left: auto;\n  transform: initial;\n}\n.hooper-navigation.is-rtl .hooper-prev {\n  left: auto;\n  right: 0;\n}\n.hooper-navigation.is-rtl .hooper-next {\n  right: auto;\n  left: 0;\n}\n.hooper {\n  position: relative;\n  box-sizing: border-box;\n  width: 100%;\n  height: 200px;\n}\n.hooper * {\n  box-sizing: border-box;\n}\n.hooper-list {\n  overflow: hidden;\n  width: 100%;\n  height: 100%;\n}\n.hooper-track {\n  display: flex;\n  box-sizing: border-box;\n  width: 100%;\n  height: 100%;\n  padding: 0;\n  margin: 0;\n}\n.hooper.is-vertical .hooper-track {\n  flex-direction: column;\n  height: 200px;\n}\n\n.hooper.is-rtl {\n  direction: rtl;\n}\n\n.hooper-sr-only {\n  position: absolute;\n  width: 1px;\n  height: 1px;\n  padding: 0;\n  margin: -1px;\n  overflow: hidden;\n  clip: rect(0, 0, 0, 0);\n  border: 0;\n}\n#hooper > div > div.hooper-navigation > button.hooper-prev > svg:hover{\n  transform: scale(1.5);\n  transition: all 0.2s;\n}\n#hooper > div > div.hooper-navigation > button.hooper-next > svg:hover{\n  transform: scale(1.5);\n  transition: all 0.2s;\n}", ""]);
+exports.push([module.i, ".hooper-slide {\n  flex-shrink: 0;\n  height: 100%;\n  margin: 0;\n  padding: 0;\n  list-style: none;\n}\n.hooper-progress {\n  position: absolute;\n  top: 0;\n  right: 0;\n  left: 0;\n  height: 4px;\n  background-color: #efefef;\n}\n.hooper-progress-inner {\n  height: 100%;\n  background-color: #4285f4;\n  transition: 300ms;\n}\n.hooper-pagination {\n  position: absolute;\n  bottom: 0;\n  right: 50%;\n  transform: translateX(50%);\n  display: flex;\n  padding: 5px 10px;\n}\n.hooper-indicators {\n  display: flex;\n  list-style: none;\n  margin: 0;\n  padding: 0;\n}\n.hooper-indicator:hover,\n.hooper-indicator.is-active {\n  background-color: #4285f4;\n}\n.hooper-indicator {\n  margin: 0 2px;\n  width: 12px;\n  height: 4px;\n  border-radius: 4px;\n  border: none;\n  padding: 0;\n  background-color: #fff;\n  cursor: pointer;\n}\n.hooper-pagination.is-vertical {\n  bottom: auto;\n  right: 0;\n  top: 50%;\n  transform: translateY(-50%);\n}\n.hooper-pagination.is-vertical .hooper-indicators {\n  flex-direction: column;\n}\n.hooper-pagination.is-vertical .hooper-indicator {\n  width: 6px;\n}\n.hooper-next,\n.hooper-prev {\n  background-color: transparent;\n  border: none;\n  padding: 1em;\n  position: absolute;\n  top: 50%;\n  transform: translateY(-50%);\n  cursor: pointer;\n}\n.hooper-next.is-disabled,\n.hooper-prev.is-disabled {\n  opacity: 0.3;\n  cursor: not-allowed;\n}\n.hooper-next {\n  right: 0;\n}\n.hooper-prev {\n  left: 0;\n}\n.hooper-navigation.is-vertical .hooper-next {\n  top: auto;\n  bottom: 0;\n  transform: initial;\n}\n.hooper-navigation.is-vertical .hooper-prev {\n  top: 0;\n  bottom: auto;\n  right: 0;\n  left: auto;\n  transform: initial;\n}\n.hooper-navigation.is-rtl .hooper-prev {\n  left: auto;\n  right: 0;\n}\n.hooper-navigation.is-rtl .hooper-next {\n  right: auto;\n  left: 0;\n}\n.hooper {\n  position: relative;\n  box-sizing: border-box;\n  width: 100%;\n  height: 200px;\n}\n.hooper * {\n  box-sizing: border-box;\n}\n.hooper-list {\n  overflow: hidden;\n  width: 100%;\n  height: 100%;\n}\n.hooper-track {\n  display: flex;\n  justify-content: center;\n  box-sizing: border-box;\n  width: 100%;\n  height: 100%;\n  padding: 0;\n  margin: 0;\n}\n.hooper.is-vertical .hooper-track {\n  flex-direction: column;\n  height: 200px;\n}\n\n.hooper.is-rtl {\n  direction: rtl;\n}\n\n.hooper-sr-only {\n  position: absolute;\n  width: 1px;\n  height: 1px;\n  padding: 0;\n  margin: -1px;\n  overflow: hidden;\n  clip: rect(0, 0, 0, 0);\n  border: 0;\n}\n#hooper > div > div.hooper-navigation > button.hooper-prev {\n\tbackground-color: #F7C244;\n\tpadding: 15px;\n\tborder-radius: 50%;\n\ttransform: translate(-70px, -25px);\n}\n\n#hooper > div > div.hooper-navigation > button.hooper-next{\n\tbackground-color: #F7C244;\n\tpadding: 15px;\n\tborder-radius: 50%;\n\ttransform: translate(70px, -25px);\n\t\n}", ""]);
 
 // exports
 
@@ -40778,84 +40727,6 @@ var render = function() {
   var _c = _vm._self._c || _h
   return this.$store.state.visibility
     ? _c("div", [
-        _c("div", { staticClass: "header" }, [
-          _c(
-            "div",
-            {
-              staticClass: "d-flex justify-content-center flex-wrap",
-              attrs: { id: "main-header" }
-            },
-            [
-              _c(
-                "div",
-                {
-                  staticClass: "d-flex justify-content-center flex-wrap",
-                  attrs: { id: "categories" }
-                },
-                _vm._l(_vm.categories.slice(0, 8), function(category) {
-                  return _c(
-                    "div",
-                    {
-                      staticClass:
-                        "category category_hover mr-4 mt-5 d-flex justify-content-center",
-                      class: _vm.letSelected == category.id ? "focusr" : ""
-                    },
-                    [
-                      _c("span", [_vm._v(_vm._s(category.name))]),
-                      _vm._v(" "),
-                      _c("input", {
-                        class: _vm.letSelected == category.id ? "focusr" : "",
-                        attrs: { type: "submit" },
-                        domProps: { value: category.id },
-                        on: { click: _vm.selectRestaurantOnClick }
-                      })
-                    ]
-                  )
-                }),
-                0
-              )
-            ]
-          )
-        ]),
-        _vm._v(" "),
-        _c("div", [
-          _c("h4", [_vm._v("Categorie:")]),
-          _vm._v(" "),
-          _c(
-            "select",
-            {
-              staticClass: "form-control",
-              attrs: { name: "category_id", id: "category_id" },
-              on: { change: _vm.selectRestaurant }
-            },
-            [
-              _c("option", { attrs: { value: "all" } }, [_vm._v("All")]),
-              _vm._v(" "),
-              _vm._l(_vm.categories, function(category) {
-                return _c(
-                  "option",
-                  {
-                    attrs: { id: "selection" },
-                    domProps: {
-                      selected: _vm.letSelected == category.id,
-                      value: category.id
-                    }
-                  },
-                  [
-                    _vm._v(
-                      _vm._s(category.name) +
-                        " (" +
-                        _vm._s(category.restaurants.length) +
-                        ")"
-                    )
-                  ]
-                )
-              })
-            ],
-            2
-          )
-        ]),
-        _vm._v(" "),
         _c(
           "div",
           { staticClass: "container", attrs: { id: "content" } },

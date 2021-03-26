@@ -1,4 +1,3 @@
-/node_modules
 /public/hot
 /public/storage
 /storage/*.key
@@ -11,6 +10,13 @@ vendor/laravel/ui/*
 !vendor/laravel/ui/auth-backend
 vendor/laravel/ui/auth-backend/*
 !vendor/laravel/ui/auth-backend/RegistersUsers.php
+
+node_modules/*
+!node_modules/hooper
+node_modules/hooper/*
+!node_modules/hooper/dist
+node_modules/hooper/dist/*
+!node_modules/hooper/dist/hooper.css
 
 .env
 .env.backup
