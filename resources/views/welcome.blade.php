@@ -4,7 +4,7 @@
 
 {{-- DA CENCELLARE? --}}
 <!-- LANDING PAGE COMPONENT -->
-{{-- <landing-component v-if="showLanding"></landing-component> --}}
+<landing-component v-if="true"></landing-component>
 
 
 <!-- COMPONENTE CATEGORIES EDO -->
