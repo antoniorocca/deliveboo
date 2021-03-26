@@ -16,9 +16,10 @@ let store = {
         test: 'bomber',
         selectedRestaurant: [],
         selectedRestaurant2:'',
-        visibility: true? JSON.parse(visibility) : false,
+        visibility: false? JSON.parse(visibility) : true,
         searchBar:'',
     },
+
     mutations: {
 
         visibilityFunction(state){

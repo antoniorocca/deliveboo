@@ -1,5 +1,4 @@
 @include('layouts.head')
-<body>
     <div id="app">
         <nav id="back_nav" class="navbar navbar-expand-md navbar-light bg-white">
             <div class="container">
