@@ -2030,7 +2030,11 @@ __webpack_require__.r(__webpack_exports__);
       hooperSettings: {
         itemsToShow: 3,
         itemsToSlide: 3,
-        centerMode: false
+        centerMode: false,
+        infiniteScroll: false,
+        mouseDrag: false,
+        transition: 500,
+        keysControl: true
       }
     };
   },
