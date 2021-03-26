@@ -8,7 +8,7 @@ use Carbon\Carbon;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Order;
-use Carbon\Carbon;
+
 class TokenController extends Controller
 {
     //
@@ -32,7 +32,7 @@ class TokenController extends Controller
 
 
         $dishes = json_decode(request('cart'));
-      
+
         $total = 0;
         foreach ($dishes as $dish) {
             $total += $dish->totalPrice;
@@ -57,11 +57,11 @@ class TokenController extends Controller
         $newOrder->order = json_encode($dishes);
         $newOrder->order_date = Carbon::now();
         $newOrder->save();
-        
+
         Mail::to($to)->send(new SendNewMail($newOrder));
-        
+
         dd($newOrder);
-        
+
         return redirect()->route('checkout');
     }
 
