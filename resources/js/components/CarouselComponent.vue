@@ -20,7 +20,7 @@
         </select>
     </div>
     
-    <div id="content" class="">
+    <div id="content" class="container">
         <div class=" first_title">
             <h2>I ristoranti consigliati</h2>
             <p>
@@ -29,10 +29,10 @@
         </div>
 
         <hooper id="hooper" :settings="hooperSettings" >
-            <slide id="slide" v-for="restaurant in restaurants.slice(0, 10)" v-bind:key="restaurants.id" >
-                <div class="card" @click="toggle">
+            <slide id="slide" v-for="restaurant in restaurants.slice(0, 9)" v-bind:key="restaurants.id" >
+                <div class="card card_hover" @click="toggle">
                     <img :src="restaurant.img" alt="restaurant's image">
-                    <h4 > {{restaurant.name}} </h4>
+                    <h4> {{restaurant.name}} </h4>
                     <!-- <input class="option_restaurant" :value="restaurant.id" @click="showRestaurant"> -->
                 </div>
             </slide>
@@ -77,7 +77,8 @@
                 letSelected: '',
                 hooperSettings: {
                     itemsToShow: 3,
-                    // centerMode: false
+                    itemsToSlide:3,
+                    centerMode: false
                 }
             }
         },
@@ -185,6 +186,19 @@
                     margin: 15px;
                     border-radius: 10px;
                     cursor: pointer;
+                    h4{
+                        padding: 10px;
+                        margin: 0;
+                    }
+                    
+                }
+                .card_hover{
+                transition: all 0.35s;
+                }
+                .card:hover{
+                    cursor: pointer;
+                    transform: scale(1.05);
+
                 }
             }
             // .option_restaurant{
