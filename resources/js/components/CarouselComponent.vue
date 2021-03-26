@@ -76,7 +76,7 @@
                 restaurantsAll: '',
                 letSelected: '',
                 hooperSettings: {
-                    itemsToShow: 3,
+                    itemsToShow: 3, 
                     itemsToSlide:3,
                     centerMode: false,
                     infiniteScroll: false,
