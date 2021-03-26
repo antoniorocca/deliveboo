@@ -137,15 +137,15 @@
         display:flex;
         justify-content: space-between;
         .payment_btn {
-        min-width: 150px;
-        display: flex;
-        justify-content: center;
-        line-height: 50px;
-        border-radius: 30px;
-        background-color: #00a082;
-        color: white;
-        height: 50px;
-        border: 0;
+            min-width: 150px;
+            display: flex;
+            justify-content: center;
+            line-height: 50px;
+            border-radius: 30px;
+            background-color: #00a082;
+            color: white;
+            height: 50px;
+            border: 0;
         }
     }
 }
