@@ -2514,18 +2514,79 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      errors: [],
+      name: null,
+      surname: null,
+      address: null,
+      email: null
+    };
+  },
   methods: {
     toggleCheckout: function toggleCheckout() {
       this.$store.commit('toggleCheckout');
       console.log(this.$store.state.checkout);
+    },
+    checkForm: function checkForm(e) {
+      if (this.name && this.surname && this.address && this.email) {
+        return true;
+      }
+
+      this.errors = [];
+
+      if (!this.name) {
+        this.errors.push('Name required.');
+      }
+
+      if (!this.surname) {
+        this.errors.push('Surname required.');
+      }
+
+      if (!this.address) {
+        this.errors.push('Address required.');
+      }
+
+      if (!this.email) {
+        this.errors.push('Email required.');
+      }
+
+      e.preventDefault();
     }
   },
   mounted: function mounted() {
     var _this = this;
 
     console.log('Component payment mounted.');
-    console.log('ciao');
     var data;
     axios.get('/api/token').then(function (response) {
       data = response.data; // call `braintree.dropin.create` code here
@@ -7408,7 +7469,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "#payment-form .wrap[data-v-4f61e082] {\n  display: flex;\n  justify-content: space-between;\n}\n#payment-form .wrap .payment_btn[data-v-4f61e082] {\n  min-width: 150px;\n  display: flex;\n  justify-content: center;\n  line-height: 50px;\n  border-radius: 30px;\n  background-color: #00a082;\n  color: white;\n  height: 50px;\n  border: 0;\n}", ""]);
+exports.push([module.i, "#payment-form[data-v-4f61e082] {\n  height: 400px;\n  overflow-y: auto;\n}\n#payment-form .wrap[data-v-4f61e082] {\n  display: flex;\n  justify-content: space-between;\n}\n#payment-form .wrap .payment_btn[data-v-4f61e082] {\n  min-width: 150px;\n  display: flex;\n  justify-content: center;\n  line-height: 50px;\n  border-radius: 30px;\n  background-color: #00a082;\n  color: white;\n  height: 50px;\n  border: 0;\n}", ""]);
 
 // exports
 
@@ -41483,8 +41544,157 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "form",
-    { attrs: { id: "payment-form", action: "api/token", method: "post" } },
+    {
+      attrs: { id: "payment-form", action: "api/token", method: "post" },
+      on: { submit: _vm.checkForm }
+    },
     [
+      _vm.errors.length
+        ? _c("p", [
+            _c("b", [_vm._v("Please correct the following error(s):")]),
+            _vm._v(" "),
+            _c(
+              "ul",
+              _vm._l(_vm.errors, function(error) {
+                return _c("li", [_vm._v(_vm._s(error))])
+              }),
+              0
+            )
+          ])
+        : _vm._e(),
+      _vm._v(" "),
+      _c("div", { staticClass: "form-group" }, [
+        _c("label", { attrs: { for: "name" } }, [_vm._v("Nome")]),
+        _vm._v(" "),
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.name,
+              expression: "name"
+            }
+          ],
+          staticClass: "form-control",
+          attrs: {
+            type: "text",
+            maxlength: "100",
+            name: "name",
+            id: "name",
+            placeholder: "Inserisci il tuo nome",
+            required: ""
+          },
+          domProps: { value: _vm.name },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.name = $event.target.value
+            }
+          }
+        })
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "form-group" }, [
+        _c("label", { attrs: { for: "surname" } }, [_vm._v("Cognome")]),
+        _vm._v(" "),
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.surname,
+              expression: "surname"
+            }
+          ],
+          staticClass: "form-control",
+          attrs: {
+            type: "text",
+            maxlength: "100",
+            name: "surname",
+            id: "surname",
+            placeholder: "Inserisci il tuo cognome",
+            required: ""
+          },
+          domProps: { value: _vm.surname },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.surname = $event.target.value
+            }
+          }
+        })
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "form-group" }, [
+        _c("label", { attrs: { for: "address" } }, [_vm._v("Indirizzo")]),
+        _vm._v(" "),
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.address,
+              expression: "address"
+            }
+          ],
+          staticClass: "form-control",
+          attrs: {
+            type: "text",
+            maxlength: "100",
+            name: "address",
+            id: "address",
+            placeholder: "Inserisci il tuo indirizzo",
+            required: ""
+          },
+          domProps: { value: _vm.address },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.address = $event.target.value
+            }
+          }
+        })
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "form-group" }, [
+        _c("label", { attrs: { for: "email" } }, [_vm._v("Email")]),
+        _vm._v(" "),
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.email,
+              expression: "email"
+            }
+          ],
+          staticClass: "form-control",
+          attrs: {
+            type: "email",
+            maxlength: "100",
+            name: "email",
+            id: "email",
+            placeholder: "Inserisci la tua email",
+            required: ""
+          },
+          domProps: { value: _vm.email },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.email = $event.target.value
+            }
+          }
+        })
+      ]),
+      _vm._v(" "),
       _c("div", { attrs: { id: "dropin-container" } }),
       _vm._v(" "),
       _c("div", { staticClass: "wrap" }, [
@@ -41603,11 +41813,11 @@ var render = function() {
           _vm._l(_vm.$store.state.dishes.data.response, function(item) {
             return _c("li", [
               _vm._v(
-                "\n      " +
+                "\r\n      " +
                   _vm._s(item.name) +
-                  "\n      " +
+                  "\r\n      " +
                   _vm._s(item.price) +
-                  "\n      "
+                  "\r\n      "
               ),
               _c(
                 "button",
@@ -41619,7 +41829,7 @@ var render = function() {
                     }
                   }
                 },
-                [_vm._v("Add to Cart\n      ")]
+                [_vm._v("Add to Cart\r\n      ")]
               )
             ])
           }),
@@ -41749,9 +41959,9 @@ var render = function() {
                   _vm._v(" "),
                   _c("h4", [
                     _vm._v(
-                      "\n                    " +
+                      "\r\n                    " +
                         _vm._s(restaurant.name) +
-                        "\n                "
+                        "\r\n                "
                     )
                   ]),
                   _vm._v(" "),
@@ -41779,7 +41989,7 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("p", [
         _vm._v(
-          "\n            Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, voluptatibus?\n            "
+          "\r\n            Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, voluptatibus?\r\n            "
         )
       ])
     ])
@@ -56721,8 +56931,8 @@ var store = {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/rocco/Documents/BOOLEAN/Classe23/deliveboo/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/rocco/Documents/BOOLEAN/Classe23/deliveboo/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\Fabio\Desktop\Boolean\classe 23\deliveboo\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\Fabio\Desktop\Boolean\classe 23\deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

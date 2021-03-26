@@ -11244,6 +11244,19 @@ footer #footer_container ul .footer_img {
   transform: rotateX(-30deg);
 }
 
+.main_container_home h1 {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.main_container_home h2 {
+  margin: 40px 0;
+}
+
+.main_container_home img {
+  margin-bottom: 60px;
+}
+
 #main_container {
   background-color: #E9F8F5;
   min-height: 600px;
@@ -11271,6 +11284,7 @@ footer #footer_container ul .footer_img {
 
 #backend_container {
   background-color: #E9F8F5;
+  padding-top: 40px;
 }
 
 #backend_container img {
@@ -11289,9 +11303,13 @@ footer #footer_container ul .footer_img {
 #backend_container .backend_wrap .content_row {
   padding: 10px 15px;
   background-color: white;
-  border: 2px solid #00A082;
+  box-shadow: 0 0 10px #acacac;
   border-radius: 10px;
   margin: 5px 0;
+}
+
+#backend_container .backend_wrap .content_row p {
+  margin-top: 1rem;
 }
 
 label {
@@ -11306,7 +11324,8 @@ h1 {
   width: 100%;
   padding: 10px 15px !important;
   background-color: white !important;
-  border: 2px solid #00A082 !important;
+  box-shadow: 0 0 10px #acacac;
+  border: 0 !important;
   border-radius: 10px !important;
   margin: 5px 0 !important;
 }
@@ -11321,6 +11340,7 @@ h1 {
   color: white;
   height: 50px;
   border: 0;
+  margin: 20px 0;
 }
 
 .glovo_btn {
@@ -11333,6 +11353,31 @@ h1 {
   color: white !important;
   height: 50px !important;
   border: 0 !important;
+}
+
+#myChart_row,
+#myChart_row2 {
+  position: relative;
+  z-index: 10;
+  overflow: hidden;
+  margin: 40px 0 !important;
+}
+
+#myChart_row canvas,
+#myChart_row2 canvas {
+  position: relative;
+  z-index: 100;
+}
+
+#myChart_row img,
+#myChart_row2 img {
+  height: 140%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 50;
+  opacity: 0.1;
 }
 
 .call_to_action {
