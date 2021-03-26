@@ -7470,7 +7470,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".selected_restaurant_container[data-v-3db2e1e3] {\n  height: 100%;\n  width: 75%;\n  padding-left: 20px;\n  padding-right: 20px;\n  border: 5px solid black;\n}\n.selected_restaurant_container #info_restaurant[data-v-3db2e1e3] {\n  position: relative;\n  margin-bottom: 150px;\n}\n.selected_restaurant_container #info_restaurant img[data-v-3db2e1e3] {\n  width: 850px;\n  height: 440px;\n}\n.selected_restaurant_container #info_restaurant #restaurant_txt[data-v-3db2e1e3] {\n  position: absolute;\n  top: 400px;\n  left: 50px;\n  height: 150px;\n  width: 500px;\n  background-color: white;\n  border-radius: 10px;\n}\n.selected_restaurant_container #info_restaurant #restaurant_txt h2[data-v-3db2e1e3] {\n  color: red;\n}\n.selected_restaurant_container #selected_restaurant_dishes[data-v-3db2e1e3] {\n  height: 100%;\n  width: 100%;\n}\n.selected_restaurant_container #selected_restaurant_dishes .dish_card[data-v-3db2e1e3] {\n  margin: 30px;\n  min-height: 230px;\n  width: 360px;\n  padding-bottom: 15px;\n  z-index: 10;\n  border-radius: 10px;\n  box-shadow: 0 0 10px #DDDDDD;\n  border-color: transparent;\n  text-align: center;\n}\n.selected_restaurant_container #selected_restaurant_dishes .dish_card img[data-v-3db2e1e3] {\n  height: 120px;\n  width: 360px;\n  border-top-left-radius: 10px;\n  border-top-right-radius: 10px;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.selected_restaurant_container #selected_restaurant_dishes .dish_card h4[data-v-3db2e1e3] {\n  border: px solid rgba(0, 0, 0, 0.125);\n  border-radius: 0.25rem;\n  margin-bottom: 10px;\n  font-weight: 700;\n  padding: 10px;\n}", ""]);
+exports.push([module.i, ".selected_restaurant_container[data-v-3db2e1e3] {\n  height: 100%;\n  width: 75%;\n  padding-left: 20px;\n  padding-right: 20px;\n  border: 5px solid black;\n}\n.selected_restaurant_container #info_restaurant[data-v-3db2e1e3] {\n  height: 600px;\n  width: 100%;\n  position: relative;\n  margin-bottom: 30px;\n  overflow: hidden;\n}\n.selected_restaurant_container #info_restaurant img[data-v-3db2e1e3] {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  width: 100%;\n  height: 440px;\n  -o-object-fit: cover;\n     object-fit: cover;\n  border-radius: 15px;\n}\n.selected_restaurant_container #info_restaurant #restaurant_txt[data-v-3db2e1e3] {\n  position: absolute;\n  top: 480px;\n  left: 50px;\n  height: 120px;\n  width: 500px;\n  background-color: white;\n  border-radius: 10px;\n}\n.selected_restaurant_container #info_restaurant #restaurant_txt h2[data-v-3db2e1e3] {\n  border: px solid rgba(0, 0, 0, 0.125);\n  border-radius: 0.25rem;\n  margin: 10px;\n  font-weight: 700;\n}\n.selected_restaurant_container #info_restaurant #restaurant_txt p[data-v-3db2e1e3] {\n  margin-left: 10px;\n}\n.selected_restaurant_container #selected_restaurant_dishes[data-v-3db2e1e3] {\n  height: 100%;\n  width: 100%;\n}\n.selected_restaurant_container #selected_restaurant_dishes .dish_card[data-v-3db2e1e3] {\n  margin: 30px;\n  min-height: 230px;\n  width: 360px;\n  padding-bottom: 15px;\n  z-index: 10;\n  border-radius: 10px;\n  box-shadow: 0 0 10px #DDDDDD;\n  border-color: transparent;\n  position: relative;\n}\n.selected_restaurant_container #selected_restaurant_dishes .dish_card img[data-v-3db2e1e3] {\n  height: 120px;\n  width: 360px;\n  border-top-left-radius: 10px;\n  border-top-right-radius: 10px;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.selected_restaurant_container #selected_restaurant_dishes .dish_card h4[data-v-3db2e1e3] {\n  border: px solid rgba(0, 0, 0, 0.125);\n  border-radius: 0.25rem;\n  margin-top: 15px;\n  font-weight: 700;\n  position: absolute;\n  left: 20px;\n}\n.selected_restaurant_container #selected_restaurant_dishes .dish_card .prezzo[data-v-3db2e1e3] {\n  position: absolute;\n  top: 170px;\n  left: 20px;\n}\n.selected_restaurant_container #selected_restaurant_dishes .dish_card .rating[data-v-3db2e1e3] {\n  position: absolute;\n  top: 190px;\n  left: 20px;\n}\n.selected_restaurant_container #selected_restaurant_dishes .dish_card button[data-v-3db2e1e3] {\n  background-color: #00a082;\n  border-style: none;\n  height: 40px;\n  width: 40px;\n  border-radius: 50%;\n  position: absolute;\n  bottom: 20px;\n  right: 20px;\n}\n.selected_restaurant_container #selected_restaurant_dishes .dish_card button[data-v-3db2e1e3]:hover {\n  transform: scale(1.1);\n  background-color: #008169;\n}\n.selected_restaurant_container #selected_restaurant_dishes .dish_card button i[data-v-3db2e1e3] {\n  color: white;\n  font-weight: bold;\n  font-size: 20px;\n}\n@media all and (max-width: 1024px) {\n#restaurant_txt[data-v-3db2e1e3] {\n    left: 20px !important;\n    height: 450px !important;\n    width: 250px !important;\n}\n}", ""]);
 
 // exports
 
@@ -40657,26 +40657,18 @@ var render = function() {
           _c("img", {
             attrs: {
               id: "restaurant_jumbotron",
-              src: this.$store.state.selectedRestaurant2.img,
+              src: this.$store.state.selectedRestaurant.img,
               alt: ""
             }
           }),
           _vm._v(" "),
-          _c("h2", [
-            _vm._v(_vm._s(this.$store.state.selectedRestaurant2.name))
-          ]),
-          _vm._v(" "),
-          _c("p", [
-            _vm._v(_vm._s(this.$store.state.selectedRestaurant2.description))
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { attrs: { id: "main_restaurant" } }, [
-          _c("div", { staticClass: " first_title" }, [
-            _c("h2", [_vm._v("Ristorante selezionato")]),
+          _c("div", { attrs: { id: "restaurant_txt" } }, [
+            _c("h2", [
+              _vm._v(_vm._s(this.$store.state.selectedRestaurant.name))
+            ]),
             _vm._v(" "),
-            _c("button", { on: { click: _vm.toggle } }, [
-              _vm._v(" torna indietro")
+            _c("p", [
+              _vm._v(_vm._s(this.$store.state.selectedRestaurant.description))
             ])
           ])
         ]),
@@ -40693,25 +40685,28 @@ var render = function() {
               _vm._v(" "),
               _c("h4", [_vm._v(_vm._s(dish.name))]),
               _vm._v(" "),
-              _c("span", [_vm._v("prezzo € " + _vm._s(dish.price.toFixed(2)))]),
+              _c("span", { staticClass: "prezzo" }, [
+                _vm._v("prezzo € " + _vm._s(dish.price.toFixed(2)))
+              ]),
               _c("br"),
               _vm._v(" "),
-              _c("span", [_vm._v(" rating " + _vm._s(dish.rating))]),
+              _c("span", { staticClass: "rating" }, [
+                _vm._v(" rating " + _vm._s(dish.rating))
+              ]),
               _vm._v(" "),
-              _c("div", { staticClass: "add_cart" }, [
-                _c(
-                  "button",
-                  {
-                    staticClass: "button is-success",
-                    on: {
-                      click: function($event) {
-                        return _vm.addToCart(dish)
-                      }
+              _c(
+                "button",
+                {
+                  staticClass:
+                    "d-flex justify-content-center align-items-center button is-success",
+                  on: {
+                    click: function($event) {
+                      return _vm.addToCart(dish)
                     }
-                  },
-                  [_vm._v("Add to Cart")]
-                )
-              ])
+                  }
+                },
+                [_c("i", { staticClass: "fas fa-plus" })]
+              )
             ])
           }),
           0
