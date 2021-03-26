@@ -1988,6 +1988,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2025,6 +2027,12 @@ __webpack_require__.r(__webpack_exports__);
         this.$store.commit('visibilityFunction');
         console.log('true');
       }
+    },
+    showRestaurant: function showRestaurant(value) {
+      console.log(value.target.value);
+      this.restaurantMom = this.restaurantsAll[value.target.value - 1];
+      console.log(this.restaurantMom.id);
+      this.$store.commit('setSelectedRestaurant', this.restaurantMom);
     }
   },
   mounted: function mounted() {
@@ -7412,7 +7420,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "#content[data-v-4681a3bc] {\n  margin: auto;\n}\n#content .first_title[data-v-4681a3bc] {\n  text-align: center;\n}\n#content .first_title h2[data-v-4681a3bc] {\n  color: black;\n  padding-top: 100px;\n  font-weight: 800;\n  font-size: 30px;\n}\n#content .first_title p[data-v-4681a3bc] {\n  color: grey;\n  font-size: 20px;\n  font-weight: 100;\n}\n#content #hooper[data-v-4681a3bc] {\n  border-radius: 10px;\n  margin: 50px;\n  height: 100%;\n  width: 100%;\n}\n#content #hooper[data-v-4681a3bc]:focus {\n  outline: none;\n}\n#content #hooper #slide[data-v-4681a3bc] {\n  border-radius: 10px;\n}\n#content #hooper #slide img[data-v-4681a3bc] {\n  height: 250px;\n  -o-object-fit: cover;\n     object-fit: cover;\n  border-top-left-radius: 10px;\n  border-top-right-radius: 10px;\n}\n#content #hooper #slide .card[data-v-4681a3bc] {\n  margin: 15px;\n  border-radius: 10px;\n  cursor: pointer;\n}\n#content #hooper #slide .card h4[data-v-4681a3bc] {\n  padding: 10px;\n  margin: 0;\n}\n#content #hooper #slide .card_hover[data-v-4681a3bc] {\n  transition: all 0.35s;\n}\n#content #hooper #slide .card[data-v-4681a3bc]:hover {\n  cursor: pointer;\n  transform: scale(1.08);\n}", ""]);
+exports.push([module.i, "#content[data-v-4681a3bc] {\n  margin: auto;\n}\n#content .first_title[data-v-4681a3bc] {\n  text-align: center;\n}\n#content .first_title h2[data-v-4681a3bc] {\n  color: black;\n  padding-top: 100px;\n  font-weight: 800;\n  font-size: 30px;\n}\n#content .first_title p[data-v-4681a3bc] {\n  color: grey;\n  font-size: 20px;\n  font-weight: 100;\n}\n#content #hooper[data-v-4681a3bc] {\n  border-radius: 10px;\n  margin: 50px;\n  height: 100%;\n  width: 100%;\n}\n#content #hooper[data-v-4681a3bc]:focus {\n  outline: none;\n}\n#content #hooper #slide[data-v-4681a3bc] {\n  border-radius: 10px;\n}\n#content #hooper #slide img[data-v-4681a3bc] {\n  height: 250px;\n  -o-object-fit: cover;\n     object-fit: cover;\n  border-top-left-radius: 10px;\n  border-top-right-radius: 10px;\n}\n#content #hooper #slide .card[data-v-4681a3bc] {\n  margin: 15px;\n  border-radius: 10px;\n  cursor: pointer;\n}\n#content #hooper #slide .card h4[data-v-4681a3bc] {\n  padding: 10px;\n  margin: 0;\n}\n#content #hooper #slide .card_hover[data-v-4681a3bc] {\n  transition: all 0.35s;\n}\n#content #hooper #slide .card[data-v-4681a3bc]:hover {\n  cursor: pointer;\n  transform: scale(1.08);\n}\n#content #hooper #slide .option_restaurant[data-v-4681a3bc] {\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  color: transparent;\n  background-color: transparent;\n  border-color: transparent;\n  cursor: pointer;\n}", ""]);
 
 // exports
 
@@ -40798,7 +40806,7 @@ var render = function() {
               "hooper",
               { attrs: { id: "hooper", settings: _vm.hooperSettings } },
               [
-                _vm._l(_vm.restaurants.slice(0, 9), function(restaurant) {
+                _vm._l(_vm.restaurants.slice(0, 20), function(restaurant) {
                   return _c(
                     "slide",
                     { key: _vm.restaurants.id, attrs: { id: "slide" } },
@@ -40819,7 +40827,13 @@ var render = function() {
                           _vm._v(" "),
                           _c("h4", [
                             _vm._v(" " + _vm._s(restaurant.name) + " ")
-                          ])
+                          ]),
+                          _vm._v(" "),
+                          _c("input", {
+                            staticClass: "option_restaurant",
+                            domProps: { value: restaurant.id },
+                            on: { click: _vm.showRestaurant }
+                          })
                         ]
                       )
                     ]
@@ -41813,11 +41827,11 @@ var render = function() {
           _vm._l(_vm.$store.state.dishes.data.response, function(item) {
             return _c("li", [
               _vm._v(
-                "\r\n      " +
+                "\n      " +
                   _vm._s(item.name) +
-                  "\r\n      " +
+                  "\n      " +
                   _vm._s(item.price) +
-                  "\r\n      "
+                  "\n      "
               ),
               _c(
                 "button",
@@ -41829,7 +41843,7 @@ var render = function() {
                     }
                   }
                 },
-                [_vm._v("Add to Cart\r\n      ")]
+                [_vm._v("Add to Cart\n      ")]
               )
             ])
           }),
@@ -41959,9 +41973,9 @@ var render = function() {
                   _vm._v(" "),
                   _c("h4", [
                     _vm._v(
-                      "\r\n                    " +
+                      "\n                    " +
                         _vm._s(restaurant.name) +
-                        "\r\n                "
+                        "\n                "
                     )
                   ]),
                   _vm._v(" "),
@@ -41989,7 +42003,7 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("p", [
         _vm._v(
-          "\r\n            Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, voluptatibus?\r\n            "
+          "\n            Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, voluptatibus?\n            "
         )
       ])
     ])
@@ -56931,8 +56945,8 @@ var store = {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\Fabio\Desktop\Boolean\classe 23\deliveboo\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\Fabio\Desktop\Boolean\classe 23\deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/rocco/Documents/BOOLEAN/Classe23/deliveboo/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/rocco/Documents/BOOLEAN/Classe23/deliveboo/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

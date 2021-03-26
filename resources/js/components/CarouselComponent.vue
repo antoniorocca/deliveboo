@@ -13,10 +13,12 @@
 
         <!-- carousel -->
         <hooper id="hooper" :settings="hooperSettings" >
-            <slide id="slide" v-for="restaurant in restaurants.slice(0, 9)" v-bind:key="restaurants.id" >
+            <slide id="slide" v-for="restaurant in restaurants.slice(0, 20)" v-bind:key="restaurants.id" >
                 <div class="card card_hover" @click="toggle">
                     <img :src="restaurant.img" alt="restaurant's image">
                     <h4> {{restaurant.name}} </h4>
+                <input class="option_restaurant" :value="restaurant.id" @click="showRestaurant">
+
                 </div>
             </slide>
             <hooper-navigation slot="hooper-addons"></hooper-navigation>
@@ -73,7 +75,13 @@
                     this.$store.commit('visibilityFunction')
                     console.log('true');
                 }
-            }
+            },
+            showRestaurant(value){
+                console.log(value.target.value);
+                this.restaurantMom = this.restaurantsAll[value.target.value - 1];
+                console.log(this.restaurantMom.id);
+                this.$store.commit('setSelectedRestaurant', this.restaurantMom);
+            },
         },
         mounted() {
             Promise.all([
@@ -138,6 +146,15 @@
                     transform: scale(1.08);
 
                 }
+                .option_restaurant{
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                color: transparent;
+                background-color: transparent;
+                border-color: transparent;
+                cursor: pointer;
+            }
             }
         }
        
