@@ -2868,6 +2868,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -40657,20 +40658,24 @@ var render = function() {
           _c("img", {
             attrs: {
               id: "restaurant_jumbotron",
-              src: this.$store.state.selectedRestaurant.img,
+              src: this.$store.state.selectedRestaurant2.img,
               alt: ""
             }
           }),
           _vm._v(" "),
           _c("div", { attrs: { id: "restaurant_txt" } }, [
             _c("h2", [
-              _vm._v(_vm._s(this.$store.state.selectedRestaurant.name))
+              _vm._v(_vm._s(this.$store.state.selectedRestaurant2.name))
             ]),
             _vm._v(" "),
             _c("p", [
-              _vm._v(_vm._s(this.$store.state.selectedRestaurant.description))
+              _vm._v(_vm._s(this.$store.state.selectedRestaurant2.description))
             ])
           ])
+        ]),
+        _vm._v(" "),
+        _c("button", { on: { click: _vm.toggle } }, [
+          _vm._v(" torna ai ristoranti")
         ]),
         _vm._v(" "),
         _c(

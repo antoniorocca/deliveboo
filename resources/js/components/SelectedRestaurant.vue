@@ -1,17 +1,18 @@
 <template>
     <div class="selected_restaurant_container" v-if="!this.$store.state.visibility">
+
         <div id="info_restaurant">
-            <img id="restaurant_jumbotron" :src="this.$store.state.selectedRestaurant.img" alt="">
+            <img id="restaurant_jumbotron" :src="this.$store.state.selectedRestaurant2.img" alt="">
             <div id="restaurant_txt">
-                <h2>{{ this.$store.state.selectedRestaurant.name }}</h2>
-                <p>{{ this.$store.state.selectedRestaurant.description }}</p>
-            </div>  
+                <h2>{{ this.$store.state.selectedRestaurant2.name }}</h2>
+                <p>{{ this.$store.state.selectedRestaurant2.description }}</p>
+            </div>
         </div>
 
+        <button @click="toggle"> torna ai ristoranti</button>
         <!-- <div id="main_restaurant">
             <div class=" first_title">
                 <h2>Ristorante selezionato</h2>
-                <button @click="toggle"> torna ai ristoranti</button>
             </div>
         </div> -->
         <div id="selected_restaurant_dishes" class="d-flex flex-wrap justify-content-center">
@@ -127,17 +128,17 @@ export default {
                 margin-top: 15px;
                 font-weight: 700;
                 position: absolute;
-                left: 20px; 
+                left: 20px;
             }
             .prezzo {
                 position: absolute;
                 top: 170px;
-                left: 20px; 
+                left: 20px;
             }
             .rating {
                 position: absolute;
                 top: 190px;
-                left: 20px; 
+                left: 20px;
             }
             button {
                 background-color: rgb(0, 160, 130);
@@ -160,7 +161,7 @@ export default {
             }
         }
     }
-}  
+}
 @media all and (max-width: 1024px) {
     #restaurant_txt {
         left: 20px !important;
