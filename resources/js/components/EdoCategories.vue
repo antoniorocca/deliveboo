@@ -47,7 +47,7 @@ export default {
 
 #category_box {
   box-sizing:border-box;
-  width:20%;
+  width: 100%;
   display:flex;
   flex-direction:column;
   button{

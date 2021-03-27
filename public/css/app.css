@@ -11108,6 +11108,15 @@ header #main-header #categories .category_hover,
 
 #main_container_box {
   display: flex;
+  flex-direction: column;
+}
+
+#main_container_box .main_container_row {
+  display: flex;
+}
+
+#main_container_box .main_container_row .edo-categories {
+  width: 20%;
 }
 
 .category_container {

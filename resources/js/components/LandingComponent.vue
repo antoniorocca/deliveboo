@@ -1,19 +1,12 @@
 <template>
 
-    <!-- <section>
-      <h2>in evidenza nella tua citta'</h2>
-      <h3>Scopri i negozi più richiesti e ricevi alla tua porta ogni tuo desiderio</h3>
-      <div class="">
-        <img src="https://res.cloudinary.com/glovoapp/w_700,h_360,c_fill,f_auto,q_auto/Stores/hetiotbb7y6pfdnpu8hr" alt="">
-      </div>
-    </section> -->
+<div class="">
 
-   <!-- v-if="this.$store.state.visibility" -->
-  
+  <carousel-component></carousel-component>
   <div class="call_to_action" >
     <div class="title">
-        <img src="img/handshakes.png" alt="">
-        <h2>Diventa uno di noi!</h2>
+      <img src="img/handshakes.png" alt="">
+      <h2>Diventa uno di noi!</h2>
     </div>
     <div class="container_calls">
       <div class="single_call">
@@ -36,6 +29,7 @@
       </div>
     </div>
   </div>
+</div>
 </template>
 
 <script>

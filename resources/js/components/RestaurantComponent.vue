@@ -105,10 +105,6 @@
 </script>
 
 <style scoped lang="scss">
-#restaurant_box{
-  width:80%;
-  border: 5px solid black;
-}
     .focusr{
         outline: 0;
     }

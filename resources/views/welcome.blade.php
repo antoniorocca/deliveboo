@@ -2,10 +2,8 @@
 
 @section('guest_content')
 
-{{-- DA CENCELLARE? --}}
-<!-- LANDING PAGE COMPONENT -->
-<!-- v-if="showLanding" -->
-{{-- <landing-component ></landing-component> --}}
+
+<landing-component style="border: 5px solid red" ></landing-component>
 
 
 <!-- COMPONENTE CATEGORIES EDO -->
@@ -14,21 +12,25 @@
     <edo-restaurants v-if="true"></edo-restaurants>
 </div> -->
 {{-- DA CENCELLARE? --}}
-<div id="main_container_box"class="">
-  <edo-categories></edo-categories>
-  <restaurant-component></restaurant-component>
+<div id="main_container_box"class="" style="border: 5px solid green">
+  <div class="main_container_row"style="border: 5px solid purple">
+    <div class="edo-categories">
+
+      <edo-categories></edo-categories>
+    </div>
+    <restaurant-component></restaurant-component>
+
+  </div>
+  <div class="main_container_row"style="border: 5px solid pink">
+    <selected-restaurant></selected-restaurant>
+
+  </div>
 </div>
-
-
-<!-- COMPONENTE RISTORANTE -->
-<!-- <carousel-component></carousel-component>
-<restaurant-component></restaurant-component> -->
 
 
 <div class="wrap" style="display:flex;">
 
     <!-- SELECTED-RESTAURANT -->
-    <selected-restaurant></selected-restaurant>
 
     <!-- LANDING-COMPONENT -->
     <landing-component></landing-component>

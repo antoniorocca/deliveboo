@@ -3,11 +3,11 @@
     <div class="header">
         <div id="main-header" class="d-flex justify-content-center flex-wrap">
             <div id="categories" class="d-flex justify-content-center flex-wrap">
-                
+
                 <div class="category category_hover mr-4 mt-5 d-flex justify-content-center">
                     <img src="img/pizza_trancio.png" alt="">
                     <span>{{this.$store.state.categories[20].name}}</span>
-                    <!-- <input type="submit" :value="this.$store.state.categories[20].id" @click="selectRestaurantOnClick" :class="(letSelected == this.$store.state.categories[20].id) ? 'focusr' : ''">  -->  
+                    <!-- <input type="submit" :value="this.$store.state.categories[20].id" @click="selectRestaurantOnClick" :class="(letSelected == this.$store.state.categories[20].id) ? 'focusr' : ''">  -->
                 </div>
 
                 <div class="category category_hover mr-4 mt-5 d-flex justify-content-center">
@@ -45,7 +45,7 @@
                     <span>{{this.$store.state.categories[13].name}}</span>
                 </div>
 
-            </div>   
+            </div>
         </div>
     </div>
 </template>
@@ -61,7 +61,7 @@
                 restaurantsAll: '',
                 letSelected: '',
                 search: '',
-                
+
             }
         },
         methods:{
@@ -122,77 +122,4 @@
 </script>
 
 <style scoped lang="scss">
-#restaurant_box{
-  width:80%;
-  border: 5px solid black;
-}
-    .focusr{
-        outline: 0;
-    }
-    input:focus{
-        outline: 0;
-    }
-    #content{
-        height: 100%;
-        width: 80%;
-        margin: auto;
-        .first_title{
-                text-align: center;
-            h2{
-                color: black;
-                padding-top: 100px;
-                font-weight: 800;
-            }
-            p{
-                color: grey;
-            }
-        }
-        .restaurants{
-            display: flex;
-            flex-wrap: wrap;
-            margin: auto;
-            justify-content: center;
-            .card{
-                margin: 30px;
-                width: 300px;
-                z-index: 10;
-                border-radius: 10px;
-                box-shadow: 0 0 10px #DDDDDD;
-                img{
-                    height: 150px;
-                    width: 100%;
-                    border-top-left-radius: 10px;
-                    border-top-right-radius: 10px;
-                    object-fit: cover;
-                }
-                h4{
-                    border: px solid rgba(0, 0, 0, 0.125);
-                    border-radius: 0.25rem;
-                    text-align: center;
-                    margin-bottom: 10px;
-                    font-weight: 700;
-                    padding: 10px;
-                }
-                option{
-                    height: 100%;
-                }
-            }
-            .card_hover{
-                transition: all 0.35s;
-            }
-            .card:hover{
-                cursor: pointer;
-                transform: scale(1.05);
-            }
-            .option_restaurant{
-                position: absolute;
-                width: 100%;
-                height: 100%;
-                color: transparent;
-                background-color: transparent;
-                border-color: transparent;
-                cursor: pointer;
-            }
-        }
-    }
 </style>
