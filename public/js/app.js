@@ -2014,7 +2014,28 @@ __webpack_require__.r(__webpack_exports__);
         infiniteScroll: false,
         mouseDrag: false,
         transition: 500,
-        keysControl: true
+        keysControl: true,
+        breakpoints: {
+          300: {
+            // smartphone
+            itemsToShow: 1,
+            touchDrag: true
+          },
+          920: {
+            // tablet
+            itemsToShow: 2,
+            touchDrag: true
+          },
+          992: {
+            // laptop
+            itemsToShow: 2,
+            touchDrag: true
+          },
+          1024: {
+            // desktop
+            itemsToShow: 4
+          }
+        }
       }
     };
   },
@@ -2585,6 +2606,8 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
 //
 //
 //
@@ -7534,7 +7557,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "#content[data-v-4681a3bc] {\n  margin: auto;\n}\n#content .first_title[data-v-4681a3bc] {\n  text-align: center;\n}\n#content .first_title h2[data-v-4681a3bc] {\n  color: black;\n  padding-top: 100px;\n  font-weight: 800;\n  font-size: 30px;\n}\n#content .first_title p[data-v-4681a3bc] {\n  color: grey;\n  font-size: 20px;\n  font-weight: 100;\n}\n#content #hooper[data-v-4681a3bc] {\n  border-radius: 10px;\n  margin: 50px;\n  height: 100%;\n  width: 100%;\n}\n#content #hooper[data-v-4681a3bc]:focus {\n  outline: none;\n}\n#content #hooper #slide[data-v-4681a3bc] {\n  border-radius: 10px;\n}\n#content #hooper #slide img[data-v-4681a3bc] {\n  height: 250px;\n  -o-object-fit: cover;\n     object-fit: cover;\n  border-top-left-radius: 10px;\n  border-top-right-radius: 10px;\n}\n#content #hooper #slide .card[data-v-4681a3bc] {\n  margin: 15px;\n  border-radius: 10px;\n  cursor: pointer;\n}\n#content #hooper #slide .card h4[data-v-4681a3bc] {\n  padding: 10px;\n  margin: 0;\n}\n#content #hooper #slide .card_hover[data-v-4681a3bc] {\n  transition: all 0.35s;\n}\n#content #hooper #slide .card[data-v-4681a3bc]:hover {\n  cursor: pointer;\n  transform: scale(1.08);\n}\n#content #hooper #slide .option_restaurant[data-v-4681a3bc] {\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  color: transparent;\n  background-color: transparent;\n  border-color: transparent;\n  cursor: pointer;\n}", ""]);
+exports.push([module.i, "#content[data-v-4681a3bc] {\n  text-align: center;\n  margin: auto;\n}\n#content .first_title[data-v-4681a3bc] {\n  text-align: center;\n}\n#content .first_title h2[data-v-4681a3bc] {\n  color: black;\n  padding-top: 100px;\n  font-weight: 800;\n  font-size: 30px;\n}\n#content .first_title p[data-v-4681a3bc] {\n  color: grey;\n  font-size: 20px;\n  font-weight: 100;\n}\n#content #hooper[data-v-4681a3bc] {\n  border-radius: 10px;\n  margin: 50px;\n  height: 100%;\n  width: 100%;\n  transform: translateX(-50px);\n}\n#content #hooper[data-v-4681a3bc]:focus {\n  outline: none;\n}\n#content #hooper #slide[data-v-4681a3bc] {\n  border-radius: 10px;\n}\n#content #hooper #slide img[data-v-4681a3bc] {\n  height: 250px;\n  -o-object-fit: cover;\n     object-fit: cover;\n  border-top-left-radius: 10px;\n  border-top-right-radius: 10px;\n}\n#content #hooper #slide .card[data-v-4681a3bc] {\n  margin: 15px;\n  border-radius: 10px;\n  cursor: pointer;\n}\n#content #hooper #slide .card h4[data-v-4681a3bc] {\n  padding: 10px;\n  margin: 0;\n}\n#content #hooper #slide .card_hover[data-v-4681a3bc] {\n  transition: all 0.35s;\n}\n#content #hooper #slide .card[data-v-4681a3bc]:hover {\n  cursor: pointer;\n  transform: scale(1.08);\n}\n#content #hooper #slide .option_restaurant[data-v-4681a3bc] {\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  color: transparent;\n  background-color: transparent;\n  border-color: transparent;\n  cursor: pointer;\n}", ""]);
 
 // exports
 
@@ -41793,59 +41816,53 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    [
-      _c("carousel-component"),
+  return _c("div", [
+    _c("div", { staticClass: "carousel" }, [_c("carousel-component")], 1),
+    _vm._v(" "),
+    _c("div", { staticClass: "most_popular" }, [
+      _vm._m(0),
       _vm._v(" "),
-      _c("div", { staticClass: "most_popular" }, [
-        _vm._m(0),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "cards" },
-          _vm._l(this.$store.state.restaurants.slice(2, 6), function(
-            restaurant
-          ) {
-            return _c(
-              "div",
-              {
-                staticClass: "card card_hover",
-                on: {
-                  click: function($event) {
-                    return _vm.showSelectedRestaurant(restaurant)
-                  }
+      _c(
+        "div",
+        { staticClass: "cards" },
+        _vm._l(this.$store.state.restaurants.slice(2, 6), function(restaurant) {
+          return _c(
+            "div",
+            {
+              staticClass: "card card_hover",
+              on: {
+                click: function($event) {
+                  return _vm.showSelectedRestaurant(restaurant)
                 }
-              },
-              [
-                _c("div", { staticClass: "restaurant_image" }, [
-                  _c("img", {
-                    attrs: { src: restaurant.img, alt: "restaurant's image" }
-                  })
-                ]),
-                _vm._v(" "),
-                _c("h4", [
-                  _vm._v(
-                    "\n\t\t\t\t\t\t" + _vm._s(restaurant.name) + "\n\t\t\t\t\t"
-                  )
-                ]),
-                _vm._v(" "),
-                _c("input", {
-                  staticClass: "option_restaurant",
-                  domProps: { value: restaurant.id },
-                  on: { click: _vm.toggle }
+              }
+            },
+            [
+              _c("div", { staticClass: "restaurant_image" }, [
+                _c("img", {
+                  attrs: { src: restaurant.img, alt: "restaurant's image" }
                 })
-              ]
-            )
-          }),
-          0
-        )
-      ]),
-      _vm._v(" "),
-      _vm._m(1)
-    ],
-    1
-  )
+              ]),
+              _vm._v(" "),
+              _c("h4", [
+                _vm._v(
+                  "\n\t\t\t\t\t\t" + _vm._s(restaurant.name) + "\n\t\t\t\t\t"
+                )
+              ]),
+              _vm._v(" "),
+              _c("input", {
+                staticClass: "option_restaurant",
+                domProps: { value: restaurant.id },
+                on: { click: _vm.toggle }
+              })
+            ]
+          )
+        }),
+        0
+      )
+    ]),
+    _vm._v(" "),
+    _vm._m(1)
+  ])
 }
 var staticRenderFns = [
   function() {

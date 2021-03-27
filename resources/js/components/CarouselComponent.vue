@@ -63,6 +63,27 @@
                     mouseDrag: false,
                     transition: 500,
                     keysControl: true,
+                    breakpoints: {
+                        300: { 
+                        // smartphone
+                        itemsToShow: 1,
+                        touchDrag: true
+                        },
+                        920: { 
+                        // tablet
+                        itemsToShow: 2,
+                        touchDrag: true
+                        },
+                        992: { 
+                        // laptop
+                        itemsToShow: 2,
+                        touchDrag: true
+                        },
+                        1024: { 
+                        // desktop
+                        itemsToShow: 4
+                        }      
+                    }
                 }
             }
         },
@@ -98,7 +119,8 @@
 
 <style scoped lang="scss">
     #content{
-        margin: auto;
+        text-align: center;
+        margin: auto ;
         .first_title{
                 text-align: center;
             h2{
@@ -118,6 +140,8 @@
             margin: 50px;
             height: 100%;
             width: 100%;
+            transform: translateX(-50px);
+
             &:focus{
                     outline: none;
                 }

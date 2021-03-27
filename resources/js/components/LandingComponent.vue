@@ -2,7 +2,9 @@
 
 	<div>
 		<!-- CAROSELLO -->
-		<carousel-component></carousel-component>
+		<div class="carousel">
+			<carousel-component></carousel-component>
+		</div>
 
 		<!-- RISTORANTI POPOLARI -->
 		<div class="most_popular" >
