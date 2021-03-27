@@ -3,7 +3,7 @@
 @section('guest_content')
 
 
-<landing-component style="border: 5px solid red" ></landing-component>
+<landing-component style="border: 5px solid red" v-if="this.$store.state.showLanding"></landing-component>
 
 
 <!-- COMPONENTE CATEGORIES EDO -->
@@ -12,8 +12,8 @@
     <edo-restaurants v-if="true"></edo-restaurants>
 </div> -->
 {{-- DA CENCELLARE? --}}
-<div id="main_container_box"class="" style="border: 5px solid green">
-  <div class="main_container_row"style="border: 5px solid purple">
+<div id="main_container_box"class="" style="border: 5px solid green" v-if="this.$store.state.showMain">
+  <div class="main_container_row"style="border: 5px solid purple" v-if="this.$store.state.showSelectRestaurant">
     <div class="categories"  >
       <edo-categories></edo-categories>
     </div>
@@ -21,26 +21,24 @@
       <restaurant-component></restaurant-component>
     </div>
   </div>
-  <div class="main_container_row"style="border: 5px solid pink">
+  <div class="main_container_row"style="border: 5px solid pink" v-if="this.$store.state.showRestaurant">
     <div class="restaurant_show" >
       <div class="">
         <selected-restaurant></selected-restaurant>
       </div>
     </div>
-    <div style="display:flex; flex-direction:column;">
-      <cart-dropdown id="box_cart" class="cart-box" v-if="true"></cart-dropdown>
+    <div style="display:flex; flex-direction:column;" v-if="this.$store.state.showCart">
+      <cart-dropdown id="box_cart" class="cart-box"></cart-dropdown>
     </div>
   </div>
 </div>
 
 
-<div class="wrap" style="display:flex;">
+<!-- <div class="wrap" style="display:flex;">
 
-    <!-- SELECTED-RESTAURANT -->
 
     LANDING-COMPONENT
     <landing-component></landing-component>
 
-    <!-- CARRELLO -->
-</div>
+</div> -->
 @endsection

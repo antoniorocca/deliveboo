@@ -51,6 +51,10 @@
             showSelectedRestaurant(restaurant){
               this.$store.commit('selectRestaurant', restaurant)
               console.log('filter');
+              // toggle between views
+              this.toggleSelectRestaurant();
+              this.togglerestaurant();
+
             },
             showRestaurant(value){
                 console.log(value.target.value);
@@ -83,6 +87,12 @@
                     });
                 }
                 this.search ='';
+            },
+            togglerestaurant(){
+              this.$store.commit('togglerestaurant')
+            },
+            toggleSelectRestaurant(){
+              this.$store.commit('toggleSelectRestaurant')
             },
         },
     }

@@ -18,6 +18,18 @@ let store = {
         selectedRestaurant2:'',
         visibility: true ? JSON.parse(visibility) : false,
         searchBar:'',
+
+        // FUNZIONAMENTO NAVIGAZIONE
+        showLanding:true,
+        showMain:false,
+        showRestaurant:false,
+        showSelectRestaurant:true,
+        showCart:true,
+        /////////////////////////////////////////
+
+
+
+
     },
     mutations: {
 
@@ -123,6 +135,23 @@ let store = {
           console.log(this.state.selectedRestaurant2);
         },
 /////////////////////////////////////////////////////////////////////////////
+
+
+        // FUNZIONAMENTO NAVIGAZIONE
+///////////////////////////////////////////////////////////////////////
+        toggleLanding(){
+          this.state.showLanding = !this.state.showLanding;
+        },
+        toggleMain(){
+          this.state.showMain = !this.state.showMain;
+        },
+        togglerestaurant(){
+          this.state.showRestaurant = !this.state.showRestaurant;
+        },
+        toggleSelectRestaurant(){
+          this.state.showSelectRestaurant = !this.state.showSelectRestaurant;
+        },
+//////////////////////////////////////////////////////////////////////
 
 
         setRestaurants(state, category) {

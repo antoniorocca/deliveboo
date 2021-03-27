@@ -41,17 +41,20 @@ export default {
     },
     methods:{
         toggle(){
-            if (this.$store.state.visibility == false) {
-                this.$store.commit('visibilityFunction', true)
-                console.log('false');
-            } else {
-                this.$store.commit('visibilityFunction', false)
-                console.log('true');
-            }
+          this.toggleSelectRestaurant();
+          this.togglerestaurant();
+
         },
         addToCart(item) {
             this.$store.commit('addToCart', item);
-        }
+        },
+        togglerestaurant(){
+          this.$store.commit('togglerestaurant')
+        },
+        toggleSelectRestaurant(){
+          this.$store.commit('toggleSelectRestaurant')
+        },
+
     },
     computed: {
     },

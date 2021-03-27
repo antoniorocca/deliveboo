@@ -2815,7 +2815,10 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     showSelectedRestaurant: function showSelectedRestaurant(restaurant) {
       this.$store.commit('selectRestaurant', restaurant);
-      console.log('filter');
+      console.log('filter'); // toggle between views
+
+      this.toggleSelectRestaurant();
+      this.togglerestaurant();
     },
     showRestaurant: function showRestaurant(value) {
       console.log(value.target.value);
@@ -2850,6 +2853,12 @@ __webpack_require__.r(__webpack_exports__);
       }
 
       this.search = '';
+    },
+    togglerestaurant: function togglerestaurant() {
+      this.$store.commit('togglerestaurant');
+    },
+    toggleSelectRestaurant: function toggleSelectRestaurant() {
+      this.$store.commit('toggleSelectRestaurant');
     }
   }
 });
@@ -2891,6 +2900,16 @@ __webpack_require__.r(__webpack_exports__);
       }
 
       this.search = '';
+    },
+    toggleLanding: function toggleLanding() {
+      this.$store.commit('toggleLanding');
+    },
+    toggleMain: function toggleMain() {
+      this.$store.commit('toggleMain');
+    },
+    toggleLandingMain: function toggleLandingMain() {
+      this.toggleLanding();
+      this.toggleMain();
     }
   }
 });
@@ -2948,16 +2967,17 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     toggle: function toggle() {
-      if (this.$store.state.visibility == false) {
-        this.$store.commit('visibilityFunction', true);
-        console.log('false');
-      } else {
-        this.$store.commit('visibilityFunction', false);
-        console.log('true');
-      }
+      this.toggleSelectRestaurant();
+      this.togglerestaurant();
     },
     addToCart: function addToCart(item) {
       this.$store.commit('addToCart', item);
+    },
+    togglerestaurant: function togglerestaurant() {
+      this.$store.commit('togglerestaurant');
+    },
+    toggleSelectRestaurant: function toggleSelectRestaurant() {
+      this.$store.commit('toggleSelectRestaurant');
     }
   },
   computed: {},
@@ -42100,7 +42120,7 @@ var render = function() {
           ) {
             return null
           }
-          return _vm.typeSearch($event)
+          return _vm.toggleLandingMain($event)
         },
         input: function($event) {
           if ($event.target.composing) {
@@ -56935,7 +56955,14 @@ var store = {
     selectedRestaurant: [],
     selectedRestaurant2: '',
     visibility: true ? JSON.parse(visibility) : undefined,
-    searchBar: ''
+    searchBar: '',
+    // FUNZIONAMENTO NAVIGAZIONE
+    showLanding: true,
+    showMain: false,
+    showRestaurant: false,
+    showSelectRestaurant: true,
+    showCart: true /////////////////////////////////////////
+
   },
   mutations: {
     visibilityFunction: function visibilityFunction(state) {
@@ -57036,6 +57063,21 @@ var store = {
       console.log(this.state.selectedRestaurant2);
     },
     /////////////////////////////////////////////////////////////////////////////
+    // FUNZIONAMENTO NAVIGAZIONE
+    ///////////////////////////////////////////////////////////////////////
+    toggleLanding: function toggleLanding() {
+      this.state.showLanding = !this.state.showLanding;
+    },
+    toggleMain: function toggleMain() {
+      this.state.showMain = !this.state.showMain;
+    },
+    togglerestaurant: function togglerestaurant() {
+      this.state.showRestaurant = !this.state.showRestaurant;
+    },
+    toggleSelectRestaurant: function toggleSelectRestaurant() {
+      this.state.showSelectRestaurant = !this.state.showSelectRestaurant;
+    },
+    //////////////////////////////////////////////////////////////////////
     setRestaurants: function setRestaurants(state, category) {
       this.state.selectedCategories = this.state.restaurants.data.response;
     },
