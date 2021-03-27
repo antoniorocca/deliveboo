@@ -14,15 +14,15 @@
 {{-- DA CENCELLARE? --}}
 <div id="main_container_box"class="" style="border: 5px solid green">
   <div class="main_container_row"style="border: 5px solid purple">
-    <div class="categories" style="background: lightgreen" >
+    <div class="categories"  >
       <edo-categories></edo-categories>
     </div>
-    <div class="restaurants"style="background: lightyellow">
+    <div class="restaurants">
       <restaurant-component></restaurant-component>
     </div>
   </div>
   <div class="main_container_row"style="border: 5px solid pink">
-    <div class="restaurant_show" style="background: violet">
+    <div class="restaurant_show" >
       <div class="">
         <selected-restaurant></selected-restaurant>
       </div>
