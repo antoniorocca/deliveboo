@@ -62,11 +62,56 @@ class RestaurantSeeder extends Seeder
             'Genova',
         ];
 
+        /* ristorante 1 pasta */
+        $newRestaurant = new Restaurant;
+        $newRestaurant->user_id = 1;
+        $newRestaurant->name = 'Pasta Alfredo';
+        $newRestaurant->description = 'Il Ristorante è immerso nel silenzio di boschi ammantati, in una zona verde nel cuore della provincia di Firenze, in un piccolo ed incantevole borgo.';
+        $newRestaurant->phone_number = $faker->phoneNumber();
+        $newRestaurant->location = 'Firenze';
+        $newRestaurant->opening_time = rand(15, 18);
+        $newRestaurant->closure_time = rand(22, 24);
+        $newRestaurant->price_shipping = rand(100, 300) / 100;
+        $newRestaurant->img = "img/restaurant/pasta.jpg";
+        $newRestaurant->save();
+        $newRestaurant->categories()->attach(19);
+        $newRestaurant->tags()->attach(rand(1, 4));
+
+        /* ristorante 2 pizza ristorante */
+        $newRestaurant = new Restaurant;
+        $newRestaurant->user_id = 2;
+        $newRestaurant->name = 'Pizzeria Il Faraone';
+        $newRestaurant->description = 'Siamo lieti di darvi il benvenuto alla pizzeria ristorante "Pizzeria Il Faraone". Un punto di riferimento tra le Pizzerie genovesi.';
+        $newRestaurant->phone_number = $faker->phoneNumber();
+        $newRestaurant->location = 'Genova';
+        $newRestaurant->opening_time = rand(15, 18);
+        $newRestaurant->closure_time = rand(22, 24);
+        $newRestaurant->price_shipping = rand(100, 300) / 100;
+        $newRestaurant->img = "img/restaurant/pizza.jpg";
+        $newRestaurant->save();
+        $newRestaurant->categories()->attach(15);
+        $newRestaurant->categories()->attach(21);
+        $newRestaurant->tags()->attach(rand(1, 4));
+
+        /* ristorante 3 giapponese cinese */
+        $newRestaurant = new Restaurant;
+        $newRestaurant->user_id = 3;
+        $newRestaurant->name = 'Sumo Sushi Ramen';
+        $newRestaurant->description = "Ristorante Asiatico Cinese e Giapponese. Ampia veranda all'aperto con vista panoramica sul porto di Venezia.";
+        $newRestaurant->phone_number = $faker->phoneNumber();
+        $newRestaurant->location = 'Venezia';
+        $newRestaurant->opening_time = rand(15, 18);
+        $newRestaurant->closure_time = rand(22, 24);
+        $newRestaurant->price_shipping = rand(100, 300) / 100;
+        $newRestaurant->img = "img/restaurant/sushiko.jpg";
+        $newRestaurant->save();
+        $newRestaurant->categories()->attach(6);
+        $newRestaurant->categories()->attach(10);
+        $newRestaurant->tags()->attach(rand(1, 4));
 
 
-
-
-        for ($i=0; $i < 31; $i++) {
+        /* ciclo for */
+        for ($i=0; $i < 29; $i++) {
             $newRestaurant = new Restaurant;
             $newRestaurant->user_id = ($i+1);
             $newRestaurant->name = 'restaurant'.($i+1);
