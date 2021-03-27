@@ -8,7 +8,7 @@
             <div id="restaurant_txt">
                 <h2>{{ this.$store.state.selectedRestaurant2.name }}</h2>
                 <p>{{ this.$store.state.selectedRestaurant2.description }}</p>
-            </div>  
+            </div>
         </div>
 
         <div id="main_restaurant">
@@ -65,7 +65,6 @@ export default {
 <style scoped lang="scss">
 .selected_restaurant_container{
     height: 100%;
-    width: 75%;
     padding-left: 20px;
     padding-right: 20px;
     border:5px solid black;
@@ -130,17 +129,17 @@ export default {
                 margin-top: 15px;
                 font-weight: 700;
                 position: absolute;
-                left: 20px; 
+                left: 20px;
             }
             .prezzo {
                 position: absolute;
                 top: 170px;
-                left: 20px; 
+                left: 20px;
             }
             .rating {
                 position: absolute;
                 top: 190px;
-                left: 20px; 
+                left: 20px;
             }
             button {
                 background-color: rgb(0, 160, 130);
@@ -163,7 +162,7 @@ export default {
             }
         }
     }
-}  
+}
 @media all and (max-width: 1024px) {
     #restaurant_txt {
         left: 20px !important;

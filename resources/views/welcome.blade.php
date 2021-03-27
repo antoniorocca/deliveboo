@@ -17,13 +17,19 @@
     <div class="categories" style="background: lightgreen" >
       <edo-categories></edo-categories>
     </div>
-    <div class="restaurant"style="background: lightyellow">
+    <div class="restaurants"style="background: lightyellow">
       <restaurant-component></restaurant-component>
     </div>
   </div>
   <div class="main_container_row"style="border: 5px solid pink">
-
-    <selected-restaurant></selected-restaurant>
+    <div class="restaurant_show" style="background: violet">
+      <div class="">
+        <selected-restaurant></selected-restaurant>
+      </div>
+    </div>
+    <div style="display:flex; flex-direction:column;">
+      <cart-dropdown id="box_cart" class="cart-box" v-if="true"></cart-dropdown>
+    </div>
   </div>
 </div>
 
@@ -32,12 +38,9 @@
 
     <!-- SELECTED-RESTAURANT -->
 
-    <!-- LANDING-COMPONENT -->
+    LANDING-COMPONENT
     <landing-component></landing-component>
 
     <!-- CARRELLO -->
-    <div style="display:flex; flex-direction:column;">
-        <cart-dropdown id="box_cart" class="cart-box"></cart-dropdown>
-    </div>
 </div>
 @endsection
