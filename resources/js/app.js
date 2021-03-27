@@ -21,8 +21,6 @@ Vue.component('carousel-component', require('./components/CarouselComponent.vue'
 
 
 // test product list
-Vue.component('products-list', require('./components/ProductsList.vue').default);
-Vue.component('products-list2', require('./components/ProductsList2.vue').default);
 
 
 Vue.component('cart-dropdown', require('./components/Cart.vue').default);

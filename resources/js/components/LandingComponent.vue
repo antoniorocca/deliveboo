@@ -8,7 +8,9 @@
       </div>
     </section> -->
 
-  <div class="call_to_action"  v-if="this.$store.state.visibility">
+   <!-- v-if="this.$store.state.visibility" -->
+  
+  <div class="call_to_action" >
     <div class="title">
         <img src="img/handshakes.png" alt="">
         <h2>Diventa uno di noi!</h2>

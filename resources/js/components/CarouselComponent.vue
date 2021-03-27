@@ -1,5 +1,6 @@
 <template>
-<div  v-if="this.$store.state.visibility">
+<!-- v-if="this.$store.state.visibility" -->
+<div  >
     
     <div id="content" class="container">
     
@@ -13,7 +14,7 @@
 
         <!-- carousel -->
         <hooper id="hooper" :settings="hooperSettings" >
-            <slide id="slide" v-for="restaurant in restaurants.slice(0, 20)" v-bind:key="restaurants.id" >
+            <slide id="slide" v-for="restaurant in restaurants.slice(0, 20)" v-bind:key="restaurant.id" >
                 <div class="card card_hover" @click="toggle">
                     <img :src="restaurant.img" alt="restaurant's image">
                     <h4> {{restaurant.name}} </h4>

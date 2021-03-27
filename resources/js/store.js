@@ -16,7 +16,7 @@ let store = {
         test: 'bomber',
         selectedRestaurant: [],
         selectedRestaurant2:'',
-        visibility: true? JSON.parse(visibility) : false,
+        visibility: true ? JSON.parse(visibility) : false,
         searchBar:'',
     },
     mutations: {

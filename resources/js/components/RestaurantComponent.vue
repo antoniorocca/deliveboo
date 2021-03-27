@@ -1,63 +1,58 @@
 <template>
-<div id="restaurant_box" v-if="this.$store.state.visibility">
-    <!-- <div class="header">
+<!--  v-if="this.$store.state.visibility" -->
+<div id="restaurant_box">
+
+    <div class="header">
         <div id="main-header" class="d-flex justify-content-center flex-wrap">
             <div id="categories" class="d-flex justify-content-center flex-wrap">
-
+                
                 <div class="category category_hover mr-4 mt-5 d-flex justify-content-center">
                     <img src="img/pizza_trancio.png" alt="">
-                    <span>{{categories[20].name}}</span>
-                    <!-- <input type="submit" :value="categories[20].id" @click="selectRestaurantOnClick" :class="(letSelected == categories[20].id) ? 'focusr' : ''"> -->
-                    <!-- <option v-for="category in categories" :value="category.id">{{category.name}}</option> -->
+                    <span>{{this.$store.state.categories[20].name}}</span>
+                    <!-- <input type="submit" :value="this.$store.state.categories[20].id" @click="selectRestaurantOnClick" :class="(letSelected == this.$store.state.categories[20].id) ? 'focusr' : ''">  -->
+                    <!-- <option v-for="category in categories" :value="category.id">{{this.$store.state.category.name}}</option>  -->
                 </div>
 
                 <div class="category category_hover mr-4 mt-5 d-flex justify-content-center">
                     <img src="img/wrap.png" alt="">
-                    <span>{{categories[19].name}}</span>
+                    <span>{{this.$store.state.categories[19].name}}</span>
                 </div>
 
                 <div class="category category_hover mr-4 mt-5 d-flex justify-content-center">
                     <img src="img/mexican.png" alt="">
-                    <span>{{categories[17].name}}</span>
+                    <span>{{this.$store.state.categories[17].name}}</span>
                 </div>
 
                 <div class="category category_hover mr-4 mt-5 d-flex justify-content-center">
                     <img src="img/ramen.png" alt="">
-                    <span>{{categories[9].name}}</span>
+                    <span>{{this.$store.state.categories[9].name}}</span>
                 </div>
 
                 <div class="category category_hover mr-4 mt-5 d-flex justify-content-center">
                     <img src="img/caffe.png" alt="">
-                    <span>{{categories[4].name}}</span>
+                    <span>{{this.$store.state.categories[4].name}}</span>
                 </div>
 
                 <div class="category category_hover mr-4 mt-5 d-flex justify-content-center">
                     <img src="img/ice-cream.png" alt="">
-                    <span>{{categories[8].name}}</span>
+                    <span>{{this.$store.state.categories[8].name}}</span>
                 </div>
 
                 <div class="category category_hover mr-4 mt-5 d-flex justify-content-center">
                     <img src="img/hamburger.png" alt="">
-                    <span>{{categories[10].name}}</span>
+                    <span>{{this.$store.state.categories[10].name}}</span>
                 </div>
 
                 <div class="category category_hover mr-4 mt-5 d-flex justify-content-center">
                     <img src="img/salad.png" alt="">
-                    <span>{{categories[13].name}}</span>
+                    <span>{{this.$store.state.categories[13].name}}</span>
                 </div>
 
             </div>   
         </div>
-    </div> -->
+    </div>
 
-    <!-- <div> -->
-        <!-- <div>
-            <h4>Categorie:</h4>
-            <select name="category_id" class="form-control" id="category_id" @change="selectRestaurant">
-                <option value="all">All</option>
-                <option id="selection" :selected="letSelected == category.id" v-for="category in categories" :value="category.id">{{category.name}} ({{category.restaurants.length}})</option>
-            </select>
-        </div> -->
+    <div>
 
         <div id="content" class="">
 
@@ -67,8 +62,6 @@
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, voluptatibus?
                 </p>
             </div>
-
-
 
 
             <div class="">
@@ -85,23 +78,8 @@
               </div>
             </div>
 
-
-
-
-
-            <!-- <div class="restaurants">
-                <div class="card card_hover" v-for="restaurant in this.$store.state.searchBar" @click="toggle" v-if="lol">
-                    <div class="restaurant_image">
-                        <img :src="restaurant.img" alt="restaurant's image">
-                    </div>
-                    <h4>
-                        {{restaurant.name}}
-                    </h4>
-                    <input class="option_restaurant" :value="restaurant.id" @click="showRestaurant">
-                </div>
-            </div> -->
         </div>
-    <!-- </div> -->
+    </div>
 </div>
 </template>
 

@@ -4,7 +4,8 @@
 
 {{-- DA CENCELLARE? --}}
 <!-- LANDING PAGE COMPONENT -->
-{{-- <landing-component v-if="showLanding"></landing-component> --}}
+<!-- v-if="showLanding" -->
+{{-- <landing-component ></landing-component> --}}
 
 
 <!-- COMPONENTE CATEGORIES EDO -->
@@ -20,8 +21,8 @@
 
 
 <!-- COMPONENTE RISTORANTE -->
-<carousel-component></carousel-component>
-<restaurant-component></restaurant-component>
+<!-- <carousel-component></carousel-component>
+<restaurant-component></restaurant-component> -->
 
 
 <div class="wrap" style="display:flex;">
