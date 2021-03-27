@@ -18,6 +18,7 @@ Vue.component('dish-component', require('./components/FooterComponent.vue').defa
 Vue.component('selected-restaurant', require('./components/SelectedRestaurant.vue').default);
 Vue.component('carousel-component', require('./components/CarouselComponent.vue').default);
 Vue.component('header-component', require('./components/HeaderComponent.vue').default);
+Vue.component('plate-component', require('./components/PlateComponent.vue').default);
 
 
 
