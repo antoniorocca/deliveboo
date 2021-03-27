@@ -14,8 +14,6 @@ class RestaurantSeeder extends Seeder
     public function run(Faker $faker)
     {
 
-
-
         $images = [
         'https://www.ilgiornaledelcibo.it/wp-content/uploads/2018/02/cibi-sintetici.jpg',
         'https://www.donnamoderna.com/content/uploads/2020/11/Porzioni-piatto-830x625.jpg',
@@ -196,14 +194,32 @@ class RestaurantSeeder extends Seeder
         $newRestaurant->price_shipping = rand(100, 300) / 100;
         $newRestaurant->img = "img/restaurant/bbq_americano.jpg";
         $newRestaurant->save();
-        $newRestaurant->categories()->attach(17);
-        $newRestaurant->categories()->attach(15);
+        $newRestaurant->categories()->attach(2);
+        $newRestaurant->categories()->attach(11);
+        $newRestaurant->tags()->attach(rand(1, 4));
+
+
+        /* ristorante 9 Poke, Healthy */
+        $newRestaurant = new Restaurant;
+        $newRestaurant->user_id = 9;
+        $newRestaurant->name = "SideUp Poke";
+        $newRestaurant->description = "Abbiamo portato nel Belpaese l’ultimo trend in ambito alimentare, il poke hawaiiano, che unisce i due concetti di street food e cucina healthy. Ogni nostra poke bowl viene realizzata in modo sano e bilanciato.";
+        $newRestaurant->phone_number = $faker->phoneNumber();
+        $newRestaurant->location = "Milano";
+        $newRestaurant->opening_time = rand(15, 18);
+        $newRestaurant->closure_time = rand(22, 24);
+        $newRestaurant->price_shipping = rand(100, 300) / 100;
+        $newRestaurant->img = "img/restaurant/poke.jpg";
+        $newRestaurant->save();
+        $newRestaurant->categories()->attach(22);
+        $newRestaurant->categories()->attach(12);
+        $newRestaurant->categories()->attach(23);
         $newRestaurant->tags()->attach(rand(1, 4));
 
 
         /* ciclo for */
         
-        for ($i=8; $i < 31; $i++) {
+        for ($i=9; $i < 31; $i++) {
             $newRestaurant = new Restaurant;
             $newRestaurant->user_id = ($i+1);
             $newRestaurant->name = 'restaurant'.($i+1);
