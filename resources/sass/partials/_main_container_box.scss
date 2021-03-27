@@ -3,8 +3,13 @@
   flex-direction: column;
   .main_container_row{
     display: flex;
-    .edo-categories{
+    .categories{
       width: 20%;
+
+    }
+    .restaurant {
+      width: 80%;
+
     }
   }
 }

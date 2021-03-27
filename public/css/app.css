@@ -11115,8 +11115,12 @@ header #main-header #categories .category_hover,
   display: flex;
 }
 
-#main_container_box .main_container_row .edo-categories {
+#main_container_box .main_container_row .categories {
   width: 20%;
+}
+
+#main_container_box .main_container_row .restaurant {
+  width: 80%;
 }
 
 .category_container {
