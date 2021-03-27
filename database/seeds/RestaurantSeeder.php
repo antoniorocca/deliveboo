@@ -148,9 +148,26 @@ class RestaurantSeeder extends Seeder
         $newRestaurant->tags()->attach(rand(1, 4));
 
 
+        /* ristorante 6 messicano, piadina */
+        $newRestaurant = new Restaurant;
+        $newRestaurant->user_id = 6;
+        $newRestaurant->name = "Quinto Sol Mexican Food & Tapas";
+        $newRestaurant->description = "Il Quinto è colorato e accogliente. Gli arredi vivaci in stile messicano creano un’atmosfera calda e allegra. Piatti messicani belli e colorati, freschi e gustosi.";
+        $newRestaurant->phone_number = $faker->phoneNumber();
+        $newRestaurant->location = "Torino";
+        $newRestaurant->opening_time = rand(15, 18);
+        $newRestaurant->closure_time = rand(22, 24);
+        $newRestaurant->price_shipping = rand(100, 300) / 100;
+        $newRestaurant->img = "img/restaurant/mex.jpg";
+        $newRestaurant->save();
+        $newRestaurant->categories()->attach(18);
+        $newRestaurant->categories()->attach(20);
+        $newRestaurant->tags()->attach(rand(1, 4));
+
+
         /* ciclo for */
         
-        for ($i=5; $i < 31; $i++) {
+        for ($i=6; $i < 31; $i++) {
             $newRestaurant = new Restaurant;
             $newRestaurant->user_id = ($i+1);
             $newRestaurant->name = 'restaurant'.($i+1);
