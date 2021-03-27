@@ -62,10 +62,10 @@ class RestaurantSeeder extends Seeder
             'Genova',
         ];
 
-        /* ristorante 1 pasta, healthy */
+        /* ristorante 1 Pasta, Healthy */
         $newRestaurant = new Restaurant;
         $newRestaurant->user_id = 1;
-        $newRestaurant->name = "Pasta Alfredo";
+        $newRestaurant->name = "Al Matarel Pasta Fresca";
         $newRestaurant->description = "Il Ristorante è immerso nel silenzio di boschi ammantati, in una zona verde nel cuore della provincia di Firenze, in un piccolo ed incantevole borgo.";
         $newRestaurant->phone_number = $faker->phoneNumber();
         $newRestaurant->location = "Firenze";
@@ -79,7 +79,7 @@ class RestaurantSeeder extends Seeder
         $newRestaurant->tags()->attach(rand(1, 4));
 
 
-        /* ristorante 2 pizza, ristorante */
+        /* ristorante 2 Pizza, Ristorante */
         $newRestaurant = new Restaurant;
         $newRestaurant->user_id = 2;
         $newRestaurant->name = "Pizzeria Il Faraone";
@@ -96,7 +96,7 @@ class RestaurantSeeder extends Seeder
         $newRestaurant->tags()->attach(rand(1, 4));
 
 
-        /* ristorante 3 giapponese, cinese */
+        /* ristorante 3 Giapponese, Cinese, Asiatico */
         $newRestaurant = new Restaurant;
         $newRestaurant->user_id = 3;
         $newRestaurant->name = "Sumo Sushi Ramen";
@@ -110,10 +110,11 @@ class RestaurantSeeder extends Seeder
         $newRestaurant->save();
         $newRestaurant->categories()->attach(6);
         $newRestaurant->categories()->attach(10);
+        $newRestaurant->categories()->attach(3);
         $newRestaurant->tags()->attach(rand(1, 4));
 
 
-        /* ristorante 4 Dolci e dessert, gelato */
+        /* ristorante 4 Dolci e Dessert, Gelato */
         $newRestaurant = new Restaurant;
         $newRestaurant->user_id = 4;
         $newRestaurant->name = "Pasticceria Creamy";
@@ -130,7 +131,7 @@ class RestaurantSeeder extends Seeder
         $newRestaurant->tags()->attach(rand(1, 4));
 
 
-        /* ristorante 5 hamburger, kebab */
+        /* ristorante 5 Hamburger, Kebab */
         $newRestaurant = new Restaurant;
         $newRestaurant->user_id = 5;
         $newRestaurant->name = "WellDone Burger";
@@ -148,7 +149,7 @@ class RestaurantSeeder extends Seeder
         $newRestaurant->tags()->attach(rand(1, 4));
 
 
-        /* ristorante 6 messicano, piadina */
+        /* ristorante 6 Messicano, Piadina, Burrito */
         $newRestaurant = new Restaurant;
         $newRestaurant->user_id = 6;
         $newRestaurant->name = "Quinto Sol Mexican Food & Tapas";
@@ -162,12 +163,47 @@ class RestaurantSeeder extends Seeder
         $newRestaurant->save();
         $newRestaurant->categories()->attach(18);
         $newRestaurant->categories()->attach(20);
+        $newRestaurant->categories()->attach(4);
+        $newRestaurant->tags()->attach(rand(1, 4));
+
+
+        /* ristorante 7 Mediterraneo, Italiano */
+        $newRestaurant = new Restaurant;
+        $newRestaurant->user_id = 7;
+        $newRestaurant->name = "Lido Mediterraneo";
+        $newRestaurant->description = "Proponiamo piatti tipici della tradizionale cucina mediterranea utilizzando materie prime locali, concedendoci qualche piccola rivisitazione in chiave moderna.";
+        $newRestaurant->phone_number = $faker->phoneNumber();
+        $newRestaurant->location = "Cagliari";
+        $newRestaurant->opening_time = rand(15, 18);
+        $newRestaurant->closure_time = rand(22, 24);
+        $newRestaurant->price_shipping = rand(100, 300) / 100;
+        $newRestaurant->img = "img/restaurant/mediterranea.jpg";
+        $newRestaurant->save();
+        $newRestaurant->categories()->attach(17);
+        $newRestaurant->categories()->attach(15);
+        $newRestaurant->tags()->attach(rand(1, 4));
+
+
+        /* ristorante 8 Americano, Hamburger */
+        $newRestaurant = new Restaurant;
+        $newRestaurant->user_id = 8;
+        $newRestaurant->name = "Chop Grill";
+        $newRestaurant->description = "Ristorante americano in stile anni ’50 con hamburger, Hot Dog e carne alla griglia. Fai un salto indietro nel tempo insieme a noi!";
+        $newRestaurant->phone_number = $faker->phoneNumber();
+        $newRestaurant->location = "Roma";
+        $newRestaurant->opening_time = rand(15, 18);
+        $newRestaurant->closure_time = rand(22, 24);
+        $newRestaurant->price_shipping = rand(100, 300) / 100;
+        $newRestaurant->img = "img/restaurant/bbq_americano.jpg";
+        $newRestaurant->save();
+        $newRestaurant->categories()->attach(17);
+        $newRestaurant->categories()->attach(15);
         $newRestaurant->tags()->attach(rand(1, 4));
 
 
         /* ciclo for */
         
-        for ($i=6; $i < 31; $i++) {
+        for ($i=8; $i < 31; $i++) {
             $newRestaurant = new Restaurant;
             $newRestaurant->user_id = ($i+1);
             $newRestaurant->name = 'restaurant'.($i+1);
