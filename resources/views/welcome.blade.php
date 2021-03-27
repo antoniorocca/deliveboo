@@ -12,6 +12,9 @@
     <edo-restaurants v-if="true"></edo-restaurants>
 </div> -->
 {{-- DA CENCELLARE? --}}
+
+
+
 <div id="main_container_box"class="" style="border: 5px solid green" v-if="this.$store.state.showMain">
   <div class="main_container_row"style="border: 5px solid purple" v-if="this.$store.state.showSelectRestaurant">
     <div class="categories"  >
@@ -21,6 +24,11 @@
       <restaurant-component></restaurant-component>
     </div>
   </div>
+
+
+
+
+
   <div class="main_container_row"style="border: 5px solid pink" v-if="this.$store.state.showRestaurant">
     <div class="restaurant_show" >
       <div class="">
@@ -31,6 +39,11 @@
       <cart-dropdown id="box_cart" class="cart-box"></cart-dropdown>
     </div>
   </div>
+
+
+
+
+
 </div>
 
 

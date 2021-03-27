@@ -88,6 +88,7 @@
                 }
                 this.search ='';
             },
+            // funzionamento navigazione
             togglerestaurant(){
               this.$store.commit('togglerestaurant')
             },

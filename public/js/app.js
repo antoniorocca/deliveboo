@@ -2305,6 +2305,7 @@ __webpack_require__.r(__webpack_exports__);
     addSelectedCategories: function addSelectedCategories(category) {
       this.$store.commit('setSelectedCategoties', category);
     },
+    // funzionamento navigazione
     filterRestaurant: function filterRestaurant(category) {
       this.$store.commit('filterRestaurant', category);
     },
@@ -2854,6 +2855,7 @@ __webpack_require__.r(__webpack_exports__);
 
       this.search = '';
     },
+    // funzionamento navigazione
     togglerestaurant: function togglerestaurant() {
       this.$store.commit('togglerestaurant');
     },

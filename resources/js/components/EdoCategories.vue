@@ -31,6 +31,7 @@ export default {
     addSelectedCategories(category){
       this.$store.commit('setSelectedCategoties', category);
     },
+    // funzionamento navigazione
     filterRestaurant(category){
 
       this.$store.commit('filterRestaurant',category);
