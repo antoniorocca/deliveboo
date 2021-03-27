@@ -28,7 +28,8 @@
         </div>
     </nav>
 
-    <div id="link-consegne">
+    <!-- <div id="link-consegne">
         <p>Consegne in <a href="">Via ...... <i class="fas fa-angle-down"></i></a></p>
-    </div>
+    </div> -->
+    <header-component></header-component>
 </header>

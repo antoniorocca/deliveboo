@@ -1,36 +1,53 @@
 <template>
 <!--  v-if="this.$store.state.visibility" -->
-<div id="restaurant_box">
-
-    <div>
-
-        <div id="content" class="">
-
-            <div class=" first_title">
-                <h2>Ristoranti consigliati</h2>
-                <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, voluptatibus?
-                </p>
-            </div>
-
-
-            <div class="">
-              <div class="restaurants">
-                <div class="card card_hover" v-for="restaurant in this.$store.state.filteredRestaurant" @click="showSelectedRestaurant(restaurant)">
-                  <div class="restaurant_image">
-                    <img :src="restaurant.img" alt="restaurant's image">
-                  </div>
-                  <h4>
-                    {{restaurant.name}}
-                  </h4>
-                  <input class="option_restaurant" :value="restaurant.id" @click="toggle">
+    <div class="header">
+        <div id="main-header" class="d-flex justify-content-center flex-wrap">
+            <div id="categories" class="d-flex justify-content-center flex-wrap">
+                
+                <div class="category category_hover mr-4 mt-5 d-flex justify-content-center">
+                    <img src="img/pizza_trancio.png" alt="">
+                    <span>{{this.$store.state.categories[20].name}}</span>
+                    <!-- <input type="submit" :value="this.$store.state.categories[20].id" @click="selectRestaurantOnClick" :class="(letSelected == this.$store.state.categories[20].id) ? 'focusr' : ''">  -->  
                 </div>
-              </div>
-            </div>
 
+                <div class="category category_hover mr-4 mt-5 d-flex justify-content-center">
+                    <img src="img/wrap.png" alt="">
+                    <span>{{this.$store.state.categories[19].name}}</span>
+                </div>
+
+                <div class="category category_hover mr-4 mt-5 d-flex justify-content-center">
+                    <img src="img/mexican.png" alt="">
+                    <span>{{this.$store.state.categories[17].name}}</span>
+                </div>
+
+                <div class="category category_hover mr-4 mt-5 d-flex justify-content-center">
+                    <img src="img/ramen.png" alt="">
+                    <span>{{this.$store.state.categories[9].name}}</span>
+                </div>
+
+                <div class="category category_hover mr-4 mt-5 d-flex justify-content-center">
+                    <img src="img/caffe.png" alt="">
+                    <span>{{this.$store.state.categories[4].name}}</span>
+                </div>
+
+                <div class="category category_hover mr-4 mt-5 d-flex justify-content-center">
+                    <img src="img/ice-cream.png" alt="">
+                    <span>{{this.$store.state.categories[8].name}}</span>
+                </div>
+
+                <div class="category category_hover mr-4 mt-5 d-flex justify-content-center">
+                    <img src="img/hamburger.png" alt="">
+                    <span>{{this.$store.state.categories[10].name}}</span>
+                </div>
+
+                <div class="category category_hover mr-4 mt-5 d-flex justify-content-center">
+                    <img src="img/salad.png" alt="">
+                    <span>{{this.$store.state.categories[13].name}}</span>
+                </div>
+
+            </div>   
         </div>
     </div>
-</div>
 </template>
 
 <script>
@@ -44,7 +61,7 @@
                 restaurantsAll: '',
                 letSelected: '',
                 search: '',
-                lol: true,
+                
             }
         },
         methods:{

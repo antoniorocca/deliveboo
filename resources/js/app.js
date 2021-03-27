@@ -17,6 +17,8 @@ Vue.component('footer-component', require('./components/FooterComponent.vue').de
 Vue.component('dish-component', require('./components/FooterComponent.vue').default);
 Vue.component('selected-restaurant', require('./components/SelectedRestaurant.vue').default);
 Vue.component('carousel-component', require('./components/CarouselComponent.vue').default);
+Vue.component('header-component', require('./components/HeaderComponent.vue').default);
+
 
 
 
