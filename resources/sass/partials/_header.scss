@@ -1,9 +1,11 @@
 header{
     height: 550px;
+    position: relative;
+    z-index: 10;
 }
 header, .header {
     background-color: $orange;
-    width: 100%;  
+    width: 100%;
     #nav {
         height: 100px;
         width: 100%;
@@ -19,7 +21,7 @@ header, .header {
                 width: 400px;
                 text-align: center;
                 border-radius: 50px;
-                border-style: none;   
+                border-style: none;
                 font-size: 18px;
                 height: 50px;
                 &:focus {
@@ -41,7 +43,7 @@ header, .header {
                 margin: 5px;
                 font-weight: bold;
             }
-        } 
+        }
     }
     #link-consegne {
         position: absolute;
@@ -93,7 +95,7 @@ header, .header {
                 transition: 0.3s all ease-in-out;
             }
         }
-    } 
+    }
 }
 @media all and (max-width: 592px) {
     header{

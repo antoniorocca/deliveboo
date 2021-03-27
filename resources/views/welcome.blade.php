@@ -2,8 +2,9 @@
 
 @section('guest_content')
 
-
-<landing-component style="border: 5px solid red" v-if="this.$store.state.showLanding"></landing-component>
+<transition name='landing'>
+  <landing-component style="border: 5px solid red" v-if="this.$store.state.showLanding"></landing-component>
+</transition>
 
 
 <!-- COMPONENTE CATEGORIES EDO -->

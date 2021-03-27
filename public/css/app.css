@@ -10964,6 +10964,8 @@ body {
 
 header {
   height: 550px;
+  position: relative;
+  z-index: 10;
 }
 
 header,
@@ -11464,6 +11466,16 @@ h1 {
 
 .call_to_action .container_calls .single_call a:hover {
   background-color: #008169;
+}
+
+.landing-enter-active,
+.landing-leave-active {
+  transition: transform 1s;
+}
+
+.landing-enter,
+.landing-leave-to {
+  transform: translateY(-100%);
 }
 
 .select_restaurant {
