@@ -1,5 +1,5 @@
 <template>
-    <div class="selected_restaurant_container"  v-if="!this.$store.state.visibility">
+    <div class="selected_restaurant_container" v-if="!this.$store.state.visibility">
         <div id="info_restaurant">
             <img id="restaurant_jumbotron" :src="this.$store.state.selectedRestaurant.img" alt="">
             <div id="restaurant_txt">
@@ -15,7 +15,7 @@
             </div>
         </div> -->
         <div id="selected_restaurant_dishes" class="d-flex flex-wrap justify-content-center">
-            <div class="dish_card" v-for="dish in this.$store.state.selectedRestaurant.dishes">
+            <div class="dish_card" v-for="dish in this.$store.state.selectedRestaurant2.dishes">
                 <img :src="dish.img" alt="">
                 <h4>{{ dish.name }}</h4>
                 <span class="prezzo">prezzo &euro; {{ dish.price.toFixed(2) }}</span><br>
@@ -25,7 +25,7 @@
                 <!-- <dd>sconto {{ dish.discount }}</dd> -->
                 <!-- <dd> classe menu {{ dish.menu_class }}</dd> -->
             </div>
-        </div>            
+        </div>
     </div>
 </template>
 
@@ -48,7 +48,7 @@ export default {
         },
         addToCart(item) {
             this.$store.commit('addToCart', item);
-        }     
+        }
     },
     computed: {
     },
@@ -65,6 +65,7 @@ export default {
     width: 75%;
     padding-left: 20px;
     padding-right: 20px;
+    border:5px solid black;
     #info_restaurant {
         height: 600px;
         width: 100%;

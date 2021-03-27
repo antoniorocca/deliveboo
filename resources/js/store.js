@@ -1,5 +1,6 @@
 let cart = window.localStorage.getItem('cart');
 let cartCount = window.localStorage.getItem('cartCount');
+let visibility = window.sessionStorage.getItem('visibility');
 
 let store = {
     state: {
@@ -9,20 +10,29 @@ let store = {
         dishes: '',
         restaurants: '',
         selectedCategories:[],
+        filteredRestaurant:'',
         // variabile per toglerare tra carrello e checkout
         checkout:false,
         test: 'bomber',
         selectedRestaurant: [],
-        visibility: true,
+        selectedRestaurant2:'',
+        visibility: true? JSON.parse(visibility) : false,
+        searchBar:'',
     },
     mutations: {
 
-        visibilityFunction(){
+        visibilityFunction(state){
             if (this.state.visibility == false) {
                 this.state.visibility = true;
+                // window.localStorage.setItem('v', visibility);
             } else {
                 this.state.visibility = false;
+                // window.localStorage.setItem('v', visibility);
             }
+            this.commit('saveView');
+        },
+        saveView(state) {
+            window.sessionStorage.setItem('visibility', JSON.stringify(state.visibility));
         },
 
       // TEST
@@ -82,19 +92,54 @@ let store = {
             window.localStorage.setItem('cartCount', state.cartCount);
         },
         saveCall(state, resp) {
-            this.state.categories = resp[0];
-            this.state.dishes = resp[1];
-            this.state.restaurants = resp[2];
+            this.state.categories = resp[0].data.response;
+            this.state.dishes = resp[1].data.response;
+            this.state.restaurants = resp[2].data.response;
+            this.state.filteredRestaurant = resp[2].data.response;
         },
         setSelectedCategoties(state, category) {
             this.state.selectedCategories = category;
         },
+
+        // FUNZIONAMENTO SELEZIONE RISTORANTI
+//////////////////////////////////////////////////////////////////////////
+
+        filterRestaurant(state, category){
+          this.state.filteredRestaurant = [];
+          this.state.categories.forEach((item, i) => {
+            if (item.name === category) {
+              item.restaurants.forEach((item, i) => {
+                this.state.filteredRestaurant.push(item);
+              });
+            }
+          });
+          console.log(this.state.filteredRestaurant);
+        },
+        selectAllRestaurants(state){
+          this.state.filteredRestaurant = this.state.restaurants;
+        },
+        selectRestaurant(state, restaurant){
+          this.state.selectedRestaurant2 = restaurant;
+          console.log(this.state.selectedRestaurant2);
+        },
+/////////////////////////////////////////////////////////////////////////////
+
+
         setRestaurants(state, category) {
             this.state.selectedCategories = this.state.restaurants.data.response;
         },
         setSelectedRestaurant(state, restaurant) {
             // console.log(restaurant);
             this.state.selectedRestaurant = restaurant;
+        },
+        searchBar(state, s) {
+            if (s == '') {
+                this.state.filteredRestaurant = this.state.restaurants;
+            } else {
+                this.state.filteredRestaurant = s;
+            }
+            // console.log(s);
+            // console.log(restaurant);
         },
         // funzione per toglerare tra carrello e checkout
         toggleCheckout(){

@@ -11,6 +11,7 @@ require('./bootstrap');
 
 Vue.component('restaurant-component', require('./components/RestaurantComponent.vue').default);
 Vue.component('to-top', require('./components/ToTop.vue').default);
+Vue.component('search-component', require('./components/SearchComponent.vue').default);
 Vue.component('category-component', require('./components/CategoryComponent.vue').default);
 Vue.component('footer-component', require('./components/FooterComponent.vue').default);
 Vue.component('dish-component', require('./components/FooterComponent.vue').default);

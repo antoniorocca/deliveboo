@@ -1,45 +1,37 @@
 <template>
-    <div class="category_container">
-        <h3>Category Component</h3>
-        <p @click="selectCategory('all')">All</p>
-
-        <p v-for="category in categories" @click="selectCategory(category.restaurants)">{{category.name}}</p>
-        
-    </div>
-
+  <div  id="category_box" v-if="this.$store.state.visibility">
+    <button @click="selectAllRestaurants">All</button>
+    <button @click="filterRestaurant(category.name)" v-for="category in this.$store.state.categories">{{category.name}}</button>
+  </div>
 </template>
 
 <script>
 export default {
-    data() {
-        return {
-            categories: '',
-            selectedCategories:'',
-        };
+  methods:{
+    addSelectedCategories(category){
+      this.$store.commit('setSelectedCategoties', category);
     },
-    methods:{
-        selectCategory(name){
-            if (name == 'all') {
-                this.$store.commit('setRestaurants', name)
+    filterRestaurant(category){
 
-                //this.selectedCategories = this.$store.getters.getSelectedCategories;
-            } else {
-                this.$store.commit('setSelectedCategoties', name)
-                console.log(name);
-                //this.selectedCategories = this.$store.getters.getSelectedCategories;
-            }
-        },
+      this.$store.commit('filterRestaurant',category);
     },
-    computed: {
-
-
+    selectAllRestaurants(){
+      this.$store.commit('selectAllRestaurants');
     },
-    mounted(){
-        this.categories = this.$store.getters.getCategories.data.response;
-        console.log(this.categories);
-    }
+  },
+
 }
 
 </script>
-<style>
+<style  scoped lang="scss">
+
+#category_box {
+  width:20%;
+  display:flex;
+  flex-direction:column;
+  border: 5px solid black;
+  button{
+
+  }
+}
 </style>

@@ -165,26 +165,37 @@ h1 {
 
 
 // BACK-END CHART style
-#myChart_row, #myChart_row2 {
-  position: relative;
-  z-index: 10;
-  overflow: hidden;
-  margin: 40px 0!important;
-  canvas {
+.chart_container{
+  height: 1300px;
+}
+.wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  #myChart_row, #myChart_row2 {
+    width: 60%;
     position: relative;
-    z-index: 100;
+    z-index: 10;
+    overflow: hidden;
 
+    margin: 40px 0!important;
+    canvas {
+      position: relative;
+      z-index: 100;
+
+    }
+    img {
+      height: 140%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      z-index: 50;
+      opacity: .1;
+    }
   }
-  img {
-    height: 140%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    z-index: 50;
-    opacity: .1;
-  }
+
 }
 #myChart_row2 {
-
+ margin-bottom: 150px!important;
 }

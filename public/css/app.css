@@ -10950,6 +10950,7 @@ a.text-dark:focus {
 
 body {
   overflow-x: hidden;
+  font-family: "Raleway", sans-serif;
 }
 
 .row {
@@ -11103,6 +11104,10 @@ header #main-header #categories .category_hover,
   header {
     height: 850px;
   }
+}
+
+#main_container_box {
+  display: flex;
 }
 
 .category_container {
@@ -11355,22 +11360,33 @@ h1 {
   border: 0 !important;
 }
 
-#myChart_row,
-#myChart_row2 {
+.chart_container {
+  height: 1300px;
+}
+
+.wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.wrap #myChart_row,
+.wrap #myChart_row2 {
+  width: 60%;
   position: relative;
   z-index: 10;
   overflow: hidden;
   margin: 40px 0 !important;
 }
 
-#myChart_row canvas,
-#myChart_row2 canvas {
+.wrap #myChart_row canvas,
+.wrap #myChart_row2 canvas {
   position: relative;
   z-index: 100;
 }
 
-#myChart_row img,
-#myChart_row2 img {
+.wrap #myChart_row img,
+.wrap #myChart_row2 img {
   height: 140%;
   position: absolute;
   top: 50%;
@@ -11378,6 +11394,10 @@ h1 {
   transform: translate(-50%, -50%);
   z-index: 50;
   opacity: 0.1;
+}
+
+#myChart_row2 {
+  margin-bottom: 150px !important;
 }
 
 .call_to_action {
