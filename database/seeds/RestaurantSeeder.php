@@ -62,28 +62,30 @@ class RestaurantSeeder extends Seeder
             'Genova',
         ];
 
-        /* ristorante 1 pasta */
+        /* ristorante 1 pasta, healthy */
         $newRestaurant = new Restaurant;
         $newRestaurant->user_id = 1;
-        $newRestaurant->name = 'Pasta Alfredo';
-        $newRestaurant->description = 'Il Ristorante è immerso nel silenzio di boschi ammantati, in una zona verde nel cuore della provincia di Firenze, in un piccolo ed incantevole borgo.';
+        $newRestaurant->name = "Pasta Alfredo";
+        $newRestaurant->description = "Il Ristorante è immerso nel silenzio di boschi ammantati, in una zona verde nel cuore della provincia di Firenze, in un piccolo ed incantevole borgo.";
         $newRestaurant->phone_number = $faker->phoneNumber();
-        $newRestaurant->location = 'Firenze';
+        $newRestaurant->location = "Firenze";
         $newRestaurant->opening_time = rand(15, 18);
         $newRestaurant->closure_time = rand(22, 24);
         $newRestaurant->price_shipping = rand(100, 300) / 100;
         $newRestaurant->img = "img/restaurant/pasta.jpg";
         $newRestaurant->save();
         $newRestaurant->categories()->attach(19);
+        $newRestaurant->categories()->attach(12);
         $newRestaurant->tags()->attach(rand(1, 4));
 
-        /* ristorante 2 pizza ristorante */
+
+        /* ristorante 2 pizza, ristorante */
         $newRestaurant = new Restaurant;
         $newRestaurant->user_id = 2;
-        $newRestaurant->name = 'Pizzeria Il Faraone';
-        $newRestaurant->description = 'Siamo lieti di darvi il benvenuto alla pizzeria ristorante "Pizzeria Il Faraone". Un punto di riferimento tra le Pizzerie genovesi.';
+        $newRestaurant->name = "Pizzeria Il Faraone";
+        $newRestaurant->description = "Siamo lieti di darvi il benvenuto alla pizzeria ristorante 'Pizzeria Il Faraone'. Un punto di riferimento tra le Pizzerie genovesi.";
         $newRestaurant->phone_number = $faker->phoneNumber();
-        $newRestaurant->location = 'Genova';
+        $newRestaurant->location = "Genova";
         $newRestaurant->opening_time = rand(15, 18);
         $newRestaurant->closure_time = rand(22, 24);
         $newRestaurant->price_shipping = rand(100, 300) / 100;
@@ -93,13 +95,14 @@ class RestaurantSeeder extends Seeder
         $newRestaurant->categories()->attach(21);
         $newRestaurant->tags()->attach(rand(1, 4));
 
-        /* ristorante 3 giapponese cinese */
+
+        /* ristorante 3 giapponese, cinese */
         $newRestaurant = new Restaurant;
         $newRestaurant->user_id = 3;
-        $newRestaurant->name = 'Sumo Sushi Ramen';
+        $newRestaurant->name = "Sumo Sushi Ramen";
         $newRestaurant->description = "Ristorante Asiatico Cinese e Giapponese. Ampia veranda all'aperto con vista panoramica sul porto di Venezia.";
         $newRestaurant->phone_number = $faker->phoneNumber();
-        $newRestaurant->location = 'Venezia';
+        $newRestaurant->location = "Venezia";
         $newRestaurant->opening_time = rand(15, 18);
         $newRestaurant->closure_time = rand(22, 24);
         $newRestaurant->price_shipping = rand(100, 300) / 100;
@@ -110,8 +113,44 @@ class RestaurantSeeder extends Seeder
         $newRestaurant->tags()->attach(rand(1, 4));
 
 
+        /* ristorante 4 Dolci e dessert, gelato */
+        $newRestaurant = new Restaurant;
+        $newRestaurant->user_id = 4;
+        $newRestaurant->name = "Pasticceria Creamy";
+        $newRestaurant->description = "La nostra pasticceria porta come marchio i valori della nostra terra, con materie prime eccellenti e di calore umano che diventa passione. La nostra produzione è attenta nella scelta dei prodotti e nel rispetto delle ricette antiche.";
+        $newRestaurant->phone_number = $faker->phoneNumber();
+        $newRestaurant->location = "Palermo";
+        $newRestaurant->opening_time = rand(15, 18);
+        $newRestaurant->closure_time = rand(22, 24);
+        $newRestaurant->price_shipping = rand(100, 300) / 100;
+        $newRestaurant->img = "img/restaurant/dessert_gelato.jpg";
+        $newRestaurant->save();
+        $newRestaurant->categories()->attach(8);
+        $newRestaurant->categories()->attach(9);
+        $newRestaurant->tags()->attach(rand(1, 4));
+
+
+        /* ristorante 5 hamburger, kebab */
+        $newRestaurant = new Restaurant;
+        $newRestaurant->user_id = 5;
+        $newRestaurant->name = "WellDone Burger";
+        $newRestaurant->description = "WellDone nasce dal desiderio di rivisitare l’unione tra i Prodotti della Terra e le Migliori Carni Italiane in chiave Street Food. Hamburger Gourmet che rappresentano una perfetta simbiosi tra Alta Cucina ed informalità.";
+        $newRestaurant->phone_number = $faker->phoneNumber();
+        $newRestaurant->location = "Bologna";
+        $newRestaurant->opening_time = rand(15, 18);
+        $newRestaurant->closure_time = rand(22, 24);
+        $newRestaurant->price_shipping = rand(100, 300) / 100;
+        $newRestaurant->img = "img/restaurant/hamburger_vet.jpg";
+        $newRestaurant->save();
+        $newRestaurant->categories()->attach(11);
+        $newRestaurant->categories()->attach(16);
+        $newRestaurant->categories()->attach(23);
+        $newRestaurant->tags()->attach(rand(1, 4));
+
+
         /* ciclo for */
-        for ($i=0; $i < 29; $i++) {
+        
+        for ($i=5; $i < 31; $i++) {
             $newRestaurant = new Restaurant;
             $newRestaurant->user_id = ($i+1);
             $newRestaurant->name = 'restaurant'.($i+1);
@@ -127,6 +166,7 @@ class RestaurantSeeder extends Seeder
             $newRestaurant->categories()->attach(rand(14,25));
             $newRestaurant->tags()->attach(rand(1,4));
         }
+        
 
     }
 }
