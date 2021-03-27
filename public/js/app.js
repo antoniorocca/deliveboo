@@ -2009,8 +2009,8 @@ __webpack_require__.r(__webpack_exports__);
       restaurantsAll: '',
       letSelected: '',
       hooperSettings: {
-        itemsToShow: 3,
-        itemsToSlide: 3,
+        itemsToShow: 4,
+        itemsToSlide: 4,
         centerMode: false,
         infiniteScroll: false,
         mouseDrag: false,
@@ -2586,6 +2586,32 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -40957,7 +40983,7 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("p", [
         _vm._v(
-          "\n            Scopri i negozi più richiesti e ricevi alla tua porta ogni tuo desiderio\n            "
+          "\n            Scopri i ristoranti più richiesti e ricevi alla tua porta ogni tuo desiderio\n            "
         )
       ])
     ])
@@ -41728,16 +41754,67 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", {}, [_c("carousel-component"), _vm._v(" "), _vm._m(0)], 1)
+  return _c(
+    "div",
+    [
+      _c("carousel-component"),
+      _vm._v(" "),
+      _c("div", { staticClass: "most_popular" }, [
+        _vm._m(0),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "cards" },
+          _vm._l(this.$store.state.restaurants.slice(2, 6), function(
+            restaurant
+          ) {
+            return _c("div", { staticClass: "card card_hover" }, [
+              _c("div", { staticClass: "restaurant_image" }, [
+                _c("img", {
+                  attrs: { src: restaurant.img, alt: "restaurant's image" }
+                })
+              ]),
+              _vm._v(" "),
+              _c("h4", [
+                _vm._v(
+                  "\n\t\t\t\t\t\t" + _vm._s(restaurant.name) + "\n\t\t\t\t\t"
+                )
+              ])
+            ])
+          }),
+          0
+        )
+      ]),
+      _vm._v(" "),
+      _vm._m(1)
+    ],
+    1
+  )
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "title" }, [
+      _c("img", { attrs: { src: "img/food-love.png", alt: "" } }),
+      _vm._v(" "),
+      _c("h2", [_vm._v("I ristoranti più popolari")]),
+      _vm._v(" "),
+      _c("p", [
+        _vm._v(
+          "\n\t\t\t\tI ristoranti più visti e più votati della tua zona\n\t\t\t\t"
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
     return _c("div", { staticClass: "call_to_action" }, [
       _c("div", { staticClass: "title" }, [
-        _c("img", { attrs: { src: "img/handshakes.png", alt: "" } }),
+        _c("img", { attrs: { src: "img/handshake.png", alt: "" } }),
         _vm._v(" "),
         _c("h2", [_vm._v("Diventa uno di noi!")])
       ]),
@@ -57156,8 +57233,8 @@ var store = {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /var/www/html/boolean/laravel/deliveboo/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /var/www/html/boolean/laravel/deliveboo/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/rocco/Documents/BOOLEAN/Classe23/deliveboo/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/rocco/Documents/BOOLEAN/Classe23/deliveboo/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

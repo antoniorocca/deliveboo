@@ -8,7 +8,7 @@
         <div class=" first_title">
             <h2>I ristoranti consigliati</h2>
             <p>
-            Scopri i negozi più richiesti e ricevi alla tua porta ogni tuo desiderio
+            Scopri i ristoranti più richiesti e ricevi alla tua porta ogni tuo desiderio
             </p>
         </div>
 
@@ -57,8 +57,8 @@
                 restaurantsAll: '',
                 letSelected: '',
                 hooperSettings: {
-                    itemsToShow: 3, 
-                    itemsToSlide:3,
+                    itemsToShow: 4, 
+                    itemsToSlide:4,
                     centerMode: false,
                     infiniteScroll: false,
                     mouseDrag: false,

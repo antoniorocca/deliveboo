@@ -1,5 +1,5 @@
 .call_to_action{
-    padding: 10px 0 50px;
+    padding: 70px 0;
     width: 100%;
     margin: auto;
     text-align: center;
@@ -8,6 +8,10 @@
         img{
             padding: 10px 0 20px;
             height: 120px;
+        }
+        h2{
+            font-weight: 800;
+            font-size: 30px;
         }
     }
     .container_calls{
@@ -41,6 +45,68 @@
                 background-color: #008169;
                 }
             }
+        }
+    }
+}
+
+.most_popular{
+    padding: 70px 0;
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    background-color: #f7a74429;
+    
+    .title{
+        img{
+            padding: 10px 0 20px;
+            height: 120px;
+        }
+        h2{
+            font-weight: 800;
+            font-size: 30px;
+        }
+        p{
+            color: grey;
+            font-size: 20px;
+            font-weight: 100;
+        }
+    }
+    .cards{
+
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        .card{
+            margin: 30px;
+            width: 300px;
+            z-index: 10;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #DDDDDD;
+            img{
+                height: 150px;
+                width: 100%;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+                object-fit: cover;
+            }
+            h4{
+                border: px solid rgba(0, 0, 0, 0.125);
+                border-radius: 0.25rem;
+                text-align: center;
+                margin-bottom: 10px;
+                font-weight: 700;
+                padding: 10px;
+            }
+            option{
+                height: 100%;
+            }
+        }
+        .card_hover{
+            transition: all 0.35s;
+        }
+        .card:hover{
+            cursor: pointer;
+            transform: scale(1.05);
         }
     }
 }

@@ -11414,7 +11414,7 @@ h1 {
 }
 
 .call_to_action {
-  padding: 10px 0 50px;
+  padding: 70px 0;
   width: 100%;
   margin: auto;
   text-align: center;
@@ -11424,6 +11424,11 @@ h1 {
 .call_to_action .title img {
   padding: 10px 0 20px;
   height: 120px;
+}
+
+.call_to_action .title h2 {
+  font-weight: 800;
+  font-size: 30px;
 }
 
 .call_to_action .container_calls {
@@ -11464,6 +11469,75 @@ h1 {
 
 .call_to_action .container_calls .single_call a:hover {
   background-color: #008169;
+}
+
+.most_popular {
+  padding: 70px 0;
+  width: 100%;
+  margin: auto;
+  text-align: center;
+  background-color: #f7a74429;
+}
+
+.most_popular .title img {
+  padding: 10px 0 20px;
+  height: 120px;
+}
+
+.most_popular .title h2 {
+  font-weight: 800;
+  font-size: 30px;
+}
+
+.most_popular .title p {
+  color: grey;
+  font-size: 20px;
+  font-weight: 100;
+}
+
+.most_popular .cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.most_popular .cards .card {
+  margin: 30px;
+  width: 300px;
+  z-index: 10;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #DDDDDD;
+}
+
+.most_popular .cards .card img {
+  height: 150px;
+  width: 100%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.most_popular .cards .card h4 {
+  border: px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+  text-align: center;
+  margin-bottom: 10px;
+  font-weight: 700;
+  padding: 10px;
+}
+
+.most_popular .cards .card option {
+  height: 100%;
+}
+
+.most_popular .cards .card_hover {
+  transition: all 0.35s;
+}
+
+.most_popular .cards .card:hover {
+  cursor: pointer;
+  transform: scale(1.05);
 }
 
 .select_restaurant {
