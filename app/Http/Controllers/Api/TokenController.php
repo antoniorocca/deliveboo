@@ -47,22 +47,33 @@ class TokenController extends Controller
             'submitForSettlement' => True
             ]
         ]);
-        $newOrder = new Order;
-        $newOrder->restaurant_id = $dishes[0]->restaurant_id;
-        $newOrder->amount = $total;
-        $newOrder->name = $request->name;
-        $newOrder->surname = $request->surname;
-        $newOrder->address = $request->address;
-        $newOrder->email = $request->email;
-        $newOrder->order = json_encode($dishes);
-        $newOrder->order_date = Carbon::now();
-        $newOrder->save();
+        if ($result->success) {
 
-        Mail::to($to)->send(new SendNewMail($newOrder));
+            $newOrder = new Order;
+            $newOrder->restaurant_id = $dishes[0]->restaurant_id;
+            $newOrder->amount = $total;
+            $newOrder->name = $request->name;
+            $newOrder->surname = $request->surname;
+            $newOrder->address = $request->address;
+            $newOrder->email = $request->email;
+            $newOrder->order = json_encode($dishes);
+            $newOrder->order_date = Carbon::now();
+            $newOrder->save();
 
-        dd($newOrder);
+            Mail::to($to)->send(new SendNewMail($newOrder));
 
-        return redirect()->route('checkout');
+            //dd($result, 'successo');
+
+            return redirect()->route('checkout');
+        } else {
+
+            //dd($result, 'fallimento');
+
+            return view('checkoutFailed');      
+        }
+
+        
+        
     }
 
 }
