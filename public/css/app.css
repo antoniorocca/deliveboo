@@ -11432,7 +11432,6 @@ h1 {
 }
 
 .call_to_action .container_calls {
-  width: 80%;
   margin: auto;
   display: flex;
   flex-direction: row;
@@ -11441,7 +11440,6 @@ h1 {
 }
 
 .call_to_action .container_calls .single_call {
-  transform: translateX(-50px);
   padding: 20px;
   margin: 20px;
   text-align: center;

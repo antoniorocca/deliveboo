@@ -21,15 +21,13 @@
         }
     }
     .container_calls{
-        width: 80%;
+        // width: 80%;
         margin: auto;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
         .single_call{
-        transform: translateX(-50px);
-
             padding: 20px;
             margin: 20px;
             text-align: center;
