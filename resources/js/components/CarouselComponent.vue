@@ -19,7 +19,6 @@
                     <img :src="restaurant.img" alt="restaurant's image">
                     <h4> {{restaurant.name}} </h4>
                 <input class="option_restaurant" :value="restaurant.id" @click="showRestaurant">
-
                 </div>
             </slide>
             <hooper-navigation slot="hooper-addons"></hooper-navigation>

@@ -1990,7 +1990,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2647,7 +2646,47 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
-  mounted: function mounted() {}
+  data: function data() {
+    return {
+      restaurants: '',
+      restaurantMom: '',
+      restaurantsAll: ''
+    };
+  },
+  methods: {
+    showSelectedRestaurant: function showSelectedRestaurant(restaurant) {
+      this.$store.commit('selectRestaurant', restaurant);
+      console.log('filter'); // toggle between views
+
+      this.toggleSelectRestaurant();
+      this.togglerestaurant();
+    },
+    toggle: function toggle() {
+      if (this.$store.state.visibility == false) {
+        this.$store.commit('visibilityFunction');
+        console.log('false');
+      } else {
+        this.$store.commit('visibilityFunction');
+        console.log('true');
+      }
+    },
+    showRestaurant: function showRestaurant(value) {
+      console.log(value.target.value);
+      this.restaurantMom = this.restaurantsAll[value.target.value - 1];
+      console.log(this.restaurantMom.id);
+      this.$store.commit('setSelectedRestaurant', this.restaurantMom);
+    }
+  },
+  mounted: function mounted() {
+    var _this = this;
+
+    Promise.all([axios.get('api/restaurants')]).then(function (resp) {
+      _this.restaurantsAll = resp[0].data.response;
+      _this.restaurants = resp[0].data.response;
+    })["catch"](function (error) {
+      console.log(error);
+    });
+  }
 });
 
 /***/ }),
@@ -41768,19 +41807,36 @@ var render = function() {
           _vm._l(this.$store.state.restaurants.slice(2, 6), function(
             restaurant
           ) {
-            return _c("div", { staticClass: "card card_hover" }, [
-              _c("div", { staticClass: "restaurant_image" }, [
-                _c("img", {
-                  attrs: { src: restaurant.img, alt: "restaurant's image" }
+            return _c(
+              "div",
+              {
+                staticClass: "card card_hover",
+                on: {
+                  click: function($event) {
+                    return _vm.showSelectedRestaurant(restaurant)
+                  }
+                }
+              },
+              [
+                _c("div", { staticClass: "restaurant_image" }, [
+                  _c("img", {
+                    attrs: { src: restaurant.img, alt: "restaurant's image" }
+                  })
+                ]),
+                _vm._v(" "),
+                _c("h4", [
+                  _vm._v(
+                    "\n\t\t\t\t\t\t" + _vm._s(restaurant.name) + "\n\t\t\t\t\t"
+                  )
+                ]),
+                _vm._v(" "),
+                _c("input", {
+                  staticClass: "option_restaurant",
+                  domProps: { value: restaurant.id },
+                  on: { click: _vm.toggle }
                 })
-              ]),
-              _vm._v(" "),
-              _c("h4", [
-                _vm._v(
-                  "\n\t\t\t\t\t\t" + _vm._s(restaurant.name) + "\n\t\t\t\t\t"
-                )
-              ])
-            ])
+              ]
+            )
           }),
           0
         )
@@ -41828,9 +41884,11 @@ var staticRenderFns = [
           _c("h4", [_vm._v("Diventa un rider")]),
           _vm._v(" "),
           _c("p", [
-            _vm._v(
-              "Lavora per te stesso! Goditi flessibilità, libertà e guadagni competitivi effettuando consegne con Deliveboo."
-            )
+            _vm._v("Lavora per te stesso! Goditi flessibilità, "),
+            _c("br"),
+            _vm._v(" libertà e guadagni competitivi "),
+            _c("br"),
+            _vm._v(" effettuando consegne con Deliveboo.")
           ]),
           _vm._v(" "),
           _c("a", { staticClass: "button", attrs: { href: "#" } }, [
@@ -41844,8 +41902,12 @@ var staticRenderFns = [
           _c("h4", [_vm._v("Diventa un partner")]),
           _vm._v(" "),
           _c("p", [
+            _vm._v("Cresci con Deliveboo! La nostra tecnologia "),
+            _c("br"),
+            _vm._v(" e la nostra base di utenti possono "),
+            _c("br"),
             _vm._v(
-              "Cresci con Deliveboo! La nostra tecnologia e la nostra base di utenti possono aiutarti a incrementare le vendite e aprire nuove opportunità!"
+              " aiutarti a incrementare le vendite e aprire nuove opportunità!"
             )
           ]),
           _vm._v(" "),
@@ -41860,9 +41922,11 @@ var staticRenderFns = [
           _c("h4", [_vm._v("Lavora con noi")]),
           _vm._v(" "),
           _c("p", [
-            _vm._v(
-              "Pronto per una nuova ed entusiasmante sfida? Se sei ambizioso, umile e ami lavorare con gli altri, mettiti in contatto con noi!"
-            )
+            _vm._v("Pronto per una nuova ed entusiasmante sfida?"),
+            _c("br"),
+            _vm._v(" Se sei ambizioso, umile e ami lavorare"),
+            _c("br"),
+            _vm._v(" con gli altri, mettiti in contatto con noi!")
           ]),
           _vm._v(" "),
           _c("a", { staticClass: "button", attrs: { href: "#" } }, [

@@ -11443,7 +11443,7 @@ h1 {
 .call_to_action .container_calls .single_call {
   padding: 20px;
   margin: 20px;
-  width: 25%;
+  text-align: center;
 }
 
 .call_to_action .container_calls .single_call img {
@@ -11455,8 +11455,9 @@ h1 {
 }
 
 .call_to_action .container_calls .single_call p {
-  margin: 5px 0;
+  margin: 0;
   height: 110px;
+  width: 100%;
 }
 
 .call_to_action .container_calls .single_call a {
@@ -11529,6 +11530,16 @@ h1 {
 
 .most_popular .cards .card option {
   height: 100%;
+}
+
+.most_popular .cards .card .option_restaurant {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  color: transparent;
+  background-color: transparent;
+  border-color: transparent;
+  cursor: pointer;
 }
 
 .most_popular .cards .card_hover {
