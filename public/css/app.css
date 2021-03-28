@@ -11468,7 +11468,11 @@ h1 {
   background-color: #008169;
 }
 
-.landing-enter-active,
+.landing-enter-active {
+  transition: transform 1s;
+  transition-delay: 2s;
+}
+
 .landing-leave-active {
   transition: transform 1s;
 }
@@ -11476,6 +11480,34 @@ h1 {
 .landing-enter,
 .landing-leave-to {
   transform: translateY(-100%);
+}
+
+.main_box-enter-active {
+  transition: transform 2s;
+  transition-delay: 1s;
+}
+
+.main_box-leave-active {
+  transition: transform 2s;
+}
+
+.main_box-enter,
+.main_box-leave-to {
+  transform: translateX(100vw);
+}
+
+.category_group-enter-active {
+  transition: transform 2s;
+  transition-delay: 1s;
+}
+
+.category_group-leave-active {
+  transition: transform 2s;
+}
+
+.category_group-enter,
+.category_group-leave-to {
+  transform: translateX(100vw);
 }
 
 .select_restaurant {

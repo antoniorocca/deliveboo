@@ -1,8 +1,34 @@
 // TRANSITION LANDING-COMPONENT
 //////////////////////////////////////
-.landing-enter-active, .landing-leave-active {
+.landing-enter-active{
+  transition: transform 1s;
+  transition-delay: 2s;
+}
+.landing-leave-active {
   transition: transform 1s;
 }
 .landing-enter, .landing-leave-to /* .fade-leave-active below version 2.1.8 */ {
   transform: translateY(-100%);
+}
+// TRANSITION CATEGORIES-COMPONENT
+//////////////////////////////////////
+.main_box-enter-active{
+  transition: transform 2s;
+  transition-delay: 1s;
+}
+.main_box-leave-active{
+  transition: transform 2s;
+}
+.main_box-enter, .main_box-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  transform:translateX(100vw);
+}
+.category_group-enter-active {
+  transition: transform 2s;
+  transition-delay: 1s;
+}
+.category_group-leave-active {
+  transition: transform 2s;
+}
+.category_group-enter, .category_group-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  transform:translateX(100vw);
 }
