@@ -295,16 +295,16 @@ class DishSeeder extends Seeder
 
 
         /* Piatti ristorante 9 Poke, Healthy */
-        $names9 = ["Hamburger Classic", "Patatine fritte", "Pancake", "Hot-Dog", "Cookies", "Donuts", "Birra", "Coca-Cola", "Acqua", "Fanta"];
-        $images9 = ["img/dishes/ham-burger.jpeg", "img/dishes/fries.jpeg", "img/dishes/pancake.jpeg", "img/dishes/hot-dog.jpeg", "img/dishes/cookies.jpeg", "img/dishes/donuts.jpeg", "img/dishes/beer.jpeg", "img/dishes/coca-cola.jpeg", "img/dishes/acqua.jpg", "img/dishes/fanta.jpg"];
+        $names9 = ["Poke Classic", "Filetto di Salmone", "Egg-Salad", "Caesar-Salad", "Protein Porridge", "Avocado-Toast", "Poke-Vegetarian", "Coca-Cola", "Acqua", "Fanta"];
+        $images9 = ["img/dishes/poke.jpeg", "img/dishes/salmone.jpeg", "img/dishes/egg-salad.jpeg", "img/dishes/caesar-salad.jpeg", "img/dishes/porridge.jpeg", "img/dishes/avocado-toast.jpeg", "img/dishes/poke2.jpeg", "img/dishes/coca-cola.jpeg", "img/dishes/acqua.jpg", "img/dishes/fanta.jpg"];
         $ingred9 = [
-            "Hamburger, insalata, pomodoro, bacon, formaggio",
-            "Porzione di patatine fritte",
-            "Pancakes con nutella e fragole",
-            "Hot-Dog con mayonese / ketchup / senape",
-            "Cookies con gocce di cioccolato",
-            "Donuts vari gusti",
-            "Birra",
+            "Riso, salmone, pomodori, funghi, avocado ",
+            "Filetto di salmone con verdure di stagione",
+            "Insalata con uova e verdure di stagione",
+            "Insalata greca con filetti di pollo grigliato e verdure di stagione",
+            "Porridge proteico con frutta di stagione",
+            "Avocado toast con salmone affumicato",
+            "Poke vegetariano con tofu, zucchine, riso, carote, fagioli ",
             "Coca-Cola",
             "Acqua",
             "Fanta",
