@@ -198,6 +198,153 @@ class DishSeeder extends Seeder
 
 
 
+        /* Piatti ristorante 7 Mediterraneo, Italiano */
+        $names7 = ["Pasta con pesto di pistacchi", "Tagliatelle al ragù bolognese", "Pasta con panna e tartufo", "Orata sotto sale", "Tagliere di salumi", "Vino rosso della casa", "Birra", "Coca-Cola", "Acqua", "Fanta"];
+        $images7 = ["img/dishes/pasta-pesto-pistacchi.jpeg", "img/dishes/ragu-bolognese.jpeg", "img/dishes/pasta-panna.jpeg", "img/dishes/pesce-sotto-sale.jpeg", "img/dishes/tagliere-salumi.jpeg", "img/dishes/wine-red.jpeg", "img/dishes/beer.jpeg", "img/dishes/coca-cola.jpeg", "img/dishes/acqua.jpg", "img/dishes/fanta.jpg"];
+        $ingred7 = [
+            "Pasta con pesto di pistacchi",
+            "Tagliatelle al ragù bolognese",
+            "Spaghetti con panna e tartufo",
+            "Orata sotto sale, verdure di stagione",
+            "Tagliere di salumi e formaggi",
+            "Nachos, salsiccia, bacon, jalapeno, cheddar",
+            "Vino rosso della casa",
+            "Coca-Cola",
+            "Acqua",
+            "Fanta",
+        ];
+
+        for ($i=0; $i < 10; $i++) {
+
+            $newDish = new Dish;
+            $newDish->name = $names7[$i];
+            $newDish->img = $images7[$i];
+            $newDish->description = $ingred7[$i];
+            $newDish->price = number_format(rand(100, 1000) / 100, 2);
+            $newDish->discount = rand(0, 1);
+            $newDish->rating = rand(3, 5);
+            $newDish->menu_class = "";
+            $newDish->discount_id = "";
+            $newDish->restaurant_id = 7;
+
+            $dish = Dish::all();
+            $slugs = array();
+
+            foreach ($dish as $value) {
+                array_push($slugs, $value->slug);
+            }
+
+            do {
+                $numb = rand(100, 1000);
+                $slug = Str::slug($newDish->name) . $newDish->restaurant_id . $numb;
+            } while (in_array($slug, $slugs));
+
+            $newDish->slug = $slug;
+            $newDish->save();
+
+        }
+        /* //Piatti ristorante 7 Mediterraneo, Italiano //*/
+
+
+        /* Piatti ristorante 8 Americano, Hamburger */
+        $names8 = ["Hamburger Classic", "Patatine fritte", "Pancake", "Hot-Dog", "Cookies", "Donuts", "Birra", "Coca-Cola", "Acqua", "Fanta"];
+        $images8 = ["img/dishes/ham-burger.jpeg", "img/dishes/fries.jpeg", "img/dishes/pancake.jpeg", "img/dishes/hot-dog.jpeg", "img/dishes/cookies.jpeg", "img/dishes/donuts.jpeg", "img/dishes/beer.jpeg", "img/dishes/coca-cola.jpeg", "img/dishes/acqua.jpg", "img/dishes/fanta.jpg"];
+        $ingred8 = [
+            "Hamburger, insalata, pomodoro, bacon, formaggio",
+            "Porzione di patatine fritte",
+            "Pancakes con nutella e fragole",
+            "Hot-Dog con mayonese / ketchup / senape",
+            "Cookies con gocce di cioccolato",
+            "Donuts vari gusti",
+            "Birra",
+            "Coca-Cola",
+            "Acqua",
+            "Fanta",
+        ];
+
+        for ($i=0; $i < 10; $i++) {
+
+            $newDish = new Dish;
+            $newDish->name = $names8[$i];
+            $newDish->img = $images8[$i];
+            $newDish->description = $ingred8[$i];
+            $newDish->price = number_format(rand(100, 1000) / 100, 2);
+            $newDish->discount = rand(0, 1);
+            $newDish->rating = rand(3, 5);
+            $newDish->menu_class = "";
+            $newDish->discount_id = "";
+            $newDish->restaurant_id = 8;
+
+            $dish = Dish::all();
+            $slugs = array();
+
+            foreach ($dish as $value) {
+                array_push($slugs, $value->slug);
+            }
+
+            do {
+                $numb = rand(100, 1000);
+                $slug = Str::slug($newDish->name) . $newDish->restaurant_id . $numb;
+            } while (in_array($slug, $slugs));
+
+            $newDish->slug = $slug;
+            $newDish->save();
+
+        }
+        /* //Piatti ristorante 8 Americano, Hamburger //*/
+
+
+        /* Piatti ristorante 9 Poke, Healthy */
+        $names9 = ["Hamburger Classic", "Patatine fritte", "Pancake", "Hot-Dog", "Cookies", "Donuts", "Birra", "Coca-Cola", "Acqua", "Fanta"];
+        $images9 = ["img/dishes/ham-burger.jpeg", "img/dishes/fries.jpeg", "img/dishes/pancake.jpeg", "img/dishes/hot-dog.jpeg", "img/dishes/cookies.jpeg", "img/dishes/donuts.jpeg", "img/dishes/beer.jpeg", "img/dishes/coca-cola.jpeg", "img/dishes/acqua.jpg", "img/dishes/fanta.jpg"];
+        $ingred9 = [
+            "Hamburger, insalata, pomodoro, bacon, formaggio",
+            "Porzione di patatine fritte",
+            "Pancakes con nutella e fragole",
+            "Hot-Dog con mayonese / ketchup / senape",
+            "Cookies con gocce di cioccolato",
+            "Donuts vari gusti",
+            "Birra",
+            "Coca-Cola",
+            "Acqua",
+            "Fanta",
+        ];
+
+        for ($i=0; $i < 10; $i++) {
+
+            $newDish = new Dish;
+            $newDish->name = $names9[$i];
+            $newDish->img = $images9[$i];
+            $newDish->description = $ingred9[$i];
+            $newDish->price = number_format(rand(100, 1000) / 100, 2);
+            $newDish->discount = rand(0, 1);
+            $newDish->rating = rand(3, 5);
+            $newDish->menu_class = "";
+            $newDish->discount_id = "";
+            $newDish->restaurant_id = 9;
+
+            $dish = Dish::all();
+            $slugs = array();
+
+            foreach ($dish as $value) {
+                array_push($slugs, $value->slug);
+            }
+
+            do {
+                $numb = rand(100, 1000);
+                $slug = Str::slug($newDish->name) . $newDish->restaurant_id . $numb;
+            } while (in_array($slug, $slugs));
+
+            $newDish->slug = $slug;
+            $newDish->save();
+
+        }
+        /* //Piatti ristorante 9 Poke, Healthy //*/
+        
+        
+
+
+
 
         /* ciclo for */
 
