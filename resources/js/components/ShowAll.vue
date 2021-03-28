@@ -86,7 +86,6 @@
   }
 </script>
 
-// esempio di scss in template
 <style scoped lang="scss">
   .justify-content-center{
     .esempio{

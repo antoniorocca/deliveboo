@@ -103,9 +103,9 @@ export default {
 }
 @media all and (max-width: 1024px) {
     #restaurant_txt {
-        left: 20px !important;
-        height: 450px !important;
-        width: 250px !important;
+        left: 20px;
+        height: 450px;
+        width: 250px;
     }
 }
 </style>
