@@ -150,16 +150,16 @@ export default {
     left: 50%;
     background-color: #ffc244;
     outline: 0;
-    min-height: 380px;
-    width: 500px;
+    min-height: 500px;
+    width: 700px;
     padding-bottom: 15px;
     z-index: 10;
     border-radius: 10px;
     box-shadow: 0 0 10px #DDDDDD;
     border-color: transparent;
     img {
-        height: 200px;
-        width: 500px;
+        height: 250px;
+        width: 700px;
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
         object-fit: cover;
