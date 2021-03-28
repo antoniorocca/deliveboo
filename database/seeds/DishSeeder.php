@@ -129,6 +129,148 @@ class DishSeeder extends Seeder
             $newDish->save();
         }
 
+        /* Piatti ristorante 10 Mediterraneo, Italiano */
+        $names5 = ["Acqua", "Vino Rosso", "Salmone", "Bistecca", "Polpette", "Filetto con verdure", "Birra", "Coca-Cola", "Pasta al pesto", "Risotto allo zafferano"];
+        $images5 = ["img/dishes/acqua.jpg", "img/dishes/wine-red.jpeg", "img/dishes/salmone.jpeg", "img/dishes/bistecca.jpeg", "img/dishes/polpette.jpg", "img/dishes/carne_verdure.jpg", "img/dishes/beer.jpeg", "img/dishes/coca-cola.jpeg", "img/dishes/pesto_tradiz.jpg", "img/dishes/zafferano.jpg"];
+        $ingred5 = [
+            "Acqua",
+            "Vino rosso",
+            "Salmone con verdure",
+            "Bistecca di bovino, patatine",
+            "Polpette di bovino con insalata",
+            "Filetto alla griglia con verdure",
+            "Birra",
+            "Coca-Cola",
+            "Pasta al pesto, ricetta tradizionale",
+            "Risotto allo zafferano secondo la nostra ricetta",
+        ];
 
+        for ($i=0; $i < 10; $i++) {
+
+            $newDish = new Dish;
+            $newDish->name = $names5[$i];
+            $newDish->img = $images5[$i];
+            $newDish->description = $ingred5[$i];
+            $newDish->price = number_format(rand(100, 1000) / 100, 2);
+            $newDish->discount = rand(0, 1);
+            $newDish->rating = rand(3, 5);
+            $newDish->menu_class = "";
+            $newDish->discount_id = "";
+            $newDish->restaurant_id = 10;
+
+            $dish = Dish::all();
+            $slugs = array();
+
+            foreach ($dish as $value) {
+                array_push($slugs, $value->slug);
+            }
+
+            do {
+                $numb = rand(100, 1000);
+                $slug = Str::slug($newDish->name) . $newDish->restaurant_id . $numb;
+            } while (in_array($slug, $slugs));
+
+            $newDish->slug = $slug;
+            $newDish->save();
+
+        }
+        /* //Piatti ristorante 10 Mediterraneo, Italiano //*/
+        
+
+        /* Piatti ristorante 11 Indiano, Asiatico */
+        $names5 = ["Acqua", "Vino Rosso", "Budino di carote", "Curry", "Chotpoti", "Samosa", "Birra", "Coca-Cola", "Pakora", "Biryani"];
+        $images5 = ["img/dishes/acqua.jpg", "img/dishes/wine-red.jpeg", "img/dishes/budino_carote.jpg", "img/dishes/curry.jpg", "img/dishes/chotpoti.jpg", "img/dishes/samosa.jpg", "img/dishes/beer.jpeg", "img/dishes/coca-cola.jpeg", "img/dishes/pakora.jpg", "img/dishes/biryani.jpg"];
+        $ingred5 = [
+            "Acqua",
+            "Vino rosso",
+            "Budino di carote",
+            "Curry ricetta tradizionale",
+            "Patate, ceci, cipolle, peperoncini, uova sode grattugiate, tamarindo, foglie di coriandolo e cumino",
+            "Impasto a base di farina avvolge un ripieno di: patate, cipolle, lenticchie, formaggio, manzo o pollo, coriandolo, peperoncino, zenzero, garam masala.",
+            "Birra",
+            "Coca-Cola",
+            "Peperoncino verde, cumino, garam masala, chiodi di garofano, cipolle, funghi, fagiolini, spinaci, zucchine, peperoni, melanzane, cavolfiori.",
+            "Riso basmati bollito a cui si aggiungono molte spezie e vari ingredienti cotti separatamente: carne, pesce, verdure.",
+        ];
+
+        for ($i=0; $i < 10; $i++) {
+
+            $newDish = new Dish;
+            $newDish->name = $names5[$i];
+            $newDish->img = $images5[$i];
+            $newDish->description = $ingred5[$i];
+            $newDish->price = number_format(rand(100, 1000) / 100, 2);
+            $newDish->discount = rand(0, 1);
+            $newDish->rating = rand(3, 5);
+            $newDish->menu_class = "";
+            $newDish->discount_id = "";
+            $newDish->restaurant_id = 11;
+
+            $dish = Dish::all();
+            $slugs = array();
+
+            foreach ($dish as $value) {
+                array_push($slugs, $value->slug);
+            }
+
+            do {
+                $numb = rand(100, 1000);
+                $slug = Str::slug($newDish->name) . $newDish->restaurant_id . $numb;
+            } while (in_array($slug, $slugs));
+
+            $newDish->slug = $slug;
+            $newDish->save();
+
+        }
+        /* //Piatti ristorante 11 Indiano, Asiatico //*/
+
+
+        
+        /* Piatti ristorante 12 Thailandese, Asiatico */
+        $names5 = ["Acqua", "Vino Rosso", "Pad Thai", "Khao Pad", "Yam Nua", "Laap", "Birra", "Coca-Cola", "Som Tam", "Khao Soi"];
+        $images5 = ["img/dishes/acqua.jpg", "img/dishes/wine-red.jpeg", "img/dishes/pad_thai.jpg", "img/dishes/khao_pad.jpg", "img/dishes/yam_nua.jpg", "img/dishes/laap.jpg", "img/dishes/beer.jpeg", "img/dishes/coca-cola.jpeg", "img/dishes/som_tam.jpg", "img/dishes/khao_soi.jpg"];
+        $ingred5 = [
+            "Acqua",
+            "Vino rosso",
+            "Cucinato con uova e tofu, insaporito con polpa di tamarindo, salsa di pesce, gamberi, aglio, peperoncino e zucchero di palma.",
+            "Riso Jasmine accompagnato da carne, pollo, gamberetti e granchio, uovo, cipolla, aglio ed occasionalmente pomodoro.",
+            "Insalata servita con manzo grigliato tagliato a fette e servito con lemon grass, verdure grigliate e cipolle croccanti.",
+            "Insalata con carne macinata, cucinata con pollo, manzo, anatra, pesce, maiale o funghi.",
+            "Birra",
+            "Coca-Cola",
+            "Insalata piccante di papaya, composta da papaya sminuzzata, pasta di gamberetti, gamberi, aglio, chili e melanzane crude.",
+            "Zuppa di noodles servita con maiale, pomodori, fagioli di soia fermentati, germogli di fagioli e scalogno.",
+        ];
+
+        for ($i=0; $i < 10; $i++) {
+
+            $newDish = new Dish;
+            $newDish->name = $names5[$i];
+            $newDish->img = $images5[$i];
+            $newDish->description = $ingred5[$i];
+            $newDish->price = number_format(rand(100, 1000) / 100, 2);
+            $newDish->discount = rand(0, 1);
+            $newDish->rating = rand(3, 5);
+            $newDish->menu_class = "";
+            $newDish->discount_id = "";
+            $newDish->restaurant_id = 12;
+
+            $dish = Dish::all();
+            $slugs = array();
+
+            foreach ($dish as $value) {
+                array_push($slugs, $value->slug);
+            }
+
+            do {
+                $numb = rand(100, 1000);
+                $slug = Str::slug($newDish->name) . $newDish->restaurant_id . $numb;
+            } while (in_array($slug, $slugs));
+
+            $newDish->slug = $slug;
+            $newDish->save();
+
+        }
+        /* //Piatti ristorante 12 Thailandese, Asiatico //*/
     }
 }
