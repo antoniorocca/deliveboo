@@ -145,9 +145,9 @@ export default {
 }
 #dish_info_pop_up{
     position: fixed;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    top: 55%;
     left: 50%;
+    transform: translate(-50%, -50%);
     background-color: #ffc244;
     outline: 0;
     min-height: 500px;
@@ -196,6 +196,26 @@ export default {
         border-color: transparent;
         cursor: pointer;
         outline: 0;
+    }
+}
+@media all and (max-width: 1024px) {
+    #dish_info_pop_up {
+        width: 600px;
+        min-height: 3250px;
+        img {
+            width: 600px;
+            height: 190px;
+        }
+    }
+}
+@media all and (max-width: 720px) {
+    #dish_info_pop_up {
+        width: 460px;
+        min-height: 300px;
+        img {
+            width: 460px;
+            height: 160px;
+        }
     }
 }
 </style>
