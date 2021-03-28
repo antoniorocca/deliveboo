@@ -50,10 +50,10 @@ class DishSeeder extends Seeder
 
         /* Piatti ristorante 1 Pasta, Healthy */
 
-        $names1 = ["", "", "", "", "", "", "", "", "", ""];
-        $images1 = ["", "", "", "", "", "", "", "", "", ""];
+        $names1 = ["Acqua", "", "", "", "", "", "", "", "", ""];
+        $images1 = ["img/dishes/acqua.jpg", "img/dishes/", "img/dishes/", "img/dishes/", "img/dishes/", "img/dishes/", "img/dishes/", "img/dishes/", "img/dishes/", "img/dishes/"];
         $ingred1 = [
-            "",
+            "Acqua",
             "",
             "",
             "",
@@ -73,7 +73,7 @@ class DishSeeder extends Seeder
             $newDish->description = $ingred1[$i];
             $newDish->price = number_format(rand(100, 1000) / 100, 2);
             $newDish->discount = rand(0, 1);
-            $newDish->rating = rand(1, 5);
+            $newDish->rating = rand(3, 5);
             $newDish->menu_class = "";
             $newDish->discount_id = "";
             $newDish->restaurant_id = 1;
@@ -94,7 +94,7 @@ class DishSeeder extends Seeder
             $newDish->save();
 
         }
-        
+
         /* //Piatti ristorante 1 Pasta, Healthy //*/
 
 
@@ -108,7 +108,7 @@ class DishSeeder extends Seeder
             $newDish->description = $faker->sentence();
             $newDish->price = number_format(rand(100, 1000) / 100, 2);
             $newDish->discount = rand(0,1);
-            $newDish->rating = rand(1,5);
+            $newDish->rating = rand(3,5);
             $newDish->menu_class = "";
             $newDish->discount_id = "";
             $newDish->restaurant_id =rand(1,31);
