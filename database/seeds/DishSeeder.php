@@ -196,6 +196,55 @@ class DishSeeder extends Seeder
         /* //Piatti ristorante 3 Giapponese, Cinese, Asiatico //*/
 
 
+        /* Piatti ristorante 4 Dolci e Dessert, Gelato */
+
+        $names4 = ["Tiramisù", "Muffin al cioccolato", "Torta panna e nutella", "Mousse al caffè", "Acqua", "Coca cola", "Birra artigianale", "Gelato al melone", "Gelato al cioccolato", "Gelato al pistacchio"];
+        $images4 = ["img/dishes/tiramisuf.jpg", "img/dishes/muffinf.jpg", "img/dishes/nutf.jpg", "img/dishes/mousecaf.jpg", "img/dishes/acqua.jpg", "img/dishes/coca.jpg", "img/dishes/birraf.jpg", "img/dishes/melonef.jpg", "img/dishes/ciocf.jpg", "img/dishes/pistacchiof.jpg"];
+        $ingred4 = [
+            "Savoiardi, mascarpone, uova, zucchero, caffè",
+            "Cacao, farina, zucchero, burro, cioccolato, uova, latte, lievito",
+            "Farina, zucchero, panna, nutella, cioccolato, uova, latte",
+            "Uova, zucchero, panna, caffè, vaniglia",
+            "Acqua",
+            "Acqua, Anidride carbonica, Zucchero, Aromi naturali, Caffeina",
+            "Malto d'orzo, luppolo, lievito, acqua",
+            "Melone, panna, latte, zucchero, uova",
+            "Cacao, panna, latte, zucchero, uova",
+            "Crema al pistacchio, panna, latte, zucchero, uova",
+        ];
+
+        for ($i = 0; $i < 10; $i++) {
+
+            $newDish = new Dish;
+            $newDish->name = $names4[$i];
+            $newDish->img = $images4[$i];
+            $newDish->description = $ingred4[$i];
+            $newDish->price = number_format(rand(100, 1000) / 100, 2);
+            $newDish->discount = rand(0, 1);
+            $newDish->rating = rand(3, 5);
+            $newDish->menu_class = "";
+            $newDish->discount_id = "";
+            $newDish->restaurant_id = 4;
+
+            $dish = Dish::all();
+            $slugs = array();
+
+            foreach ($dish as $value) {
+                array_push($slugs, $value->slug);
+            }
+
+            do {
+                $numb = rand(100, 1000);
+                $slug = Str::slug($newDish->name) . $newDish->restaurant_id . $numb;
+            } while (in_array($slug, $slugs));
+
+            $newDish->slug = $slug;
+            $newDish->save();
+        }
+
+        /* //Piatti ristorante 3 Giapponese, Cinese, Asiatico //*/
+
+
 
         /* ciclo for */
 
