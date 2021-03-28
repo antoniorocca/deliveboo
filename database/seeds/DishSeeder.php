@@ -50,19 +50,19 @@ class DishSeeder extends Seeder
 
         /* Piatti ristorante 1 Pasta, Healthy */
 
-        $names1 = ["Acqua", "", "", "", "", "", "", "", "", ""];
-        $images1 = ["img/dishes/acqua.jpg", "img/dishes/", "img/dishes/", "img/dishes/", "img/dishes/", "img/dishes/", "img/dishes/", "img/dishes/", "img/dishes/", "img/dishes/"];
+        $names1 = ["Spaghetti allo scoglio", "Pasta alla carbonara", "Salmon Salad", "Chicken Salad", "Acqua", "Coca cola", "Birra artigianale", "Pennete panna e salmone", "Taco Salad", "Pasta Salad"];
+        $images1 = ["img/dishes/spaghetti_scoglio.jpg", "img/dishes/carbf.jpg", "img/dishes/orange_salad.jpg", "img/dishes/chicken_salad.jpg", "img/dishes/acqua.jpg", "img/dishes/coca.jpg", "img/dishes/birraf.jpg", "img/dishes/panna_salmonef.jpg", "img/dishes/taco_saladf.jpg", "img/dishes/healthy_pasta_saladf.jpg"];
         $ingred1 = [
+            "Spaghetti, gamberi, cozze, arsele, pomodoro",
+            "Spaghetti, guanciale, uova, pecorino, sale, pepe",
+            "Salmone marinato, Menta, Avocado, Mango, Edamame, Germogli di soia",
+            "Pollo, pomodori, mais, mozzarella",
             "Acqua",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
+            "Acqua, Anidride carbonica, Zucchero, Aromi naturali, Caffeina",
+            "Malto d'orzo, luppolo, lievito, acqua",
+            "Pennete, panna, salmone, erba cipollina",
+            "Carne lessa, pomodori ciliegini, lattuga romana, avocado",
+            "Fusilli, pomodori, peperoni rossi, pomodori, basilico, olio extra vergine d'oliva",
         ];
 
         for ($i=0; $i < 10; $i++) {
@@ -96,6 +96,104 @@ class DishSeeder extends Seeder
         }
 
         /* //Piatti ristorante 1 Pasta, Healthy //*/
+
+
+        /* Piatti ristorante 2 Pizza, Ristorante */
+
+        $names2 = ["Margherita", "Prosciutto", "Funghi", "Wurstel e patatine", "Acqua", "Coca cola", "Birra artigianale", "Bistecca alla fiorentina", "Pennete panna e salmone", "Fritto misto"];
+        $images2 = ["img/dishes/margheritaf.jpg", "img/dishes/prosciuttof.jpg", "img/dishes/pizza_funghif.jpg", "img/dishes/wurstel_e_patatinef.jpg", "img/dishes/acqua.jpg", "img/dishes/coca.jpg", "img/dishes/birraf.jpg", "img/dishes/bisteccaf.jpg", "img/dishes/panna_salmonef.jpg", "img/dishes/fritto_mistof.jpg"];
+        $ingred2 = [
+            "Pomodoro, mozzarella, basilico",
+            "Pomodoro, mozzarella, prosciutto",
+            "Pomodoro, mozzarella, funghi",
+            "Pomodoro, mozzarella, wurstel, patatine",
+            "Acqua",
+            "Acqua, Anidride carbonica, Zucchero, Aromi naturali, Caffeina",
+            "Malto d'orzo, luppolo, lievito, acqua",
+            "Carne bovina, peppe",
+            "Pennete, panna, salmone, erba cipollina",
+            "Gamberetti, triglie, alici, calamari, semola, sale",
+        ];
+
+        for ($i = 0; $i < 10; $i++) {
+
+            $newDish = new Dish;
+            $newDish->name = $names2[$i];
+            $newDish->img = $images2[$i];
+            $newDish->description = $ingred2[$i];
+            $newDish->price = number_format(rand(100, 1000) / 100, 2);
+            $newDish->discount = rand(0, 1);
+            $newDish->rating = rand(3, 5);
+            $newDish->menu_class = "";
+            $newDish->discount_id = "";
+            $newDish->restaurant_id = 2;
+
+            $dish = Dish::all();
+            $slugs = array();
+
+            foreach ($dish as $value) {
+                array_push($slugs, $value->slug);
+            }
+
+            do {
+                $numb = rand(100, 1000);
+                $slug = Str::slug($newDish->name) . $newDish->restaurant_id . $numb;
+            } while (in_array($slug, $slugs));
+
+            $newDish->slug = $slug;
+            $newDish->save();
+        }
+
+        /* //Piatti ristorante 2 Pizza, Ristorante //*/
+
+
+        /* Piatti ristorante 3 Giapponese, Cinese, Asiatico */
+
+        $names3 = ["Nighiri", "Uramaki", "Tempura di gamberi", "Involtini primavera", "Acqua", "Coca cola", "Birra artigianale", "Ravioli cinesi", "Ramen", "Onigiri"];
+        $images3 = ["img/dishes/nighirif.jpg", "img/dishes/uramakif.jpg", "img/dishes/tempuraf.jpg", "img/dishes/involtini_primaveraf.jpg", "img/dishes/acqua.jpg", "img/dishes/coca.jpg", "img/dishes/birraf.jpg", "img/dishes/ravioli_cinesif.jpg", "img/dishes/ramenf.jpg", "img/dishes/onigirif.jpg"];
+        $ingred3 = [
+            "Riso nishiki, salmone, tonno",
+            "Riso nishiki, alga nori, avocado, polpa di granchio",
+            "Gamberi, farina di riso, farina",
+            "Sfoglie per involtini, cavolo cappuccio, carote",
+            "Acqua",
+            "Acqua, Anidride carbonica, Zucchero, Aromi naturali, Caffeina",
+            "Malto d'orzo, luppolo, lievito, acqua",
+            "Maiale, cavolo, cipolla, farina, vino di riso",
+            "Noodles, lonza di maiale, uova, cipollotto, salsa di soia, sake, naruto, aglio",
+            "Riso, salmone, tonno, olio",
+        ];
+
+        for ($i = 0; $i < 10; $i++) {
+
+            $newDish = new Dish;
+            $newDish->name = $names3[$i];
+            $newDish->img = $images3[$i];
+            $newDish->description = $ingred3[$i];
+            $newDish->price = number_format(rand(100, 1000) / 100, 2);
+            $newDish->discount = rand(0, 1);
+            $newDish->rating = rand(3, 5);
+            $newDish->menu_class = "";
+            $newDish->discount_id = "";
+            $newDish->restaurant_id = 3;
+
+            $dish = Dish::all();
+            $slugs = array();
+
+            foreach ($dish as $value) {
+                array_push($slugs, $value->slug);
+            }
+
+            do {
+                $numb = rand(100, 1000);
+                $slug = Str::slug($newDish->name) . $newDish->restaurant_id . $numb;
+            } while (in_array($slug, $slugs));
+
+            $newDish->slug = $slug;
+            $newDish->save();
+        }
+
+        /* //Piatti ristorante 3 Giapponese, Cinese, Asiatico //*/
 
 
 
