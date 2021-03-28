@@ -14,7 +14,7 @@
         <div id="main_restaurant">
             <div class=" first_title">
                 <h2>Ristorante selezionato</h2>
-                <button @click="toggle"> torna ai ristoranti</button>
+                <button id="back" @click="toggle"> torna ai ristoranti</button>
             </div>
         </div>
 
@@ -92,6 +92,13 @@ export default {
                 margin-left: 10px;
             }
         }
+    }
+    #back{
+        background-color: #ffc244;
+        color: black;
+        padding: 5px;
+        border-radius: 10px;
+        border: 1px solid transparent;
     }
 }
 @media all and (max-width: 1024px) {

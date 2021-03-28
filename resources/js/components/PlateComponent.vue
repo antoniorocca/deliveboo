@@ -127,7 +127,6 @@ export default {
             display: flex;
             place-content: center;
             place-items: center;
-            border: 1px solid #00a082;
         }
         .show_plate_info{
             position: absolute;
@@ -183,7 +182,6 @@ export default {
         display: flex;
         place-content: center;
         place-items: center;
-        border: 1px solid #00a082;
     }
     .show_plate_info{
         position: absolute;
