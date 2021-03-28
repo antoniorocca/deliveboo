@@ -17,7 +17,7 @@
 
 
 <transition name="main_box">
-  <div id="main_container_box"class="" style="border: 5px solid green" v-if="this.$store.state.showMain">
+  <div id="main_container_box"class="" style="border: 5px solid green; display:block;" v-if="this.$store.state.showMain">
     <transition name="category_group">
       <div class="main_container_row"style="border: 5px solid purple" v-if="this.$store.state.showSelectRestaurant">
         <div class="categories"  >
