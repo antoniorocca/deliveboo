@@ -217,9 +217,60 @@ class RestaurantSeeder extends Seeder
         $newRestaurant->tags()->attach(rand(1, 4));
 
 
+        /* ristorante 10 Mediterraneo, Italiano */
+        $newRestaurant = new Restaurant;
+        $newRestaurant->user_id = 10;
+        $newRestaurant->name = "Ristorante Bella Vista";
+        $newRestaurant->description = "La cucina del Bella Vista coniuga perfettamente tradizione e voglia di nuovo, sapori dal passato con la ricerca dell’innovazione.";
+        $newRestaurant->phone_number = $faker->phoneNumber();
+        $newRestaurant->location = "Como";
+        $newRestaurant->opening_time = rand(15, 18);
+        $newRestaurant->closure_time = rand(22, 24);
+        $newRestaurant->price_shipping = rand(100, 300) / 100;
+        $newRestaurant->img = "img/restaurant/bella_vista.jpg";
+        $newRestaurant->save();
+        $newRestaurant->categories()->attach(17);
+        $newRestaurant->categories()->attach(15);
+        $newRestaurant->tags()->attach(rand(1, 4));
+
+
+        /* ristorante 11 Indiano, Asiatico */
+        $newRestaurant = new Restaurant;
+        $newRestaurant->user_id = 11;
+        $newRestaurant->name = "Just India";
+        $newRestaurant->description = "Il nostro vastissimo menu è pronto a soddisfare tutte le esigenze, passando dai piatti vegetariani fino all'assaggio di molte delle nostre portate, per i clienti più indecisi.";
+        $newRestaurant->phone_number = $faker->phoneNumber();
+        $newRestaurant->location = "Milano";
+        $newRestaurant->opening_time = rand(15, 18);
+        $newRestaurant->closure_time = rand(22, 24);
+        $newRestaurant->price_shipping = rand(100, 300) / 100;
+        $newRestaurant->img = "img/restaurant/indiano.jpg";
+        $newRestaurant->save();
+        $newRestaurant->categories()->attach(13);
+        $newRestaurant->categories()->attach(3);
+        $newRestaurant->tags()->attach(rand(1, 4));
+
+
+        /* ristorante 12 Thailandese, Asiatico */
+        $newRestaurant = new Restaurant;
+        $newRestaurant->user_id = 12;
+        $newRestaurant->name = "Baan Thai";
+        $newRestaurant->description = "Farsi prendere dalla natura circostante e sentirsi parte di essa pur avendo l'idea di non essere mai andati via da Casa";
+        $newRestaurant->phone_number = $faker->phoneNumber();
+        $newRestaurant->location = "Trento";
+        $newRestaurant->opening_time = rand(15, 18);
+        $newRestaurant->closure_time = rand(22, 24);
+        $newRestaurant->price_shipping = rand(100, 300) / 100;
+        $newRestaurant->img = "img/restaurant/thailandese.jpg";
+        $newRestaurant->save();
+        $newRestaurant->categories()->attach(25);
+        $newRestaurant->categories()->attach(3);
+        $newRestaurant->tags()->attach(rand(1, 4));
+
+
         /* ciclo for */
         
-        for ($i=9; $i < 31; $i++) {
+        for ($i=12; $i < 31; $i++) {
             $newRestaurant = new Restaurant;
             $newRestaurant->user_id = ($i+1);
             $newRestaurant->name = 'restaurant'.($i+1);
