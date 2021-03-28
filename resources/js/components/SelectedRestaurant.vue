@@ -19,19 +19,6 @@
         </div>
 
         <plate-component></plate-component>
-
-        <!-- <div id="selected_restaurant_dishes" class="d-flex flex-wrap justify-content-center">
-            <div class="dish_card" v-for="dish in this.$store.state.selectedRestaurant2.dishes">
-                <img :src="dish.img" alt="">
-                <h4>{{ dish.name }}</h4>
-                <span class="prezzo">prezzo &euro; {{ dish.price.toFixed(2) }}</span><br>
-                <span class="rating"> rating {{ dish.rating }}</span>
-                <button class="d-flex justify-content-center align-items-center button is-success" @click="addToCart(dish)"><i class="fas fa-plus"></i></button>
-                <p>descrizione {{ dish.description }}</p>
-                <dd>sconto {{ dish.discount }}</dd>
-                <dd> classe menu {{ dish.menu_class }}</dd>
-            </div>
-        </div> -->
     </div>
 </template>
 
