@@ -59,4 +59,14 @@
 </script>
 
 <style scoped lang="scss">
+@media all and (max-width: 576px) {
+    #main-header{
+        height: 550px;
+    }
+}
+@media all and (max-width: 431px) {
+    #main-header{
+        height: 720px;
+    }
+}
 </style>
