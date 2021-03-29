@@ -8,9 +8,11 @@
             <div>
                 <img :src="dish.img" alt="">
                 <h4>{{ dish.name }}</h4>
-                <span class="prezzo">prezzo &euro; {{ dish.price.toFixed(2) }}</span><br>
-                <span class="rating"> rating {{ dish.rating }}</span>
-
+                <span class="prezzo"> &euro; {{ dish.price.toFixed(2) }}</span><br>
+                <span class="rating">
+                    <i v-for="star in dish.rating" class="fas fa-star"></i>
+                    <i v-for="starsEmpty in 5 - dish.rating" class="far fa-star"></i>
+                </span>
                 <div class="info">
                     <dd class="show_plate_info_logo" @click="ShowInfo(dish)"><i class="fas fa-info-circle"></i></dd>
                 </div>
@@ -102,18 +104,21 @@ export default {
             border-radius: 0.25rem;
             margin-top: 15px;
             font-weight: 700;
-            position: absolute;
-            left: 20px;
+            padding: 15px 10px 0;
+
+            
         }
         .prezzo {
-            position: absolute;
-            top: 170px;
-            left: 20px;
+            font-size: 16px;
+            font-weight: 500;
+            padding: 15px 10px 0;
+
         }
         .rating {
-            position: absolute;
-            top: 190px;
-            left: 20px;
+            padding: 15px 10px 0;
+            i{
+                color: #ffc244;
+            }
         }
         button {
             background-color: rgb(0, 160, 130);
