@@ -267,6 +267,7 @@ class RestaurantSeeder extends Seeder
         $newRestaurant->categories()->attach(3);
         $newRestaurant->tags()->attach(rand(1, 4));
 
+
         /* ciclo for */
         
         for ($i=12; $i < 31; $i++) {
