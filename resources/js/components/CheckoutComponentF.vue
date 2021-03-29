@@ -1,12 +1,12 @@
 <template>
   <div id="checkout_box">
     <div class="checkout_row">
-      <h1>Pagamento avvenuto</h1>
+      <h1>Pagamento non riuscito</h1>
       <a href="/">
         <button  name="button">Torna all Home</button>
       </a>
     </div>
-    <img src="/img/checkout.png" alt="">
+    <img src="/img/checkoutf.png" alt="">
   </div>
 
 </template>

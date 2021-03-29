@@ -33,6 +33,7 @@ Vue.component('edo-restaurants', require('./components/EdoRestaurants.vue').defa
 Vue.component('selected-restaurant', require('./components/SelectedRestaurant.vue').default);
 Vue.component('edo-payment', require('./components/PaymentComponent.vue').default);
 Vue.component('checkout', require('./components/CheckoutComponent.vue').default);
+Vue.component('checkoutf', require('./components/CheckoutComponentF.vue').default);
 
 
 const app = new Vue({

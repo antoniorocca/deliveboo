@@ -15,12 +15,11 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-
 </head>
 <body>
-    <h1>Pagamento non avvenuto</h1>
-    <a href="/">
-      <button  name="button">Torna all Home</button>
-    </a>
+<div id="app">
+  ciao
+  <checkoutf></checkoutf>
+</div>
 </body>
 </html></html>

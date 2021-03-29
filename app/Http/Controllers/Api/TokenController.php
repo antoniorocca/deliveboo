@@ -60,7 +60,7 @@ class TokenController extends Controller
                 }
               }
             }
-            dd($filters);
+
 
             $newOrder = new Order;
             $newOrder->restaurant_id = $dishes[0]->restaurant_id;
@@ -89,8 +89,8 @@ class TokenController extends Controller
         } else {
 
             //dd($result, 'fallimento');
-
-            return view('checkoutFailed');
+            return redirect()->route('checkoutf');
+            
         }
 
 
