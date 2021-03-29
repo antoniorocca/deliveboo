@@ -217,6 +217,8 @@ export default {
     left: 20px;
     width: 100%;
     z-index: 15;
+                transition: all 0.35s;
+
     img{
         height: 60px;
         
@@ -228,8 +230,14 @@ export default {
         border: 1px solid transparent;
         font-size: 18px;
         font-weight: 600;
-        &:hover{
+
+        &:hover img{
             cursor: pointer;
+            transform: scale(1.05);
+            border-radius: 50%;
+            border: 2.5px solid #008169;
+
+
         }
     }
 

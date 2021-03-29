@@ -13,7 +13,7 @@
 
         <div id="main_restaurant">
             <div class=" first_title">
-                <h2>Ristorante selezionato</h2>
+                <h2>Menù del ristorante: {{this.$store.state.selectedRestaurant2.name}}</h2>
             </div>
             
         </div>
