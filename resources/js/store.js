@@ -36,16 +36,6 @@ let store = {
     },
     mutations: {
 
-        visibilityFunction(state){
-            if (this.state.visibility == false) {
-                this.state.visibility = true;
-                // window.localStorage.setItem('v', visibility);
-            } else {
-                this.state.visibility = false;
-                // window.localStorage.setItem('v', visibility);
-            }
-            this.commit('saveView');
-        },
         saveView(state) {
             window.sessionStorage.setItem('visibility', JSON.stringify(state.visibility));
         },
@@ -131,7 +121,8 @@ let store = {
                   }
               });
           });
-          console.log(this.state.filteredRestaurant);
+          this.state.showLanding = false;
+          this.state.showMain = true;
         },
         search(state, search){
           this.state.filteredRestaurant = [];
