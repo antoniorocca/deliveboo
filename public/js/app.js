@@ -42405,7 +42405,7 @@ var render = function() {
                         }),
                         _vm._v(
                           "\r\n                        € " +
-                            _vm._s(restaurant.price_shipping) +
+                            _vm._s(restaurant.price_shipping.toFixed(2)) +
                             " \r\n                        "
                         ),
                         _c("img", { attrs: { src: "img/like.png", alt: "" } }),
