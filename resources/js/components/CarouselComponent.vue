@@ -8,23 +8,21 @@
         <div class=" first_title">
             <h2>I ristoranti consigliati</h2>
             <p>
-            Scopri i negozi più richiesti e ricevi alla tua porta ogni tuo desiderio
+            Scopri i ristoranti più richiesti e ricevi alla tua porta ogni tuo desiderio
             </p>
         </div>
 
         <!-- carousel -->
-        <hooper id="hooper" :settings="hooperSettings" >
-            <slide id="slide" v-for="restaurant in restaurants.slice(0, 20)" v-bind:key="restaurant.id" >
+        <hooper id="hooper" :settings="hooperSettings">
+            <slide id="slide" v-for="restaurant in restaurants.slice(2, 12)" v-bind:key="restaurant.id" >
                 <div class="card card_hover" @click="toggle">
                     <img :src="restaurant.img" alt="restaurant's image">
                     <h4> {{restaurant.name}} </h4>
                 <input class="option_restaurant" :value="restaurant.id" @click="showRestaurant">
-
                 </div>
             </slide>
-            <hooper-navigation slot="hooper-addons"></hooper-navigation>
-            <!-- <hooper-pagination slot="hooper-addons"></hooper-pagination>
-            <hooper-progress slot="hooper-addons"></hooper-progress> -->
+            <hooper-navigation slot="hooper-addons" ></hooper-navigation>
+            
         </hooper>
 
     </div>
@@ -35,8 +33,6 @@
     import { 
         Hooper,
         Slide,
-        // Progress as HooperProgress,
-        // Pagination as HooperPagination,
         Navigation as HooperNavigation,
     } from 'hooper';
     import 'hooper/dist/hooper.css';
@@ -45,8 +41,6 @@
         components: {
             Hooper,
             Slide,
-            // HooperProgress,
-            // HooperPagination,
             HooperNavigation
         },
         data(){
@@ -57,13 +51,43 @@
                 restaurantsAll: '',
                 letSelected: '',
                 hooperSettings: {
-                    itemsToShow: 3, 
-                    itemsToSlide:3,
+                    itemsToShow: 4, 
+                    itemsToSlide:2,
                     centerMode: false,
                     infiniteScroll: false,
                     mouseDrag: false,
                     transition: 500,
                     keysControl: true,
+                    trimWhiteSpace: true,
+                    breakpoints: {
+                        300: { 
+                        // smartphone
+                        itemsToShow: 1,
+                        touchDrag: true,
+                        trimWhiteSpace: true
+
+                        },
+                        920: { 
+                        // tablet
+                        itemsToShow: 2,
+                        touchDrag: true,
+                        trimWhiteSpace: true
+                        
+                        },
+                        992: { 
+                        // laptop
+                        itemsToShow: 2,
+                        touchDrag: true,
+                        trimWhiteSpace: true
+
+                        },
+                        1024: { 
+                        // desktop
+                        itemsToShow: 4,
+                    trimWhiteSpace: true
+
+                        }      
+                    }
                 }
             }
         },
@@ -99,7 +123,8 @@
 
 <style scoped lang="scss">
     #content{
-        margin: auto;
+        text-align: center;
+        margin: auto ;
         .first_title{
                 text-align: center;
             h2{
@@ -119,6 +144,8 @@
             margin: 50px;
             height: 100%;
             width: 100%;
+            transform: translateX(-50px);
+
             &:focus{
                     outline: none;
                 }
