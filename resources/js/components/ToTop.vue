@@ -23,10 +23,7 @@ export default {
         width: 60px;
         height: 35px;
         display: flex;
-        
         font-size: 35px;
-      
     }
 }
-
 </style>
