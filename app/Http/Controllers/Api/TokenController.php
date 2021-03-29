@@ -27,9 +27,9 @@ class TokenController extends Controller
             'address' => 'required | max:100',
             'email' => 'required | email | max:100',
         ]);
+        
         //dd($request);
         $to = $request->email;
-
 
         $dishes = json_decode(request('cart'));
 
@@ -73,9 +73,17 @@ class TokenController extends Controller
             $newOrder->order_date = Carbon::now();
             $newOrder->save();
 
-            Mail::to($to)->send(new SendNewMail($newOrder));
+            $datiUtente = [
+                'name' => $request->name,
+                'surname' => $request->surname,
+                'address' => $request->address,
+                'email' => $request->email,
+                'amount' => $total,
+            ];
 
-            //dd($result, 'successo');
+            Mail::to($to)->send(new SendNewMail($datiUtente));
+
+            //dd($result, $datiUtente, 'successo');
 
             return redirect()->route('checkout');
         // } else {
