@@ -21,8 +21,8 @@ let store = {
         // FUNZIONAMENTO NAVIGAZIONE
         showLanding:true,
         showMain:false,
-        showRestaurant:false,
         showSelectRestaurant:true,
+        showRestaurant:false,
         showCart:true,
         showHeader:true,
         /////////////////////////////////////////
@@ -121,14 +121,15 @@ let store = {
 
         filterRestaurant(state, category){
           this.state.filteredRestaurant = [];
-          this.state.categories.forEach((item, i) => {
-            if (item.name === category) {
-              item.restaurants.forEach((item, i) => {
-                this.state.filteredRestaurant.push(item);
-              });
-            }
+          this.state.restaurants.forEach((item, i) => {
+            console.log(item);
+            item.categories.forEach(element => {
+                console.log(element);
+                if (element.name === category) {
+                    this.state.filteredRestaurant.push(item);
+                }
+            });
           });
-          console.log(this.state.filteredRestaurant);
         },
         search(state, search){
           this.state.filteredRestaurant = [];
@@ -149,6 +150,16 @@ let store = {
         selectRestaurant(state, restaurant){
           this.state.selectedRestaurant2 = restaurant;
           console.log(this.state.selectedRestaurant2);
+        },
+        showCarouselRestaurant(state, restaurant){
+          console.log(restaurant);
+          this.state.selectedRestaurant2 = restaurant;
+          if (this.state.showLanding) {
+            this.state.showLanding = false;
+            this.state.showMain = true;
+            this.state.showSelectRestaurant = false;
+            this.state.showRestaurant = true;
+          }
         },
 /////////////////////////////////////////////////////////////////////////////
 

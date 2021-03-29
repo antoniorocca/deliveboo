@@ -1,9 +1,9 @@
 <template>
 <!-- v-if="this.$store.state.visibility" -->
 <div  >
-    
+
     <div id="content" class="container">
-    
+
         <!-- titolo section -->
         <div class=" first_title">
             <h2>I ristoranti consigliati</h2>
@@ -15,14 +15,13 @@
         <!-- carousel -->
         <hooper id="hooper" :settings="hooperSettings">
             <slide id="slide" v-for="restaurant in restaurants.slice(2, 12)" v-bind:key="restaurant.id" >
-                <div class="card card_hover" @click="toggle">
+                <div class="card card_hover" @click="showCarouselRestaurant(restaurant)">
                     <img :src="restaurant.img" alt="restaurant's image">
                     <h4> {{restaurant.name}} </h4>
-                <input class="option_restaurant" :value="restaurant.id" @click="showRestaurant">
                 </div>
             </slide>
             <hooper-navigation slot="hooper-addons" ></hooper-navigation>
-            
+
         </hooper>
 
     </div>
@@ -30,7 +29,7 @@
 </template>
 
 <script>
-    import { 
+    import {
         Hooper,
         Slide,
         Navigation as HooperNavigation,
@@ -51,7 +50,7 @@
                 restaurantsAll: '',
                 letSelected: '',
                 hooperSettings: {
-                    itemsToShow: 4, 
+                    itemsToShow: 4,
                     itemsToSlide:2,
                     centerMode: false,
                     infiniteScroll: false,
@@ -60,33 +59,33 @@
                     keysControl: true,
                     trimWhiteSpace: true,
                     breakpoints: {
-                        300: { 
+                        300: {
                         // smartphone
                         itemsToShow: 1,
                         touchDrag: true,
                         trimWhiteSpace: true
 
                         },
-                        920: { 
+                        920: {
                         // tablet
                         itemsToShow: 2,
                         touchDrag: true,
                         trimWhiteSpace: true
-                        
+
                         },
-                        992: { 
+                        992: {
                         // laptop
                         itemsToShow: 2,
                         touchDrag: true,
                         trimWhiteSpace: true
 
                         },
-                        1024: { 
+                        1024: {
                         // desktop
                         itemsToShow: 4,
                     trimWhiteSpace: true
 
-                        }      
+                        }
                     }
                 }
             }
@@ -106,6 +105,10 @@
                 this.restaurantMom = this.restaurantsAll[value.target.value - 1];
                 console.log(this.restaurantMom.id);
                 this.$store.commit('setSelectedRestaurant', this.restaurantMom);
+            },
+            showCarouselRestaurant(restaurant){
+              console.log('carousel');
+              this.$store.commit('showCarouselRestaurant',restaurant);
             },
         },
         mounted() {
@@ -185,7 +188,7 @@
             }
             }
         }
-       
+
     }
-    
+
 </style>

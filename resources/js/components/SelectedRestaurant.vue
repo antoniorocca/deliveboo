@@ -17,8 +17,11 @@
                 <button id="back" @click="toggle"> torna ai ristoranti</button>
             </div>
         </div>
-
+        ciao
+        {{this.$store.state.selectedRestaurant2.dishes}}
         <plate-component></plate-component>
+
+
     </div>
 </template>
 

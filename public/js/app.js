@@ -1988,7 +1988,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2056,6 +2055,10 @@ __webpack_require__.r(__webpack_exports__);
       this.restaurantMom = this.restaurantsAll[value.target.value - 1];
       console.log(this.restaurantMom.id);
       this.$store.commit('setSelectedRestaurant', this.restaurantMom);
+    },
+    showCarouselRestaurant: function showCarouselRestaurant(restaurant) {
+      console.log('carousel');
+      this.$store.commit('showCarouselRestaurant', restaurant);
     }
   },
   mounted: function mounted() {
@@ -3092,6 +3095,9 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
 //
 //
 //
@@ -41116,7 +41122,11 @@ var render = function() {
                     "div",
                     {
                       staticClass: "card card_hover",
-                      on: { click: _vm.toggle }
+                      on: {
+                        click: function($event) {
+                          return _vm.showCarouselRestaurant(restaurant)
+                        }
+                      }
                     },
                     [
                       _c("img", {
@@ -41126,13 +41136,7 @@ var render = function() {
                         }
                       }),
                       _vm._v(" "),
-                      _c("h4", [_vm._v(" " + _vm._s(restaurant.name) + " ")]),
-                      _vm._v(" "),
-                      _c("input", {
-                        staticClass: "option_restaurant",
-                        domProps: { value: restaurant.id },
-                        on: { click: _vm.showRestaurant }
-                      })
+                      _c("h4", [_vm._v(" " + _vm._s(restaurant.name) + " ")])
                     ]
                   )
                 ]
@@ -42554,7 +42558,11 @@ var render = function() {
           ])
         ])
       ]),
-      _vm._v(" "),
+      _vm._v(
+        "\n        ciao\n        " +
+          _vm._s(this.$store.state.selectedRestaurant2.dishes) +
+          "\n        "
+      ),
       _c("plate-component")
     ],
     1
@@ -57383,8 +57391,8 @@ var store = {
     // FUNZIONAMENTO NAVIGAZIONE
     showLanding: true,
     showMain: false,
-    showRestaurant: false,
     showSelectRestaurant: true,
+    showRestaurant: false,
     showCart: true,
     showHeader: true /////////////////////////////////////////
     // FUNZIONAMENTO SEARCH
@@ -57474,14 +57482,16 @@ var store = {
       var _this = this;
 
       this.state.filteredRestaurant = [];
-      this.state.categories.forEach(function (item, i) {
-        if (item.name === category) {
-          item.restaurants.forEach(function (item, i) {
+      this.state.restaurants.forEach(function (item, i) {
+        console.log(item);
+        item.categories.forEach(function (element) {
+          console.log(element);
+
+          if (element.name === category) {
             _this.state.filteredRestaurant.push(item);
-          });
-        }
+          }
+        });
       });
-      console.log(this.state.filteredRestaurant);
     },
     search: function search(state, _search) {
       var _this2 = this;
@@ -57502,6 +57512,17 @@ var store = {
     selectRestaurant: function selectRestaurant(state, restaurant) {
       this.state.selectedRestaurant2 = restaurant;
       console.log(this.state.selectedRestaurant2);
+    },
+    showCarouselRestaurant: function showCarouselRestaurant(state, restaurant) {
+      console.log(restaurant);
+      this.state.selectedRestaurant2 = restaurant;
+
+      if (this.state.showLanding) {
+        this.state.showLanding = false;
+        this.state.showMain = true;
+        this.state.showSelectRestaurant = false;
+        this.state.showRestaurant = true;
+      }
     },
     /////////////////////////////////////////////////////////////////////////////
     // FUNZIONAMENTO NAVIGAZIONE
