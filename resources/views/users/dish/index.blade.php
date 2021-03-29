@@ -1,5 +1,7 @@
 @extends('layouts.app')
 @section('content')
+@include('layouts.registered_nav')
+
 <div class="spacer">
   <img class="img_spacer" src="{{asset('storage/lightgreen_wave.png')}}" alt="">
 </div>
@@ -8,7 +10,7 @@
     <h1>Elenco pietanze</h1>
     <div class="content_row">
       <a id="glovo_btn" class="text-white" href="{{ route('user.dish.create') }}">
-            Crea Nuovo piatto
+        Crea Nuovo piatto
       </a>
       <table class="table">
         <thead>
