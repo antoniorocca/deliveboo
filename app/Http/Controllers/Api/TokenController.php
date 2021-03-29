@@ -44,7 +44,23 @@ class TokenController extends Controller
             'amount' => $total,
             'paymentMethodNonce' => $nonceFromTheClient,
         ]);
-        if ($result->success) {
+        // if ($result->success) {
+            $filters= [];
+            foreach ($dishes as $dish) {
+              if (!in_array(array($dish->restaurant_id), $filters)) {
+                array_push($filters,array($dish->restaurant_id));
+              }
+            }
+
+            foreach ($dishes as $dish) {
+              foreach ($filters as $key => $filter) {
+                if ($dish->restaurant_id == $filter[0]) {
+                  // code...
+                  array_push($filters[$key],$dish);
+                }
+              }
+            }
+            dd($filters);
 
             $newOrder = new Order;
             $newOrder->restaurant_id = $dishes[0]->restaurant_id;
@@ -62,15 +78,15 @@ class TokenController extends Controller
             //dd($result, 'successo');
 
             return redirect()->route('checkout');
-        } else {
+        // } else {
+        //
+        //     //dd($result, 'fallimento');
+        //
+        //     return view('checkoutFailed');
+        // }
+        //
 
-            //dd($result, 'fallimento');
 
-            return view('checkoutFailed');      
-        }
-
-        
-        
     }
 
 }
