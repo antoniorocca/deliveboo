@@ -1,5 +1,5 @@
 <template>
-    <div class="cart_box" v-if="!this.$store.state.visibility">
+    <div class="cart_box">
 
       <div class="resume_wrap" v-if="!this.$store.state.checkout">
         <span class="cart_count_span">
