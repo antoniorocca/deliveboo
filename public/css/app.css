@@ -10977,7 +10977,7 @@ header #nav,
   position: fixed;
   top: 0;
   background-color: #ffc244;
-  z-index: 100;
+  z-index: 1000;
   box-shadow: 0px 5px 5px #80808042;
 }
 
@@ -11079,6 +11079,19 @@ header #main-header #categories .category input,
 header #main-header #categories .category_hover,
 .header #main-header #categories .category_hover {
   transition: 0.3s all ease-in-out;
+}
+
+#btn_auth {
+  flex-flow: row-reverse;
+  z-index: 5;
+}
+
+#btn_auth a {
+  background-color: #CFFFF6;
+}
+
+#back_nav > div > a > img {
+  height: 55px;
 }
 
 @media all and (max-width: 592px) {

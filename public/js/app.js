@@ -2529,73 +2529,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  data: function data() {
-    return {
-      restaurantMom: '',
-      categories: '',
-      categoriesAll: '',
-      restaurantsAll: '',
-      letSelected: '',
-      search: ''
-    };
-  },
   methods: {
-    showSelectedRestaurant: function showSelectedRestaurant(restaurant) {
-      this.$store.commit('selectRestaurant', restaurant);
-      console.log('filter');
-    },
-    // selectRestaurant(value){
-    //     if (value.target.value !== 'all') {
-    //         let restSelect = this.categories[value.target.value - 1];
-    //         this.restaurants = restSelect.restaurants;
-    //         this.letSelected = value.target.value;
-    //         // console.log('if case');
-    //         // console.log( this.restaurants);
-    //         // console.log('restaurant all');
-    //         // console.log( this.restaurantsAll);
-    //     } else {
-    //         this.restaurants = this.restaurantsAll;
-    //         this.letSelected = "all";
-    //         // console.log('else case');
-    //         // console.log(this.restaurants);
-    //     }
-    // },
-    showRestaurant: function showRestaurant(value) {
-      console.log(value.target.value);
-      this.restaurantMom = this.restaurantsAll[value.target.value - 1];
-      console.log(this.restaurantMom.id);
-      this.$store.commit('setSelectedRestaurant', this.restaurantMom);
-    },
-    selectRestaurantOnClick: function selectRestaurantOnClick(value) {
-      console.log(value.target.value);
-      var v = this.categories[value.target.value - 1];
-      this.restaurants = v.restaurants;
-      this.letSelected = value.target.value;
-    },
-    toggle: function toggle() {
-      if (this.$store.state.visibility == false) {
-        this.$store.commit('visibilityFunction'); // console.log('false');
-      } else {
-        this.$store.commit('visibilityFunction'); // console.log('true');
-      }
-    },
-    typeSearchMain: function typeSearchMain() {
-      var _this = this;
-
-      console.log(this.search);
-
-      if (this.search == '') {
-        this.restaurants = this.restaurantsAll;
-      } else {
-        this.restaurants = this.restaurantsAll.filter(function (restaurant) {
-          return restaurant.name.toLowerCase().match(_this.search.toLowerCase());
-        });
-      }
-
-      this.search = '';
+    filterRestaurant: function filterRestaurant(category) {
+      this.$store.commit('filterRestaurant', category);
     }
   }
 });
@@ -41801,14 +41738,17 @@ var render = function() {
               "div",
               {
                 staticClass:
-                  "category category_hover mr-4 mt-5 d-flex justify-content-center"
+                  "category category_hover mr-4 mt-5 d-flex justify-content-center",
+                on: {
+                  click: function($event) {
+                    return _vm.filterRestaurant("Pizza")
+                  }
+                }
               },
               [
                 _c("img", { attrs: { src: "img/pizza_trancio.png", alt: "" } }),
                 _vm._v(" "),
-                _c("span", [
-                  _vm._v(_vm._s(this.$store.state.categories[20].name))
-                ])
+                _c("span", [_vm._v("Pizza")])
               ]
             ),
             _vm._v(" "),
@@ -41816,14 +41756,17 @@ var render = function() {
               "div",
               {
                 staticClass:
-                  "category category_hover mr-4 mt-5 d-flex justify-content-center"
+                  "category category_hover mr-4 mt-5 d-flex justify-content-center",
+                on: {
+                  click: function($event) {
+                    return _vm.filterRestaurant("Piadina")
+                  }
+                }
               },
               [
                 _c("img", { attrs: { src: "img/wrap.png", alt: "" } }),
                 _vm._v(" "),
-                _c("span", [
-                  _vm._v(_vm._s(this.$store.state.categories[19].name))
-                ])
+                _c("span", [_vm._v("Piadina")])
               ]
             ),
             _vm._v(" "),
@@ -41831,14 +41774,17 @@ var render = function() {
               "div",
               {
                 staticClass:
-                  "category category_hover mr-4 mt-5 d-flex justify-content-center"
+                  "category category_hover mr-4 mt-5 d-flex justify-content-center",
+                on: {
+                  click: function($event) {
+                    return _vm.filterRestaurant("Messicano")
+                  }
+                }
               },
               [
                 _c("img", { attrs: { src: "img/mexican.png", alt: "" } }),
                 _vm._v(" "),
-                _c("span", [
-                  _vm._v(_vm._s(this.$store.state.categories[17].name))
-                ])
+                _c("span", [_vm._v("Messicano")])
               ]
             ),
             _vm._v(" "),
@@ -41846,14 +41792,17 @@ var render = function() {
               "div",
               {
                 staticClass:
-                  "category category_hover mr-4 mt-5 d-flex justify-content-center"
+                  "category category_hover mr-4 mt-5 d-flex justify-content-center",
+                on: {
+                  click: function($event) {
+                    return _vm.filterRestaurant("Giapponese")
+                  }
+                }
               },
               [
                 _c("img", { attrs: { src: "img/ramen.png", alt: "" } }),
                 _vm._v(" "),
-                _c("span", [
-                  _vm._v(_vm._s(this.$store.state.categories[9].name))
-                ])
+                _c("span", [_vm._v("Giapponese")])
               ]
             ),
             _vm._v(" "),
@@ -41861,14 +41810,17 @@ var render = function() {
               "div",
               {
                 staticClass:
-                  "category category_hover mr-4 mt-5 d-flex justify-content-center"
+                  "category category_hover mr-4 mt-5 d-flex justify-content-center",
+                on: {
+                  click: function($event) {
+                    return _vm.filterRestaurant("Caffeteria")
+                  }
+                }
               },
               [
                 _c("img", { attrs: { src: "img/caffe.png", alt: "" } }),
                 _vm._v(" "),
-                _c("span", [
-                  _vm._v(_vm._s(this.$store.state.categories[4].name))
-                ])
+                _c("span", [_vm._v("Caffeteria")])
               ]
             ),
             _vm._v(" "),
@@ -41876,14 +41828,17 @@ var render = function() {
               "div",
               {
                 staticClass:
-                  "category category_hover mr-4 mt-5 d-flex justify-content-center"
+                  "category category_hover mr-4 mt-5 d-flex justify-content-center",
+                on: {
+                  click: function($event) {
+                    return _vm.filterRestaurant("Gelato")
+                  }
+                }
               },
               [
                 _c("img", { attrs: { src: "img/ice-cream.png", alt: "" } }),
                 _vm._v(" "),
-                _c("span", [
-                  _vm._v(_vm._s(this.$store.state.categories[8].name))
-                ])
+                _c("span", [_vm._v("Gelato")])
               ]
             ),
             _vm._v(" "),
@@ -41891,14 +41846,17 @@ var render = function() {
               "div",
               {
                 staticClass:
-                  "category category_hover mr-4 mt-5 d-flex justify-content-center"
+                  "category category_hover mr-4 mt-5 d-flex justify-content-center",
+                on: {
+                  click: function($event) {
+                    return _vm.filterRestaurant("Hamburger")
+                  }
+                }
               },
               [
                 _c("img", { attrs: { src: "img/hamburger.png", alt: "" } }),
                 _vm._v(" "),
-                _c("span", [
-                  _vm._v(_vm._s(this.$store.state.categories[10].name))
-                ])
+                _c("span", [_vm._v("Hamburger")])
               ]
             ),
             _vm._v(" "),
@@ -41906,14 +41864,17 @@ var render = function() {
               "div",
               {
                 staticClass:
-                  "category category_hover mr-4 mt-5 d-flex justify-content-center"
+                  "category category_hover mr-4 mt-5 d-flex justify-content-center",
+                on: {
+                  click: function($event) {
+                    return _vm.filterRestaurant("Insalate")
+                  }
+                }
               },
               [
                 _c("img", { attrs: { src: "img/salad.png", alt: "" } }),
                 _vm._v(" "),
-                _c("span", [
-                  _vm._v(_vm._s(this.$store.state.categories[13].name))
-                ])
+                _c("span", [_vm._v("Insalate")])
               ]
             )
           ]
@@ -57512,6 +57473,7 @@ var store = {
             _this.state.filteredRestaurant.push(item);
           }
         });
+<<<<<<< HEAD
       });
     },
     search: function search(state, _search) {
@@ -57522,6 +57484,8 @@ var store = {
         if (item.name.includes(_search)) {
           _this2.state.filteredRestaurant.push(item);
         }
+=======
+>>>>>>> branchStyleHeader
       });
       console.log(this.state.filteredRestaurant);
       this.state.showLanding = false;
