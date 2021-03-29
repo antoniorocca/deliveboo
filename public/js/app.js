@@ -57386,7 +57386,8 @@ var store = {
     showMain: false,
     showRestaurant: false,
     showSelectRestaurant: true,
-    showCart: true /////////////////////////////////////////
+    showCart: true,
+    showHeader: true /////////////////////////////////////////
     // FUNZIONAMENTO SEARCH
     /////////////////////////////////////////////////////
     /////////////////////////////////////////
@@ -57517,6 +57518,7 @@ var store = {
     },
     toggleSelectRestaurant: function toggleSelectRestaurant() {
       this.state.showSelectRestaurant = !this.state.showSelectRestaurant;
+      this.state.showHeader = !this.state.showHeader;
     },
     //////////////////////////////////////////////////////////////////////
     setRestaurants: function setRestaurants(state, category) {

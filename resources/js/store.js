@@ -24,6 +24,7 @@ let store = {
         showRestaurant:false,
         showSelectRestaurant:true,
         showCart:true,
+        showHeader:true,
         /////////////////////////////////////////
 
         // FUNZIONAMENTO SEARCH
@@ -165,6 +166,8 @@ let store = {
         },
         toggleSelectRestaurant(){
           this.state.showSelectRestaurant = !this.state.showSelectRestaurant;
+          this.state.showHeader = !this.state.showHeader;
+
         },
 //////////////////////////////////////////////////////////////////////
 
