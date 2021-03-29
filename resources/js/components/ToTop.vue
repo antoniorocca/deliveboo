@@ -26,6 +26,7 @@ export default {
         place-content: center;
         place-items: center;
         border-radius: 10px;
+        border: 1px solid transparent;
     }
 
 </style>
