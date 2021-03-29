@@ -7,10 +7,7 @@
         <div id="content" class="">
 
             <div class=" first_title">
-                <h2>Ristoranti consigliati</h2>
-                <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, voluptatibus?
-                </p>
+                <h2>I risultati della tua ricerca</h2>
             </div>
 
 
@@ -18,11 +15,19 @@
               <div class="restaurants">
                 <div class="card card_hover" v-for="restaurant in this.$store.state.filteredRestaurant" @click="showSelectedRestaurant(restaurant)">
                   <div class="restaurant_image">
+                      
                     <img :src="restaurant.img" alt="restaurant's image">
                   </div>
                   <h4>
-                    {{restaurant.name}}
+                        {{restaurant.name}}
                   </h4>
+                  
+                  <p v-if="restaurant.price_shipping > 0">
+                        <img src="img/scooter-delivery.png" alt="">
+                        &euro; {{ restaurant.price_shipping }} 
+                        <img src="img/like.png" alt="">
+                        {{ restaurant.quality }} %
+                  </p>
                   <input class="option_restaurant" :value="restaurant.id" @click="toggle">
                 </div>
               </div>
@@ -116,9 +121,6 @@
                 padding-top: 100px;
                 font-weight: 800;
             }
-            p{
-                color: grey;
-            }
         }
         .restaurants{
             display: flex;
@@ -145,6 +147,18 @@
                     margin-bottom: 10px;
                     font-weight: 700;
                     padding: 10px;
+                    height: 50px;
+                }
+                p{
+                    font-weight: 600;
+                    font-size: 16px;
+                    text-align: center;
+                    img{
+                        margin: 0 12px 0 15px;
+                        height: 30px;
+                        width: 30px;
+
+                    }
                 }
                 option{
                     height: 100%;

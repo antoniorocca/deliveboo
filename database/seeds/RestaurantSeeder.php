@@ -23,7 +23,8 @@ class RestaurantSeeder extends Seeder
         $newRestaurant->location = "Firenze";
         $newRestaurant->opening_time = rand(15, 18);
         $newRestaurant->closure_time = rand(22, 24);
-        $newRestaurant->price_shipping = rand(100, 300) / 100;
+        $newRestaurant->price_shipping = rand(1, 3);
+        $newRestaurant->quality = rand(70, 100);
         $newRestaurant->img = "img/restaurant/pasta.jpg";
         $newRestaurant->save();
         $newRestaurant->categories()->attach(19);
@@ -40,7 +41,8 @@ class RestaurantSeeder extends Seeder
         $newRestaurant->location = "Genova";
         $newRestaurant->opening_time = rand(15, 18);
         $newRestaurant->closure_time = rand(22, 24);
-        $newRestaurant->price_shipping = rand(100, 300) / 100;
+        $newRestaurant->price_shipping = rand(1, 3);
+        $newRestaurant->quality = rand(70, 100);
         $newRestaurant->img = "img/restaurant/pizza.jpg";
         $newRestaurant->save();
         $newRestaurant->categories()->attach(15);
@@ -57,7 +59,8 @@ class RestaurantSeeder extends Seeder
         $newRestaurant->location = "Venezia";
         $newRestaurant->opening_time = rand(15, 18);
         $newRestaurant->closure_time = rand(22, 24);
-        $newRestaurant->price_shipping = rand(100, 300) / 100;
+        $newRestaurant->price_shipping = rand(1, 3);
+        $newRestaurant->quality = rand(70, 100);
         $newRestaurant->img = "img/restaurant/sushiko.jpg";
         $newRestaurant->save();
         $newRestaurant->categories()->attach(6);
@@ -75,7 +78,8 @@ class RestaurantSeeder extends Seeder
         $newRestaurant->location = "Palermo";
         $newRestaurant->opening_time = rand(15, 18);
         $newRestaurant->closure_time = rand(22, 24);
-        $newRestaurant->price_shipping = rand(100, 300) / 100;
+        $newRestaurant->price_shipping = rand(1, 3);
+        $newRestaurant->quality = rand(70, 100);
         $newRestaurant->img = "img/restaurant/dessert_gelato.jpg";
         $newRestaurant->save();
         $newRestaurant->categories()->attach(8);
@@ -92,7 +96,8 @@ class RestaurantSeeder extends Seeder
         $newRestaurant->location = "Bologna";
         $newRestaurant->opening_time = rand(15, 18);
         $newRestaurant->closure_time = rand(22, 24);
-        $newRestaurant->price_shipping = rand(100, 300) / 100;
+        $newRestaurant->price_shipping = rand(1, 3);
+        $newRestaurant->quality = rand(70, 100);
         $newRestaurant->img = "img/restaurant/hamburger_vet.jpg";
         $newRestaurant->save();
         $newRestaurant->categories()->attach(11);
@@ -110,7 +115,8 @@ class RestaurantSeeder extends Seeder
         $newRestaurant->location = "Torino";
         $newRestaurant->opening_time = rand(15, 18);
         $newRestaurant->closure_time = rand(22, 24);
-        $newRestaurant->price_shipping = rand(100, 300) / 100;
+        $newRestaurant->price_shipping = rand(1, 3);
+        $newRestaurant->quality = rand(70, 100);
         $newRestaurant->img = "img/restaurant/mex.jpg";
         $newRestaurant->save();
         $newRestaurant->categories()->attach(18);
@@ -128,7 +134,8 @@ class RestaurantSeeder extends Seeder
         $newRestaurant->location = "Cagliari";
         $newRestaurant->opening_time = rand(15, 18);
         $newRestaurant->closure_time = rand(22, 24);
-        $newRestaurant->price_shipping = rand(100, 300) / 100;
+        $newRestaurant->price_shipping = rand(1, 3);
+        $newRestaurant->quality = rand(70, 100);
         $newRestaurant->img = "img/restaurant/mediterranea.jpg";
         $newRestaurant->save();
         $newRestaurant->categories()->attach(17);
@@ -145,7 +152,8 @@ class RestaurantSeeder extends Seeder
         $newRestaurant->location = "Roma";
         $newRestaurant->opening_time = rand(15, 18);
         $newRestaurant->closure_time = rand(22, 24);
-        $newRestaurant->price_shipping = rand(100, 300) / 100;
+        $newRestaurant->price_shipping = rand(1, 3);
+        $newRestaurant->quality = rand(70, 100);
         $newRestaurant->img = "img/restaurant/bbq_americano.jpg";
         $newRestaurant->save();
         $newRestaurant->categories()->attach(2);
@@ -162,7 +170,8 @@ class RestaurantSeeder extends Seeder
         $newRestaurant->location = "Milano";
         $newRestaurant->opening_time = rand(15, 18);
         $newRestaurant->closure_time = rand(22, 24);
-        $newRestaurant->price_shipping = rand(100, 300) / 100;
+        $newRestaurant->price_shipping = rand(1, 3);
+        $newRestaurant->quality = rand(70, 100);
         $newRestaurant->img = "img/restaurant/poke.jpg";
         $newRestaurant->save();
         $newRestaurant->categories()->attach(22);
@@ -180,7 +189,8 @@ class RestaurantSeeder extends Seeder
         $newRestaurant->location = "Como";
         $newRestaurant->opening_time = rand(15, 18);
         $newRestaurant->closure_time = rand(22, 24);
-        $newRestaurant->price_shipping = rand(100, 300) / 100;
+        $newRestaurant->price_shipping = rand(1, 3);
+        $newRestaurant->quality = rand(70, 100);
         $newRestaurant->img = "img/restaurant/bella_vista.jpg";
         $newRestaurant->save();
         $newRestaurant->categories()->attach(17);
@@ -197,7 +207,8 @@ class RestaurantSeeder extends Seeder
         $newRestaurant->location = "Milano";
         $newRestaurant->opening_time = rand(15, 18);
         $newRestaurant->closure_time = rand(22, 24);
-        $newRestaurant->price_shipping = rand(100, 300) / 100;
+        $newRestaurant->price_shipping = rand(1, 3);
+        $newRestaurant->quality = rand(70, 100);
         $newRestaurant->img = "img/restaurant/indiano.jpg";
         $newRestaurant->save();
         $newRestaurant->categories()->attach(13);
@@ -214,7 +225,8 @@ class RestaurantSeeder extends Seeder
         $newRestaurant->location = "Trento";
         $newRestaurant->opening_time = rand(15, 18);
         $newRestaurant->closure_time = rand(22, 24);
-        $newRestaurant->price_shipping = rand(100, 300) / 100;
+        $newRestaurant->price_shipping = rand(1, 3);
+        $newRestaurant->quality = rand(70, 100);
         $newRestaurant->img = "img/restaurant/thailandese.jpg";
         $newRestaurant->save();
         $newRestaurant->categories()->attach(25);

@@ -160,6 +160,9 @@
                     border-top-left-radius: 10px;
                     border-top-right-radius: 10px;
                 }
+                h4{
+                    height: 70px;
+                }
                 .card{
                     margin: 15px;
                     border-radius: 10px;
