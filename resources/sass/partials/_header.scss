@@ -2,7 +2,7 @@ header{
     height: 550px;
     position: relative;
     z-index: 10;
-}
+} 
 header, .header {
     background-color: $orange;
     width: 100%;
@@ -12,7 +12,7 @@ header, .header {
         position: fixed;
         top: 0;
         background-color: $orange;
-        z-index: 100;
+        z-index: 1000;
         box-shadow: 0px 5px 5px #80808042;
         #logo {
             width: 800px;

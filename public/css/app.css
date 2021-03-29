@@ -10977,7 +10977,7 @@ header #nav,
   position: fixed;
   top: 0;
   background-color: #ffc244;
-  z-index: 100;
+  z-index: 1000;
   box-shadow: 0px 5px 5px #80808042;
 }
 
