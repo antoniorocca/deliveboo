@@ -76,7 +76,7 @@
                 @if ($restaurant->img)
                 <dd>foto ristorante</dd>
                 <img src="{{asset('storage/' . $restaurant->img )}}" style="height:300px;" alt="">
-                <img src="{{$restaurant->img}}" style="height:300px;" alt="">
+                <img src="{{'/' . $restaurant->img}}" style="height:300px;" alt="">
                 @else
                 <p class="card-text text-danger">N/A</p>
                 @endif

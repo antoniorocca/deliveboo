@@ -28,7 +28,7 @@
     <h4>Immagine:</h4>
     <!-- per farla veloce -->
     <img src="{{ asset('storage/' . $restaurant->img )}}" alt="">
-    <img src="{{$restaurant->img}}" alt="">
+    <img src="{{'/' . $restaurant->img}}" alt="">
 
     <h4>Indirizzo:</h4>
     <div class="content_row">

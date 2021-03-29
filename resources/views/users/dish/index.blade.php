@@ -27,7 +27,7 @@
             <td>
               @if ($dish->img)
               <img src="{{asset('storage/' . $dish->img )}}" style="height:50px;" alt="">
-              <img src="{{$dish->img}}" style="height:50px;" alt="">
+              <img src="{{'/' . $dish->img}}" style="height:50px;" alt="">
               @else
               <p class="card-text text-danger">N/A</p>
               @endif

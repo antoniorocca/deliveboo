@@ -14,7 +14,7 @@
             <h4 class="text-info">img</h4>
             @if ($dish->img)
             <img src="{{asset('storage/' . $dish->img )}}" style="height:300px;" alt="">
-            <img src="{{$dish->img}}" style="height:300px;" alt="">
+            <img src="{{'/' . $dish->img}}" style="height:300px;" alt="">
             @else
             <p class="card-text text-danger">N/A</p>
             @endif
