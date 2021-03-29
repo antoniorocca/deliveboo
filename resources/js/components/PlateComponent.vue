@@ -23,7 +23,7 @@
         <h4>{{ this.plate.name }}</h4>
         <p>{{ this.plate.description }}</p>
         <!-- <button class="d-flex justify-content-center align-items-center button is-success" @click="addToCart(dish)"><i class="fas fa-plus"></i></button> -->
-        
+
         <div>
             <dd class="show_plate_info_logo">X</dd>
             <input class="show_plate_info" type="submit" @click="ShowInfo()">
@@ -54,6 +54,10 @@ export default {
                 console.log('false');
             }
         },
+        addToCart(item) {
+            this.$store.commit('addToCart', item);
+        },
+
     },
 }
 </script>

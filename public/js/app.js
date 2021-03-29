@@ -2910,6 +2910,9 @@ __webpack_require__.r(__webpack_exports__);
         this.plate = '';
         console.log('false');
       }
+    },
+    addToCart: function addToCart(item) {
+      this.$store.commit('addToCart', item);
     }
   }
 });
