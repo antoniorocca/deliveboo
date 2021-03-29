@@ -1,6 +1,6 @@
 <template>
     <div>
-        <input id="header_logo" type="text" placeholder="Cerca" v-model="search"  @keyup.enter="toggleLandingMain">
+        <input id="header_logo" type="text" placeholder="Cerca" v-model="search"  @keyup="searchAndToggle">
     </div>
 </template>
 
@@ -35,6 +35,9 @@ export default {
           this.toggleLanding();
           this.toggleMain();
         },
+        searchAndToggle(){
+          this.$store.commit('search',this.search);
+        }
     },
 }
 </script>

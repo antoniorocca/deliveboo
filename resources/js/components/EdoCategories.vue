@@ -28,9 +28,9 @@
 <script>
 export default {
   methods:{
-    addSelectedCategories(category){
-      this.$store.commit('setSelectedCategoties', category);
-    },
+    // addSelectedCategories(category){
+    //   this.$store.commit('setSelectedCategoties', category);
+    // },
     // funzionamento navigazione
     filterRestaurant(category){
 

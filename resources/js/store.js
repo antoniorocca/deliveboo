@@ -17,7 +17,6 @@ let store = {
         selectedRestaurant: [],
         selectedRestaurant2:'',
         visibility: true ? JSON.parse(visibility) : false,
-        searchBar:'',
 
         // FUNZIONAMENTO NAVIGAZIONE
         showLanding:true,
@@ -27,7 +26,10 @@ let store = {
         showCart:true,
         /////////////////////////////////////////
 
+        // FUNZIONAMENTO SEARCH
+        /////////////////////////////////////////////////////
 
+        /////////////////////////////////////////
 
 
     },
@@ -126,6 +128,19 @@ let store = {
             }
           });
           console.log(this.state.filteredRestaurant);
+        },
+        search(state, search){
+          this.state.filteredRestaurant = [];
+          this.state.restaurants.forEach((item, i) => {
+            if (item.name.includes(search)) {
+              this.state.filteredRestaurant.push(item);
+            }
+          });
+          console.log(this.state.filteredRestaurant);
+          this.state.showLanding = false;
+          this.state.showMain = true;
+
+
         },
         selectAllRestaurants(state){
           this.state.filteredRestaurant = this.state.restaurants;

@@ -2324,9 +2324,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
   methods: {
-    addSelectedCategories: function addSelectedCategories(category) {
-      this.$store.commit('setSelectedCategoties', category);
-    },
+    // addSelectedCategories(category){
+    //   this.$store.commit('setSelectedCategoties', category);
+    // },
     // funzionamento navigazione
     filterRestaurant: function filterRestaurant(category) {
       this.$store.commit('filterRestaurant', category);
@@ -3071,6 +3071,9 @@ __webpack_require__.r(__webpack_exports__);
     toggleLandingMain: function toggleLandingMain() {
       this.toggleLanding();
       this.toggleMain();
+    },
+    searchAndToggle: function searchAndToggle() {
+      this.$store.commit('search', this.search);
     }
   }
 });
@@ -42486,15 +42489,7 @@ var render = function() {
       attrs: { id: "header_logo", type: "text", placeholder: "Cerca" },
       domProps: { value: _vm.search },
       on: {
-        keyup: function($event) {
-          if (
-            !$event.type.indexOf("key") &&
-            _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
-          ) {
-            return null
-          }
-          return _vm.toggleLandingMain($event)
-        },
+        keyup: _vm.searchAndToggle,
         input: function($event) {
           if ($event.target.composing) {
             return
@@ -57386,13 +57381,15 @@ var store = {
     selectedRestaurant: [],
     selectedRestaurant2: '',
     visibility: true ? JSON.parse(visibility) : undefined,
-    searchBar: '',
     // FUNZIONAMENTO NAVIGAZIONE
     showLanding: true,
     showMain: false,
     showRestaurant: false,
     showSelectRestaurant: true,
     showCart: true /////////////////////////////////////////
+    // FUNZIONAMENTO SEARCH
+    /////////////////////////////////////////////////////
+    /////////////////////////////////////////
 
   },
   mutations: {
@@ -57485,6 +57482,19 @@ var store = {
         }
       });
       console.log(this.state.filteredRestaurant);
+    },
+    search: function search(state, _search) {
+      var _this2 = this;
+
+      this.state.filteredRestaurant = [];
+      this.state.restaurants.forEach(function (item, i) {
+        if (item.name.includes(_search)) {
+          _this2.state.filteredRestaurant.push(item);
+        }
+      });
+      console.log(this.state.filteredRestaurant);
+      this.state.showLanding = false;
+      this.state.showMain = true;
     },
     selectAllRestaurants: function selectAllRestaurants(state) {
       this.state.filteredRestaurant = this.state.restaurants;
