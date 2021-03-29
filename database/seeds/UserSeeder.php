@@ -24,7 +24,7 @@ class UserSeeder extends Seeder
         $newUser->category_id = rand(1, 57);
         $newUser->save();
         
-        for ($i=0; $i < 30 ; $i++) {
+        for ($i=0; $i < 11 ; $i++) {
             $newUser = new User;
             $newUser->name = "M'c ".$faker->name();
             $newUser->email = $faker->email();

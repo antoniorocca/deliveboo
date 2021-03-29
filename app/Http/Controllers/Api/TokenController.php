@@ -43,9 +43,6 @@ class TokenController extends Controller
         $result = $braintree->transaction()->sale([
             'amount' => $total,
             'paymentMethodNonce' => $nonceFromTheClient,
-            'options' => [
-            'submitForSettlement' => True
-            ]
         ]);
         if ($result->success) {
 

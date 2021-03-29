@@ -481,41 +481,10 @@ class DishSeeder extends Seeder
         /* //Piatti ristorante 9 Poke, Healthy //*/
 
 
-
-        /* ciclo for */
-
-        for ($i=0; $i < 310; $i++) {
-            $newDish = new Dish;
-            $newDish->name = $names[rand(0,7)];
-            $newDish->img = $images[rand(0,25)];
-            $newDish->description = $faker->sentence();
-            $newDish->price = number_format(rand(100, 1000) / 100, 2);
-            $newDish->discount = rand(0,1);
-            $newDish->rating = rand(3,5);
-            $newDish->menu_class = "";
-            $newDish->discount_id = "";
-            $newDish->restaurant_id =rand(1,31);
-
-            $dish = Dish::all();
-            $slugs = array();
-
-            foreach ($dish as $value) {
-                array_push($slugs, $value->slug);
-            }
-
-            do {
-                $numb = rand(100, 1000);
-                $slug = Str::slug($newDish->name) . $newDish->restaurant_id . $numb;
-            } while (in_array($slug, $slugs));
-
-            $newDish->slug = $slug;
-            $newDish->save();
-        }
-
         /* Piatti ristorante 10 Mediterraneo, Italiano */
-        $names5 = ["Acqua", "Vino Rosso", "Salmone", "Bistecca", "Polpette", "Filetto con verdure", "Birra", "Coca-Cola", "Pasta al pesto", "Risotto allo zafferano"];
-        $images5 = ["img/dishes/acqua.jpg", "img/dishes/wine-red.jpeg", "img/dishes/salmone.jpeg", "img/dishes/bistecca.jpeg", "img/dishes/polpette.jpg", "img/dishes/carne_verdure.jpg", "img/dishes/beer.jpeg", "img/dishes/coca-cola.jpeg", "img/dishes/pesto_tradiz.jpg", "img/dishes/zafferano.jpg"];
-        $ingred5 = [
+        $names10 = ["Acqua", "Vino Rosso", "Salmone", "Bistecca", "Polpette", "Filetto con verdure", "Birra", "Coca-Cola", "Pasta al pesto", "Risotto allo zafferano"];
+        $images10 = ["img/dishes/acqua.jpg", "img/dishes/wine-red.jpeg", "img/dishes/salmone.jpeg", "img/dishes/bistecca.jpeg", "img/dishes/polpette.jpg", "img/dishes/carne_verdure.jpg", "img/dishes/beer.jpeg", "img/dishes/coca-cola.jpeg", "img/dishes/pesto_tradiz.jpg", "img/dishes/zafferano.jpg"];
+        $ingred10 = [
             "Acqua",
             "Vino rosso",
             "Salmone con verdure",
@@ -531,9 +500,9 @@ class DishSeeder extends Seeder
         for ($i=0; $i < 10; $i++) {
 
             $newDish = new Dish;
-            $newDish->name = $names5[$i];
-            $newDish->img = $images5[$i];
-            $newDish->description = $ingred5[$i];
+            $newDish->name = $names10[$i];
+            $newDish->img = $images10[$i];
+            $newDish->description = $ingred10[$i];
             $newDish->price = number_format(rand(100, 1000) / 100, 2);
             $newDish->discount = rand(0, 1);
             $newDish->rating = rand(3, 5);
@@ -561,9 +530,9 @@ class DishSeeder extends Seeder
         
 
         /* Piatti ristorante 11 Indiano, Asiatico */
-        $names5 = ["Acqua", "Vino Rosso", "Budino di carote", "Curry", "Chotpoti", "Samosa", "Birra", "Coca-Cola", "Pakora", "Biryani"];
-        $images5 = ["img/dishes/acqua.jpg", "img/dishes/wine-red.jpeg", "img/dishes/budino_carote.jpg", "img/dishes/curry.jpg", "img/dishes/chotpoti.jpg", "img/dishes/samosa.jpg", "img/dishes/beer.jpeg", "img/dishes/coca-cola.jpeg", "img/dishes/pakora.jpg", "img/dishes/biryani.jpg"];
-        $ingred5 = [
+        $names11 = ["Acqua", "Vino Rosso", "Budino di carote", "Curry", "Chotpoti", "Samosa", "Birra", "Coca-Cola", "Pakora", "Biryani"];
+        $images11 = ["img/dishes/acqua.jpg", "img/dishes/wine-red.jpeg", "img/dishes/budino_carote.jpg", "img/dishes/curry.jpg", "img/dishes/chotpoti.jpg", "img/dishes/samosa.jpg", "img/dishes/beer.jpeg", "img/dishes/coca-cola.jpeg", "img/dishes/pakora.jpg", "img/dishes/biryani.jpg"];
+        $ingred11 = [
             "Acqua",
             "Vino rosso",
             "Budino di carote",
@@ -579,9 +548,9 @@ class DishSeeder extends Seeder
         for ($i=0; $i < 10; $i++) {
 
             $newDish = new Dish;
-            $newDish->name = $names5[$i];
-            $newDish->img = $images5[$i];
-            $newDish->description = $ingred5[$i];
+            $newDish->name = $names11[$i];
+            $newDish->img = $images11[$i];
+            $newDish->description = $ingred11[$i];
             $newDish->price = number_format(rand(100, 1000) / 100, 2);
             $newDish->discount = rand(0, 1);
             $newDish->rating = rand(3, 5);
@@ -610,9 +579,9 @@ class DishSeeder extends Seeder
 
         
         /* Piatti ristorante 12 Thailandese, Asiatico */
-        $names5 = ["Acqua", "Vino Rosso", "Pad Thai", "Khao Pad", "Yam Nua", "Laap", "Birra", "Coca-Cola", "Som Tam", "Khao Soi"];
-        $images5 = ["img/dishes/acqua.jpg", "img/dishes/wine-red.jpeg", "img/dishes/pad_thai.jpg", "img/dishes/khao_pad.jpg", "img/dishes/yam_nua.jpg", "img/dishes/laap.jpg", "img/dishes/beer.jpeg", "img/dishes/coca-cola.jpeg", "img/dishes/som_tam.jpg", "img/dishes/khao_soi.jpg"];
-        $ingred5 = [
+        $names12 = ["Acqua", "Vino Rosso", "Pad Thai", "Khao Pad", "Yam Nua", "Laap", "Birra", "Coca-Cola", "Som Tam", "Khao Soi"];
+        $images12 = ["img/dishes/acqua.jpg", "img/dishes/wine-red.jpeg", "img/dishes/pad_thai.jpg", "img/dishes/khao_pad.jpg", "img/dishes/yam_nua.jpg", "img/dishes/laap.jpg", "img/dishes/beer.jpeg", "img/dishes/coca-cola.jpeg", "img/dishes/som_tam.jpg", "img/dishes/khao_soi.jpg"];
+        $ingred12 = [
             "Acqua",
             "Vino rosso",
             "Cucinato con uova e tofu, insaporito con polpa di tamarindo, salsa di pesce, gamberi, aglio, peperoncino e zucchero di palma.",
@@ -628,9 +597,9 @@ class DishSeeder extends Seeder
         for ($i=0; $i < 10; $i++) {
 
             $newDish = new Dish;
-            $newDish->name = $names5[$i];
-            $newDish->img = $images5[$i];
-            $newDish->description = $ingred5[$i];
+            $newDish->name = $names12[$i];
+            $newDish->img = $images12[$i];
+            $newDish->description = $ingred12[$i];
             $newDish->price = number_format(rand(100, 1000) / 100, 2);
             $newDish->discount = rand(0, 1);
             $newDish->rating = rand(3, 5);
