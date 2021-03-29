@@ -2834,6 +2834,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2842,6 +2845,10 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
+    toggle: function toggle() {
+      this.toggleSelectRestaurant();
+      this.togglerestaurant();
+    },
     ShowInfo: function ShowInfo(value) {
       this.plate = ''; // console.log(i);
 
@@ -2857,6 +2864,12 @@ __webpack_require__.r(__webpack_exports__);
     },
     addToCart: function addToCart(item) {
       this.$store.commit('addToCart', item);
+    },
+    togglerestaurant: function togglerestaurant() {
+      this.$store.commit('togglerestaurant');
+    },
+    toggleSelectRestaurant: function toggleSelectRestaurant() {
+      this.$store.commit('toggleSelectRestaurant');
     }
   }
 });
@@ -3064,8 +3077,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -3073,10 +3084,6 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
-    toggle: function toggle() {
-      this.toggleSelectRestaurant();
-      this.togglerestaurant();
-    },
     addToCart: function addToCart(item) {
       this.$store.commit('addToCart', item);
     },
@@ -7669,7 +7676,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "#selected_restaurant_dishes[data-v-0fa44a32] {\n  height: 100%;\n  width: 100%;\n}\n#selected_restaurant_dishes .dish_card[data-v-0fa44a32] {\n  margin: 30px;\n  min-height: 230px;\n  width: 360px;\n  padding-bottom: 15px;\n  z-index: 10;\n  border-radius: 10px;\n  box-shadow: 0 0 10px #DDDDDD;\n  border-color: transparent;\n  position: relative;\n}\n#selected_restaurant_dishes .dish_card img[data-v-0fa44a32] {\n  height: 120px;\n  width: 360px;\n  border-top-left-radius: 10px;\n  border-top-right-radius: 10px;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n#selected_restaurant_dishes .dish_card h4[data-v-0fa44a32] {\n  border: px solid rgba(0, 0, 0, 0.125);\n  border-radius: 0.25rem;\n  margin-top: 15px;\n  font-weight: 700;\n  position: absolute;\n  left: 20px;\n}\n#selected_restaurant_dishes .dish_card .prezzo[data-v-0fa44a32] {\n  position: absolute;\n  top: 170px;\n  left: 20px;\n}\n#selected_restaurant_dishes .dish_card .rating[data-v-0fa44a32] {\n  position: absolute;\n  top: 190px;\n  left: 20px;\n}\n#selected_restaurant_dishes .dish_card button[data-v-0fa44a32] {\n  background-color: #00a082;\n  border-style: none;\n  height: 40px;\n  width: 40px;\n  border-radius: 50%;\n  position: absolute;\n  bottom: 20px;\n  right: 20px;\n}\n#selected_restaurant_dishes .dish_card button i[data-v-0fa44a32] {\n  color: white;\n  font-weight: bold;\n  font-size: 20px;\n}\n#selected_restaurant_dishes .dish_card button[data-v-0fa44a32]:hover {\n  transform: scale(1.1);\n  background-color: #008169;\n}\n#selected_restaurant_dishes .dish_card .show_plate_info_logo[data-v-0fa44a32] {\n  position: absolute;\n  top: 5px;\n  left: 5px;\n  width: 25px;\n  height: 25px;\n  background-color: #ffc244;\n  border-radius: 50%;\n  display: flex;\n  place-content: center;\n  place-items: center;\n}\n#selected_restaurant_dishes .dish_card .show_plate_info[data-v-0fa44a32] {\n  position: absolute;\n  top: 0px;\n  left: 0px;\n  width: 100%;\n  height: 70%;\n  color: transparent;\n  background-color: transparent;\n  border-color: transparent;\n  cursor: pointer;\n  outline: 0;\n}\n#dish_info_pop_up[data-v-0fa44a32] {\n  position: fixed;\n  top: 55%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  background-color: #ffc244;\n  box-shadow: 0 0 20px black;\n  outline: 0;\n  min-height: 500px;\n  width: 700px;\n  padding-bottom: 15px;\n  z-index: 10;\n  border-radius: 10px;\n  border-color: transparent;\n}\n#dish_info_pop_up img[data-v-0fa44a32] {\n  height: 250px;\n  width: 700px;\n  border-top-left-radius: 10px;\n  border-top-right-radius: 10px;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n#dish_info_pop_up h4[data-v-0fa44a32] {\n  border: px solid rgba(0, 0, 0, 0.125);\n  border-radius: 0.25rem;\n  margin-top: 15px;\n  font-weight: 700;\n  position: absolute;\n  left: 20px;\n}\n#dish_info_pop_up .show_plate_info_logo[data-v-0fa44a32] {\n  position: absolute;\n  top: 5px;\n  left: 5px;\n  width: 25px;\n  height: 25px;\n  background-color: #ffc244;\n  border-radius: 50%;\n  display: flex;\n  place-content: center;\n  place-items: center;\n}\n#dish_info_pop_up .show_plate_info[data-v-0fa44a32] {\n  position: absolute;\n  top: 0px;\n  left: 0px;\n  width: 100%;\n  height: 100%;\n  color: transparent;\n  background-color: transparent;\n  border-color: transparent;\n  cursor: pointer;\n  outline: 0;\n}\n@media all and (max-width: 1024px) {\n#dish_info_pop_up[data-v-0fa44a32] {\n    width: 600px;\n    min-height: 3250px;\n}\n#dish_info_pop_up img[data-v-0fa44a32] {\n    width: 600px;\n    height: 190px;\n}\n}\n@media all and (max-width: 720px) {\n#dish_info_pop_up[data-v-0fa44a32] {\n    width: 460px;\n    min-height: 300px;\n}\n#dish_info_pop_up img[data-v-0fa44a32] {\n    width: 460px;\n    height: 160px;\n}\n}", ""]);
+exports.push([module.i, "#selected_restaurant_dishes[data-v-0fa44a32] {\n  height: 100%;\n  width: 100%;\n}\n#selected_restaurant_dishes .dish_card[data-v-0fa44a32] {\n  margin: 30px;\n  min-height: 230px;\n  width: 360px;\n  padding-bottom: 15px;\n  z-index: 10;\n  border-radius: 10px;\n  box-shadow: 0 0 10px #DDDDDD;\n  border-color: transparent;\n  position: relative;\n}\n#selected_restaurant_dishes .dish_card img[data-v-0fa44a32] {\n  height: 120px;\n  width: 360px;\n  border-top-left-radius: 10px;\n  border-top-right-radius: 10px;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n#selected_restaurant_dishes .dish_card h4[data-v-0fa44a32] {\n  border: px solid rgba(0, 0, 0, 0.125);\n  border-radius: 0.25rem;\n  margin-top: 15px;\n  font-weight: 700;\n  position: absolute;\n  left: 20px;\n}\n#selected_restaurant_dishes .dish_card .prezzo[data-v-0fa44a32] {\n  position: absolute;\n  top: 170px;\n  left: 20px;\n}\n#selected_restaurant_dishes .dish_card .rating[data-v-0fa44a32] {\n  position: absolute;\n  top: 190px;\n  left: 20px;\n}\n#selected_restaurant_dishes .dish_card button[data-v-0fa44a32] {\n  background-color: #00a082;\n  border-style: none;\n  height: 40px;\n  width: 40px;\n  border-radius: 50%;\n  position: absolute;\n  bottom: 20px;\n  right: 20px;\n}\n#selected_restaurant_dishes .dish_card button i[data-v-0fa44a32] {\n  color: white;\n  font-weight: bold;\n  font-size: 20px;\n}\n#selected_restaurant_dishes .dish_card button[data-v-0fa44a32]:hover {\n  transform: scale(1.1);\n  background-color: #008169;\n}\n#selected_restaurant_dishes .dish_card .info i[data-v-0fa44a32] {\n  position: absolute;\n  top: 5px;\n  left: 5px;\n  font-size: 28px;\n  color: #ffc244;\n  background-color: white;\n  border-radius: 50%;\n  cursor: pointer;\n  display: flex;\n  place-content: center;\n  place-items: center;\n}\n#dish_info_pop_up[data-v-0fa44a32] {\n  position: fixed;\n  top: 55%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  background-color: #ffc244;\n  box-shadow: 0 0 20px black;\n  outline: 0;\n  min-height: 500px;\n  width: 700px;\n  padding-bottom: 15px;\n  z-index: 10;\n  border-radius: 10px;\n  border-color: transparent;\n  text-align: center;\n}\n#dish_info_pop_up .close i[data-v-0fa44a32] {\n  position: absolute;\n  top: 5px;\n  left: 5px;\n  font-size: 28px;\n  color: #ffc244;\n  background-color: white;\n  border-radius: 50%;\n  cursor: pointer;\n  display: flex;\n  place-content: center;\n  place-items: center;\n}\n#dish_info_pop_up img[data-v-0fa44a32] {\n  height: 250px;\n  width: 700px;\n  border-top-left-radius: 10px;\n  border-top-right-radius: 10px;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n#dish_info_pop_up h4[data-v-0fa44a32] {\n  font-size: 28px;\n  margin-top: 15px;\n  font-weight: 700;\n}\n#dish_info_pop_up .show_plate_info[data-v-0fa44a32] {\n  position: absolute;\n  top: 0px;\n  left: 0px;\n  width: 100%;\n  height: 100%;\n  color: transparent;\n  background-color: transparent;\n  border-color: transparent;\n  cursor: pointer;\n  outline: 0;\n}\n.torna_ristoranti[data-v-0fa44a32] {\n  width: 150px;\n  height: 100px;\n  position: sticky;\n  top: 130px;\n  left: 20px;\n  width: 100%;\n  z-index: 15;\n}\n.torna_ristoranti img[data-v-0fa44a32] {\n  height: 60px;\n}\n.torna_ristoranti #back[data-v-0fa44a32] {\n  color: black;\n  padding: 10px 15px;\n  border-radius: 10px;\n  border: 1px solid transparent;\n  font-size: 18px;\n  font-weight: 600;\n}\n.torna_ristoranti #back[data-v-0fa44a32]:hover {\n  cursor: pointer;\n}\n@media all and (max-width: 1024px) {\n#dish_info_pop_up[data-v-0fa44a32] {\n    width: 600px;\n    min-height: 3250px;\n}\n#dish_info_pop_up img[data-v-0fa44a32] {\n    width: 600px;\n    height: 190px;\n}\n}\n@media all and (max-width: 720px) {\n#dish_info_pop_up[data-v-0fa44a32] {\n    width: 460px;\n    min-height: 300px;\n}\n#dish_info_pop_up img[data-v-0fa44a32] {\n    width: 460px;\n    height: 160px;\n}\n}", ""]);
 
 // exports
 
@@ -7707,7 +7714,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".selected_restaurant_container[data-v-3db2e1e3] {\n  height: 100%;\n  padding: 20px 20px;\n  border: 5px solid black;\n}\n.selected_restaurant_container #info_restaurant[data-v-3db2e1e3] {\n  height: 600px;\n  width: 100%;\n  position: relative;\n  margin-bottom: 30px;\n  overflow: hidden;\n}\n.selected_restaurant_container #info_restaurant img[data-v-3db2e1e3] {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  width: 100%;\n  height: 440px;\n  -o-object-fit: cover;\n     object-fit: cover;\n  border-radius: 15px;\n}\n.selected_restaurant_container #info_restaurant #restaurant_txt[data-v-3db2e1e3] {\n  padding: 10px;\n  position: absolute;\n  top: 480px;\n  left: 50px;\n  height: 100%;\n  width: 500px;\n  background-color: white;\n  border-radius: 10px;\n}\n.selected_restaurant_container #info_restaurant #restaurant_txt h2[data-v-3db2e1e3] {\n  border: px solid rgba(0, 0, 0, 0.125);\n  border-radius: 0.25rem;\n  font-weight: 700;\n}\n.selected_restaurant_container #info_restaurant #restaurant_txt p[data-v-3db2e1e3] {\n  margin-left: 10px;\n}\n.selected_restaurant_container #back[data-v-3db2e1e3] {\n  background-color: #ffc244;\n  color: black;\n  padding: 5px;\n  border-radius: 10px;\n  border: 1px solid transparent;\n}\n@media all and (max-width: 1024px) {\n#restaurant_txt[data-v-3db2e1e3] {\n    left: 20px;\n    height: 450px;\n    width: 250px;\n}\n}", ""]);
+exports.push([module.i, ".selected_restaurant_container[data-v-3db2e1e3] {\n  height: 100%;\n  padding: 20px 20px;\n  border: 5px solid black;\n}\n.selected_restaurant_container #info_restaurant[data-v-3db2e1e3] {\n  height: 600px;\n  width: 100%;\n  position: relative;\n  margin-bottom: 30px;\n  overflow: hidden;\n}\n.selected_restaurant_container #info_restaurant img[data-v-3db2e1e3] {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  width: 100%;\n  height: 440px;\n  -o-object-fit: cover;\n     object-fit: cover;\n  border-radius: 15px;\n}\n.selected_restaurant_container #info_restaurant #restaurant_txt[data-v-3db2e1e3] {\n  padding: 10px;\n  height: 100%;\n  width: 500px;\n  background-color: white;\n  border-radius: 10px;\n}\n.selected_restaurant_container #info_restaurant #restaurant_txt h2[data-v-3db2e1e3] {\n  border: px solid rgba(0, 0, 0, 0.125);\n  border-radius: 0.25rem;\n  font-weight: 700;\n}\n.selected_restaurant_container #info_restaurant #restaurant_txt p[data-v-3db2e1e3] {\n  margin-left: 10px;\n}\n@media all and (max-width: 1024px) {\n#restaurant_txt[data-v-3db2e1e3] {\n    left: 20px;\n    height: 450px;\n    width: 250px;\n}\n}", ""]);
 
 // exports
 
@@ -7888,749 +7895,755 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
 /**
-  * Hopper 0.3.4
-  * (c) 2019
-    * @license MIT
-    */
+ * Hopper 0.3.4
+ * (c) 2019
+ * @license MIT
+ */
 
 
 function _defineProperty(obj, key, value) {
-  if (key in obj) {
-    Object.defineProperty(obj, key, {
-      value: value,
-      enumerable: true,
-      configurable: true,
-      writable: true
-    });
-  } else {
-    obj[key] = value;
-  }
+    if (key in obj) {
+        Object.defineProperty(obj, key, {
+            value: value,
+            enumerable: true,
+            configurable: true,
+            writable: true
+        });
+    } else {
+        obj[key] = value;
+    }
 
-  return obj;
+    return obj;
 }
 
 function _objectSpread(target) {
-  for (var i = 1; i < arguments.length; i++) {
-    var source = arguments[i] != null ? arguments[i] : {};
-    var ownKeys = Object.keys(source);
+    for (var i = 1; i < arguments.length; i++) {
+        var source = arguments[i] != null ? arguments[i] : {};
+        var ownKeys = Object.keys(source);
 
-    if (typeof Object.getOwnPropertySymbols === 'function') {
-      ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {
-        return Object.getOwnPropertyDescriptor(source, sym).enumerable;
-      }));
+        if (typeof Object.getOwnPropertySymbols === 'function') {
+            ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function(sym) {
+                return Object.getOwnPropertyDescriptor(source, sym).enumerable;
+            }));
+        }
+
+        ownKeys.forEach(function(key) {
+            _defineProperty(target, key, source[key]);
+        });
     }
 
-    ownKeys.forEach(function (key) {
-      _defineProperty(target, key, source[key]);
-    });
-  }
-
-  return target;
+    return target;
 }
 
 function _toConsumableArray(arr) {
-  return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread();
+    return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread();
 }
 
 function _arrayWithoutHoles(arr) {
-  if (Array.isArray(arr)) {
-    for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) arr2[i] = arr[i];
+    if (Array.isArray(arr)) {
+        for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) arr2[i] = arr[i];
 
-    return arr2;
-  }
+        return arr2;
+    }
 }
 
 function _iterableToArray(iter) {
-  if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter);
+    if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter);
 }
 
 function _nonIterableSpread() {
-  throw new TypeError("Invalid attempt to spread non-iterable instance");
+    throw new TypeError("Invalid attempt to spread non-iterable instance");
 }
 
 function getInRange(value, min, max) {
-  return Math.max(Math.min(value, max), min);
+    return Math.max(Math.min(value, max), min);
 }
+
 function now() {
-  return Date.now();
+    return Date.now();
 }
+
 function Timer(callback, time) {
-  this.create = function createTimer() {
-    return window.setInterval(callback, time);
-  };
+    this.create = function createTimer() {
+        return window.setInterval(callback, time);
+    };
 
-  this.stop = function stopTimer() {
-    if (this.timer) {
-      window.clearInterval(this.timer);
-      this.timer = null;
-    }
-  };
+    this.stop = function stopTimer() {
+        if (this.timer) {
+            window.clearInterval(this.timer);
+            this.timer = null;
+        }
+    };
 
-  this.start = function startTimer() {
-    if (!this.timer) {
-      this.timer = this.create();
-    }
-  };
+    this.start = function startTimer() {
+        if (!this.timer) {
+            this.timer = this.create();
+        }
+    };
 
-  this.restart = function restartTimer(newTime) {
-    time = newTime || time;
-    this.stop();
-    this.start();
-  };
+    this.restart = function restartTimer(newTime) {
+        time = newTime || time;
+        this.stop();
+        this.start();
+    };
 
-  this.timer = this.create();
+    this.timer = this.create();
 }
+
 function camelCaseToString(camelCase) {
-  camelCase = camelCase.replace(/([A-Z]+)/g, ' $1');
-  return camelCase.charAt(0).toUpperCase() + camelCase.slice(1);
+    camelCase = camelCase.replace(/([A-Z]+)/g, ' $1');
+    return camelCase.charAt(0).toUpperCase() + camelCase.slice(1);
 }
+
 function normalizeSlideIndex(index, slidesCount) {
-  var realIndex;
+    var realIndex;
 
-  if (index < 0) {
-    realIndex = (index + slidesCount) % slidesCount;
-  } else {
-    realIndex = index % slidesCount;
-  } // Test for NaN
+    if (index < 0) {
+        realIndex = (index + slidesCount) % slidesCount;
+    } else {
+        realIndex = index % slidesCount;
+    } // Test for NaN
 
 
-  if (realIndex !== realIndex) {
-    return 0;
-  }
+    if (realIndex !== realIndex) {
+        return 0;
+    }
 
-  return realIndex;
+    return realIndex;
 }
+
 function cloneNode(h, vNode) {
-  // use the context that the original vnode was created in.
-  var children = vNode.children || vNode.componentOptions.children || vNode.text;
-  var tag = vNode.componentOptions.Ctor;
-  return h(tag, vNode.data, children);
+    // use the context that the original vnode was created in.
+    var children = vNode.children || vNode.componentOptions.children || vNode.text;
+    var tag = vNode.componentOptions.Ctor;
+    return h(tag, vNode.data, children);
 } // IE11 :)
 
 function assignPoly(target) {
-  if (target === undefined || target === null) {
-    throw new TypeError('Cannot convert first argument to object');
-  }
-
-  var to = Object(target);
-
-  for (var i = 1; i < arguments.length; i++) {
-    var nextSource = arguments[i];
-
-    if (nextSource === undefined || nextSource === null) {
-      continue;
+    if (target === undefined || target === null) {
+        throw new TypeError('Cannot convert first argument to object');
     }
 
-    nextSource = Object(nextSource);
-    var keysArray = Object.keys(Object(nextSource));
+    var to = Object(target);
 
-    for (var nextIndex = 0, len = keysArray.length; nextIndex < len; nextIndex++) {
-      var nextKey = keysArray[nextIndex];
-      var desc = Object.getOwnPropertyDescriptor(nextSource, nextKey);
+    for (var i = 1; i < arguments.length; i++) {
+        var nextSource = arguments[i];
 
-      if (desc !== undefined && desc.enumerable) {
-        to[nextKey] = nextSource[nextKey];
-      }
+        if (nextSource === undefined || nextSource === null) {
+            continue;
+        }
+
+        nextSource = Object(nextSource);
+        var keysArray = Object.keys(Object(nextSource));
+
+        for (var nextIndex = 0, len = keysArray.length; nextIndex < len; nextIndex++) {
+            var nextKey = keysArray[nextIndex];
+            var desc = Object.getOwnPropertyDescriptor(nextSource, nextKey);
+
+            if (desc !== undefined && desc.enumerable) {
+                to[nextKey] = nextSource[nextKey];
+            }
+        }
     }
-  }
 
-  return to;
+    return to;
 }
 
 var assign = Object.assign || assignPoly;
 
 function signPoly(value) {
-  if (value < 0) {
-    return -1;
-  }
+    if (value < 0) {
+        return -1;
+    }
 
-  return value > 0 ? 1 : 0;
+    return value > 0 ? 1 : 0;
 }
 
 var sign = Math.sign || signPoly;
+
 function normalizeChildren(context) {
-  var slotProps = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+    var slotProps = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
 
-  if (context.$scopedSlots.default) {
-    return context.$scopedSlots.default(slotProps) || [];
-  }
+    if (context.$scopedSlots.default) {
+        return context.$scopedSlots.default(slotProps) || [];
+    }
 
-  return context.$slots.default || [];
+    return context.$slots.default || [];
 }
 
 var EMITTER = new vue__WEBPACK_IMPORTED_MODULE_0___default.a();
 var Carousel = {
-  name: 'Hooper',
-  provide: function provide() {
-    return {
-      $hooper: this
-    };
-  },
-  props: {
-    // count of items to showed per view
-    itemsToShow: {
-      default: 1,
-      type: Number
+    name: 'Hooper',
+    provide: function provide() {
+        return {
+            $hooper: this
+        };
     },
-    // count of items to slide when use navigation buttons
-    itemsToSlide: {
-      default: 1,
-      type: Number
+    props: {
+        // count of items to showed per view
+        itemsToShow: {
+            default: 1,
+            type: Number
+        },
+        // count of items to slide when use navigation buttons
+        itemsToSlide: {
+            default: 1,
+            type: Number
+        },
+        // index number of initial slide
+        initialSlide: {
+            default: 0,
+            type: Number
+        },
+        // control infinite scrolling mode
+        infiniteScroll: {
+            default: false,
+            type: Boolean
+        },
+        // control center mode
+        centerMode: {
+            default: false,
+            type: Boolean
+        },
+        // vertical sliding mode
+        vertical: {
+            default: false,
+            type: Boolean
+        },
+        // enable rtl mode
+        rtl: {
+            default: null,
+            type: Boolean
+        },
+        // enable auto sliding to carousel
+        autoPlay: {
+            default: false,
+            type: Boolean
+        },
+        // speed of auto play to trigger slide
+        playSpeed: {
+            default: 2000,
+            type: Number
+        },
+        // toggle mouse dragging
+        mouseDrag: {
+            default: true,
+            type: Boolean
+        },
+        // toggle touch dragging
+        touchDrag: {
+            default: true,
+            type: Boolean
+        },
+        // toggle mouse wheel sliding
+        wheelControl: {
+            default: true,
+            type: Boolean
+        },
+        // toggle keyboard control
+        keysControl: {
+            default: true,
+            type: Boolean
+        },
+        // enable any move to commit a slide
+        shortDrag: {
+            default: true,
+            type: Boolean
+        },
+        // sliding transition time in ms
+        transition: {
+            default: 300,
+            type: Number
+        },
+        // pause autoPlay on mousehover
+        hoverPause: {
+            default: true,
+            type: Boolean
+        },
+        // remove empty space around slides
+        trimWhiteSpace: {
+            default: true,
+            type: Boolean
+        },
+        // an object to pass all settings
+        settings: {
+            default: function _default() {
+                return {};
+            },
+            type: Object
+        },
+        group: {
+            type: String,
+            default: null
+        }
     },
-    // index number of initial slide
-    initialSlide: {
-      default: 0,
-      type: Number
+    data: function data() {
+        return {
+            isDragging: false,
+            isSliding: false,
+            isTouch: false,
+            isHover: false,
+            isFocus: false,
+            initialized: false,
+            slideWidth: 0,
+            slideHeight: 0,
+            slidesCount: 0,
+            trimStart: 0,
+            trimEnd: 1,
+            currentSlide: null,
+            timer: null,
+            defaults: {},
+            breakpoints: {},
+            delta: {
+                x: 0,
+                y: 0
+            },
+            config: {}
+        };
     },
-    // control infinite scrolling mode
-    infiniteScroll: {
-      default: false,
-      type: Boolean
-    },
-    // control center mode
-    centerMode: {
-      default: false,
-      type: Boolean
-    },
-    // vertical sliding mode
-    vertical: {
-      default: false,
-      type: Boolean
-    },
-    // enable rtl mode
-    rtl: {
-      default: null,
-      type: Boolean
-    },
-    // enable auto sliding to carousel
-    autoPlay: {
-      default: false,
-      type: Boolean
-    },
-    // speed of auto play to trigger slide
-    playSpeed: {
-      default: 2000,
-      type: Number
-    },
-    // toggle mouse dragging
-    mouseDrag: {
-      default: true,
-      type: Boolean
-    },
-    // toggle touch dragging
-    touchDrag: {
-      default: true,
-      type: Boolean
-    },
-    // toggle mouse wheel sliding
-    wheelControl: {
-      default: true,
-      type: Boolean
-    },
-    // toggle keyboard control
-    keysControl: {
-      default: true,
-      type: Boolean
-    },
-    // enable any move to commit a slide
-    shortDrag: {
-      default: true,
-      type: Boolean
-    },
-    // sliding transition time in ms
-    transition: {
-      default: 300,
-      type: Number
-    },
-    // pause autoPlay on mousehover
-    hoverPause: {
-      default: true,
-      type: Boolean
-    },
-    // remove empty space around slides
-    trimWhiteSpace: {
-      default: false,
-      type: Boolean
-    },
-    // an object to pass all settings
-    settings: {
-      default: function _default() {
-        return {};
-      },
-      type: Object
-    },
-    group: {
-      type: String,
-      default: null
-    }
-  },
-  data: function data() {
-    return {
-      isDragging: false,
-      isSliding: false,
-      isTouch: false,
-      isHover: false,
-      isFocus: false,
-      initialized: false,
-      slideWidth: 0,
-      slideHeight: 0,
-      slidesCount: 0,
-      trimStart: 0,
-      trimEnd: 1,
-      currentSlide: null,
-      timer: null,
-      defaults: {},
-      breakpoints: {},
-      delta: {
-        x: 0,
-        y: 0
-      },
-      config: {}
-    };
-  },
-  computed: {
-    slideBounds: function slideBounds() {
-      var config = this.config,
-          currentSlide = this.currentSlide; // Because the "isActive" depends on the slides shown, not the number of slidable ones.
-      // but upper and lower bounds for Next,Prev depend on whatever is smaller.
+    computed: {
+        slideBounds: function slideBounds() {
+            var config = this.config,
+                currentSlide = this.currentSlide; // Because the "isActive" depends on the slides shown, not the number of slidable ones.
+            // but upper and lower bounds for Next,Prev depend on whatever is smaller.
 
-      var siblings = config.itemsToShow;
-      var lower = config.centerMode ? Math.ceil(currentSlide - siblings / 2) : currentSlide;
-      var upper = config.centerMode ? Math.floor(currentSlide + siblings / 2) : Math.floor(currentSlide + siblings - 1);
-      return {
-        lower: lower,
-        upper: upper
-      };
+            var siblings = config.itemsToShow;
+            var lower = config.centerMode ? Math.ceil(currentSlide - siblings / 2) : currentSlide;
+            var upper = config.centerMode ? Math.floor(currentSlide + siblings / 2) : Math.floor(currentSlide + siblings - 1);
+            return {
+                lower: lower,
+                upper: upper
+            };
+        },
+        trackTransform: function trackTransform() {
+            var _this$config = this.config,
+                infiniteScroll = _this$config.infiniteScroll,
+                vertical = _this$config.vertical,
+                rtl = _this$config.rtl,
+                centerMode = _this$config.centerMode;
+            var direction = rtl ? -1 : 1;
+            var slideLength = vertical ? this.slideHeight : this.slideWidth;
+            var containerLength = vertical ? this.containerHeight : this.containerWidth;
+            var dragDelta = vertical ? this.delta.y : this.delta.x;
+            var clonesSpace = infiniteScroll ? slideLength * this.slidesCount : 0;
+            var centeringSpace = centerMode ? (containerLength - slideLength) / 2 : 0; // calculate track translate
+
+            var translate = dragDelta + direction * (centeringSpace - clonesSpace - this.currentSlide * slideLength);
+
+            if (vertical) {
+                return "transform: translate(0, ".concat(translate, "px);");
+            }
+
+            return "transform: translate(".concat(translate, "px, 0);");
+        },
+        trackTransition: function trackTransition() {
+            if (this.initialized && this.isSliding) {
+                return "transition: ".concat(this.config.transition, "ms");
+            }
+
+            return '';
+        }
     },
-    trackTransform: function trackTransform() {
-      var _this$config = this.config,
-          infiniteScroll = _this$config.infiniteScroll,
-          vertical = _this$config.vertical,
-          rtl = _this$config.rtl,
-          centerMode = _this$config.centerMode;
-      var direction = rtl ? -1 : 1;
-      var slideLength = vertical ? this.slideHeight : this.slideWidth;
-      var containerLength = vertical ? this.containerHeight : this.containerWidth;
-      var dragDelta = vertical ? this.delta.y : this.delta.x;
-      var clonesSpace = infiniteScroll ? slideLength * this.slidesCount : 0;
-      var centeringSpace = centerMode ? (containerLength - slideLength) / 2 : 0; // calculate track translate
+    watch: {
+        group: function group(val, oldVal) {
+            if (val === oldVal) {
+                return;
+            }
 
-      var translate = dragDelta + direction * (centeringSpace - clonesSpace - this.currentSlide * slideLength);
-
-      if (vertical) {
-        return "transform: translate(0, ".concat(translate, "px);");
-      }
-
-      return "transform: translate(".concat(translate, "px, 0);");
+            EMITTER.$off("slideGroup:".concat(oldVal), this._groupSlideHandler);
+            this.addGroupListeners();
+        }
     },
-    trackTransition: function trackTransition() {
-      if (this.initialized && this.isSliding) {
-        return "transition: ".concat(this.config.transition, "ms");
-      }
+    methods: {
+        // controlling methods
+        slideTo: function slideTo(slideIndex) {
+            var _this = this;
 
-      return '';
-    }
-  },
-  watch: {
-    group: function group(val, oldVal) {
-      if (val === oldVal) {
-        return;
-      }
+            var isSource = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
 
-      EMITTER.$off("slideGroup:".concat(oldVal), this._groupSlideHandler);
-      this.addGroupListeners();
-    }
-  },
-  methods: {
-    // controlling methods
-    slideTo: function slideTo(slideIndex) {
-      var _this = this;
+            if (this.isSliding || slideIndex === this.currentSlide) {
+                return;
+            }
 
-      var isSource = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
+            this.$emit('beforeSlide', {
+                currentSlide: this.currentSlide,
+                slideTo: index
+            });
+            var _this$config2 = this.config,
+                infiniteScroll = _this$config2.infiniteScroll,
+                transition = _this$config2.transition;
+            var previousSlide = this.currentSlide;
+            var index = infiniteScroll ? slideIndex : getInRange(slideIndex, this.trimStart, this.slidesCount - this.trimEnd); // Notify others if in a group and is the slide event initiator.
 
-      if (this.isSliding || slideIndex === this.currentSlide) {
-        return;
-      }
+            if (this.group && isSource) {
+                EMITTER.$emit("slideGroup:".concat(this.group), slideIndex);
+            }
 
-      this.$emit('beforeSlide', {
-        currentSlide: this.currentSlide,
-        slideTo: index
-      });
-      var _this$config2 = this.config,
-          infiniteScroll = _this$config2.infiniteScroll,
-          transition = _this$config2.transition;
-      var previousSlide = this.currentSlide;
-      var index = infiniteScroll ? slideIndex : getInRange(slideIndex, this.trimStart, this.slidesCount - this.trimEnd); // Notify others if in a group and is the slide event initiator.
+            this.currentSlide = index;
+            this.isSliding = true;
+            window.setTimeout(function() {
+                _this.isSliding = false;
+                _this.currentSlide = normalizeSlideIndex(index, _this.slidesCount);
+            }, transition);
+            this.$emit('slide', {
+                currentSlide: this.currentSlide,
+                slideFrom: previousSlide
+            });
+        },
+        slideNext: function slideNext() {
+            this.slideTo(this.currentSlide + this.config.itemsToSlide);
+        },
+        slidePrev: function slidePrev() {
+            this.slideTo(this.currentSlide - this.config.itemsToSlide);
+        },
+        initEvents: function initEvents() {
+            // get the element direction if not explicitly set
+            if (this.defaults.rtl === null) {
+                this.defaults.rtl = getComputedStyle(this.$el).direction === 'rtl';
+            }
 
-      if (this.group && isSource) {
-        EMITTER.$emit("slideGroup:".concat(this.group), slideIndex);
-      }
+            if (this.config.autoPlay) {
+                this.initAutoPlay();
+            }
 
-      this.currentSlide = index;
-      this.isSliding = true;
-      window.setTimeout(function () {
-        _this.isSliding = false;
-        _this.currentSlide = normalizeSlideIndex(index, _this.slidesCount);
-      }, transition);
-      this.$emit('slide', {
-        currentSlide: this.currentSlide,
-        slideFrom: previousSlide
-      });
+            if (this.config.mouseDrag) {
+                this.$refs.list.addEventListener('mousedown', this.onDragStart);
+            }
+
+            if (this.config.touchDrag) {
+                this.$refs.list.addEventListener('touchstart', this.onDragStart, {
+                    passive: true
+                });
+            }
+
+            if (this.config.keysControl) {
+                this.$el.addEventListener('keydown', this.onKeypress);
+            }
+
+            if (this.config.wheelControl) {
+                this.lastScrollTime = now();
+                this.$el.addEventListener('wheel', this.onWheel, {
+                    passive: false
+                });
+            }
+
+            window.addEventListener('resize', this.update);
+        },
+        initAutoPlay: function initAutoPlay() {
+            var _this2 = this;
+
+            this.timer = new Timer(function() {
+                if (_this2.isSliding || _this2.isDragging || _this2.isHover && _this2.config.hoverPause || _this2.isFocus) {
+                    return;
+                }
+
+                if (_this2.currentSlide === _this2.slidesCount - 1 && !_this2.config.infiniteScroll) {
+                    _this2.slideTo(0);
+
+                    return;
+                }
+
+                _this2.slideNext();
+            }, this.config.playSpeed);
+        },
+        initDefaults: function initDefaults() {
+            this.breakpoints = this.settings.breakpoints;
+            this.defaults = assign({}, this.$props, this.settings);
+            this.config = assign({}, this.defaults);
+        },
+        // updating methods
+        update: function update() {
+            if (this.breakpoints) {
+                this.updateConfig();
+            }
+
+            this.updateWidth();
+            this.updateTrim();
+            this.$emit('updated', {
+                containerWidth: this.containerWidth,
+                containerHeight: this.containerHeight,
+                slideWidth: this.slideWidth,
+                slideHeight: this.slideHeight,
+                settings: this.config
+            });
+        },
+        updateTrim: function updateTrim() {
+            var _this$config3 = this.config,
+                trimWhiteSpace = _this$config3.trimWhiteSpace,
+                itemsToShow = _this$config3.itemsToShow,
+                centerMode = _this$config3.centerMode,
+                infiniteScroll = _this$config3.infiniteScroll;
+
+            if (!trimWhiteSpace || infiniteScroll) {
+                this.trimStart = 0;
+                this.trimEnd = 1;
+                return;
+            }
+
+            this.trimStart = centerMode ? Math.floor((itemsToShow - 1) / 2) : 0;
+            this.trimEnd = centerMode ? Math.ceil(itemsToShow / 2) : itemsToShow;
+        },
+        updateWidth: function updateWidth() {
+            var rect = this.$el.getBoundingClientRect();
+            this.containerWidth = rect.width;
+            this.containerHeight = rect.height;
+
+            if (this.config.vertical) {
+                this.slideHeight = this.containerHeight / this.config.itemsToShow;
+                return;
+            }
+
+            this.slideWidth = this.containerWidth / this.config.itemsToShow;
+        },
+        updateConfig: function updateConfig() {
+            var _this3 = this;
+
+            var breakpoints = Object.keys(this.breakpoints).sort(function(a, b) {
+                return b - a;
+            });
+            var matched;
+            breakpoints.some(function(breakpoint) {
+                matched = window.matchMedia("(min-width: ".concat(breakpoint, "px)")).matches;
+
+                if (matched) {
+                    _this3.config = assign({}, _this3.config, _this3.defaults, _this3.breakpoints[breakpoint]);
+                    return true;
+                }
+            });
+
+            if (!matched) {
+                this.config = assign(this.config, this.defaults);
+            }
+        },
+        restartTimer: function restartTimer() {
+            if (this.timer) {
+                this.timer.restart();
+            }
+        },
+        restart: function restart() {
+            var _this4 = this;
+
+            this.$nextTick(function() {
+                _this4.update();
+            });
+        },
+        // events handlers
+        onDragStart: function onDragStart(event) {
+            this.isTouch = event.type === 'touchstart';
+
+            if (!this.isTouch && event.button !== 0) {
+                return;
+            }
+
+            this.startPosition = {
+                x: 0,
+                y: 0
+            };
+            this.endPosition = {
+                x: 0,
+                y: 0
+            };
+            this.isDragging = true;
+            this.startPosition.x = this.isTouch ? event.touches[0].clientX : event.clientX;
+            this.startPosition.y = this.isTouch ? event.touches[0].clientY : event.clientY;
+            document.addEventListener(this.isTouch ? 'touchmove' : 'mousemove', this.onDrag);
+            document.addEventListener(this.isTouch ? 'touchend' : 'mouseup', this.onDragEnd);
+        },
+        isInvalidDirection: function isInvalidDirection(deltaX, deltaY) {
+            if (!this.config.vertical) {
+                return Math.abs(deltaX) <= Math.abs(deltaY);
+            }
+
+            if (this.config.vertical) {
+                return Math.abs(deltaY) <= Math.abs(deltaX);
+            }
+
+            return false;
+        },
+        onDrag: function onDrag(event) {
+            if (this.isSliding) {
+                return;
+            }
+
+            this.endPosition.x = this.isTouch ? event.touches[0].clientX : event.clientX;
+            this.endPosition.y = this.isTouch ? event.touches[0].clientY : event.clientY;
+            var deltaX = this.endPosition.x - this.startPosition.x;
+            var deltaY = this.endPosition.y - this.startPosition.y; // Maybe scrolling.
+
+            if (this.isInvalidDirection(deltaX, deltaY)) {
+                return;
+            }
+
+            this.delta.y = deltaY;
+            this.delta.x = deltaX;
+
+            if (!this.isTouch) {
+                event.preventDefault();
+            }
+        },
+        onDragEnd: function onDragEnd() {
+            var tolerance = this.config.shortDrag ? 0.5 : 0.15;
+            this.isDragging = false;
+
+            if (this.config.vertical) {
+                var draggedSlides = Math.round(Math.abs(this.delta.y / this.slideHeight) + tolerance);
+                this.slideTo(this.currentSlide - sign(this.delta.y) * draggedSlides);
+            }
+
+            if (!this.config.vertical) {
+                var direction = (this.config.rtl ? -1 : 1) * sign(this.delta.x);
+
+                var _draggedSlides = Math.round(Math.abs(this.delta.x / this.slideWidth) + tolerance);
+
+                this.slideTo(this.currentSlide - direction * _draggedSlides);
+            }
+
+            this.delta.x = 0;
+            this.delta.y = 0;
+            document.removeEventListener(this.isTouch ? 'touchmove' : 'mousemove', this.onDrag);
+            document.removeEventListener(this.isTouch ? 'touchend' : 'mouseup', this.onDragEnd);
+            this.restartTimer();
+        },
+        onTransitionend: function onTransitionend() {
+            this.isSliding = false;
+            this.$emit('afterSlide', {
+                currentSlide: this.currentSlide
+            });
+        },
+        onKeypress: function onKeypress(event) {
+            var key = event.key;
+
+            if (key.startsWith('Arrow')) {
+                event.preventDefault();
+            }
+
+            if (this.config.vertical) {
+                if (key === 'ArrowUp') {
+                    this.slidePrev();
+                }
+
+                if (key === 'ArrowDown') {
+                    this.slideNext();
+                }
+
+                return;
+            }
+
+            if (this.config.rtl) {
+                if (key === 'ArrowRight') {
+                    this.slidePrev();
+                }
+
+                if (key === 'ArrowLeft') {
+                    this.slideNext();
+                }
+
+                return;
+            }
+
+            if (key === 'ArrowRight') {
+                this.slideNext();
+            }
+
+            if (key === 'ArrowLeft') {
+                this.slidePrev();
+            }
+        },
+        onWheel: function onWheel(event) {
+            event.preventDefault();
+
+            if (now() - this.lastScrollTime < 200) {
+                return;
+            } // get wheel direction
+
+
+            this.lastScrollTime = now();
+            var value = event.wheelDelta || -event.deltaY;
+            var delta = sign(value);
+
+            if (delta === -1) {
+                this.slideNext();
+            }
+
+            if (delta === 1) {
+                this.slidePrev();
+            }
+        },
+        addGroupListeners: function addGroupListeners() {
+            var _this5 = this;
+
+            if (!this.group) {
+                return;
+            }
+
+            this._groupSlideHandler = function(slideIndex) {
+                // set the isSource to false to prevent infinite emitting loop.
+                _this5.slideTo(slideIndex, false);
+            };
+
+            EMITTER.$on("slideGroup:".concat(this.group), this._groupSlideHandler);
+        }
     },
-    slideNext: function slideNext() {
-      this.slideTo(this.currentSlide + this.config.itemsToSlide);
+    created: function created() {
+        this.initDefaults();
     },
-    slidePrev: function slidePrev() {
-      this.slideTo(this.currentSlide - this.config.itemsToSlide);
-    },
-    initEvents: function initEvents() {
-      // get the element direction if not explicitly set
-      if (this.defaults.rtl === null) {
-        this.defaults.rtl = getComputedStyle(this.$el).direction === 'rtl';
-      }
+    mounted: function mounted() {
+        var _this6 = this;
 
-      if (this.config.autoPlay) {
-        this.initAutoPlay();
-      }
+        this.initEvents();
+        this.addGroupListeners();
+        this.$nextTick(function() {
+            _this6.update();
 
-      if (this.config.mouseDrag) {
-        this.$refs.list.addEventListener('mousedown', this.onDragStart);
-      }
+            _this6.slideTo(_this6.config.initialSlide || 0);
 
-      if (this.config.touchDrag) {
-        this.$refs.list.addEventListener('touchstart', this.onDragStart, {
-          passive: true
+            setTimeout(function() {
+                _this6.$emit('loaded');
+
+                _this6.initialized = true;
+            }, _this6.transition);
         });
-      }
-
-      if (this.config.keysControl) {
-        this.$el.addEventListener('keydown', this.onKeypress);
-      }
-
-      if (this.config.wheelControl) {
-        this.lastScrollTime = now();
-        this.$el.addEventListener('wheel', this.onWheel, {
-          passive: false
-        });
-      }
-
-      window.addEventListener('resize', this.update);
     },
-    initAutoPlay: function initAutoPlay() {
-      var _this2 = this;
+    beforeDestroy: function beforeDestroy() {
+        window.removeEventListener('resize', this.update);
 
-      this.timer = new Timer(function () {
-        if (_this2.isSliding || _this2.isDragging || _this2.isHover && _this2.config.hoverPause || _this2.isFocus) {
-          return;
+        if (this.group) {
+            EMITTER.$off("slideGroup:".concat(this.group), this._groupSlideHandler);
         }
 
-        if (_this2.currentSlide === _this2.slidesCount - 1 && !_this2.config.infiniteScroll) {
-          _this2.slideTo(0);
-
-          return;
+        if (this.timer) {
+            this.timer.stop();
         }
-
-        _this2.slideNext();
-      }, this.config.playSpeed);
     },
-    initDefaults: function initDefaults() {
-      this.breakpoints = this.settings.breakpoints;
-      this.defaults = assign({}, this.$props, this.settings);
-      this.config = assign({}, this.defaults);
-    },
-    // updating methods
-    update: function update() {
-      if (this.breakpoints) {
-        this.updateConfig();
-      }
+    render: function render(h) {
+        var _this7 = this;
 
-      this.updateWidth();
-      this.updateTrim();
-      this.$emit('updated', {
-        containerWidth: this.containerWidth,
-        containerHeight: this.containerHeight,
-        slideWidth: this.slideWidth,
-        slideHeight: this.slideHeight,
-        settings: this.config
-      });
-    },
-    updateTrim: function updateTrim() {
-      var _this$config3 = this.config,
-          trimWhiteSpace = _this$config3.trimWhiteSpace,
-          itemsToShow = _this$config3.itemsToShow,
-          centerMode = _this$config3.centerMode,
-          infiniteScroll = _this$config3.infiniteScroll;
-
-      if (!trimWhiteSpace || infiniteScroll) {
-        this.trimStart = 0;
-        this.trimEnd = 1;
-        return;
-      }
-
-      this.trimStart = centerMode ? Math.floor((itemsToShow - 1) / 2) : 0;
-      this.trimEnd = centerMode ? Math.ceil(itemsToShow / 2) : itemsToShow;
-    },
-    updateWidth: function updateWidth() {
-      var rect = this.$el.getBoundingClientRect();
-      this.containerWidth = rect.width;
-      this.containerHeight = rect.height;
-
-      if (this.config.vertical) {
-        this.slideHeight = this.containerHeight / this.config.itemsToShow;
-        return;
-      }
-
-      this.slideWidth = this.containerWidth / this.config.itemsToShow;
-    },
-    updateConfig: function updateConfig() {
-      var _this3 = this;
-
-      var breakpoints = Object.keys(this.breakpoints).sort(function (a, b) {
-        return b - a;
-      });
-      var matched;
-      breakpoints.some(function (breakpoint) {
-        matched = window.matchMedia("(min-width: ".concat(breakpoint, "px)")).matches;
-
-        if (matched) {
-          _this3.config = assign({}, _this3.config, _this3.defaults, _this3.breakpoints[breakpoint]);
-          return true;
-        }
-      });
-
-      if (!matched) {
-        this.config = assign(this.config, this.defaults);
-      }
-    },
-    restartTimer: function restartTimer() {
-      if (this.timer) {
-        this.timer.restart();
-      }
-    },
-    restart: function restart() {
-      var _this4 = this;
-
-      this.$nextTick(function () {
-        _this4.update();
-      });
-    },
-    // events handlers
-    onDragStart: function onDragStart(event) {
-      this.isTouch = event.type === 'touchstart';
-
-      if (!this.isTouch && event.button !== 0) {
-        return;
-      }
-
-      this.startPosition = {
-        x: 0,
-        y: 0
-      };
-      this.endPosition = {
-        x: 0,
-        y: 0
-      };
-      this.isDragging = true;
-      this.startPosition.x = this.isTouch ? event.touches[0].clientX : event.clientX;
-      this.startPosition.y = this.isTouch ? event.touches[0].clientY : event.clientY;
-      document.addEventListener(this.isTouch ? 'touchmove' : 'mousemove', this.onDrag);
-      document.addEventListener(this.isTouch ? 'touchend' : 'mouseup', this.onDragEnd);
-    },
-    isInvalidDirection: function isInvalidDirection(deltaX, deltaY) {
-      if (!this.config.vertical) {
-        return Math.abs(deltaX) <= Math.abs(deltaY);
-      }
-
-      if (this.config.vertical) {
-        return Math.abs(deltaY) <= Math.abs(deltaX);
-      }
-
-      return false;
-    },
-    onDrag: function onDrag(event) {
-      if (this.isSliding) {
-        return;
-      }
-
-      this.endPosition.x = this.isTouch ? event.touches[0].clientX : event.clientX;
-      this.endPosition.y = this.isTouch ? event.touches[0].clientY : event.clientY;
-      var deltaX = this.endPosition.x - this.startPosition.x;
-      var deltaY = this.endPosition.y - this.startPosition.y; // Maybe scrolling.
-
-      if (this.isInvalidDirection(deltaX, deltaY)) {
-        return;
-      }
-
-      this.delta.y = deltaY;
-      this.delta.x = deltaX;
-
-      if (!this.isTouch) {
-        event.preventDefault();
-      }
-    },
-    onDragEnd: function onDragEnd() {
-      var tolerance = this.config.shortDrag ? 0.5 : 0.15;
-      this.isDragging = false;
-
-      if (this.config.vertical) {
-        var draggedSlides = Math.round(Math.abs(this.delta.y / this.slideHeight) + tolerance);
-        this.slideTo(this.currentSlide - sign(this.delta.y) * draggedSlides);
-      }
-
-      if (!this.config.vertical) {
-        var direction = (this.config.rtl ? -1 : 1) * sign(this.delta.x);
-
-        var _draggedSlides = Math.round(Math.abs(this.delta.x / this.slideWidth) + tolerance);
-
-        this.slideTo(this.currentSlide - direction * _draggedSlides);
-      }
-
-      this.delta.x = 0;
-      this.delta.y = 0;
-      document.removeEventListener(this.isTouch ? 'touchmove' : 'mousemove', this.onDrag);
-      document.removeEventListener(this.isTouch ? 'touchend' : 'mouseup', this.onDragEnd);
-      this.restartTimer();
-    },
-    onTransitionend: function onTransitionend() {
-      this.isSliding = false;
-      this.$emit('afterSlide', {
-        currentSlide: this.currentSlide
-      });
-    },
-    onKeypress: function onKeypress(event) {
-      var key = event.key;
-
-      if (key.startsWith('Arrow')) {
-        event.preventDefault();
-      }
-
-      if (this.config.vertical) {
-        if (key === 'ArrowUp') {
-          this.slidePrev();
-        }
-
-        if (key === 'ArrowDown') {
-          this.slideNext();
-        }
-
-        return;
-      }
-
-      if (this.config.rtl) {
-        if (key === 'ArrowRight') {
-          this.slidePrev();
-        }
-
-        if (key === 'ArrowLeft') {
-          this.slideNext();
-        }
-
-        return;
-      }
-
-      if (key === 'ArrowRight') {
-        this.slideNext();
-      }
-
-      if (key === 'ArrowLeft') {
-        this.slidePrev();
-      }
-    },
-    onWheel: function onWheel(event) {
-      event.preventDefault();
-
-      if (now() - this.lastScrollTime < 200) {
-        return;
-      } // get wheel direction
-
-
-      this.lastScrollTime = now();
-      var value = event.wheelDelta || -event.deltaY;
-      var delta = sign(value);
-
-      if (delta === -1) {
-        this.slideNext();
-      }
-
-      if (delta === 1) {
-        this.slidePrev();
-      }
-    },
-    addGroupListeners: function addGroupListeners() {
-      var _this5 = this;
-
-      if (!this.group) {
-        return;
-      }
-
-      this._groupSlideHandler = function (slideIndex) {
-        // set the isSource to false to prevent infinite emitting loop.
-        _this5.slideTo(slideIndex, false);
-      };
-
-      EMITTER.$on("slideGroup:".concat(this.group), this._groupSlideHandler);
+        var body = renderBody.call(this, h);
+        return h('section', {
+            class: {
+                hooper: true,
+                    'is-vertical': this.config.vertical,
+                    'is-rtl': this.config.rtl
+            },
+            attrs: {
+                tabindex: '0'
+            },
+            on: {
+                focusin: function focusin() {
+                    return _this7.isFocus = true;
+                },
+                focusout: function focusout() {
+                    return _this7.isFocus = false;
+                },
+                mouseover: function mouseover() {
+                    return _this7.isHover = true;
+                },
+                mouseleave: function mouseleave() {
+                    return _this7.isHover = false;
+                }
+            }
+        }, body);
     }
-  },
-  created: function created() {
-    this.initDefaults();
-  },
-  mounted: function mounted() {
-    var _this6 = this;
-
-    this.initEvents();
-    this.addGroupListeners();
-    this.$nextTick(function () {
-      _this6.update();
-
-      _this6.slideTo(_this6.config.initialSlide || 0);
-
-      setTimeout(function () {
-        _this6.$emit('loaded');
-
-        _this6.initialized = true;
-      }, _this6.transition);
-    });
-  },
-  beforeDestroy: function beforeDestroy() {
-    window.removeEventListener('resize', this.update);
-
-    if (this.group) {
-      EMITTER.$off("slideGroup:".concat(this.group), this._groupSlideHandler);
-    }
-
-    if (this.timer) {
-      this.timer.stop();
-    }
-  },
-  render: function render(h) {
-    var _this7 = this;
-
-    var body = renderBody.call(this, h);
-    return h('section', {
-      class: {
-        hooper: true,
-        'is-vertical': this.config.vertical,
-        'is-rtl': this.config.rtl
-      },
-      attrs: {
-        tabindex: '0'
-      },
-      on: {
-        focusin: function focusin() {
-          return _this7.isFocus = true;
-        },
-        focusout: function focusout() {
-          return _this7.isFocus = false;
-        },
-        mouseover: function mouseover() {
-          return _this7.isHover = true;
-        },
-        mouseleave: function mouseleave() {
-          return _this7.isHover = false;
-        }
-      }
-    }, body);
-  }
 };
 /**
  * Renders additional slides for infinite slides mode.
@@ -8638,36 +8651,36 @@ var Carousel = {
  */
 
 function renderBufferSlides(h, slides) {
-  var before = [];
-  var after = []; // reduce prop access
+    var before = [];
+    var after = []; // reduce prop access
 
-  var slidesCount = slides.length;
+    var slidesCount = slides.length;
 
-  for (var i = 0; i < slidesCount; i++) {
-    var slide = slides[i];
-    var clonedBefore = cloneNode(h, slide);
-    var slideIndex = i - slidesCount;
-    clonedBefore.data.key = "before_".concat(i);
-    clonedBefore.key = clonedBefore.data.key;
-    clonedBefore.componentOptions.propsData.index = slideIndex;
-    clonedBefore.data.props = {
-      index: slideIndex,
-      isClone: true
-    };
-    before.push(clonedBefore);
-    var clonedAfter = cloneNode(h, slide);
-    slideIndex = i + slidesCount;
-    clonedAfter.data.key = "after_".concat(slideIndex);
-    clonedAfter.componentOptions.propsData.index = slideIndex;
-    clonedAfter.key = clonedAfter.data.key;
-    clonedAfter.data.props = {
-      index: slideIndex,
-      isClone: true
-    };
-    after.push(clonedAfter);
-  }
+    for (var i = 0; i < slidesCount; i++) {
+        var slide = slides[i];
+        var clonedBefore = cloneNode(h, slide);
+        var slideIndex = i - slidesCount;
+        clonedBefore.data.key = "before_".concat(i);
+        clonedBefore.key = clonedBefore.data.key;
+        clonedBefore.componentOptions.propsData.index = slideIndex;
+        clonedBefore.data.props = {
+            index: slideIndex,
+            isClone: true
+        };
+        before.push(clonedBefore);
+        var clonedAfter = cloneNode(h, slide);
+        slideIndex = i + slidesCount;
+        clonedAfter.data.key = "after_".concat(slideIndex);
+        clonedAfter.componentOptions.propsData.index = slideIndex;
+        clonedAfter.key = clonedAfter.data.key;
+        clonedAfter.data.props = {
+            index: slideIndex,
+            isClone: true
+        };
+        after.push(clonedAfter);
+    }
 
-  return [].concat(before, _toConsumableArray(slides), after);
+    return [].concat(before, _toConsumableArray(slides), after);
 }
 /**
  * Produces the VNodes for the Slides.
@@ -8677,48 +8690,48 @@ function renderBufferSlides(h, slides) {
 
 
 function renderSlides(h) {
-  var children = normalizeChildren(this);
-  var childrenCount = children.length;
-  var idx = 0;
-  var slides = [];
+    var children = normalizeChildren(this);
+    var childrenCount = children.length;
+    var idx = 0;
+    var slides = [];
 
-  for (var i = 0; i < childrenCount; i++) {
-    var child = children[i];
-    var ctor = child.componentOptions && child.componentOptions.Ctor;
+    for (var i = 0; i < childrenCount; i++) {
+        var child = children[i];
+        var ctor = child.componentOptions && child.componentOptions.Ctor;
 
-    if (!ctor || ctor.options.name !== 'HooperSlide') {
-      continue;
-    } // give slide an index behind the scenes
-
-
-    child.componentOptions.propsData.index = idx;
-    child.data.key = idx;
-    child.key = idx;
-    child.data.props = _objectSpread({}, child.data.props || {}, {
-      isClone: false,
-      index: idx++
-    });
-    slides.push(child);
-  } // update hooper's information of the slide count.
+        if (!ctor || ctor.options.name !== 'HooperSlide') {
+            continue;
+        } // give slide an index behind the scenes
 
 
-  this.slidesCount = slides.length;
+        child.componentOptions.propsData.index = idx;
+        child.data.key = idx;
+        child.key = idx;
+        child.data.props = _objectSpread({}, child.data.props || {}, {
+            isClone: false,
+            index: idx++
+        });
+        slides.push(child);
+    } // update hooper's information of the slide count.
 
-  if (this.config.infiniteScroll) {
-    slides = renderBufferSlides(h, slides);
-  }
 
-  return h('ul', {
-    class: {
-      'hooper-track': true,
-      'is-dragging': this.isDragging
-    },
-    style: this.trackTransform + this.trackTransition,
-    ref: 'track',
-    on: {
-      transitionend: this.onTransitionend
+    this.slidesCount = slides.length;
+
+    if (this.config.infiniteScroll) {
+        slides = renderBufferSlides(h, slides);
     }
-  }, slides);
+
+    return h('ul', {
+        class: {
+            'hooper-track': true,
+            'is-dragging': this.isDragging
+        },
+        style: this.trackTransform + this.trackTransition,
+        ref: 'track',
+        on: {
+            transitionend: this.onTransitionend
+        }
+    }, slides);
 }
 /**
  * Builds the VNodes for the hooper body.
@@ -8729,321 +8742,320 @@ function renderSlides(h) {
 
 
 function renderBody(h) {
-  var slides = renderSlides.call(this, h);
-  var addons = this.$slots['hooper-addons'] || [];
-  var a11y = h('div', {
-    class: 'hooper-liveregion hooper-sr-only',
-    attrs: {
-      'aria-live': 'polite',
-      'aria-atomic': 'true'
-    }
-  }, "Item ".concat(this.currentSlide + 1, " of ").concat(this.slidesCount));
-  var children = [slides].concat(_toConsumableArray(addons), [a11y]);
-  return [h('div', {
-    class: 'hooper-list',
-    ref: 'list'
-  }, children)];
+    var slides = renderSlides.call(this, h);
+    var addons = this.$slots['hooper-addons'] || [];
+    var a11y = h('div', {
+        class: 'hooper-liveregion hooper-sr-only',
+        attrs: {
+            'aria-live': 'polite',
+            'aria-atomic': 'true'
+        }
+    }, "Item ".concat(this.currentSlide + 1, " of ").concat(this.slidesCount));
+    var children = [slides].concat(_toConsumableArray(addons), [a11y]);
+    return [h('div', {
+        class: 'hooper-list',
+        ref: 'list'
+    }, children)];
 }
 
 var Slide = {
-  name: 'HooperSlide',
-  inject: ['$hooper'],
-  props: {
-    isClone: {
-      type: Boolean,
-      default: false
+    name: 'HooperSlide',
+    inject: ['$hooper'],
+    props: {
+        isClone: {
+            type: Boolean,
+            default: false
+        },
+        index: {
+            type: Number,
+            required: true
+        }
     },
-    index: {
-      type: Number,
-      required: true
-    }
-  },
-  computed: {
-    style: function style() {
-      var _ref = this.$hooper || {},
-          config = _ref.config,
-          slideHeight = _ref.slideHeight,
-          slideWidth = _ref.slideWidth;
+    computed: {
+        style: function style() {
+            var _ref = this.$hooper || {},
+                config = _ref.config,
+                slideHeight = _ref.slideHeight,
+                slideWidth = _ref.slideWidth;
 
-      if (config.vertical) {
-        return "height: ".concat(slideHeight, "px");
-      }
+            if (config.vertical) {
+                return "height: ".concat(slideHeight, "px");
+            }
 
-      return "width: ".concat(slideWidth, "px");
+            return "width: ".concat(slideWidth, "px");
+        },
+        isActive: function isActive() {
+            var _this$$hooper$slideBo = this.$hooper.slideBounds,
+                upper = _this$$hooper$slideBo.upper,
+                lower = _this$$hooper$slideBo.lower;
+            return this.index >= lower && this.index <= upper;
+        },
+        isPrev: function isPrev() {
+            var lower = this.$hooper.slideBounds.lower;
+            var itemsToSlide = this.$hooper.config.itemsToSlide;
+            return this.index < lower && this.index >= lower - itemsToSlide;
+        },
+        isNext: function isNext() {
+            var upper = this.$hooper.slideBounds.upper;
+            var itemsToSlide = this.$hooper.config.itemsToSlide;
+            return this.index > upper && this.index <= upper + itemsToSlide;
+        },
+        isCurrent: function isCurrent() {
+            return this.index === this.$hooper.currentSlide;
+        }
     },
-    isActive: function isActive() {
-      var _this$$hooper$slideBo = this.$hooper.slideBounds,
-          upper = _this$$hooper$slideBo.upper,
-          lower = _this$$hooper$slideBo.lower;
-      return this.index >= lower && this.index <= upper;
-    },
-    isPrev: function isPrev() {
-      var lower = this.$hooper.slideBounds.lower;
-      var itemsToSlide = this.$hooper.config.itemsToSlide;
-      return this.index < lower && this.index >= lower - itemsToSlide;
-    },
-    isNext: function isNext() {
-      var upper = this.$hooper.slideBounds.upper;
-      var itemsToSlide = this.$hooper.config.itemsToSlide;
-      return this.index > upper && this.index <= upper + itemsToSlide;
-    },
-    isCurrent: function isCurrent() {
-      return this.index === this.$hooper.currentSlide;
+    render: function render(h) {
+        var classes = {
+            'hooper-slide': true,
+            'is-clone': this.isClone,
+            'is-active': this.isActive,
+            'is-prev': this.isPrev,
+            'is-next': this.isNext,
+            'is-current': this.isCurrent
+        };
+        var children = normalizeChildren(this);
+        return h('li', {
+            class: classes,
+            style: this.style,
+            attrs: {
+                'aria-hidden': !this.isActive
+            }
+        }, children);
     }
-  },
-  render: function render(h) {
-    var classes = {
-      'hooper-slide': true,
-      'is-clone': this.isClone,
-      'is-active': this.isActive,
-      'is-prev': this.isPrev,
-      'is-next': this.isNext,
-      'is-current': this.isCurrent
-    };
-    var children = normalizeChildren(this);
-    return h('li', {
-      class: classes,
-      style: this.style,
-      attrs: {
-        'aria-hidden': !this.isActive
-      }
-    }, children);
-  }
 };
 
 var Mixin = {
-  inject: ['$hooper']
+    inject: ['$hooper']
 };
 
 var icons = {
-  arrowUp: 'M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z',
-  arrowDown: 'M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z',
-  arrowRight: 'M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z',
-  arrowLeft: 'M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z'
+    arrowUp: 'M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z',
+    arrowDown: 'M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z',
+    arrowRight: 'M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z',
+    arrowLeft: 'M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z'
 };
 var Icon = {
-  name: 'HooperIcon',
-  functional: true,
-  inheritAttrs: true,
-  props: {
-    name: {
-      type: String,
-      required: true,
-      validator: function validator(val) {
-        return val in icons;
-      }
+    name: 'HooperIcon',
+    functional: true,
+    inheritAttrs: true,
+    props: {
+        name: {
+            type: String,
+            required: true,
+            validator: function validator(val) {
+                return val in icons;
+            }
+        }
+    },
+    render: function render(createElement, _ref) {
+        var props = _ref.props;
+        var icon = icons[props.name];
+        var children = [];
+        children.push(createElement('title', camelCaseToString(props.name)));
+        children.push(createElement('path', {
+            attrs: {
+                d: 'M0 0h24v24H0z',
+                fill: 'none'
+            }
+        }));
+        children.push(createElement('path', {
+            attrs: {
+                d: icon
+            }
+        }));
+        return createElement('svg', {
+            attrs: {
+                class: "icon icon-".concat(props.name),
+                viewBox: '0 0 24 24',
+                width: '24px',
+                height: '24px'
+            }
+        }, children);
     }
-  },
-  render: function render(createElement, _ref) {
-    var props = _ref.props;
-    var icon = icons[props.name];
-    var children = [];
-    children.push(createElement('title', camelCaseToString(props.name)));
-    children.push(createElement('path', {
-      attrs: {
-        d: 'M0 0h24v24H0z',
-        fill: 'none'
-      }
-    }));
-    children.push(createElement('path', {
-      attrs: {
-        d: icon
-      }
-    }));
-    return createElement('svg', {
-      attrs: {
-        class: "icon icon-".concat(props.name),
-        viewBox: '0 0 24 24',
-        width: '24px',
-        height: '24px'
-      }
-    }, children);
-  }
 };
 
 var Progress = {
-  inject: ['$hooper'],
-  name: 'HooperProgress',
-  computed: {
-    currentSlide: function currentSlide() {
-      return normalizeSlideIndex(this.$hooper.currentSlide, this.$hooper.slidesCount);
+    inject: ['$hooper'],
+    name: 'HooperProgress',
+    computed: {
+        currentSlide: function currentSlide() {
+            return normalizeSlideIndex(this.$hooper.currentSlide, this.$hooper.slidesCount);
+        },
+        progress: function progress() {
+            var range = this.$hooper.slidesCount - this.$hooper.trimStart - this.$hooper.trimEnd;
+            return (this.currentSlide - this.$hooper.trimStart) * 100 / range;
+        }
     },
-    progress: function progress() {
-      var range = this.$hooper.slidesCount - this.$hooper.trimStart - this.$hooper.trimEnd;
-      return (this.currentSlide - this.$hooper.trimStart) * 100 / range;
+    render: function render(h) {
+        return h('div', {
+            class: 'hooper-progress'
+        }, [h('div', {
+            class: 'hooper-progress-inner',
+            style: "width: ".concat(this.progress, "%")
+        })]);
     }
-  },
-  render: function render(h) {
-    return h('div', {
-      class: 'hooper-progress'
-    }, [h('div', {
-      class: 'hooper-progress-inner',
-      style: "width: ".concat(this.progress, "%")
-    })]);
-  }
 };
 
 function renderFraction(h, current, totalCount) {
-  return [h('span', current + 1), h('span', '/'), h('span', totalCount)];
+    return [h('span', current + 1), h('span', '/'), h('span', totalCount)];
 }
 
 function renderIndicator(h, index, isCurrent, onClick) {
-  return h('li', [h('button', {
-    class: {
-      'hooper-indicator': true,
-      'is-active': isCurrent
-    },
-    on: {
-      click: onClick
-    },
-    attrs: {
-      type: 'button'
-    }
-  }, [h('span', {
-    class: 'hooper-sr-only'
-  }, "item ".concat(index))])]);
+    return h('li', [h('button', {
+        class: {
+            'hooper-indicator': true,
+            'is-active': isCurrent
+        },
+        on: {
+            click: onClick
+        },
+        attrs: {
+            type: 'button'
+        }
+    }, [h('span', {
+        class: 'hooper-sr-only'
+    }, "item ".concat(index))])]);
 }
 
 function renderDefault(h, current, totalCount, slideToIndex) {
-  var children = [];
+    var children = [];
 
-  var _loop = function _loop(i) {
-    children.push(renderIndicator(h, i, i === current, function () {
-      return slideToIndex(i);
-    }));
-  };
+    var _loop = function _loop(i) {
+        children.push(renderIndicator(h, i, i === current, function() {
+            return slideToIndex(i);
+        }));
+    };
 
-  for (var i = 0; i < totalCount; i++) {
-    _loop(i);
-  }
+    for (var i = 0; i < totalCount; i++) {
+        _loop(i);
+    }
 
-  return [h('ol', {
-    class: 'hooper-indicators'
-  }, children)];
+    return [h('ol', {
+        class: 'hooper-indicators'
+    }, children)];
 }
 
 var Pagination = {
-  inject: ['$hooper'],
-  name: 'HooperPagination',
-  props: {
-    mode: {
-      default: 'indicator',
-      type: String
-    }
-  },
-  computed: {
-    currentSlide: function currentSlide() {
-      return normalizeSlideIndex(this.$hooper.currentSlide, this.$hooper.slidesCount);
+    inject: ['$hooper'],
+    name: 'HooperPagination',
+    props: {
+        mode: {
+            default: 'indicator',
+            type: String
+        }
     },
-    slides: function slides() {
-      var slides = this.$hooper.slides.map(function (_, index) {
-        return index;
-      });
-      return slides.slice(this.$hooper.trimStart, this.$hooper.slidesCount - this.$hooper.trimEnd + 1);
-    }
-  },
-  render: function render(h) {
-    var _this = this;
+    computed: {
+        currentSlide: function currentSlide() {
+            return normalizeSlideIndex(this.$hooper.currentSlide, this.$hooper.slidesCount);
+        },
+        slides: function slides() {
+            var slides = this.$hooper.slides.map(function(_, index) {
+                return index;
+            });
+            return slides.slice(this.$hooper.trimStart, this.$hooper.slidesCount - this.$hooper.trimEnd + 1);
+        }
+    },
+    render: function render(h) {
+        var _this = this;
 
-    var totalCount = this.$hooper.slidesCount;
-    var children = this.mode === 'indicator' ? renderDefault(h, this.currentSlide, totalCount, function (index) {
-      return _this.$hooper.slideTo(index);
-    }) : renderFraction(h, this.currentSlide, totalCount);
-    return h('div', {
-      class: {
-        'hooper-pagination': true,
-        'is-vertical': this.$hooper.config.vertical
-      }
-    }, children);
-  }
+        var totalCount = this.$hooper.slidesCount;
+        var children = this.mode === 'indicator' ? renderDefault(h, this.currentSlide, totalCount, function(index) {
+            return _this.$hooper.slideTo(index);
+        }) : renderFraction(h, this.currentSlide, totalCount);
+        return h('div', {
+            class: {
+                'hooper-pagination': true,
+                'is-vertical': this.$hooper.config.vertical
+            }
+        }, children);
+    }
 };
 
 function iconName(isVertical, isRTL, isPrev) {
-  if (isPrev) {
-    return isVertical ? 'arrowUp' : isRTL ? 'arrowRight' : 'arrowLeft';
-  }
+    if (isPrev) {
+        return isVertical ? 'arrowUp' : isRTL ? 'arrowRight' : 'arrowLeft';
+    }
 
-  return isVertical ? 'arrowDown' : isRTL ? 'arrowLeft' : 'arrowRight';
+    return isVertical ? 'arrowDown' : isRTL ? 'arrowLeft' : 'arrowRight';
 }
 
 function renderButton(h, disabled, slot, isPrev, _ref, onClick) {
-  var _class;
+    var _class;
 
-  var isVertical = _ref.isVertical,
-      isRTL = _ref.isRTL;
-  var children = slot && slot.length ? slot : [h(Icon, {
-    props: {
-      name: iconName(isVertical, isRTL, isPrev)
-    }
-  })];
-  return h('button', {
-    class: (_class = {}, _defineProperty(_class, "hooper-".concat(isPrev ? 'prev' : 'next'), true), _defineProperty(_class, 'is-disabled', disabled), _class),
-    attrs: {
-      type: 'button'
-    },
-    on: {
-      click: onClick
-    }
-  }, children);
+    var isVertical = _ref.isVertical,
+        isRTL = _ref.isRTL;
+    var children = slot && slot.length ? slot : [h(Icon, {
+        props: {
+            name: iconName(isVertical, isRTL, isPrev)
+        }
+    })];
+    return h('button', {
+        class: (_class = {}, _defineProperty(_class, "hooper-".concat(isPrev ? 'prev' : 'next'), true), _defineProperty(_class, 'is-disabled', disabled), _class),
+        attrs: {
+            type: 'button'
+        },
+        on: {
+            click: onClick
+        }
+    }, children);
 }
 
 var Navigation = {
-  inject: ['$hooper'],
-  name: 'HooperNavigation',
-  computed: {
-    isPrevDisabled: function isPrevDisabled() {
-      if (this.$hooper.config.infiniteScroll) {
-        return false;
-      }
+    inject: ['$hooper'],
+    name: 'HooperNavigation',
+    computed: {
+        isPrevDisabled: function isPrevDisabled() {
+            if (this.$hooper.config.infiniteScroll) {
+                return false;
+            }
 
-      return this.$hooper.currentSlide === 0;
+            return this.$hooper.currentSlide === 0;
+        },
+        isNextDisabled: function isNextDisabled() {
+            if (this.$hooper.config.infiniteScroll) {
+                return false;
+            }
+
+            if (this.$hooper.config.trimWhiteSpace) {
+                return this.$hooper.currentSlide === this.$hooper.slidesCount - Math.min(this.$hooper.config.itemsToShow, this.$hooper.slidesCount);
+            }
+
+            return this.$hooper.currentSlide === this.$hooper.slidesCount - 1;
+        }
     },
-    isNextDisabled: function isNextDisabled() {
-      if (this.$hooper.config.infiniteScroll) {
-        return false;
-      }
-
-      if (this.$hooper.config.trimWhiteSpace) {
-        return this.$hooper.currentSlide === this.$hooper.slidesCount - Math.min(this.$hooper.config.itemsToShow, this.$hooper.slidesCount);
-      }
-
-      return this.$hooper.currentSlide === this.$hooper.slidesCount - 1;
-    }
-  },
-  methods: {
-    slideNext: function slideNext() {
-      this.$hooper.slideNext();
-      this.$hooper.restartTimer();
+    methods: {
+        slideNext: function slideNext() {
+            this.$hooper.slideNext();
+            this.$hooper.restartTimer();
+        },
+        slidePrev: function slidePrev() {
+            this.$hooper.slidePrev();
+            this.$hooper.restartTimer();
+        }
     },
-    slidePrev: function slidePrev() {
-      this.$hooper.slidePrev();
-      this.$hooper.restartTimer();
-    }
-  },
-  render: function render(h) {
-    var _this = this;
+    render: function render(h) {
+        var _this = this;
 
-    var config = {
-      isRTL: this.$hooper.config.rtl,
-      isVertical: this.$hooper.config.vertical
-    };
-    var children = [renderButton(h, this.isPrevDisabled, this.$slots['hooper-prev'], true, config, function () {
-      return _this.slidePrev();
-    }), renderButton(h, this.isNextDisabled, this.$slots['hooper-next'], false, config, function () {
-      return _this.slideNext();
-    })];
-    return h('div', {
-      class: {
-        'hooper-navigation': true,
-        'is-vertical': this.$hooper.config.vertical,
-        'is-rtl': this.$hooper.config.rtl
-      }
-    }, children);
-  }
+        var config = {
+            isRTL: this.$hooper.config.rtl,
+            isVertical: this.$hooper.config.vertical
+        };
+        var children = [renderButton(h, this.isPrevDisabled, this.$slots['hooper-prev'], true, config, function() {
+            return _this.slidePrev();
+        }), renderButton(h, this.isNextDisabled, this.$slots['hooper-next'], false, config, function() {
+            return _this.slideNext();
+        })];
+        return h('div', {
+            class: {
+                'hooper-navigation': true,
+                'is-vertical': this.$hooper.config.vertical,
+                    'is-rtl': this.$hooper.config.rtl
+            }
+        }, children);
+    }
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Carousel);
-
 
 
 /***/ }),
@@ -42264,53 +42276,62 @@ var render = function() {
         staticClass: "d-flex flex-wrap justify-content-center",
         attrs: { id: "selected_restaurant_dishes" }
       },
-      _vm._l(this.$store.state.selectedRestaurant2.dishes, function(dish) {
-        return _c("div", { staticClass: "dish_card" }, [
-          _c("div", [
-            _c("img", { attrs: { src: dish.img, alt: "" } }),
-            _vm._v(" "),
-            _c("h4", [_vm._v(_vm._s(dish.name))]),
-            _vm._v(" "),
-            _c("span", { staticClass: "prezzo" }, [
-              _vm._v("prezzo € " + _vm._s(dish.price.toFixed(2)))
-            ]),
-            _c("br"),
-            _vm._v(" "),
-            _c("span", { staticClass: "rating" }, [
-              _vm._v(" rating " + _vm._s(dish.rating))
-            ]),
-            _vm._v(" "),
+      [
+        _c("div", { staticClass: "torna_ristoranti" }, [
+          _c("span", { attrs: { id: "back" }, on: { click: _vm.toggle } }, [
+            _c("img", { attrs: { src: "img/back.png" } })
+          ])
+        ]),
+        _vm._v(" "),
+        _vm._l(this.$store.state.selectedRestaurant2.dishes, function(dish) {
+          return _c("div", { staticClass: "dish_card" }, [
             _c("div", [
-              _c("dd", { staticClass: "show_plate_info_logo" }, [_vm._v("?")]),
+              _c("img", { attrs: { src: dish.img, alt: "" } }),
               _vm._v(" "),
-              _c("input", {
-                staticClass: "show_plate_info",
-                attrs: { type: "submit" },
+              _c("h4", [_vm._v(_vm._s(dish.name))]),
+              _vm._v(" "),
+              _c("span", { staticClass: "prezzo" }, [
+                _vm._v("prezzo € " + _vm._s(dish.price.toFixed(2)))
+              ]),
+              _c("br"),
+              _vm._v(" "),
+              _c("span", { staticClass: "rating" }, [
+                _vm._v(" rating " + _vm._s(dish.rating))
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "info" }, [
+                _c(
+                  "dd",
+                  {
+                    staticClass: "show_plate_info_logo",
+                    on: {
+                      click: function($event) {
+                        return _vm.ShowInfo(dish)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "fas fa-info-circle" })]
+                )
+              ])
+            ]),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass:
+                  "d-flex justify-content-center align-items-center button is-success",
                 on: {
                   click: function($event) {
-                    return _vm.ShowInfo(dish)
+                    return _vm.addToCart(dish)
                   }
                 }
-              })
-            ])
-          ]),
-          _vm._v(" "),
-          _c(
-            "button",
-            {
-              staticClass:
-                "d-flex justify-content-center align-items-center button is-success",
-              on: {
-                click: function($event) {
-                  return _vm.addToCart(dish)
-                }
-              }
-            },
-            [_c("i", { staticClass: "fas fa-plus" })]
-          )
-        ])
-      }),
-      0
+              },
+              [_c("i", { staticClass: "fas fa-plus" })]
+            )
+          ])
+        })
+      ],
+      2
     ),
     _vm._v(" "),
     _vm.showInfo
@@ -42321,18 +42342,21 @@ var render = function() {
           _vm._v(" "),
           _c("p", [_vm._v(_vm._s(this.plate.description))]),
           _vm._v(" "),
-          _c("div", [
-            _c("dd", { staticClass: "show_plate_info_logo" }, [_vm._v("X")]),
-            _vm._v(" "),
-            _c("input", {
-              staticClass: "show_plate_info",
-              attrs: { type: "submit" },
-              on: {
-                click: function($event) {
-                  return _vm.ShowInfo()
+          _c("p", [_vm._v("prezzo: € " + _vm._s(this.plate.price))]),
+          _vm._v(" "),
+          _c("div", { staticClass: "close" }, [
+            _c(
+              "dd",
+              {
+                staticClass: "show_plate_info_logo",
+                on: {
+                  click: function($event) {
+                    return _vm.ShowInfo()
+                  }
                 }
-              }
-            })
+              },
+              [_c("i", { staticClass: "fas fa-times-circle" })]
+            )
           ])
         ])
       : _vm._e()
@@ -42530,22 +42554,25 @@ var render = function() {
         ])
       ]),
       _vm._v(" "),
-      _c("div", { attrs: { id: "main_restaurant" } }, [
-        _c("div", { staticClass: " first_title" }, [
-          _c("h2", [_vm._v("Ristorante selezionato")]),
-          _vm._v(" "),
-          _c("button", { attrs: { id: "back" }, on: { click: _vm.toggle } }, [
-            _vm._v(" torna ai ristoranti")
-          ])
-        ])
-      ]),
+      _vm._m(0),
       _vm._v(" "),
       _c("plate-component")
     ],
     1
   )
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { attrs: { id: "main_restaurant" } }, [
+      _c("div", { staticClass: " first_title" }, [
+        _c("h2", [_vm._v("Ristorante selezionato")])
+      ])
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -57588,8 +57615,8 @@ var store = {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /var/www/html/boolean/laravel/deliveboo/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /var/www/html/boolean/laravel/deliveboo/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/rocco/Documents/BOOLEAN/Classe23/deliveboo/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/rocco/Documents/BOOLEAN/Classe23/deliveboo/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

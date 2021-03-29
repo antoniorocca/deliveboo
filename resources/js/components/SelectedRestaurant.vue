@@ -14,12 +14,10 @@
         <div id="main_restaurant">
             <div class=" first_title">
                 <h2>Ristorante selezionato</h2>
-                <button id="back" @click="toggle"> torna ai ristoranti</button>
             </div>
+            
         </div>
         <plate-component></plate-component>
-
-
     </div>
 </template>
 
@@ -31,11 +29,6 @@ export default {
         };
     },
     methods:{
-        toggle(){
-          this.toggleSelectRestaurant();
-          this.togglerestaurant();
-
-        },
         addToCart(item) {
             this.$store.commit('addToCart', item);
         },
@@ -45,7 +38,6 @@ export default {
         toggleSelectRestaurant(){
           this.$store.commit('toggleSelectRestaurant')
         },
-
     },
     computed: {
     },
@@ -60,7 +52,7 @@ export default {
 .selected_restaurant_container{
     height: 100%;
     padding: 20px 20px;
-    border:5px solid black;
+    border: 5px solid black;
     #info_restaurant {
         height: 600px;
         width: 100%;
@@ -79,9 +71,9 @@ export default {
         }
         #restaurant_txt {
             padding: 10px;;
-            position: absolute;
-            top: 480px;
-            left: 50px;
+            // position: absolute;
+            // top: 480px;
+            // left: 50px;
             height: 100%;
             width: 500px;
             background-color: white;
@@ -96,13 +88,7 @@ export default {
             }
         }
     }
-    #back{
-        background-color: #ffc244;
-        color: black;
-        padding: 5px;
-        border-radius: 10px;
-        border: 1px solid transparent;
-    }
+
 }
 @media all and (max-width: 1024px) {
     #restaurant_txt {
