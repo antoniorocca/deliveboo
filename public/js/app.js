@@ -7733,7 +7733,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "#to_top[data-v-2b42e07f] {\n  position: absolute;\n  top: 0px;\n  right: 20px;\n  margin: 35px;\n  background-color: #ffc244;\n  color: white;\n  width: 60px;\n  height: 35px;\n  display: flex;\n  place-content: center;\n  place-items: center;\n  border-radius: 10px;\n  border: 1px solid transparent;\n}", ""]);
+exports.push([module.i, "#to_top i[data-v-2b42e07f] {\n  position: absolute;\n  top: 0px;\n  right: 20px;\n  margin: 35px;\n  color: #ffc244;\n  width: 60px;\n  height: 35px;\n  display: flex;\n  font-size: 35px;\n}", ""]);
 
 // exports
 
@@ -42602,7 +42602,7 @@ var render = function() {
         }
       }
     },
-    [_vm._v("/\\")]
+    [_c("i", { staticClass: "fas fa-chevron-circle-up" })]
   )
 }
 var staticRenderFns = []
