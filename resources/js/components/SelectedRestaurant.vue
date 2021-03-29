@@ -60,7 +60,6 @@ export default {
 .selected_restaurant_container{
     height: 100%;
     padding: 20px 20px;
-    border:5px solid black;
     #info_restaurant {
         height: 600px;
         width: 100%;
