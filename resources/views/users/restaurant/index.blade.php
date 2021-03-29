@@ -1,11 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
+@include('layouts.registered_nav')
+
 <div class="spacer">
   <img class="img_spacer" src="{{asset('storage/lightgreen_wave.png')}}" alt="">
 </div>
 
-<div id="backend_container"class="">
+<div id="backend_container" class="">
   <div class="backend_wrap">
 
 
