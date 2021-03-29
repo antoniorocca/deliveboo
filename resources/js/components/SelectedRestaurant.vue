@@ -58,8 +58,7 @@ export default {
 <style scoped lang="scss">
 .selected_restaurant_container{
     height: 100%;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding: 20px 20px;
     border:5px solid black;
     #info_restaurant {
         height: 600px;
@@ -78,17 +77,17 @@ export default {
             border-radius: 15px;
         }
         #restaurant_txt {
+            padding: 10px;;
             position: absolute;
             top: 480px;
             left: 50px;
-            height: 120px;
+            height: 100%;
             width: 500px;
             background-color: white;
             border-radius: 10px;
             h2 {
                 border: px solid rgba(0, 0, 0, 0.125);
                 border-radius: 0.25rem;
-                margin: 10px;
                 font-weight: 700;
             }
             p {

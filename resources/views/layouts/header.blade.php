@@ -1,7 +1,7 @@
 <header >
     <nav id="nav" class="col-lg-12 col-md-12 col-sm-12 d-flex justify-content-around align-items-center">
         <div id="logo" class="d-flex">
-            <a href="/"><img src="{{asset('img/logo_green.svg')}}" alt=""></a>
+            <a href="/"><img src="{{asset('img/deliveboo-logo-green.png')}}" alt=""></a>
             <search-component></search-component>
             {{-- <div>
                 <input id="header_logo" type="text" placeholder="Cerca" v-model="search" @keyup.enter="switchMain"><i></i>
@@ -31,5 +31,5 @@
     <!-- <div id="link-consegne">
         <p>Consegne in <a href="">Via ...... <i class="fas fa-angle-down"></i></a></p>
     </div> -->
-    <header-component v-if="this.$store.state.showHeader"></header-component>
+    <header-component v-if="!this.$store.state.showRestaurant"></header-component>
 </header>
