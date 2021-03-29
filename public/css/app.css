@@ -11007,22 +11007,6 @@ header #nav #logo img,
   height: 50px;
 }
 
-header #nav #register,
-.header #nav #register {
-  border-radius: 50px;
-  background-color: #00a082;
-  color: white;
-  height: 50px;
-  width: 120px;
-}
-
-header #nav #register a,
-.header #nav #register a {
-  color: white;
-  margin: 5px;
-  font-weight: bold;
-}
-
 header #main-header,
 .header #main-header {
   width: 100%;
@@ -11081,13 +11065,18 @@ header #main-header #categories .category_hover,
   transition: 0.3s all ease-in-out;
 }
 
-#btn_auth {
+#collapse #btn_auth {
   flex-flow: row-reverse;
   z-index: 5;
 }
 
-#btn_auth a {
-  background-color: #CFFFF6;
+#collapse #btn_auth a {
+  background-color: #00a082;
+  text-transform: none;
+  height: 50px;
+  width: 120px;
+  border-radius: 80px;
+  color: white !important;
 }
 
 #back_nav > div > a > img {
@@ -11492,7 +11481,7 @@ h1 {
 .most_popular .cards .card {
   margin: 30px;
   width: 300px;
-  z-index: 10;
+  z-index: 9;
   border-radius: 10px;
   box-shadow: 0 0 10px #DDDDDD;
 }

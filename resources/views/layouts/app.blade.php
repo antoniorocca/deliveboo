@@ -24,9 +24,9 @@
 
                         @guest
                         <div id="btn_auth" class="d-flex">
-                            <a class="nav-link mx-2" href="{{ route('login') }}">{{ __('Login') }}</a>
+                            <a class="nav-link mx-2 d-flex align-items-center justify-content-center" href="{{ route('login') }}">{{ __('Accedi') }}</a>
                             @if (Route::has('register'))
-                            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                            <a class="nav-link d-flex align-items-center justify-content-center" href="{{ route('register') }}">{{ __('Registrati') }}</a>
                             @endif
                         </div>
                         @else
