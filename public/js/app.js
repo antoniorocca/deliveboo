@@ -2364,6 +2364,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   methods: {
     // addSelectedCategories(category){
@@ -2874,11 +2876,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-<<<<<<< HEAD
 //
 //
-=======
->>>>>>> uni2
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -7806,9 +7809,17 @@ exports.push([module.i, ".focusr[data-v-78e2f7b6] {\n  outline: 0;\n}\ninput[dat
   !*** ./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/SelectedRestaurant.vue?vue&type=style&index=0&id=3db2e1e3&scoped=true&lang=scss& ***!
   \****************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-throw new Error("Module build failed (from ./node_modules/sass-loader/dist/cjs.js):\nSassError: expected \"{\".\n   ╷\n57 │     border: 5px solid black;\n   │                            ^\n   ╵\n  /var/www/html/boolean/laravel/deliveboo/resources/js/components/SelectedRestaurant.vue 57:28  root stylesheet");
+exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".selected_restaurant_container[data-v-3db2e1e3] {\n  height: 100%;\n  padding: 20px 20px;\n}\n.selected_restaurant_container #info_restaurant[data-v-3db2e1e3] {\n  height: 600px;\n  width: 100%;\n  position: relative;\n  margin-bottom: 30px;\n  overflow: hidden;\n}\n.selected_restaurant_container #info_restaurant img[data-v-3db2e1e3] {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  width: 100%;\n  height: 440px;\n  -o-object-fit: cover;\n     object-fit: cover;\n  border-radius: 15px;\n}\n.selected_restaurant_container #info_restaurant #restaurant_txt[data-v-3db2e1e3] {\n  padding: 10px;\n  height: 100%;\n  width: 500px;\n  background-color: white;\n  border-radius: 10px;\n}\n.selected_restaurant_container #info_restaurant #restaurant_txt h2[data-v-3db2e1e3] {\n  border: px solid rgba(0, 0, 0, 0.125);\n  border-radius: 0.25rem;\n  font-weight: 700;\n}\n.selected_restaurant_container #info_restaurant #restaurant_txt p[data-v-3db2e1e3] {\n  margin-left: 10px;\n}\n@media all and (max-width: 1024px) {\n#restaurant_txt[data-v-3db2e1e3] {\n    left: 20px;\n    height: 450px;\n    width: 250px;\n}\n}", ""]);
+
+// exports
+
 
 /***/ }),
 
@@ -7843,7 +7854,7 @@ exports = module.exports = __webpack_require__(/*! ../../css-loader/lib/css-base
 
 
 // module
-exports.push([module.i, ".hooper-slide {\r\n  flex-shrink: 0;\r\n  height: 100%;\r\n  margin: 0;\r\n  padding: 0;\r\n  list-style: none;\r\n}\r\n.hooper-progress {\r\n  position: absolute;\r\n  top: 0;\r\n  right: 0;\r\n  left: 0;\r\n  height: 4px;\r\n  background-color: #efefef;\r\n}\r\n.hooper-progress-inner {\r\n  height: 100%;\r\n  background-color: #4285f4;\r\n  transition: 300ms;\r\n}\r\n.hooper-pagination {\r\n  position: absolute;\r\n  bottom: 0;\r\n  right: 50%;\r\n  transform: translateX(50%);\r\n  display: flex;\r\n  padding: 5px 10px;\r\n}\r\n.hooper-indicators {\r\n  display: flex;\r\n  list-style: none;\r\n  margin: 0;\r\n  padding: 0;\r\n}\r\n.hooper-indicator:hover,\r\n.hooper-indicator.is-active {\r\n  background-color: #4285f4;\r\n}\r\n.hooper-indicator {\r\n  margin: 0 2px;\r\n  width: 12px;\r\n  height: 4px;\r\n  border-radius: 4px;\r\n  border: none;\r\n  padding: 0;\r\n  background-color: #fff;\r\n  cursor: pointer;\r\n}\r\n.hooper-pagination.is-vertical {\r\n  bottom: auto;\r\n  right: 0;\r\n  top: 50%;\r\n  transform: translateY(-50%);\r\n}\r\n.hooper-pagination.is-vertical .hooper-indicators {\r\n  flex-direction: column;\r\n}\r\n.hooper-pagination.is-vertical .hooper-indicator {\r\n  width: 6px;\r\n}\r\n.hooper-next,\r\n.hooper-prev {\r\n  background-color: transparent;\r\n  border: none;\r\n  padding: 1em;\r\n  position: absolute;\r\n  top: 50%;\r\n  transform: translateY(-50%);\r\n  cursor: pointer;\r\n}\r\n.hooper-next.is-disabled,\r\n.hooper-prev.is-disabled {\r\n  opacity: 0.3;\r\n  cursor: not-allowed;\r\n}\r\n.hooper-next {\r\n  right: 0;\r\n}\r\n.hooper-prev {\r\n  left: 0;\r\n}\r\n.hooper-navigation.is-vertical .hooper-next {\r\n  top: auto;\r\n  bottom: 0;\r\n  transform: initial;\r\n}\r\n.hooper-navigation.is-vertical .hooper-prev {\r\n  top: 0;\r\n  bottom: auto;\r\n  right: 0;\r\n  left: auto;\r\n  transform: initial;\r\n}\r\n.hooper-navigation.is-rtl .hooper-prev {\r\n  left: auto;\r\n  right: 0;\r\n}\r\n.hooper-navigation.is-rtl .hooper-next {\r\n  right: auto;\r\n  left: 0;\r\n}\r\n.hooper {\r\n  position: relative;\r\n  box-sizing: border-box;\r\n  width: 100%;\r\n  height: 200px;\r\n}\r\n.hooper * {\r\n  box-sizing: border-box;\r\n}\r\n.hooper-list {\r\n  overflow: hidden;\r\n  width: 100%;\r\n  height: 100%;\r\n}\r\n.hooper-track {\r\n  display: flex;\r\n  justify-content: center;\r\n  box-sizing: border-box;\r\n  width: 100%;\r\n  height: 100%;\r\n  padding: 0;\r\n  margin: 0;\r\n}\r\n.hooper.is-vertical .hooper-track {\r\n  flex-direction: column;\r\n  height: 200px;\r\n}\r\n\r\n.hooper.is-rtl {\r\n  direction: rtl;\r\n}\r\n\r\n.hooper-sr-only {\r\n  position: absolute;\r\n  width: 1px;\r\n  height: 1px;\r\n  padding: 0;\r\n  margin: -1px;\r\n  overflow: hidden;\r\n  clip: rect(0, 0, 0, 0);\r\n  border: 0;\r\n}\r\n#hooper > div > div.hooper-navigation > button.hooper-prev {\r\n\tbackground-color: #F7C244;\r\n\tpadding: 15px;\r\n\tborder-radius: 50%;\r\n\ttransform: translate(-70px, -25px);\r\n}\r\n\r\n#hooper > div > div.hooper-navigation > button.hooper-next{\r\n\tbackground-color: #F7C244;\r\n\tpadding: 15px;\r\n\tborder-radius: 50%;\r\n\ttransform: translate(70px, -25px);\r\n\t\r\n}", ""]);
+exports.push([module.i, ".hooper-slide {\n  flex-shrink: 0;\n  height: 100%;\n  margin: 0;\n  padding: 0;\n  list-style: none;\n}\n.hooper-progress {\n  position: absolute;\n  top: 0;\n  right: 0;\n  left: 0;\n  height: 4px;\n  background-color: #efefef;\n}\n.hooper-progress-inner {\n  height: 100%;\n  background-color: #4285f4;\n  transition: 300ms;\n}\n.hooper-pagination {\n  position: absolute;\n  bottom: 0;\n  right: 50%;\n  transform: translateX(50%);\n  display: flex;\n  padding: 5px 10px;\n}\n.hooper-indicators {\n  display: flex;\n  list-style: none;\n  margin: 0;\n  padding: 0;\n}\n.hooper-indicator:hover,\n.hooper-indicator.is-active {\n  background-color: #4285f4;\n}\n.hooper-indicator {\n  margin: 0 2px;\n  width: 12px;\n  height: 4px;\n  border-radius: 4px;\n  border: none;\n  padding: 0;\n  background-color: #fff;\n  cursor: pointer;\n}\n.hooper-pagination.is-vertical {\n  bottom: auto;\n  right: 0;\n  top: 50%;\n  transform: translateY(-50%);\n}\n.hooper-pagination.is-vertical .hooper-indicators {\n  flex-direction: column;\n}\n.hooper-pagination.is-vertical .hooper-indicator {\n  width: 6px;\n}\n.hooper-next,\n.hooper-prev {\n  background-color: transparent;\n  border: none;\n  padding: 1em;\n  position: absolute;\n  top: 50%;\n  transform: translateY(-50%);\n  cursor: pointer;\n}\n.hooper-next.is-disabled,\n.hooper-prev.is-disabled {\n  opacity: 0.3;\n  cursor: not-allowed;\n}\n.hooper-next {\n  right: 0;\n}\n.hooper-prev {\n  left: 0;\n}\n.hooper-navigation.is-vertical .hooper-next {\n  top: auto;\n  bottom: 0;\n  transform: initial;\n}\n.hooper-navigation.is-vertical .hooper-prev {\n  top: 0;\n  bottom: auto;\n  right: 0;\n  left: auto;\n  transform: initial;\n}\n.hooper-navigation.is-rtl .hooper-prev {\n  left: auto;\n  right: 0;\n}\n.hooper-navigation.is-rtl .hooper-next {\n  right: auto;\n  left: 0;\n}\n.hooper {\n  position: relative;\n  box-sizing: border-box;\n  width: 100%;\n  height: 200px;\n}\n.hooper * {\n  box-sizing: border-box;\n}\n.hooper-list {\n  overflow: hidden;\n  width: 100%;\n  height: 100%;\n}\n.hooper-track {\n  display: flex;\n  justify-content: center;\n  box-sizing: border-box;\n  width: 100%;\n  height: 100%;\n  padding: 0;\n  margin: 0;\n}\n.hooper.is-vertical .hooper-track {\n  flex-direction: column;\n  height: 200px;\n}\n\n.hooper.is-rtl {\n  direction: rtl;\n}\n\n.hooper-sr-only {\n  position: absolute;\n  width: 1px;\n  height: 1px;\n  padding: 0;\n  margin: -1px;\n  overflow: hidden;\n  clip: rect(0, 0, 0, 0);\n  border: 0;\n}\n#hooper > div > div.hooper-navigation > button.hooper-prev {\n\tbackground-color: #F7C244;\n\tpadding: 15px;\n\tborder-radius: 50%;\n\ttransform: translate(-70px, -25px);\n}\n\n#hooper > div > div.hooper-navigation > button.hooper-next{\n\tbackground-color: #F7C244;\n\tpadding: 15px;\n\tborder-radius: 50%;\n\ttransform: translate(70px, -25px);\n\t\n}", ""]);
 
 // exports
 
@@ -41297,7 +41308,7 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("p", [
         _vm._v(
-          "\r\n            Scopri i ristoranti più richiesti e ricevi alla tua porta ogni tuo desiderio\r\n            "
+          "\n            Scopri i ristoranti più richiesti e ricevi alla tua porta ogni tuo desiderio\n            "
         )
       ])
     ])
@@ -41629,46 +41640,50 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { attrs: { id: "category_box" } },
-    [
-      _c("button", { on: { click: _vm.selectAllRestaurants } }, [_vm._m(0)]),
-      _vm._v(" "),
-      _vm._l(this.$store.state.categories, function(category) {
-        return _c(
-          "button",
-          {
-            on: {
-              click: function($event) {
-                return _vm.filterRestaurant(category.name)
-              }
-            }
-          },
-          [
-            _c("div", { staticClass: "wrap_category_button" }, [
-              _c("span", [
-                _c("strong", [
-                  _vm._v(
-                    "\r\n          " + _vm._s(category.name) + "\r\n        "
-                  )
+  return this.$store.state.showSelectRestaurant
+    ? _c(
+        "div",
+        { attrs: { id: "category_box" } },
+        [
+          _c("button", { on: { click: _vm.selectAllRestaurants } }, [
+            _vm._m(0)
+          ]),
+          _vm._v(" "),
+          _vm._l(this.$store.state.categories, function(category) {
+            return _c(
+              "button",
+              {
+                on: {
+                  click: function($event) {
+                    return _vm.filterRestaurant(category.name)
+                  }
+                }
+              },
+              [
+                _c("div", { staticClass: "wrap_category_button" }, [
+                  _c("span", [
+                    _c("strong", [
+                      _vm._v(
+                        "\n          " + _vm._s(category.name) + "\n        "
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("span", { staticClass: "restaurants_badge" }, [
+                    _vm._v(
+                      "\n        " +
+                        _vm._s(category.restaurants.length) +
+                        "\n      "
+                    )
+                  ])
                 ])
-              ]),
-              _vm._v(" "),
-              _c("span", { staticClass: "restaurants_badge" }, [
-                _vm._v(
-                  "\r\n        " +
-                    _vm._s(category.restaurants.length) +
-                    "\r\n      "
-                )
-              ])
-            ])
-          ]
-        )
-      })
-    ],
-    2
-  )
+              ]
+            )
+          })
+        ],
+        2
+      )
+    : _vm._e()
 }
 var staticRenderFns = [
   function() {
@@ -41676,7 +41691,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "wrap_category_button" }, [
-      _c("span", [_c("strong", [_vm._v("\r\n          All\r\n        ")])])
+      _c("span", [_c("strong", [_vm._v("\n          All\n        ")])])
     ])
   }
 ]
@@ -42496,119 +42511,106 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c(
-      "div",
-      {
-        staticClass: "d-flex flex-wrap justify-content-center",
-        attrs: { id: "selected_restaurant_dishes" }
-      },
-<<<<<<< HEAD
-      [
-        _c("div", { staticClass: "torna_ristoranti" }, [
-          _c("span", { attrs: { id: "back" }, on: { click: _vm.toggle } }, [
-            _c("img", { attrs: { src: "img/back.png" } })
-          ])
-        ]),
-        _vm._v(" "),
-        _vm._l(this.$store.state.selectedRestaurant2.dishes, function(dish) {
-          return _c("div", { staticClass: "dish_card" }, [
-=======
-      _vm._l(this.$store.state.selectedRestaurant2.dishes, function(dish) {
-        return _c("div", { staticClass: "dish_card" }, [
-          _c("div", [
-            _c("img", { attrs: { src: dish.img, alt: "" } }),
-            _vm._v(" "),
-            _c("img", { attrs: { src: "/storage/" + dish.img, alt: "" } }),
-            _vm._v(" "),
-            _c("h4", [_vm._v(_vm._s(dish.name))]),
-            _vm._v(" "),
-            _c("span", { staticClass: "prezzo" }, [
-              _vm._v("prezzo € " + _vm._s(dish.price.toFixed(2)))
-            ]),
-            _c("br"),
-            _vm._v(" "),
-            _c("span", { staticClass: "rating" }, [
-              _vm._v(" rating " + _vm._s(dish.rating))
-            ]),
-            _vm._v(" "),
->>>>>>> uni2
-            _c("div", [
-              _c("img", { attrs: { src: dish.img, alt: "" } }),
-              _vm._v(" "),
-              _c("h4", [_vm._v(_vm._s(dish.name))]),
-              _vm._v(" "),
-              _c("span", { staticClass: "prezzo" }, [
-                _vm._v("prezzo € " + _vm._s(dish.price.toFixed(2)))
+  return _c(
+    "div",
+    [
+      _c(
+        "div",
+        {
+          staticClass: "d-flex flex-wrap justify-content-center",
+          attrs: { id: "selected_restaurant_dishes" }
+        },
+        [
+          _c("div", { staticClass: "torna_ristoranti" }, [
+            _c("span", { attrs: { id: "back" }, on: { click: _vm.toggle } }, [
+              _c("img", { attrs: { src: "img/back.png" } })
+            ])
+          ]),
+          _vm._v(" "),
+          _vm._l(this.$store.state.selectedRestaurant2.dishes, function(dish) {
+            return _c("div", { staticClass: "dish_card" }, [
+              _c("div", [
+                _c("img", { attrs: { src: dish.img, alt: "" } }),
+                _vm._v(" "),
+                _c("img", { attrs: { src: "/storage/" + dish.img, alt: "" } }),
+                _vm._v(" "),
+                _c("h4", [_vm._v(_vm._s(dish.name))]),
+                _vm._v(" "),
+                _c("span", { staticClass: "prezzo" }, [
+                  _vm._v("prezzo € " + _vm._s(dish.price.toFixed(2)))
+                ]),
+                _c("br"),
+                _vm._v(" "),
+                _c("span", { staticClass: "rating" }, [
+                  _vm._v(" rating " + _vm._s(dish.rating))
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "info" }, [
+                  _c(
+                    "dd",
+                    {
+                      staticClass: "show_plate_info_logo",
+                      on: {
+                        click: function($event) {
+                          return _vm.ShowInfo(dish)
+                        }
+                      }
+                    },
+                    [_c("i", { staticClass: "fas fa-info-circle" })]
+                  )
+                ])
               ]),
-              _c("br"),
               _vm._v(" "),
-              _c("span", { staticClass: "rating" }, [
-                _vm._v(" rating " + _vm._s(dish.rating))
-              ]),
+              _c(
+                "button",
+                {
+                  staticClass:
+                    "d-flex justify-content-center align-items-center button is-success",
+                  on: {
+                    click: function($event) {
+                      return _vm.addToCart(dish)
+                    }
+                  }
+                },
+                [_c("i", { staticClass: "fas fa-plus" })]
+              )
+            ])
+          })
+        ],
+        2
+      ),
+      _vm._v(" "),
+      _c("transition", { attrs: { name: "cart" } }, [
+        _vm.showInfo
+          ? _c("div", { attrs: { id: "dish_info_pop_up" } }, [
+              _c("img", { attrs: { src: this.plate.img, alt: "" } }),
               _vm._v(" "),
-              _c("div", { staticClass: "info" }, [
+              _c("h4", [_vm._v(_vm._s(this.plate.name))]),
+              _vm._v(" "),
+              _c("p", [_vm._v(_vm._s(this.plate.description))]),
+              _vm._v(" "),
+              _c("p", [_vm._v("prezzo: € " + _vm._s(this.plate.price))]),
+              _vm._v(" "),
+              _c("div", { staticClass: "close" }, [
                 _c(
                   "dd",
                   {
                     staticClass: "show_plate_info_logo",
                     on: {
                       click: function($event) {
-                        return _vm.ShowInfo(dish)
+                        return _vm.ShowInfo()
                       }
                     }
                   },
-                  [_c("i", { staticClass: "fas fa-info-circle" })]
+                  [_c("i", { staticClass: "fas fa-times-circle" })]
                 )
               ])
-            ]),
-            _vm._v(" "),
-            _c(
-              "button",
-              {
-                staticClass:
-                  "d-flex justify-content-center align-items-center button is-success",
-                on: {
-                  click: function($event) {
-                    return _vm.addToCart(dish)
-                  }
-                }
-              },
-              [_c("i", { staticClass: "fas fa-plus" })]
-            )
-          ])
-        })
-      ],
-      2
-    ),
-    _vm._v(" "),
-    _vm.showInfo
-      ? _c("div", { attrs: { id: "dish_info_pop_up" } }, [
-          _c("img", { attrs: { src: this.plate.img, alt: "" } }),
-          _vm._v(" "),
-          _c("h4", [_vm._v(_vm._s(this.plate.name))]),
-          _vm._v(" "),
-          _c("p", [_vm._v(_vm._s(this.plate.description))]),
-          _vm._v(" "),
-          _c("p", [_vm._v("prezzo: € " + _vm._s(this.plate.price))]),
-          _vm._v(" "),
-          _c("div", { staticClass: "close" }, [
-            _c(
-              "dd",
-              {
-                staticClass: "show_plate_info_logo",
-                on: {
-                  click: function($event) {
-                    return _vm.ShowInfo()
-                  }
-                }
-              },
-              [_c("i", { staticClass: "fas fa-times-circle" })]
-            )
-          ])
-        ])
-      : _vm._e()
-  ])
+            ])
+          : _vm._e()
+      ])
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -42637,66 +42639,82 @@ var render = function() {
       _c("div", { attrs: { id: "content" } }, [
         _vm._m(0),
         _vm._v(" "),
-        _c("div", {}, [
-          _c(
-            "div",
-            { staticClass: "restaurants" },
-            _vm._l(this.$store.state.filteredRestaurant, function(restaurant) {
-              return _c(
-                "div",
-                {
-                  staticClass: "card card_hover",
-                  on: {
-                    click: function($event) {
-                      return _vm.showSelectedRestaurant(restaurant)
+        _c(
+          "div",
+          {},
+          [
+            _c(
+              "transition-group",
+              {
+                staticClass: "restaurants",
+                attrs: { tag: "div", name: "cart" }
+              },
+              _vm._l(this.$store.state.filteredRestaurant, function(
+                restaurant
+              ) {
+                return _c(
+                  "div",
+                  {
+                    key: restaurant,
+                    staticClass: "card card_hover",
+                    on: {
+                      click: function($event) {
+                        return _vm.showSelectedRestaurant(restaurant)
+                      }
                     }
-                  }
-                },
-                [
-                  _c("div", { staticClass: "restaurant_image" }, [
-                    _c("img", {
-                      attrs: { src: restaurant.img, alt: "restaurant's image" }
+                  },
+                  [
+                    _c("div", { staticClass: "restaurant_image" }, [
+                      _c("img", {
+                        attrs: {
+                          src: restaurant.img,
+                          alt: "restaurant's image"
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("h4", [
+                      _vm._v(
+                        "\n                        " +
+                          _vm._s(restaurant.name) +
+                          "\n                  "
+                      )
+                    ]),
+                    _vm._v(" "),
+                    restaurant.price_shipping > 0
+                      ? _c("p", [
+                          _c("img", {
+                            attrs: { src: "img/scooter-delivery.png", alt: "" }
+                          }),
+                          _vm._v(
+                            "\n                        € " +
+                              _vm._s(restaurant.price_shipping) +
+                              "\n                        "
+                          ),
+                          _c("img", {
+                            attrs: { src: "img/like.png", alt: "" }
+                          }),
+                          _vm._v(
+                            "\n                        " +
+                              _vm._s(restaurant.quality) +
+                              " %\n                  "
+                          )
+                        ])
+                      : _vm._e(),
+                    _vm._v(" "),
+                    _c("input", {
+                      staticClass: "option_restaurant",
+                      domProps: { value: restaurant.id },
+                      on: { click: _vm.toggle }
                     })
-                  ]),
-                  _vm._v(" "),
-                  _c("h4", [
-                    _vm._v(
-                      "\r\n                        " +
-                        _vm._s(restaurant.name) +
-                        "\r\n                  "
-                    )
-                  ]),
-                  _vm._v(" "),
-                  restaurant.price_shipping > 0
-                    ? _c("p", [
-                        _c("img", {
-                          attrs: { src: "img/scooter-delivery.png", alt: "" }
-                        }),
-                        _vm._v(
-                          "\r\n                        € " +
-                            _vm._s(restaurant.price_shipping) +
-                            " \r\n                        "
-                        ),
-                        _c("img", { attrs: { src: "img/like.png", alt: "" } }),
-                        _vm._v(
-                          "\r\n                        " +
-                            _vm._s(restaurant.quality) +
-                            " %\r\n                  "
-                        )
-                      ])
-                    : _vm._e(),
-                  _vm._v(" "),
-                  _c("input", {
-                    staticClass: "option_restaurant",
-                    domProps: { value: restaurant.id },
-                    on: { click: _vm.toggle }
-                  })
-                ]
-              )
-            }),
-            0
-          )
-        ])
+                  ]
+                )
+              }),
+              0
+            )
+          ],
+          1
+        )
       ])
     ])
   ])
@@ -57767,7 +57785,7 @@ var store = {
     // FUNZIONAMENTO NAVIGAZIONE
     showLanding: true,
     showMain: false,
-    showSelectRestaurant: true,
+    showSelectRestaurant: false,
     showRestaurant: false,
     showCart: true,
     showHeader: true /////////////////////////////////////////
@@ -57780,11 +57798,6 @@ var store = {
     saveView: function saveView(state) {
       window.sessionStorage.setItem('visibility', JSON.stringify(state.visibility));
     },
-    // TEST
-    changeTest: function changeTest(state) {
-      state.test = 'ciao';
-    },
-    /////////////////
     addToCart: function addToCart(state, item) {
       var found = state.cart.find(function (product) {
         return product.id == item.id;
@@ -57862,6 +57875,7 @@ var store = {
       });
       this.state.showLanding = false;
       this.state.showMain = true;
+      this.state.showSelectRestaurant = true;
     },
     search: function search(state, _search) {
       var _this2 = this;
@@ -57875,6 +57889,7 @@ var store = {
       console.log(this.state.filteredRestaurant);
       this.state.showLanding = false;
       this.state.showMain = true;
+      this.state.showSelectRestaurant = true;
     },
     selectAllRestaurants: function selectAllRestaurants(state) {
       this.state.filteredRestaurant = this.state.restaurants;
@@ -57987,8 +58002,8 @@ var store = {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\gitKraken_esercizi\deliveboo_progetto_finale\deliveboo\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\gitKraken_esercizi\deliveboo_progetto_finale\deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /var/www/html/boolean/laravel/deliveboo/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /var/www/html/boolean/laravel/deliveboo/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

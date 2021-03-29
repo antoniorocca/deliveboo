@@ -1,28 +1,30 @@
 <template>
-<!-- v-if="this.$store.state.visibility" -->
-  <div  id="category_box" >
-    <button @click="selectAllRestaurants">
-    <div class="wrap_category_button">
-      <span>
-        <strong>
-          All
-        </strong>
-      </span>
-    </div>
-    </button>
-    <button @click="filterRestaurant(category.name)" v-for="category in this.$store.state.categories">
-    <div class="wrap_category_button">
-      <span>
-        <strong>
-          {{category.name}}
-        </strong>
-      </span>
-      <span class="restaurants_badge">
-        {{category.restaurants.length}}
-      </span>
-    </div>
-    </button>
-  </div>
+   <div  id="category_box" v-if="this.$store.state.showSelectRestaurant" >
+     <button @click="selectAllRestaurants">
+       <div class="wrap_category_button">
+         <span>
+           <strong>
+             All
+           </strong>
+         </span>
+       </div>
+     </button>
+
+     <button @click="filterRestaurant(category.name)" v-for="category in this.$store.state.categories">
+       <div class="wrap_category_button">
+         <span>
+           <strong>
+             {{category.name}}
+           </strong>
+         </span>
+         <span class="restaurants_badge">
+           {{category.restaurants.length}}
+         </span>
+       </div>
+     </button>
+
+   </div>
+
 </template>
 
 <script>

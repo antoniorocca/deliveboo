@@ -21,7 +21,7 @@ let store = {
         // FUNZIONAMENTO NAVIGAZIONE
         showLanding:true,
         showMain:false,
-        showSelectRestaurant:true,
+        showSelectRestaurant:false,
         showRestaurant:false,
         showCart:true,
         showHeader:true,
@@ -40,12 +40,6 @@ let store = {
             window.sessionStorage.setItem('visibility', JSON.stringify(state.visibility));
         },
 
-      // TEST
-
-      changeTest(state){
-        state.test = 'ciao';
-      },
-      /////////////////
         addToCart(state, item) {
             let found = state.cart.find(product => product.id == item.id);
 
@@ -123,6 +117,7 @@ let store = {
           });
           this.state.showLanding = false;
           this.state.showMain = true;
+          this.state.showSelectRestaurant = true;
         },
         search(state, search){
           this.state.filteredRestaurant = [];
@@ -134,6 +129,7 @@ let store = {
           console.log(this.state.filteredRestaurant);
           this.state.showLanding = false;
           this.state.showMain = true;
+          this.state.showSelectRestaurant = true;
 
 
         },

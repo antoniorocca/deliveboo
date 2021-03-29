@@ -20,8 +20,9 @@
             <button class="d-flex justify-content-center align-items-center button is-success" @click="addToCart(dish)"><i class="fas fa-plus"></i></button>
         </div>
     </div>
+    <transition name="cart">
 
-    <div id="dish_info_pop_up" v-if="showInfo">
+      <div id="dish_info_pop_up" v-if="showInfo">
         <img :src="this.plate.img" alt="">
         <h4>{{ this.plate.name }}</h4>
         <p>{{ this.plate.description }}</p>
@@ -31,8 +32,10 @@
         <div class="close">
             <dd class="show_plate_info_logo" @click="ShowInfo()"><i class="fas fa-times-circle"></i></dd>
         </div>
-      
+
     </div>
+    </transition>
+
 </div>
 </template>
 
@@ -196,7 +199,7 @@ export default {
         margin-top: 15px;
         font-weight: 700;
     }
-   
+
     .show_plate_info{
         position: absolute;
         top: 0px;
@@ -220,7 +223,7 @@ export default {
     z-index: 15;
     img{
         height: 60px;
-        
+
     }
     #back{
         color: black;
@@ -234,7 +237,7 @@ export default {
         }
     }
 
-    
+
 }
 @media all and (max-width: 1024px) {
     #dish_info_pop_up {

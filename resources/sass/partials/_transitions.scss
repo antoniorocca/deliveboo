@@ -15,7 +15,7 @@
 //////////////////////////////////////
 .main_box-enter-active{
   transition: all 1s;
-  transition-delay: 1s;
+  transition-delay: 2s;
 }
 .main_box-leave-active{
   transition: all 1s;
@@ -30,11 +30,42 @@
 }
 .category_group-leave-active {
   transition: all 1s;
+
 }
 .category_group-enter, .category_group-leave-to /* .fade-leave-active below version 2.1.8 */ {
-  transform:translateX(100%);
+  transform:translateX(300%);
     opacity: 0;
 }
+
+
+.category_group3-enter-active {
+  transition: all 1s;
+  transition-delay: 1s;
+}
+.category_group3-leave-active {
+  transition: all 1s;
+
+
+}
+.category_group3-enter, .category_group3-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  transform:translateX(-100%);
+    opacity: 0;
+}
+.category_group2-enter-active {
+  transition: all 1s;
+  transition-delay: 1s;
+}
+.category_group2-leave-active {
+  transition: all 1s;
+
+}
+.category_group2-enter, .category_group2-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  transform:translateX(-100%);
+    opacity: 0;
+}
+
+
+
 .show_restaurant-enter-active {
   transition: all 1s;
   transition-delay: 1s;
@@ -44,5 +75,16 @@
 }
 .show_restaurant-enter, .show_restaurant-leave-to /* .fade-leave-active below version 2.1.8 */ {
   transform:translatex(-100%);
+  opacity: 0;
+}
+.cart-enter-active {
+  transition: all 1s;
+}
+.cart-leave-active {
+  transition: all 1s;
+}
+.cart-enter, .cart-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  transform:scale(0);
+  transform: translate(100vw);
   opacity: 0;
 }

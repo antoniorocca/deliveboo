@@ -12,25 +12,25 @@
 
 
             <div class="">
-              <div class="restaurants">
-                <div class="card card_hover" v-for="restaurant in this.$store.state.filteredRestaurant" @click="showSelectedRestaurant(restaurant)">
+                <transition-group tag="div" name="cart" class="restaurants">
+                  <div class="card card_hover" :key="restaurant" v-for="restaurant in this.$store.state.filteredRestaurant" @click="showSelectedRestaurant(restaurant)">
                   <div class="restaurant_image">
-                      
+
                     <img :src="restaurant.img" alt="restaurant's image">
                   </div>
                   <h4>
                         {{restaurant.name}}
                   </h4>
-                  
+
                   <p v-if="restaurant.price_shipping > 0">
                         <img src="img/scooter-delivery.png" alt="">
-                        &euro; {{ restaurant.price_shipping }} 
+                        &euro; {{ restaurant.price_shipping }}
                         <img src="img/like.png" alt="">
                         {{ restaurant.quality }} %
                   </p>
                   <input class="option_restaurant" :value="restaurant.id" @click="toggle">
                 </div>
-              </div>
+              </transition-group>
             </div>
 
         </div>

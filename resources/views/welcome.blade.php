@@ -14,11 +14,24 @@
 </div> -->
 {{-- DA CENCELLARE? --}}
 <div id="new_main_box" style="display:flex;" v-if="this.$store.state.showMain">
+  <transition name="category_group3">
 
-  <edo-categories style=" min-width: 20%" v-if="this.$store.state.showSelectRestaurant"></edo-categories>
-  <restaurant-component style=" flex-grow: 4; " v-if="this.$store.state.showSelectRestaurant"></restaurant-component>
-  <selected-restaurant style=" flex-grow: 4;" v-if="this.$store.state.showRestaurant"></selected-restaurant>
-  <cart-dropdown id="box_cart" class="cart-box" v-if="this.$store.state.cart[0]"></cart-dropdown>
+    <edo-categories style=" min-width: 20%" v-if="this.$store.state.showSelectRestaurant"></edo-categories>
+  </transition>
+
+    <transition name="category_group">
+
+      <restaurant-component style=" flex-grow: 4; " v-if="this.$store.state.showSelectRestaurant"></restaurant-component>
+    </transition>
+
+    <transition name="category_group2">
+      <selected-restaurant style=" flex-grow: 4;" v-if="this.$store.state.showRestaurant"></selected-restaurant>
+    </transition>
+    <transition name="cart">
+
+      <cart-dropdown id="box_cart" class="cart-box" v-if="this.$store.state.cart[0]"></cart-dropdown>
+    </transition>
+
 </div>
 
 
