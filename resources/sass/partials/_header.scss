@@ -98,14 +98,3 @@ header, .header {
 #back_nav > div > a > img{
     height: 55px;
 }
-@media all and (max-width: 592px) {
-    header {
-        height: 710px;
-    }
-}
-
-@media all and (max-width: 431px) {
-    header {
-        height: 850px;
-    }
-}

@@ -11094,18 +11094,6 @@ header #main-header #categories .category_hover,
   height: 55px;
 }
 
-@media all and (max-width: 592px) {
-  header {
-    height: 710px;
-  }
-}
-
-@media all and (max-width: 431px) {
-  header {
-    height: 850px;
-  }
-}
-
 #main_container_box {
   display: flex;
   flex-direction: column;

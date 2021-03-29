@@ -41109,7 +41109,7 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("p", [
         _vm._v(
-          "\n            Scopri i ristoranti più richiesti e ricevi alla tua porta ogni tuo desiderio\n            "
+          "\r\n            Scopri i ristoranti più richiesti e ricevi alla tua porta ogni tuo desiderio\r\n            "
         )
       ])
     ])
@@ -41412,15 +41412,17 @@ var render = function() {
             _c("div", { staticClass: "wrap_category_button" }, [
               _c("span", [
                 _c("strong", [
-                  _vm._v("\n          " + _vm._s(category.name) + "\n        ")
+                  _vm._v(
+                    "\r\n          " + _vm._s(category.name) + "\r\n        "
+                  )
                 ])
               ]),
               _vm._v(" "),
               _c("span", { staticClass: "restaurants_badge" }, [
                 _vm._v(
-                  "\n        " +
+                  "\r\n        " +
                     _vm._s(category.restaurants.length) +
-                    "\n      "
+                    "\r\n      "
                 )
               ])
             ])
@@ -41437,7 +41439,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "wrap_category_button" }, [
-      _c("span", [_c("strong", [_vm._v("\n          All\n        ")])])
+      _c("span", [_c("strong", [_vm._v("\r\n          All\r\n        ")])])
     ])
   }
 ]
@@ -42389,9 +42391,9 @@ var render = function() {
                   _vm._v(" "),
                   _c("h4", [
                     _vm._v(
-                      "\n                        " +
+                      "\r\n                        " +
                         _vm._s(restaurant.name) +
-                        "\n                  "
+                        "\r\n                  "
                     )
                   ]),
                   _vm._v(" "),
@@ -42401,15 +42403,15 @@ var render = function() {
                           attrs: { src: "img/scooter-delivery.png", alt: "" }
                         }),
                         _vm._v(
-                          "\n                        € " +
+                          "\r\n                        € " +
                             _vm._s(restaurant.price_shipping) +
-                            " \n                        "
+                            " \r\n                        "
                         ),
                         _c("img", { attrs: { src: "img/like.png", alt: "" } }),
                         _vm._v(
-                          "\n                        " +
+                          "\r\n                        " +
                             _vm._s(restaurant.quality) +
-                            " %\n                  "
+                            " %\r\n                  "
                         )
                       ])
                     : _vm._e(),
@@ -57596,8 +57598,8 @@ var store = {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /var/www/html/boolean/laravel/deliveboo/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /var/www/html/boolean/laravel/deliveboo/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\Fabio\Desktop\Boolean\classe 23\deliveboo\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\Fabio\Desktop\Boolean\classe 23\deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
