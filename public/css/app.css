@@ -11612,5 +11612,10 @@ h1 {
   .hooper-prev {
     display: none;
   }
+
+  #new_main_box {
+    display: flex;
+    flex-direction: column;
+  }
 }
 

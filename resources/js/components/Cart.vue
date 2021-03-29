@@ -119,7 +119,6 @@ export default {
 
 <style  scoped lang="scss">
 .cart_box {
-    position: relative;
     box-shadow:  0 0 10px #acacac;
     width: 400px;
     max-height: 560px;
@@ -246,17 +245,15 @@ export default {
   }
 
 }
-@media all and (max-width: 780px) {
+@media all and (max-width: 580px) {
   .cart_box{
-    .resume_wrap{
-      width: 250px;
-    }
-    .resume_wrap{
-      .phone{
-        width: 300px;
-      }
-    }
+    position: absolute;
   }
 
+}
+@media all and (max-width: 780px) {
+    .cart_box{
+      width: 100%;
+  }
 }
 </style>
