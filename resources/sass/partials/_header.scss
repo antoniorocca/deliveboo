@@ -97,6 +97,16 @@ header, .header {
         }
     }
 }
+#btn_auth{
+    flex-flow: row-reverse;
+    z-index: 5;
+    a{
+        background-color: #CFFFF6;
+    };
+}
+#back_nav > div > a > img{
+    height: 55px;
+}
 @media all and (max-width: 592px) {
     header{
         height: 710px;

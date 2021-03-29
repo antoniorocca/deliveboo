@@ -23,8 +23,8 @@
                         <!-- Authentication Links -->
 
                         @guest
-                        <div class="d-flex">
-                            <a class="nav-link mr-2" href="{{ route('login') }}">{{ __('Login') }}</a>
+                        <div id="btn_auth" class="d-flex">
+                            <a class="nav-link mx-2" href="{{ route('login') }}">{{ __('Login') }}</a>
                             @if (Route::has('register'))
                             <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                             @endif
