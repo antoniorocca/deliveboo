@@ -122,7 +122,7 @@ export default {
     position: relative;
     box-shadow:  0 0 10px #acacac;
     width: 400px;
-    max-height: 500px;
+    max-height: 560px;
     display: flex;
     flex-direction: column;
     align-items: center;

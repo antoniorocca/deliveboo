@@ -15,10 +15,10 @@
 {{-- DA CENCELLARE? --}}
 <div id="new_main_box" style="border: 5px solid green; display:flex;" v-if="this.$store.state.showMain">
 
-  <edo-categories style="border: 5px solid purple" v-if="this.$store.state.showSelectRestaurant"></edo-categories>
+  <edo-categories style="border: 5px solid purple; max-width:20%" v-if="this.$store.state.showSelectRestaurant"></edo-categories>
   <restaurant-component style="border: 5px solid violet" v-if="this.$store.state.showSelectRestaurant"></restaurant-component>
   <selected-restaurant style="border: 5px solid lightgreen" v-if="this.$store.state.showRestaurant"></selected-restaurant>
-  <cart-dropdown id="box_cart" class="cart-box" style="border: 5px solid lightyellow" v-if="this.$store.state.showRestaurant"></cart-dropdown>
+  <cart-dropdown id="box_cart" class="cart-box" style="border: 5px solid lightyellow" v-if="this.$store.state.cart[0]"></cart-dropdown>
 </div>
 
 
