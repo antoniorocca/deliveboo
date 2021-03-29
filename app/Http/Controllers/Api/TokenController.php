@@ -27,7 +27,7 @@ class TokenController extends Controller
             'address' => 'required | max:100',
             'email' => 'required | email | max:100',
         ]);
-        
+
         //dd($request);
         $to = $request->email;
 
@@ -44,7 +44,7 @@ class TokenController extends Controller
             'amount' => $total,
             'paymentMethodNonce' => $nonceFromTheClient,
         ]);
-        // if ($result->success) {
+        if ($result->success) {
             $filters= [];
             foreach ($dishes as $dish) {
               if (!in_array(array($dish->restaurant_id), $filters)) {
@@ -86,13 +86,13 @@ class TokenController extends Controller
             //dd($result, $datiUtente, 'successo');
 
             return redirect()->route('checkout');
-        // } else {
-        //
-        //     //dd($result, 'fallimento');
-        //
-        //     return view('checkoutFailed');
-        // }
-        //
+        } else {
+
+            //dd($result, 'fallimento');
+
+            return view('checkoutFailed');
+        }
+
 
 
     }

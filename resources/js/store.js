@@ -120,17 +120,18 @@ let store = {
 //////////////////////////////////////////////////////////////////////////
 
         filterRestaurant(state, category){
-<<<<<<< HEAD
+          this.state.filteredRestaurant = [];
           this.state.filteredRestaurant = [];
           this.state.restaurants.forEach((item, i) => {
-            console.log(item);
-            item.categories.forEach(element => {
-                console.log(element);
-                if (element.name === category) {
-                    this.state.filteredRestaurant.push(item);
-                }
-            });
+              console.log(item);
+              item.categories.forEach(element => {
+                  console.log(element);
+                  if (element.name === category) {
+                      this.state.filteredRestaurant.push(item);
+                  }
+              });
           });
+          console.log(this.state.filteredRestaurant);
         },
         search(state, search){
           this.state.filteredRestaurant = [];
@@ -144,19 +145,6 @@ let store = {
           this.state.showMain = true;
 
 
-=======
-            this.state.filteredRestaurant = [];
-            this.state.restaurants.forEach((item, i) => {
-                console.log(item);
-                item.categories.forEach(element => {
-                    console.log(element);
-                    if (element.name === category) {
-                        this.state.filteredRestaurant.push(item);
-                    }
-                });
-            });
-            console.log(this.state.filteredRestaurant);
->>>>>>> branchStyleHeader
         },
         selectAllRestaurants(state){
           this.state.filteredRestaurant = this.state.restaurants;
