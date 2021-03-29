@@ -1,101 +1,95 @@
-.carousel{
-    // text-align: center !important;
-    // margin: 0 !important;
-    // width: 100% !important;
-
-}
-.call_to_action{
+.call_to_action {
     padding: 70px 0;
     width: 100%;
     margin: auto;
     text-align: center;
     background-color: #E9F8F5;
-    .title{
-        img{
+    .title {
+        img {
             padding: 10px 0 20px;
             height: 120px;
         }
-        h2{
+        h2 {
             font-weight: 800;
             font-size: 30px;
         }
     }
-    .container_calls{
+    .container_calls {
         // width: 80%;
         margin: auto;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
-        .single_call{
+        .single_call {
             padding: 20px;
             margin: 20px;
             text-align: center;
             // width: 33%;
-            img{
+            img {
                 height: 250px;
             }
-            h4{
+            h4 {
                 margin: 20px 0 10px;
             }
-            p{
+            p {
                 margin: 0;
                 height: 110px;
                 width: 100%;
             }
-            a{
+            a {
                 background-color: #36a081;
                 color: white;
                 padding: 20px 40px;
                 border-radius: 30px;
                 text-decoration: none;
-                &:hover{
-                background-color: #008169;
+                &:hover {
+                    background-color: #008169;
                 }
             }
         }
     }
 }
 
-.most_popular{
+.most_popular {
     padding: 70px 0;
     width: 100%;
     margin: auto;
     text-align: center;
     background-color: #f7a74429;
-    .title{
-        img{
+    .title {
+        img {
             padding: 10px 0 20px;
             height: 120px;
         }
-        h2{
+        h2 {
             font-weight: 800;
             font-size: 30px;
         }
-        p{
+        p {
             color: grey;
             font-size: 20px;
             font-weight: 100;
         }
     }
-    .cards{
+    .cards {
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
-        .card{
+        .card {
             margin: 30px;
             width: 300px;
             z-index: 10;
             border-radius: 10px;
             box-shadow: 0 0 10px #DDDDDD;
-            img{
+            img {
                 height: 150px;
                 width: 100%;
                 border-top-left-radius: 10px;
                 border-top-right-radius: 10px;
                 object-fit: cover;
             }
-            h4{
+            h4 {
                 border: px solid rgba(0, 0, 0, 0.125);
                 border-radius: 0.25rem;
                 text-align: center;
@@ -103,10 +97,10 @@
                 font-weight: 700;
                 padding: 10px;
             }
-            option{
+            option {
                 height: 100%;
             }
-            .option_restaurant{
+            .option_restaurant {
                 position: absolute;
                 width: 100%;
                 height: 100%;
@@ -116,10 +110,10 @@
                 cursor: pointer;
             }
         }
-        .card_hover{
+        .card_hover {
             transition: all 0.35s;
         }
-        .card:hover{
+        .card:hover {
             cursor: pointer;
             transform: scale(1.05);
         }
