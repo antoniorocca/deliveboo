@@ -11443,7 +11443,7 @@ h1 {
 
 .call_to_action .container_calls .single_call p {
   margin: 0;
-  height: 110px;
+  height: 140px;
   width: 100%;
 }
 
@@ -11605,5 +11605,17 @@ h1 {
 #box_cart {
   position: sticky;
   top: 100px;
+}
+
+@media all and (max-width: 780px) {
+  .hooper-next,
+  .hooper-prev {
+    display: none;
+  }
+
+  #new_main_box {
+    display: flex;
+    flex-direction: column;
+  }
 }
 

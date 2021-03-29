@@ -40,7 +40,7 @@
                 @if ($dish->img)
                 <dd>foto piatto</dd>
                 <img src="{{asset('storage/' . $dish->img )}}" style="height:300px;" alt="">
-                <img src="{{$dish->img}}" style="height:300px;" alt="">
+                <img src="{{'/' . $dish->img}}" style="height:300px;" alt="">
                 @else
                 <p class="card-text text-danger">N/A</p>
                 @endif

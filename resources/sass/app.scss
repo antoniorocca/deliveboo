@@ -27,3 +27,14 @@
     position: sticky;
     top: 100px;
 }
+
+
+@media all and (max-width: 780px) {
+  .hooper-next, .hooper-prev{
+    display: none;
+  }
+  #new_main_box{
+    display: flex;
+    flex-direction: column;
+  }
+}

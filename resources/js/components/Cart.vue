@@ -119,7 +119,6 @@ export default {
 
 <style  scoped lang="scss">
 .cart_box {
-    position: relative;
     box-shadow:  0 0 10px #acacac;
     width: 400px;
     max-height: 560px;
@@ -129,7 +128,7 @@ export default {
     border-radius: 15px;
     padding: 20px;
     .resume_wrap{
-        min-width: 350px;
+        width: 350px;
         .cart_count_span{
             font-size: 23px;
             font-weight: 600;
@@ -233,5 +232,28 @@ export default {
     }
 
 }
+@media all and (max-width: 880px) {
+  .cart_box{
+    .resume_wrap{
+      width: 250px;
+    }
+    .resume_wrap{
+      .phone{
+        width: 300px;
+      }
+    }
+  }
 
+}
+@media all and (max-width: 580px) {
+  .cart_box{
+    position: absolute;
+  }
+
+}
+@media all and (max-width: 780px) {
+    .cart_box{
+      width: 100%;
+  }
+}
 </style>

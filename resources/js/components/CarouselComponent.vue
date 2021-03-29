@@ -21,7 +21,6 @@
                 </div>
             </slide>
             <hooper-navigation slot="hooper-addons" ></hooper-navigation>
-
         </hooper>
 
     </div>
@@ -193,5 +192,4 @@
         }
 
     }
-
 </style>
