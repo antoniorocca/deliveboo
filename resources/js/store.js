@@ -117,15 +117,17 @@ let store = {
 //////////////////////////////////////////////////////////////////////////
 
         filterRestaurant(state, category){
-          this.state.filteredRestaurant = [];
-          this.state.categories.forEach((item, i) => {
-            if (item.name === category) {
-              item.restaurants.forEach((item, i) => {
-                this.state.filteredRestaurant.push(item);
-              });
-            }
-          });
-          console.log(this.state.filteredRestaurant);
+            this.state.filteredRestaurant = [];
+            this.state.restaurants.forEach((item, i) => {
+                console.log(item);
+                item.categories.forEach(element => {
+                    console.log(element);
+                    if (element.name === category) {
+                        this.state.filteredRestaurant.push(item);
+                    }
+                });
+            });
+            console.log(this.state.filteredRestaurant);
         },
         selectAllRestaurants(state){
           this.state.filteredRestaurant = this.state.restaurants;
