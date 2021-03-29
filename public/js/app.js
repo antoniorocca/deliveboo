@@ -2703,6 +2703,10 @@ __webpack_require__.r(__webpack_exports__);
       this.restaurantMom = this.restaurantsAll[value.target.value - 1];
       console.log(this.restaurantMom.id);
       this.$store.commit('setSelectedRestaurant', this.restaurantMom);
+    },
+    showCarouselRestaurant: function showCarouselRestaurant(restaurant) {
+      console.log('carousel');
+      this.$store.commit('showCarouselRestaurant', restaurant);
     }
   },
   mounted: function mounted() {
@@ -3095,8 +3099,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
 //
 //
 //
@@ -41948,7 +41950,7 @@ var render = function() {
               staticClass: "card card_hover",
               on: {
                 click: function($event) {
-                  return _vm.showSelectedRestaurant(restaurant)
+                  return _vm.showCarouselRestaurant(restaurant)
                 }
               }
             },
@@ -42558,11 +42560,7 @@ var render = function() {
           ])
         ])
       ]),
-      _vm._v(
-        "\n        ciao\n        " +
-          _vm._s(this.$store.state.selectedRestaurant2.dishes) +
-          "\n        "
-      ),
+      _vm._v(" "),
       _c("plate-component")
     ],
     1
