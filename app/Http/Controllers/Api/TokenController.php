@@ -28,7 +28,7 @@ class TokenController extends Controller
             'email' => 'required | email | max:100',
         ]);
         
-        dd($request);
+        //dd($request);
         $to = $request->email;
 
         $dishes = json_decode(request('cart'));
@@ -70,7 +70,7 @@ class TokenController extends Controller
 
             Mail::to($to)->send(new SendNewMail($datiUtente));
 
-            dd($result, $datiUtente, 'successo');
+            //dd($result, $datiUtente, 'successo');
 
             return redirect()->route('checkout');
         } else {
