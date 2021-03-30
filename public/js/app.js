@@ -2366,32 +2366,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   methods: {
     // funzionamento navigazione
@@ -2953,10 +2927,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
 //
 //
 //
@@ -41663,8 +41633,66 @@ render._withStripped = true
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function () {}
-var staticRenderFns = []
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return this.$store.state.showSelectRestaurant
+    ? _c(
+        "div",
+        { attrs: { id: "category_box" } },
+        [
+          _c("button", { on: { click: _vm.selectAllRestaurants } }, [
+            _vm._m(0)
+          ]),
+          _vm._v(" "),
+          _vm._l(this.$store.state.categories, function(category) {
+            return _c(
+              "button",
+              {
+                on: {
+                  click: function($event) {
+                    return _vm.filterRestaurant(category.name)
+                  }
+                }
+              },
+              [
+                _c("div", { staticClass: "wrap_category_button" }, [
+                  _c("span", [
+                    _c("strong", [
+                      _vm._v(
+                        "\n          " + _vm._s(category.name) + "\n        "
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("span", { staticClass: "restaurants_badge" }, [
+                    _vm._v(
+                      "\n        " +
+                        _vm._s(category.restaurants.length) +
+                        "\n      "
+                    )
+                  ])
+                ])
+              ]
+            )
+          })
+        ],
+        2
+      )
+    : _vm._e()
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "wrap_category_button" }, [
+      _c("span", [_c("strong", [_vm._v("\n          All\n        ")])])
+    ])
+  }
+]
+render._withStripped = true
 
 
 
@@ -42656,11 +42684,9 @@ var render = function() {
                             attrs: { src: "img/scooter-delivery.png", alt: "" }
                           }),
                           _vm._v(
-                            "\n<<<<<<< HEAD\n                        € " +
+                            "\n                        € " +
                               _vm._s(restaurant.price_shipping) +
-                              "\n=======\n                        € " +
-                              _vm._s(restaurant.price_shipping.toFixed(2)) +
-                              " \n>>>>>>> wayToTheEnd\n                        "
+                              "\n                        "
                           ),
                           _c("img", {
                             attrs: { src: "img/like.png", alt: "" }

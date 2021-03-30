@@ -45,6 +45,10 @@ class TokenController extends Controller
             'paymentMethodNonce' => $nonceFromTheClient,
         ]);
         if ($result->success) {
+
+
+
+
             $filters= [];
             foreach ($dishes as $dish) {
               if (!in_array(array($dish->restaurant_id), $filters)) {
@@ -60,18 +64,45 @@ class TokenController extends Controller
                 }
               }
             }
+            foreach ($filters as $key => $filter) {
+              $restaurantTotal=0;
+              for ($i=1; $i < count($filter) ; $i++) {
+                $restaurantTotal +=  $filter[$i]->totalPrice;
+              }
+              array_push($filters[$key],$restaurantTotal);
+            }
 
 
-            $newOrder = new Order;
-            $newOrder->restaurant_id = $dishes[0]->restaurant_id;
-            $newOrder->amount = $total;
-            $newOrder->name = $request->name;
-            $newOrder->surname = $request->surname;
-            $newOrder->address = $request->address;
-            $newOrder->email = $request->email;
-            $newOrder->order = json_encode($dishes);
-            $newOrder->order_date = Carbon::now();
-            $newOrder->save();
+            foreach ($filters as $filter) {
+              // code...
+              $newOrder = new Order;
+              $newOrder->restaurant_id = $filter[0];
+              $newOrder->amount = $filter[count($filter)-1];
+              $newOrder->name = $request->name;
+              $newOrder->surname = $request->surname;
+              $newOrder->address = $request->address;
+              $newOrder->email = $request->email;
+              $order = [];
+              for ($i=1; $i < count($filter)-1 ; $i++) {
+                array_push($order,$filter[$i]);
+              }
+              $newOrder->order = json_encode($order);
+              $newOrder->order_date = Carbon::now();
+            
+              $newOrder->save();
+
+            }
+
+            // $newOrder = new Order;
+            // $newOrder->restaurant_id = $dishes[0]->restaurant_id;
+            // $newOrder->amount = $total;
+            // $newOrder->name = $request->name;
+            // $newOrder->surname = $request->surname;
+            // $newOrder->address = $request->address;
+            // $newOrder->email = $request->email;
+            // $newOrder->order = json_encode($dishes);
+            // $newOrder->order_date = Carbon::now();
+            // $newOrder->save();
 
             $datiUtente = [
                 'name' => $request->name,
@@ -90,7 +121,7 @@ class TokenController extends Controller
 
             //dd($result, 'fallimento');
             return redirect()->route('checkoutf');
-            
+
         }
 
 
