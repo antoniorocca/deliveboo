@@ -59,4 +59,13 @@
 </script>
 
 <style scoped lang="scss">
+@media all and (max-width: 580px) {
+    #main-header {
+        height: 100%;
+        #categories {
+            height: 100%;
+            padding-bottom: 50px;
+        }
+    }
+}
 </style>
