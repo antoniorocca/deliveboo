@@ -2363,6 +2363,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+<<<<<<< HEAD
 //
 //
 //
@@ -2392,6 +2393,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+=======
+>>>>>>> fabHI
 /* harmony default export */ __webpack_exports__["default"] = ({
   methods: {
     // funzionamento navigazione
@@ -41671,6 +41674,7 @@ var render = function() {
         return _c(
           "button",
           {
+            key: category.id,
             on: {
               click: function($event) {
                 return _vm.filterRestaurant(category.name)
@@ -41682,16 +41686,18 @@ var render = function() {
               _c("span", [
                 _c("strong", [
                   _vm._v(
-                    "\r\n          " + _vm._s(category.name) + "\r\n        "
+                    "\n                    " +
+                      _vm._s(category.name) +
+                      "\n                "
                   )
                 ])
               ]),
               _vm._v(" "),
               _c("span", { staticClass: "restaurants_badge" }, [
                 _vm._v(
-                  "\r\n        " +
+                  "\n                " +
                     _vm._s(category.restaurants.length) +
-                    "\r\n      "
+                    "\n            "
                 )
               ])
             ])
@@ -41723,8 +41729,14 @@ var staticRenderFns = [
       _c("img", { attrs: { src: "/img/checkoutf.png", alt: "" } })
 =======
     return _c("div", { staticClass: "wrap_category_button" }, [
+<<<<<<< HEAD
       _c("span", [_c("strong", [_vm._v("\r\n          All\r\n        ")])])
 >>>>>>> navbarend
+=======
+      _c("span", [
+        _c("strong", [_vm._v("\n                    All\n                ")])
+      ])
+>>>>>>> fabHI
     ])
   }
 ]
@@ -42809,7 +42821,7 @@ var render = function() {
                         }),
                         _vm._v(
                           "\r\n                        € " +
-                            _vm._s(restaurant.price_shipping) +
+                            _vm._s(restaurant.price_shipping.toFixed(2)) +
                             " \r\n                        "
                         ),
                         _c("img", { attrs: { src: "img/like.png", alt: "" } }),
