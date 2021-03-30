@@ -50,7 +50,7 @@ export default {
     height: 100%;
     padding: 20px 20px;
     #info_restaurant {
-        height: 600px;
+        height: 605px;
         width: 100%;
         position: relative;
         margin-bottom: 30px;

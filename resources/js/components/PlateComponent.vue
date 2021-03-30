@@ -86,10 +86,9 @@ export default {
     height: 100%;
     width: 100%;
     .dish_card {
-        margin: 30px;
+        margin: 15px;
         min-height: 230px;
         width: 360px;
-        padding-bottom: 15px;
         z-index: 9;
         border-radius: 10px;
         box-shadow: 0 0 10px #DDDDDD;
@@ -221,12 +220,6 @@ export default {
     position: fixed;
     top: 50%;
     left: 30px;
-    // width: 150px;
-    // height: 100px;
-    // position: sticky;
-    // top: 130px;
-    // left: 20px;
-    // width: 100%;
     z-index: 15;
     transition: all 0.35s;
 
