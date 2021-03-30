@@ -1,5 +1,7 @@
 @extends('layouts.app')
-
+@section('content')
+@include('layouts.registered_nav')
+@endsection
 
 
 
@@ -26,9 +28,6 @@
 </style>
 @endsection
 
-
-@section('content')
-@endsection
 @section('scripts')
 <div class="spacer">
   <img class="img_spacer" src="{{asset('storage/lightgreen_wave.png')}}" alt="">
