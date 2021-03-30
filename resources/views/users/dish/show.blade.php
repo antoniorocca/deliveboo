@@ -54,7 +54,7 @@
         @if ($dish->discount === 0)
         no
         @else
-        QUI STAMPARE SCONTO
+        -
         @endif
       </p>
     </div>
