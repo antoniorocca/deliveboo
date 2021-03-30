@@ -162,7 +162,7 @@ export default {
                     font-weight: 600;
                     padding: 10px;
                     border-radius: 10px;
-                    margin-top: 10px;
+                    margin: 15px 0;
                     background-color: #f4f4f4;
                     box-shadow:  0 0 10px #acacac;
                     .cart_item{
@@ -233,22 +233,40 @@ export default {
     }
 
 }
-@media all and (max-width: 880px) {
+
+@media all and (max-width: 880px) and (min-width: 581px) {
     .cart_box{
         .resume_wrap{
-            width: 250px;
+            width: 100%;
+            .cart_product_dropdown{
+                .cart_wrap{
+                    display: flex;
+                    flex-wrap: wrap;
+                    .cart_product_item{
+                        flex-basis: calc(50% - 30px);
+                        margin: 10px 15px;
+                    }
+                }
+            }
         }
+    }
+}
+
+@media all and (max-width: 880px) {
+    .cart_box{
         .resume_wrap{
             .phone{
                 width: 300px;
             }
         }
     }
-
 }
 @media all and (max-width: 580px) {
     .cart_box{
         position: absolute;
+        .resume_wrap{
+            width: 100%;
+        }
     }
 
 }
