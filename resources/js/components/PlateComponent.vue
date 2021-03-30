@@ -161,7 +161,7 @@ export default {
     top: 55%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #ffc244;
+    background-color: white;
     box-shadow: 0 0 20px black;
     outline: 0;
     min-height: 500px;
@@ -189,7 +189,7 @@ export default {
         }
     }
     img {
-        height: 250px;
+        height: 345px;
         width: 700px;
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
@@ -222,7 +222,7 @@ export default {
     left: 20px;
     width: 100%;
     z-index: 15;
-                transition: all 0.35s;
+    transition: all 0.35s;
 
     img{
         height: 60px;
