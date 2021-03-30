@@ -7637,7 +7637,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".cart_box[data-v-b7f93bea] {\n  box-shadow: 0 0 10px #acacac;\n  width: 400px;\n  max-height: 560px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  border-radius: 15px;\n  padding: 20px;\n}\n.cart_box .resume_wrap[data-v-b7f93bea] {\n  width: 350px;\n}\n.cart_box .resume_wrap .cart_count_span[data-v-b7f93bea] {\n  font-size: 23px;\n  font-weight: 600;\n  display: flex;\n  justify-content: center;\n}\n.cart_box .resume_wrap .cart_count_span span[data-v-b7f93bea] {\n  color: #00a082;\n}\n.cart_box .resume_wrap .scooter[data-v-b7f93bea] {\n  text-align: center;\n}\n.cart_box .resume_wrap .scooter img[data-v-b7f93bea] {\n  height: 40px;\n}\n.cart_box .resume_wrap .cart_product_dropdown[data-v-b7f93bea] {\n  display: flex;\n  flex-direction: column;\n  z-index: 99;\n  position: relative;\n  z-index: 100;\n}\n.cart_box .resume_wrap .cart_product_dropdown .cart_wrap[data-v-b7f93bea] {\n  overflow: auto;\n  height: 300px;\n  padding: 5px;\n}\n.cart_box .resume_wrap .cart_product_dropdown .cart_wrap .cart_product_item[data-v-b7f93bea] {\n  line-height: 50px;\n  font-weight: 600;\n  padding: 10px;\n  border-radius: 10px;\n  margin-top: 10px;\n  background-color: #f4f4f4;\n  box-shadow: 0 0 10px #acacac;\n}\n.cart_box .resume_wrap .cart_product_dropdown .cart_wrap .cart_product_item .cart_item[data-v-b7f93bea] {\n  font-size: 20px;\n  font-weight: 600;\n}\n.cart_box .resume_wrap .cart_product_dropdown .cart_wrap .cart_product_item .cart_item span[data-v-b7f93bea] {\n  color: #00a082;\n}\n.cart_box .resume_wrap .cart_product_dropdown .cart_wrap .cart_product_item .btn_box[data-v-b7f93bea] {\n  display: flex;\n  justify-content: space-between;\n  padding: 5px;\n}\n.cart_box .resume_wrap .cart_product_dropdown .cart_wrap .cart_product_item .btn_box button[data-v-b7f93bea] {\n  font-size: 20px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  padding: 5px;\n  border-radius: 50%;\n  height: 40px;\n  width: 40px;\n  color: #00a082;\n  background-color: #00a08317;\n  border: none;\n}\n.cart_box .resume_wrap .cart_product_dropdown .cart_wrap .cart_product_item .btn_box .trash[data-v-b7f93bea] {\n  color: red;\n}\n.cart_box .resume_wrap .cart_product_dropdown .wrapCheckout[data-v-b7f93bea] {\n  display: flex;\n  justify-content: space-between;\n}\n.cart_box .resume_wrap .cart_product_dropdown .wrapCheckout .checkoutBtn[data-v-b7f93bea] {\n  display: flex;\n  justify-content: center;\n  line-height: 50px;\n  border-radius: 30px;\n  background-color: #00a082;\n  color: white;\n  height: 50px;\n  width: 120px;\n}\n.cart_box .resume_wrap .cart_product_dropdown .totalSpan[data-v-b7f93bea] {\n  font-size: 20px;\n  font-weight: 600;\n  padding: 20px;\n}\n.cart_box .resume_wrap .cart_product_dropdown .totalSpan span[data-v-b7f93bea] {\n  color: #00a082;\n}\n.cart_box .resume_wrap .cart_product_dropdown .navbar_divider[data-v-b7f93bea] {\n  margin-top: 0;\n}\n.cart_box .resume_wrap .phone[data-v-b7f93bea] {\n  height: 70%;\n  position: absolute;\n  top: 60%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  opacity: 0.15;\n}\n@media all and (max-width: 880px) {\n.cart_box .resume_wrap[data-v-b7f93bea] {\n    width: 250px;\n}\n.cart_box .resume_wrap .phone[data-v-b7f93bea] {\n    width: 300px;\n}\n}\n@media all and (max-width: 580px) {\n.cart_box[data-v-b7f93bea] {\n    position: absolute;\n}\n}\n@media all and (max-width: 780px) {\n.cart_box[data-v-b7f93bea] {\n    width: 100%;\n}\n}", ""]);
+exports.push([module.i, ".cart_box[data-v-b7f93bea] {\n  box-shadow: 0 0 10px #acacac;\n  width: 400px;\n  max-height: 560px;\n  max-height: 850px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  border-radius: 15px;\n  padding: 20px;\n}\n.cart_box .resume_wrap[data-v-b7f93bea] {\n  width: 350px;\n}\n.cart_box .resume_wrap .cart_count_span[data-v-b7f93bea] {\n  font-size: 23px;\n  font-weight: 600;\n  display: flex;\n  justify-content: center;\n}\n.cart_box .resume_wrap .cart_count_span span[data-v-b7f93bea] {\n  color: #00a082;\n}\n.cart_box .resume_wrap .scooter[data-v-b7f93bea] {\n  text-align: center;\n}\n.cart_box .resume_wrap .scooter img[data-v-b7f93bea] {\n  height: 40px;\n}\n.cart_box .resume_wrap .cart_product_dropdown[data-v-b7f93bea] {\n  display: flex;\n  flex-direction: column;\n  z-index: 99;\n  position: relative;\n  z-index: 100;\n}\n.cart_box .resume_wrap .cart_product_dropdown .cart_wrap[data-v-b7f93bea] {\n  overflow: auto;\n  height: 300px;\n  height: 600px;\n  padding: 5px;\n}\n.cart_box .resume_wrap .cart_product_dropdown .cart_wrap .cart_product_item[data-v-b7f93bea] {\n  line-height: 50px;\n  font-weight: 600;\n  padding: 10px;\n  border-radius: 10px;\n  margin-top: 10px;\n  background-color: #f4f4f4;\n  box-shadow: 0 0 10px #acacac;\n}\n.cart_box .resume_wrap .cart_product_dropdown .cart_wrap .cart_product_item .cart_item[data-v-b7f93bea] {\n  font-size: 20px;\n  font-weight: 600;\n}\n.cart_box .resume_wrap .cart_product_dropdown .cart_wrap .cart_product_item .cart_item span[data-v-b7f93bea] {\n  color: #00a082;\n}\n.cart_box .resume_wrap .cart_product_dropdown .cart_wrap .cart_product_item .btn_box[data-v-b7f93bea] {\n  display: flex;\n  justify-content: space-between;\n  padding: 5px;\n}\n.cart_box .resume_wrap .cart_product_dropdown .cart_wrap .cart_product_item .btn_box button[data-v-b7f93bea] {\n  font-size: 20px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  padding: 5px;\n  border-radius: 50%;\n  height: 40px;\n  width: 40px;\n  color: #00a082;\n  background-color: #00a08317;\n  border: none;\n}\n.cart_box .resume_wrap .cart_product_dropdown .cart_wrap .cart_product_item .btn_box .trash[data-v-b7f93bea] {\n  color: red;\n}\n.cart_box .resume_wrap .cart_product_dropdown .wrapCheckout[data-v-b7f93bea] {\n  display: flex;\n  justify-content: space-between;\n}\n.cart_box .resume_wrap .cart_product_dropdown .wrapCheckout .checkoutBtn[data-v-b7f93bea] {\n  display: flex;\n  justify-content: center;\n  line-height: 50px;\n  border-radius: 30px;\n  background-color: #00a082;\n  color: white;\n  height: 50px;\n  width: 120px;\n}\n.cart_box .resume_wrap .cart_product_dropdown .totalSpan[data-v-b7f93bea] {\n  font-size: 20px;\n  font-weight: 600;\n  padding: 20px;\n}\n.cart_box .resume_wrap .cart_product_dropdown .totalSpan span[data-v-b7f93bea] {\n  color: #00a082;\n}\n.cart_box .resume_wrap .cart_product_dropdown .navbar_divider[data-v-b7f93bea] {\n  margin-top: 0;\n}\n.cart_box .resume_wrap .phone[data-v-b7f93bea] {\n  width: 100%;\n  position: absolute;\n  top: 60%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  opacity: 0.15;\n}\n@media all and (max-width: 880px) {\n.cart_box .resume_wrap[data-v-b7f93bea] {\n    width: 250px;\n}\n.cart_box .resume_wrap .phone[data-v-b7f93bea] {\n    width: 300px;\n}\n}\n@media all and (max-width: 580px) {\n.cart_box[data-v-b7f93bea] {\n    position: absolute;\n}\n}\n@media all and (max-width: 780px) {\n.cart_box[data-v-b7f93bea] {\n    width: 100%;\n}\n}", ""]);
 
 // exports
 
@@ -7751,7 +7751,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "#payment-form[data-v-4f61e082] {\n  height: 400px;\n  overflow-y: auto;\n}\n#payment-form .wrap[data-v-4f61e082] {\n  display: flex;\n  justify-content: space-between;\n}\n#payment-form .wrap .payment_btn[data-v-4f61e082] {\n  min-width: 150px;\n  display: flex;\n  justify-content: center;\n  line-height: 50px;\n  border-radius: 30px;\n  background-color: #00a082;\n  color: white;\n  height: 50px;\n  border: 0;\n}", ""]);
+exports.push([module.i, "#payment-form[data-v-4f61e082] {\n  overflow-y: auto;\n  width: 350px;\n}\n#payment-form .wrap[data-v-4f61e082] {\n  display: flex;\n  justify-content: space-between;\n}\n#payment-form .wrap .payment_btn[data-v-4f61e082] {\n  min-width: 150px;\n  display: flex;\n  justify-content: center;\n  line-height: 50px;\n  border-radius: 30px;\n  background-color: #00a082;\n  color: white;\n  height: 50px;\n  border: 0;\n  margin-top: 10px;\n  cursor: pointer;\n  text-decoration: none;\n}", ""]);
 
 // exports
 
@@ -41334,9 +41334,9 @@ var render = function() {
       !this.$store.state.checkout
         ? _c("div", { staticClass: "resume_wrap" }, [
             _c("span", { staticClass: "cart_count_span" }, [
-              _vm._v("\n      Cart ("),
+              _vm._v("\n            Cart ("),
               _c("span", [_vm._v(_vm._s(_vm.$store.state.cartCount))]),
-              _vm._v(")\n    ")
+              _vm._v(")\n        ")
             ]),
             _vm._v(" "),
             _vm._m(0),
@@ -41353,7 +41353,7 @@ var render = function() {
                         [
                           _c("span", { staticClass: "cart_item" }, [
                             _vm._v(
-                              "\n            " +
+                              "\n                        " +
                                 _vm._s(item.name) +
                                 " x " +
                                 _vm._s(item.quantity) +
@@ -41415,7 +41415,7 @@ var render = function() {
                   _vm._v(" "),
                   _c("span", { staticClass: "totalSpan" }, [
                     _c("span", [_vm._v("Total: ")]),
-                    _vm._v(" $" + _vm._s(_vm.totalPrice) + "\n      ")
+                    _vm._v(" $" + _vm._s(_vm.totalPrice) + "\n            ")
                   ]),
                   _vm._v(" "),
                   _c("hr", { staticClass: "navbar_divider" }),
@@ -41427,7 +41427,11 @@ var render = function() {
                         staticClass: "checkoutBtn",
                         on: { click: _vm.toggleCheckout }
                       },
-                      [_vm._v("\n            Checkout\n          ")]
+                      [
+                        _vm._v(
+                          "\n                    Checkout\n                "
+                        )
+                      ]
                     ),
                     _vm._v(" "),
                     _c(
@@ -41448,7 +41452,7 @@ var render = function() {
                     _c(
                       "a",
                       { staticClass: "navbar-item", attrs: { href: "" } },
-                      [_vm._v("\n        Cart is empty\n      ")]
+                      [_vm._v("\n                Cart is empty\n            ")]
                     )
                   ]
                 ),

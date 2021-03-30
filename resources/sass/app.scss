@@ -25,16 +25,19 @@
 
 #box_cart {
     position: sticky;
-    top: 100px;
+    top: 110px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 5px;
 }
 
 
 @media all and (max-width: 780px) {
-  .hooper-next, .hooper-prev{
-    display: none;
-  }
-  #new_main_box{
-    display: flex;
-    flex-direction: column;
-  }
+    .hooper-next, .hooper-prev{
+        display: none;
+    }
+    #new_main_box{
+        display: flex;
+        flex-direction: column;
+    }
 }

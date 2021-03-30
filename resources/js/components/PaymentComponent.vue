@@ -131,8 +131,8 @@
 </script>
 <style  scoped lang="scss">
 #payment-form{
-    height: 400px;
     overflow-y: auto;
+    width: 350px;
     .wrap {
         display:flex;
         justify-content: space-between;
@@ -146,6 +146,9 @@
             color: white;
             height: 50px;
             border: 0;
+            margin-top: 10px;
+            cursor: pointer;
+            text-decoration: none;
         }
     }
 }
