@@ -257,7 +257,7 @@ export default {
 @media all and (max-width: 1024px) {
     #dish_info_pop_up {
         width: 600px;
-        min-height: 3250px;
+        min-height: 325px;
         img {
             width: 600px;
             height: 190px;
