@@ -120,13 +120,14 @@ let store = {
           this.state.showSelectRestaurant = true;
         },
         search(state, search){
+          console.log(search.toLowerCase());
           this.state.filteredRestaurant = [];
           this.state.restaurants.forEach((item, i) => {
-            if (item.name.includes(search)) {
+            let itemName = item.name.toLowerCase();
+            if (itemName.includes(search)) {
               this.state.filteredRestaurant.push(item);
             }
           });
-          console.log(this.state.filteredRestaurant);
           this.state.showLanding = false;
           this.state.showMain = true;
           this.state.showSelectRestaurant = true;
