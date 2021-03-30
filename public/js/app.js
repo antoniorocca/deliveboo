@@ -2149,12 +2149,6 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 //
 //
 //
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -7700,7 +7694,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "#category_box[data-v-6e0bd8de] {\n  box-sizing: border-box;\n  width: 100%;\n  display: flex;\n  flex-direction: column;\n}\n#category_box button[data-v-6e0bd8de] {\n  height: 60px;\n  line-height: 45px;\n  border-radius: 7px;\n  margin: 5px;\n  box-shadow: 0 0 10px #acacac;\n  border: 0;\n  padding: 0 10px;\n}\n#category_box button .wrap_category_button[data-v-6e0bd8de] {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n}\n#category_box button .wrap_category_button .restaurants_badge[data-v-6e0bd8de] {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  line-height: normal;\n  height: 30px;\n  width: 30px;\n  border-radius: 50%;\n  border: 2px solid #008169;\n}\n#category_box button[data-v-6e0bd8de]:hover {\n  line-height: 50px;\n  border: 3px solid #008169;\n  font-size: 20px;\n}", ""]);
+exports.push([module.i, "#category_box[data-v-6e0bd8de] {\n  box-sizing: border-box;\n  width: 100%;\n  display: flex;\n  flex-direction: column;\n  max-width: 20%;\n  min-width: 200px;\n}\n#category_box button[data-v-6e0bd8de] {\n  height: 60px;\n  line-height: 45px;\n  border-radius: 7px;\n  margin: 5px;\n  box-shadow: 0 0 10px #acacac;\n  border: 0;\n  padding: 0 10px;\n}\n#category_box button .wrap_category_button[data-v-6e0bd8de] {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n}\n#category_box button .wrap_category_button .restaurants_badge[data-v-6e0bd8de] {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  line-height: normal;\n  height: 30px;\n  width: 30px;\n  border-radius: 50%;\n  border: 2px solid #008169;\n}\n#category_box button[data-v-6e0bd8de]:hover {\n  line-height: 50px;\n  border: 3px solid #008169;\n  font-size: 20px;\n}\n@media all and (max-width: 767px) {\n#category_box[data-v-6e0bd8de] {\n    min-width: 100% !important;\n    max-width: 100% !important;\n}\n}", ""]);
 
 // exports
 
@@ -41345,15 +41339,13 @@ var render = function() {
       !this.$store.state.checkout
         ? _c("div", { staticClass: "resume_wrap" }, [
             _c("span", { staticClass: "cart_count_span" }, [
-              _vm._v("\n                Cart ("),
+              _vm._v("\n            Cart ("),
               _c("span", [_vm._v(_vm._s(_vm.$store.state.cartCount))]),
-              _vm._v(")\n            ")
+              _vm._v(")\n        ")
             ]),
-            _vm._v("\n\n<<<<<<< HEAD\n        "),
+            _vm._v(" "),
             _vm._m(0),
-            _vm._v("\n=======\n            "),
-            _vm._m(1),
-            _vm._v("\n>>>>>>> branchMerge\n\n            "),
+            _vm._v(" "),
             _vm.$store.state.cart.length > 0
               ? _c("div", { staticClass: "cart_product_dropdown" }, [
                   _c(
@@ -41366,7 +41358,7 @@ var render = function() {
                         [
                           _c("span", { staticClass: "cart_item" }, [
                             _vm._v(
-                              "\n                            " +
+                              "\n                        " +
                                 _vm._s(item.name) +
                                 " x " +
                                 _vm._s(item.quantity) +
@@ -41428,7 +41420,7 @@ var render = function() {
                   _vm._v(" "),
                   _c("span", { staticClass: "totalSpan" }, [
                     _c("span", [_vm._v("Total: ")]),
-                    _vm._v(" $" + _vm._s(_vm.totalPrice) + "\n                ")
+                    _vm._v(" $" + _vm._s(_vm.totalPrice) + "\n            ")
                   ]),
                   _vm._v(" "),
                   _c("hr", { staticClass: "navbar_divider" }),
@@ -41442,7 +41434,7 @@ var render = function() {
                       },
                       [
                         _vm._v(
-                          "\n                        Checkout\n                    "
+                          "\n                    Checkout\n                "
                         )
                       ]
                     ),
@@ -41465,11 +41457,7 @@ var render = function() {
                     _c(
                       "a",
                       { staticClass: "navbar-item", attrs: { href: "" } },
-                      [
-                        _vm._v(
-                          "\n                    Cart is empty\n                "
-                        )
-                      ]
+                      [_vm._v("\n                Cart is empty\n            ")]
                     )
                   ]
                 ),
@@ -41487,14 +41475,6 @@ var render = function() {
   )
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "scooter" }, [
-      _c("img", { attrs: { src: "img/scooter-delivery.png", alt: "" } })
-    ])
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -58037,18 +58017,8 @@ var store = {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-__webpack_require__(/*! /var/www/html/boolean/laravel/deliveboo/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /var/www/html/boolean/laravel/deliveboo/resources/sass/app.scss */"./resources/sass/app.scss");
-=======
 __webpack_require__(/*! /Users/rocco/Documents/BOOLEAN/Classe23/deliveboo/resources/js/app.js */"./resources/js/app.js");
 module.exports = __webpack_require__(/*! /Users/rocco/Documents/BOOLEAN/Classe23/deliveboo/resources/sass/app.scss */"./resources/sass/app.scss");
->>>>>>> roc-branch
-=======
-__webpack_require__(/*! C:\gitKraken_esercizi\deliveboo_progetto_finale\deliveboo\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\gitKraken_esercizi\deliveboo_progetto_finale\deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
->>>>>>> resposniveCorrezionNWTE
 
 
 /***/ })

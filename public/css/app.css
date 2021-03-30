@@ -11096,6 +11096,7 @@ header #main-header #categories .category_hover,
   border-radius: 80px;
   color: white !important;
   display: flex;
+  float: right;
   justify-content: center;
   align-items: center;
 }
@@ -11103,6 +11104,17 @@ header #main-header #categories .category_hover,
 .dropdown #navbarDropdown:hover {
   cursor: pointer;
   background-color: #008169;
+}
+
+#collapse > div > div {
+  background-color: rgba(0, 0, 0, 0) !important;
+  border: 0;
+}
+
+#collapse > div > div > a {
+  background-color: white;
+  width: 120px;
+  float: right;
 }
 
 #back_nav > div > a > img {
