@@ -63,26 +63,23 @@
                         itemsToShow: 1,
                         touchDrag: true,
                         trimWhiteSpace: true
-
                         },
                         920: {
                         // tablet
                         itemsToShow: 2,
                         touchDrag: true,
                         trimWhiteSpace: true
-
                         },
                         992: {
                         // laptop
                         itemsToShow: 2,
                         touchDrag: true,
                         trimWhiteSpace: true
-
                         },
                         1024: {
                         // desktop
                         itemsToShow: 4,
-                    trimWhiteSpace: true
+                        trimWhiteSpace: true
 
                         }
                     }

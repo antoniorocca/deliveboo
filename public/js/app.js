@@ -2903,8 +2903,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+<<<<<<< HEAD
 //
 //
+=======
+>>>>>>> 10-11-12-rocco
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -7825,10 +7828,14 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 // module
 <<<<<<< HEAD
+<<<<<<< HEAD
 exports.push([module.i, "#selected_restaurant_dishes[data-v-0fa44a32] {\n  height: 100%;\n  width: 100%;\n}\n#selected_restaurant_dishes .dish_card[data-v-0fa44a32] {\n  margin: 30px;\n  min-height: 230px;\n  width: 360px;\n  padding-bottom: 15px;\n  z-index: 10;\n  border-radius: 10px;\n  box-shadow: 0 0 10px #DDDDDD;\n  border-color: transparent;\n  position: relative;\n}\n#selected_restaurant_dishes .dish_card img[data-v-0fa44a32] {\n  height: 120px;\n  width: 360px;\n  border-top-left-radius: 10px;\n  border-top-right-radius: 10px;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n#selected_restaurant_dishes .dish_card h4[data-v-0fa44a32] {\n  border: px solid rgba(0, 0, 0, 0.125);\n  border-radius: 0.25rem;\n  margin-top: 15px;\n  font-weight: 700;\n  position: absolute;\n  left: 20px;\n}\n#selected_restaurant_dishes .dish_card .prezzo[data-v-0fa44a32] {\n  position: absolute;\n  top: 170px;\n  left: 20px;\n}\n#selected_restaurant_dishes .dish_card .rating[data-v-0fa44a32] {\n  position: absolute;\n  top: 190px;\n  left: 20px;\n}\n#selected_restaurant_dishes .dish_card button[data-v-0fa44a32] {\n  background-color: #00a082;\n  border-style: none;\n  height: 40px;\n  width: 40px;\n  border-radius: 50%;\n  position: absolute;\n  bottom: 20px;\n  right: 20px;\n}\n#selected_restaurant_dishes .dish_card button i[data-v-0fa44a32] {\n  color: white;\n  font-weight: bold;\n  font-size: 20px;\n}\n#selected_restaurant_dishes .dish_card button[data-v-0fa44a32]:hover {\n  transform: scale(1.1);\n  background-color: #008169;\n}\n#selected_restaurant_dishes .dish_card .info i[data-v-0fa44a32] {\n  position: absolute;\n  top: 5px;\n  left: 5px;\n  font-size: 28px;\n  color: #ffc244;\n  background-color: white;\n  border-radius: 50%;\n  cursor: pointer;\n  display: flex;\n  place-content: center;\n  place-items: center;\n}\n#dish_info_pop_up[data-v-0fa44a32] {\n  position: fixed;\n  top: 55%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  background-color: #ffc244;\n  box-shadow: 0 0 20px black;\n  outline: 0;\n  min-height: 500px;\n  width: 700px;\n  padding-bottom: 15px;\n  z-index: 10;\n  border-radius: 10px;\n  border-color: transparent;\n  text-align: center;\n}\n#dish_info_pop_up .close i[data-v-0fa44a32] {\n  position: absolute;\n  top: 5px;\n  left: 5px;\n  font-size: 28px;\n  color: #ffc244;\n  background-color: white;\n  border-radius: 50%;\n  cursor: pointer;\n  display: flex;\n  place-content: center;\n  place-items: center;\n}\n#dish_info_pop_up img[data-v-0fa44a32] {\n  height: 250px;\n  width: 700px;\n  border-top-left-radius: 10px;\n  border-top-right-radius: 10px;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n#dish_info_pop_up h4[data-v-0fa44a32] {\n  font-size: 28px;\n  margin-top: 15px;\n  font-weight: 700;\n}\n#dish_info_pop_up .show_plate_info[data-v-0fa44a32] {\n  position: absolute;\n  top: 0px;\n  left: 0px;\n  width: 100%;\n  height: 100%;\n  color: transparent;\n  background-color: transparent;\n  border-color: transparent;\n  cursor: pointer;\n  outline: 0;\n}\n.torna_ristoranti[data-v-0fa44a32] {\n  width: 150px;\n  height: 100px;\n  position: sticky;\n  top: 130px;\n  left: 20px;\n  width: 100%;\n  z-index: 15;\n}\n.torna_ristoranti img[data-v-0fa44a32] {\n  height: 60px;\n}\n.torna_ristoranti #back[data-v-0fa44a32] {\n  color: black;\n  padding: 10px 15px;\n  border-radius: 10px;\n  border: 1px solid transparent;\n  font-size: 18px;\n  font-weight: 600;\n}\n.torna_ristoranti #back[data-v-0fa44a32]:hover {\n  cursor: pointer;\n}\n@media all and (max-width: 1024px) {\n#dish_info_pop_up[data-v-0fa44a32] {\n    width: 600px;\n    min-height: 3250px;\n}\n#dish_info_pop_up img[data-v-0fa44a32] {\n    width: 600px;\n    height: 190px;\n}\n}\n@media all and (max-width: 720px) {\n#dish_info_pop_up[data-v-0fa44a32] {\n    width: 460px;\n    min-height: 300px;\n}\n#dish_info_pop_up img[data-v-0fa44a32] {\n    width: 460px;\n    height: 160px;\n}\n}", ""]);
 =======
 exports.push([module.i, "#selected_restaurant_dishes[data-v-0fa44a32] {\n  height: 100%;\n  width: 100%;\n}\n#selected_restaurant_dishes .dish_card[data-v-0fa44a32] {\n  margin: 30px;\n  min-height: 230px;\n  width: 360px;\n  padding-bottom: 15px;\n  z-index: 9;\n  border-radius: 10px;\n  box-shadow: 0 0 10px #DDDDDD;\n  border-color: transparent;\n  position: relative;\n}\n#selected_restaurant_dishes .dish_card img[data-v-0fa44a32] {\n  height: 120px;\n  width: 360px;\n  border-top-left-radius: 10px;\n  border-top-right-radius: 10px;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n#selected_restaurant_dishes .dish_card h4[data-v-0fa44a32] {\n  border: px solid rgba(0, 0, 0, 0.125);\n  border-radius: 0.25rem;\n  margin-top: 15px;\n  font-weight: 700;\n  position: absolute;\n  left: 20px;\n}\n#selected_restaurant_dishes .dish_card .prezzo[data-v-0fa44a32] {\n  position: absolute;\n  top: 170px;\n  left: 20px;\n}\n#selected_restaurant_dishes .dish_card .rating[data-v-0fa44a32] {\n  position: absolute;\n  top: 190px;\n  left: 20px;\n}\n#selected_restaurant_dishes .dish_card button[data-v-0fa44a32] {\n  background-color: #00a082;\n  border-style: none;\n  height: 40px;\n  width: 40px;\n  border-radius: 50%;\n  position: absolute;\n  bottom: 20px;\n  right: 20px;\n}\n#selected_restaurant_dishes .dish_card button i[data-v-0fa44a32] {\n  color: white;\n  font-weight: bold;\n  font-size: 20px;\n}\n#selected_restaurant_dishes .dish_card button[data-v-0fa44a32]:hover {\n  transform: scale(1.1);\n  background-color: #008169;\n}\n#selected_restaurant_dishes .dish_card .show_plate_info_logo[data-v-0fa44a32] {\n  position: absolute;\n  top: 5px;\n  left: 5px;\n  width: 25px;\n  height: 25px;\n  background-color: #ffc244;\n  border-radius: 50%;\n  display: flex;\n  place-content: center;\n  place-items: center;\n}\n#selected_restaurant_dishes .dish_card .show_plate_info[data-v-0fa44a32] {\n  position: absolute;\n  top: 0px;\n  left: 0px;\n  width: 100%;\n  height: 70%;\n  color: transparent;\n  background-color: transparent;\n  border-color: transparent;\n  cursor: pointer;\n  outline: 0;\n}\n#dish_info_pop_up[data-v-0fa44a32] {\n  position: fixed;\n  top: 55%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  background-color: #ffc244;\n  box-shadow: 0 0 20px black;\n  outline: 0;\n  min-height: 500px;\n  width: 700px;\n  padding-bottom: 15px;\n  z-index: 10;\n  border-radius: 10px;\n  border-color: transparent;\n}\n#dish_info_pop_up img[data-v-0fa44a32] {\n  height: 250px;\n  width: 700px;\n  border-top-left-radius: 10px;\n  border-top-right-radius: 10px;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n#dish_info_pop_up h4[data-v-0fa44a32] {\n  border: px solid rgba(0, 0, 0, 0.125);\n  border-radius: 0.25rem;\n  margin-top: 15px;\n  font-weight: 700;\n  position: absolute;\n  left: 20px;\n}\n#dish_info_pop_up .show_plate_info_logo[data-v-0fa44a32] {\n  position: absolute;\n  top: 5px;\n  left: 5px;\n  width: 25px;\n  height: 25px;\n  background-color: #ffc244;\n  border-radius: 50%;\n  display: flex;\n  place-content: center;\n  place-items: center;\n}\n#dish_info_pop_up .show_plate_info[data-v-0fa44a32] {\n  position: absolute;\n  top: 0px;\n  left: 0px;\n  width: 100%;\n  height: 100%;\n  color: transparent;\n  background-color: transparent;\n  border-color: transparent;\n  cursor: pointer;\n  outline: 0;\n}\n@media all and (max-width: 1024px) {\n#dish_info_pop_up[data-v-0fa44a32] {\n    width: 600px;\n    min-height: 3250px;\n}\n#dish_info_pop_up img[data-v-0fa44a32] {\n    width: 600px;\n    height: 190px;\n}\n}\n@media all and (max-width: 720px) {\n#dish_info_pop_up[data-v-0fa44a32] {\n    width: 460px;\n    min-height: 300px;\n}\n#dish_info_pop_up img[data-v-0fa44a32] {\n    width: 460px;\n    height: 160px;\n}\n}", ""]);
 >>>>>>> navbarend
+=======
+exports.push([module.i, "#selected_restaurant_dishes[data-v-0fa44a32] {\n  height: 100%;\n  width: 100%;\n}\n#selected_restaurant_dishes .dish_card[data-v-0fa44a32] {\n  margin: 30px;\n  min-height: 230px;\n  width: 360px;\n  padding-bottom: 15px;\n  z-index: 10;\n  border-radius: 10px;\n  box-shadow: 0 0 10px #DDDDDD;\n  border-color: transparent;\n  position: relative;\n}\n#selected_restaurant_dishes .dish_card img[data-v-0fa44a32] {\n  height: 120px;\n  width: 360px;\n  border-top-left-radius: 10px;\n  border-top-right-radius: 10px;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n#selected_restaurant_dishes .dish_card h4[data-v-0fa44a32] {\n  border: px solid rgba(0, 0, 0, 0.125);\n  border-radius: 0.25rem;\n  margin-top: 15px;\n  font-weight: 700;\n  padding: 15px 10px 0;\n}\n#selected_restaurant_dishes .dish_card .prezzo[data-v-0fa44a32] {\n  font-size: 16px;\n  font-weight: 500;\n  padding: 15px 10px 0;\n}\n#selected_restaurant_dishes .dish_card .rating[data-v-0fa44a32] {\n  padding: 15px 10px 0;\n}\n#selected_restaurant_dishes .dish_card .rating i[data-v-0fa44a32] {\n  color: #ffc244;\n}\n#selected_restaurant_dishes .dish_card button[data-v-0fa44a32] {\n  background-color: #00a082;\n  border-style: none;\n  height: 40px;\n  width: 40px;\n  border-radius: 50%;\n  position: absolute;\n  bottom: 20px;\n  right: 20px;\n}\n#selected_restaurant_dishes .dish_card button i[data-v-0fa44a32] {\n  color: white;\n  font-weight: bold;\n  font-size: 20px;\n}\n#selected_restaurant_dishes .dish_card button[data-v-0fa44a32]:hover {\n  transform: scale(1.1);\n  background-color: #008169;\n}\n#selected_restaurant_dishes .dish_card .info i[data-v-0fa44a32] {\n  position: absolute;\n  top: 5px;\n  left: 5px;\n  font-size: 28px;\n  color: #ffc244;\n  background-color: white;\n  border-radius: 50%;\n  cursor: pointer;\n  display: flex;\n  place-content: center;\n  place-items: center;\n}\n#dish_info_pop_up[data-v-0fa44a32] {\n  position: fixed;\n  top: 55%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  background-color: white;\n  box-shadow: 0 0 20px black;\n  outline: 0;\n  min-height: 500px;\n  width: 700px;\n  padding-bottom: 15px;\n  z-index: 10;\n  border-radius: 10px;\n  border-color: transparent;\n  text-align: center;\n}\n#dish_info_pop_up .close i[data-v-0fa44a32] {\n  position: absolute;\n  top: 5px;\n  left: 5px;\n  font-size: 28px;\n  color: #ffc244;\n  background-color: white;\n  border-radius: 50%;\n  cursor: pointer;\n  display: flex;\n  place-content: center;\n  place-items: center;\n}\n#dish_info_pop_up img[data-v-0fa44a32] {\n  height: 345px;\n  width: 700px;\n  border-top-left-radius: 10px;\n  border-top-right-radius: 10px;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n#dish_info_pop_up h4[data-v-0fa44a32] {\n  font-size: 28px;\n  margin-top: 15px;\n  font-weight: 700;\n}\n#dish_info_pop_up .show_plate_info[data-v-0fa44a32] {\n  position: absolute;\n  top: 0px;\n  left: 0px;\n  width: 100%;\n  height: 100%;\n  color: transparent;\n  background-color: transparent;\n  border-color: transparent;\n  cursor: pointer;\n  outline: 0;\n}\n.torna_ristoranti[data-v-0fa44a32] {\n  width: 150px;\n  height: 100px;\n  position: sticky;\n  top: 130px;\n  left: 20px;\n  width: 100%;\n  z-index: 15;\n  transition: all 0.35s;\n}\n.torna_ristoranti img[data-v-0fa44a32] {\n  height: 60px;\n}\n.torna_ristoranti #back[data-v-0fa44a32] {\n  color: black;\n  padding: 10px 15px;\n  border-radius: 10px;\n  border: 1px solid transparent;\n  font-size: 18px;\n  font-weight: 600;\n}\n.torna_ristoranti #back:hover img[data-v-0fa44a32] {\n  cursor: pointer;\n  transform: scale(1.05);\n  border-radius: 50%;\n  border: 2.5px solid #008169;\n}\n@media all and (max-width: 1024px) {\n#dish_info_pop_up[data-v-0fa44a32] {\n    width: 600px;\n    min-height: 3250px;\n}\n#dish_info_pop_up img[data-v-0fa44a32] {\n    width: 600px;\n    height: 190px;\n}\n}\n@media all and (max-width: 720px) {\n#dish_info_pop_up[data-v-0fa44a32] {\n    width: 460px;\n    min-height: 300px;\n}\n#dish_info_pop_up img[data-v-0fa44a32] {\n    width: 460px;\n    height: 160px;\n}\n}", ""]);
+>>>>>>> 10-11-12-rocco
 
 // exports
 
@@ -7885,7 +7892,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "#to_top[data-v-2b42e07f] {\n  position: absolute;\n  top: 0px;\n  right: 20px;\n  margin: 35px;\n  background-color: #ffc244;\n  color: white;\n  width: 60px;\n  height: 35px;\n  display: flex;\n  place-content: center;\n  place-items: center;\n  border-radius: 10px;\n  border: 1px solid transparent;\n}", ""]);
+exports.push([module.i, "#to_top i[data-v-2b42e07f] {\n  position: absolute;\n  top: 0px;\n  right: 20px;\n  margin: 35px;\n  color: #ffc244;\n  width: 60px;\n  height: 35px;\n  display: flex;\n  font-size: 35px;\n}", ""]);
 
 // exports
 
@@ -7904,7 +7911,11 @@ exports = module.exports = __webpack_require__(/*! ../../css-loader/lib/css-base
 
 
 // module
+<<<<<<< HEAD
 exports.push([module.i, ".hooper-slide {\r\n  flex-shrink: 0;\r\n  height: 100%;\r\n  margin: 0;\r\n  padding: 0;\r\n  list-style: none;\r\n}\r\n.hooper-progress {\r\n  position: absolute;\r\n  top: 0;\r\n  right: 0;\r\n  left: 0;\r\n  height: 4px;\r\n  background-color: #efefef;\r\n}\r\n.hooper-progress-inner {\r\n  height: 100%;\r\n  background-color: #4285f4;\r\n  transition: 300ms;\r\n}\r\n.hooper-pagination {\r\n  position: absolute;\r\n  bottom: 0;\r\n  right: 50%;\r\n  transform: translateX(50%);\r\n  display: flex;\r\n  padding: 5px 10px;\r\n}\r\n.hooper-indicators {\r\n  display: flex;\r\n  list-style: none;\r\n  margin: 0;\r\n  padding: 0;\r\n}\r\n.hooper-indicator:hover,\r\n.hooper-indicator.is-active {\r\n  background-color: #4285f4;\r\n}\r\n.hooper-indicator {\r\n  margin: 0 2px;\r\n  width: 12px;\r\n  height: 4px;\r\n  border-radius: 4px;\r\n  border: none;\r\n  padding: 0;\r\n  background-color: #fff;\r\n  cursor: pointer;\r\n}\r\n.hooper-pagination.is-vertical {\r\n  bottom: auto;\r\n  right: 0;\r\n  top: 50%;\r\n  transform: translateY(-50%);\r\n}\r\n.hooper-pagination.is-vertical .hooper-indicators {\r\n  flex-direction: column;\r\n}\r\n.hooper-pagination.is-vertical .hooper-indicator {\r\n  width: 6px;\r\n}\r\n.hooper-next,\r\n.hooper-prev {\r\n  background-color: transparent;\r\n  border: none;\r\n  padding: 1em;\r\n  position: absolute;\r\n  top: 50%;\r\n  transform: translateY(-50%);\r\n  cursor: pointer;\r\n}\r\n.hooper-next.is-disabled,\r\n.hooper-prev.is-disabled {\r\n  opacity: 0.3;\r\n  cursor: not-allowed;\r\n}\r\n.hooper-next {\r\n  right: 0;\r\n}\r\n.hooper-prev {\r\n  left: 0;\r\n}\r\n.hooper-navigation.is-vertical .hooper-next {\r\n  top: auto;\r\n  bottom: 0;\r\n  transform: initial;\r\n}\r\n.hooper-navigation.is-vertical .hooper-prev {\r\n  top: 0;\r\n  bottom: auto;\r\n  right: 0;\r\n  left: auto;\r\n  transform: initial;\r\n}\r\n.hooper-navigation.is-rtl .hooper-prev {\r\n  left: auto;\r\n  right: 0;\r\n}\r\n.hooper-navigation.is-rtl .hooper-next {\r\n  right: auto;\r\n  left: 0;\r\n}\r\n.hooper {\r\n  position: relative;\r\n  box-sizing: border-box;\r\n  width: 100%;\r\n  height: 200px;\r\n}\r\n.hooper * {\r\n  box-sizing: border-box;\r\n}\r\n.hooper-list {\r\n  overflow: hidden;\r\n  width: 100%;\r\n  height: 100%;\r\n}\r\n.hooper-track {\r\n  display: flex;\r\n  justify-content: center;\r\n  box-sizing: border-box;\r\n  width: 100%;\r\n  height: 100%;\r\n  padding: 0;\r\n  margin: 0;\r\n}\r\n.hooper.is-vertical .hooper-track {\r\n  flex-direction: column;\r\n  height: 200px;\r\n}\r\n\r\n.hooper.is-rtl {\r\n  direction: rtl;\r\n}\r\n\r\n.hooper-sr-only {\r\n  position: absolute;\r\n  width: 1px;\r\n  height: 1px;\r\n  padding: 0;\r\n  margin: -1px;\r\n  overflow: hidden;\r\n  clip: rect(0, 0, 0, 0);\r\n  border: 0;\r\n}\r\n#hooper > div > div.hooper-navigation > button.hooper-prev {\r\n\tbackground-color: #F7C244;\r\n\tpadding: 15px;\r\n\tborder-radius: 50%;\r\n\ttransform: translate(-70px, -25px);\r\n}\r\n\r\n#hooper > div > div.hooper-navigation > button.hooper-next{\r\n\tbackground-color: #F7C244;\r\n\tpadding: 15px;\r\n\tborder-radius: 50%;\r\n\ttransform: translate(70px, -25px);\r\n\t\r\n}", ""]);
+=======
+exports.push([module.i, ".hooper-slide {\n    flex-shrink: 0;\n    height: 100%;\n    margin: 0;\n    padding: 0;\n    list-style: none;\n}\n\n.hooper-progress {\n    position: absolute;\n    top: 0;\n    right: 0;\n    left: 0;\n    height: 4px;\n    background-color: #efefef;\n}\n\n.hooper-progress-inner {\n    height: 100%;\n    background-color: #4285f4;\n    transition: 300ms;\n}\n\n.hooper-pagination {\n    position: absolute;\n    bottom: 0;\n    right: 50%;\n    transform: translateX(50%);\n    display: flex;\n    padding: 5px 10px;\n}\n\n.hooper-indicators {\n    display: flex;\n    list-style: none;\n    margin: 0;\n    padding: 0;\n}\n\n.hooper-indicator:hover,\n.hooper-indicator.is-active {\n    background-color: #4285f4;\n}\n\n.hooper-indicator {\n    margin: 0 2px;\n    width: 12px;\n    height: 4px;\n    border-radius: 4px;\n    border: none;\n    padding: 0;\n    background-color: #fff;\n    cursor: pointer;\n}\n\n.hooper-pagination.is-vertical {\n    bottom: auto;\n    right: 0;\n    top: 50%;\n    transform: translateY(-50%);\n}\n\n.hooper-pagination.is-vertical .hooper-indicators {\n    flex-direction: column;\n}\n\n.hooper-pagination.is-vertical .hooper-indicator {\n    width: 6px;\n}\n\n.hooper-next,\n.hooper-prev {\n    background-color: transparent;\n    border: none;\n    padding: 1em;\n    position: absolute;\n    top: 50%;\n    transform: translateY(-50%);\n    cursor: pointer;\n}\n\n.hooper-next.is-disabled,\n.hooper-prev.is-disabled {\n    opacity: 0.3;\n    cursor: not-allowed;\n}\n\n.hooper-next {\n    right: 0;\n}\n\n.hooper-prev {\n    left: 0;\n}\n\n.hooper-navigation.is-vertical .hooper-next {\n    top: auto;\n    bottom: 0;\n    transform: initial;\n}\n\n.hooper-navigation.is-vertical .hooper-prev {\n    top: 0;\n    bottom: auto;\n    right: 0;\n    left: auto;\n    transform: initial;\n}\n\n.hooper-navigation.is-rtl .hooper-prev {\n    left: auto;\n    right: 0;\n}\n\n.hooper-navigation.is-rtl .hooper-next {\n    right: auto;\n    left: 0;\n}\n\n.hooper {\n    position: relative;\n    box-sizing: border-box;\n    width: 100%;\n    height: 200px;\n}\n\n.hooper * {\n    box-sizing: border-box;\n}\n\n.hooper-list {\n    overflow: hidden;\n    width: 100%;\n    height: 100%;\n}\n\n.hooper-track {\n    display: flex;\n    justify-content: center;\n    box-sizing: border-box;\n    width: 100%;\n    height: 100%;\n    padding: 0;\n    margin: 0;\n}\n\n.hooper.is-vertical .hooper-track {\n    flex-direction: column;\n    height: 200px;\n}\n\n.hooper.is-rtl {\n    direction: rtl;\n}\n\n.hooper-sr-only {\n    position: absolute;\n    width: 1px;\n    height: 1px;\n    padding: 0;\n    margin: -1px;\n    overflow: hidden;\n    clip: rect(0, 0, 0, 0);\n    border: 0;\n}\n\n#hooper>div>div.hooper-navigation>button.hooper-prev {\n    background-color: #F7C244;\n    padding: 15px;\n    border-radius: 50%;\n    transform: translate(-70px, -25px);\n}\n\n#hooper>div>div.hooper-navigation>button.hooper-next {\n    background-color: #F7C244;\n    padding: 15px;\n    border-radius: 50%;\n    transform: translate(70px, -25px);\n}\n\n@media all and (max-width: 1023px) {\n    #hooper>div>div.hooper-navigation>button.hooper-next {\n        display: none;\n    }\n    #hooper>div>div.hooper-navigation>button.hooper-prev {\n        display: none;\n    }\n}", ""]);
+>>>>>>> 10-11-12-rocco
 
 // exports
 
@@ -41529,7 +41540,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "scooter" }, [
-      _c("img", { attrs: { src: "img/scooter.png", alt: "" } })
+      _c("img", { attrs: { src: "img/scooter-delivery.png", alt: "" } })
     ])
   }
 ]
@@ -42625,11 +42636,33 @@ var render = function() {
           ? _c("div", { attrs: { id: "dish_info_pop_up" } }, [
               _c("img", { attrs: { src: this.plate.img, alt: "" } }),
               _vm._v(" "),
+<<<<<<< HEAD
               _c("h4", [_vm._v(_vm._s(this.plate.name))]),
               _vm._v(" "),
               _c("p", [_vm._v(_vm._s(this.plate.description))]),
               _vm._v(" "),
               _c("p", [_vm._v("prezzo: € " + _vm._s(this.plate.price))]),
+=======
+              _c("span", { staticClass: "prezzo" }, [
+                _vm._v(" € " + _vm._s(dish.price.toFixed(2)))
+              ]),
+              _c("br"),
+              _vm._v(" "),
+              _c(
+                "span",
+                { staticClass: "rating" },
+                [
+                  _vm._l(dish.rating, function(star) {
+                    return _c("i", { staticClass: "fas fa-star" })
+                  }),
+                  _vm._v(" "),
+                  _vm._l(5 - dish.rating, function(starsEmpty) {
+                    return _c("i", { staticClass: "far fa-star" })
+                  })
+                ],
+                2
+              ),
+>>>>>>> 10-11-12-rocco
               _vm._v(" "),
               _c("div", { staticClass: "close" }, [
                 _c(
@@ -42905,25 +42938,23 @@ var render = function() {
         ])
       ]),
       _vm._v(" "),
-      _vm._m(0),
+      _c("div", { attrs: { id: "main_restaurant" } }, [
+        _c("div", { staticClass: " first_title" }, [
+          _c("h2", [
+            _vm._v(
+              "Menù del ristorante: " +
+                _vm._s(this.$store.state.selectedRestaurant2.name)
+            )
+          ])
+        ])
+      ]),
       _vm._v(" "),
       _c("plate-component")
     ],
     1
   )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { attrs: { id: "main_restaurant" } }, [
-      _c("div", { staticClass: " first_title" }, [
-        _c("h2", [_vm._v("Ristorante selezionato")])
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -42955,7 +42986,7 @@ var render = function() {
         }
       }
     },
-    [_vm._v("/\\")]
+    [_c("i", { staticClass: "fas fa-chevron-circle-up" })]
   )
 }
 var staticRenderFns = []
