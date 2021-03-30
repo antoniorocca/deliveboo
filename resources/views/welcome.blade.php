@@ -3,7 +3,7 @@
 @section('guest_content')
 
 <transition name='landing'>
-  <landing-component  v-if="this.$store.state.showLanding"></landing-component>
+  <landing-component v-if="this.$store.state.showLanding"></landing-component>
 </transition>
 
 
@@ -13,24 +13,24 @@
     <edo-restaurants v-if="true"></edo-restaurants>
 </div> -->
 {{-- DA CENCELLARE? --}}
-<div id="new_main_box" style="display:flex;" v-if="this.$store.state.showMain">
+<div id="new_main_box" style="display:flex; align-items: flex-start;" v-if="this.$store.state.showMain">
   <transition name="category_group3">
 
     <edo-categories style="max-width: 20%; min-width: 200px;" v-if="this.$store.state.showSelectRestaurant"></edo-categories>
   </transition>
 
-    <transition name="category_group">
+  <transition name="category_group">
 
-      <restaurant-component style=" flex-grow: 4; " v-if="this.$store.state.showSelectRestaurant"></restaurant-component>
-    </transition>
+    <restaurant-component style=" flex-grow: 4; " v-if="this.$store.state.showSelectRestaurant"></restaurant-component>
+  </transition>
 
-    <transition name="category_group2">
-      <selected-restaurant style=" flex-grow: 4;" v-if="this.$store.state.showRestaurant"></selected-restaurant>
-    </transition>
-    <transition name="cart">
+  <transition name="category_group2">
+    <selected-restaurant style=" flex-grow: 4;" v-if="this.$store.state.showRestaurant"></selected-restaurant>
+  </transition>
+  <transition name="cart">
 
-      <cart-dropdown id="box_cart" class="cart-box" v-if="this.$store.state.cart[0]"></cart-dropdown>
-    </transition>
+    <cart-dropdown id="box_cart" class="cart-box" v-if="this.$store.state.cart[0]"></cart-dropdown>
+  </transition>
 
 </div>
 

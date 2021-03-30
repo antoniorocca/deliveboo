@@ -121,9 +121,9 @@ export default {
 .cart_box {
     box-shadow:  0 0 10px #acacac;
     width: 400px;
-    max-height: 560px;
+    // max-height: 560px;
 
-    max-height: 850px;
+    // max-height: 850px;
 
     display: flex;
     flex-direction: column;
@@ -150,55 +150,50 @@ export default {
         .cart_product_dropdown {
             display: flex;
             flex-direction: column;
-            z-index: 99;
             position: relative;
             z-index: 100;
             .cart_wrap{
-            overflow: auto;
-            height: 300px;
-
-            height: 600px;
-
-            padding: 5px;
-
-            .cart_product_item{
-                line-height: 50px;
-                font-weight: 600;
-                padding: 10px;
-                border-radius: 10px;
-                margin-top: 10px;
-                background-color: #f4f4f4;
-                box-shadow:  0 0 10px #acacac;
-                .cart_item{
-                font-size: 20px;
-                font-weight: 600;
-                    span{
-                        color: #00a082;
-                    }
-                }
-                .btn_box{
-                display: flex;
-                justify-content: space-between;
+                overflow: auto;
+                max-height: 300px;
                 padding: 5px;
-                    button {
-                        font-size: 20px;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        padding: 5px;
-                        border-radius: 50%;
-                        height: 40px;
-                        width: 40px;
-                        color: #00a082;
-                        background-color: #00a08317;
-                        border: none;
+
+                .cart_product_item{
+                    line-height: 50px;
+                    font-weight: 600;
+                    padding: 10px;
+                    border-radius: 10px;
+                    margin-top: 10px;
+                    background-color: #f4f4f4;
+                    box-shadow:  0 0 10px #acacac;
+                    .cart_item{
+                    font-size: 20px;
+                    font-weight: 600;
+                        span{
+                            color: #00a082;
+                        }
                     }
-                    .trash{
-                        color: red;
+                    .btn_box{
+                    display: flex;
+                    justify-content: space-between;
+                    padding: 5px;
+                        button {
+                            font-size: 20px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            padding: 5px;
+                            border-radius: 50%;
+                            height: 40px;
+                            width: 40px;
+                            color: #00a082;
+                            background-color: #00a08317;
+                            border: none;
+                        }
+                        .trash{
+                            color: red;
+                        }
                     }
                 }
-
-            }
             };
             .wrapCheckout{
                 display: flex;
