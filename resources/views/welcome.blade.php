@@ -16,7 +16,7 @@
 <div id="new_main_box" style="display:flex; align-items: flex-start;" v-if="this.$store.state.showMain">
   <transition name="category_group3">
 
-    <edo-categories style="max-width: 20%; min-width: 200px;" v-if="this.$store.state.showSelectRestaurant"></edo-categories>
+    <edo-categories v-if="this.$store.state.showSelectRestaurant"></edo-categories>
   </transition>
 
   <transition name="category_group">

@@ -46,6 +46,8 @@ export default {
     width: 100%;
     display:flex;
     flex-direction:column;
+    max-width: 20%;
+    min-width: 200px;
     button{
         height: 60px;
         line-height: 45px;
@@ -75,5 +77,12 @@ export default {
         border: 3px solid #008169;
         font-size: 20px;
     }
+
 }
+    @media all and (max-width: 767px) {
+        #category_box{
+            min-width: 100% !important;
+            max-width: 100% !important;
+        }
+    }
 </style>

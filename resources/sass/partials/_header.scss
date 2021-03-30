@@ -2,8 +2,10 @@ header {
     height: 100%;
     position: relative;
     z-index: 10;
-} 
-header, .header {
+}
+
+header,
+.header {
     background-color: $orange;
     width: 100%;
     #nav {
@@ -32,8 +34,8 @@ header, .header {
                 height: 50px;
             }
         }
-        #collapse  {
-            #btn_auth{
+        #collapse {
+            #btn_auth {
                 flex-flow: row-reverse;
                 z-index: 5;
                 a {
@@ -41,7 +43,7 @@ header, .header {
                     text-transform: none;
                     height: 50px;
                     width: 120px;
-                    border-radius: 80px; 
+                    border-radius: 80px;
                     color: white !important;
                     &:hover {
                         transform: scale(1.1);
@@ -95,29 +97,44 @@ header, .header {
         }
     }
 }
+
 .dropdown {
     #navbarDropdown {
-            background-color: $green;
-            text-transform: none;
-            height: 50px;
-            width: 120px;
-            border-radius: 80px; 
-            color: white !important;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            &:hover {
-                cursor: pointer;
-                background-color: #008169;
-            }
+        background-color: $green;
+        text-transform: none;
+        height: 50px;
+        width: 120px;
+        border-radius: 80px;
+        color: white !important;
+        display: flex;
+        float: right;
+        justify-content: center;
+        align-items: center;
+        &:hover {
+            cursor: pointer;
+            background-color: #008169;
         }
+    }
 }
-#back_nav > div > a > img{
+
+#collapse>div>div {
+    background-color: rgba(0, 0, 0, 0) !important;
+    border: 0;
+}
+
+#collapse>div>div>a {
+    background-color: white;
+    width: 120px;
+    float: right;
+}
+
+#back_nav>div>a>img {
     height: 55px;
 }
+
 @media all and (max-width: 992px) {
     .container {
-        #logo {  
+        #logo {
             #header_logo {
                 margin-right: 20px;
                 width: 200px !important;
@@ -127,25 +144,27 @@ header, .header {
                 padding-left: 30px;
                 height: 35px;
             }
-        }     
+        }
     }
 }
+
 @media all and (max-width: 768px) {
     #btn_auth {
         height: 100%;
         flex-flow: column-reverse !important;
         align-items: flex-end !important;
         a {
-           margin: 10px !important;
+            margin: 10px !important;
         }
     }
 }
+
 @media all and (max-width: 520px) {
     .container {
-        #logo {  
+        #logo {
             img {
-               display: none;
+                display: none;
             }
-        }     
+        }
     }
 }
