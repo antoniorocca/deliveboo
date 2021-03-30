@@ -1,4 +1,4 @@
-<nav id="user_nav" class="d-flex">
+<nav id="user_nav" >
 
     <div class="button_wrap">
         <a class="" href="{{route('user.home')}}">
@@ -16,7 +16,7 @@
                 <img src="/img/restaurant.png" alt="">
             </div>
         </a>
-        <span class="user_span">Il mio ristorante</span>
+        <span class="user_span">ristorante</span>
     </div>
 
 

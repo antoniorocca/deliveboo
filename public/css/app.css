@@ -11193,7 +11193,9 @@ footer #footer_container ul .footer_img {
 #user_nav {
   width: 60%;
   margin: auto !important;
+  display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 #user_nav .button_wrap {
@@ -11201,6 +11203,8 @@ footer #footer_container ul .footer_img {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 10px;
+  flex-wrap: wrap;
 }
 
 #user_nav .button_wrap .user_nav_button {
@@ -11220,7 +11224,7 @@ footer #footer_container ul .footer_img {
 }
 
 #user_nav .button_wrap span {
-  font-size: 20px;
+  font-size: 15px;
   font-weight: bold;
   text-transform: uppercase;
 }
