@@ -10984,12 +10984,12 @@ header #nav,
 header #nav #logo,
 .header #nav #logo {
   width: 800px;
+  justify-content: space-evenly;
 }
 
 header #nav #logo #header_logo,
 .header #nav #logo #header_logo {
-  margin-left: 25%;
-  width: 400px;
+  width: 370px;
   text-align: center;
   border-radius: 50px;
   border-style: none;
@@ -11005,6 +11005,29 @@ header #nav #logo #header_logo:focus,
 header #nav #logo img,
 .header #nav #logo img {
   height: 50px;
+}
+
+header #nav #collapse #btn_auth,
+.header #nav #collapse #btn_auth {
+  flex-flow: row-reverse;
+  z-index: 5;
+}
+
+header #nav #collapse #btn_auth a,
+.header #nav #collapse #btn_auth a {
+  background-color: #00a082;
+  text-transform: none;
+  height: 50px;
+  width: 120px;
+  border-radius: 80px;
+  color: white !important;
+}
+
+header #nav #collapse #btn_auth a:hover,
+.header #nav #collapse #btn_auth a:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+  background-color: #008169;
 }
 
 header #main-header,
@@ -11065,22 +11088,56 @@ header #main-header #categories .category_hover,
   transition: 0.3s all ease-in-out;
 }
 
-#collapse #btn_auth {
-  flex-flow: row-reverse;
-  z-index: 5;
-}
-
-#collapse #btn_auth a {
+.dropdown #navbarDropdown {
   background-color: #00a082;
   text-transform: none;
   height: 50px;
   width: 120px;
   border-radius: 80px;
   color: white !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dropdown #navbarDropdown:hover {
+  cursor: pointer;
+  background-color: #008169;
 }
 
 #back_nav > div > a > img {
   height: 55px;
+}
+
+@media all and (max-width: 992px) {
+  .container #logo #header_logo {
+    margin-right: 20px;
+    width: 200px !important;
+    font-size: 16px !important;
+  }
+
+  .container #logo img {
+    padding-left: 30px;
+    height: 35px;
+  }
+}
+
+@media all and (max-width: 768px) {
+  #btn_auth {
+    height: 100%;
+    flex-flow: column-reverse !important;
+    align-items: flex-end !important;
+  }
+
+  #btn_auth a {
+    margin: 10px !important;
+  }
+}
+
+@media all and (max-width: 520px) {
+  .container #logo img {
+    display: none;
+  }
 }
 
 #main_container_box {
