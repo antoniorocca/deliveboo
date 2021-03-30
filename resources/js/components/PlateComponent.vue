@@ -24,7 +24,7 @@
     <transition name="cart">
 
       <div id="dish_info_pop_up" v-if="showInfo">
-        <img :src="this.plate.img" alt="">
+        <img :src="'/storage/' + this.plate.img" alt="">
         <h4>{{ this.plate.name }}</h4>
         <p>{{ this.plate.description }}</p>
         <p>prezzo: &euro; {{ this.plate.price }}</p>
@@ -218,12 +218,15 @@ export default {
     }
 }
 .torna_ristoranti{
-    width: 150px;
-    height: 100px;
-    position: sticky;
-    top: 130px;
-    left: 20px;
-    width: 100%;
+    position: fixed;
+    top: 50%;
+    left: 30px;
+    // width: 150px;
+    // height: 100px;
+    // position: sticky;
+    // top: 130px;
+    // left: 20px;
+    // width: 100%;
     z-index: 15;
     transition: all 0.35s;
 
@@ -268,6 +271,23 @@ export default {
         img {
             width: 460px;
             height: 160px;
+        }
+    }
+}
+@media all and (max-width: 450px) {
+    #selected_restaurant_dishes{
+        .torna_ristoranti{
+            top: 20%;
+        }
+    }
+}
+@media all and (max-width: 410px) {
+    #selected_restaurant_dishes{
+        .dish_card{
+            width: 290px;
+            img{
+                width: 290px;
+            }
         }
     }
 }

@@ -67,10 +67,9 @@ export default {
         }
         #restaurant_txt {
             padding: 10px;;
-            // position: absolute;
-            // top: 480px;
-            // left: 50px;
-            height: 100%;
+            position: absolute;
+            top: 480px;
+            left: 50px;
             width: 500px;
             background-color: white;
             border-radius: 10px;
@@ -87,10 +86,24 @@ export default {
 
 }
 @media all and (max-width: 1024px) {
-    #restaurant_txt {
-        left: 20px;
-        height: 450px;
-        width: 250px;
+    .selected_restaurant_container{
+        #info_restaurant {
+            #restaurant_txt {
+                left: 20px;
+                width: 350px;
+            }
+        }
     }
 }
+@media all and (max-width: 429px) {
+    .selected_restaurant_container{
+        #info_restaurant {
+            #restaurant_txt {
+                left: 20px;
+                width: 241px;
+            }
+        }
+    }
+}
+
 </style>
