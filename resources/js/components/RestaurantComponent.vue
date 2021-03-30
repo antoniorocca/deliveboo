@@ -24,7 +24,7 @@
 
                   <p v-if="restaurant.price_shipping > 0">
                         <img src="img/scooter-delivery.png" alt="">
-                        &euro; {{ restaurant.price_shipping.toFixed(2) }} 
+                        &euro; {{ restaurant.price_shipping.toFixed(2) }}
                         <img src="img/like.png" alt="">
                         {{ restaurant.quality }} %
                   </p>

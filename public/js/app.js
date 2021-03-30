@@ -42700,7 +42700,7 @@ var render = function() {
                           _vm._v(
                             "\n                        € " +
                               _vm._s(restaurant.price_shipping.toFixed(2)) +
-                              " \n                        "
+                              "\n                        "
                           ),
                           _c("img", {
                             attrs: { src: "img/like.png", alt: "" }
@@ -57890,12 +57890,14 @@ var store = {
     search: function search(state, _search) {
       var _this2 = this;
 
-      console.log(_search.toLowerCase());
       this.state.filteredRestaurant = [];
+
+      var lowSearch = _search.toLowerCase();
+
       this.state.restaurants.forEach(function (item, i) {
         var itemName = item.name.toLowerCase();
 
-        if (itemName.includes(_search)) {
+        if (itemName.includes(lowSearch)) {
           _this2.state.filteredRestaurant.push(item);
         }
       });

@@ -120,11 +120,12 @@ let store = {
           this.state.showSelectRestaurant = true;
         },
         search(state, search){
-          console.log(search.toLowerCase());
+
           this.state.filteredRestaurant = [];
+          let lowSearch = search.toLowerCase();
           this.state.restaurants.forEach((item, i) => {
             let itemName = item.name.toLowerCase();
-            if (itemName.includes(search)) {
+            if (itemName.includes(lowSearch)) {
               this.state.filteredRestaurant.push(item);
             }
           });
