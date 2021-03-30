@@ -24,7 +24,7 @@
     <transition name="cart">
 
       <div id="dish_info_pop_up" v-if="showInfo">
-        <img :src="this.plate.img" alt="">
+        <img :src="'/storage/' + this.plate.img" alt="">
         <h4>{{ this.plate.name }}</h4>
         <p>{{ this.plate.description }}</p>
         <p>prezzo: &euro; {{ this.plate.price }}</p>
@@ -86,10 +86,9 @@ export default {
     height: 100%;
     width: 100%;
     .dish_card {
-        margin: 30px;
+        margin: 15px;
         min-height: 230px;
         width: 360px;
-        padding-bottom: 15px;
         z-index: 9;
         border-radius: 10px;
         box-shadow: 0 0 10px #DDDDDD;
@@ -218,12 +217,9 @@ export default {
     }
 }
 .torna_ristoranti{
-    width: 150px;
-    height: 100px;
-    position: sticky;
-    top: 130px;
-    left: 20px;
-    width: 100%;
+    position: fixed;
+    top: 50%;
+    left: 30px;
     z-index: 15;
     transition: all 0.35s;
 
@@ -254,7 +250,7 @@ export default {
 @media all and (max-width: 1024px) {
     #dish_info_pop_up {
         width: 600px;
-        min-height: 3250px;
+        min-height: 325px;
         img {
             width: 600px;
             height: 190px;
@@ -268,6 +264,23 @@ export default {
         img {
             width: 460px;
             height: 160px;
+        }
+    }
+}
+@media all and (max-width: 450px) {
+    #selected_restaurant_dishes{
+        .torna_ristoranti{
+            top: 20%;
+        }
+    }
+}
+@media all and (max-width: 410px) {
+    #selected_restaurant_dishes{
+        .dish_card{
+            width: 290px;
+            img{
+                width: 290px;
+            }
         }
     }
 }
