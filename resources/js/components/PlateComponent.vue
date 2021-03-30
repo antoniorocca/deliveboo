@@ -6,7 +6,6 @@
         </div>
         <div class="dish_card" v-for="dish in this.$store.state.selectedRestaurant2.dishes">
             <div>
-                <img :src="dish.img" alt="">
                 <img :src="'/storage/' + dish.img" alt="">
                 <h4>{{ dish.name }}</h4>
                 <span class="prezzo"> &euro; {{ dish.price.toFixed(2) }}</span><br>
