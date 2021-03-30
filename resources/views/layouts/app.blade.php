@@ -56,7 +56,7 @@
             <img class="img_spacer" src="{{asset('storage/yellow_arch.png')}}" alt="">
         </div>
 
-        <main class="py-4">
+        <main>
             @yield('content')
         </main>
 
