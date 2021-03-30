@@ -20,6 +20,9 @@ Route::get('/', function () {
 Route::get('/checkout', function () {
 	return view('endCheckout');
 })->name('checkout');
+Route::get('/checkoutf', function () {
+	return view('checkoutFailed');
+})->name('checkoutf');
 
 Auth::routes();
 

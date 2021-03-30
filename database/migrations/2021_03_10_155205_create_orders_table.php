@@ -18,6 +18,10 @@ class CreateOrdersTable extends Migration
             $table->unsignedBigInteger('restaurant_id');
             $table->foreign('restaurant_id')->references('id')->on('restaurants');
             $table->text('order');
+            $table->string('name')->nullable();
+            $table->string('surname')->nullable();
+            $table->string('address')->nullable();
+            $table->string('email')->nullable();
             $table->float('amount', 10,2);
             $table->dateTime('order_date');  
             $table->timestamps();

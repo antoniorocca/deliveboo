@@ -1,11 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
+@include('layouts.registered_nav')
+
 <div class="spacer">
   <img class="img_spacer" src="{{asset('storage/lightgreen_wave.png')}}" alt="">
 </div>
 
-<div id="backend_container"class="">
+<div id="backend_container" class="">
   <div class="backend_wrap">
 
 
@@ -28,7 +30,7 @@
     <h4>Immagine:</h4>
     <!-- per farla veloce -->
     <img src="{{ asset('storage/' . $restaurant->img )}}" alt="">
-    <img src="{{$restaurant->img}}" alt="">
+    <img src="{{'/' . $restaurant->img}}" alt="">
 
     <h4>Indirizzo:</h4>
     <div class="content_row">

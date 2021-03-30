@@ -11,15 +11,19 @@ require('./bootstrap');
 
 Vue.component('restaurant-component', require('./components/RestaurantComponent.vue').default);
 Vue.component('to-top', require('./components/ToTop.vue').default);
+Vue.component('search-component', require('./components/SearchComponent.vue').default);
 Vue.component('category-component', require('./components/CategoryComponent.vue').default);
 Vue.component('footer-component', require('./components/FooterComponent.vue').default);
 Vue.component('dish-component', require('./components/FooterComponent.vue').default);
 Vue.component('selected-restaurant', require('./components/SelectedRestaurant.vue').default);
+Vue.component('carousel-component', require('./components/CarouselComponent.vue').default);
+Vue.component('header-component', require('./components/HeaderComponent.vue').default);
+Vue.component('plate-component', require('./components/PlateComponent.vue').default);
+
+
 
 
 // test product list
-Vue.component('products-list', require('./components/ProductsList.vue').default);
-Vue.component('products-list2', require('./components/ProductsList2.vue').default);
 
 
 Vue.component('cart-dropdown', require('./components/Cart.vue').default);
@@ -29,6 +33,8 @@ Vue.component('edo-restaurants', require('./components/EdoRestaurants.vue').defa
 Vue.component('selected-restaurant', require('./components/SelectedRestaurant.vue').default);
 Vue.component('edo-payment', require('./components/PaymentComponent.vue').default);
 Vue.component('checkout', require('./components/CheckoutComponent.vue').default);
+Vue.component('checkoutf', require('./components/CheckoutComponentF.vue').default);
+// Vue.component('chart', require('./components/ChartComponent.vue').default);
 
 
 const app = new Vue({

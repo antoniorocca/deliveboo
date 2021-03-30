@@ -1,14 +1,16 @@
 @extends('layouts.app')
 @section('content')
+@include('layouts.registered_nav')
+
 <div class="spacer">
-  <img class="img_spacer" src="{{asset('storage/lightgreen_wave.png')}}" alt="">
+    <img class="img_spacer" src="{{asset('storage/lightgreen_wave.png')}}" alt="">
 </div>
 
 <div id="backend_container">
 
-        <div class="container">
-          <h1>Modifica ristorante</h1>
-          <form action="{{ route('user.restaurant.update', $restaurant) }}" method="post" enctype="multipart/form-data">
+    <div class="container">
+        <h1>Modifica ristorante</h1>
+        <form action="{{ route('user.restaurant.update', $restaurant) }}" method="post" enctype="multipart/form-data">
             @csrf
             @method('patch')
 
@@ -18,9 +20,9 @@
                 <div class="col-md-12-12 col-md-12">
                     <input id="name" maxlength='255' type="text" class="edit_input" name="name" value="{{ $restaurant->name }}">
                     @error('name')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
                     @enderror
                 </div>
             </div>
@@ -40,22 +42,22 @@
 
             {{-- categories --}}
             <div class="form-group">
-             <label for="category_id" class="col-sm-1-12 col-form-label text-info">Categorie:</label>
-             <select name="category_id[]"class="edit_input" id="category_id" multiple>
-               @foreach($categories as $category)
-               <option value="{{$category->id}}" {{$restaurant->categories->contains($category) ? 'selected' : ''}}>{{$category->name}}</option>
-               @endforeach
-             </select>
+                <label for="category_id" class="col-sm-1-12 col-form-label text-info">Categorie:</label>
+                <select name="category_id[]" class="edit_input" id="category_id" multiple>
+                    @foreach($categories as $category)
+                    <option value="{{$category->id}}" {{$restaurant->categories->contains($category) ? 'selected' : ''}}>{{$category->name}}</option>
+                    @endforeach
+                </select>
             </div>
 
             {{-- categories --}}
             <div class="form-group">
-             <label for="tag_id" class="col-sm-1-12 col-form-label text-info">Categorie:</label>
-             <select name="tag_id[]"class="edit_input" id="tag_id" multiple>
-               @foreach($tags as $tag)
-               <option value="{{$tag->id}}" {{$restaurant->tags->contains($tag) ? 'selected' : ''}}>{{$tag->name}}</option>
-               @endforeach
-             </select>
+                <label for="tag_id" class="col-sm-1-12 col-form-label text-info">Categorie:</label>
+                <select name="tag_id[]" class="edit_input" id="tag_id" multiple>
+                    @foreach($tags as $tag)
+                    <option value="{{$tag->id}}" {{$restaurant->tags->contains($tag) ? 'selected' : ''}}>{{$tag->name}}</option>
+                    @endforeach
+                </select>
             </div>
 
 
@@ -64,7 +66,7 @@
             <div class="content_row">
                 <label for="phone_number" class="col-sm-1-12 col-form-label text-info">Numero di telefono</label>
                 <div class="col-md-12-12 col-md-12">
-                  <input type="text" class="edit_input" name="phone_number" value="{{$restaurant->phone_number}}" maxlength="20">
+                    <input type="text" class="edit_input" name="phone_number" value="{{$restaurant->phone_number}}" maxlength="20">
                 </div>
                 @error('phone_number')
                 <div class="alert alert-danger">{{ $message }}</div>
@@ -76,7 +78,7 @@
                 @if ($restaurant->img)
                 <dd>foto ristorante</dd>
                 <img src="{{asset('storage/' . $restaurant->img )}}" style="height:300px;" alt="">
-                <img src="{{$restaurant->img}}" style="height:300px;" alt="">
+                <img src="{{'/' . $restaurant->img}}" style="height:300px;" alt="">
                 @else
                 <p class="card-text text-danger">N/A</p>
                 @endif
@@ -151,7 +153,7 @@
                     <input id="glovo_btn" type="submit" value="Update">
                 </div>
             </div>
-        </div>
+    </div>
     </form>
 </div>
 @endsection

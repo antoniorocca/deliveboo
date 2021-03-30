@@ -23,5 +23,9 @@
         "vue": "^2.5.17",
         "vue-template-compiler": "^2.6.10",
         "vuex": "^3.0.1"
+    },
+    "dependencies": {
+        "hooper": "^0.3.4",
+        "vue-carousel": "^0.18.0"
     }
 }

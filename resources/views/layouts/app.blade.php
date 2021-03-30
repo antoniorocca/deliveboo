@@ -1,10 +1,11 @@
 @include('layouts.head')
+
 <body>
     <div id="app">
         <nav id="back_nav" class="navbar navbar-expand-md navbar-light bg-white">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    <img src="https://res.cloudinary.com/glovoapp/image/fetch///https://glovoapp.com/images/logo_green.svg" alt="">
+                    <img src="{{asset('img/deliveboo-logo-green.png')}}" alt="">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -17,92 +18,50 @@
                     </ul>
 
                     <!-- Right Side Of Navbar -->
-                    <ul id="collapse" class="navbar-nav ml-auto">
+
+                    <div id="collapse" class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
+
                         @guest
-                            <li class="nav-item">
-                                <a class="" href="{{ route('login') }}">{{ __('Login') }}</a>
-                            </li>
+                        <div id="btn_auth" class="d-flex">
+                            <a class="nav-link mx-3 d-flex align-items-center justify-content-center" href="{{ route('login') }}">{{ __('Accedi') }}</a>
                             @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
+                            <a class="nav-link d-flex align-items-center justify-content-center" href="{{ route('register') }}">{{ __('Registrati') }}</a>
                             @endif
+                        </div>
                         @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
+                        <div class="nav-item dropdown">
+                            <a style="background-color: #CFFFF6;" id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                {{ Auth::user()->name }}
+                            </a>
+
+                            <div style="background-color: rgba(0,0,0,0); border: none;" class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <a style="background-color: #CFFFF6;" class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                    {{ __('Logout') }}
                                 </a>
 
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
+                            </div>
+                        </div>
                         @endguest
-                    </ul>
+                    </div>
+
                 </div>
             </div>
         </nav>
         <div class="spacer">
-          <img class="img_spacer" src="{{asset('storage/yellow_arch.png')}}" alt="">
+            <img class="img_spacer" src="{{asset('storage/yellow_arch.png')}}" alt="">
         </div>
 
         <main class="py-4">
-          <nav id="user_nav" class="d-flex">
-
-            <div class="button_wrap">
-              <a class="" href="{{route('user.home')}}">
-                <div class="user_nav_button">
-                  <img src="{{asset('storage/house1.png')}}" alt="">
-                </div>
-              </a>
-              <span class="user_span">home</span>
-            </div>
-
-
-            <div class="button_wrap">
-              <a class="" href="{{route('user.restaurant.index') }}">
-                <div class="user_nav_button">
-                  <img src="{{asset('storage/restaurant.png')}}" alt="">
-                </div>
-              </a>
-              <span class="user_span">Il mio ristorante</span>
-            </div>
-
-
-
-            <div class="button_wrap">
-              <a class="" href="{{route('user.dish.index')}}">
-                <div class="user_nav_button">
-                  <img src="{{asset('storage/steak.png')}}" alt="">
-                </div>
-              </a>
-              <span class="user_span">piatti</span>
-            </div>
-
-
-            <div class="button_wrap">
-              <a class="" href="{{route('user.graphs')}}">
-                <div class="user_nav_button">
-                  <img src="{{asset('storage/analysis.png')}}" alt="">
-                </div>
-              </a>
-              <span class="user_span">grafici</span>
-            </div>
-
-          </nav>
-          @yield('content')
+            @yield('content')
         </main>
 
     </div>
     @yield('scripts')
 </body>
+
 </html>

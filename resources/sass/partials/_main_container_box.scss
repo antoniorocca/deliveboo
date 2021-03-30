@@ -1,0 +1,15 @@
+#main_container_box {
+  display: flex;
+  flex-direction: column;
+  .main_container_row{
+    display: flex;
+    .categories{
+      width: 20%;
+
+    }
+    .restaurants {
+      width: 80%;
+
+    }
+  }
+}

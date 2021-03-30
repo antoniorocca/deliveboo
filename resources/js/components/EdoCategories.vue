@@ -1,45 +1,88 @@
 <template>
-    <div class="category_container">
-        <h3>Category Component</h3>
-        <p @click="selectCategory('all')">All</p>
-
-        <p v-for="category in categories" @click="selectCategory(category.restaurants)">{{category.name}}</p>
-        
+    <div  id="category_box" >
+        <button @click="selectAllRestaurants">
+            <div class="wrap_category_button">
+                <span>
+                    <strong>
+                        All
+                    </strong>
+                </span>
+            </div>
+        </button>
+        <button @click="filterRestaurant(category.name)" v-for="category in this.$store.state.categories" v-bind:key="category.id">
+            <div class="wrap_category_button">
+                <span>
+                    <strong>
+                        {{category.name}}
+                    </strong>
+                </span>
+                <span class="restaurants_badge">
+                    {{category.restaurants.length}}
+                </span>
+            </div>
+        </button>
     </div>
-
 </template>
 
 <script>
 export default {
-    data() {
-        return {
-            categories: '',
-            selectedCategories:'',
-        };
+  methods:{
+    // funzionamento navigazione
+    filterRestaurant(category){
+      this.$store.commit('filterRestaurant',category);
     },
-    methods:{
-        selectCategory(name){
-            if (name == 'all') {
-                this.$store.commit('setRestaurants', name)
-
-                //this.selectedCategories = this.$store.getters.getSelectedCategories;
-            } else {
-                this.$store.commit('setSelectedCategoties', name)
-                console.log(name);
-                //this.selectedCategories = this.$store.getters.getSelectedCategories;
-            }
-        },
+    selectAllRestaurants(){
+      this.$store.commit('selectAllRestaurants');
     },
-    computed: {
+  },
 
-
-    },
-    mounted(){
-        this.categories = this.$store.getters.getCategories.data.response;
-        console.log(this.categories);
-    }
 }
 
 </script>
-<style>
+<style  scoped lang="scss">
+
+#category_box {
+    box-sizing:border-box;
+    width: 100%;
+    display:flex;
+    flex-direction:column;
+    max-width: 20%;
+    min-width: 200px;
+    button{
+        height: 60px;
+        line-height: 45px;
+        border-radius: 7px;
+        margin: 5px;
+        box-shadow:  0 0 10px #acacac;
+        border:0;
+        padding: 0 10px;
+        .wrap_category_button{
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+            .restaurants_badge {
+                display:flex;
+                justify-content:center;
+                align-items:center;
+                line-height:normal;
+                height:30px;
+                width:30px;
+                border-radius: 50%;
+                border: 2px solid #008169;
+            }
+        }
+    }
+    button:hover{
+        line-height:50px;
+        border: 3px solid #008169;
+        font-size: 20px;
+    }
+
+}
+    @media all and (max-width: 767px) {
+        #category_box{
+            min-width: 100% !important;
+            max-width: 100% !important;
+        }
+    }
 </style>
