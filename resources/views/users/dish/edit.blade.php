@@ -7,7 +7,7 @@
 </div>
 <div id="backend_container">
     <div class="container">
-        <h1>modifica piatto: {{$dish->name}}</h1>
+        <h1>Modifica piatto: {{$dish->name}}</h1>
         <form action="{{ route('user.dish.update', ['dish' => $dish->slug]) }}" method="post" enctype="multipart/form-data">
             @csrf
 
@@ -40,7 +40,7 @@
                 {{-- img --}}
                 <div class="form-group">
                     @if ($dish->img)
-                    <dd>foto piatto</dd>
+                    <dd>Foto piatto</dd>
                     <img src="{{asset('storage/' . $dish->img )}}" style="height:300px;" alt="">
                     <img src="{{$dish->img}}" style="height:300px;" alt="">
                     @else
@@ -59,7 +59,7 @@
                 <div class="content_row">
                     <label for="price" class="col-sm-1-12 col-form-label text-info">Prezzo</label>
                     <div class="col-md-12-12 col-md-12">
-                        <input class="edit_input" type="text" class="form-control" name="price" value="{{$dish->price}}" min="0" max="999.99" step="0.01">
+                        <input class="edit_input" type="text" class="form-control" name="price" value="{{number_format($dish['price'], 2)}}" min="0" max="999.99" step="0.01">
                     </div>
                     @error('price')
                     <div class="alert alert-danger">{{ $message }}</div>
@@ -83,11 +83,11 @@
 
                     <div class="col-md-2">
                         <input type="radio" class="form-check-input" name="discount" value="1">
-                        <label class="form-check-lable" for="discount">sconto</label>
+                        <label class="form-check-lable" for="discount">Sconto</label>
                     </div>
                     <div class="col-md-2">
                         <input type="radio" class="form-check-input" name="discount" value="0">
-                        <label class="form-check-lable" for="discount">nessuno sconto</label>
+                        <label class="form-check-lable" for="discount">Nessuno sconto</label>
                     </div>
                     @error('discount')
                     <div class="alert alert-danger">{{ $message }}</div>

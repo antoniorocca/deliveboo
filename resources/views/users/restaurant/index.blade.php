@@ -41,7 +41,7 @@
             </span>
         </h4>
 
-        <h4 style="font-size: 20px; margin: 20px 0; color: #00a082;">Prezzo spedizione: <span style="color:black;">{{$restaurant['price_shipping']}}</span></h4>
+        <h4 style="font-size: 20px; margin: 20px 0; color: #00a082;">Prezzo spedizione: <span style="color:black;">{{number_format($restaurant['price_shipping'], 2)}}</span></h4>
 
     </div>
 </div>

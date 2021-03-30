@@ -34,7 +34,7 @@
               <p class="card-text text-danger">N/A</p>
               @endif
             </td>
-            <td>{{$dish->price}}</td>
+            <td>{{number_format($dish['price'], 2)}}</td>
             <td>
 
               <a class="btn btn-primary" href="{{ route('user.dish.show', $dish) }}">Show</a>
