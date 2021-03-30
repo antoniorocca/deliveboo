@@ -89,7 +89,7 @@ export default {
         min-height: 230px;
         width: 360px;
         padding-bottom: 15px;
-        z-index: 10;
+        z-index: 9;
         border-radius: 10px;
         box-shadow: 0 0 10px #DDDDDD;
         border-color: transparent;

@@ -32,18 +32,18 @@ header, .header {
                 height: 50px;
             }
         }
-        #register {
-            border-radius: 50px;
-            background-color: $green;
-            color: white;
-            height: 50px;
-            width: 120px;
-            a {
-                color: white;
-                margin: 5px;
-                font-weight: bold;
-            }
-        }
+        // #register {
+        //     border-radius: 50px;
+        //     background-color: $green;
+        //     color: white;
+        //     height: 50px;
+        //     width: 120px;
+        //     a {
+        //         color: white;
+        //         margin: 5px;
+        //         font-weight: bold;
+        //     }
+        // }
     }
     #main-header {
         width: 100%;
@@ -88,12 +88,19 @@ header, .header {
         }
     }
 }
-#btn_auth{
-    flex-flow: row-reverse;
-    z-index: 5;
-    a{
-        background-color: #CFFFF6;
-    };
+#collapse  {
+    #btn_auth{
+        flex-flow: row-reverse;
+        z-index: 5;
+        a {
+            background-color: $green;
+            text-transform: none;
+            height: 50px;
+            width: 120px;
+            border-radius: 80px; 
+            color: white !important;
+        };
+    }
 }
 #back_nav > div > a > img{
     height: 55px;
