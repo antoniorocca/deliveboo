@@ -2363,9 +2363,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   methods: {
     // funzionamento navigazione
@@ -2879,6 +2876,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -3096,9 +3094,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
-//
 //
 //
 //
@@ -7718,7 +7713,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".focusr[data-v-f567f19e] {\n  outline: 0;\n}\ninput[data-v-f567f19e]:focus {\n  outline: 0;\n}\n#content[data-v-f567f19e] {\n  width: 80%;\n  margin: auto !important;\n}\n#content .first_title[data-v-f567f19e] {\n  text-align: center;\n}\n#content .first_title h2[data-v-f567f19e] {\n  color: black;\n  margin-top: 40px;\n  font-weight: 800;\n}\n#content .first_title p[data-v-f567f19e] {\n  color: grey;\n}\n#content .restaurants[data-v-f567f19e] {\n  display: flex;\n  flex-wrap: wrap;\n  margin: auto;\n  justify-content: center;\n}\n#content .restaurants .card[data-v-f567f19e] {\n  margin: 10px !important;\n  width: 300px;\n  z-index: 10;\n  border-radius: 10px;\n  box-shadow: 0 0 10px #DDDDDD;\n}\n#content .restaurants .card img[data-v-f567f19e] {\n  height: 150px;\n  width: 100%;\n  border-top-left-radius: 10px;\n  border-top-right-radius: 10px;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n#content .restaurants .card h4[data-v-f567f19e] {\n  border: px solid rgba(0, 0, 0, 0.125);\n  border-radius: 0.25rem;\n  text-align: center;\n  margin-bottom: 10px;\n  font-weight: 700;\n  padding: 10px;\n}\n#content .restaurants .card_hover[data-v-f567f19e] {\n  transition: all 0.35s;\n}\n#content .restaurants .card[data-v-f567f19e]:hover {\n  cursor: pointer;\n  transform: scale(1.05);\n}", ""]);
+exports.push([module.i, ".focusr[data-v-f567f19e] {\n  outline: 0;\n}\ninput[data-v-f567f19e]:focus {\n  outline: 0;\n}\n#content[data-v-f567f19e] {\n  width: 80%;\n  margin: auto !important;\n}\n#content .first_title[data-v-f567f19e] {\n  text-align: center;\n}\n#content .first_title h2[data-v-f567f19e] {\n  color: black;\n  margin-top: 40px;\n  font-weight: 800;\n}\n#content .first_title p[data-v-f567f19e] {\n  color: grey;\n}\n#content .restaurants[data-v-f567f19e] {\n  display: flex;\n  flex-wrap: wrap;\n  margin: auto;\n  justify-content: center;\n}\n#content .restaurants .card[data-v-f567f19e] {\n  margin: 10px !important;\n  width: 300px;\n  z-index: 9;\n  border-radius: 10px;\n  box-shadow: 0 0 10px #DDDDDD;\n}\n#content .restaurants .card img[data-v-f567f19e] {\n  height: 150px;\n  width: 100%;\n  border-top-left-radius: 10px;\n  border-top-right-radius: 10px;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n#content .restaurants .card h4[data-v-f567f19e] {\n  border: px solid rgba(0, 0, 0, 0.125);\n  border-radius: 0.25rem;\n  text-align: center;\n  margin-bottom: 10px;\n  font-weight: 700;\n  padding: 10px;\n}\n#content .restaurants .card_hover[data-v-f567f19e] {\n  transition: all 0.35s;\n}\n#content .restaurants .card[data-v-f567f19e]:hover {\n  cursor: pointer;\n  transform: scale(1.05);\n}", ""]);
 
 // exports
 
@@ -7737,7 +7732,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "@media all and (max-width: 576px) {\n#main-header[data-v-153bfd55] {\n    height: 550px;\n}\n}\n@media all and (max-width: 431px) {\n#main-header[data-v-153bfd55] {\n    height: 720px;\n}\n}", ""]);
+exports.push([module.i, "@media all and (max-width: 580px) {\n#main-header[data-v-153bfd55] {\n    height: 100%;\n}\n#main-header #categories[data-v-153bfd55] {\n    height: 100%;\n    padding-bottom: 50px;\n}\n}", ""]);
 
 // exports
 
@@ -7775,7 +7770,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "#selected_restaurant_dishes[data-v-0fa44a32] {\n  height: 100%;\n  width: 100%;\n}\n#selected_restaurant_dishes .dish_card[data-v-0fa44a32] {\n  margin: 30px;\n  min-height: 230px;\n  width: 360px;\n  padding-bottom: 15px;\n  z-index: 10;\n  border-radius: 10px;\n  box-shadow: 0 0 10px #DDDDDD;\n  border-color: transparent;\n  position: relative;\n}\n#selected_restaurant_dishes .dish_card img[data-v-0fa44a32] {\n  height: 120px;\n  width: 360px;\n  border-top-left-radius: 10px;\n  border-top-right-radius: 10px;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n#selected_restaurant_dishes .dish_card h4[data-v-0fa44a32] {\n  border: px solid rgba(0, 0, 0, 0.125);\n  border-radius: 0.25rem;\n  margin-top: 15px;\n  font-weight: 700;\n  position: absolute;\n  left: 20px;\n}\n#selected_restaurant_dishes .dish_card .prezzo[data-v-0fa44a32] {\n  position: absolute;\n  top: 170px;\n  left: 20px;\n}\n#selected_restaurant_dishes .dish_card .rating[data-v-0fa44a32] {\n  position: absolute;\n  top: 190px;\n  left: 20px;\n}\n#selected_restaurant_dishes .dish_card button[data-v-0fa44a32] {\n  background-color: #00a082;\n  border-style: none;\n  height: 40px;\n  width: 40px;\n  border-radius: 50%;\n  position: absolute;\n  bottom: 20px;\n  right: 20px;\n}\n#selected_restaurant_dishes .dish_card button i[data-v-0fa44a32] {\n  color: white;\n  font-weight: bold;\n  font-size: 20px;\n}\n#selected_restaurant_dishes .dish_card button[data-v-0fa44a32]:hover {\n  transform: scale(1.1);\n  background-color: #008169;\n}\n#selected_restaurant_dishes .dish_card .info i[data-v-0fa44a32] {\n  position: absolute;\n  top: 5px;\n  left: 5px;\n  font-size: 28px;\n  color: #ffc244;\n  background-color: white;\n  border-radius: 50%;\n  cursor: pointer;\n  display: flex;\n  place-content: center;\n  place-items: center;\n}\n#dish_info_pop_up[data-v-0fa44a32] {\n  position: fixed;\n  top: 55%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  background-color: #ffc244;\n  box-shadow: 0 0 20px black;\n  outline: 0;\n  min-height: 500px;\n  width: 700px;\n  padding-bottom: 15px;\n  z-index: 10;\n  border-radius: 10px;\n  border-color: transparent;\n  text-align: center;\n}\n#dish_info_pop_up .close i[data-v-0fa44a32] {\n  position: absolute;\n  top: 5px;\n  left: 5px;\n  font-size: 28px;\n  color: #ffc244;\n  background-color: white;\n  border-radius: 50%;\n  cursor: pointer;\n  display: flex;\n  place-content: center;\n  place-items: center;\n}\n#dish_info_pop_up img[data-v-0fa44a32] {\n  height: 250px;\n  width: 700px;\n  border-top-left-radius: 10px;\n  border-top-right-radius: 10px;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n#dish_info_pop_up h4[data-v-0fa44a32] {\n  font-size: 28px;\n  margin-top: 15px;\n  font-weight: 700;\n}\n#dish_info_pop_up .show_plate_info[data-v-0fa44a32] {\n  position: absolute;\n  top: 0px;\n  left: 0px;\n  width: 100%;\n  height: 100%;\n  color: transparent;\n  background-color: transparent;\n  border-color: transparent;\n  cursor: pointer;\n  outline: 0;\n}\n.torna_ristoranti[data-v-0fa44a32] {\n  width: 150px;\n  height: 100px;\n  position: sticky;\n  top: 130px;\n  left: 20px;\n  width: 100%;\n  z-index: 15;\n}\n.torna_ristoranti img[data-v-0fa44a32] {\n  height: 60px;\n}\n.torna_ristoranti #back[data-v-0fa44a32] {\n  color: black;\n  padding: 10px 15px;\n  border-radius: 10px;\n  border: 1px solid transparent;\n  font-size: 18px;\n  font-weight: 600;\n}\n.torna_ristoranti #back[data-v-0fa44a32]:hover {\n  cursor: pointer;\n}\n@media all and (max-width: 1024px) {\n#dish_info_pop_up[data-v-0fa44a32] {\n    width: 600px;\n    min-height: 3250px;\n}\n#dish_info_pop_up img[data-v-0fa44a32] {\n    width: 600px;\n    height: 190px;\n}\n}\n@media all and (max-width: 720px) {\n#dish_info_pop_up[data-v-0fa44a32] {\n    width: 460px;\n    min-height: 300px;\n}\n#dish_info_pop_up img[data-v-0fa44a32] {\n    width: 460px;\n    height: 160px;\n}\n}", ""]);
+exports.push([module.i, "#selected_restaurant_dishes[data-v-0fa44a32] {\n  height: 100%;\n  width: 100%;\n}\n#selected_restaurant_dishes .dish_card[data-v-0fa44a32] {\n  margin: 30px;\n  min-height: 230px;\n  width: 360px;\n  padding-bottom: 15px;\n  z-index: 9;\n  border-radius: 10px;\n  box-shadow: 0 0 10px #DDDDDD;\n  border-color: transparent;\n  position: relative;\n}\n#selected_restaurant_dishes .dish_card img[data-v-0fa44a32] {\n  height: 120px;\n  width: 360px;\n  border-top-left-radius: 10px;\n  border-top-right-radius: 10px;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n#selected_restaurant_dishes .dish_card h4[data-v-0fa44a32] {\n  border: px solid rgba(0, 0, 0, 0.125);\n  border-radius: 0.25rem;\n  margin-top: 15px;\n  font-weight: 700;\n  padding: 15px 10px 0;\n}\n#selected_restaurant_dishes .dish_card .prezzo[data-v-0fa44a32] {\n  font-size: 16px;\n  font-weight: 500;\n  padding: 15px 10px 0;\n}\n#selected_restaurant_dishes .dish_card .rating[data-v-0fa44a32] {\n  padding: 15px 10px 0;\n}\n#selected_restaurant_dishes .dish_card .rating i[data-v-0fa44a32] {\n  color: #ffc244;\n}\n#selected_restaurant_dishes .dish_card button[data-v-0fa44a32] {\n  background-color: #00a082;\n  border-style: none;\n  height: 40px;\n  width: 40px;\n  border-radius: 50%;\n  position: absolute;\n  bottom: 20px;\n  right: 20px;\n}\n#selected_restaurant_dishes .dish_card button i[data-v-0fa44a32] {\n  color: white;\n  font-weight: bold;\n  font-size: 20px;\n}\n#selected_restaurant_dishes .dish_card button[data-v-0fa44a32]:hover {\n  transform: scale(1.1);\n  background-color: #008169;\n}\n#selected_restaurant_dishes .dish_card .info i[data-v-0fa44a32] {\n  position: absolute;\n  top: 5px;\n  left: 5px;\n  font-size: 28px;\n  color: #ffc244;\n  background-color: white;\n  border-radius: 50%;\n  cursor: pointer;\n  display: flex;\n  place-content: center;\n  place-items: center;\n}\n#dish_info_pop_up[data-v-0fa44a32] {\n  position: fixed;\n  top: 55%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  background-color: white;\n  box-shadow: 0 0 20px black;\n  outline: 0;\n  min-height: 500px;\n  width: 700px;\n  padding-bottom: 15px;\n  z-index: 10;\n  border-radius: 10px;\n  border-color: transparent;\n  text-align: center;\n}\n#dish_info_pop_up .close i[data-v-0fa44a32] {\n  position: absolute;\n  top: 5px;\n  left: 5px;\n  font-size: 28px;\n  color: #ffc244;\n  background-color: white;\n  border-radius: 50%;\n  cursor: pointer;\n  display: flex;\n  place-content: center;\n  place-items: center;\n}\n#dish_info_pop_up img[data-v-0fa44a32] {\n  height: 345px;\n  width: 700px;\n  border-top-left-radius: 10px;\n  border-top-right-radius: 10px;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n#dish_info_pop_up h4[data-v-0fa44a32] {\n  font-size: 28px;\n  margin-top: 15px;\n  font-weight: 700;\n}\n#dish_info_pop_up .show_plate_info[data-v-0fa44a32] {\n  position: absolute;\n  top: 0px;\n  left: 0px;\n  width: 100%;\n  height: 100%;\n  color: transparent;\n  background-color: transparent;\n  border-color: transparent;\n  cursor: pointer;\n  outline: 0;\n}\n.torna_ristoranti[data-v-0fa44a32] {\n  width: 150px;\n  height: 100px;\n  position: sticky;\n  top: 130px;\n  left: 20px;\n  width: 100%;\n  z-index: 15;\n  transition: all 0.35s;\n}\n.torna_ristoranti img[data-v-0fa44a32] {\n  height: 60px;\n}\n.torna_ristoranti #back[data-v-0fa44a32] {\n  color: black;\n  padding: 10px 15px;\n  border-radius: 10px;\n  border: 1px solid transparent;\n  font-size: 18px;\n  font-weight: 600;\n}\n.torna_ristoranti #back:hover img[data-v-0fa44a32] {\n  cursor: pointer;\n  transform: scale(1.05);\n  border-radius: 50%;\n  border: 2.5px solid #008169;\n}\n@media all and (max-width: 1024px) {\n#dish_info_pop_up[data-v-0fa44a32] {\n    width: 600px;\n    min-height: 3250px;\n}\n#dish_info_pop_up img[data-v-0fa44a32] {\n    width: 600px;\n    height: 190px;\n}\n}\n@media all and (max-width: 720px) {\n#dish_info_pop_up[data-v-0fa44a32] {\n    width: 460px;\n    min-height: 300px;\n}\n#dish_info_pop_up img[data-v-0fa44a32] {\n    width: 460px;\n    height: 160px;\n}\n}", ""]);
 
 // exports
 
@@ -7794,7 +7789,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".focusr[data-v-78e2f7b6] {\n  outline: 0;\n}\ninput[data-v-78e2f7b6]:focus {\n  outline: 0;\n}\n#content[data-v-78e2f7b6] {\n  height: 100%;\n  margin: auto;\n}\n#content .first_title[data-v-78e2f7b6] {\n  text-align: center;\n}\n#content .first_title h2[data-v-78e2f7b6] {\n  color: black;\n  padding-top: 100px;\n  font-weight: 800;\n}\n#content .restaurants[data-v-78e2f7b6] {\n  display: flex;\n  flex-wrap: wrap;\n  margin: auto;\n  justify-content: center;\n}\n#content .restaurants .card[data-v-78e2f7b6] {\n  margin: 30px;\n  width: 300px;\n  z-index: 10;\n  border-radius: 10px;\n  box-shadow: 0 0 10px #DDDDDD;\n}\n#content .restaurants .card img[data-v-78e2f7b6] {\n  height: 150px;\n  width: 100%;\n  border-top-left-radius: 10px;\n  border-top-right-radius: 10px;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n#content .restaurants .card h4[data-v-78e2f7b6] {\n  border: px solid rgba(0, 0, 0, 0.125);\n  border-radius: 0.25rem;\n  text-align: center;\n  margin-bottom: 10px;\n  font-weight: 700;\n  padding: 10px;\n  height: 50px;\n}\n#content .restaurants .card p[data-v-78e2f7b6] {\n  font-weight: 600;\n  font-size: 16px;\n  text-align: center;\n}\n#content .restaurants .card p img[data-v-78e2f7b6] {\n  margin: 0 12px 0 15px;\n  height: 30px;\n  width: 30px;\n}\n#content .restaurants .card option[data-v-78e2f7b6] {\n  height: 100%;\n}\n#content .restaurants .card_hover[data-v-78e2f7b6] {\n  transition: all 0.35s;\n}\n#content .restaurants .card[data-v-78e2f7b6]:hover {\n  cursor: pointer;\n  transform: scale(1.05);\n}\n#content .restaurants .option_restaurant[data-v-78e2f7b6] {\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  color: transparent;\n  background-color: transparent;\n  border-color: transparent;\n  cursor: pointer;\n}", ""]);
+exports.push([module.i, ".focusr[data-v-78e2f7b6] {\n  outline: 0;\n}\ninput[data-v-78e2f7b6]:focus {\n  outline: 0;\n}\n#content[data-v-78e2f7b6] {\n  height: 100%;\n  margin: auto;\n}\n#content .first_title[data-v-78e2f7b6] {\n  text-align: center;\n}\n#content .first_title h2[data-v-78e2f7b6] {\n  color: black;\n  padding-top: 100px;\n  font-weight: 800;\n}\n#content .restaurants[data-v-78e2f7b6] {\n  display: flex;\n  flex-wrap: wrap;\n  margin: auto;\n  justify-content: center;\n}\n#content .restaurants .card[data-v-78e2f7b6] {\n  margin: 30px;\n  width: 300px;\n  z-index: 9;\n  border-radius: 10px;\n  box-shadow: 0 0 10px #DDDDDD;\n}\n#content .restaurants .card img[data-v-78e2f7b6] {\n  height: 150px;\n  width: 100%;\n  border-top-left-radius: 10px;\n  border-top-right-radius: 10px;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n#content .restaurants .card h4[data-v-78e2f7b6] {\n  border: px solid rgba(0, 0, 0, 0.125);\n  border-radius: 0.25rem;\n  text-align: center;\n  margin-bottom: 10px;\n  font-weight: 700;\n  padding: 10px;\n  height: 50px;\n}\n#content .restaurants .card p[data-v-78e2f7b6] {\n  font-weight: 600;\n  font-size: 16px;\n  text-align: center;\n}\n#content .restaurants .card p img[data-v-78e2f7b6] {\n  margin: 0 12px 0 15px;\n  height: 30px;\n  width: 30px;\n}\n#content .restaurants .card option[data-v-78e2f7b6] {\n  height: 100%;\n}\n#content .restaurants .card_hover[data-v-78e2f7b6] {\n  transition: all 0.35s;\n}\n#content .restaurants .card[data-v-78e2f7b6]:hover {\n  cursor: pointer;\n  transform: scale(1.05);\n}\n#content .restaurants .option_restaurant[data-v-78e2f7b6] {\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  color: transparent;\n  background-color: transparent;\n  border-color: transparent;\n  cursor: pointer;\n}", ""]);
 
 // exports
 
@@ -7832,7 +7827,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "#to_top[data-v-2b42e07f] {\n  position: absolute;\n  top: 0px;\n  right: 20px;\n  margin: 35px;\n  background-color: #ffc244;\n  color: white;\n  width: 60px;\n  height: 35px;\n  display: flex;\n  place-content: center;\n  place-items: center;\n  border-radius: 10px;\n  border: 1px solid transparent;\n}", ""]);
+exports.push([module.i, "#to_top i[data-v-2b42e07f] {\n  position: absolute;\n  top: 0px;\n  right: 20px;\n  margin: 35px;\n  color: #ffc244;\n  width: 60px;\n  height: 35px;\n  display: flex;\n  font-size: 35px;\n}", ""]);
 
 // exports
 
@@ -7851,7 +7846,7 @@ exports = module.exports = __webpack_require__(/*! ../../css-loader/lib/css-base
 
 
 // module
-exports.push([module.i, ".hooper-slide {\n  flex-shrink: 0;\n  height: 100%;\n  margin: 0;\n  padding: 0;\n  list-style: none;\n}\n.hooper-progress {\n  position: absolute;\n  top: 0;\n  right: 0;\n  left: 0;\n  height: 4px;\n  background-color: #efefef;\n}\n.hooper-progress-inner {\n  height: 100%;\n  background-color: #4285f4;\n  transition: 300ms;\n}\n.hooper-pagination {\n  position: absolute;\n  bottom: 0;\n  right: 50%;\n  transform: translateX(50%);\n  display: flex;\n  padding: 5px 10px;\n}\n.hooper-indicators {\n  display: flex;\n  list-style: none;\n  margin: 0;\n  padding: 0;\n}\n.hooper-indicator:hover,\n.hooper-indicator.is-active {\n  background-color: #4285f4;\n}\n.hooper-indicator {\n  margin: 0 2px;\n  width: 12px;\n  height: 4px;\n  border-radius: 4px;\n  border: none;\n  padding: 0;\n  background-color: #fff;\n  cursor: pointer;\n}\n.hooper-pagination.is-vertical {\n  bottom: auto;\n  right: 0;\n  top: 50%;\n  transform: translateY(-50%);\n}\n.hooper-pagination.is-vertical .hooper-indicators {\n  flex-direction: column;\n}\n.hooper-pagination.is-vertical .hooper-indicator {\n  width: 6px;\n}\n.hooper-next,\n.hooper-prev {\n  background-color: transparent;\n  border: none;\n  padding: 1em;\n  position: absolute;\n  top: 50%;\n  transform: translateY(-50%);\n  cursor: pointer;\n}\n.hooper-next.is-disabled,\n.hooper-prev.is-disabled {\n  opacity: 0.3;\n  cursor: not-allowed;\n}\n.hooper-next {\n  right: 0;\n}\n.hooper-prev {\n  left: 0;\n}\n.hooper-navigation.is-vertical .hooper-next {\n  top: auto;\n  bottom: 0;\n  transform: initial;\n}\n.hooper-navigation.is-vertical .hooper-prev {\n  top: 0;\n  bottom: auto;\n  right: 0;\n  left: auto;\n  transform: initial;\n}\n.hooper-navigation.is-rtl .hooper-prev {\n  left: auto;\n  right: 0;\n}\n.hooper-navigation.is-rtl .hooper-next {\n  right: auto;\n  left: 0;\n}\n.hooper {\n  position: relative;\n  box-sizing: border-box;\n  width: 100%;\n  height: 200px;\n}\n.hooper * {\n  box-sizing: border-box;\n}\n.hooper-list {\n  overflow: hidden;\n  width: 100%;\n  height: 100%;\n}\n.hooper-track {\n  display: flex;\n  justify-content: center;\n  box-sizing: border-box;\n  width: 100%;\n  height: 100%;\n  padding: 0;\n  margin: 0;\n}\n.hooper.is-vertical .hooper-track {\n  flex-direction: column;\n  height: 200px;\n}\n\n.hooper.is-rtl {\n  direction: rtl;\n}\n\n.hooper-sr-only {\n  position: absolute;\n  width: 1px;\n  height: 1px;\n  padding: 0;\n  margin: -1px;\n  overflow: hidden;\n  clip: rect(0, 0, 0, 0);\n  border: 0;\n}\n#hooper > div > div.hooper-navigation > button.hooper-prev {\n\tbackground-color: #F7C244;\n\tpadding: 15px;\n\tborder-radius: 50%;\n\ttransform: translate(-70px, -25px);\n}\n\n#hooper > div > div.hooper-navigation > button.hooper-next{\n\tbackground-color: #F7C244;\n\tpadding: 15px;\n\tborder-radius: 50%;\n\ttransform: translate(70px, -25px);\n\t\n}", ""]);
+exports.push([module.i, ".hooper-slide {\n    flex-shrink: 0;\n    height: 100%;\n    margin: 0;\n    padding: 0;\n    list-style: none;\n}\n\n.hooper-progress {\n    position: absolute;\n    top: 0;\n    right: 0;\n    left: 0;\n    height: 4px;\n    background-color: #efefef;\n}\n\n.hooper-progress-inner {\n    height: 100%;\n    background-color: #4285f4;\n    transition: 300ms;\n}\n\n.hooper-pagination {\n    position: absolute;\n    bottom: 0;\n    right: 50%;\n    transform: translateX(50%);\n    display: flex;\n    padding: 5px 10px;\n}\n\n.hooper-indicators {\n    display: flex;\n    list-style: none;\n    margin: 0;\n    padding: 0;\n}\n\n.hooper-indicator:hover,\n.hooper-indicator.is-active {\n    background-color: #4285f4;\n}\n\n.hooper-indicator {\n    margin: 0 2px;\n    width: 12px;\n    height: 4px;\n    border-radius: 4px;\n    border: none;\n    padding: 0;\n    background-color: #fff;\n    cursor: pointer;\n}\n\n.hooper-pagination.is-vertical {\n    bottom: auto;\n    right: 0;\n    top: 50%;\n    transform: translateY(-50%);\n}\n\n.hooper-pagination.is-vertical .hooper-indicators {\n    flex-direction: column;\n}\n\n.hooper-pagination.is-vertical .hooper-indicator {\n    width: 6px;\n}\n\n.hooper-next,\n.hooper-prev {\n    background-color: transparent;\n    border: none;\n    padding: 1em;\n    position: absolute;\n    top: 50%;\n    transform: translateY(-50%);\n    cursor: pointer;\n}\n\n.hooper-next.is-disabled,\n.hooper-prev.is-disabled {\n    opacity: 0.3;\n    cursor: not-allowed;\n}\n\n.hooper-next {\n    right: 0;\n}\n\n.hooper-prev {\n    left: 0;\n}\n\n.hooper-navigation.is-vertical .hooper-next {\n    top: auto;\n    bottom: 0;\n    transform: initial;\n}\n\n.hooper-navigation.is-vertical .hooper-prev {\n    top: 0;\n    bottom: auto;\n    right: 0;\n    left: auto;\n    transform: initial;\n}\n\n.hooper-navigation.is-rtl .hooper-prev {\n    left: auto;\n    right: 0;\n}\n\n.hooper-navigation.is-rtl .hooper-next {\n    right: auto;\n    left: 0;\n}\n\n.hooper {\n    position: relative;\n    box-sizing: border-box;\n    width: 100%;\n    height: 200px;\n}\n\n.hooper * {\n    box-sizing: border-box;\n}\n\n.hooper-list {\n    overflow: hidden;\n    width: 100%;\n    height: 100%;\n}\n\n.hooper-track {\n    display: flex;\n    justify-content: center;\n    box-sizing: border-box;\n    width: 100%;\n    height: 100%;\n    padding: 0;\n    margin: 0;\n}\n\n.hooper.is-vertical .hooper-track {\n    flex-direction: column;\n    height: 200px;\n}\n\n.hooper.is-rtl {\n    direction: rtl;\n}\n\n.hooper-sr-only {\n    position: absolute;\n    width: 1px;\n    height: 1px;\n    padding: 0;\n    margin: -1px;\n    overflow: hidden;\n    clip: rect(0, 0, 0, 0);\n    border: 0;\n}\n\n#hooper>div>div.hooper-navigation>button.hooper-prev {\n    background-color: #F7C244;\n    padding: 15px;\n    border-radius: 50%;\n    transform: translate(-70px, -25px);\n}\n\n#hooper>div>div.hooper-navigation>button.hooper-next {\n    background-color: #F7C244;\n    padding: 15px;\n    border-radius: 50%;\n    transform: translate(70px, -25px);\n}\n\n@media all and (max-width: 1023px) {\n    #hooper>div>div.hooper-navigation>button.hooper-next {\n        display: none;\n    }\n    #hooper>div>div.hooper-navigation>button.hooper-prev {\n        display: none;\n    }\n}", ""]);
 
 // exports
 
@@ -41271,7 +41266,7 @@ var render = function() {
                     [
                       _c("img", {
                         attrs: {
-                          src: restaurant.img,
+                          src: "/storage/" + restaurant.img,
                           alt: "restaurant's image"
                         }
                       }),
@@ -41476,7 +41471,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "scooter" }, [
-      _c("img", { attrs: { src: "img/scooter.png", alt: "" } })
+      _c("img", { attrs: { src: "img/scooter-delivery.png", alt: "" } })
     ])
   }
 ]
@@ -41637,50 +41632,49 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return this.$store.state.showSelectRestaurant
-    ? _c(
-        "div",
-        { attrs: { id: "category_box" } },
-        [
-          _c("button", { on: { click: _vm.selectAllRestaurants } }, [
-            _vm._m(0)
-          ]),
-          _vm._v(" "),
-          _vm._l(this.$store.state.categories, function(category) {
-            return _c(
-              "button",
-              {
-                on: {
-                  click: function($event) {
-                    return _vm.filterRestaurant(category.name)
-                  }
-                }
-              },
-              [
-                _c("div", { staticClass: "wrap_category_button" }, [
-                  _c("span", [
-                    _c("strong", [
-                      _vm._v(
-                        "\n          " + _vm._s(category.name) + "\n        "
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("span", { staticClass: "restaurants_badge" }, [
-                    _vm._v(
-                      "\n        " +
-                        _vm._s(category.restaurants.length) +
-                        "\n      "
-                    )
-                  ])
+  return _c(
+    "div",
+    { attrs: { id: "category_box" } },
+    [
+      _c("button", { on: { click: _vm.selectAllRestaurants } }, [_vm._m(0)]),
+      _vm._v(" "),
+      _vm._l(this.$store.state.categories, function(category) {
+        return _c(
+          "button",
+          {
+            key: category.id,
+            on: {
+              click: function($event) {
+                return _vm.filterRestaurant(category.name)
+              }
+            }
+          },
+          [
+            _c("div", { staticClass: "wrap_category_button" }, [
+              _c("span", [
+                _c("strong", [
+                  _vm._v(
+                    "\n                    " +
+                      _vm._s(category.name) +
+                      "\n                "
+                  )
                 ])
-              ]
-            )
-          })
-        ],
-        2
-      )
-    : _vm._e()
+              ]),
+              _vm._v(" "),
+              _c("span", { staticClass: "restaurants_badge" }, [
+                _vm._v(
+                  "\n                " +
+                    _vm._s(category.restaurants.length) +
+                    "\n            "
+                )
+              ])
+            ])
+          ]
+        )
+      })
+    ],
+    2
+  )
 }
 var staticRenderFns = [
   function() {
@@ -41688,7 +41682,9 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "wrap_category_button" }, [
-      _c("span", [_c("strong", [_vm._v("\n          All\n        ")])])
+      _c("span", [
+        _c("strong", [_vm._v("\n                    All\n                ")])
+      ])
     ])
   }
 ]
@@ -42174,7 +42170,10 @@ var render = function() {
             [
               _c("div", { staticClass: "restaurant_image" }, [
                 _c("img", {
-                  attrs: { src: restaurant.img, alt: "restaurant's image" }
+                  attrs: {
+                    src: "/storage/" + restaurant.img,
+                    alt: "restaurant's image"
+                  }
                 })
               ]),
               _vm._v(" "),
@@ -42527,20 +42526,29 @@ var render = function() {
           _vm._l(this.$store.state.selectedRestaurant2.dishes, function(dish) {
             return _c("div", { staticClass: "dish_card" }, [
               _c("div", [
-                _c("img", { attrs: { src: dish.img, alt: "" } }),
-                _vm._v(" "),
                 _c("img", { attrs: { src: "/storage/" + dish.img, alt: "" } }),
                 _vm._v(" "),
                 _c("h4", [_vm._v(_vm._s(dish.name))]),
                 _vm._v(" "),
                 _c("span", { staticClass: "prezzo" }, [
-                  _vm._v("prezzo € " + _vm._s(dish.price.toFixed(2)))
+                  _vm._v(" € " + _vm._s(dish.price.toFixed(2)))
                 ]),
                 _c("br"),
                 _vm._v(" "),
-                _c("span", { staticClass: "rating" }, [
-                  _vm._v(" rating " + _vm._s(dish.rating))
-                ]),
+                _c(
+                  "span",
+                  { staticClass: "rating" },
+                  [
+                    _vm._l(dish.rating, function(star) {
+                      return _c("i", { staticClass: "fas fa-star" })
+                    }),
+                    _vm._v(" "),
+                    _vm._l(5 - dish.rating, function(starsEmpty) {
+                      return _c("i", { staticClass: "far fa-star" })
+                    })
+                  ],
+                  2
+                ),
                 _vm._v(" "),
                 _c("div", { staticClass: "info" }, [
                   _c(
@@ -42664,7 +42672,7 @@ var render = function() {
                     _c("div", { staticClass: "restaurant_image" }, [
                       _c("img", {
                         attrs: {
-                          src: restaurant.img,
+                          src: "/storage/" + restaurant.img,
                           alt: "restaurant's image"
                         }
                       })
@@ -42685,8 +42693,8 @@ var render = function() {
                           }),
                           _vm._v(
                             "\n                        € " +
-                              _vm._s(restaurant.price_shipping) +
-                              "\n                        "
+                              _vm._s(restaurant.price_shipping.toFixed(2)) +
+                              " \n                        "
                           ),
                           _c("img", {
                             attrs: { src: "img/like.png", alt: "" }
@@ -42801,7 +42809,7 @@ var render = function() {
         _c("img", {
           attrs: {
             id: "restaurant_jumbotron",
-            src: this.$store.state.selectedRestaurant2.img,
+            src: "/storage/" + this.$store.state.selectedRestaurant2.img,
             alt: ""
           }
         }),
@@ -42817,25 +42825,23 @@ var render = function() {
         ])
       ]),
       _vm._v(" "),
-      _vm._m(0),
+      _c("div", { attrs: { id: "main_restaurant" } }, [
+        _c("div", { staticClass: " first_title" }, [
+          _c("h2", [
+            _vm._v(
+              "Menù del ristorante: " +
+                _vm._s(this.$store.state.selectedRestaurant2.name)
+            )
+          ])
+        ])
+      ]),
       _vm._v(" "),
       _c("plate-component")
     ],
     1
   )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { attrs: { id: "main_restaurant" } }, [
-      _c("div", { staticClass: " first_title" }, [
-        _c("h2", [_vm._v("Ristorante selezionato")])
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -42867,7 +42873,7 @@ var render = function() {
         }
       }
     },
-    [_vm._v("/\\")]
+    [_c("i", { staticClass: "fas fa-chevron-circle-up" })]
   )
 }
 var staticRenderFns = []
@@ -56342,7 +56348,8 @@ Vue.component('edo-restaurants', __webpack_require__(/*! ./components/EdoRestaur
 Vue.component('selected-restaurant', __webpack_require__(/*! ./components/SelectedRestaurant.vue */ "./resources/js/components/SelectedRestaurant.vue")["default"]);
 Vue.component('edo-payment', __webpack_require__(/*! ./components/PaymentComponent.vue */ "./resources/js/components/PaymentComponent.vue")["default"]);
 Vue.component('checkout', __webpack_require__(/*! ./components/CheckoutComponent.vue */ "./resources/js/components/CheckoutComponent.vue")["default"]);
-Vue.component('checkoutf', __webpack_require__(/*! ./components/CheckoutComponentF.vue */ "./resources/js/components/CheckoutComponentF.vue")["default"]);
+Vue.component('checkoutf', __webpack_require__(/*! ./components/CheckoutComponentF.vue */ "./resources/js/components/CheckoutComponentF.vue")["default"]); // Vue.component('chart', require('./components/ChartComponent.vue').default);
+
 var app = new Vue({
   el: '#app',
   store: new Vuex.Store(_store_js__WEBPACK_IMPORTED_MODULE_0__["default"]),

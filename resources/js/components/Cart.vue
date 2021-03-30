@@ -7,7 +7,7 @@
         </span>
 
         <div class="scooter">
-          <img src="img/scooter.png" alt="">
+          <img src="img/scooter-delivery.png" alt="">
         </div>
 
         <div v-if="$store.state.cart.length > 0" class="cart_product_dropdown">

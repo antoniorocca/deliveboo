@@ -28,6 +28,7 @@
 
 
 @section('content')
+@include('layouts.registered_nav')
 @endsection
 @section('scripts')
 <div class="spacer">

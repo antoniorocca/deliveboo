@@ -16,7 +16,7 @@
                   <div class="card card_hover" :key="restaurant" v-for="restaurant in this.$store.state.filteredRestaurant" @click="showSelectedRestaurant(restaurant)">
                   <div class="restaurant_image">
 
-                    <img :src="restaurant.img" alt="restaurant's image">
+                    <img :src="'/storage/' + restaurant.img" alt="restaurant's image">
                   </div>
                   <h4>
                         {{restaurant.name}}
@@ -24,7 +24,7 @@
 
                   <p v-if="restaurant.price_shipping > 0">
                         <img src="img/scooter-delivery.png" alt="">
-                        &euro; {{ restaurant.price_shipping }}
+                        &euro; {{ restaurant.price_shipping.toFixed(2) }} 
                         <img src="img/like.png" alt="">
                         {{ restaurant.quality }} %
                   </p>
@@ -130,7 +130,7 @@
             .card{
                 margin: 30px;
                 width: 300px;
-                z-index: 10;
+                z-index: 9;
                 border-radius: 10px;
                 box-shadow: 0 0 10px #DDDDDD;
                 img{

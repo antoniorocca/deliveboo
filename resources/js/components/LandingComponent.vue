@@ -19,7 +19,7 @@
 			<div class="cards">
 				<div class="card card_hover" v-for="restaurant in this.$store.state.restaurants.slice(2, 6)" @click="showCarouselRestaurant(restaurant)">
 					<div class="restaurant_image">
-						<img :src="restaurant.img" alt="restaurant's image">
+						<img :src="'/storage/' + restaurant.img" alt="restaurant's image">
 					</div>
 					<h4>
 						{{restaurant.name}}

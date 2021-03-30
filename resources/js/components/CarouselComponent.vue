@@ -16,7 +16,7 @@
         <hooper id="hooper" :settings="hooperSettings">
             <slide id="slide" v-for="restaurant in restaurants.slice(2, 12)" v-bind:key="restaurant.id" >
                 <div class="card card_hover" @click="showCarouselRestaurant(restaurant)">
-                    <img :src="restaurant.img" alt="restaurant's image">
+                    <img :src="'/storage/' + restaurant.img" alt="restaurant's image">
                     <h4> {{restaurant.name}} </h4>
                 </div>
             </slide>
@@ -63,26 +63,23 @@
                         itemsToShow: 1,
                         touchDrag: true,
                         trimWhiteSpace: true
-
                         },
                         920: {
                         // tablet
                         itemsToShow: 2,
                         touchDrag: true,
                         trimWhiteSpace: true
-
                         },
                         992: {
                         // laptop
                         itemsToShow: 2,
                         touchDrag: true,
                         trimWhiteSpace: true
-
                         },
                         1024: {
                         // desktop
                         itemsToShow: 4,
-                    trimWhiteSpace: true
+                        trimWhiteSpace: true
 
                         }
                     }

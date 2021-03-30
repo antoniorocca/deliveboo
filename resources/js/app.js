@@ -34,6 +34,7 @@ Vue.component('selected-restaurant', require('./components/SelectedRestaurant.vu
 Vue.component('edo-payment', require('./components/PaymentComponent.vue').default);
 Vue.component('checkout', require('./components/CheckoutComponent.vue').default);
 Vue.component('checkoutf', require('./components/CheckoutComponentF.vue').default);
+// Vue.component('chart', require('./components/ChartComponent.vue').default);
 
 
 const app = new Vue({

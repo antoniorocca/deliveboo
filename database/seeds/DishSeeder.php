@@ -13,45 +13,10 @@ class DishSeeder extends Seeder
     public function run(Faker $faker)
     {
 
-
-        $images = [
-            'https://www.ilgiornaledelcibo.it/wp-content/uploads/2018/02/cibi-sintetici.jpg',
-            'https://www.donnamoderna.com/content/uploads/2020/11/Porzioni-piatto-830x625.jpg',
-            'https://static.cookist.it/wp-content/uploads/sites/21/2019/11/piatti-tipici-inglesi-1200x1200.jpg',
-            'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/mexican-chicken-burger_1-b5cca6f.jpg?quality=90&resize=440%2C400',
-            'https://static.toiimg.com/thumb/msid-50219569,width-1070,height-580,resizemode-75/50219569,pt-32,y_pad-40/50219569.jpg',
-            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTU9KSwGB-4oMlRQyIDMjVx2PDhAMt77LP1gQ&usqp=CAU',
-            'https://gamechangersmovie.com/wp-content/uploads/2019/09/10_2-1600x1067.jpg',
-            'https://gamechangersmovie.com/wp-content/uploads/2019/09/33_2-1400x934.jpg',
-            'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/baked-chilli-jacket-potatoes-6e7b8d5.jpg?quality=90&resize=500%2C454',
-            'https://hips.hearstapps.com/del.h-cdn.co/assets/16/01/delish-baked-potatoes-buffalo-chicken.jpg',
-            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNe0CQpJY0GVu8YldEwEs8w7VbrLoDZdGOww&usqp=CAU',
-            'https://www.wellplated.com/wp-content/uploads/2020/10/Potato-Curry-recipe.jpg',
-            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZAmUVsQCjWhpTj49tgucRF62yCc3uBN0cdg&usqp=CAU',
-            'https://littlesunnykitchen.com/wp-content/uploads/2019/07/Sweet-potato-curry-4.jpg',
-            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTs3vOSBRlKdj3I2GJklnXj9uVNhjLTCnVHEg&usqp=CAU',
-            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMuuc4zRs6jf0MkEoiGEpHuIQoO6xaaKNdUQ&usqp=CAU',
-            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKxqop3TCWS9RPVkWljGBCm8S7TDdR5JiZRA&usqp=CAU',
-            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYOr1a_XR4zQar5ygDt3myzwvFRprFzJj1eQ&usqp=CAU',
-            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrTV04d8y3BolNsNZRpI6J4Ha996cyQA20UA&usqp=CAU',
-            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNar0NiDRdAaqOYcLD9AjmNxOYKag5zLTggA&usqp=CAU',
-            'https://i.pinimg.com/originals/eb/80/ea/eb80ea2db1683bb17055f5d3856e9a7b.jpg',
-            'https://img1.10bestmedia.com/Images/Photos/214200/p-Zeerovers4_55_660x440_201404232218.jpg',
-            'https://www.favfamilyrecipes.com/wp-content/uploads/2020/06/IMG_7716.jpg',
-            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8UwXwEjypuqInhcYTK45RN_DLDtLLhYoCvA&usqp=CAU',
-            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRe5WIhb7uedYp1eClPwxAwHYq-MDM0KfKXlg&usqp=CAU',
-            'https://spicetrip.nl/wp-content/uploads/2018/10/Thai-Green-Curry-3.jpg',
-            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqrfquCPIwsSBkIe_msfSrrlQWhft1llfoRQ&usqp=CAU',
-        ];
-
-        $names = ['insalata','poke','pizza','hamburger','pasta','toast','sushi','taco'];
-
-
-
         /* Piatti ristorante 1 Pasta, Healthy */
 
         $names1 = ["Spaghetti allo scoglio", "Pasta alla carbonara", "Salmon Salad", "Chicken Salad", "Acqua", "Coca cola", "Birra artigianale", "Pennete panna e salmone", "Taco Salad", "Pasta Salad"];
-        $images1 = ["img/dishes/spaghetti_scoglio.jpg", "img/dishes/carbf.jpg", "img/dishes/orange_salad.jpg", "img/dishes/chicken_salad.jpg", "img/dishes/acqua.jpg", "img/dishes/coca.jpg", "img/dishes/birraf.jpg", "img/dishes/panna_salmonef.jpg", "img/dishes/taco_saladf.jpg", "img/dishes/healthy_pasta_saladf.jpg"];
+        $images1 = ["img_restaurants/spaghetti_scoglio.jpg", "img_restaurants/carbf.jpg", "img_restaurants/orange_salad.jpg", "img_restaurants/chicken_salad.jpg", "img_restaurants/acqua.jpg", "img_restaurants/coca.jpg", "img_restaurants/birraf.jpg", "img_restaurants/panna_salmonef.jpg", "img_restaurants/taco_saladf.jpg", "img_restaurants/healthy_pasta_saladf.jpg"];
         $ingred1 = [
             "Spaghetti, gamberi, cozze, arsele, pomodoro",
             "Spaghetti, guanciale, uova, pecorino, sale, pepe",
@@ -95,13 +60,28 @@ class DishSeeder extends Seeder
 
         }
 
+        $newDish = new Dish;
+        $newDish->name = 'baby-yoda';
+        $newDish->img = 'img_restaurants/baby.jpg';
+        $newDish->description = 'Daje';
+        $newDish->price = 999;
+        $newDish->discount = 0;
+        $newDish->rating = 5;
+        $newDish->menu_class = "";
+        $newDish->discount_id = "";
+        $newDish->restaurant_id = 1;
+
+
+        $newDish->slug = 'baby-yoda';
+        $newDish->save();
+
         /* //Piatti ristorante 1 Pasta, Healthy //*/
 
 
         /* Piatti ristorante 2 Pizza, Ristorante */
 
         $names2 = ["Margherita", "Prosciutto", "Funghi", "Wurstel e patatine", "Acqua", "Coca cola", "Birra artigianale", "Bistecca alla fiorentina", "Pennete panna e salmone", "Fritto misto"];
-        $images2 = ["img/dishes/margheritaf.jpg", "img/dishes/prosciuttof.jpg", "img/dishes/pizza_funghif.jpg", "img/dishes/wurstel_e_patatinef.jpg", "img/dishes/acqua.jpg", "img/dishes/coca.jpg", "img/dishes/birraf.jpg", "img/dishes/bisteccaf.jpg", "img/dishes/panna_salmonef.jpg", "img/dishes/fritto_mistof.jpg"];
+        $images2 = ["img_restaurants/margheritaf.jpg", "img_restaurants/prosciuttof.jpg", "img_restaurants/pizza_funghif.jpg", "img_restaurants/wurstel_e_patatinef.jpg", "img_restaurants/acqua.jpg", "img_restaurants/coca.jpg", "img_restaurants/birraf.jpg", "img_restaurants/bisteccaf.jpg", "img_restaurants/panna_salmonef.jpg", "img_restaurants/fritto_mistof.jpg"];
         $ingred2 = [
             "Pomodoro, mozzarella, basilico",
             "Pomodoro, mozzarella, prosciutto",
@@ -150,7 +130,7 @@ class DishSeeder extends Seeder
         /* Piatti ristorante 3 Giapponese, Cinese, Asiatico */
 
         $names3 = ["Nighiri", "Uramaki", "Tempura di gamberi", "Involtini primavera", "Acqua", "Coca cola", "Birra artigianale", "Ravioli cinesi", "Ramen", "Onigiri"];
-        $images3 = ["img/dishes/nighirif.jpg", "img/dishes/uramakif.jpg", "img/dishes/tempuraf.jpg", "img/dishes/involtini_primaveraf.jpg", "img/dishes/acqua.jpg", "img/dishes/coca.jpg", "img/dishes/birraf.jpg", "img/dishes/ravioli_cinesif.jpg", "img/dishes/ramenf.jpg", "img/dishes/onigirif.jpg"];
+        $images3 = ["img_restaurants/nighirif.jpg", "img_restaurants/uramakif.jpg", "img_restaurants/tempuraf.jpg", "img_restaurants/involtini_primaveraf.jpg", "img_restaurants/acqua.jpg", "img_restaurants/coca.jpg", "img_restaurants/birraf.jpg", "img_restaurants/ravioli_cinesif.jpg", "img_restaurants/ramenf.jpg", "img_restaurants/onigirif.jpg"];
         $ingred3 = [
             "Riso nishiki, salmone, tonno",
             "Riso nishiki, alga nori, avocado, polpa di granchio",
@@ -199,7 +179,7 @@ class DishSeeder extends Seeder
         /* Piatti ristorante 4 Dolci e Dessert, Gelato */
 
         $names4 = ["Tiramisù", "Muffin al cioccolato", "Torta panna e nutella", "Mousse al caffè", "Acqua", "Coca cola", "Birra artigianale", "Gelato al melone", "Gelato al cioccolato", "Gelato al pistacchio"];
-        $images4 = ["img/dishes/tiramisuf.jpg", "img/dishes/muffinf.jpg", "img/dishes/nutf.jpg", "img/dishes/mousecaf.jpg", "img/dishes/acqua.jpg", "img/dishes/coca.jpg", "img/dishes/birraf.jpg", "img/dishes/melonef.jpg", "img/dishes/ciocf.jpg", "img/dishes/pistacchiof.jpg"];
+        $images4 = ["img_restaurants/tiramisuf.jpg", "img_restaurants/muffinf.jpg", "img_restaurants/nutf.jpg", "img_restaurants/mousecaf.jpg", "img_restaurants/acqua.jpg", "img_restaurants/coca.jpg", "img_restaurants/birraf.jpg", "img_restaurants/melonef.jpg", "img_restaurants/ciocf.jpg", "img_restaurants/pistacchiof.jpg"];
         $ingred4 = [
             "Savoiardi, mascarpone, uova, zucchero, caffè",
             "Cacao, farina, zucchero, burro, cioccolato, uova, latte, lievito",
@@ -247,7 +227,7 @@ class DishSeeder extends Seeder
 
         /* Piatti ristorante 5 Hamburger, Kebab */
         $names5 = ["Acqua", "Hamburger", "Kebab", "Bistecca", "Chicken Burger", "Crispy Chicken", "Birra", "Coca-Cola", "Filetto di manzo", "Pollo grigliato"];
-        $images5 = ["img/dishes/acqua.jpg", "img/dishes/hamburger.jpeg", "img/dishes/kebab.jpeg", "img/dishes/bistecca.jpeg", "img/dishes/chicken-burger.jpeg", "img/dishes/crispy-chicken.jpeg", "img/dishes/beer.jpeg", "img/dishes/coca-cola.jpeg", "img/dishes/filetto-manzo.jpeg", "img/dishes/pollo-grigliato.jpeg"];
+        $images5 = ["img_restaurants/acqua.jpg", "img_restaurants/hamburger.jpeg", "img_restaurants/kebab.jpeg", "img_restaurants/bistecca.jpeg", "img_restaurants/chicken-burger.jpeg", "img_restaurants/crispy-chicken.jpeg", "img_restaurants/beer.jpeg", "img_restaurants/coca-cola.jpeg", "img_restaurants/filetto-manzo.jpeg", "img_restaurants/pollo-grigliato.jpeg"];
         $ingred5 = [
             "Acqua",
             "Pomodori, insalata, Hamburger di Manzo, cheddar, patatine",
@@ -294,7 +274,7 @@ class DishSeeder extends Seeder
 
         /* Piatti ristorante 6 Messicano, Piadina, Burrito */
         $names6 = ["Taco", "Burrito", "Nachos Cheese", "Taco Steak", "Taco Vegetarian", "Nachos Sausage", "Birra", "Coca-Cola", "Acqua", "Jarritos"];
-        $images6 = ["img/dishes/tacos.jpeg", "img/dishes/burrito.jpeg", "img/dishes/nachos.jpeg", "img/dishes/taco-steak.jpeg", "img/dishes/burrito-vegan.jpeg", "img/dishes/nachos-sausage.jpeg", "img/dishes/beer.jpeg", "img/dishes/coca-cola.jpeg", "img/dishes/acqua.jpg", "img/dishes/jarritos.jpg"];
+        $images6 = ["img_restaurants/tacos.jpeg", "img_restaurants/burrito.jpeg", "img_restaurants/nachos.jpeg", "img_restaurants/taco-steak.jpeg", "img_restaurants/burrito-vegan.jpeg", "img_restaurants/nachos-sausage.jpeg", "img_restaurants/beer.jpeg", "img_restaurants/coca-cola.jpeg", "img_restaurants/acqua.jpg", "img_restaurants/jarritos.jpg"];
         $ingred6 = [
             "Tortilla, Carne trita, cipolle rosse, tabasco, peperoni",
             "Tortilla, trito di manzo, salsa sour, pomodori, formaggio, fagioli messicani",
@@ -342,7 +322,7 @@ class DishSeeder extends Seeder
 
         /* Piatti ristorante 7 Mediterraneo, Italiano */
         $names7 = ["Pasta con pesto di pistacchi", "Tagliatelle al ragù bolognese", "Pasta con panna e tartufo", "Orata sotto sale", "Tagliere di salumi", "Vino rosso della casa", "Birra", "Coca-Cola", "Acqua", "Fanta"];
-        $images7 = ["img/dishes/pasta-pesto-pistacchi.jpeg", "img/dishes/ragu-bolognese.jpeg", "img/dishes/pasta-panna.jpeg", "img/dishes/pesce-sotto-sale.jpeg", "img/dishes/tagliere-salumi.jpeg", "img/dishes/wine-red.jpeg", "img/dishes/beer.jpeg", "img/dishes/coca-cola.jpeg", "img/dishes/acqua.jpg", "img/dishes/fanta.jpg"];
+        $images7 = ["img_restaurants/pasta-pesto-pistacchi.jpeg", "img_restaurants/ragu-bolognese.jpeg", "img_restaurants/pasta-panna.jpeg", "img_restaurants/pesce-sotto-sale.jpeg", "img_restaurants/tagliere-salumi.jpeg", "img_restaurants/wine-red.jpeg", "img_restaurants/beer.jpeg", "img_restaurants/coca-cola.jpeg", "img_restaurants/acqua.jpg", "img_restaurants/fanta.jpg"];
         $ingred7 = [
             "Pasta con pesto di pistacchi",
             "Tagliatelle al ragù bolognese",
@@ -389,7 +369,7 @@ class DishSeeder extends Seeder
 
         /* Piatti ristorante 8 Americano, Hamburger */
         $names8 = ["Hamburger Classic", "Patatine fritte", "Pancake", "Hot-Dog", "Cookies", "Donuts", "Birra", "Coca-Cola", "Acqua", "Fanta"];
-        $images8 = ["img/dishes/ham-burger.jpeg", "img/dishes/fries.jpeg", "img/dishes/pancake.jpeg", "img/dishes/hot-dog.jpeg", "img/dishes/cookies.jpeg", "img/dishes/donuts.jpeg", "img/dishes/beer.jpeg", "img/dishes/coca-cola.jpeg", "img/dishes/acqua.jpg", "img/dishes/fanta.jpg"];
+        $images8 = ["img_restaurants/ham-burger.jpeg", "img_restaurants/fries.jpeg", "img_restaurants/pancake.jpeg", "img_restaurants/hot-dog.jpeg", "img_restaurants/cookies.jpeg", "img_restaurants/donuts.jpeg", "img_restaurants/beer.jpeg", "img_restaurants/coca-cola.jpeg", "img_restaurants/acqua.jpg", "img_restaurants/fanta.jpg"];
         $ingred8 = [
             "Hamburger, insalata, pomodoro, bacon, formaggio",
             "Porzione di patatine fritte",
@@ -436,7 +416,7 @@ class DishSeeder extends Seeder
 
         /* Piatti ristorante 9 Poke, Healthy */
         $names9 = ["Poke Classic", "Filetto di Salmone", "Egg-Salad", "Caesar-Salad", "Protein Porridge", "Avocado-Toast", "Poke-Vegetarian", "Coca-Cola", "Acqua", "Fanta"];
-        $images9 = ["img/dishes/poke.jpeg", "img/dishes/salmone.jpeg", "img/dishes/egg-salad.jpeg", "img/dishes/caesar-salad.jpeg", "img/dishes/porridge.jpeg", "img/dishes/avocado-toast.jpeg", "img/dishes/poke2.jpeg", "img/dishes/coca-cola.jpeg", "img/dishes/acqua.jpg", "img/dishes/fanta.jpg"];
+        $images9 = ["img_restaurants/poke.jpeg", "img_restaurants/salmone.jpeg", "img_restaurants/egg-salad.jpeg", "img_restaurants/caesar-salad.jpeg", "img_restaurants/porridge.jpeg", "img_restaurants/avocado-toast.jpeg", "img_restaurants/poke2.jpeg", "img_restaurants/coca-cola.jpeg", "img_restaurants/acqua.jpg", "img_restaurants/fanta.jpg"];
         $ingred9 = [
             "Riso, salmone, pomodori, funghi, avocado ",
             "Filetto di salmone con verdure di stagione",
@@ -483,7 +463,7 @@ class DishSeeder extends Seeder
 
         /* Piatti ristorante 10 Mediterraneo, Italiano */
         $names10 = ["Acqua", "Vino Rosso", "Salmone", "Bistecca", "Polpette", "Filetto con verdure", "Birra", "Coca-Cola", "Pasta al pesto", "Risotto allo zafferano"];
-        $images10 = ["img/dishes/acqua.jpg", "img/dishes/wine-red.jpeg", "img/dishes/salmone.jpeg", "img/dishes/bistecca.jpeg", "img/dishes/polpette.jpg", "img/dishes/carne_verdure.jpg", "img/dishes/beer.jpeg", "img/dishes/coca-cola.jpeg", "img/dishes/pesto_tradiz.jpg", "img/dishes/zafferano.jpg"];
+        $images10 = ["img_restaurants/acqua.jpg", "img_restaurants/wine-red.jpeg", "img_restaurants/salmone.jpeg", "img_restaurants/bistecca.jpeg", "img_restaurants/polpette.jpg", "img_restaurants/carne_verdure.jpg", "img_restaurants/beer.jpeg", "img_restaurants/coca-cola.jpeg", "img_restaurants/pesto_tradiz.jpg", "img_restaurants/zafferano.jpg"];
         $ingred10 = [
             "Acqua",
             "Vino rosso",
@@ -527,11 +507,11 @@ class DishSeeder extends Seeder
 
         }
         /* //Piatti ristorante 10 Mediterraneo, Italiano //*/
-        
+
 
         /* Piatti ristorante 11 Indiano, Asiatico */
         $names11 = ["Acqua", "Vino Rosso", "Budino di carote", "Curry", "Chotpoti", "Samosa", "Birra", "Coca-Cola", "Pakora", "Biryani"];
-        $images11 = ["img/dishes/acqua.jpg", "img/dishes/wine-red.jpeg", "img/dishes/budino_carote.jpg", "img/dishes/curry.jpg", "img/dishes/chotpoti.jpg", "img/dishes/samosa.jpg", "img/dishes/beer.jpeg", "img/dishes/coca-cola.jpeg", "img/dishes/pakora.jpg", "img/dishes/biryani.jpg"];
+        $images11 = ["img_restaurants/acqua.jpg", "img_restaurants/wine-red.jpeg", "img_restaurants/budino_carote.jpg", "img_restaurants/curry.jpg", "img_restaurants/chotpoti.jpg", "img_restaurants/samosa.jpg", "img_restaurants/beer.jpeg", "img_restaurants/coca-cola.jpeg", "img_restaurants/pakora.jpg", "img_restaurants/biryani.jpg"];
         $ingred11 = [
             "Acqua",
             "Vino rosso",
@@ -577,10 +557,10 @@ class DishSeeder extends Seeder
         /* //Piatti ristorante 11 Indiano, Asiatico //*/
 
 
-        
+
         /* Piatti ristorante 12 Thailandese, Asiatico */
         $names12 = ["Acqua", "Vino Rosso", "Pad Thai", "Khao Pad", "Yam Nua", "Laap", "Birra", "Coca-Cola", "Som Tam", "Khao Soi"];
-        $images12 = ["img/dishes/acqua.jpg", "img/dishes/wine-red.jpeg", "img/dishes/pad_thai.jpg", "img/dishes/khao_pad.jpg", "img/dishes/yam_nua.jpg", "img/dishes/laap.jpg", "img/dishes/beer.jpeg", "img/dishes/coca-cola.jpeg", "img/dishes/som_tam.jpg", "img/dishes/khao_soi.jpg"];
+        $images12 = ["img_restaurants/acqua.jpg", "img_restaurants/wine-red.jpeg", "img_restaurants/pad_thai.jpg", "img_restaurants/khao_pad.jpg", "img_restaurants/yam_nua.jpg", "img_restaurants/laap.jpg", "img_restaurants/beer.jpeg", "img_restaurants/coca-cola.jpeg", "img_restaurants/som_tam.jpg", "img_restaurants/khao_soi.jpg"];
         $ingred12 = [
             "Acqua",
             "Vino rosso",
