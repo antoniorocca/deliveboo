@@ -41,12 +41,12 @@
               <a class="btn btn-warning" href="{{ route('user.dish.edit', $dish) }}">Edit</a>
 
               <!-- Button trigger modal -->
-              <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete-{{$dish->id}}">
+              <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete-{{$dish->slug}}">
                 Delete
               </button>
 
               <!-- Modal -->
-              <div class="modal fade text-dark" id="delete-{{$dish->id}}" tabindex="-1" role="dialog" aria-labelledby="dish-delete-{{$dish->id}}" aria-hidden="true">
+              <div class="modal fade text-dark" id="delete-{{$dish->slug}}" tabindex="-1" role="dialog" aria-labelledby="dish-delete-{{$dish->slug}}" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                   <div class="modal-content">
                     <div class="modal-header">
@@ -60,7 +60,7 @@
                     </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                      <form class="" action="{{route('user.dish.destroy', $dish->id )}}" method="post">
+                      <form class="" action="{{route('user.dish.destroy', $dish->slug )}}" method="post">
                         @csrf
                         @method('delete')
                         <button type="submit" class="btn btn-danger btn-block">delete</button>
