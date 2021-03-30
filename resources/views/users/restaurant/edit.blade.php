@@ -52,7 +52,7 @@
 
             {{-- categories --}}
             <div class="form-group">
-                <label for="tag_id" class="col-sm-1-12 col-form-label text-info">Categorie:</label>
+                <label for="tag_id" class="col-sm-1-12 col-form-label text-info">Sconto ristorante:</label>
                 <select name="tag_id[]" class="edit_input" id="tag_id" multiple>
                     @foreach($tags as $tag)
                     <option value="{{$tag->id}}" {{$restaurant->tags->contains($tag) ? 'selected' : ''}}>{{$tag->name}}</option>
