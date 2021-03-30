@@ -51,7 +51,7 @@ class RestaurantSeeder extends Seeder
         $newRestaurant->tags()->attach(rand(1, 4));
 
 
-        /* ristorante 3 Giapponese, Cinese, Asiatico */
+        /* ristorante 3 Giapponese, Cinese, Asiatico, Sushi */
         $newRestaurant = new Restaurant;
         $newRestaurant->user_id = 3;
         $newRestaurant->name = "Sumo Sushi Ramen";
@@ -67,6 +67,7 @@ class RestaurantSeeder extends Seeder
         $newRestaurant->categories()->attach(6);
         $newRestaurant->categories()->attach(10);
         $newRestaurant->categories()->attach(3);
+        $newRestaurant->categories()->attach(24);
         $newRestaurant->tags()->attach(rand(1, 4));
 
 
