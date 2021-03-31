@@ -7846,7 +7846,7 @@ exports = module.exports = __webpack_require__(/*! ../../css-loader/lib/css-base
 
 
 // module
-exports.push([module.i, ".hooper-slide {\n    flex-shrink: 0;\n    height: 100%;\n    margin: 0;\n    padding: 0;\n    list-style: none;\n}\n\n.hooper-progress {\n    position: absolute;\n    top: 0;\n    right: 0;\n    left: 0;\n    height: 4px;\n    background-color: #efefef;\n}\n\n.hooper-progress-inner {\n    height: 100%;\n    background-color: #4285f4;\n    transition: 300ms;\n}\n\n.hooper-pagination {\n    position: absolute;\n    bottom: 0;\n    right: 50%;\n    transform: translateX(50%);\n    display: flex;\n    padding: 5px 10px;\n}\n\n.hooper-indicators {\n    display: flex;\n    list-style: none;\n    margin: 0;\n    padding: 0;\n}\n\n.hooper-indicator:hover,\n.hooper-indicator.is-active {\n    background-color: #4285f4;\n}\n\n.hooper-indicator {\n    margin: 0 2px;\n    width: 12px;\n    height: 4px;\n    border-radius: 4px;\n    border: none;\n    padding: 0;\n    background-color: #fff;\n    cursor: pointer;\n}\n\n.hooper-pagination.is-vertical {\n    bottom: auto;\n    right: 0;\n    top: 50%;\n    transform: translateY(-50%);\n}\n\n.hooper-pagination.is-vertical .hooper-indicators {\n    flex-direction: column;\n}\n\n.hooper-pagination.is-vertical .hooper-indicator {\n    width: 6px;\n}\n\n.hooper-next,\n.hooper-prev {\n    background-color: transparent;\n    border: none;\n    padding: 1em;\n    position: absolute;\n    top: 50%;\n    transform: translateY(-50%);\n    cursor: pointer;\n}\n\n.hooper-next.is-disabled,\n.hooper-prev.is-disabled {\n    opacity: 0.3;\n    cursor: not-allowed;\n}\n\n.hooper-next {\n    right: 0;\n}\n\n.hooper-prev {\n    left: 0;\n}\n\n.hooper-navigation.is-vertical .hooper-next {\n    top: auto;\n    bottom: 0;\n    transform: initial;\n}\n\n.hooper-navigation.is-vertical .hooper-prev {\n    top: 0;\n    bottom: auto;\n    right: 0;\n    left: auto;\n    transform: initial;\n}\n\n.hooper-navigation.is-rtl .hooper-prev {\n    left: auto;\n    right: 0;\n}\n\n.hooper-navigation.is-rtl .hooper-next {\n    right: auto;\n    left: 0;\n}\n\n.hooper {\n    position: relative;\n    box-sizing: border-box;\n    width: 100%;\n    height: 200px;\n}\n\n.hooper * {\n    box-sizing: border-box;\n}\n\n.hooper-list {\n    overflow: hidden;\n    width: 100%;\n    height: 100%;\n}\n\n.hooper-track {\n    display: flex;\n    justify-content: center;\n    box-sizing: border-box;\n    width: 100%;\n    height: 100%;\n    padding: 0;\n    margin: 0;\n}\n\n.hooper.is-vertical .hooper-track {\n    flex-direction: column;\n    height: 200px;\n}\n\n.hooper.is-rtl {\n    direction: rtl;\n}\n\n.hooper-sr-only {\n    position: absolute;\n    width: 1px;\n    height: 1px;\n    padding: 0;\n    margin: -1px;\n    overflow: hidden;\n    clip: rect(0, 0, 0, 0);\n    border: 0;\n}\n\n#hooper>div>div.hooper-navigation>button.hooper-prev {\n    background-color: #F7C244;\n    padding: 15px;\n    border-radius: 50%;\n    transform: translate(-70px, -25px);\n}\n\n#hooper>div>div.hooper-navigation>button.hooper-next {\n    background-color: #F7C244;\n    padding: 15px;\n    border-radius: 50%;\n    transform: translate(70px, -25px);\n}\n\n@media all and (max-width: 1023px) {\n    #hooper>div>div.hooper-navigation>button.hooper-next {\n        display: none;\n    }\n    #hooper>div>div.hooper-navigation>button.hooper-prev {\n        display: none;\n    }\n}", ""]);
+exports.push([module.i, ".hooper-slide {\r\n    flex-shrink: 0;\r\n    height: 100%;\r\n    margin: 0;\r\n    padding: 0;\r\n    list-style: none;\r\n}\r\n\r\n.hooper-progress {\r\n    position: absolute;\r\n    top: 0;\r\n    right: 0;\r\n    left: 0;\r\n    height: 4px;\r\n    background-color: #efefef;\r\n}\r\n\r\n.hooper-progress-inner {\r\n    height: 100%;\r\n    background-color: #4285f4;\r\n    transition: 300ms;\r\n}\r\n\r\n.hooper-pagination {\r\n    position: absolute;\r\n    bottom: 0;\r\n    right: 50%;\r\n    transform: translateX(50%);\r\n    display: flex;\r\n    padding: 5px 10px;\r\n}\r\n\r\n.hooper-indicators {\r\n    display: flex;\r\n    list-style: none;\r\n    margin: 0;\r\n    padding: 0;\r\n}\r\n\r\n.hooper-indicator:hover,\r\n.hooper-indicator.is-active {\r\n    background-color: #4285f4;\r\n}\r\n\r\n.hooper-indicator {\r\n    margin: 0 2px;\r\n    width: 12px;\r\n    height: 4px;\r\n    border-radius: 4px;\r\n    border: none;\r\n    padding: 0;\r\n    background-color: #fff;\r\n    cursor: pointer;\r\n}\r\n\r\n.hooper-pagination.is-vertical {\r\n    bottom: auto;\r\n    right: 0;\r\n    top: 50%;\r\n    transform: translateY(-50%);\r\n}\r\n\r\n.hooper-pagination.is-vertical .hooper-indicators {\r\n    flex-direction: column;\r\n}\r\n\r\n.hooper-pagination.is-vertical .hooper-indicator {\r\n    width: 6px;\r\n}\r\n\r\n.hooper-next,\r\n.hooper-prev {\r\n    background-color: transparent;\r\n    border: none;\r\n    padding: 1em;\r\n    position: absolute;\r\n    top: 50%;\r\n    transform: translateY(-50%);\r\n    cursor: pointer;\r\n}\r\n\r\n.hooper-next.is-disabled,\r\n.hooper-prev.is-disabled {\r\n    opacity: 0.3;\r\n    cursor: not-allowed;\r\n}\r\n\r\n.hooper-next {\r\n    right: 0;\r\n}\r\n\r\n.hooper-prev {\r\n    left: 0;\r\n}\r\n\r\n.hooper-navigation.is-vertical .hooper-next {\r\n    top: auto;\r\n    bottom: 0;\r\n    transform: initial;\r\n}\r\n\r\n.hooper-navigation.is-vertical .hooper-prev {\r\n    top: 0;\r\n    bottom: auto;\r\n    right: 0;\r\n    left: auto;\r\n    transform: initial;\r\n}\r\n\r\n.hooper-navigation.is-rtl .hooper-prev {\r\n    left: auto;\r\n    right: 0;\r\n}\r\n\r\n.hooper-navigation.is-rtl .hooper-next {\r\n    right: auto;\r\n    left: 0;\r\n}\r\n\r\n.hooper {\r\n    position: relative;\r\n    box-sizing: border-box;\r\n    width: 100%;\r\n    height: 200px;\r\n}\r\n\r\n.hooper * {\r\n    box-sizing: border-box;\r\n}\r\n\r\n.hooper-list {\r\n    overflow: hidden;\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n\r\n.hooper-track {\r\n    display: flex;\r\n    justify-content: center;\r\n    box-sizing: border-box;\r\n    width: 100%;\r\n    height: 100%;\r\n    padding: 0;\r\n    margin: 0;\r\n}\r\n\r\n.hooper.is-vertical .hooper-track {\r\n    flex-direction: column;\r\n    height: 200px;\r\n}\r\n\r\n.hooper.is-rtl {\r\n    direction: rtl;\r\n}\r\n\r\n.hooper-sr-only {\r\n    position: absolute;\r\n    width: 1px;\r\n    height: 1px;\r\n    padding: 0;\r\n    margin: -1px;\r\n    overflow: hidden;\r\n    clip: rect(0, 0, 0, 0);\r\n    border: 0;\r\n}\r\n\r\n#hooper>div>div.hooper-navigation>button.hooper-prev {\r\n    background-color: #F7C244;\r\n    padding: 15px;\r\n    border-radius: 50%;\r\n    transform: translate(-70px, -25px);\r\n}\r\n\r\n#hooper>div>div.hooper-navigation>button.hooper-next {\r\n    background-color: #F7C244;\r\n    padding: 15px;\r\n    border-radius: 50%;\r\n    transform: translate(70px, -25px);\r\n}\r\n\r\n@media all and (max-width: 1023px) {\r\n    #hooper>div>div.hooper-navigation>button.hooper-next {\r\n        display: none;\r\n    }\r\n    #hooper>div>div.hooper-navigation>button.hooper-prev {\r\n        display: none;\r\n    }\r\n}", ""]);
 
 // exports
 
@@ -41300,7 +41300,7 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("p", [
         _vm._v(
-          "\n            Scopri i ristoranti più richiesti e ricevi alla tua porta ogni tuo desiderio\n            "
+          "\r\n            Scopri i ristoranti più richiesti e ricevi alla tua porta ogni tuo desiderio\r\n            "
         )
       ])
     ])
@@ -41360,7 +41360,7 @@ var render = function() {
                                 " - "
                             ),
                             _c("span", [
-                              _vm._v("$" + _vm._s(item.totalPrice.toFixed(2)))
+                              _vm._v("€" + _vm._s(item.totalPrice.toFixed(2)))
                             ])
                           ]),
                           _vm._v(" "),
@@ -41415,7 +41415,7 @@ var render = function() {
                   _vm._v(" "),
                   _c("span", { staticClass: "totalSpan" }, [
                     _c("span", [_vm._v("Total: ")]),
-                    _vm._v(" $" + _vm._s(_vm.totalPrice) + "\n            ")
+                    _vm._v(" €" + _vm._s(_vm.totalPrice) + "\n            ")
                   ]),
                   _vm._v(" "),
                   _c("hr", { staticClass: "navbar_divider" }),
@@ -42686,9 +42686,9 @@ var render = function() {
                     _vm._v(" "),
                     _c("h4", [
                       _vm._v(
-                        "\n                        " +
+                        "\r\n                        " +
                           _vm._s(restaurant.name) +
-                          "\n                  "
+                          "\r\n                  "
                       )
                     ]),
                     _vm._v(" "),
@@ -42698,17 +42698,21 @@ var render = function() {
                             attrs: { src: "img/scooter-delivery.png", alt: "" }
                           }),
                           _vm._v(
-                            "\n                        € " +
+                            "\r\n                        € " +
                               _vm._s(restaurant.price_shipping.toFixed(2)) +
+<<<<<<< HEAD
                               "\n                        "
+=======
+                              " \r\n                        "
+>>>>>>> main
                           ),
                           _c("img", {
                             attrs: { src: "img/like.png", alt: "" }
                           }),
                           _vm._v(
-                            "\n                        " +
+                            "\r\n                        " +
                               _vm._s(restaurant.quality) +
-                              " %\n                  "
+                              " %\r\n                  "
                           )
                         ])
                       : _vm._e(),
@@ -58016,8 +58020,8 @@ var store = {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /var/www/html/boolean/laravel/deliveboo/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /var/www/html/boolean/laravel/deliveboo/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\Fabio\Desktop\Boolean\classe 23\deliveboo\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\Fabio\Desktop\Boolean\classe 23\deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

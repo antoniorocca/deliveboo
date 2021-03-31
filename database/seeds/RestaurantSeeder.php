@@ -14,7 +14,7 @@ class RestaurantSeeder extends Seeder
     public function run(Faker $faker)
     {
 
-        /* ristorante 1 Pasta, Healthy */
+        /* ristorante 1 Pasta, Healthy, Insalate */
         $newRestaurant = new Restaurant;
         $newRestaurant->user_id = 1;
         $newRestaurant->name = "Al Matarel Pasta Fresca";
@@ -29,6 +29,7 @@ class RestaurantSeeder extends Seeder
         $newRestaurant->save();
         $newRestaurant->categories()->attach(19);
         $newRestaurant->categories()->attach(12);
+        $newRestaurant->categories()->attach(14);
         $newRestaurant->tags()->attach(rand(1, 4));
 
 
@@ -50,7 +51,7 @@ class RestaurantSeeder extends Seeder
         $newRestaurant->tags()->attach(rand(1, 4));
 
 
-        /* ristorante 3 Giapponese, Cinese, Asiatico */
+        /* ristorante 3 Giapponese, Cinese, Asiatico, Sushi */
         $newRestaurant = new Restaurant;
         $newRestaurant->user_id = 3;
         $newRestaurant->name = "Sumo Sushi Ramen";
@@ -66,6 +67,7 @@ class RestaurantSeeder extends Seeder
         $newRestaurant->categories()->attach(6);
         $newRestaurant->categories()->attach(10);
         $newRestaurant->categories()->attach(3);
+        $newRestaurant->categories()->attach(24);
         $newRestaurant->tags()->attach(rand(1, 4));
 
 
@@ -161,7 +163,7 @@ class RestaurantSeeder extends Seeder
         $newRestaurant->tags()->attach(rand(1, 4));
 
 
-        /* ristorante 9 Poke, Healthy */
+        /* ristorante 9 Poke, Healthy, Street food, Insalate */
         $newRestaurant = new Restaurant;
         $newRestaurant->user_id = 9;
         $newRestaurant->name = "SideUp Poke";
@@ -177,6 +179,7 @@ class RestaurantSeeder extends Seeder
         $newRestaurant->categories()->attach(22);
         $newRestaurant->categories()->attach(12);
         $newRestaurant->categories()->attach(23);
+        $newRestaurant->categories()->attach(14);
         $newRestaurant->tags()->attach(rand(1, 4));
 
 

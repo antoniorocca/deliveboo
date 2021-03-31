@@ -13,10 +13,10 @@
             @csrf
 
             <div class="container">
-                <span>* campo obligatorio</span>
+                <div>* Campo obligatorio</div>
 
                 {{-- name --}}
-                <label for="name" class="col-sm-1-12 col-form-label text-info">name</label>
+                <label for="name" class="col-sm-1-12 col-form-label text-info">Nome</label>
                 <div class="col-md-12-12 col-md-12">
                     <input type="text" class="edit_input" name="name" value="" maxlength='30'>
                 </div>
@@ -25,7 +25,7 @@
                 @enderror
 
                 {{-- description --}}
-                <label for="description" class="col-sm-1-12 col-form-label text-info">Description</label>
+                <label for="description" class="col-sm-1-12 col-form-label text-info">Descrizione</label>
                 <div class="col-md-12-12 col-md-12">
                     <textarea type="text" class="edit_input" name="description" value="" maxlength='500'></textarea>
                 </div>
@@ -34,7 +34,7 @@
                 @enderror
 
                 {{-- img --}}
-                <label for="img">immagine piatto</label>
+                <label for="img">Immagine piatto</label>
                 <input type="file" class="edit_input-file" name="img" aria-describedby="fileHelpId">
                 @error('img')
                 <div class="alert alert-danger">{{ $message }}</div>
@@ -43,7 +43,7 @@
                 <br>
 
                 {{-- price --}}
-                <label for="price" class="col-sm-1-12 col-form-label text-info">Price*</label>
+                <label for="price" class="col-sm-1-12 col-form-label text-info">Prezzo*</label>
                 <div class="col-md-12-12 col-md-12">
                     <input type="number" class="edit_input" name="price" value="" min="0" max="999.99" step="0.01">
                 </div>
@@ -52,7 +52,7 @@
                 @enderror
 
                 {{-- menu_class --}}
-                <label for="menu_class" class="col-sm-1-12 col-form-label text-info">menu_class</label>
+                <label for="menu_class" class="col-sm-1-12 col-form-label text-info">Classe menu</label>
                 <div class="col-md-12-12 col-md-12">
                     <textarea type="text" class="edit_input" name="menu_class" value="" maxlength='30'></textarea>
                 </div>
@@ -61,15 +61,15 @@
                 @enderror
 
                 {{-- discount --}}
-                <label for="discount" class="col-lg-12 col-form-label text-info">discount</label>
+                <label for="discount" class="col-lg-12 col-form-label text-info">Sconto</label>
 
                 <div class="col-md-1">
                     <input type="radio" class="form-check-input" name="discount" value="1">
-                    <label class="form-check-lable" for="discount">no</label>
+                    <label class="form-check-lable" for="discount">No</label>
                 </div>
                 <div class="col-md-2">
                     <input type="radio" class="form-check-input" name="discount" value="0">
-                    <label class="form-check-lable" for="discount">sconto</label>
+                    <label class="form-check-lable" for="discount">Sconto</label>
                 </div>
 
                 @error('discount')

@@ -31,12 +31,12 @@
                         </div>
                         @else
                         <div class="nav-item dropdown">
-                            <a style="background-color: #CFFFF6;" id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ Auth::user()->name }}
                             </a>
 
                             <div style="background-color: rgba(0,0,0,0); border: none;" class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a style="background-color: #CFFFF6;" class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                     {{ __('Logout') }}
                                 </a>
@@ -56,7 +56,7 @@
             <img class="img_spacer" src="{{asset('storage/yellow_arch.png')}}" alt="">
         </div>
 
-        <main class="py-4">
+        <main>
             @yield('content')
         </main>
 

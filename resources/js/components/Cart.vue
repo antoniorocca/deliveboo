@@ -16,7 +16,7 @@
                     <div class="cart_product_item" v-for="item in $store.state.cart" :key="item.id">
 
                         <span class="cart_item">
-                            {{ item.name }} x {{ item.quantity }} - <span>${{ item.totalPrice.toFixed(2) }}</span>
+                            {{ item.name }} x {{ item.quantity }} - <span>&euro;{{ item.totalPrice.toFixed(2) }}</span>
                         </span>
 
                         <div class="btn_box">
@@ -30,7 +30,7 @@
 
 
                 <span class="totalSpan">
-                    <span>Total: </span> ${{ totalPrice }}
+                    <span>Total: </span> &euro;{{ totalPrice }}
                 </span>
 
                 <hr class="navbar_divider">

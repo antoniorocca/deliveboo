@@ -52,7 +52,7 @@
 
             {{-- categories --}}
             <div class="form-group">
-                <label for="tag_id" class="col-sm-1-12 col-form-label text-info">Categorie:</label>
+                <label for="tag_id" class="col-sm-1-12 col-form-label text-info">Sconto ristorante:</label>
                 <select name="tag_id[]" class="edit_input" id="tag_id" multiple>
                     @foreach($tags as $tag)
                     <option value="{{$tag->id}}" {{$restaurant->tags->contains($tag) ? 'selected' : ''}}>{{$tag->name}}</option>
@@ -76,7 +76,7 @@
             {{-- img --}}
             <div class="form-group">
                 @if ($restaurant->img)
-                <dd>foto ristorante</dd>
+                <dd>Foto ristorante</dd>
                 <img src="{{asset('storage/' . $restaurant->img )}}" style="height:300px;" alt="">
                 <img src="{{'/' . $restaurant->img}}" style="height:300px;" alt="">
                 @else
@@ -126,11 +126,11 @@
 
                 <div class="col-md-2">
                     <input type="radio" class="form-check-input" name="free_shipping" value="1">
-                    <label class="" for="free_shipping">consegna gratuita</label>
+                    <label class="" for="free_shipping">Consegna gratuita</label>
                 </div>
                 <div class="col-md-2">
                     <input type="radio" class="form-check-input" name="free_shipping" value="0">
-                    <label class="" for="free_shipping">consegna a pagamento</label>
+                    <label class="" for="free_shipping">Consegna a pagamento</label>
                 </div>
                 @error('free_shipping')
                 <div class="alert alert-danger">{{ $message }}</div>
@@ -139,9 +139,9 @@
 
             {{-- price_shipping --}}
             <div class="content_row">
-                <label for="price_shipping" class="col-sm-1-12 col-form-label text-info">prezzo di consegna</label>
+                <label for="price_shipping" class="col-sm-1-12 col-form-label text-info">Prezzo di consegna</label>
                 <div class="col-md-12-12 col-md-12">
-                    <input type="text" class="edit_input" name="price_shipping" value="{{$restaurant->price_shipping}}" min="0" max="99.99" step="0.01">
+                    <input type="text" class="edit_input" name="price_shipping" value="{{number_format($restaurant['price_shipping'], 2)}}" min="0" max="99.99" step="0.01">
                 </div>
                 @error('price_shipping')
                 <div class="alert alert-danger">{{ $message }}</div>
