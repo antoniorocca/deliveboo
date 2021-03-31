@@ -31,7 +31,17 @@
     margin-right: 5px;
 }
 
+@media all and (max-width: 1249px) {
 
+    .hooper-navigation{
+        .hooper-next{
+            transform: translate(45px, -25px) !important;
+        }
+        .hooper-prev{
+            transform: translate(-45px, -25px) !important;
+        }
+    }
+}
 @media all and (max-width: 780px) {
     .hooper-next, .hooper-prev{
         display: none;

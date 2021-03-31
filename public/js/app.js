@@ -42700,11 +42700,7 @@ var render = function() {
                           _vm._v(
                             "\r\n                        € " +
                               _vm._s(restaurant.price_shipping.toFixed(2)) +
-<<<<<<< HEAD
-                              "\n                        "
-=======
-                              " \r\n                        "
->>>>>>> main
+                              "\r\n                        "
                           ),
                           _c("img", {
                             attrs: { src: "img/like.png", alt: "" }
@@ -58020,8 +58016,8 @@ var store = {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\Fabio\Desktop\Boolean\classe 23\deliveboo\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\Fabio\Desktop\Boolean\classe 23\deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\gitKraken_esercizi\deliveboo_progetto_finale\deliveboo\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\gitKraken_esercizi\deliveboo_progetto_finale\deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
